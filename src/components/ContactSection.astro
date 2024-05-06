@@ -1,0 +1,239 @@
+---
+const { title } = Astro.props;
+---
+<script>
+    
+</script>
+<section class="contact-us" id="contact">
+    <div class="bg-vectors">
+        <img
+            src="assets/images/bg-vector2.webp"
+            alt="vector image"
+        />
+    </div>
+    <div class="container cus-main">
+        <div class="text-center slide-left">
+            <div class="py-2 flex justify-center">
+                <img
+                    src="assets/images/let-telegram.webp"
+                    alt="Telegram"
+                    class="lets-telegram"
+                />
+            </div>
+            <h5 class="text-white">LET'S TALK</h5>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 slide-left">
+                <h4 class="text-white pt-5 pb-3">Have A Project?</h4>
+                <p>
+                    We assist you with your Metaverse project and help make your
+                    vision into reality. We always focus on meeting & exceeding
+                    clients' expectations, delivering solutions on time and
+                    within budget while maintaining quality.
+                </p>
+                <div class="calendly-inline-widget" data-processed="true">
+                    <iframe
+                        src="https://calendly.com/meta_pro_lane/15min"
+                        title="Calendly"></iframe>
+                </div>
+            </div>
+
+            <div class="col-lg-8 slide-right">
+                <div id="alerts"></div>
+                <form
+                    id="contact"
+                    action="javascript:void(0)"
+                    method="post"
+                    onsubmit="submitContactForm();"
+                >
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <p>
+                                Your Name <span
+                                    id="nameloc"
+                                    style="color:yellow;float:right"></span>
+                            </p>
+                            <fieldset>
+                                <input
+                                    name="name"
+                                    type="text"
+                                    id="name"
+                                    placeholder=""
+                                    class="ms-l"
+                                />
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-6">
+                            <p>
+                                Your Mail <span
+                                    id="emailloc"
+                                    style="color:yellow;float:right"></span>
+                            </p>
+                            <fieldset>
+                                <input
+                                    name="email"
+                                    type="text"
+                                    id="email"
+                                    placeholder=""
+                                    class="ms-r"
+                                />
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-6">
+                            <p>Your Country</p>
+                            <fieldset>
+                                <div class="form-item">
+                                    <input
+                                        id="country_selector"
+                                        type="text"
+                                        required=""
+                                    />
+                                    <label
+                                        for="country_selector"
+                                        style="display:none;"
+                                        >Select a country here...</label
+                                    >
+                                </div>
+                                <div class="form-item" style="display:none;">
+                                    <input
+                                        type="text"
+                                        id="country_selector_code"
+                                        name="country_selector_code"
+                                        data-countrycodeinput="1"
+                                        readonly="readonly"
+                                        placeholder="Selected country code will appear here"
+                                    />
+                                    <label for="country_selector_code"
+                                        >...and the selected country code will
+                                        be updated here</label
+                                    >
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-6">
+                            <p>
+                                Phone Number <span
+                                    id="phoneloc"
+                                    style="color:yellow;float:right"></span>
+                            </p>
+                            <fieldset>
+                                <input
+                                    name="phone"
+                                    type="text"
+                                    id="phone"
+                                    placeholder=""
+                                    class="ms-r"
+                                />
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-6">
+                            <p>
+                                Company <span
+                                    id="companyloc"
+                                    style="color:yellow;float:right"></span>
+                            </p>
+                            <fieldset>
+                                <input
+                                    name="company"
+                                    type="text"
+                                    id="company"
+                                    placeholder=""
+                                    class="ms-l"
+                                />
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-6">
+                            <p>
+                                Ask for <span
+                                    id="askforloc"
+                                    style="color:yellow;float:right"></span>
+                            </p>
+                            <fieldset>
+                                <select
+                                    class="ask-select"
+                                    name="askfor"
+                                    id="askfor"
+                                >
+                                    <option value="">Please Select</option>
+                                    <option value="Metaverse Virtual Office"
+                                        >Metaverse Virtual Office</option
+                                    >
+                                    <option value="Metaverse Auditorium"
+                                        >Metaverse Auditorium</option
+                                    >
+                                    <option value="Metaverse Virtual City"
+                                        >Metaverse Virtual City</option
+                                    >
+                                    <option value="Metaverse Shopping Mall"
+                                        >Metaverse Shopping Mall</option
+                                    >
+                                    <option value="Metaverse Casino Game"
+                                        >Metaverse Casino Game</option
+                                    >
+                                    <option
+                                        value="Metaverse Development Company"
+                                        >Metaverse Development Company</option
+                                    >
+                                    <option
+                                        value="Metaverse Game Development Services"
+                                        >Metaverse Game Development Services</option
+                                    >
+                                    <option value="Metaverse for Industries"
+                                        >Metaverse for Industries</option
+                                    >
+                                    <option value="Metaverse Virtual Showroom"
+                                        >Metaverse Virtual Showroom</option
+                                    >
+                                    <option
+                                        value="Metaverse Real Estate Solutions"
+                                        >Metaverse Real Estate Solutions</option
+                                    >
+                                    <option value="Metaverse jwelery shopping"
+                                        >Metaverse jewelry shopping</option
+                                    >
+                                </select>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-12">
+                            <p>
+                                Your Message <span
+                                    id="msgloc"
+                                    style="color:yellow;float:right"></span>
+                            </p>
+                            <fieldset>
+                                <textarea
+                                    name="message"
+                                    class="form-control"
+                                    id="message"
+                                    placeholder=""></textarea>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-12 pb-4">
+                            <fieldset>
+                                <div
+                                    class="g-recaptcha"
+                                    data-sitekey="6Lfm0MAlAAAAAAHzTSmQlm7DOG7lYS2On5uoc_ro"
+                                >
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="col-lg-12 mh-last">
+                            <fieldset>
+                                <button
+                                    aria-label="send form"
+                                    type="submit"
+                                    id="form-submit"
+                                    class="btn btn-transparent"
+                                    >Send Form</button
+                                >
+                            </fieldset>
+                            <br /><br />
+                            <span id="msgbl" style="color:yellow;font-size:20px"
+                            ></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,806 @@
+@font-face {
+    font-family: "roboto";
+    src: url('/assets/fonts/Roboto/Roboto-Regular.ttf');
+}
+
+/* body {
+    font-family: 'Roboto', sans-serif !important;
+} */
+body {
+    font-family: "roboto", sans-serif !important;
+}
+
+.top-detail-card {
+    display: flex;
+    position: absolute;
+    top: 0;
+    height: 53rem;
+    align-items: center;
+    padding-left: 120px;
+    width: 50%;
+}
+
+.card1-text-title {
+    color: #FFF;
+    /* material-theme/display/medium */
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 52px;
+}
+
+@media screen and (max-width:767px) {
+    .top-detail-card {
+        padding-left: 7% !important;
+        padding-right: 7% !important;
+        height: 48rem !important;
+        width: 100% !important;
+    }
+
+    .card1-text-title {
+        font-size: 30px !important;
+        line-height: 40px !important;
+    }
+
+    .card-background {
+        padding: 40px !important;
+        margin-top: 16px !important;
+        width: 100% !important;
+    }
+
+    .script-img {
+        height: 48rem !important;
+    }
+
+    .card1-text-content {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+
+    .top-talk-btn {
+        width: auto !important;
+    }
+
+    .talk-btn-text {
+        font-size: 14px !important;
+        line-height: 20px !important;
+
+    }
+
+    .service-section {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+    }
+
+    .fashion-store {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .fashion-left {
+        width: 100% !important
+    }
+
+    .fashion-right {
+        width: 100% !important;
+    }
+
+    .trading-section {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .fashion-card {
+        padding: 20px !important;
+    }
+
+    .wallet-img {
+        height: auto !important;
+    }
+
+    .gray-car {
+        width: 100% !important;
+    }
+
+    .car-right {
+        width: 100% !important;
+        padding: 24px !important;
+    }
+
+    .video-content {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+        height: 54rem !important;
+    }
+
+    .vr-video {
+        height: 54rem !important;
+    }
+
+    .scroll-item {
+        width: 270px !important;
+    }
+
+    .process-card-section {
+        padding-left: 24px !important;
+        padding-right: 24px !important;
+    }
+
+    .vr-img {
+        width: 435px !important;
+        height: 300px !important;
+    }
+
+    .FAQ-question {
+        max-width: 80% !important;
+    }
+
+    .AI-car-section {
+        padding-bottom: 0px !important;
+    }
+
+}
+
+@media (min-width:767px) and (max-width:1024px) {
+    .script-img {
+        height: 56rem !important;
+    }
+
+    .top-detail-card {
+        padding-left: 52px !important;
+        height: 56rem !important;
+        width: 100% !important;
+    }
+
+    .card-background {
+        width: 60% !important;
+        padding: 40px !important;
+    }
+
+    .service-section,
+    .fashion-store,
+    .trading-section,
+    .video-content,
+    .process-card-section {
+        padding-left: 52px !important;
+        padding-right: 52px !important;
+    }
+
+    .fashion-left,
+    .fashion-right {
+        width: 100% !important;
+    }
+
+    .fashion-card {
+        padding: 20px !important;
+    }
+
+    .wallet-img {
+        height: auto !important;
+    }
+
+    .gray-car {
+        width: 100% !important;
+    }
+
+    .car-right {
+        width: 100% !important;
+        padding: 52px !important;
+    }
+
+    .scroll-item {
+        width: 300px !important;
+    }
+
+    .AI-car-section {
+        padding-bottom: 0px !important;
+    }
+
+    .vr-img {
+        width: 400px !important;
+        height: 320px !important;
+    }
+
+    .FAQ-question {
+        max-width: 90% !important;
+    }
+}
+
+@media (min-width:1024px) {
+    .wallet-img {
+        height: auto !important;
+        width: auto !important;
+    }
+}
+
+.vr-video {
+    height: 42rem;
+    width: 100%;
+}
+
+.script-img {
+    height: 53rem
+}
+
+.card-background {
+    border-radius: 20px;
+    border: 2px solid #FFF;
+    background: rgba(0, 0, 0, 0.80);
+    backdrop-filter: blur(7.5px);
+    width: 100%;
+    padding: 60px;
+}
+
+.card1-text-content {
+    max-height: 156px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    /* 150% */
+    letter-spacing: 0.5px;
+    color: #FFF;
+    line-height: 36px;
+    padding-top: 12px;
+}
+
+.readmore-description {
+    padding-top: 4px;
+    color: #FFF;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.expanded {
+    max-height: none;
+    -webkit-line-clamp: initial;
+}
+
+.virtual-expanded {
+    max-height: none !important;
+    -webkit-line-clamp: initial !important;
+}
+
+.talk-btn {
+    width: 250px;
+    margin-top: 20px;
+    display: flex;
+    padding: 20px 40px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    border: 3px solid transparent;
+    border-width: 3px;
+    border-style: solid;
+    cursor: pointer;
+    background: linear-gradient(#F1FFE9 0 0) padding-box, linear-gradient(to right, #08BCF0, #77DB27) border-box;
+}
+
+.top-talk-btn {
+    background: linear-gradient(#006E0F 0 0) padding-box, linear-gradient(to right, #08BCF0, #77DB27) border-box !important;
+}
+
+.top-talk-btn:hover {
+    background: linear-gradient(#034D0F 0 0) padding-box, linear-gradient(to right, #08BCF0, #77DB27) border-box !important;
+    /* background-color: #034D0F !important;  */
+}
+
+.talk-btn:hover {
+    background: linear-gradient(#66DD5E 0 0) padding-box, linear-gradient(to right, #08BCF0, #77DB27) border-box;
+}
+
+.virtual-readmore {
+    padding-top: 4px;
+    color: #F2FFE9;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.talk-btn-text {
+    color: black;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+}
+
+.fashion-store {
+    background-color: #1B2118;
+    /* display: flex;
+    flex-direction: row; */
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+    padding-left: 85px;
+    padding-right: 85px;
+    padding-bottom: 24px;
+}
+
+.fashion-left {
+    width: 50%;
+}
+
+.fashion-right {
+    width: 50%;
+}
+
+.fashion-title {
+    color: #171D15;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 44px;
+}
+
+.fashion-content {
+    margin-top: 12px;
+    overflow: hidden;
+    color: #171D15;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    max-height: 96px;
+}
+
+.fashion-image {
+    width: 100%;
+}
+
+.trading-section {
+    padding-top: 40px;
+    padding-bottom: 28px;
+    padding-left: 85px;
+    padding-right: 85px;
+    background-color: #0F150D;
+    /* margin-right: 24px;
+    margin-left: 24px; */
+    padding-top: 8px;
+    border-top: 1px solid rgb(161, 157, 157);
+    display: flex;
+    flex-direction: row;
+}
+
+.trading-card {
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.wallet-img {
+    height: 72px;
+    border-right: 1px solid #3A4637;
+    padding-right: 8px;
+
+}
+
+.car-feature-img {
+    height: 72px;
+    width: 65px;
+    padding-bottom: 12px;
+}
+
+.wallet-title {
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+.wallet-content {
+    margin-top: 4px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #F2FFE9;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    white-space: normal !important;
+}
+.top-bg-image{
+    object-fit: cover
+}
+.AI-car-section {
+    align-items: center;
+    gap: 40px;
+    background-color: black;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.AI-car-title {
+    color: #003E06;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 44px;
+}
+
+.gray-car {
+    width: 45%;
+}
+
+.gray-car-title {
+    color: white;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 44px;
+}
+
+.gray-car-content {
+    margin-top: 12px;
+    overflow: hidden;
+    color: white;
+    text-overflow: ellipsis;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    max-height: 96px;
+}
+
+.car-right {
+    width: 40%;
+}
+
+.car-feature-title {
+    border-top: 1px solid #F2FFE9;
+    padding-top: 8px;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+.car-feature-card {
+    border-radius: 8px;
+    background: rgba(27, 33, 24, 0.50);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.fashion-card {
+    border-radius: 8px;
+    background: rgba(27, 33, 24, 0.50);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    margin-bottom: 24px;
+    gap: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.coin-card-title {
+    color: #003E06;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 44px;
+}
+
+.coin-list {
+    padding-top: 24px;
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+}
+
+.coin-card {
+    border-radius: 16px;
+    background: #D9E7D1;
+    padding: 16px;
+    box-shadow: 1px 4px 60px 0px rgba(0, 0, 0, 0.10);
+}
+
+.coin-frame-img {
+    border-radius: 14px;
+    width: 100%;
+}
+
+.coin-title {
+    margin-top: 20px;
+    color: #171D15;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #6E7B69;
+}
+
+.coin-content {
+    padding-top: 12px;
+    color: #171D15;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.border-card {
+    margin-top: 30px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid #BDCAB6;
+    box-shadow: 1px 4px 60px 0px rgba(0, 0, 0, 0.10);
+    display: flex;
+    flex-direction: row;
+    gap: 12px
+}
+
+.trading-title {
+    color: #003E06;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+}
+
+.trading-content {
+    padding-top: 8px;
+    color: #003E06;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+}
+
+.diverse-section {
+    margin-top: 60px;
+    border-top: 1px solid #C2CFBA;
+    padding-top: 16px;
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.diverse-scroll {
+    gap: 6px;
+    overflow-x: scroll;
+    margin: 0px !important;
+    padding: 0px !important;
+    flex-wrap: nowrap !important;
+    display: -webkit-inline-box;
+}
+
+.video-content {
+    width: 100%;
+    position: absolute;
+    height: 43rem;
+    top: 0;
+    padding-top: 40px;
+    padding-bottom: 28px;
+    padding-left: 85px;
+    padding-right: 85px;
+}
+
+.scroll-container {
+    padding-top: 44px;
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scroll-item {
+    display: inline-block;
+    width: 320px;
+    margin-right: 10px;
+    vertical-align: top;
+}
+
+.diverse-title {
+    border-top: 1px solid #C2CFBA;
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    padding-top: 8px;
+}
+
+.diverse-card {
+    border-radius: 8px;
+    background: rgba(27, 33, 24, 0.50);
+    backdrop-filter: blur(10px);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    /* Width of the scrollbar */
+    height: 10px;
+}
+
+/* Define scrollbar thumb color */
+::-webkit-scrollbar-thumb {
+    background-color: #abb3b9;
+    /* Color of the scrollbar thumb */
+    border-radius: 10px;
+    /* Rounded corners of the thumb */
+}
+
+/* Create a pseudo-element for the scrollbar track */
+::-webkit-scrollbar-track {
+    position: relative;
+    /* Ensure proper stacking context */
+    overflow: hidden;
+    /* Hide the backdrop filter effect overflow */
+}
+
+/* Overlay element for backdrop filter effect */
+::-webkit-scrollbar-track::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    /* Apply backdrop filter with blur effect */
+}
+
+.process-card {
+    border-left: 1px solid #C2CFBA;
+    padding-left: 12px;
+}
+
+.vr-section {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vr-img {
+    width: 400px;
+    height: 400px;
+}
+
+.process-card-section {
+    background-color: black;
+    padding-top: 40px;
+    padding-bottom: 28px;
+    padding-left: 85px;
+    padding-right: 85px;
+}
+
+.vr-process-section {
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px solid #C2CFBA;
+}
+
+.service-section {
+    background-color: #D9E7D1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 85px;
+    padding-right: 85px;
+}
+
+.service-title {
+    color: black;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 44px;
+}
+
+.service-content {
+    text-align: justify;
+    padding-top: 16px;
+    color: black;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.FAQ-card {
+    margin-top: 24px;
+    border-radius: 16px;
+    padding: 24px;
+    background-color: #1B2118;
+    box-shadow: 1px 4px 60px 0px rgba(0, 0, 0, 0.10);
+    cursor: pointer;
+}
+
+.FAQ-qstn-section {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.FAQ-question {
+    color: #FFF;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    max-width: 90%;
+}
+
+.faq .answer {
+    border-top: 1px solid white;
+    padding-top: 12px;
+    margin-top: 16px;
+    color: white;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+}
+
+.answer1 {
+    display: none;
+}
+
+/* .faq .question {
+    cursor: pointer;
+    font-weight: bold;
+} */
+
+.faq .question:hover {
+    text-decoration: underline;
+    /* Optional: Add underline effect on hover */
+}
+
+.dropdown-arrow {
+    width: 28px;
+}
+
+.animated-div {
+    width: 200px;
+    height: 200px;
+    background-color: #f0f0f0;
+    transition: transform 1s ease;
+}
+
+.container:hover .animated-div {
+    transform: scale(1.2);
+    color: red;
+}
