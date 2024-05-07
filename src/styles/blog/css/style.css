@@ -1602,7 +1602,7 @@ section.contact-us .right-info ul li span {
     margin-top: 0;
     border-top: 0;
     padding: 50px 0 20px;
-    background-image: url(../images/footer-bg.webp)
+    background-image: url('/assets/images/footer-bg.webp')
 }
 
 .footer p {
