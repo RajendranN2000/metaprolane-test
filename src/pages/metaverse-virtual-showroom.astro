@@ -1,12 +1,109 @@
 ---
 import Layout from "../layouts/Layout.astro";
+const PUBLIC_STRAPI_URL = import.meta.env.PUBLIC_STRAPI_URL;
+
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        query: `
+        query{
+            metaversVirtualShowroom{
+                data{
+                    attributes{
+                        section_one_heading
+                        section_one_content
+                        section_one_button_text
+                        section_two_heading
+                        section_one_content
+                        section_two_button_text
+                        metavers_virtual_showroom_section_3s {
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                    url
+                                }
+                            }
+                        }
+                        section_four_heading
+                        section_four_content
+                        section_five_heading
+                        section_five_content
+                        section_five_button_text
+                        metaverse_virtual_showroom_section_sixes{
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                    url
+                                }
+                            }
+                        }
+                        section_seven_heading
+                        section_seven_content
+                        section_seven_button_text
+                        metaverse_virtual_showroom_section_sevens{
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                    url
+                                }
+                            }
+                        }
+                        section_eight_heading
+                        section_eight_left : metaverse_virtual_showroom_eights(filters : {id : {in :[1,2,3]}}){
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                }
+                            }
+                        }
+                        section_eight_right : metaverse_virtual_showroom_eights(filters : {id : {in :[4,5,6]}}){
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                }
+                            }
+                        }
+                        section_eight_center : metaverse_virtual_showroom_eights(filters : {id : {eq : 7}}){
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                }
+                            }
+                        }
+                        section_nine_heading
+                        section_nine_content
+                        metaverse_virtual_showroom_faqs{
+                            data{
+                                attributes{
+                                    question
+                                    answer
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        `,
+    }),
+});
+
+const { data } = await response.json();
 ---
 
 <Layout title="metaverse-virtual-showroom">
     <html lang="en">
         <div class="home-container industries-page">
             <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
-            <script is:inline
+            <script
+                is:inline
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
             ></script>
             <link
@@ -88,21 +185,24 @@ import Layout from "../layouts/Layout.astro";
             <div class="top-detail-card" style=" ">
                 <div class="card-background">
                     <div class="card1-text-title roboto-regular" id="content">
-                        Metaverse Virtual Showroom Development
+                        {
+                            data.metaversVirtualShowroom.data.attributes
+                                .section_one_heading
+                        }
                     </div>
                     <div class="card1-text-content">
-                        Elevate your retail presence with our premier Metaverse
-                        Virtual Showroom Development Company. Harnessing
-                        cutting-edge technology and immersive experiences, we
-                        craft bespoke virtual environments that seamlessly
-                        integrate with your brand, transforming the way
-                        customers engage and shop. Join us in shaping the future
-                        of retail today!
+                        {
+                            data.metaversVirtualShowroom.data.attributes
+                                .section_one_content
+                        }
                     </div>
                     <div class="readmore-description">Read more</div>
                     <div class="talk-btn top-talk-btn">
                         <div class="talk-btn-text" style="color:white">
-                            Talk to Our Experts
+                            {
+                                data.metaversVirtualShowroom.data.attributes
+                                    .section_one_button_text
+                            }
                         </div>
                     </div>
                 </div>
@@ -110,15 +210,24 @@ import Layout from "../layouts/Layout.astro";
             <div class="fashion-store d-lg-flex">
                 <div class="fashion-left">
                     <div class="gray-car-title">
-                        Features of Virtual Showroom in Metaverse
+                        {
+                            data.metaversVirtualShowroom.data.attributes
+                                .section_two_heading
+                        }
                     </div>
                     <div class="gray-car-content">
-                        A virtual showroom in the Metaverse can offer a range of
-                        features to enhance the shopping experience and engage
-                        customers in immersive ways. Here are some key features:
+                        {
+                            data.metaversVirtualShowroom.data.attributes
+                                .section_one_content
+                        }
                     </div>
                     <div class="talk-btn">
-                        <div class="talk-btn-text">Talk to Our Experts</div>
+                        <div class="talk-btn-text">
+                            {
+                                data.metaversVirtualShowroom.data.attributes
+                                    .section_two_button_text
+                            }
+                        </div>
                     </div>
                 </div>
                 <div class="fashion-right">
@@ -131,308 +240,63 @@ import Layout from "../layouts/Layout.astro";
             <div style="background-color: #F4FCED;">
                 <div class="trading-section container-fluid">
                     <div class="row" style="padding-top:24px;">
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/video 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Immersive Environments
-                                    </div>
-                                    <div class="wallet-content">
-                                        Virtual showrooms in the Metaverse offer
-                                        immersive 3D environments that replicate
-                                        real-world retail spaces, allowing
-                                        customers to explore products in an
-                                        interactive manner.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/businessperson 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Customizable Avatars
-                                    </div>
-                                    <div class="wallet-content">
-                                        Enrich user engagement by enabling
-                                        customization of avatars, allowing users
-                                        to select clothing, accessories, and
-                                        hairstyles for a tailored virtual
-                                        experience.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/lighting 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Interactive Product Displays
-                                    </div>
-                                    <div class="wallet-content">
-                                        Facilitate dynamic product exploration,
-                                        enabling users to interact with items,
-                                        adjust colors, textures, and virtually
-                                        test various options for enhanced
-                                        decision-making.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/digital-advertising 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Social Features
-                                    </div>
-                                    <div class="wallet-content">
-                                        Promote community interaction through
-                                        integrated chat or voice communication
-                                        tools in real-time, enabling friends &
-                                        family to explore products together in
-                                        virtual showrooms.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/virtual-assistant 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Virtual Assistants
-                                    </div>
-                                    <div class="wallet-content">
-                                        Enhance user support with virtual
-                                        assistants, whether through chatbots or
-                                        voice-activated interfaces, providing
-                                        seamless access to product information
-                                        and assistance.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/augmented-reality 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Augmented Reality
-                                    </div>
-                                    <div class="wallet-content">
-                                        Transform the showroom experience with
-                                        augmented reality features, enabling
-                                        users to view virtual objects within
-                                        their real-world environments, elevating
-                                        immersion & engagement.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/money 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Gamification Elements
-                                    </div>
-                                    <div class="wallet-content">
-                                        Drive user participation & retention
-                                        with gamification elements such as
-                                        rewards & challenges, fostering
-                                        interaction and enhancing overall
-                                        engagement within the virtual showroom.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/secure-and-safe 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Enhanced Security and Privacy
-                                    </div>
-                                    <div class="wallet-content">
-                                        Prioritizing security, virtual showrooms
-                                        implement measures like encryption and
-                                        authentication to safeguard customer
-                                        data, ensuring a secure shopping
-                                        experience.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/video-marketing 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Multimedia Content
-                                    </div>
-                                    <div class="wallet-content">
-                                        Provide in-depth product details through
-                                        diverse media formats, enriching user
-                                        engagement and amplifying sales
-                                        potential across the Metaverse showroom.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/discourse 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Virtual Presenter
-                                    </div>
-                                    <div class="wallet-content">
-                                        Interactive presentations enable users
-                                        to customize products, empowering them
-                                        to tailor designs according to their
-                                        preferences for a personalized
-                                        experience.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/web-traffic 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Visitors Analytics
-                                    </div>
-                                    <div class="wallet-content">
-                                        Utilize robust analytics to track user
-                                        behavior, gaining valuable insights into
-                                        product popularity, visitor engagement,
-                                        and overall traffic patterns within the
-                                        virtual showroom.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="fashion-card">
-                                <img
-                                    class="wallet-img"
-                                    src="assets/images/retail-showroom/cross-platform 1.webp"
-                                />
-                                <div>
-                                    <div class="wallet-title">
-                                        Cross-Platform Accessibility
-                                    </div>
-                                    <div class="wallet-content">
-                                        Virtual showrooms are accessible across
-                                        various devices, including desktops,
-                                        mobile devices, and VR headsets,
-                                        ensuring accessibility for a wide range
-                                        of users.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- <pre>{JSON.stringify(data.metaversVirtualShowroom.data.attributes.metavers_virtual_showroom_section_3s.data)}</pre> -->
+                        {
+                            data.metaversVirtualShowroom.data.attributes.metavers_virtual_showroom_section_3s.data.map(
+                                (item: any, index: number) => {
+                                    let lastIndex =
+                                        data.metaversVirtualShowroom.data
+                                            .attributes
+                                            .metavers_virtual_showroom_section_3s
+                                            .data.length ===
+                                        index + 1;
+                                    return (
+                                        <div
+                                            class={`col-sm-12 col-md-6 col-lg-4`}
+                                        >
+                                            <div class="fashion-card">
+                                                <img
+                                                    class="wallet-img"
+                                                    src={item.attributes.url}
+                                                />
+                                                <div>
+                                                    <div class="wallet-title">
+                                                        {
+                                                            item.attributes
+                                                                .heading
+                                                        }
+                                                    </div>
+                                                    <div class="wallet-content">
+                                                        {
+                                                            item.attributes
+                                                                .content
+                                                        }
+                                                    </div>
+                                                    <div class="virtual-readmore">
+                                                        Read more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                },
+                            )
+                        }
                     </div>
                 </div>
             </div>
             <div class="service-section">
                 <div class="service-title">
-                    Metaverse Virtual Showroom Development Services
+                    {
+                        data.metaversVirtualShowroom.data.attributes
+                            .section_four_heading
+                    }
                 </div>
                 <div class="service-content">
-                    Step into the future of retail with our cutting-edge
-                    Metaverse Virtual Showroom Development services. Leveraging
-                    advanced technologies and innovative design, we specialize
-                    in creating immersive virtual environments tailored to your
-                    brand's unique identity. Our meticulous approach ensures
-                    seamless integration of your products into captivating
-                    virtual showrooms, providing customers with an unparalleled
-                    shopping experience. With a keen understanding of the
-                    evolving Metaverse landscape, we stay ahead of the curve,
-                    delivering future-proof solutions that set your brand apart.
-                    Whether you're a forward-thinking retailer seeking to
-                    enhance customer engagement or an innovative brand looking
-                    to pioneer in the digital realm, our Metaverse Virtual
-                    Showroom Development services empower you to thrive in the
-                    virtual marketplace. Experience the next frontier of retail
-                    with Metaprolane as your trusted partner. Let us transform
-                    your vision into reality and redefine the possibilities of
-                    virtual commerce. Embark on a journey with us to unleash the
-                    full potential of the Metaverse Virtual Showroom.
+                    {
+                        data.metaversVirtualShowroom.data.attributes
+                            .section_four_content
+                    }
                 </div>
             </div>
             <div class="AI-car-section d-lg-flex">
@@ -442,43 +306,65 @@ import Layout from "../layouts/Layout.astro";
                 />
                 <div class="car-right">
                     <div class="gray-car-title">
-                        Benefits of Metaverse Virtual Showroom Development
+                        {
+                            data.metaversVirtualShowroom.data.attributes
+                                .section_five_heading
+                        }
                     </div>
                     <div class="gray-car-content">
-                        Developing a virtual showroom within the metaverse
-                        offers a plethora of benefits for businesses, consumers,
-                        and the overall retail industry. Here are some key
-                        advantages
+                        {
+                            data.metaversVirtualShowroom.data.attributes
+                                .section_five_content
+                        }
                     </div>
                     <div class="talk-btn">
-                        <div class="talk-btn-text">Talk to Our Experts</div>
+                        <div class="talk-btn-text">
+                            {
+                                data.metaversVirtualShowroom.data.attributes
+                                    .section_five_button_text
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="trading-section container-fluid">
                 <div class="row" style="padding-top:24px">
-                    <div class="col-sm-12 col-md-6 col-lg-4">
-                        <div class="car-feature-card">
-                            <img
-                                class="car-feature-img"
-                                src="assets/images/retail-showroom/customer-service 1.webp"
-                            />
-                            <div>
-                                <div class="car-feature-title">
-                                    Enhanced Customer Engagement
-                                </div>
-                                <div class="wallet-content">
-                                    Metaverse virtual showrooms captivate
-                                    customers, fostering brand loyalty through
-                                    immersive experiences and personalized
-                                    interactions, leading to increased
-                                    engagement.
-                                </div>
-                                <div class="virtual-readmore">Read more</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-md-6 col-lg-4">
+                    {
+                        data.metaversVirtualShowroom.data.attributes.metaverse_virtual_showroom_section_sixes.data.map(
+                            (item: any, index: number) => {
+                                let lastIndex =
+                                    data.metaversVirtualShowroom.data.attributes
+                                        .metaverse_virtual_showroom_section_sixes
+                                        .data.length ===
+                                    index + 1;
+                                return (
+                                    <div
+                                        class={`col-sm-12 col-md-6  ${lastIndex ? "col-lg-12" : "col-lg-4"}`}
+                                    >
+                                        <div class="car-feature-card">
+                                            <img
+                                                class="car-feature-img"
+                                                src={item.attributes.url}
+                                            />
+                                            <div>
+                                                <div class="car-feature-title">
+                                                    {item.attributes.heading}
+                                                </div>
+                                                <div class="wallet-content">
+                                                    {item.attributes.content}
+                                                </div>
+                                                <div class="virtual-readmore">
+                                                    Read more
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            },
+                        )
+                    }
+
+                    <!-- <div class="col-sm-12 col-md-6 col-lg-4">
                         <div class="car-feature-card">
                             <img
                                 class="car-feature-img"
@@ -661,7 +547,7 @@ import Layout from "../layouts/Layout.astro";
                                 <div class="virtual-readmore">Read more</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div style="position: relative;">
@@ -689,39 +575,51 @@ import Layout from "../layouts/Layout.astro";
                 <div class="video-content">
                     <div>
                         <div class="gray-car-title">
-                            Diverse Industries Harnessing the Power of Virtual
-                            Showrooms in Metaverse
+                            {
+                                data.metaversVirtualShowroom.data.attributes
+                                    .section_seven_heading
+                            }
                         </div>
                         <div class="gray-car-content">
-                            Various industries are increasingly harnessing the
-                            power of virtual showrooms in the Metaverse to
-                            transform their operations and engage with customers
-                            in innovative ways. Here are several industries that
-                            are leveraging virtual showrooms
+                            {
+                                data.metaversVirtualShowroom.data.attributes
+                                    .section_seven_content
+                            }
                         </div>
                         <div class="talk-btn">
-                            <div class="talk-btn-text">Talk to Our Experts</div>
+                            <div class="talk-btn-text">
+                                {
+                                    data.metaversVirtualShowroom.data.attributes
+                                        .section_seven_button_text
+                                }
+                            </div>
                         </div>
                     </div>
                     <div class="scroll-container">
-                        <div class="scroll-item diverse-card">
-                            <img
-                                class="car-feature-img"
-                                src="assets/images/retail-showroom/car 1.webp"
-                            />
-                            <div>
-                                <div class="diverse-title">Automotive</div>
-                                <div class="wallet-content">
-                                    Virtual showrooms allow car manufacturers to
-                                    showcase vehicles with interactive features,
-                                    enabling customers to explore models,
-                                    customize options, & schedule test drives
-                                    remotely.
-                                </div>
-                                <div class="virtual-readmore">Read more</div>
-                            </div>
-                        </div>
-                        <div class="scroll-item diverse-card">
+                        {
+                            data.metaversVirtualShowroom.data.attributes.metaverse_virtual_showroom_section_sevens.data.map(
+                                (item: any) => (
+                                    <div class="scroll-item diverse-card">
+                                        <img
+                                            class="car-feature-img"
+                                            src={item.attributes.url}
+                                        />
+                                        <div>
+                                            <div class="diverse-title">
+                                                {item.attributes.heading}
+                                            </div>
+                                            <div class="wallet-content">
+                                                {item.attributes.content}
+                                            </div>
+                                            <div class="virtual-readmore">
+                                                Read more
+                                            </div>
+                                        </div>
+                                    </div>
+                                ),
+                            )
+                        }
+                        <!-- <div class="scroll-item diverse-card">
                             <img
                                 class="car-feature-img"
                                 src="assets/images/retail-showroom/estate-agent 1.webp"
@@ -886,35 +784,40 @@ import Layout from "../layouts/Layout.astro";
                                 </div>
                                 <div class="virtual-readmore">Read more</div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
             <div class="process-card-section">
                 <div class="gray-car-title">
-                    Our Comprehensive Process of Metaverse Virtual Showroom
-                    Development
+                    {
+                        data.metaversVirtualShowroom.data.attributes
+                            .section_eight_heading
+                    }
                 </div>
                 <div class="vr-process-section container-fluid">
                     <div class="row" style="padding-top:24px">
                         <div class="col-sm-12 col-md-6 col-lg-4">
-                            <div class="car-feature-card">
-                                <div class="process-card">
-                                    <div class="wallet-title">
-                                        Objective Alignment
-                                    </div>
-                                    <div class="wallet-content">
-                                        We'll discuss your goals, product lines,
-                                        variants to showcase, target audience
-                                        profiles, & language requirements to
-                                        ensure alignment with your objectives.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="car-feature-card">
+                            {
+                                data.metaversVirtualShowroom.data.attributes.section_eight_left.data.map(
+                                    (item: any) => (
+                                        <div class="car-feature-card">
+                                            <div class="process-card">
+                                                <div class="wallet-title">
+                                                    {item.attributes.heading}
+                                                </div>
+                                                <div class="wallet-content">
+                                                    {item.attributes.content}
+                                                </div>
+                                                <div class="virtual-readmore">
+                                                    Read more
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ),
+                                )
+                            }
+                            <!-- <div class="car-feature-card">
                                 <div class="process-card">
                                     <div class="wallet-title">
                                         Showroom Building
@@ -943,7 +846,7 @@ import Layout from "../layouts/Layout.astro";
                                         Read more
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <div class="vr-section">
@@ -957,26 +860,32 @@ import Layout from "../layouts/Layout.astro";
                             <div
                                 class="col-md-12 d-md-flex d-sm-block d-lg-block"
                             >
-                                <div
-                                    class="car-feature-card col-md-6 col-lg-12"
-                                >
-                                    <div class="process-card">
-                                        <div class="wallet-title">
-                                            3D Models
-                                        </div>
-                                        <div class="wallet-content">
-                                            We'll either create or assist in
-                                            developing highly realistic 3D
-                                            models of your key products,
-                                            capturing all variant details,
-                                            features, and pricing information.
-                                        </div>
-                                        <div class="virtual-readmore">
-                                            Read more
-                                        </div>
-                                    </div>
-                                </div>
-                                <div
+                                {
+                                    data.metaversVirtualShowroom.data.attributes.section_eight_right.data.map(
+                                        (item: any) => (
+                                            <div class="car-feature-card col-md-6 col-lg-12">
+                                                <div class="process-card">
+                                                    <div class="wallet-title">
+                                                        {
+                                                            item.attributes
+                                                                .heading
+                                                        }
+                                                    </div>
+                                                    <div class="wallet-content">
+                                                        {
+                                                            item.attributes
+                                                                .content
+                                                        }
+                                                    </div>
+                                                    <div class="virtual-readmore">
+                                                        Read more
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ),
+                                    )
+                                }
+                                <!-- <div
                                     class="car-feature-card col-md-6 col-lg-12"
                                 >
                                     <div class="process-card">
@@ -994,47 +903,56 @@ import Layout from "../layouts/Layout.astro";
                                             Read more
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="car-feature-card">
-                                <div class="process-card">
-                                    <div class="wallet-title">
-                                        Testing & Deployment
-                                    </div>
-                                    <div class="wallet-content">
-                                        Before deployment, we'll conduct
-                                        thorough user testing and gather
-                                        feedback to refine and finalize the
-                                        virtual showroom, ensuring optimal
-                                        performance.
-                                    </div>
-                                    <div class="virtual-readmore">
-                                        Read more
-                                    </div>
-                                </div>
+                                </div> -->
+
+                                <!-- <div class="car-feature-card col-md-6 col-lg-12">
+                                                <div class="process-card">
+                                                    <div class="wallet-title">
+                                                        {item.attributes.heading}
+                                                    </div>
+                                                    <div class="wallet-content">
+                                                        {item.attributes.content}
+                                                    </div>
+                                                    <div class="virtual-readmore">
+                                                        Read more
+                                                    </div>
+                                                </div>
+                                            </div> -->
                             </div>
                         </div>
                     </div>
-                    <div class="car-feature-card">
-                        <div class="process-card">
-                            <div class="wallet-title">Train & Enable</div>
-                            <div class="wallet-content">
-                                Finally, we'll provide comprehensive guidance on
-                                managing your virtual showrooms using our
-                                platform, along with ongoing support to ensure
-                                smooth operation.
-                            </div>
-                            <div class="virtual-readmore">Read more</div>
-                        </div>
-                    </div>
+                    {
+                        data.metaversVirtualShowroom.data.attributes.section_eight_center.data.map(
+                            (item: any) => (
+                                <div class="car-feature-card">
+                                    <div class="process-card">
+                                        <div class="wallet-title">
+                                            {item.attributes.heading}
+                                        </div>
+                                        <div class="wallet-content">
+                                            {item.attributes.content}
+                                        </div>
+                                        <div class="virtual-readmore">
+                                            Read more
+                                        </div>
+                                    </div>
+                                </div>
+                            ),
+                        )
+                    }
                 </div>
             </div>
             <div class="service-section">
                 <div class="service-title">
-                    Elevate Your Brand with Metaprolane's Metaverse Virtual
-                    Showroom Development Services
+                    {
+                        data.metaversVirtualShowroom.data.attributes
+                            .section_nine_heading
+                    }
                 </div>
-                <div class="service-content">
+                <div set:html={data.metaversVirtualShowroom.data.attributes.section_nine_content}>
+
+                </div>
+                <!-- <div class="service-content">
                     <span style="font-weight: 600;">Metaprolane stands</span> out
                     as the premier choice for<span style="font-weight: 600;">
                         Metaverse Virtual Showroom Development Services</span
@@ -1062,39 +980,33 @@ import Layout from "../layouts/Layout.astro";
                         Services</span
                     > that redefine the possibilities of immersive digital experiences,
                     propelling your brand into the future of retail.
-                </div>
+                </div> -->
             </div>
             <div class="process-card-section">
                 <div class="gray-car-title">FAQs</div>
-                <div class="FAQ-card faq">
+                {
+                    data.metaversVirtualShowroom.data.attributes.metaverse_virtual_showroom_faqs.data.map(
+                        (item: any) => (
+                            <div class="FAQ-card faq">
+                                <div class="FAQ-qstn-section question1">
+                                    <div class="FAQ-question">
+                                        {item.attributes.question}
+                                    </div>
+                                    <img
+                                        class="dropdown-arrow"
+                                        src="assets/images/retail-showroom/Keyboard arrow down.webp"
+                                    />
+                                </div>
+                                <div class="answer answer1">
+                                    {item.attributes.answer}
+                                </div>
+                            </div>
+
+                        ))}
+                <!-- <div class="FAQ-card faq">
                     <div class="FAQ-qstn-section question1">
                         <div class="FAQ-question">
-                            What is a Metaverse Virtual Showroom?
-                        </div>
-                        <img
-                            class="dropdown-arrow"
-                            src="assets/images/retail-showroom/Keyboard arrow down.webp"
-                        />
-                    </div>
-                    <div class="answer answer1">
-                        A Metaverse Virtual Showroom is a digital platform that
-                        replicates physical retail spaces in a virtual
-                        environment within the Metaverse. It allows businesses
-                        to showcase their products or services in an immersive
-                        and interactive manner, enabling customers to explore,
-                        interact with, and purchase items from anywhere in the
-                        world. By leveraging advanced technologies such as
-                        augmented reality (AR) and virtual reality (VR),
-                        Metaverse Virtual Showrooms offer a realistic and
-                        engaging shopping experience that transcends traditional
-                        online shopping.
-                    </div>
-                </div>
-                <div class="FAQ-card faq">
-                    <div class="FAQ-qstn-section question1">
-                        <div class="FAQ-question">
-                            How can a Metaverse Virtual Showroom benefit my
-                            business?
+                            How can a Metaverse Virtual Showroom benefit my business?
                         </div>
                         <img
                             class="dropdown-arrow"
@@ -1271,7 +1183,7 @@ import Layout from "../layouts/Layout.astro";
                         ensuring that your virtual showroom remains secure and
                         compliant with industry standards.
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </html></Layout
