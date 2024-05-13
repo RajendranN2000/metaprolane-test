@@ -2,6 +2,98 @@
 import Layout from "../layouts/Layout.astro";
 
 const {} = Astro.props;
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        query: `
+        query{
+            metaversVirtualShowroom{
+                data{
+                    attributes{
+                        section_one_heading
+                        section_one_content
+                        section_one_button_text
+                        section_two_heading
+                        section_one_content
+                        section_two_button_text
+                        metavers_virtual_showroom_section_3s {
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                    url
+                                }
+                            }
+                        }
+                        section_four_heading
+                        section_four_content
+                        section_five_heading
+                        section_five_content
+                        section_five_button_text
+                        metaverse_virtual_showroom_section_sixes{
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                    url
+                                }
+                            }
+                        }
+                        section_seven_heading
+                        section_seven_content
+                        section_seven_button_text
+                        metaverse_virtual_showroom_section_sevens{
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                    url
+                                }
+                            }
+                        }
+                        section_eight_heading
+                        section_eight_left : metaverse_virtual_showroom_eights(filters : {id : {in :[1,2,3]}}){
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                }
+                            }
+                        }
+                        section_eight_right : metaverse_virtual_showroom_eights(filters : {id : {in :[4,5,6]}}){
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                }
+                            }
+                        }
+                        section_eight_center : metaverse_virtual_showroom_eights(filters : {id : {eq : 7}}){
+                            data{
+                                attributes{
+                                    heading
+                                    content
+                                }
+                            }
+                        }
+                        section_nine_heading
+                        section_nine_content
+                        metaverse_virtual_showroom_faqs{
+                            data{
+                                attributes{
+                                    question
+                                    answer
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        `,
+    }),
+});
 ---
 <!-- <link rel="stylesheet" href="/styles/css/bootstrap-rtl.css"/> -->
 <!-- <link rel="stylesheet" href="/styles/css/bootstrap.css"/> -->
