@@ -1,7 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-const PUBLIC_STRAPI_URL = import.meta.env.PUBLIC_STRAPI_URL;
-
 const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
