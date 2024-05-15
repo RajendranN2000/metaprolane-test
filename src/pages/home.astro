@@ -8,97 +8,62 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
     body: JSON.stringify({
         query: `
         query{
-            metaversVirtualShowroom{
+            homePageSection1{
                 data{
                     attributes{
-                        section_one_heading
-                        section_one_content
-                        section_one_button_text
-                        section_two_heading
-                        section_one_content
-                        section_two_button_text
-                        metavers_virtual_showroom_section_3s {
-                            data{
-                                attributes{
-                                    heading
-                                    content
-                                    url
-                                }
-                            }
-                        }
-                        section_four_heading
-                        section_four_content
-                        section_five_heading
-                        section_five_content
-                        section_five_button_text
-                        metaverse_virtual_showroom_section_sixes{
-                            data{
-                                attributes{
-                                    heading
-                                    content
-                                    url
-                                }
-                            }
-                        }
-                        section_seven_heading
-                        section_seven_content
-                        section_seven_button_text
-                        metaverse_virtual_showroom_section_sevens{
-                            data{
-                                attributes{
-                                    heading
-                                    content
-                                    url
-                                }
-                            }
-                        }
-                        section_eight_heading
-                        section_eight_left : metaverse_virtual_showroom_eights(filters : {id : {in :[1,2,3]}}){
-                            data{
-                                attributes{
-                                    heading
-                                    content
-                                }
-                            }
-                        }
-                        section_eight_right : metaverse_virtual_showroom_eights(filters : {id : {in :[4,5,6]}}){
-                            data{
-                                attributes{
-                                    heading
-                                    content
-                                }
-                            }
-                        }
-                        section_eight_center : metaverse_virtual_showroom_eights(filters : {id : {eq : 7}}){
-                            data{
-                                attributes{
-                                    heading
-                                    content
-                                }
-                            }
-                        }
-                        section_nine_heading
-                        section_nine_content
-                        metaverse_virtual_showroom_faqs{
-                            data{
-                                attributes{
-                                    question
-                                    answer
-                                }
+                     project_details{
+                         data{
+                            attributes{
+                                title
+                                count
+                                img_path
                             }
                         }
                     }
+                    section_two_title
+                    section_two_content
+                    meta_title
+                    meta_description
+                    meta_keywords
+                    section_three_title1
+                    section_three_title2
+                    section_three_content
+                    section_three_button1
+                    section_three_button2
+                    section_four_title
+                    section_four_content
+                    section_four_button
+                    section_four_video
+                    section_five_title
+                    section_five_content
+                    section_five_button
+                    section_five_video
+                    section_six_title
+                    section_six_content
+                    section_six_button
+                    section_six_video
+                    section_seven_title
+                    section_seven_content
+                    section_seven_button
+                    section_eight_title
+                    section_eight_content
+                    section_eight_button
                 }
             }
         }
+    }
         `,
     }),
 });
+const data = await response.json();
 ---
-<!-- <link rel="stylesheet" href="/styles/css/bootstrap-rtl.css"/> -->
-<!-- <link rel="stylesheet" href="/styles/css/bootstrap.css"/> -->
 
-<Layout title="home">
+<!-- <link rel="stylesheet" href="/styles/css/bootstrap-rtl.css"/> --><!-- <link rel="stylesheet" href="/styles/css/bootstrap.css"/> -->
+<Layout
+    title={data.data.homePageSection1.data.attributes.meta_title}
+    description={data.data.homePageSection1.data.attributes.meta_description}
+    keywords={data.data.homePageSection1.data.attributes.meta_keywords}
+>
     <section class="section main-banner" id="top" data-section="section1">
         <video autoplay muted loop id="bg-video">
             <source src="/assets/video/home_banner.mp4" type="video/mp4" />
@@ -108,42 +73,96 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
         <div class="container">
             <div class="under-banner-values-section slide-left">
                 <div class="row">
-                    <div class="col-lg-3">
+                    {
+                        data.data.homePageSection1.data.attributes.project_details.data.map(
+                            (each: any, index: number) => {
+                                return (
+                                    <div class="col-lg-3">
+                                        <div class="svs-main d-flex count-area-content pluss">
+                                            <div class="svs-l">
+                                                <img
+                                                    src={
+                                                        each.attributes.img_path
+                                                    }
+                                                    alt="icon1"
+                                                />
+                                            </div>
+                                            <div class="svs-r">
+                                                <h6 class="text-green numbers-top">
+                                                    {each.attributes.title}
+                                                </h6>
+                                                <div
+                                                    class={`count-digit ${each.attributes.img_path == "/assets/images/icon1.webp" ? "noplus" : "numbers-bot"}`}
+                                                >
+                                                    {each.attributes.count}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            },
+                        )
+                    }
+                    <!-- <div class="col-lg-3">
                         <div class="svs-main d-flex count-area-content pluss">
-                            <div class="svs-l"><img src="/assets/images/icon3.webp" alt="icon1"></div>
+                            <div class="svs-l">
+                                <img
+                                    src={data.data.homePageSection1.data
+                                        .attributes.project_details.data[1]
+                                        .attributes.img_path}
+                                    alt="icon2"
+                                />
+                            </div>
                             <div class="svs-r">
-                                <h6 class="text-green numbers-top">Total<br>Projects</h6>
-                                <div class="count-digit numbers-bot">350</div>
+                                <h6 class="text-green numbers-top">
+                                    {
+                                        data.data.homePageSection1.data
+                                            .attributes.project_details.data[1]
+                                            .attributes.title
+                                    }
+                                </h6>
+                                <div class="count-digit noplus">
+                                    {
+                                        data.data.homePageSection1.data
+                                            .attributes.project_details.data[1]
+                                            .attributes.count
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="svs-main d-flex count-area-content pluss">
-                            <div class="svs-l"><img src="/assets/images/icon1.webp" alt="icon2"></div>
-                            <div class="svs-r">
-                                <h6 class="text-green numbers-top">Blockchain<br>Experience</h6>
-                                <div class="count-digit noplus">7</div>
+                            <div class="svs-l">
+                                <img
+                                    src="/assets/images/icon4.webp"
+                                    alt="icon3"
+                                />
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="svs-main d-flex count-area-content pluss">
-                            <div class="svs-l"><img src="/assets/images/icon4.webp" alt="icon3"></div>
                             <div class="svs-r">
-                                <h6 class="text-green numbers-top">Blockchain<br>Experts</h6>
+                                <h6 class="text-green numbers-top">
+                                    Blockchain<br />Experts
+                                </h6>
                                 <div class="count-digit">250</div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="svs-main d-flex count-area-content pluss">
-                            <div class="svs-l"><img src="/assets/images/icon2.webp" alt="icon4"></div>
+                            <div class="svs-l">
+                                <img
+                                    src="/assets/images/icon2.webp"
+                                    alt="icon4"
+                                />
+                            </div>
                             <div class="svs-r">
-                                    <h6 class="text-green numbers-top">Global<br>Brands</h6>
-                                    <div class="count-digit">120</div>
+                                <h6 class="text-green numbers-top">
+                                    Global<br />Brands
+                                </h6>
+                                <div class="count-digit">120</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <!-- <div class="under-banner-carousel-section slide-left">
@@ -226,36 +245,404 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
             </div> -->
         </div>
     </section>
+
     <section class="aboutmeta about-main abt-1 topmeta-dev-company">
         <div class="container">
             <div class="row">
                 <div class="col-lg-9">
-                    <div class="about-ms  slide-right">
-                        <h1 class="text-black top-t">Top Metaverse Development Company</h1>
-                        <p class="text-gray2">Welcome to Metaprolane, the ultimate destination for Metaverse
-                            development solutions. As a leading Metaverse Development Company, we specialize in
-                            creating immersive and interactive virtual worlds that push the boundaries of what is
-                            possible in the Metaverse. The Metaverse is a vast and growing digital universe that
-                            provides limitless opportunities for innovation and creativity. At Metaprolane, we offer
-                            innovative and high-quality Metaverse Development services and solutions for various
-                            businesses and industry verticals. We specialize in developing cutting-edge solutions
-                            that enable our clients to leverage the power of the Metaverse to drive business growth
-                            and enhance user engagement. Whether you're looking to build a virtual showroom, an
-                            interactive gaming experience, or a social platform, our team of expert developers and
-                            designers have the skills and experience needed to turn your vision into a reality. Our
-                            team also has extensive experience in creating custom avatars, 3D models, and virtual
-                            reality environments, ensuring that your virtual world is tailored to your specific
-                            needs.</p>
+                    <div class="about-ms slide-right">
+                        <h1 class="text-black top-t">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_two_title
+                            }
+                        </h1>
+                        <p class="text-gray2">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_two_content
+                            }
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-3">
                     <div class="about-ms-r text-right slide-left">
                         <div class="about-ms-img ams2">
-                            <img src="/assets/images/about2.webp" alt="About" class=" " />
+                            <img
+                                src="/assets/images/about2.webp"
+                                alt="About"
+                                class=""
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <section class="aboutmeta about-main abt-1 topmeta-dev-company2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="about-ms slide-left">
+                        <p class="text-black unlock-heading">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_three_title1
+                            }
+                        </p>
+                        <h2 class="text-blue h2-blue">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_three_title2
+                            }
+                        </h2>
+                        <p class="text-gray2 normal-paras">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_three_content
+                            }
+                        </p>
+                        <div class="unlock-btn-sec">
+                            <a
+                                href="https://api.whatsapp.com/send?l=en&text=Hi!%20I%27m%20interested%20in%20one%20of%20your%20products%20&phone=919942011919"
+                                target="_blank"
+                                class="btn btn-primary"
+                                >{
+                                    data.data.homePageSection1.data.attributes
+                                        .section_three_button1
+                                }</a
+                            >
+                            <a href="#contact" class="btn btn-primary"
+                                >{
+                                    data.data.homePageSection1.data.attributes
+                                        .section_three_button2
+                                }</a
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="about-ms-r text-right slide-right">
+                        <div class="about-ms-img">
+                            <img
+                                src="assets/images/about.webp"
+                                alt="About"
+                                class="vert-move3"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="immersive-experience" id="demo">
+        <div class="bg-vectors">
+            <img src="assets/images/white-bg.webp" alt="white bg" />
+        </div>
+        <div class="container immersive-experience-c">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="immersive-m-l slide-left">
+                        <iframe
+                            title="Metaprolane Video"
+                            srcdoc="
+                    <style>
+                    body, .full {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;watch
+                    object-fit: cover;
+                    }
+                    </style>
+                    <a
+                    href='https://www.youtube.com/embed/Yb-xi5hI5gQ?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1'
+                    class='full'
+                    >
+                    <img
+                    src='https://metaprolane.stsdev.site/assets/images/video3.png'
+                    class='full'
+                    />
+                    <svg
+                    version='1.1'
+                    viewBox='0 0 68 48'
+                    width='68px'
+                    style='position: relative;'
+                    >
+                    <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                    <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                    </a>
+                    "
+                            style="max-width: 640px; width: 100%; aspect-ratio: 16/9;"
+                            frameborder="0"></iframe>
+                    </div>
+                    <!-- https://vumbnail.com/t0NKhGQVuhQ.jpg -->
+                </div>
+                <div class="col-lg-6">
+                    <div class="immersive-m-r slide-right">
+                        <h5 class="text-white get-experience">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_four_title
+                            }
+                        </h5>
+                        <p class="text-white text-last-right">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_four_content
+                            }
+                        </p>
+                        <p class="py-3">
+                            <a class="btn btn-secondary" href="#contact"
+                                >{
+                                    data.data.homePageSection1.data.attributes
+                                        .section_four_button
+                                }</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-vectors">
+            <img src="assets/images/bg-vector1-white.webp" alt="vector bg" />
+        </div>
+    </section>
+    <section class="aboutmeta about-main trans-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-ms slide-left">
+                        <h5
+                            class="text-black text-last-left2 ims get-experience pb-3"
+                        >
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_five_title
+                            }
+                        </h5>
+                        <p class="text-gray2 text-last-left">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_five_content
+                            }
+                        </p>
+                        <p class="btn-section py-3">
+                            <a class="btn btn-primary" href="#contact"
+                                >{
+                                    data.data.homePageSection1.data.attributes
+                                        .section_five_button
+                                }</a
+                            >
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="immersive-m-l slide-right">
+                        <!-- https://www.youtube.com/embed/t0NKhGQVuhQ?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1 -->
+                        <iframe
+                            title="Metaprolane Video"
+                            srcdoc="
+                    <style>
+                    body, .full {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;watch
+                    object-fit: cover;
+                    }
+                    </style>
+                    <a
+                    href='https://www.youtube.com/embed/R-uCpc5KC1c?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1'
+                    class='full'
+                    >
+                    <img
+                    src='https://metaprolane.stsdev.site/assets/images/video1.png'
+                    class='full'
+                    />
+                    <svg
+                    version='1.1'
+                    viewBox='0 0 68 48'
+                    width='68px'
+                    style='position: relative;'
+                    >
+                    <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                    <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                    </a>
+                    "
+                            style="max-width: 640px; width: 100%; aspect-ratio: 16/9;"
+                            frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="immersive-experience">
+        <div class="bg-vectors">
+            <img src="assets/images/white-bg.webp" alt="white bg" />
+        </div>
+        <div class="container immersive-experience-c">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="immersive-m-l slide-left">
+                        <iframe
+                            title="Metaprolane Video"
+                            srcdoc="
+                    <style>
+                    body, .full {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    position: absolute;
+                    display: flex;
+                    justify-content: center;watch
+                    object-fit: cover;
+                    }
+                    </style>
+                    <a
+                    href='https://www.youtube.com/embed/veaeTQJdOFA?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1'
+                    class='full' 
+                    >
+                    <img
+                    src='https://metaprolane.stsdev.site/assets/images/video2.png'
+                    class='full'
+                    />
+                    <svg
+                    version='1.1'
+                    viewBox='0 0 68 48'
+                    width='68px'
+                    style='position: relative;'
+                    >
+                    <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                    <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                    </svg>
+                    </a>
+                    "
+                            style="max-width: 640px; width: 100%; aspect-ratio: 16/9;"
+                            frameborder="0"></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="immersive-m-r slide-right">
+                        <h4 class="text-white get-experience">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_six_title
+                            }
+                        </h4>
+                        <p class="text-white text-last-right">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_six_content
+                            }
+                        </p>
+                        <p class="py-3">
+                            <a class="btn btn-secondary" href="#contact"
+                                >{
+                                    data.data.homePageSection1.data.attributes
+                                        .section_six_button
+                                }</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-vectors">
+            <img src="assets/images/bg-vector1-white.webp" alt="vector bg" />
+        </div>
+    </section>
+    <section class="aboutmeta about-main trans-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-ms slide-left">
+                        <h5
+                            class="text-black text-last-left2 ims get-experience pb-3"
+                        >
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_seven_title
+                            }
+                        </h5>
+                        <p class="text-gray2 text-last-left">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_seven_content
+                            }
+                        </p>
+                        <p class="btn-section py-3">
+                            <a class="btn btn-primary" href="#contact"
+                                >{
+                                    data.data.homePageSection1.data.attributes
+                                        .section_seven_button
+                                }</a
+                            >
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="immersive-m-l slide-right">
+                        <img
+                            src="https://metaprolane.stsdev.site/assets/images/mall-home/home-mall.png"
+                            alt="Casino"
+                            class="w-100 img-border-6-20-2"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="immersive-experience">
+        <div class="bg-vectors">
+            <img src="assets/images/white-bg.webp" alt="white bg" />
+        </div>
+        <div class="container immersive-experience-c">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="immersive-m-l slide-left">
+                        <img
+                            src="https://metaprolane.stsdev.site/assets/images/casino-game/home-casino.png"
+                            alt="Casino"
+                            class="w-100 img-border-6-20"
+                        />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="immersive-m-r slide-right">
+                        <h4 class="text-white get-experience">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_eight_title
+                            }
+                        </h4>
+                        <p class="text-white text-last-right">
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_eight_content
+                            }
+                        </p>
+                        <p class="py-3">
+                            <a class="btn btn-secondary" href="#contact"
+                                >{
+                                    data.data.homePageSection1.data.attributes
+                                        .section_eight_button
+                                }</a
+                            >
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="bg-vectors">
+            <img src="assets/images/bg-vector1.webp" alt="vector bg" />
+        </div> -->
+    </section>
+       
 </Layout>

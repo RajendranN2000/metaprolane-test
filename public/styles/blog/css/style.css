@@ -652,6 +652,7 @@ section.under-banner .container {
 
 .numbers-top {
     font-size: 1rem;
+    max-width: 75%;
     line-height: 20px;
     letter-spacing: 0;
     font-weight: 600;
@@ -1425,7 +1426,7 @@ section.our-facts h2 {
 
 .pluss .count-digit.noplus:before {
     content: 'YEARS';
-    margin-left: 3px;
+    margin-left: 14px !important;
     position: absolute;
     left: 135px;
     right: unset;
