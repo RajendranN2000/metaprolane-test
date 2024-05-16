@@ -8824,3 +8824,7 @@ border: 1px solid #8383b6;
     top: -2px;
     right: -2px;
 }
+
+.owl-image-content {
+    width: fit-content;
+}

@@ -9177,3 +9177,7 @@ b.rm1 {
         min-height: 1000px !important
     }
 }
+
+.owl-image-content {
+    width:fit-content;
+}

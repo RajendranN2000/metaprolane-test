@@ -1,0 +1,49 @@
+---
+const data = [
+  { img: "/assets/images/icons1/aiko.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/back-stage2.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/bitcci.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/bitrpive.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/crazy-goat2.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/elysium.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/graphiclink.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/lovely-inu.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/nugen.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/redcab.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/sdc-logo.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/skilchain.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/star-walkers.png", alt: "Image icon" },
+  { img: "/assets/images/icons1/superfarm.png", alt: "Image icon" },
+];
+---
+
+<div class="swiper-container">
+  <div class="swiper-wrapper">
+    {data.map((item, index) => (
+      <div class="swiper-slide d-flex">
+        <div class="icon">
+          <img src={item.img} alt={item.alt} />
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<style>
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .icon img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>

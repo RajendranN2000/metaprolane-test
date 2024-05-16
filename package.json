@@ -20,6 +20,8 @@
     "@mui/material": "^5.15.17",
     "astro": "^4.7.1",
     "jquery": "^3.7.1",
+    "owl.carousel": "^2.3.4",
+    "swiper": "^11.1.3",
     "typescript": "^5.4.5"
   }
 }
