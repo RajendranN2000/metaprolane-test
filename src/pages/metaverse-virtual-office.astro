@@ -1,0 +1,1570 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        query: `
+        query{
+            metaverseVirtualOffice{
+                data{
+                    attributes{
+                        section_one_virtual_office
+                        metevarse_office_sub_title
+                        metaverse_office_content
+                        virtual_office_development
+                       virtual_office_development_content
+                    }
+                }
+            }
+        }
+        `,
+    }),
+});
+
+const { data } = await response.json();
+---
+
+<Layout title="metaverse-virtual-office" description="" keywords="">
+    <html lang="en">
+        <div class="home-container industries-page">
+            <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
+            <script
+                is:inline
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            ></script>
+            <link
+                href="/vendor/bootstrap/css/bootstrap.min.css"
+                rel="stylesheet"
+            />
+            <link rel="stylesheet" href="/styles/css/style.css" />
+
+            <script is:inline>
+                $(document).ready(function () {
+                    $(".question1").click(function () {
+                        console.log("clicked questions");
+                        var answer = $(this).next(".answer");
+                        $(".answer").not(answer).slideUp();
+                        answer.slideToggle();
+                    });
+                });
+                $(document).ready(() => {
+                    $(".readmore-description").click(function () {
+                        var $cardTextContent = $(this).prev(
+                            ".card1-text-content",
+                        );
+                        $cardTextContent.toggleClass("expanded");
+                        $(this).text(
+                            $cardTextContent.hasClass("expanded")
+                                ? "Read less"
+                                : "Read more",
+                        );
+                    });
+                });
+                $(document).ready(() => {
+                    $(".wallet-content").each(function () {
+                        var $content = $(this);
+                        if (
+                            $content[0]?.scrollHeight > $content.innerHeight()
+                        ) {
+                            $content.next(".virtual-readmore").show();
+                        } else {
+                            $content.next(".virtual-readmore").hide();
+                        }
+                    });
+                    $(".virtual-readmore").click(function () {
+                        var $cardTextContent = $(this).prev(".wallet-content");
+                        $cardTextContent.toggleClass("virtual-expanded");
+                        $(this).text(
+                            $cardTextContent.hasClass("virtual-expanded")
+                                ? "Read less"
+                                : "Read more",
+                        );
+                    });
+                });
+                $(document).ready(function () {
+                    $(".talk-btn").click(function () {
+                        $("html, body").animate(
+                            {
+                                scrollTop: $("#footer").offset().top,
+                            },
+                            300,
+                        ); // Adjust the duration as per your requirement
+                    });
+                });
+                // $("#content").hide().show("slide", { direction: "left" }, 1500);
+            </script>
+
+            <section
+                class="section main-banner"
+                id="top"
+                data-section="section1"
+            >
+                <video autoplay muted loop id="bg-video">
+                    <source
+                        src="/assets/images/products2/video1.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+                <div class="bg-vectors bgv-white">
+                    <img
+                        src="assets/images/products/bg1.webp"
+                        alt="Image icon"
+                    />
+                </div>
+            </section>
+
+            <section class="under-banner our-technologies product-tech-sec">
+                <div class="container">
+                    <div class="section-heading ss-case slide-left">
+                        <h3 class="text-black text-center mb-1 h3-under-bar2">
+                            <div class="fs-32 text-blue fw-700">
+                                {
+                                    data.metaverseVirtualOffice.data.attributes
+                                        .section_one_virtual_office
+                                }
+                            </div>
+                            {
+                                data.metaverseVirtualOffice.data.attributes
+                                    .metevarse_office_sub_title
+                            }
+                        </h3>
+                        <p class="text-gray2 text-last-center py-4">
+                            {
+                                data.metaverseVirtualOffice.data.attributes
+                                    .metaverse_office_content
+                            }
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section
+                class="under-banner our-technologies product-tech-sec aboutmeta about-main abt-1 topmeta-dev-company2"
+            >
+                <div class="container">
+                    <h1
+                        class="text-black text-center mb-4 h3-under-bar2 slide-left"
+                    >
+                    {
+                        data.metaverseVirtualOffice.data.attributes
+                            .virtual_office_development
+                    }
+                    </h1>
+                    <div class="row py-3">
+                        <div class="col-lg-7">
+                            <div class="section-heading ss-case slide-left">
+                                <p class="text-gray2 text-last-left pt-0 pb-3">
+                                    {
+                                        data.metaverseVirtualOffice.data.attributes
+                                            .virtual_office_development_content
+                                    }
+                                </p>
+                                <div class="unlock-btn-sec">
+                                    <a href="#contact" class="btn btn-primary"
+                                        >Get Quote Now</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="plr-10-only-mobile slide-right">
+                                <img
+                                    src="assets/images/products2/Join-the-metavers2.webp"
+                                    alt="BG Vector"
+                                    class="w-100-br-15"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="our-courses product-our-courses msd-box1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-heading slide-left">
+                                <h2
+                                    class="text-black text-center pt-4 h3-under-bar2 mt-4"
+                                >
+                                    Features Of Our Metaverse Virtual Office
+                                    Development
+                                </h2>
+                                <div class="owl-experts-item owl-carousel">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <div class="expert-txt2">
+                                                <div class="box-img">
+                                                    <img
+                                                        src="assets/images/products2/customization-workspace.webp"
+                                                        alt="Features Image"
+                                                    />
+                                                </div>
+                                                <div class="box-img-inn">
+                                                    <h6>
+                                                        Customizable Workspace
+                                                    </h6>
+                                                    <p class="text-last-center">
+                                                        Employees can customize
+                                                        their workspace to suit
+                                                        their preferences and
+                                                        work style. They can
+                                                        choose their office
+                                                        layout, furniture, and
+                                                        decor.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <div class="expert-txt2">
+                                                <div class="box-img">
+                                                    <img
+                                                        src="assets/images/products2/avatars.webp"
+                                                        alt="Features Image"
+                                                    />
+                                                </div>
+                                                <div class="box-img-inn">
+                                                    <h6>Avatars</h6>
+                                                    <p class="text-last-center">
+                                                        Employees can create and
+                                                        customize their avatars
+                                                        to represent themselves
+                                                        in the virtual world.
+                                                        Avatars can be used to
+                                                        interact with other
+                                                        employees and attend
+                                                        virtual meetings.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <div class="expert-txt2">
+                                                <div class="box-img">
+                                                    <img
+                                                        src="assets/images/products2/virtual-meeting-rooms.webp"
+                                                        alt="Features Image"
+                                                    />
+                                                </div>
+                                                <div class="box-img-inn">
+                                                    <h6>
+                                                        Virtual Meeting Rooms
+                                                    </h6>
+                                                    <p class="text-last-center">
+                                                        The virtual office can
+                                                        have multiple meeting
+                                                        rooms where employees
+                                                        can hold virtual
+                                                        meetings, presentations,
+                                                        and training sessions.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <div class="expert-txt2">
+                                                <div class="box-img">
+                                                    <img
+                                                        src="assets/images/products2/collaboration-tools.webp"
+                                                        alt="Features Image"
+                                                    />
+                                                </div>
+                                                <div class="box-img-inn">
+                                                    <h6>Collaboration Tools</h6>
+                                                    <p class="text-last-center">
+                                                        The virtual office can
+                                                        have tools for
+                                                        collaborative work such
+                                                        as whiteboards, shared
+                                                        documents, and project
+                                                        management software.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <div class="expert-txt2">
+                                                <div class="box-img">
+                                                    <img
+                                                        src="assets/images/products/img1.webp"
+                                                        alt="Features Image"
+                                                    />
+                                                </div>
+                                                <div class="box-img-inn">
+                                                    <h6>Virtual Events</h6>
+                                                    <p class="text-last-center">
+                                                        In Metaverse virtual
+                                                        office, you can host
+                                                        virtual events such as
+                                                        team-building exercises,
+                                                        social gatherings, and
+                                                        product launches.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <div class="expert-txt2">
+                                                <div class="box-img">
+                                                    <img
+                                                        src="assets/images/products2/security-features.webp"
+                                                        alt="Features Image"
+                                                    />
+                                                </div>
+                                                <div class="box-img-inn">
+                                                    <h6>Security Features</h6>
+                                                    <p class="text-last-center">
+                                                        The Metaverse virtual
+                                                        office should have
+                                                        security measures to
+                                                        protect sensitive data
+                                                        and prevent unauthorized
+                                                        access.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <div class="expert-txt2">
+                                                <div class="box-img">
+                                                    <img
+                                                        src="assets/images/products2/real-time-communication.webp"
+                                                        alt="Real time Communication"
+                                                    />
+                                                </div>
+                                                <div class="box-img-inn">
+                                                    <h6>
+                                                        Real-time Communication
+                                                    </h6>
+                                                    <p class="text-last-center">
+                                                        The virtual office
+                                                        should have real-time
+                                                        communication tools such
+                                                        as voice and video chat
+                                                        to facilitate
+                                                        communication between
+                                                        employees.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <div class="expert-txt2">
+                                                <div class="box-img">
+                                                    <img
+                                                        src="assets/images/products2/analytics-and-reporting.webp"
+                                                        alt="Analytics and Reporting"
+                                                    />
+                                                </div>
+                                                <div class="box-img-inn">
+                                                    <h6>
+                                                        Analytics and Reporting
+                                                    </h6>
+                                                    <p class="text-last-center">
+                                                        The virtual office
+                                                        should have tools for
+                                                        analytics and reporting
+                                                        to track employee
+                                                        engagement and
+                                                        productivity.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <div class="under-banner">
+                                    <div class="under-banner-carousel-section">
+                                        <h3
+                                            class="text-white h3-under-bar2 slide-left"
+                                        >
+                                            Benefits Of Metaverse Virtual Office
+                                            Development
+                                        </h3>
+                                        <div class="row slide-left">
+                                            <div class="col-lg-4">
+                                                <div
+                                                    class="benefits-metavirtualoffice"
+                                                >
+                                                    <div
+                                                        class="text-center bm-img"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products/icon1.webp"
+                                                            alt="Benefits Icons"
+                                                        />
+                                                    </div>
+                                                    <h5>Business Spotlight</h5>
+                                                    <p
+                                                        class="text-gray2 text-last-center"
+                                                    >
+                                                        Our interactive 3D
+                                                        spaces offer a
+                                                        captivating way for your
+                                                        visitors to get to know
+                                                        your business, explore
+                                                        your offerings, and
+                                                        engage with your team.
+                                                        Metaverse virtual office
+                                                        development allows
+                                                        companies to expand
+                                                        their reach and engage
+                                                        with global customers.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div
+                                                    class="benefits-metavirtualoffice"
+                                                >
+                                                    <div
+                                                        class="text-center bm-img"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products/icon2.webp"
+                                                            alt="Benefits Icons"
+                                                        />
+                                                    </div>
+                                                    <h5>24/7 Virtual Office</h5>
+                                                    <p
+                                                        class="text-gray2 text-last-center"
+                                                    >
+                                                        Say goodbye to physical
+                                                        office spaces and hello
+                                                        to the future of work.
+                                                        Our Metaverse Corporate
+                                                        Office allows you to
+                                                        work from anywhere in
+                                                        the world, at any time,
+                                                        giving you the ultimate
+                                                        flexibility to manage
+                                                        your business on your
+                                                        terms & embrace the
+                                                        endless possibilities.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div
+                                                    class="benefits-metavirtualoffice"
+                                                >
+                                                    <div
+                                                        class="text-center bm-img"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products/icon3.webp"
+                                                            alt="Benefits Icons"
+                                                        />
+                                                    </div>
+                                                    <h5>
+                                                        Seamless Collaboration
+                                                    </h5>
+                                                    <p
+                                                        class="text-gray2 text-last-center"
+                                                    >
+                                                        Our Metaverse Corporate
+                                                        Office provides a
+                                                        seamless virtual
+                                                        environment for you to
+                                                        connect with your team
+                                                        and clients from around
+                                                        the world. Collaborate
+                                                        in real-time, conduct
+                                                        meetings, and host
+                                                        presentations & training
+                                                        sessions, all in a fully
+                                                        immersive virtual
+                                                        environment.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div
+                                                    class="benefits-metavirtualoffice"
+                                                >
+                                                    <div
+                                                        class="text-center bm-img"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products/icon4.webp"
+                                                            alt="Benefits Icons"
+                                                        />
+                                                    </div>
+                                                    <h5>Cost-effective</h5>
+                                                    <p
+                                                        class="text-gray2 text-last-center"
+                                                    >
+                                                        Metaverse virtual office
+                                                        can be a cost-effective
+                                                        alternative to a
+                                                        traditional physical
+                                                        office, as it eliminates
+                                                        the need for rent,
+                                                        utilities, expensive
+                                                        equipment, physical
+                                                        space, and commuting
+                                                        costs while providing
+                                                        the flexibility to work
+                                                        from anywhere and reach
+                                                        a global audience.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div
+                                                    class="benefits-metavirtualoffice"
+                                                >
+                                                    <div
+                                                        class="text-center bm-img"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products/icon5.webp"
+                                                            alt="Benefits Icons"
+                                                        />
+                                                    </div>
+                                                    <h5>
+                                                        Increased productivity
+                                                    </h5>
+                                                    <p
+                                                        class="text-gray2 text-last-center"
+                                                    >
+                                                        Metaverse virtual office
+                                                        offers employees a
+                                                        distraction-free
+                                                        environment and the
+                                                        ability to work from
+                                                        anywhere. Create
+                                                        Metaverse virtual office
+                                                        that enables companies
+                                                        to offer flexible work
+                                                        arrangements which can
+                                                        improve work-life
+                                                        balance and
+                                                        productivity.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                <div
+                                                    class="benefits-metavirtualoffice"
+                                                >
+                                                    <div
+                                                        class="text-center bm-img"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products/icon6.webp"
+                                                            alt="Benefits Icons"
+                                                        />
+                                                    </div>
+                                                    <h5>Scalability</h5>
+                                                    <p
+                                                        class="text-gray2 text-last-center"
+                                                    >
+                                                        A virtual office in the
+                                                        Metaverse can be easily
+                                                        scaled up or down as per
+                                                        the company's needs,
+                                                        without any additional
+                                                        physical space or
+                                                        resources. Metaverse
+                                                        virtual office is an
+                                                        innovative way to
+                                                        conduct business that
+                                                        helps companies stand
+                                                        out in a competitive
+                                                        market.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-vectors">
+                    <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
+                </div>
+            </section>
+
+            <section class="why-metaprolane whym2 product-why-sec">
+                <div class="container">
+                    <h2 class="text-black text-center h3-under-bar2 slide-left">
+                        Metaverse Virtual Working Space Solutions
+                    </h2>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="why-metaprolane-l slide-left">
+                                <p class="text-gray2 text-last-left padd-0">
+                                    Our Metaverse Virtual Working Space
+                                    Solutions provides a dynamic and innovative
+                                    virtual environment for businesses and
+                                    professionals to work, collaborate and
+                                    socialize in a new dimension. Find a new way
+                                    of setting corporate office with our
+                                    Metaverse Corporate Office idea is also
+                                    known as MetaCorp. Take your business to the
+                                    next level with our Shamla Tech MetaCorp
+                                    concept. We offer metaverse development
+                                    service solutions for various business
+                                    services and a range of collaborative tools
+                                    to help you grow your business in the
+                                    Metaverse world. With our virtual office
+                                    setup, you can join other professionals,
+                                    attend virtual events, and showcase your
+                                    products and services to a global audience.
+                                    Experience the future of workspaces and
+                                    unlock new opportunities for growth,
+                                    collaboration, and success.
+                                    <br /><br />
+                                    Sign up today and start exploring the endless
+                                    possibilities of the Metaverse!
+                                </p>
+                                <div class="text-last-left my-3 mt-4 pt-2">
+                                    <a
+                                        href="https://metaprolane.stsdev.site/#demo"
+                                    >
+                                        <button class="btn padd-0">
+                                            <div
+                                                class="btn-box border-gradient"
+                                            >
+                                                Start your 3D journey
+                                            </div>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <img
+                                src="assets/images/products2/virtual-meeting-rooms.webp"
+                                alt="BG Vector"
+                                class="w-100-br-15"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <div class="under-banner">
+                                    <div class="under-banner-carousel-section">
+                                        <h3
+                                            class="text-white h3-under-bar2 mb-5 slide-left"
+                                        >
+                                            Monetizing Options In Metaverse
+                                            Virtual Office Business
+                                        </h3>
+                                        <div
+                                            class="row align-items-center slide-left"
+                                        >
+                                            <div class="col-lg-6">
+                                                <div
+                                                    class="benefits-metavirtualoffice mds22"
+                                                >
+                                                    <div
+                                                        class="align-items-center"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products2/hosting-events.webp"
+                                                            alt="Benefits Icons"
+                                                            class="mds-product"
+                                                        />
+                                                    </div>
+                                                    <div
+                                                        class="benefits-mds-inn"
+                                                    >
+                                                        <h3>Hosting Events</h3>
+                                                        <p
+                                                            class="text-last-center text-gray2"
+                                                        >
+                                                            If you have a large
+                                                            and engaged
+                                                            audience, you can
+                                                            host events such as
+                                                            concerts,
+                                                            exhibitions, and
+                                                            conferences in your
+                                                            virtual office.
+                                                            Hosting and
+                                                            organizing such
+                                                            events can generate
+                                                            revenue through
+                                                            ticket sales or
+                                                            sponsorships from
+                                                            brands.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div
+                                                    class="benefits-metavirtualoffice mds22"
+                                                >
+                                                    <div
+                                                        class="align-items-center"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products2/offering-service.webp"
+                                                            alt="Benefits Icons"
+                                                            class="mds-product"
+                                                        />
+                                                    </div>
+                                                    <div
+                                                        class="benefits-mds-inn"
+                                                    >
+                                                        <h3>
+                                                            Offering Services
+                                                        </h3>
+                                                        <p
+                                                            class="text-last-center text-gray2"
+                                                        >
+                                                            If you have a
+                                                            skillset that is
+                                                            valuable in the
+                                                            Metaverse, such as
+                                                            graphic design, web
+                                                            development,
+                                                            programming, or
+                                                            marketing, you can
+                                                            offer your services
+                                                            to other users and
+                                                            charge for them.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div
+                                                    class="benefits-metavirtualoffice mds22"
+                                                >
+                                                    <div
+                                                        class="align-items-center"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products2/Renting-Out-Space.webp"
+                                                            alt="Benefits Icons"
+                                                            class="mds-product"
+                                                        />
+                                                    </div>
+                                                    <div
+                                                        class="benefits-mds-inn"
+                                                    >
+                                                        <h3>
+                                                            Renting Out Space
+                                                        </h3>
+                                                        <p
+                                                            class="text-last-center text-gray2"
+                                                        >
+                                                            If you have a large
+                                                            virtual office, you
+                                                            can rent out space
+                                                            to other users for
+                                                            events or as a
+                                                            workspace. The users
+                                                            can also rent
+                                                            virtual office space
+                                                            that includes desks,
+                                                            meeting rooms, and
+                                                            other amenities.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div
+                                                    class="benefits-metavirtualoffice mds22"
+                                                >
+                                                    <div
+                                                        class="align-items-center"
+                                                    >
+                                                        <img
+                                                            src="assets/images/products2/Selling-Virtual-Goods.webp"
+                                                            alt="Benefits Icons"
+                                                            class="mds-product"
+                                                        />
+                                                    </div>
+                                                    <div
+                                                        class="benefits-mds-inn"
+                                                    >
+                                                        <h3>
+                                                            Selling Virtual
+                                                            Goods
+                                                        </h3>
+                                                        <p
+                                                            class="text-last-center text-gray2"
+                                                        >
+                                                            You can create and
+                                                            sell virtual goods
+                                                            such as furniture,
+                                                            artwork, and
+                                                            clothing for
+                                                            avatars. This can be
+                                                            done through your
+                                                            own virtual
+                                                            storefront or on
+                                                            third-party
+                                                            marketplaces.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-vectors">
+                    <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
+                </div>
+            </section>
+
+            <section class="why-metaprolane whym2 product-why-sec">
+                <div class="container">
+                    <h4
+                        class="text-black text-center h3-under-bar2 mb-4 fw-bold-800 slide-left"
+                    >
+                        Step Into Future Of Virtual WorkSpace With Our Metaverse
+                        Virtual Office Development
+                    </h4>
+                    <p
+                        class="padd-0 my-4 mb-4 text-last-center text-gray2 slide-left"
+                    >
+                        As the world becomes increasingly digital, more and more
+                        people are seeking alternatives option for traditional
+                        working spaces. The Metaverse is emerging as a potential
+                        solution for those looking to create a virtual office.
+                        Our MetaCorp is a cutting-edge solution for individual
+                        entrepreneurs to start virtual workspace. This
+                        innovative metaverse virtual platform allows your end
+                        users to feel like a real office with all advanced
+                        features and security for geting efficient productivity,
+                        networking, and collaborated with other professionals.
+                    </p>
+                    <div class="row mb-3">
+                        <div class="col-lg-12">
+                            <div class="w-100">
+                                <div class="immersive-m-l text-center">
+                                    <iframe
+                                        title="Metaprolane Video"
+                                        srcdoc="
+    <style>
+    body, .full {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    object-fit: cover;
+    }
+    </style>
+    <a
+    href='https://www.youtube.com/embed/R-uCpc5KC1c?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1'
+    class='full'
+    >          
+    <img
+    src='assets/images/products/img6.png'
+    class='full'
+    />
+    <svg
+    version='1.1'
+    viewBox='0 0 68 48'
+    width='68px'
+    style='position: relative;'
+    >
+    <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+    <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+    </svg>
+    </a>
+    "
+                                        style="max-width: 90%; width: 100%; aspect-ratio: 16/9;"
+                                        frameborder="0"
+                                    >
+                                    </iframe>
+                                </div>
+                            </div>
+                            <div class="text-center my-3">
+                                <a href="#contact">
+                                    <button class="btn padd-0">
+                                        <div class="btn-box border-gradient">
+                                            Talk To Our Expert
+                                        </div>
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="under-banner our-technologies gradient-ms-box">
+                <div class="bg-vectors">
+                    <img
+                        src="assets/images/products/bg3.webp"
+                        alt="BG Vector"
+                    />
+                </div>
+                <div class="container">
+                    <div class="under-banner-carousel-section">
+                        <h5
+                            class="text-center text-white h3-under-bar2 slide-left"
+                        >
+                            Metaverse Development Tools That We Use
+                        </h5>
+                        <div class="row mt-4">
+                            <div class="col-lg-12 slide-left">
+                                <div class="owl-service-item owl-carousel">
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img
+                                                src="assets/images/ourtech1.webp"
+                                                alt="Ourtech1"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img
+                                                src="assets/images/blender.png"
+                                                alt="Ourtech1"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img
+                                                src="assets/images/ourtech2.webp"
+                                                alt="Ourtech2"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img
+                                                src="assets/images/ourtech3.webp"
+                                                alt="Ourtech3"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img
+                                                src="assets/images/ourtech4.webp"
+                                                alt="Ourtech4"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="icon">
+                                            <img
+                                                src="assets/images/ourtech5.webp"
+                                                alt="Ourtech5"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="gradient-ms-box">
+                <div class="bg-vectors">
+                    <!-- <img src="assets/images/products/bg3.webp" alt="BG Vector"> -->
+                </div>
+                <div class="container">
+                    <div class="why-expertise-section">
+                        <div class="under-banner">
+                            <div class="under-banner-carousel-section">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <h3
+                                            class="text-black text-center fw-bold-800 fs-32 mb-4"
+                                        >
+                                            Why Metaprolane Is Your Ideal
+                                            Partner For Metaverse Virtual Office
+                                            Development
+                                        </h3>
+                                        <div
+                                            class="owl-service-item-ms owl-carousel"
+                                        >
+                                            <div class="item">
+                                                <div class="icon">
+                                                    <div
+                                                        class="row align-items-center"
+                                                    >
+                                                        <div class="col-lg-7">
+                                                            <h6
+                                                                class="text-black text-last-left fw-bold fs-rem"
+                                                            >
+                                                                Expertise
+                                                            </h6>
+                                                            <p
+                                                                class="text-gray2 text-last-left"
+                                                            >
+                                                                Metaprolane has
+                                                                a team of
+                                                                experts who are
+                                                                experienced in
+                                                                creating virtual
+                                                                environments,
+                                                                including
+                                                                virtual offices.
+                                                                Our experts have
+                                                                a deep
+                                                                understanding of
+                                                                the latest
+                                                                technologies and
+                                                                trends in the
+                                                                Metaverse space
+                                                                and can help you
+                                                                create a virtual
+                                                                office that is
+                                                                cutting-edge and
+                                                                innovative.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div
+                                                                class="gms-box-img text-center"
+                                                            >
+                                                                <img
+                                                                    src="assets/images/products2/Expertise-01.webp"
+                                                                    alt="Expertise"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="icon">
+                                                    <div
+                                                        class="row align-items-center"
+                                                    >
+                                                        <div class="col-lg-7">
+                                                            <h6
+                                                                class="text-black text-last-left fw-bold fs-rem"
+                                                            >
+                                                                Customization
+                                                            </h6>
+                                                            <p
+                                                                class="text-gray2 text-last-left"
+                                                            >
+                                                                Metaprolane
+                                                                understands that
+                                                                every business
+                                                                is unique and
+                                                                has different
+                                                                needs when it
+                                                                comes to a
+                                                                virtual office.
+                                                                We offer a high
+                                                                level of
+                                                                customization
+                                                                and can tailor
+                                                                the virtual
+                                                                environment to
+                                                                your specific
+                                                                needs and
+                                                                requirements.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div
+                                                                class="gms-box-img text-center"
+                                                            >
+                                                                <img
+                                                                    src="assets/images/products2/Customization-01.webp"
+                                                                    alt="Customization"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="icon">
+                                                    <div
+                                                        class="row align-items-center"
+                                                    >
+                                                        <div class="col-lg-7">
+                                                            <h6
+                                                                class="text-black text-last-left fw-bold fs-rem"
+                                                            >
+                                                                Collaborative
+                                                                Approach
+                                                            </h6>
+                                                            <p
+                                                                class="text-gray2 text-last-left"
+                                                            >
+                                                                Metaprolane
+                                                                takes a
+                                                                collaborative
+                                                                approach to
+                                                                Metaverse
+                                                                Virtual Office
+                                                                Development. We
+                                                                work closely
+                                                                with our clients
+                                                                to understand
+                                                                their needs &
+                                                                goals and keep
+                                                                them involved in
+                                                                every step of
+                                                                the development
+                                                                process.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div
+                                                                class="gms-box-img text-center"
+                                                            >
+                                                                <img
+                                                                    src="assets/images/products2/Collaborative-Approach-01.webp"
+                                                                    alt="Collaborative Approach"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="icon">
+                                                    <div
+                                                        class="row align-items-center"
+                                                    >
+                                                        <div class="col-lg-7">
+                                                            <h6
+                                                                class="text-black text-last-left fw-bold fs-rem"
+                                                            >
+                                                                Cutting-Edge
+                                                                Technology
+                                                            </h6>
+                                                            <p
+                                                                class="text-gray2 text-last-left"
+                                                            >
+                                                                Metaprolane uses
+                                                                the latest and
+                                                                most advanced
+                                                                technologies to
+                                                                create virtual
+                                                                environments
+                                                                that are
+                                                                realistic and
+                                                                immersive. We
+                                                                are constantly
+                                                                researching and
+                                                                experimenting
+                                                                with new
+                                                                technologies to
+                                                                ensure that our
+                                                                clients have
+                                                                access to the
+                                                                most
+                                                                cutting-edge
+                                                                solutions.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div
+                                                                class="gms-box-img text-center"
+                                                            >
+                                                                <img
+                                                                    src="assets/images/products2/Cutting-Edge-Technology-01.webp"
+                                                                    alt="Cutting-Edge Technology"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="icon">
+                                                    <div
+                                                        class="row align-items-center"
+                                                    >
+                                                        <div class="col-lg-7">
+                                                            <h6
+                                                                class="text-black text-last-left fw-bold fs-rem"
+                                                            >
+                                                                Ongoing Support
+                                                            </h6>
+                                                            <p
+                                                                class="text-gray2 text-last-left"
+                                                            >
+                                                                Metaprolane
+                                                                provides ongoing
+                                                                support and
+                                                                maintenance
+                                                                services to
+                                                                ensure that your
+                                                                virtual office
+                                                                space is
+                                                                functioning
+                                                                properly and is
+                                                                up to date with
+                                                                the latest
+                                                                technologies and
+                                                                features.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div
+                                                                class="gms-box-img text-center"
+                                                            >
+                                                                <img
+                                                                    src="assets/images/products2/Ongoing-Support-01.webp"
+                                                                    alt="Ongoing Support"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="icon">
+                                                    <div
+                                                        class="row align-items-center"
+                                                    >
+                                                        <div class="col-lg-7">
+                                                            <h6
+                                                                class="text-black text-last-left fw-bold fs-rem"
+                                                            >
+                                                                Integration
+                                                            </h6>
+                                                            <p
+                                                                class="text-gray2 text-last-left"
+                                                            >
+                                                                Metaprolane can
+                                                                help you
+                                                                integrate your
+                                                                virtual office
+                                                                space with other
+                                                                tools and
+                                                                technologies,
+                                                                such as video
+                                                                conferencing,
+                                                                chat, and
+                                                                collaboration
+                                                                tools. This can
+                                                                help you create
+                                                                a seamless
+                                                                virtual office
+                                                                experience for
+                                                                your team
+                                                                members and
+                                                                clients.
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-lg-5">
+                                                            <div
+                                                                class="gms-box-img text-center"
+                                                            >
+                                                                <img
+                                                                    src="assets/images/products2/Integration-01.webp"
+                                                                    alt="Integration"
+                                                                />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="why-metaprolane whym2 product-why-sec apply-now">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="why-metaprolane-l mt-2">
+                                <h3 class="text-black h3-under-bar2 mb-5">
+                                    Metaverse Virtual Development - Frequently
+                                    Asked Questions (FAQ's)
+                                </h3>
+                            </div>
+                            <div id="accordion" class="accordion">
+                                <div class="card border-0">
+                                    <div
+                                        class="card-header p-0 border-0"
+                                        id="heading-239"
+                                    >
+                                        <button
+                                            class="btn btn-link accordion-title border-0 collapsed"
+                                            data-toggle="collapse"
+                                            data-target="#collapse-239"
+                                            aria-expanded="true"
+                                            aria-controls="#collapse-239"
+                                            ><i
+                                                class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"
+                                            ></i> How to set up a Metaverse virtual
+                                            office?</button
+                                        >
+                                    </div>
+                                    <div
+                                        id="collapse-239"
+                                        class="collapse"
+                                        aria-labelledby="heading-239"
+                                        data-parent="#accordion"
+                                    >
+                                        <div class="card-body accordion-body">
+                                            <p>
+                                                To set up a Metaverse virtual
+                                                office, choose a suitable
+                                                platform, create a custom
+                                                virtual environment, implement
+                                                security measures, ensure
+                                                accessibility, and provide
+                                                training to employees on how to
+                                                use it. Consider factors such as
+                                                design, user experience, and
+                                                functionality to create an
+                                                engaging and collaborative
+                                                workspace. If you are looking to
+                                                set up a Metaverse virtual
+                                                office, then contact a renowned
+                                                Metaverse development company
+                                                like Metaprolane.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card border-0 wow fadeInUp"
+                                    style="visibility: visible; animation-name: fadeInUp;"
+                                >
+                                    <div
+                                        class="card-header p-0 border-0"
+                                        id="heading-240"
+                                    >
+                                        <button
+                                            class="btn btn-link accordion-title border-0 collapsed"
+                                            data-toggle="collapse"
+                                            data-target="#collapse-240"
+                                            aria-expanded="false"
+                                            aria-controls="#collapse-240"
+                                            ><i
+                                                class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"
+                                            ></i>
+                                            Is Metaverse virtual office development
+                                            a good idea?</button
+                                        >
+                                    </div>
+                                    <div
+                                        id="collapse-240"
+                                        class="collapse"
+                                        aria-labelledby="heading-240"
+                                        data-parent="#accordion"
+                                    >
+                                        <div class="card-body accordion-body">
+                                            <p>
+                                                Metaverse virtual office
+                                                development can be a good idea
+                                                for companies looking to provide
+                                                a more engaging, collaborative,
+                                                and flexible working environment
+                                                for their employees. It can also
+                                                reduce costs associated with
+                                                physical office space and offer
+                                                a more innovative and
+                                                cutting-edge approach to work.
+                                                It is important to consider the
+                                                specific needs and goals of the
+                                                company, as well as the
+                                                technical requirements and
+                                                potential challenges associated
+                                                with developing and maintaining
+                                                a virtual environment.
+                                                Metaprolane helps you create an
+                                                immersive virtual workspace for
+                                                your business.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card border-0 wow fadeInUp"
+                                    style="visibility: visible; animation-name: fadeInUp;"
+                                >
+                                    <div
+                                        class="card-header p-0 border-0"
+                                        id="heading-241"
+                                    >
+                                        <button
+                                            class="btn btn-link accordion-title border-0 collapsed"
+                                            data-toggle="collapse"
+                                            data-target="#collapse-241"
+                                            aria-expanded="false"
+                                            aria-controls="#collapse-241"
+                                            ><i
+                                                class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"
+                                            ></i>
+                                            What is Metaverse in an office environment?</button
+                                        >
+                                    </div>
+                                    <div
+                                        id="collapse-241"
+                                        class="collapse"
+                                        aria-labelledby="heading-241"
+                                        data-parent="#accordion"
+                                    >
+                                        <div class="card-body accordion-body">
+                                            <p>
+                                                In an office environment, a
+                                                Metaverse is a virtual world or
+                                                space that enables individuals
+                                                to collaborate and work together
+                                                in a more immersive and
+                                                interactive way. It can offer
+                                                features such as 3D avatars,
+                                                virtual meeting rooms, and
+                                                customizable workspaces. The
+                                                Metaverse can allow employees to
+                                                engage in meetings, discussions,
+                                                and social interactions,
+                                                regardless of their physical
+                                                location, and can provide a more
+                                                engaging and collaborative
+                                                working environment. It can also
+                                                reduce costs associated with
+                                                physical office space and offer
+                                                greater flexibility in terms of
+                                                remote work.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card border-0 wow fadeInUp"
+                                    style="visibility: visible; animation-name: fadeInUp;"
+                                >
+                                    <div
+                                        class="card-header p-0 border-0"
+                                        id="heading-242"
+                                    >
+                                        <button
+                                            class="btn btn-link accordion-title border-0 collapsed"
+                                            data-toggle="collapse"
+                                            data-target="#collapse-242"
+                                            aria-expanded="false"
+                                            aria-controls="#collapse-242"
+                                            ><i
+                                                class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"
+                                            ></i>
+                                            Why would a company want to develop a
+                                            Metaverse virtual office?</button
+                                        >
+                                    </div>
+                                    <div
+                                        id="collapse-242"
+                                        class="collapse"
+                                        aria-labelledby="heading-242"
+                                        data-parent="#accordion"
+                                    >
+                                        <div class="card-body accordion-body">
+                                            <p>
+                                                A company might want to develop
+                                                a Metaverse virtual office to
+                                                offer its employees a more
+                                                engaging and collaborative
+                                                working environment. It can also
+                                                reduce the costs of maintaining
+                                                physical office space and
+                                                increase productivity by
+                                                allowing team members to work
+                                                from anywhere.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="card border-0 wow fadeInUp"
+                                    style="visibility: visible; animation-name: fadeInUp;"
+                                >
+                                    <div
+                                        class="card-header p-0 border-0"
+                                        id="heading-243"
+                                    >
+                                        <button
+                                            class="btn btn-link accordion-title border-0 collapsed"
+                                            data-toggle="collapse"
+                                            data-target="#collapse-243"
+                                            aria-expanded="false"
+                                            aria-controls="#collapse-243"
+                                            ><i
+                                                class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"
+                                            ></i>
+                                            What are the technical requirements for
+                                            developing a Metaverse virtual office?</button
+                                        >
+                                    </div>
+                                    <div
+                                        id="collapse-243"
+                                        class="collapse"
+                                        aria-labelledby="heading-243"
+                                        data-parent="#accordion"
+                                    >
+                                        <div class="card-body accordion-body">
+                                            <p>
+                                                Developing a Metaverse virtual
+                                                office requires skills in 3D
+                                                modeling, programming, and user
+                                                experience design. You'll need
+                                                to choose the best Metaverse
+                                                Development Company like
+                                                Metaprolane to create a custom
+                                                virtual environment that meets
+                                                your needs.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </html>
+</Layout>
