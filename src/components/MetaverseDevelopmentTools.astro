@@ -1,0 +1,79 @@
+---
+const {title} = Astro.props
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        query: `
+        query{
+            metaverseVirtualOffice{
+                data{
+                    attributes{
+                     
+                metaveser_development_tools
+                  metaverse_development_tools_lists {
+                    data {
+                      attributes{
+                        image
+                      }
+                    }
+                  }
+                    }
+                }
+            }
+        }
+        `,
+    }),
+});
+
+const { data } = await response.json();
+---
+
+<section class="under-banner our-technologies gradient-ms-box">
+    <div class="bg-vectors">
+        <img
+            src="assets/images/products/bg3.webp"
+            alt="BG Vector"
+        />
+    </div>
+    <div class="container">
+        <div class="under-banner-carousel-section">
+            <h5
+                class="text-center text-white h3-under-bar2 slide-left"
+            >
+                {
+                    data.metaverseVirtualOffice.data.attributes
+                        .metaveser_development_tools
+                }
+            </h5>
+            <div class="row mt-4">
+                <div class="col-lg-12 slide-left">
+                    <div
+                        class="owl-service-item owl-carousel d-flex justify-content-between"
+                    >
+                        {
+                            data.metaverseVirtualOffice.data.attributes.metaverse_development_tools_lists.data.map(
+                                (each: any, index: number) => {
+                                    return (
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={
+                                                        each
+                                                            .attributes
+                                                            .image
+                                                    }
+                                                    alt="Ourtech1"
+                                                />
+                                            </div>
+                                        </div>
+                                    );
+                                },
+                            )
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

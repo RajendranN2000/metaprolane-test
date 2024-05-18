@@ -1,0 +1,545 @@
+---
+import Layout from "../layouts/Layout.astro";
+import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.astro";
+
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        query: `
+        query{
+            metaverseAuditorium{
+                data{
+                    attributes{
+                        endless_vritual_frontiers
+                        metaverse_auditorium_title
+						metaverse_auditorium_content
+						metaverse_auditorium_Dev_title
+                        metaverse_auditorium_Dev_content
+                        feature_metaverse_auditorium
+                        feature_metaverse_auditorium_lists{
+                            data {
+                            attributes {
+                                 title
+                                content
+                                image
+                              }
+                             }
+                        }
+                        benefits_metaverse_auditorium
+                        benefits_metaverse_auditorium_lists{
+                            data{
+                             attributes{
+                                 title
+                                content
+                                image
+                             }
+                         }
+                    }
+                    join_metaverse_revolution_title
+                    join_metaverse_revolution_content
+                    monetizing_metaverse_auditorium
+                    monetizing_metaverse_auditorium_sub
+                    monetizing_metaverse_auditorium_lists{
+                    data{
+                      attributes{
+                        title
+                        image
+                        content
+                      }
+                    }
+                  }
+                  vitual_metaverse_auditorium
+                vitual_metaverse_auditorium_content
+                metaverse_auditorium_ideal_title
+                  metaverse_auditorium_ideal_content
+                  metaverse_auditorium_faq
+                  metaverse_auditorium_faq_lists {
+                    data {
+                     attributes {
+                    question
+                    answer
+                    }
+                 }
+                }
+                  
+                    }
+                }
+            }
+        }
+        `,
+    }),
+});
+
+const { data } = await response.json();
+---
+<Layout title="metaverse-virtual-office" description="" keywords="">
+    <html lang="en">
+        <div class="home-container industries-page meta-product">
+            <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
+            <script
+                is:inline
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+            ></script>
+            <link
+                href="/vendor/bootstrap/css/bootstrap.min.css"
+                rel="stylesheet"
+            />
+            <link rel="stylesheet" href="/styles/css/style.css" />
+
+            <script is:inline>
+                $(document).ready(function () {
+                    $(".question1").click(function () {
+                        console.log("clicked questions");
+                        var answer = $(this).next(".answer");
+                        $(".answer").not(answer).slideUp();
+                        answer.slideToggle();
+                    });
+                });
+                $(document).ready(() => {
+                    $(".readmore-description").click(function () {
+                        var $cardTextContent = $(this).prev(
+                            ".card1-text-content",
+                        );
+                        $cardTextContent.toggleClass("expanded");
+                        $(this).text(
+                            $cardTextContent.hasClass("expanded")
+                                ? "Read less"
+                                : "Read more",
+                        );
+                    });
+                });
+                $(document).ready(() => {
+                    $(".wallet-content").each(function () {
+                        var $content = $(this);
+                        if (
+                            $content[0]?.scrollHeight > $content.innerHeight()
+                        ) {
+                            $content.next(".virtual-readmore").show();
+                        } else {
+                            $content.next(".virtual-readmore").hide();
+                        }
+                    });
+                    $(".virtual-readmore").click(function () {
+                        var $cardTextContent = $(this).prev(".wallet-content");
+                        $cardTextContent.toggleClass("virtual-expanded");
+                        $(this).text(
+                            $cardTextContent.hasClass("virtual-expanded")
+                                ? "Read less"
+                                : "Read more",
+                        );
+                    });
+                });
+                $(document).ready(function () {
+                    $(".talk-btn").click(function () {
+                        $("html, body").animate(
+                            {
+                                scrollTop: $("#footer").offset().top,
+                            },
+                            300,
+                        ); // Adjust the duration as per your requirement
+                    });
+                });
+                // $("#content").hide().show("slide", { direction: "left" }, 1500);
+            </script>
+
+            <!-- <div class="meta-product"> -->
+                    <section class="section main-banner audit-videos" id="top" data-section="section1">
+                      <!-- <img src="assets/images/Auditorium/Banner_BG.png" alt="Auditorium page Banner" class="inner-section-banner" /> -->
+                      <video autoplay="" muted="" loop="" id="bg-video">
+                        <source src="assets/images/shopping-mall/mall-banner.mp4" type="video/mp4">
+                      </video>
+                      <div class="video-overlay header-text main-banner-cont">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="caption">                  
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="bg-vectors banner-vector-down">
+                        <img src="assets/images/products/bg1.webp" alt="BG">
+                      </div>
+                    </section>
+
+                    <!-- Auditorium Development Services -->
+                    <section class="under-banner our-technologies product-tech-sec">
+                        <div class="container">
+                          <div class="section-heading ss-case">
+                            <p class="text-blue h2-blue text-center fs-32 fw-bold hub-mutual1 slide-left">
+                                {
+                                    data.metaverseAuditorium.data.attributes
+                                        .endless_vritual_frontiers
+                                }
+                            </p>
+                            <h2 class="text-black text-center h3-under-bar2 hub2 hub-mutual2 slide-left">
+                                {
+                                    data.metaverseAuditorium.data.attributes
+                                        .metaverse_auditorium_title
+                                }
+                            </h2>
+                            <p class="text-gray2 text-last-center pb-2 immitate0 slide-left">
+                                {
+                                    data.metaverseAuditorium.data.attributes
+                                        .metaverse_auditorium_content
+                                }
+                            </p>
+                
+                          </div>
+                        </div>
+                      </section>
+
+                      <!-- Metaverse Auditorium Development -->
+                      <section class="under-banner our-technologies product-tech-sec vir-ms1 vir-ms11 pt-0">
+                        <div class="container">
+                          <div class="section-heading ss-case">
+                            <h1
+                              class="text-black text-center mb-4 h3-under-bar2 hub2 hub-mutual4 mt-0 vir-ms2 slide-left">
+                              {
+                                data.metaverseAuditorium.data.attributes
+                                    .metaverse_auditorium_Dev_title
+                            }
+                            </h1>
+                            <div class="row">
+                              <div class="col-lg-7">
+                                <div class="slide-left">
+                                  <p class="text-gray2 text-last-left pb-4 pt-0">
+                                    {
+                                        data.metaverseAuditorium.data.attributes
+                                            .metaverse_auditorium_Dev_content
+                                    }
+                                  </p>
+                                  <div class="unlock-btn-sec mb-4">
+                                    <a href="#contact" class="btn btn-primary">Get Quote Now</a>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-5">
+                                <div class="plr-10-only-mobile mb-3 slide-right">
+                                  <img src="assets/images/products2/Join-the-metavers2.webp" alt="BG Vector" class="w-100-br-15">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <!-- Features Of Metaverse Auditorium Development -->
+                      <section class="our-courses product-our-courses msd-box1 pt-0">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="section-heading">
+                                <h4
+                                  class="text-black text-center h3-under-bar2 hub1 mb-5 hub-mutual3 feature-h5 mb-mobile slide-left">
+                                  {
+                                    data.metaverseAuditorium.data.attributes
+                                        .feature_metaverse_auditorium
+                                }
+                                </h4>
+                                <div class="owl-experts-item owl-carousel slide-left d-flex flex-wrap">
+                                    {
+                                        data.metaverseAuditorium.data.attributes.feature_metaverse_auditorium_lists.data.map(
+                                            (each: any, index: number) => {
+                                                return (
+                                  <div class="item" style="width:23rem">
+                                    <div class="icon">
+                                      <div class="expert-txt2">
+                                        <div class="box-img">
+                                          <img src={each.attributes.image} alt="Large Capacity" />
+                                        </div>
+                                        <div class="box-img-inn">
+                                          <h5 class="fma">{each.attributes.title}</h5>
+                                          <p class="text-last-center">
+                                            {each.attributes.content}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                 )})}
+
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <!-- Benefits of Metaverse Auditorium -->
+                      <section class="meta-development-services product-our-services">
+                        <div class="container">
+                          <div class="row align-items-center">
+                            <div class="col-lg-12">
+                              <div class="text-center">
+                                <div class="under-banner ">
+                                  <div class="under-banner-carousel-section">
+                                    <h4 class="text-white h3-under-bar2 slide-left">
+                                        {
+                                            data.metaverseAuditorium.data.attributes
+                                                .benefits_metaverse_auditorium
+                                        }
+                                    </h4>
+                                    <div class="row slide-left">
+                                        {
+                                            data.metaverseAuditorium.data.attributes.benefits_metaverse_auditorium_lists.data.map(
+                                                (each: any, index: number) => {
+                                                    return (
+                                      <div class="col-lg-4">
+                                        <div class="benefits-metavirtualoffice">
+                                          <div class="text-center bm-img"><img src={each.attributes.image}
+                                              alt="Benefits Icons" /></div>
+                                          <h5>{each.attributes.title}</h5>
+                                          <p class="text-gray2 text-last-center">
+                                            {each.attributes.content}
+                                          </p>
+                                        </div>
+                                      </div>
+                                    )}
+                                    )}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bg-vectors">
+                          <img src="assets/images/bg-vector3.webp" alt="BG Vector">
+                        </div>
+                      </section>
+
+                      <!-- Metaverse Revolution Today! -->
+                      <section class="why-metaprolane whym2 product-why-sec">
+                        <div class="container pt-0">
+                          <h4 class="text-black text-center h3-under-bar2 mb-2 pt-1 pb-2 fw-bold-800 slide-left">
+                            {
+                                data.metaverseAuditorium.data.attributes
+                                    .join_metaverse_revolution_title
+                            }
+                          </h4>
+                          <div class="row">
+                            <div class="col-lg-7">
+                              <div class="why-metaprolane-l slide-left">
+                                <p class="text-gray2 text-last-left padd-0">
+                                    {
+                                        data.metaverseAuditorium.data.attributes
+                                            .join_metaverse_revolution_content
+                                    }
+                                </p>
+                                <div class="text-last-left my-3 mb-4">
+                                  <a href="https://metaprolane.stsdev.site/#demo">
+                                    <button class="btn padd-0">
+                                      <div class="btn-box border-gradient">
+                                        Start your 3D journey
+                                      </div>
+                                    </button>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-5">
+                              <div class="slide-right">
+                                <img src="assets/images/Auditorium/Join-the-Metaverse-Revolution.png" alt="BG Vector"
+                                  class="w-100-br-15">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+                
+                      <!-- Monetizing Options in Metaverse Auditorium -->
+                      <section class="meta-development-services product-our-services">
+                        <div class="container">
+                          <div class="row align-items-center">
+                            <div class="col-lg-12">
+                              <div class="text-center">
+                                <div class="under-banner ">
+                                  <div class="under-banner-carousel-section">
+                                    <h5 class="text-white h3-under-bar2 mb-0 mt-5 slide-left">
+                                        {
+                                            data.metaverseAuditorium.data.attributes
+                                                .monetizing_metaverse_auditorium
+                                        }
+                                    </h5>
+                                    <p class="text-last-center text-white mb-3 slide-left">
+                                        {
+                                            data.metaverseAuditorium.data.attributes
+                                                .monetizing_metaverse_auditorium_sub
+                                        }
+                                    </p>
+                                    <div class="row align-items-center slide-left">
+                                        {
+                                            data.metaverseAuditorium.data.attributes.monetizing_metaverse_auditorium_lists.data.map(
+                                                (each: any, index: number) => {
+                                                    return (
+                                      <div class="col-lg-6">
+                                        <div class="benefits-metavirtualoffice mds22">
+                                          <div class="align-items-center">
+                                            <img src={each.attributes.image} alt="Ticket Sales"
+                                              class="mds-product" />
+                                          </div>
+                                          <div class="benefits-mds-inn">
+                                            <h6 class="bmoffice">{each.attributes.title}</h6>
+                                            <p class="text-last-center text-gray2">
+                                                {each.attributes.content}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )})}
+                                    
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="bg-vectors">
+                          <img src="assets/images/bg-vector3.webp" alt="BG Vector">
+                        </div>
+                      </section>
+                
+                      <!-- Creating The Ultimate Virtual Event Experience with Metaverse Auditorium -->
+                      <section class="why-metaprolane whym2 product-why-sec">
+                        <div class="container pt-0">
+                          <h3 class="text-black text-center h3-under-bar2 bar-non mb-4 fw-bold-800 slide-left">
+                            {
+                                data.metaverseAuditorium.data.attributes
+                                    .vitual_metaverse_auditorium
+                            }    
+                        </h3>
+                          <p class="padd-0 my-4 mb-4 text-last-center text-gray2 mt-3 slide-left">
+                            {
+                                data.metaverseAuditorium.data.attributes
+                                    .vitual_metaverse_auditorium_content
+                            }
+                        </p>
+                          <div class="row mb-3">
+                            <div class="col-lg-12">
+                              <div class="w-100">
+                                <div class="immersive-m-l text-center slide-left">
+                                  <iframe title="Metaprolane Video" srcdoc="
+                          <style>
+                          body, .full {
+                          width: 100%;
+                          height: 100%;
+                          margin: 0;
+                          position: absolute;
+                          display: flex;
+                          justify-content: center;
+                          object-fit: cover;
+                          }
+                          </style>
+                          <a
+                          href='https://www.youtube.com/embed/veaeTQJdOFA?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1'
+                          class='full'
+                          >
+                          <img
+                          src='assets/images/video2.png'
+                          class='full'
+                          />
+                          <svg
+                          version='1.1'
+                          viewBox='0 0 68 48'
+                          width='68px'
+                          style='position: relative;'
+                          >
+                          <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                          <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                          </svg>
+                          </a>
+                          " style="max-width: 90%; width: 100%; aspect-ratio: 16/9;" frameborder="0">
+                                  </iframe>
+                                </div>
+                              </div>
+                
+                              <div class="text-center my-3">
+                                <a href="#contact">
+                                  <button class="btn padd-0">
+                                    <div class="btn-box border-gradient">
+                                      Talk To Our Expert
+                                    </div>
+                                  </button>
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <!-- metaverse development tools -->
+                      <MetaverseDevelopmentTools/>
+
+                      <!-- Why Metaprolane is your ideal partner? -->
+                      <section class="gradient-ms-box">
+                        <div class="bg-vectors">
+                          <!-- <img src="assets/images/products/bg3.webp" alt="BG Vector"> -->
+                        </div>
+                        <div class="container">
+                          <div class="why-expertise-section">
+                            <div class="under-banner ">
+                              <div class="under-banner-carousel-section slide-left">
+                                <div class="row">
+                                  <div class="col-lg-12">
+                                    <h3 class="text-black text-center fw-bold-800 fs-32 mb-0">
+                                        {
+                                            data.metaverseAuditorium.data.attributes
+                                                .metaverse_auditorium_ideal_title
+                                        }
+                                    </h3>
+                                    <p class="text-gray2 text-last-center">
+                                        {
+                                            data.metaverseAuditorium.data.attributes
+                                                .metaverse_auditorium_ideal_content
+                                        }
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+
+                      <!-- faq's -->
+                      <section class="why-metaprolane whym2 product-why-sec apply-now">
+                        <div class="container">
+                          <div class="row">
+                            <div class="col-lg-12">
+                              <div class="why-metaprolane-l mt-2 slide-left">
+                                <h5 class="text-black h3-under-bar2 mb-5">
+                                    {
+                                        data.metaverseAuditorium.data.attributes
+                                            .metaverse_auditorium_faq
+                                    }
+                                </h5>
+                              </div>
+                              {data.metaverseAuditorium.data.attributes.metaverse_auditorium_faq_lists.data.map(
+                                    (item: any) => (
+                                        <div class="FAQ-card faq">
+                                            <div class="FAQ-qstn-section question1">
+                                                <div class="FAQ-question">
+                                                    {item.attributes.question}
+                                                </div>
+                                                <img
+                                                    class="dropdown-arrow"
+                                                    src="assets/images/retail-showroom/Keyboard arrow down.webp"
+                                                />
+                                            </div>
+                                            <div class="answer answer1">
+                                                {item.attributes.answer}
+                                            </div>
+                                        </div>
+                                    ),
+                                )
+                            }            
+                            </div>
+                          </div>
+                        </div>
+                      </section>
+            </html>
+        </Layout>
