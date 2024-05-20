@@ -3879,7 +3879,7 @@ section.our-courses.product-our-courses .item .icon {
 }
 
 .expert-txt2 {
-    background: #333;
+    /* background: #333; */
     color: #fff;
     text-align: center;
     padding: 0;
@@ -5737,7 +5737,7 @@ section.meta-development-services.product-our-services.casino-ms-three-section .
 
 section.our-courses.product-our-courses.casino-ms-four-section {
     padding: 50px 0;
-    background: url(../images/casino-game/game-collections-bg.png) center top/cover no-repeat fixed #262b33;
+    background: url(../images/casino-game/game-collections-bg.png) center top/cover no-repeat fixed #262b33 !important;
     position: relative;
     min-height: max-content;
     align-items: center;

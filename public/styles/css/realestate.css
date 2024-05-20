@@ -1,0 +1,549 @@
+.realestate-section-1 {
+    background-image: url('../images/realestate/image_2024_04_15T09_26_16_717Z.webp');
+    width: 100%;
+    height: 600px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.realestate-section-1 .section-1-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.section-1-text h2 {
+    font-family: Cairo, sans-serif;
+    font-weight: 700;
+}
+
+.section-1-text p {
+    font-family: Cairo, sans-serif;
+    font-weight: 400;
+}
+
+.section-2 h1 {
+    color: #696bff;
+    font-weight: 700;
+}
+
+.section-2 p {
+    font-weight: 400;
+}
+
+.section-3 {
+    background-image: url('../images/realestate/section-3.webp');
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-top: 100px !important;
+}
+
+.section-3 h2 {
+    font-family: Cairo, sans-serif;
+    font-weight: 700;
+}
+
+.section-3 p {
+    font-family: Cairo, sans-serif;
+    font-weight: 400;
+}
+
+.section-3-top-content {
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.section-3 h3 {
+    font-weight: 600;
+    font-family: Cairo, sans-serif;
+}
+
+.section-3 p {
+    color: #d5d5f2 !important;
+    line-height: 27px;
+    font-weight: 400;
+    font-family: Cairo, sans-serif;
+}
+
+.section-4 h2 {
+    color: #000000;
+    font-weight: 700;
+    font-family: Cairo, sans-serif;
+}
+
+.section-4 {
+    padding-bottom: 15px;
+}
+
+.section-4 .box img {
+    width: 61px;
+    height: 61px;
+    position: absolute;
+    margin-top: -40px;
+    z-index: 1;
+    padding: 9px;
+    border-radius: 10px;
+    background-color: #696bff;
+}
+
+.section-4 .box {
+    margin: 10px;
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 0px 24px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+    height: 300px;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+
+.section-4 .box-content {
+    margin-top: 30px;
+    padding: 10px;
+    text-align: center;
+}
+
+.section-4 .box:hover {
+    background-color: #696bff;
+}
+
+.section-4 .box:hover .box-content,
+.section-4 .box:hover .box-content p {
+    color: white;
+}
+
+.section-4 .box:hover img {
+    background-color: white;
+}
+
+.box:hover #first {
+    content: url('../images/realestate/1.User-friendly-01.webp');
+}
+
+.box:hover #second {
+    content: url('../images/realestate/2.Cross-platform access-01.webp');
+}
+
+.box:hover #third {
+    content: url('../images/realestate/3.Interactive  ecosystem-01.webp');
+}
+
+.box:hover #fourth {
+    content: url('../images/realestate/4.Virtual\ Property\ Ownership-01.webp');
+}
+
+.box:hover #fifth {
+    content: url('../images/realestate/5.Real Estate Listings-01.webp');
+}
+
+.box:hover #sixth {
+    content: url('../images/realestate/6.Virtual Tours & Showcases-01.webp');
+}
+
+.box:hover #seventh {
+    content: url('../images/realestate/7.Virtual Community Building-01.webp');
+}
+
+.box:hover #eight {
+    content: url('../images/realestate/8.Customization options-01.webp');
+}
+
+
+.section-4 .box-content h6 {
+    font-weight: 600;
+    font-family: Cairo, sans-serif;
+}
+
+.section-4 .box-content p {
+    font-weight: 400;
+    font-family: Cairo, sans-serif;
+}
+
+.section-4 .heading {
+    margin-top: 10px;
+    margin-bottom: 70px;
+}
+
+.section-5 {
+    background-image: url('../images/realestate/benefits bg.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 100px;
+    padding-top: 50px;
+}
+
+.section-5 h2 {
+    font-weight: 700;
+    font-family: Cairo, sans-serif;
+}
+
+.section-5 .box-content img {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+}
+
+.section-5 .box-content h6 {
+    font-weight: 600;
+    font-family: Cairo, sans-serif;
+}
+
+.section-5 .box-content p {
+    font-weight: 400;
+    font-family: Cairo, sans-serif;
+}
+
+.section-6 {
+    background-image: url('../images/realestate/the\ process\ bg.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 40px;
+}
+
+.section-6 p {
+    color: #66667d;
+}
+
+.section-6 .box img,
+.section-6 .box-small img {
+    margin-top: 12px;
+    margin-bottom: 16px;
+    width: 100px;
+    height: 100px;
+}
+
+.section-6 .box {
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 0px 24px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f8fbff;
+    padding: 10px;
+    margin-bottom: 40px;
+    height: 334px;
+    cursor: pointer;
+}
+
+.section-6 .box-small {
+    box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.2), 0 0px 24px 0 rgba(0, 0, 0, 0.19);
+    background-color: #f8fbff;
+    padding: 10px;
+    margin-bottom: 40px;
+    height: 100%;
+}
+
+.corosel-content {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    max-width: 70%;
+    color: #d5d5f2;
+}
+
+.corosel-content-quotes {
+    color: #d5d5f2;
+}
+
+.image-section {
+    border: 1px solid #68fe9a;
+    border-radius: 4px;
+    width: 100px;
+    height: 100px;
+}
+
+.content-space {
+    padding-left: 12px;
+}
+
+.section-7 {
+    background-image: url('../images/realestate/background_dark_web.webp');
+    background-size: 100% 95%;
+    background-repeat: no-repeat;
+    height: 1500px;
+    /* padding-top: 300px; */
+
+}
+
+.section-7 .heading {
+    position: relative;
+}
+
+.section-7 .heading::before {
+    content: "";
+    position: absolute;
+    height: 10px;
+    background-color: #67fd99;
+    top: 100%;
+    width: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.section-7 .box {
+    background-color: black;
+    padding: 31px 20px 24px;
+    margin-top: 80px;
+    height: 300px;
+    color: white;
+    text-align: center;
+    border: 3px solid #000000;
+}
+
+.section-7 .box:hover {
+    border: 3px solid #68fe9a;
+    cursor: pointer;
+}
+
+.section-7 .box p {
+    line-height: 30px;
+    color: #cbcbd6;
+    font-weight: 400;
+    font-family: "Cairo";
+}
+
+section.section-8 .nav {
+    display: block;
+}
+
+@media only screen and (max-width:767px)  {
+    .section-8 {
+        padding-top: 64px;
+    }
+}
+
+section.section-8 .nav-tabs {
+    border-bottom: none;
+}
+
+section.section-8 .nav-link,
+section.section-8 .nav-link.active {
+    border-color: transparent;
+    padding-left: 30px !important;
+    color: #282727;
+    border-radius: 0px;
+    font-weight: 700;
+}
+
+section.section-8 .nav-item .bottom-border {
+    border-bottom: 1px solid #4d0de1 !important;
+}
+
+
+
+section.section-8 .nav-link:hover,
+section.section-8 .nav-link.active,
+section.section-8 .nav-link:hover~.nav-item {
+    border-color: transparent;
+    background-image: linear-gradient(-90deg, #954fd3 0%, #4d0de1 100%);
+    color: white;
+    /* border-bottom: 3px solid #954fd3; */
+}
+
+section.section-8 .nav-item {
+    border-right: 1px solid #dbdbdb;
+}
+
+section.section-8 p {
+    padding: 0px;
+    color: #282727;
+    line-height: 34px;
+    font-size: 17px;
+}
+
+section.section-8 .tab-pane {
+    padding-bottom: 30px;
+}
+
+.section-8-bg {
+    background-color: rgba(203, 203, 214, 0.30196078431372547);
+}
+
+.section-8 .no-padding {
+    padding: 0px !important;
+}
+
+section.section-9 {
+    background-image: url('../images/realestate/why choose bg.webp');
+    background-size: 100% 95%;
+    background-repeat: no-repeat;
+    padding-top: 150px;
+    padding-bottom: 300px;
+    background-color: #1e1f2f !important;
+}
+
+section.section-9 .heading::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    background-color: #67fd99;
+    margin-top: 50px;
+    width: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section.section-9 h3 {
+    color: #68fe9a;
+    font-weight: 700;
+}
+
+section.section-9 .qoute-box {
+    width: 85%;
+}
+
+section.section-9 .qoute-box blockquote {
+    width: 90%;
+    font-size: 20px;
+    color: white;
+    color: #d5d5f2;
+    font-family: "Montserrat Roman";
+}
+
+section.section-9 .qoute-box span {
+    font-size: 50px;
+    font-family: sans-serif;
+    color: #d0d0d0;
+    line-height: 0px;
+}
+
+@media only screen and (max-width: 600px) {
+    .section-1-text h2 {
+        padding-top: 100px;
+    }
+
+}
+
+@media only screen and (min-width :576px) and (max-width: 768px) {
+    /* section.section-5 h2 {
+        margin-top: 100px !important;
+    } */
+
+    section.section-6 .box {
+        height: 350px;
+    }
+
+
+}
+
+@media only screen and (max-width : 1200px) {
+    .section-6 .box {
+        height: fit-content;
+    }
+}
+.image1{
+    padding: 48px !important;
+}
+
+@media only screen and (max-width : 767px) {
+    section.section-7 {
+        background-image: none;
+        height: fit-content;
+        padding-top: 30px;
+    }
+  
+    .image-section {
+        width: 64px;
+        height: 64px;
+    }
+    .section-5 .box-content img {
+        height: 62px !important;
+        width: auto;
+    }
+    section.section-7 .heading {
+        color: black !important;
+    }
+    .section-5 {
+        background-image: url('../images/realestate/benefits bg_new.webp');
+    }
+    .section-3 {
+        background-image: url('../images/realestate/metaverse RE bg_new.webp') !important;
+    }
+    .section-4 {
+        padding-bottom: 0px !important;
+    }
+    .image1{
+        padding: 0px !important;
+        padding-bottom: 40px !important;
+    }
+}
+
+@media only screen and (max-width : 575px) {
+    /* section.section-5 .heading {
+        margin-top: 100px !important;
+    } */
+
+    section.section-5 .heading {
+        /* margin-top: 180px !important; */
+        font-size: 20px !important;
+    }
+
+    section.section-6 .box {
+        height: fit-content;
+    }
+
+    section.section-7 .box {
+        height: fit-content;
+    }
+
+  
+
+    .section-4 .box {
+        height: fit-content;
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width: 1024px) {
+    section.section-6 .box {
+        height: 450px;
+    }
+ section.section-5 .heading {
+        margin-top: 100px !important;
+    }
+    /* .section-7 {
+        background-image: url('../images/realestate/Mechanics of Metaverse new bg.webp') !important;
+        height: 2600px !important;
+        background-size: 100% 97%
+    } */
+
+    section.section-7 .box {
+        height: 400px;
+    }
+
+}
+@media only screen and (min-width : 768px) and (max-width: 991px) {
+    .section-7 {
+        background-image: url('../images/realestate/background_dark_mobile.webp') !important;
+        height: 2200px !important;
+        background-size: 100% 97%
+    }
+}
+@media only screen and (min-width : 992px) and (max-width: 1199px) {
+    .section-7 {
+        background-image: url('../images/realestate/background_dark_mobile.webp') !important;
+        height: 1700px !important;
+        background-size: 100% 97%
+    }
+}
+
+@media only screen and (min-width : 768px) and (max-width: 991px) {
+    section.section-7 {
+        /* height: 3100px; */
+    }
+
+    section.section-7 .heading {
+        /* margin-top: 230px; */
+    }
+
+    section.section-7 .box {
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width : 992px) and (max-width: 1199px) {
+    section.section-7 {
+        height: 1900px;
+    }
+}
+
+@media only screen and (min-width : 1200px) {
+    section.section-7 {
+        height: 1100px;
+    }
+}

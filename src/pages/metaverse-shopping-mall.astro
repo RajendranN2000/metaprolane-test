@@ -2,6 +2,78 @@
 import Layout from "../layouts/Layout.astro";
 import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.astro";
 
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query: `
+        query{
+          metaverseShoppingMall{
+                data{
+                    attributes{
+                      shopping_retail_experience
+                      shopping_mall_dev_title
+                  shopping_mall_dev_content
+                  shopping_dev_company_title
+                  shopping_dev_company_content
+                  shopping_mall_features_title
+                  shopping_mall_features_lists {
+                    data{
+                      attributes{
+                        title
+                        image
+                        content
+                      }
+                    }
+                  }
+                  shopping_mall_benefits_title
+             shopping_mall_benefites_lists {
+              data {
+                attributes{
+                  title
+                  content
+                  image
+                }
+              }
+            }
+                  mall_development_title
+                  mall_development_content
+                shopping_mall_monetizing_title
+                  shopping_mall_monetizing_content
+                  shopping_mall_monetizing_lists{
+                    data{
+                      attributes{
+                        title
+                        content
+                        image
+                      }
+                    }
+                  }
+                  shopping_with_demo_title
+                  shopping_with_demo_content
+                shopping_metaprolane_title
+                  shopping_idea_partner_content
+                  shopping_mall_faq_title
+                  shopping_mall_faq_lists{
+                    data{
+                      attributes{
+                        question
+                        answer
+                      }
+                    }
+                  }
+
+                  
+                    }
+                }
+            }
+        }
+        `,
+  }),
+});
+
+const { data } = await response.json();
+
 ---
 
 <Layout title="metaverse-virtual-office" description="" keywords="">
@@ -101,26 +173,23 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                         <div class="slide-left">
                           <p
                             class="text-black text-center mb-1 h3-under-bar2 hub2 hub-mutual4 text-blue h2-blue w-100 fw-700 fs-32">
-                            Revolutionize
-                            the Retail Experience</p>
+                            {
+                              data.metaverseShoppingMall.data.attributes
+                                .shopping_retail_experience
+                            }
+                          </p>
                           <h1 class="text-black text-center mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0 mt-0 head-another-one">
-                            Metaverse
-                            Shopping Mall
-                            Development</h1>
+                            {
+                              data.metaverseShoppingMall.data.attributes
+                                .shopping_mall_dev_title
+                            }
+                          </h1>
                         </div>
-                        <p class="text-gray2 text-last-center py-4 first-para slide-left">Welcome to Metamall,
-                          the premier virtual shopping destination in
-                          the Metaverse created by Metaprolane, a leading Metaverse development company. Metamall - where
-                          shopping,
-                          entertainment, and fun collide in a towering 4-story building featuring a Cineplex, a plethora of shops,
-                          and an amusing Funzone! Our Metaverse Shopping Mall Development services offer a new shopping
-                          experience that combines the convenience of online shopping with the excitement of a virtual world. In
-                          Metamall, you can browse through hundreds of virtual stores, each offering a unique shopping experience
-                          tailored to your interests. From the latest fashion trends to cutting-edge technology, there's something
-                          for everyone in Metamall. And with new stores added regularly, you'll always find something new and
-                          exciting to explore. Metamall is not just a shopping destination, but a complete entertainment hub in
-                          the
-                          Metaverse. Join the Metamall community today and discover the future of shopping in the Metaverse!
+                        <p class="text-gray2 text-last-center py-4 first-para slide-left">
+                          {
+                            data.metaverseShoppingMall.data.attributes
+                              .shopping_mall_dev_content
+                          }
                         </p>
           
                       </div>
@@ -130,34 +199,19 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                     <div class="container">
                       <div class="section-heading ss-case">
           
-                        <h2 class="text-black text-center h3-under-bar2 hub2 hub-mutual2 slide-left">Metaverse
-                          Shopping Mall
-                          Development Company</h2>
+                        <h2 class="text-black text-center h3-under-bar2 hub2 hub-mutual2 slide-left">
+                          {
+                            data.metaverseShoppingMall.data.attributes
+                              .shopping_dev_company_title
+                          }
+                        </h2>
                         <div class="row pt-3 mob-pt-0">
                           <div class="col-lg-7">
-                            <p class="text-gray2 text-last-left py-0 pb-4 slide-left">Metaprolane is a leading
-                              Metaverse shopping mall
-                              development
-                              company with a mission to create immersive and engaging shopping experiences in the Metaverse. If
-                              you're
-                              looking to create a virtual mall like Metamall, look no further than Metaprolane. Our team of
-                              experienced
-                              Metaverse developers and designers can help you build a custom virtual mall that meets your specific
-                              needs
-                              and objectives. With our expertise in Metaverse development, we can create a virtual environment
-                              that
-                              replicates the immersive experience of physical malls, complete with interactive features, 3D
-                              product
-                              visualization, and personalized recommendations. We can also integrate e-commerce capabilities,
-                              including
-                              payment processing and inventory management, to ensure a seamless and secure shopping experience for
-                              your
-                              customers. With our cutting-edge technology, you can try on clothes, test out products, and even
-                              chat
-                              with
-                              store owners and fellow shoppers. With Metaprolane, you can create a virtual mall like Metamall that
-                              stands out from the competition and offers a unique and engaging shopping experience for your
-                              customers.
+                            <p class="text-gray2 text-last-left py-0 pb-4 slide-left"> 
+                              {
+                              data.metaverseShoppingMall.data.attributes
+                                .shopping_dev_company_content
+                            }
                             </p>
                             <div class="unlock-btn-sec mb-4">
                               <a href="#contact" class="btn btn-primary">Get Quote Now</a>
@@ -180,143 +234,33 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                           <div class="section-heading">
                             <h5
                               class="text-black text-center h3-under-bar2 hub1 mb-5 hub-mutual3 feature-h5 slide-left">
-                              Features Of Metaverse
-                              Shopping Mall</h5>
-                            <div class="owl-experts-item owl-carousel slide-left">
-                              <div class="item">
+                              {
+                                data.metaverseShoppingMall.data.attributes
+                                  .shopping_mall_features_title
+                              }  
+                            </h5>
+                            <div class="owl-experts-item owl-carousel slide-left d-flex flex-wrap">
+                              {
+                                data.metaverseShoppingMall.data.attributes.shopping_mall_features_lists.data.map(
+                                  (each: any, index: number) => {
+                                    return (
+                              <div class="item" style="width:23rem">
                                 <div class="icon">
                                   <div class="expert-txt2">
                                     <div class="box-img">
-                                      <img src="assets/images/shopping-mall/immersive-environment.png"
+                                      <img src={each.attributes.image}
                                         alt="Immersive Environment Image" />
                                     </div>
                                     <div class="box-img-inn">
-                                      <h5 class="fma">Immersive Environment</h5>
+                                      <h5 class="fma">{each.attributes.title}</h5>
                                       <p class="text-last-center">
-                                        Virtual malls provide an immersive environment that allows users to navigate through a
-                                        virtual space that mimics a real-world shopping experience.
+                                        {each.attributes.content}
                                       </p>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                              <div class="item">
-                                <div class="icon">
-                                  <div class="expert-txt2">
-                                    <div class="box-img">
-                                      <img src="assets/images/shopping-mall/multi-store-shopping.png"
-                                        alt="Multi-Store Shopping Image" />
-                                    </div>
-                                    <div class="box-img-inn">
-                                      <h5 class="fma">Multi-Store Shopping</h5>
-                                      <p class="text-last-center">
-                                        Virtual malls enable users to browse and shop from a variety of stores, all within the
-                                        same
-                                        virtual environment. This provides a one-stop-shop experience for users.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="item">
-                                <div class="icon">
-                                  <div class="expert-txt2">
-                                    <div class="box-img">
-                                      <img src="assets/images/shopping-mall/cineplex.png" alt="Cineplex Image" />
-                                    </div>
-                                    <div class="box-img-inn">
-                                      <h5 class="fma">Cineplex</h5>
-                                      <p class="text-last-center">
-                                        Watch the latest movies in our state-of-the-art virtual cinema. With comfortable seating
-                                        and
-                                        crystal-clear audio & video quality, you'll feel like you're right in the middle of the
-                                        action.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="item">
-                                <div class="icon">
-                                  <div class="expert-txt2">
-                                    <div class="box-img">
-                                      <img src="assets/images/shopping-mall/funzone.png" alt="Funzone Image" />
-                                    </div>
-                                    <div class="box-img-inn">
-                                      <h5 class="fma">Funzone</h5>
-                                      <p class="text-last-center">
-                                        Keep the whole family entertained with a variety of exciting games and attractions. Enjoy
-                                        virtual reality experiences, play games, and win prizes in this exciting virtual world.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="item">
-                                <div class="icon">
-                                  <div class="expert-txt2">
-                                    <div class="box-img">
-                                      <img src="assets/images/shopping-mall/3D-product-visualization.png"
-                                        alt="3D Product Visualization Image" />
-                                    </div>
-                                    <div class="box-img-inn">
-                                      <h5 class="fma">3D Product Visualization</h5>
-                                      <p class="text-last-center">
-                                        Virtual malls provide a 3D visualization of products that allows users to interact with
-                                        products in a way that is not possible in a traditional online shopping experience.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="item">
-                                <div class="icon">
-                                  <div class="expert-txt2">
-                                    <div class="box-img">
-                                      <img src="assets/images/shopping-mall/personalization.png" alt="Personalization Image" />
-                                    </div>
-                                    <div class="box-img-inn">
-                                      <h5 class="fma">Personalization</h5>
-                                      <p class="text-last-center">
-                                        Virtual shopping malls provide a personalized shopping experience through personalized
-                                        recommendations based on user’s browsing history and preferences.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="item">
-                                <div class="icon">
-                                  <div class="expert-txt2">
-                                    <div class="box-img">
-                                      <img src="assets/images/shopping-mall/social-interaction.png" alt="Social Interaction" />
-                                    </div>
-                                    <div class="box-img-inn">
-                                      <h5 class="fma">Social Interaction</h5>
-                                      <p class="text-last-center">
-                                        Virtual malls provide a social experience through the use of avatars and social media-like
-                                        features that allow users to interact with each other while shopping.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="item">
-                                <div class="icon">
-                                  <div class="expert-txt2">
-                                    <div class="box-img">
-                                      <img src="assets/images/shopping-mall/gamification.png" alt="Gamification Image" />
-                                    </div>
-                                    <div class="box-img-inn">
-                                      <h5 class="fma">Gamification</h5>
-                                      <p class="text-last-center">
-                                        Virtual malls provide a gamified shopping experience through the use of mini-games and
-                                        challenges that reward users for participating in the shopping experience.
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                  )})}
                             </div>
                           </div>
                         </div>
@@ -331,76 +275,29 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                           <div class="text-center">
                             <div class="under-banner ">
                               <div class="under-banner-carousel-section">
-                                <h4 class="text-white h3-under-bar2 slide-left">Benefits Of Metaverse Shopping
-                                  Mall Development</h4>
+                                <h4 class="text-white h3-under-bar2 slide-left">
+                                  {
+                                    data.metaverseShoppingMall.data.attributes
+                                      .shopping_mall_benefits_title
+                                  }
+                                </h4>
                                 <div class="row slide-left">
+                                  {
+                                    data.metaverseShoppingMall.data.attributes.shopping_mall_benefites_lists.data.map(
+                                      (each: any, index: number) => {
+                                        return (
                                   <div class="col-lg-4">
                                     <div class="benefits-metavirtualoffice">
-                                      <div class="text-center bm-img"><img src="assets/images/products/icon1.webp"
+                                      <div class="text-center bm-img"><img src={each.attributes.image}
                                           alt="Benefits Icons" /></div>
-                                      <h6 class="benefits-h6">Convenience</h6>
+                                      <h6 class="benefits-h6">{each.attributes.title}</h6>
                                       <p class="text-gray2 text-last-center">
-                                        With virtual shopping, customers can browse & shop for products from anywhere and at any
-                                        time, without the need to physically visit a mall. This increased convenience can lead to
-                                        higher customer satisfaction.
+                                        {each.attributes.content}
                                       </p>
                                     </div>
                                   </div>
-                                  <div class="col-lg-4">
-                                    <div class="benefits-metavirtualoffice">
-                                      <div class="text-center bm-img"><img src="assets/images/products/icon2.webp"
-                                          alt="Benefits Icons" /></div>
-                                      <h6 class="benefits-h6">Variety</h6>
-                                      <p class="text-gray2 text-last-center">Metaverse Virtual malls offer a wide range of
-                                        products
-                                        and services, from fashion and beauty to technology and home decor. You can explore
-                                        multiple
-                                        stores in one place, which saves more time and effort.</p>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                    <div class="benefits-metavirtualoffice">
-                                      <div class="text-center bm-img"><img src="assets/images/products/icon3.webp"
-                                          alt="Benefits Icons" /></div>
-                                      <h6 class="benefits-h6">Global Reach</h6>
-                                      <p class="text-gray2 text-last-center">Virtual malls are not bound by geographic
-                                        limitations.
-                                        Shoppers from around the world can participate in the shopping experience. This expands
-                                        the
-                                        customer base for retailers and creates a diverse shopping community.</p>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                    <div class="benefits-metavirtualoffice">
-                                      <div class="text-center bm-img"><img src="assets/images/products/icon4.webp"
-                                          alt="Benefits Icons" /></div>
-                                      <h6 class="benefits-h6">Loyalty Programs</h6>
-                                      <p class="text-gray2 text-last-center">Many virtual malls offer loyalty programs that reward
-                                        shoppers for their purchases. These programs can include discounts, coupons, and other
-                                        rewards that encourage shoppers to return and continue shopping.</p>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                    <div class="benefits-metavirtualoffice">
-                                      <div class="text-center bm-img"><img src="assets/images/products/icon5.webp"
-                                          alt="Benefits Icons" /></div>
-                                      <h6 class="benefits-h6">Customization</h6>
-                                      <p class="text-gray2 text-last-center">Virtual shopping malls can be designed to offer a
-                                        more
-                                        personalized and customized experience for each customer. This can lead to increased
-                                        engagement and satisfaction, as well as more sales.</p>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-4">
-                                    <div class="benefits-metavirtualoffice">
-                                      <div class="text-center bm-img"><img src="assets/images/products/icon6.webp"
-                                          alt="Benefits Icons" /></div>
-                                      <h6 class="benefits-h6">Lower Overhead Costs</h6>
-                                      <p class="text-gray2 text-last-center">Developing & maintaining a virtual mall can be less
-                                        expensive than building and maintaining a physical one. This can result in lower overhead
-                                        costs, which are passed on to customers through lower prices.</p>
-                                    </div>
-                                  </div>
+                                 )})}
+                               
                                 </div>
                               </div>
                             </div>
@@ -415,24 +312,20 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
 
                   <section class="why-metaprolane whym2 product-why-sec">
                     <div class="container pt-0">
-                      <h3 class="text-black text-center h3-under-bar2 mb-4 pt-1 pb-2 slide-left">Metaverse Mall
-                        Development</h3>
+                      <h3 class="text-black text-center h3-under-bar2 mb-4 pt-1 pb-2 slide-left">
+                        {
+                          data.metaverseShoppingMall.data.attributes
+                            .mall_development_title
+                        }
+                      </h3>
                       <div class="row">
                         <div class="col-lg-7">
                           <div class="why-metaprolane-l slide-left">
-                            <p class="text-gray2 text-last-left padd-0">Metaprolane offers a range of Metaverse Mall Development
-                              to
-                              meet the unique needs of businesses and individuals. Our solutions
-                              include customized virtual environments, e-commerce integration, interactive social experiences,
-                              personalized product recommendations, and ongoing support and maintenance. We work closely with our
-                              clients to create immersive and engaging shopping experiences in the Metaverse that reflect their
-                              brand and business objectives. Our Metaverse Mall Development can help
-                              retailers and developers to create engaging and immersive virtual shopping experiences that can
-                              provide a range of benefits for both customers and businesses. Whether you're looking to launch a
-                              new
-                              virtual shopping mall or improve an existing one, Metaprolane has the expertise and technology to
-                              help
-                              you succeed in the Metaverse.
+                            <p class="text-gray2 text-last-left padd-0">
+                              {
+                                data.metaverseShoppingMall.data.attributes
+                                  .mall_development_content
+                              }
                             </p>
                             <div class="text-last-left my-3 mt-4 pt-2">
                               <a href="https://metaprolane.stsdev.site/#demo">
@@ -461,80 +354,37 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                           <div class="text-center">
                             <div class="under-banner ">
                               <div class="under-banner-carousel-section">
-                                <h4 class="text-white h3-under-bar2 mb-0 mt-5 slide-left">Monetizing Options in
-                                  Metaverse Virtual Shopping Mall
+                                <h4 class="text-white h3-under-bar2 mb-0 mt-5 slide-left">
+                                  {
+                                    data.metaverseShoppingMall.data.attributes
+                                      .shopping_mall_monetizing_title
+                                  }
                                 </h4>
-                                <p class="text-last-center text-white mb-3 slide-left">There are many different
-                                  monetizing options available in
-                                  a Metaverse virtual shopping mall, and businesses can choose the options that work best for
-                                  their
-                                  specific needs and goals. Here are some of the money-making options available in a Metaverse
-                                  virtual shopping mall:</p>
+                                <p class="text-last-center text-white mb-3 slide-left">{
+                                  data.metaverseShoppingMall.data.attributes
+                                    .shopping_mall_monetizing_content
+                                }</p>
                                 <div class="row align-items-center slide-left">
+                                  {
+                                    data.metaverseShoppingMall.data.attributes.shopping_mall_monetizing_lists.data.map(
+                                      (each: any, index: number) => {
+                                        return (
                                   <div class="col-lg-6">
                                     <div class="benefits-metavirtualoffice mds22">
                                       <div class="align-items-center">
-                                        <img src="assets/images/shopping-mall/ecommerce-integration.png"
+                                        <img src={each.attributes.image}
                                           alt="E-commerce Integration Image" class="mds-product" />
                                       </div>
                                       <div class="benefits-mds-inn">
-                                        <h6 class="bmoffice">E-commerce Integration</h6>
-                                        <p class="text-last-center text-gray2">Sell your products directly to customers through
-                                          your
-                                          virtual shopping mall. This involves integrating the virtual shopping experience with a
-                                          real-world e-commerce platform, allowing customers to purchase physical products
-                                          directly
-                                          from the virtual environment.</p>
+                                        <h6 class="bmoffice">{each.attributes.title}</h6>
+                                        <p class="text-last-center text-gray2">
+                                          {each.attributes.content}
+                                        </p>
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="col-lg-6">
-                                    <div class="benefits-metavirtualoffice mds22">
-                                      <div class="align-items-center">
-                                        <img src="assets/images/shopping-mall/virtual-real-estate.png"
-                                          alt="Virtual Real Estate Image" class="mds-product" />
-                                      </div>
-                                      <div class="benefits-mds-inn">
-                                        <h6 class="bmoffice">Virtual Real Estate</h6>
-                                        <p class="text-last-center text-gray2">Virtual shopping malls can also monetize through
-                                          the
-                                          sale or rental of virtual real estate within the environment. Retailers can pay to have
-                                          a
-                                          virtual storefront within the mall or to have their products featured in a prominent
-                                          location.</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-6">
-                                    <div class="benefits-metavirtualoffice mds22">
-                                      <div class="align-items-center">
-                                        <img src="assets/images/shopping-mall/advertising.png" alt="Advertising Image"
-                                          class="mds-product" />
-                                      </div>
-                                      <div class="benefits-mds-inn">
-                                        <h6 class="bmoffice">Advertising</h6>
-                                        <p class="text-last-center text-gray2">Virtual shopping malls can offer advertising
-                                          opportunities for businesses looking to promote their products or services. Advertisers
-                                          can pay to display ads within the virtual environment, such as banners or videos.</p>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-lg-6">
-                                    <div class="benefits-metavirtualoffice mds22">
-                                      <div class="align-items-center">
-                                        <img src="assets/images/shopping-mall/virtual-product-sales.png"
-                                          alt="Virtual Product Sales Image" class="mds-product" />
-                                      </div>
-                                      <div class="benefits-mds-inn">
-                                        <h6 class="bmoffice">Virtual Product Sales</h6>
-                                        <p class="text-last-center text-gray2">Virtual shopping malls can also monetize through
-                                          the
-                                          sale of virtual products, such as virtual clothing, accessories, home décor, etc.
-                                          Customers can pay real money to purchase these virtual products, which can be customized
-                                          and used within the virtual environment.</p>
-                                      </div>
-                                    </div>
-                                  </div>
+                                 )})}
+                                
                                 </div>
                               </div>
                             </div>
@@ -550,20 +400,17 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                   <section class="why-metaprolane whym2 product-why-sec">
                     <div class="container pt-0">
                       <h5 class="text-black text-center h3-under-bar2 mb-4 fw-bold-800 mvc-step slide-left">
-                        Check out A New World Of Shopping with our demo
-                        <!-- Step Into A New World Of Shopping
-                      With Our Metaverse Virtual Shopping Mall! -->
+                        {
+                          data.metaverseShoppingMall.data.attributes
+                            .shopping_with_demo_title
+                        }
                       </h5>
-                      <p class="padd-0 my-3 mb-4 text-last-center text-gray2 slide-left">Explore a fully
-                        customizable, immersive 3D environment
-                        where you can browse through a wide range of products and services from the comfort of your own home. Our
-                        Metaverse Virtual Shopping Mall offers an exciting shopping experience like no other, complete with
-                        personalized recommendations, social interaction, and e-commerce capabilities. Discover new products,
-                        connect with other shoppers, and make purchases seamlessly with just a few clicks. With our Metaverse
-                        Virtual Shopping Mall, you can access your favorite stores and brands anytime, anywhere, and take your
-                        shopping experience to the next level. At Metaprolane, we offer a range of services to help businesses and
-                        individuals create their own virtual malls. Experience personalized shopping like never before with our
-                        Metaverse Shopping Mall Development Services.</p>
+                      <p class="padd-0 my-3 mb-4 text-last-center text-gray2 slide-left">
+                        {
+                          data.metaverseShoppingMall.data.attributes
+                            .shopping_with_demo_content
+                        }
+                      </p>
                       <div class="row mb-3">
                         <div class="col-lg-12">
                           <div class="w-100">
@@ -630,23 +477,17 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                           <div class="under-banner-carousel-section">
                             <div class="row">
                               <div class="col-lg-12">
-                                <h5 class="text-black text-center fw-bold-800 fs-32 mb-0 slide-left">Why
-                                  Metaprolane is Your Ideal Partner?
+                                <h5 class="text-black text-center fw-bold-800 fs-32 mb-0 slide-left">
+                                  {
+                                  data.metaverseShoppingMall.data.attributes
+                                    .shopping_metaprolane_title
+                                }
                                 </h5>
-                                <p class="text-gray2 text-last-center slide-left">Metaprolane is a leading
-                                  Metaverse development company with
-                                  extensive expertise and experience in creating immersive virtual environments. Our team of
-                                  skilled
-                                  developers and designers can create high-quality and engaging virtual shopping experiences that
-                                  meet the specific needs of each client. We work closely with our clients to understand their
-                                  requirements and create solutions that are optimized for their specific industry and target
-                                  audience. Additionally, we offer a range of services, including 3D modeling and design, virtual
-                                  reality and augmented reality technologies, and online marketplace platforms for selling
-                                  products
-                                  and services. We stay up-to-date with the latest Metaverse technologies and trends, which allows
-                                  us to provide our clients with cutting-edge solutions that are ahead of the curve. We prioritize
-                                  customer satisfaction and provide ongoing support and maintenance to ensure that our clients'
-                                  virtual shopping malls continue to deliver value long after launch.
+                                <p class="text-gray2 text-last-center slide-left">
+                                  {
+                                    data.metaverseShoppingMall.data.attributes
+                                      .shopping_idea_partner_content
+                                  }
                                 </p>
                               </div>
                             </div>
@@ -661,98 +502,30 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                         <div class="col-lg-12">
                           <div class="why-metaprolane-l mt-2">
                             <h5 class="text-black h3-under-bar2 mb-5 slide-left">
-                              FAQ - Metaverse Shopping Mall Development
-                              <!-- Metaverse Virtual Shopping Development - FAQs -->
+                              {
+                                data.metaverseShoppingMall.data.attributes
+                                  .shopping_mall_faq_title
+                              }
                             </h5>
                           </div>
-                          <div id="accordion" class="accordion slide-left">
-                            <div class="card border-0">
-                              <div class="card-header p-0 border-0" id="heading-239">
-                                <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                  data-target="#collapse-239" aria-expanded="true" aria-controls="#collapse-239"><i
-                                    class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                  What is a Metaverse virtual shopping mall?</button>
-                              </div>
-                              <div id="collapse-239" class="collapse" aria-labelledby="heading-239" data-parent="#accordion">
-                                <div class="card-body accordion-body">
-                                  <p>A Metaverse virtual shopping mall is a virtual environment that allows customers to browse
-                                    and purchase products in a virtual space. These environments are often highly immersive and
-                                    can include features such as 3D modeling, virtual reality, and augmented reality.</p>
+                          {
+                            data.metaverseShoppingMall.data.attributes.shopping_mall_faq_lists.data.map(
+                              (item: any) => (
+                                <div class="FAQ-card faq">
+                                  <div class="FAQ-qstn-section question1">
+                                    <div class="FAQ-question">
+                                      {item.attributes.question}
+                                    </div>
+                                    <img
+                                      class="dropdown-arrow"
+                                      src="assets/images/retail-showroom/Keyboard arrow down.webp"
+                                    />
+                                  </div>
+                                  <div class="answer answer1">{item.attributes.answer}</div>
                                 </div>
-                              </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                              <div class="card-header p-0 border-0" id="heading-240">
-                                <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                  data-target="#collapse-240" aria-expanded="false" aria-controls="#collapse-240"><i
-                                    class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                  What are the benefits of developing a Metaverse virtual shopping mall?</button>
-                              </div>
-                              <div id="collapse-240" class="collapse " aria-labelledby="heading-240" data-parent="#accordion">
-                                <div class="card-body accordion-body">
-                                  <p>Developing a Metaverse virtual shopping mall can provide several benefits for businesses,
-                                    including increased brand awareness, higher customer engagement, and the ability to reach new
-                                    audiences. Virtual shopping malls can also provide customers with a unique and engaging
-                                    shopping experience that can differentiate a business from its competitors.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                              <div class="card-header p-0 border-0" id="heading-241">
-                                <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                  data-target="#collapse-241" aria-expanded="false" aria-controls="#collapse-241"><i
-                                    class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                  What technologies are used to develop metaverse virtual shopping malls?</button>
-                              </div>
-                              <div id="collapse-241" class="collapse " aria-labelledby="heading-241" data-parent="#accordion">
-                                <div class="card-body accordion-body">
-                                  <p>Metaverse virtual shopping malls can use a range of technologies, including 3D modeling
-                                    software, virtual reality and augmented reality technologies, and online marketplace
-                                    platforms. Developing a virtual shopping mall can be a complex process and businesses should
-                                    partner with a specialized Metaverse development company like Metaprolane to create engaging
-                                    and immersive virtual environments.</p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                              <div class="card-header p-0 border-0" id="heading-242">
-                                <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                  data-target="#collapse-242" aria-expanded="false" aria-controls="#collapse-242"><i
-                                    class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                  How can a business monetize a Metaverse virtual shopping mall?</button>
-                              </div>
-                              <div id="collapse-242" class="collapse " aria-labelledby="heading-242" data-parent="#accordion">
-                                <div class="card-body accordion-body">
-                                  <p>There are several monetizing options available for a Metaverse virtual shopping mall,
-                                    including advertising, virtual real estate sales, E-commerce integration, virtual product
-                                    sales, subscription services, commission-based sales, and partnerships and collaborations. Our
-                                    customized e-commerce integration can also provide a seamless shopping experience and increase
-                                    revenue for businesses.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                              <div class="card-header p-0 border-0" id="heading-243">
-                                <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                  data-target="#collapse-243" aria-expanded="false" aria-controls="#collapse-243"><i
-                                    class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                  How long does it take to develop a Metaverse virtual shopping mall?</button>
-                              </div>
-                              <div id="collapse-243" class="collapse " aria-labelledby="heading-243" data-parent="#accordion">
-                                <div class="card-body accordion-body">
-                                  <p>The time it takes to develop a Metaverse virtual shopping mall can vary depending on the
-                                    complexity of the project and the specific requirements of the business. It can take anywhere
-                                    from a few months to over a year to create a high-quality virtual shopping experience Our team
-                                    works closely with businesses to establish realistic timelines and ensure that the project is
-                                    delivered on time and within budget. It can take anywhere from a few months to over a year to
-                                    create a high-quality virtual shopping experience.
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                              ),
+                            )
+                          }
                         </div>
                       </div>
                     </div>
