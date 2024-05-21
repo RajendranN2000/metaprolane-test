@@ -1,370 +1,331 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.astro";
+
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query: `
+        query{
+          metaverseJewelryShopping{
+                data{
+                    attributes{
+                      jewelry_shopping_title
+                      jewelry_shopping_content
+        own_jewelry_shop_title
+        own_jewelry_shop_content
+        benefits_jewelry_dev_title
+        jewelry_benefits_dev_lists{
+          data{
+            attributes{
+              title
+              content
+              image
+            }
+          }
+        }
+        jewelry_virtual_store_title
+        jewelry_virtual_store_content
+        jewelry_virtual_store_lists{
+          data{
+            attributes{
+              title
+              content
+              image
+            }
+          }
+        }
+        jewelry_business_title
+          }
+                }
+            }
+        }
+        `,
+  }),
+});
+
+const { data } = await response.json();
 ---
 
 <Layout title="metaverse-virtual-office" description="" keywords="">
-    <html lang="en">
-        <div class="home-container industries-page meta-product">
-            <link rel="stylesheet" href="/styles/css/jewellery.css" />
-            <script
-                is:inline
-                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            ></script>
-            <link
-                href="/vendor/bootstrap/css/bootstrap.min.css"
-                rel="stylesheet"
-            />
-            <link rel="stylesheet" href="/styles/css/jewellery.css" />
+  <html lang="en">
+    <div class="home-container industries-page meta-product">
+      <link rel="stylesheet" href="/styles/css/jewellery.css" />
+      <script
+        is:inline
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      ></script>
+      <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/styles/css/jewellery.css" />
 
-            <script is:inline>
-                $(document).ready(function () {
-                    $(".question1").click(function () {
-                        console.log("clicked questions");
-                        var answer = $(this).next(".answer");
-                        $(".answer").not(answer).slideUp();
-                        answer.slideToggle();
-                    });
-                });
-                $(document).ready(() => {
-                    $(".readmore-description").click(function () {
-                        var $cardTextContent = $(this).prev(
-                            ".card1-text-content",
-                        );
-                        $cardTextContent.toggleClass("expanded");
-                        $(this).text(
-                            $cardTextContent.hasClass("expanded")
-                                ? "Read less"
-                                : "Read more",
-                        );
-                    });
-                });
-                $(document).ready(() => {
-                    $(".wallet-content").each(function () {
-                        var $content = $(this);
-                        if (
-                            $content[0]?.scrollHeight > $content.innerHeight()
-                        ) {
-                            $content.next(".virtual-readmore").show();
-                        } else {
-                            $content.next(".virtual-readmore").hide();
-                        }
-                    });
-                    $(".virtual-readmore").click(function () {
-                        var $cardTextContent = $(this).prev(".wallet-content");
-                        $cardTextContent.toggleClass("virtual-expanded");
-                        $(this).text(
-                            $cardTextContent.hasClass("virtual-expanded")
-                                ? "Read less"
-                                : "Read more",
-                        );
-                    });
-                });
-                $(document).ready(function () {
-                    $(".talk-btn").click(function () {
-                        $("html, body").animate(
-                            {
-                                scrollTop: $("#footer").offset().top,
-                            },
-                            300,
-                        ); // Adjust the duration as per your requirement
-                    });
-                });
-                // $("#content").hide().show("slide", { direction: "left" }, 1500);
-            </script>
+      <script is:inline>
+        $(document).ready(function () {
+          $(".question1").click(function () {
+            console.log("clicked questions");
+            var answer = $(this).next(".answer");
+            $(".answer").not(answer).slideUp();
+            answer.slideToggle();
+          });
+        });
+      
+        document.addEventListener('DOMContentLoaded', function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const totalSlides = slides.length;
 
-<div class="">
-    <div class="section1-banner">
-      <div class="section1">
-        <div class="section1-title">
-          Metaverse Jewelry Shopping
+    document.querySelector('.carousel-control-next').addEventListener('click', () => {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % totalSlides;
+      slides[currentIndex].classList.add('active');
+    });
+
+    document.querySelector('.carousel-control-prev').addEventListener('click', () => {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      slides[currentIndex].classList.add('active');
+    });
+  });
+       
+        $(document).ready(function () {
+          $(".talk-btn").click(function () {
+            $("html, body").animate(
+              {
+                scrollTop: $("#footer").offset().top,
+              },
+              300,
+            ); // Adjust the duration as per your requirement
+          });
+        });
+        // $("#content").hide().show("slide", { direction: "left" }, 1500);
+      </script>
+
+      <div class="">
+        <div class="section1-banner">
+          <div class="section1">
+            <div class="section1-title">
+              {
+                data.metaverseJewelryShopping.data.attributes
+                  .jewelry_shopping_title
+              }
+            </div>
+            <div class="sectio1-content">
+              {
+                data.metaverseJewelryShopping.data.attributes
+                  .jewelry_shopping_content
+              }
+            </div>
+            <div class="section1-button request-demo">
+              Request for a Free Demo
+            </div>
+          </div>
         </div>
-        <div class="sectio1-content">Elevate your customers' shopping experience with an exquisite Metaverse platform
-          for your jewelry store, offering unparalleled immersion and interactivity.</div>
-        <div class="section1-button request-demo">Request for a Free Demo</div>
-      </div>
-    </div>
-    <div class="section2">
-      <img class="section2-img" src="assets/images/jewellery/ImageSequence_003_0100@4x.webp">
-      </img>
-      <div class="section2-right">
-        <div class="section2-title">
-          Develop Your Own Metaverse Jewelry Shop
-        </div>
-        <div class="section2-content">The global Metaverse ecosystem is rapidly evolving, with fashion brands leading
-          the charge in creating virtual commerce experiences. Specializing in virtual jewelry store development, our
-          expert team utilizes AR and VR technologies to immerse customers into a brand's culture and design, fostering
-          loyalty and trust. This not only enhances the shopping experience but also opens up new revenue avenues
-          through digital twins. Partner with us to transform your business and pioneer in the Metaverse jewelry market.
+
+        <div class="section2">
+          <img
+            class="section2-img"
+            src="assets/images/jewellery/ImageSequence_003_0100@4x.webp"
+          />
+        <div class="section2-right">
+          <div class="section2-title">
+            {data.metaverseJewelryShopping.data.attributes.own_jewelry_shop_title}
+          </div>
+          <div class="section2-content">{data.metaverseJewelryShopping.data.attributes.own_jewelry_shop_content}
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Benefits of Metaverse Jewelry -->
-    <section class="container-fluid section3 bg-white">
+      <!-- Benefits of Metaverse Jewelry -->
+      <section class="container-fluid section3 bg-white">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h2 class="mt-4 text-center text-white heading">Benefits of Metaverse Jewelry<br> Development Solutions</h2>
+              <h2 class="mt-4 text-center text-white heading">
+                {
+              data.metaverseJewelryShopping.data.attributes
+                .benefits_jewelry_dev_title
+            }
+              </h2>
             </div>
           </div>
           <div class="row">
+            {
+              data.metaverseJewelryShopping.data.attributes.jewelry_benefits_dev_lists.data.map(
+                (each: any, index: number) => {
+                  return (
             <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
+              <div class="box-content">
                 <div class="outer-section">
                   <div class="section3-img">
-                    <img class="img-size" alt="Customization" src="./assets/images/jewellery/Customization-01@4x.webp" />
+                    <img
+                      class="img-size"
+                      alt="Customization"
+                      src={each.attributes.image}
+                    />
                   </div>
                 </div>
                 <div class="">
-                  <h6 class="text-center title-text">Customization</h6>
-                  <p class="text-white">Allowing customers to personalize jewelry store designs to suit their preferences.
-                    Tailor store infrastructure in the Metaverse to reflect personal styles, offering an unmatched,
-                    personalized shopping adventure</p>
+                  <h6 class="text-center title-text">{each.attributes.title}</h6>
+                  <p class="text-white">
+                    {each.attributes.content}
+                  </p>
                 </div>
               </div>
             </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img class="img-size" alt="VirtualTry-Ons"
-                      src="./assets/images/jewellery/VirtualTry-Ons-01@4x.webp" />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">Virtual Try-Ons</h6>
-                  <p class="text-white"> Providing a realistic preview of how jewelry looks on through augmented reality.
-                    Metaverse AR try-ons provide an interactive selection process, enhancing user satisfaction and
-                    engagement.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img class="img-size" alt="Streamlined Operations"
-                      src="./assets/images/jewellery/StreamlinedOperations-01@4x.webp" />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">Streamlined Operations</h6>
-                  <p class="text-white">Enhancing the production process for quicker and cost-effective results. Optimize
-                    jewelry production in the Metaverse, cutting costs and time and ensuring a quick market response.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img class="img-size" alt="Interactive Shopping"
-                      src="./assets/images/jewellery/InteractiveShopping-01@4x.webp" />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">Interactive Shopping</h6>
-                  <p class="text-white"> Delivering an engaging and immersive retail experience online. Engage customers
-                    with virtual stores, crafting an immersive and memorable brand experience. </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img class="img-size" alt="Global Reach" src="./assets/images/jewellery/GlobalReach-01@4x.webp" />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">Global Reach</h6>
-                  <p class="text-white">Expanding market presence without geographical barriers. Access a global customer
-                    base with Metaverse stores, transcending physical and geographical limitations. </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img class="img-size" alt="Trend setting" src="./assets/images/jewellery/Trendsetting-01@4x.webp" />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">Trendsetting</h6>
-                  <p class="text-white">Rapidly adopting and prototyping new designs and trends. Stay ahead in jewelry
-                    trends by utilizing Metaverse for quick design, testing, and market launch.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img class="img-size" alt="Brand Presence" src="./assets/images/jewellery/BrandPresence-01@4x.webp" />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">Brand Presence</h6>
-                  <p class="text-white">Establishing a distinctive brand identity in the virtual space. Forge a strong
-                    brand identity in the virtual world, enhancing customer connection and loyalty.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img class="img-size" alt="Customer Insight"
-                      src="./assets/images/jewellery/CustomerInsight-01@4x.webp" />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">Customer Insight</h6>
-                  <p class="text-white">Gaining valuable feedback through interactive experiences. Use Metaverse
-                    interactions for valuable customer insights, tailoring offerings to preferences and trends.</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content ">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img class="img-size" alt="Investment Potential"
-                      src="./assets/images/jewellery/InvestmentPotential-01@4x.webp" />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">Investment Potential</h6>
-                  <p class="text-white"> Opening new revenue streams by venturing into digital goods. Unlock new revenue
-                    streams in the Metaverse by pioneering the digital jewelry marketplace.</p>
-                </div>
-              </div>
-            </div>
+          )})}
           </div>
         </div>
       </section>
 
       <div class="section4">
-        <img class="section4-img" src="assets/images/jewellery/puchachingImage.webp" />
+        <img
+          class="section4-img"
+          src="assets/images/jewellery/puchachingImage.webp"
+        />
       </div>
       <div class="section5-outer">
         <div class="section5">
-          <!-- <div class="section5-frame">
-                <img class="section5-left" src="assets/images/jewellery/ImageSequence_007_0100@4x.webp"/>
-                <div class="section5-right">
-                    <div class="section5-title">Virtual Store</div>
-                    <div class="section5-content">Metaverse allows you to build a virtual jewelry store. It can be the duplicate or virtual version of their in-house products or physical store. The same designs and infrastructure can be copied to the virtual world in Metaverse. It will help the customer to explore their desired products, even try it out using their avatar, and they can even purchase it from the same virtual store. </div>
-                </div>
-            </div> -->
-            <div id="carouselExample" class="carousel slide" data-ride="carousel">
-                <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+          <div id="carouselExample" class="carousel">
+                        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 </a>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <div class="section5-carousel">
-                      <div class="section5-frame">
-                        <img class="section5-left"
-                          src="assets/images/jewellery/Develop_Your_Own_Metaverse_Jewelry_Shop.webp" />
-                        <div class="section5-right">
-                          <div class="section5-title">Virtual Store</div>
-                          <div class="section5-content">Metaverse allows you to build a virtual jewelry store. It can be the
-                            duplicate or virtual version of their in-house products or physical store. The same designs and
-                            infrastructure can be copied to the virtual world in Metaverse. It will help the customer to
-                            explore
-                            their desired products, even try it out using their avatar, and they can even purchase it from the
-                            same virtual store. </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="carousel-item ">
-                    <div class="section5-carousel">
-                      <div class="section5-frame">
-                        <img class="section5-left" src="assets/images/jewellery/CostCutting.webp" />
-                        <div class="section5-right">
-                          <div class="section5-title">Cost Cutting</div>
-                          <div class="section5-content">Metaverse virtual jewelry store will help you develop the same kind of
-                            physical store in virtual reality. This will cut down the real construction cost, time, and
-                            energy. Retailers can also save up their rental costs, electrical bills, utilities, operating
-                            expenses etc.,</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+            <div class="carousel-inner">
+              {
+                data.metaverseJewelryShopping.data.attributes.jewelry_virtual_store_lists.data.map(
+                  (each: any, index: number) => {
+                    return (
+                    <div class={`carousel-item ${index === 0 ? 'active' : ''}`}>
+        <div class="section5-carousel">
+          <div class="section5-frame">
+            <img class="section5-left"  src={each.attributes.image} />
+            <div class="section5-right">
+              <div class="section5-title">{each.attributes.title}</div>
+              <div class="section5-content">{each.attributes.content}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+              // <div class="carousel-item">
+              //   <div class="section5-carousel">
+              //     <div class="section5-frame">
+              //       <img
+              //         class="section5-left"
+              //         src={each.attributes.image}
+              //       />
+              //       <div class="section5-right">
+              //         <div class="section5-title">{each.attributes.title}</div>
+              //         <div class="section5-content">
+              //           {each.attributes.content}
+              //         </div>
+              //       </div>
+              //     </div>
+              //   </div>
+              // </div>
+           )})}
 
-                  <div class="carousel-item ">
-                    <div class="section5-carousel">
-                      <div class="section5-frame">
-                        <img class="section5-left" src="assets/images/jewellery/ImageSequence_007_0100@4x.webp" />
-                        <div class="section5-right">
-                          <div class="section5-title">Robust Technology</div>
-                          <div class="section5-content">We integrate various robust and interactive technologies into the
-                            metaverse for jewelry stores, such as haptic feedback, motion sensors, and digital replicas. These
-                            technologies and their features will help you have a realistic experience within the metaverse.
-                            Venturing into the metaverse will give your jewelry a new dimension and allow you to create a
-                            surrealistic experience.</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-      
-                <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+            </div>
+
+            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="section6">
+        <div class="section6-frame">
+          <div class="section6-left">
+            <div class="section6-img-section">
+              <div class="">
+                <img
+                  class="section6-image1"
+                  src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp"
+                />
+              </div>
+              <div class="">
+                <img
+                  class="section6-image2"
+                  src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp"
+                />
+              </div>
+            </div>
+            <div class="section6-img2-section">
+              <div class="">
+                <img
+                  class="section6-image3"
+                  src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp"
+                />
+              </div>
+              <div class="">
+                <img
+                  class="section6-image4"
+                  src="assets/images/jewellery/2151034059@4x.webp"
+                />
               </div>
             </div>
           </div>
-
-          <div class="section6">
-            <div class="section6-frame">
-              <div class="section6-left">
-                <div class="section6-img-section">
-                  <div class="">
-                    <img class="section6-image1"
-                      src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp" />
-                  </div>
-                  <div class="">
-                    <img class="section6-image2"
-                      src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp" />
-                  </div>
-                </div>
-                <div class="section6-img2-section">
-                  <div class="">
-                    <img class="section6-image3"
-                      src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp" />
-                  </div>
-                  <div class="">
-                    <img class="section6-image4" src="assets/images/jewellery/2151034059@4x.webp" />
-                  </div>
-                </div>
-              </div>
-              <div class="section6-right">
-                <div class="section6-title">Virtual Store</div>
-                <div class="section6-content">Metaverse allows you to build a virtual jewelry store. It can be the duplicate
-                  or virtual version of their in-house products or physical store. The same designs and infrastructure can be
-                  copied to the virtual world in Metaverse. It will help the customer to explore their desired products, even
-                  try it out using their avatar, and they can even purchase it from the same virtual store. </div>
-              </div>
+          <div class="section6-right">
+            <div class="section6-title">
+              {
+                data.metaverseJewelryShopping.data.attributes
+                  .jewelry_virtual_store_title
+              }
             </div>
-          </div>
-
-          <div class="section7-outer-section">
-            <div class="section7-banner">
-              <div class="section7">
-                <div class="section7-title">
-                  Looking for a Place Where You Can Build A Virtual Reality of Your Jewelry Business?
-                </div>
-                <div class="section7-button request-demo">You can be nowhere but here!</div>
-              </div>
+            <div class="section6-content">
+              {
+                data.metaverseJewelryShopping.data.attributes
+                  .jewelry_virtual_store_content
+              }
             </div>
           </div>
         </div>
-    
+      </div>
+
+      <div class="section7-outer-section">
+        <div class="section7-banner">
+          <div class="section7">
+            <div class="section7-title">
+              {
+                data.metaverseJewelryShopping.data.attributes
+                  .jewelry_business_title
+              }
+            </div>
+            <div class="section7-button request-demo">
+              You can be nowhere but here!
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-        </div>
-    </html>
+
+    <style>
+      .carousel {
+        position: relative;
+      }
+      .carousel-inner {
+        display: flex;
+        overflow: hidden;
+      }
+      .carousel-item {
+        min-width: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+      .carousel-control-prev, .carousel-control-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: none;
+        border: none;
+        font-size: 2rem;
+        cursor: pointer;
+      }
+      .carousel-control-prev {
+        left: 0;
+      }
+      .carousel-control-next {
+        right: 0;
+      }
+    </style>
+
+  </html>
 </Layout>

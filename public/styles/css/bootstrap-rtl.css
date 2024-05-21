@@ -3854,6 +3854,7 @@ textarea.form-control-lg {
   border: 1px solid transparent;
   border-top-right-radius: 0.25rem;
   border-top-left-radius: 0.25rem;
+  background-color: #fff;
 }
 .nav-tabs .nav-link:hover, .nav-tabs .nav-link:focus {
   border-color: #e9ecef #e9ecef #dee2e6;
@@ -3866,9 +3867,9 @@ textarea.form-control-lg {
 }
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
-  color: #495057;
-  background-color: #fff;
-  border-color: #dee2e6 #dee2e6 #fff;
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;

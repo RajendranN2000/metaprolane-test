@@ -5468,7 +5468,7 @@ section.meta-development-services.product-our-services.casino-ms-three-section .
 
 section.our-courses.product-our-courses.casino-ms-four-section {
     padding: 50px 0;
-    background: url(../images/casino-game/game-collections-bg.png) center top/cover no-repeat fixed #262b33 !important;
+    background: url(../images/casino-game/game-collections-bg.png) center top/cover no-repeat fixed #262b33;
     position: relative;
     min-height: max-content;
     align-items: center;
@@ -5826,7 +5826,7 @@ section.why-metaprolane.whym2.product-why-sec.apply-now.casino-ms-FAQ-section {
 }
 
 .home-container.inner-container.game-dev-page section.under-banner.our-technologies.casino-ms-one-section {
-    background: #fff;
+    background: #fff !important;
     padding: 50px 0;
     margin: 0
 }
@@ -6220,13 +6220,13 @@ section.under-banner.our-technologies.gradient-ms-box.casino-ms-Nine-section.too
 }
 
 .home-container.industries-page section.under-banner.our-technologies.casino-ms-one-section {
-    /* background: url(../images/casino-game/game-development_bg.png) center center/cover no-repeat #0b0b0b; */
+    background: url(../images/casino-game/game-development_bg.png) center center/cover no-repeat #0b0b0b !important;
     padding: 50px 0;
     background: #fff;
 }
 
 .home-container.industries-page section.our-courses.product-our-courses.casino-ms-four-section {
-    background: url(../images/industries/s-crafting-new-paradigm.png) center top/cover no-repeat #040308;
+    background: url(../images/industries/s-crafting-new-paradigm.png) center top/cover no-repeat #040308 !important;
     padding: 50px 0 75px;
 }
 
@@ -6383,7 +6383,7 @@ section.under-banner.our-technologies.gradient-ms-box.casino-ms-Nine-section.too
 }
 
 .home-container.industries-page section.meta-development-services.product-our-services.casino-ms-five-section {
-    /* background: #fff; */
+    background: #fff !important;
 }
 
 .home-container.industries-page section.meta-development-services.product-our-services.casino-ms-five-section .h3-under-bar2 {
@@ -9379,3 +9379,19 @@ section.section-9 .qoute-box span {
         height: 1100px;
     }
 }
+
+.nav-tabs .nav-link.active,
+.nav-tabs .nav-item.show .nav-link {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: -1px;
+    background: none;
+    border: 1px solid transparent;
+    border-top-right-radius: 0.25rem;
+    border-top-left-radius: 0.25rem;
+    background-color: #fff;
+  }

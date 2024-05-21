@@ -1,6 +1,76 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.astro";
+
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+        query: `
+        query{
+            metaverseForIndustrie{
+  data {
+    attributes{
+      industry_project_details{
+        data {
+          attributes {
+            title
+            count
+            image
+          }
+        }
+      }
+      industries_metaverse_title
+      industries_metaverse_content
+      industries_various_title
+      industries_various_content
+      industries_various_lists{
+        data{
+          attributes{
+            title
+            content
+            image
+          }
+        }
+      }
+      industry_reshaping_diverse_title
+      industry_reshaping_diverse_content
+      industry_reshaping_diverse_lists {
+        data{
+          attributes{
+            text
+            image
+          }
+        }
+      }
+      industry_advance_risk_mang_title
+      industry_advance_risk_mang_title1
+      industry_advance_risk_mang_content
+      industry_fire_safety_title
+      industry_fire_safety_content
+      industry_safety_confined_title
+      industry_safety_confined_content
+      industry_crafting_centric_title
+      industry_crafting_centric_content
+      industry_faq_title
+      industry_faq_lists{
+        data{
+          attributes{
+            question
+            answer
+          }
+        }
+      }
+      
+    }
+  }
+}
+        }
+        `,
+    }),
+});
+
+const { data } = await response.json();
 ---
 
 <Layout title="metaverse-virtual-office" description="" keywords="">
@@ -26,40 +96,7 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                         answer.slideToggle();
                     });
                 });
-                $(document).ready(() => {
-                    $(".readmore-description").click(function () {
-                        var $cardTextContent = $(this).prev(
-                            ".card1-text-content",
-                        );
-                        $cardTextContent.toggleClass("expanded");
-                        $(this).text(
-                            $cardTextContent.hasClass("expanded")
-                                ? "Read less"
-                                : "Read more",
-                        );
-                    });
-                });
-                $(document).ready(() => {
-                    $(".wallet-content").each(function () {
-                        var $content = $(this);
-                        if (
-                            $content[0]?.scrollHeight > $content.innerHeight()
-                        ) {
-                            $content.next(".virtual-readmore").show();
-                        } else {
-                            $content.next(".virtual-readmore").hide();
-                        }
-                    });
-                    $(".virtual-readmore").click(function () {
-                        var $cardTextContent = $(this).prev(".wallet-content");
-                        $cardTextContent.toggleClass("virtual-expanded");
-                        $(this).text(
-                            $cardTextContent.hasClass("virtual-expanded")
-                                ? "Read less"
-                                : "Read more",
-                        );
-                    });
-                });
+
                 $(document).ready(function () {
                     $(".talk-btn").click(function () {
                         $("html, body").animate(
@@ -70,6 +107,24 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                         ); // Adjust the duration as per your requirement
                     });
                 });
+                document.addEventListener('DOMContentLoaded', function() {
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault();
+
+        const targetId = this.getAttribute('href').substring(1);
+
+        tabLinks.forEach(link => link.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+        this.classList.add('active');
+        document.getElementById(targetId).classList.add('active');
+      });
+    });
+  });
                 // $("#content").hide().show("slide", { direction: "left" }, 1500);
             </script>
 
@@ -98,95 +153,43 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
 
                 <section class="under-banner ub">
                     <div class="container">
-                        <div
-                            class="under-banner-values-section slide-left"
-                        >
+                        <div class="under-banner-values-section slide-left">
                             <div class="row">
+                                {
+                                    data.metaverseForIndustrie.data.attributes.industry_project_details.data.map(
+                                        (each: any, index: number) => {
+                                            return (
                                 <div class="col-lg-3">
                                     <div
                                         class="svs-main d-flex count-area-content pluss"
                                     >
                                         <div class="svs-l">
                                             <img
-                                                src="assets/images/icon3.webp"
+                                                src= {each.attributes.image}
                                                 alt="icon1"
                                             />
                                         </div>
                                         <div class="svs-r">
                                             <h6 class="text-green numbers-top">
-                                                Total<br />Projects
+                                                {each.attributes.title}
                                             </h6>
                                             <div
                                                 class="count-digit numbers-bot"
                                             >
-                                                350
+                                                 {each.attributes.count}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3">
-                                    <div
-                                        class="svs-main d-flex count-area-content pluss"
-                                    >
-                                        <div class="svs-l">
-                                            <img
-                                                src="assets/images/icon1.webp"
-                                                alt="icon2"
-                                            />
-                                        </div>
-                                        <div class="svs-r">
-                                            <h6 class="text-green numbers-top">
-                                                Blockchain<br />Experience
-                                            </h6>
-                                            <div class="count-digit noplus">
-                                                7
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div
-                                        class="svs-main d-flex count-area-content pluss"
-                                    >
-                                        <div class="svs-l">
-                                            <img
-                                                src="assets/images/icon4.webp"
-                                                alt="icon3"
-                                            />
-                                        </div>
-                                        <div class="svs-r">
-                                            <h6 class="text-green numbers-top">
-                                                Blockchain<br />Experts
-                                            </h6>
-                                            <div class="count-digit">250</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3">
-                                    <div
-                                        class="svs-main d-flex count-area-content pluss"
-                                    >
-                                        <div class="svs-l">
-                                            <img
-                                                src="assets/images/icon2.webp"
-                                                alt="icon4"
-                                            />
-                                        </div>
-                                        <div class="svs-r">
-                                            <h6 class="text-green numbers-top">
-                                                Global<br />Brands
-                                            </h6>
-                                            <div class="count-digit">120</div>
-                                        </div>
-                                    </div>
-                                </div>
+                               )})}
                             </div>
                         </div>
-                        <div
-                            class="under-banner-carousel-section slide-left">
+                        <div class="under-banner-carousel-section slide-left">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="owl-service-item owl-carousel d-flex">
+                                    <div
+                                        class="owl-service-item owl-carousel d-flex"
+                                    >
                                         <div class="item">
                                             <div class="icon">
                                                 <img
@@ -309,448 +312,429 @@ import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.a
                 <!-- Metaverse for Industries -->
                 <section class="aboutmeta about-main abt-1 topmeta-dev-company">
                     <div class="container">
-                      <div class="row">
-                          <div class="col-lg-7">
-                             <div class="about-ms slide-right">
-                                <h1 class="text-black top-t"><b class="text-blue">Metaverse for Industries</b></h1>
-                                <p class="text-gray2">Welcome to Metaprolane, your gateway to the boundless possibilities of the
-                                   Metaverse for industries. As a leading Metaverse Development Company, we are dedicated to
-                                   reshaping various sectors, including Manufacturing, Automotive, Fire and Safety, Oil and Gas,
-                                   Mining, Logistics, and beyond by seamlessly integrating this cutting-edge technology. At
-                                   Metaprolane, we are at the forefront of harnessing the power of the Metaverse for industries,
-                                   guiding them towards unprecedented opportunities and transformative growth.</p>
-                                   <div class="unlock-btn-sec my-3">
-                                      <a href="#contact" class="btn btn-primary">Get Quote Now</a>
-                                   </div>
-                             </div>
-                          </div>
-                          <div class="col-lg-5">
-                             <div class="about-ms-r text-right slide-left">
-                                <div class="about-ms-img ams2">
-                                   <img src="assets/images/industries/s-transforming-business.png" alt="About" class=" " />
-                                </div>
-                                
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </section>
-
-                 <!-- Metaverse for Various Industries -->
-                 <section class="our-courses product-our-courses msd-box1 feature-val-p casino-ms-four-section ccs">
-                    <div class="container c-features">
-                       <div class="row">
-                          <div class="col-lg-12">
-                             <div class="section-heading slide-left">
-                                <h2 class="text-white text-center h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 mt-0 mb-4">
-                                Metaverse for Various Industries
-                                </h2>
-                                <p class="text-center">We are dedicated to crafting innovative Metaverse solutions tailored to industry-specific needs. We understand the unique challenges and opportunities within each sector, and our Metaverse environments are designed to empower industries to excel. From optimizing manufacturing processes to elevating safety and training, we are committed to unlocking the full potential of the Metaverse for industries.</p>
-                                <div class="owl-experts-item-Cas-game mdsd3 owl-carousel">
-                                <div class="item">
-                                      <div class="icon">
-                                         <div class="expert-txt2">
-                                            <div class="box-img">
-                                               <img src="assets/images/industries/m-manufacturing-building-new-future2.png"
-                                                  alt="Features Image" />
-                                            </div>
-                                            <div class="box-img-inn">
-                                               <h6 class="fma">Metaverse for Manufacturing: Building a New Future</h6>
-                                               <p class="text-last-left">
-                                               In Manufacturing, we're redefining how businesses operate. With Metaverse technology, we create digital twins of your machinery and production lines. This digital replication allows for real-time monitoring, predictive maintenance, and seamless collaboration, resulting in increased efficiency and reduced downtime
-                                               </p>
-                                            </div>
-                                         </div>
-                                      </div>
-                                       
-                                   </div>
-                                   <div class="item">
-                                      <div class="icon">
-                                         <div class="expert-txt2">
-                                            <div class="box-img">
-                                               <img src="assets/images/industries/m-services-manufacturing-industry2.png"
-                                                  alt="Features Image" />
-                                            </div>
-                                            <div class="box-img-inn">
-                                               <h6 class="fma">Metaverse Services for the Manufacturing Industry</h6>
-                                               <p class="text-last-left">
-                                               Metaprolane offers a comprehensive suite of Metaverse services tailored specifically to the manufacturing industry. Beyond machinery, we provide immersive training simulations, enabling your workforce to master complex processes and machinery operations with unparalleled precision —all within the Metaverse.
-                                               </p>
-                                            </div>
-                                         </div>
-                                      </div>
-                                       
-                                   </div>
-                                   <div class="item">
-                                      <div class="icon">
-                                         <div class="expert-txt2">
-                                            <div class="box-img">
-                                               <img src="assets/images/industries/m-mining-industry-meta2.png"
-                                                  alt="Features Image" />
-                                            </div>
-                                            <div class="box-img-inn">
-                                               <h6 class="fma">Metaverse for Mining: Unearthing New Possibilities</h6>
-                                               <p class="text-last-left">
-                                               In the Mining sector, we are pioneers of Metaverse solutions that redefine exploration, planning, and operations. Dive into a digital twin of your mine, a fully immersive replica of your mining site, complete with vehicles, equipment, and geological features. Within this virtual realm, you can optimize resource management, and train mining personnel in a safe, virtual environment.
-                                               </p>
-                                            </div>
-                                         </div>
-                                      </div>
-                                       
-                                   </div>
-                                   <div class="item">
-                                      <div class="icon">
-                                         <div class="expert-txt2">
-                                            <div class="box-img">
-                                               <img src="assets/images/industries/m-vr-automobile-meta2.png"
-                                                  alt="Features Image" />
-                                            </div>
-                                            <div class="box-img-inn">
-                                               <h6 class="fma">Metaverse for Automotive: Driving Innovation</h6>
-                                               <p class="text-last-left">
-                                               In the Automotive industry, we're reimagining product design and development of Metaverse environments. Virtually design, prototype, and test vehicles collaborate seamlessly with global teams, and enhance innovation—all within the Metaverse. Our solutions transform training by offering immersive VR experiences. From engine maintenance to precise tire care, our solutions elevate skill mastery in the automotive field, shaping the future of training.
-                                               </p>
-                                            </div>
-                                         </div>
-                                      </div>
-                                       
-                                   </div>
-                                   <div class="item">
-                                      <div class="icon">
-                                         <div class="expert-txt2">
-                                            <div class="box-img">
-                                               <img src="assets/images/industries/m-oil-gas2.png"
-                                                  alt="Features Image" />
-                                            </div>
-                                            <div class="box-img-inn">
-                                               <h6 class="fma">Metaverse for Oil and Gas: Transforming Exploration</h6>
-                                               <p class="text-last-left">
-                                               In Oil and Gas, our Metaverse solutions revolutionize exploration by creating Metaverse replicas of oil rigs, simulating drilling scenarios, and analyzing real-time data. These tools empower you to make critical decisions that boost safety and efficiency, all within the Metaverse.
-                                               </p>
-                                            </div>
-                                         </div>
-                                      </div>
-                                       
-                                   </div>
-                                   <div class="item">
-                                      <div class="icon">
-                                         <div class="expert-txt2">
-                                            <div class="box-img">
-                                               <img src="assets/images/industries/m-metaverse-for-logistics2.png"
-                                                  alt="Features Image" />
-                                            </div>
-                                            <div class="box-img-inn">
-                                               <h6 class="fma">Metaverse for Logistics: Enhancing Efficiency</h6>
-                                               <p class="text-last-left">
-                                               In Logistics, we harness the power of Metaverse analytics to optimize supply chains, create virtual warehousing simulations, and streamline distribution operations. The Metaverse isn't just reshaping logistics; it's redefining how we think about efficiency and productivity in the industrial world.
-                                               </p>
-                                            </div>
-                                         </div>
-                                      </div>
-                                       
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </section>
-
-                 <!-- Reshaping Diverse Industry Landscapes -->
-                 <section class="our-courses top-your-domain" id="industries">
-                    <div class="container">
                         <div class="row">
-                            <div class="col-lg-12">
-                                <div class="section-heading">
-                                    <h5 class="text-black text-center h3-under-bar text-uppercase slide-left">
-                                     <b class="text-blue">The Metaverse</b><br>Reshaping Diverse Industry Landscapes
-                                  </h5>
+                            <div class="col-lg-7">
+                                <div class="about-ms slide-right">
+                                    <h1 class="text-black top-t">
+                                        <b class="text-blue">
+                                            {
+                                                data.metaverseForIndustrie.data
+                                                    .attributes
+                                                    .industries_metaverse_title
+                                            }
+                                        </b>
+                                    </h1>
+                                    <p class="text-gray2">
+                                        {
+                                            data.metaverseForIndustrie.data
+                                                .attributes
+                                                .industries_metaverse_content
+                                        }
+                                    </p>
+                                    <div class="unlock-btn-sec my-3">
+                                        <a
+                                            href="#contact"
+                                            class="btn btn-primary"
+                                            >Get Quote Now</a
+                                        >
+                                    </div>
                                 </div>
-                                <div class="owl-experts-item owl-carousel slide-left">
-                                     <div class="item">
-                                        <div class="icon">
-                                            <img src="assets/images/industries/manufacturing.png" alt="Manufacturing">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Manufacturing</p>
-                                                <!-- <p class="top-your-bot">Production</p> -->
-                                            </div>
-                                        </div>
-                                        <div class="icon">
-                                            <img src="assets/images/industries/automotive.jpg" alt="Automative">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Automotive</p>
-                                                <!-- <p class="top-your-bot">Automobile</p> -->
-                                            </div>
-                                        </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="about-ms-r text-right slide-left">
+                                    <div class="about-ms-img ams2">
+                                        <img
+                                            src="assets/images/industries/s-transforming-business.png"
+                                            alt="About"
+                                            class=""
+                                        />
                                     </div>
-                                    <div class="item">
-                                        <div class="icon">
-                                            <img src="assets/images/industries/mining.jpg" alt="Gaming">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Mining</p>
-                                                <!-- <p class="top-your-bot">Entertainment</p> -->
-                                            </div>
-                                        </div>
-                                        <div class="icon">
-                                            <img src="assets/images/industries/oil-gas.jpg" alt="Real Estate">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Oil & Gas</p>
-                                                <!-- <p class="top-your-bot">Flats | Plots Sale </p> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="icon">
-                                            <img src="assets/images/industries/logistics.jpg" alt="Marketing">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Logistics</p>
-                                                <!-- <p class="top-your-bot">Advertisment</p> -->
-                                            </div>
-                                        </div>
-                                        <div class="icon">
-                                            <img src="assets/images/industries/H-care.jpg" alt="Healthcare">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">HEALTHCARE</p>
-                                                <!-- <p class="top-your-bot">Consulting</p> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="icon">
-                                            <img src="assets/images/industries/aerospace.jpg" alt="Gaming">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Aerospace</p>
-                                                <!-- <p class="top-your-bot">Entertainment</p> -->
-                                            </div>
-                                        </div>
-                                        <div class="icon">
-                                            <img src="assets/images/industries/energy-and-utilities.jpg" alt="Real Estate">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Energy and Utilities</p>
-                                                <!-- <p class="top-your-bot">Flats | Plots Sale </p> -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="item">
-                                        <div class="icon">
-                                            <img src="assets/images/industries/construction.jpg" alt="Tourism">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Construction</p>
-                                                <!-- <p class="top-your-bot">Park | Lake</p> -->
-                                            </div>
-                                        </div>
-                                        <div class="icon">
-                                            <img src="assets/images/industries/real-estate.png" alt="ECommerce">
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">Real Estate</p>
-                                                <!-- <p class="top-your-bot">Selling Products</p> -->
-                                            </div>
-                                        </div>
-                                    </div>                                                                                               
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>  
-                
+                </section>
+
+                <!-- Metaverse for Various Industries -->
+                <section
+                    class="our-courses product-our-courses msd-box1 feature-val-p casino-ms-four-section ccs"
+                >
+                    <div class="container c-features">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-heading slide-left">
+                                    <h2
+                                        class="text-white text-center h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 mt-0 mb-4"
+                                    >
+                                    {
+                                        data.metaverseForIndustrie.data
+                                            .attributes
+                                            .industries_various_title
+                                    }
+                                    </h2>
+                                    <p class="text-center">
+                                        {
+                                            data.metaverseForIndustrie.data
+                                                .attributes
+                                                .industries_various_content
+                                        }
+                                    </p>
+                                    <div
+                                        class="owl-experts-item-Cas-game mdsd3 owl-carousel d-flex flex-wrap justify-content-between"
+                                    >
+                                    {
+                                        data.metaverseForIndustrie.data.attributes.industries_various_lists.data.map(
+                                            (each: any, index: number) => {
+                                                return (
+                                        <div class="item" style="width:27rem">
+                                            <div class="icon">
+                                                <div class="expert-txt2">
+                                                    <div class="box-img" style="width:27rem">
+                                                        <img
+                                                            src={each.attributes.image}
+                                                            alt="Features Image"
+                                                        />
+                                                    </div>
+                                                    <div class="box-img-inn">
+                                                        <h6 class="fma">
+                                                            {each.attributes.title}
+                                                        </h6>
+                                                        <p
+                                                            class="text-last-left"
+                                                        >
+                                                           {each.attributes.content}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                       )})}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Reshaping Diverse Industry Landscapes -->
+                <section class="our-courses top-your-domain" id="industries">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-heading">
+                                    <h5
+                                        class="text-black text-center h3-under-bar text-uppercase slide-left"
+                                    >
+                                        <b class="text-blue">{
+                                            data.metaverseForIndustrie.data
+                                                .attributes
+                                                .industry_reshaping_diverse_title
+                                        }</b
+                                        ><br />{
+                                            data.metaverseForIndustrie.data
+                                                .attributes
+                                                .industry_reshaping_diverse_content
+                                        }
+                                    </h5>
+                                </div>
+                                <div
+                                    class="owl-experts-item owl-carousel slide-left d-flex flex-wrap justify-content-between"
+                                >
+                                {
+                                    data.metaverseForIndustrie.data.attributes.industry_reshaping_diverse_lists.data.map(
+                                        (each: any, index: number) => {
+                                            return (
+                                    <div class="item" style="width:22rem">
+                                        <div class="icon">
+                                            <img
+                                                src={each.attributes.image}
+                                                alt="Manufacturing"
+                                            />
+                                            <div class="expert-txt">
+                                                <p class="top-your-head">
+                                                    {each.attributes.text}
+                                                </p>
+                                            </div>
+                                        </div>
+                                </div>
+                                   )})}
+                            </div>
+                        </div>
+                    </div>
+                </section>
                 <div class="home-container inner-container game-dev-page">
                     <section class="why-metaprolane whym2 product-why-sec casino-ms-Six-section">
-                       <div class="container py-0">
-                          <div id="tabs" class="game-dev-tab">
-                             <div class="row">
-                                <div class="col-lg-6">
-                                   <div id="tabs-1">
-                                      <img src="assets/images/industries/m-confined-spaces2.png" alt="Features Image" class="w-100" />
-                                      <p class="ms42">Experience the future of confined space safety with Metaverse technology. Our virtual confined space assessments minimize risks by providing immersive training and simulations. Train personnel to boost safety awareness, ensuring they are well-prepared for real-world challenges. Take confined space safety to new heights with our innovative Metaverse solutions.</p>
-                                   </div>
-                                   <div id="tabs-2">
-                                      <img src="assets/images/industries/s-metaverse-industry.png" alt="Features Image"
-                                         class="w-100" />
-                                      <p class="ms43">Metaprolane empowers Fire & Safety professionals with immersive Metaverse training simulations, enhanced by digital twins. Train emergency responders in hyper-realistic virtual environments, develop emergency response plans, and ensure your teams are fully prepared for any scenario—an evolution in safety training within the Metaverse.</p>
-                                   </div>
-                                   <!-- <div id="tabs-3">
-                                      <img src="assets/images/game-development/BM-img.webp" alt="Features Image" class="w-100" />
-                                      <p>Haptic feedback technologies can enhance immersive metaverse game development services by
-                                         simulating touch sensations in virtual worlds.</p>
-                                   </div> -->
+                      <div class="container py-0">
+                        <div id="tabs" class="game-dev-tab">
+                          <div class="row">
+                            <div class="col-lg-6">
+                              <div id="tabs-1" class="tab-content active">
+                                <img src="assets/images/industries/m-confined-spaces2.png" alt="Features Image" class="w-100" />
+                                <p class="ms42">
+                                    {
+                                        data.metaverseForIndustrie.data
+                                            .attributes
+                                            .industry_safety_confined_content
+                                    }
+                                </p>
+                              </div>
+                              <div id="tabs-2" class="tab-content">
+                                <img src="assets/images/industries/s-metaverse-industry.png" alt="Features Image" class="w-100" />
+                                <p class="ms43">
+                                    {
+                                        data.metaverseForIndustrie.data
+                                            .attributes
+                                            .industry_fire_safety_content
+                                    }
+                                </p>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <div class="why-metaprolane-l slide-right">
+                                <h3 class="text-white text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700">
+                                  <b class="text-blue">{
+                                    data.metaverseForIndustrie.data
+                                        .attributes
+                                        .industry_advance_risk_mang_title
+                                }</b><br>{
+                                        data.metaverseForIndustrie.data
+                                            .attributes
+                                            .industry_advance_risk_mang_title1
+                                    }
+                                </h3>
+                                <div class="mi-advance">
+                                    {
+                                        data.metaverseForIndustrie.data
+                                            .attributes
+                                            .industry_advance_risk_mang_content
+                                    }
+                                    </div>
+                                <div class="text-last-left my-3 mt-4 pt-2">
+                                  <ul class="nav nav-tabs">
+                                    <li class="nav-item">
+                                      <a href="#tabs-2" class="nav-link tab-link">
+                                        {
+                                            data.metaverseForIndustrie.data
+                                                .attributes
+                                                .industry_fire_safety_title
+                                        }
+                                    </a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a href="#tabs-1" class="nav-link tab-link">
+                                        {
+                                            data.metaverseForIndustrie.data
+                                                .attributes
+                                                .industry_safety_confined_title
+                                        }
+                                      </a>
+                                    </li>
+                                  </ul>
+                                  <div id="tabs-1"></div>
+                                  <div id="tabs-2"></div>
                                 </div>
-                                <div class="col-lg-6">
-                                   <div class="why-metaprolane-l slide-right">
-                                      <h3 class="text-white text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700">
-                                         <b class="text-blue">Metaverse for Industries</b><br>Advancements in Safety and Risk Management
-                                      </h3>
-                                      <div class="mi-advance">Discover how the Metaverse is revolutionizing safety and risk management across various industries.</div>
-                                      <div class="text-last-left my-3 mt-4 pt-2">
-                                         <ul>
-                                            <li>
-                                               <a href="#tabs-2">Metaverse for Fire & Safety<br>Training for Preparedness</a>
-                                            </li>
-                                            <li>
-                                               <a href="#tabs-1">Metaverse - Elevating Safety <br>and Awareness for Confined Spaces</a>
-                                            </li>
-                                         </ul>
-                                         <div id="tabs-1">
-                                         </div>
-                                         <div id="tabs-2">
-                                         </div>
-                                      </div>
-                                   </div>
-                                </div>
-                             </div>
+                              </div>
+                            </div>
                           </div>
-                       </div>
-                    </section>
-                 </div>
-
-                 <!-- Your Partner in Crafting Industry-Centric Metaverse Solutions -->
-                 <section class="meta-development-services product-our-services casino-ms-five-section">
-                    <div class="container">
-                       <div class="row align-items-center">
-                          <div class="col-lg-12">
-                             <div class="text-center">
-                                <div class="under-banner ">
-                                   <div class="under-banner-carousel-section">
-                                      <h4 class="text-black h3-under-bar2 fw-700 slide-left">
-                                      Metaprolane<br>Your Partner in Crafting Industry-Centric Metaverse Solutions</h4>
-                                       <p>
-                                       Choose Metaprolane for our unparalleled expertise in harnessing the Metaverse's potential for industries. We are pioneers in creating Metaverse solutions tailored to your industry's needs. Our cutting-edge Metaverse-driven products and services propel your business into the future, ensuring you stay ahead of the competition. With a customer-centric approach, we build Metaverse solutions to address your industry's unique challenges. We're committed to creating Metaverse environments that unlock operational efficiency, improve safety and training, and boost innovation. Partner with us to experience industrial excellence in the Metaverse, transforming the way you do business and creating a Metaverse for your industry.
-                                       </p>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </section>
-
-                   <!-- metaverse development tools -->
-              <MetaverseDevelopmentTools/>
-
-              <section class="why-metaprolane whym2 product-why-sec apply-now casino-ms-FAQ-section">
-                <div class="container py-0">
-                   <div class="row">
-                      <div class="col-lg-12">
-                         <div class="why-metaprolane-l mt-2 slide-left">
-                            <h5 class="text-white h3-under-bar2 mb-5 fw-600">Frequently Asked
-                               Questions
-                               (FAQ's)
-                            </h5>
-                         </div>
-                         <div id="accordion" class="accordion slide-left">
-                            <div class="card border-0">
-                               <div class="card-header p-0 border-0" id="heading-239">
-                                  <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                     data-target="#collapse-239" aria-expanded="true" aria-controls="#collapse-239"><i
-                                        class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                        What is the Metaverse, and how does it relate to industries?
-                                  </button>
-                               </div>
-                               <div id="collapse-239" class="collapse" aria-labelledby="heading-239"
-                                  data-parent="#accordion">
-                                  <div class="card-body accordion-body">
-                                     <p>The Metaverse is a vast digital realm where industries thrive in innovative ways. The Metaverse for Industries is a dynamic digital realm where the physical and digital converge to enhance operations, training, and collaboration. Metaprolane specializes in harnessing the Metaverse for Industries, tailoring solutions that address sector-specific needs. We're ushering industries into a transformative era, where the Metaverse enhances processes and fosters industrial excellence.</p>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                               <div class="card-header p-0 border-0" id="heading-240">
-                                  <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                     data-target="#collapse-240" aria-expanded="false" aria-controls="#collapse-240"><i
-                                        class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                        How can Metaprolane help our industry embrace the Metaverse?</button>
-                               </div>
-                               <div id="collapse-240" class="collapse " aria-labelledby="heading-240"
-                                  data-parent="#accordion">
-                                  <div class="card-body accordion-body">
-                                     <p>Metaprolane is your Metaverse partner, guiding industries on their digital transformation journey. We're pioneers in developing industry-specific Metaverse solutions, seamlessly integrating this groundbreaking technology. Our expertise lies in crafting tailored solutions that address your industry's unique challenges and opportunities. Our customer-centric approach ensures that we understand and cater to the unique challenges of your sector, reshaping how you operate and excel in the age of the Metaverse for Industries. Partnering with us ensures you stay at the forefront of the Metaverse revolution, redefining how your industry operates and thrives</p>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                               <div class="card-header p-0 border-0" id="heading-241">
-                                  <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                     data-target="#collapse-241" aria-expanded="false" aria-controls="#collapse-241"><i
-                                        class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                        What specific Metaverse solutions does Metaprolane offer for Manufacturing?
-                                  </button>
-                               </div>
-                               <div id="collapse-241" class="collapse " aria-labelledby="heading-241"
-                                  data-parent="#accordion">
-                                  <div class="card-body accordion-body">
-                                     <p>In the Manufacturing sector, we redefine processes through the Metaverse for Industries. Our digital twins of machinery and production lines enable real-time monitoring, predictive maintenance, and immersive training simulations. At Metaprolane, we offer a comprehensive suite of Metaverse services tailored exclusively to the manufacturing industry. Beyond machinery, our immersive training simulations empower your workforce to master intricate processes and machinery operations with exceptional precision—all within the Metaverse. This results in efficiency gains, reduced downtime, and a competitive edge in the Metaverse for Industries.</p>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                               <div class="card-header p-0 border-0" id="heading-242">
-                                  <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                     data-target="#collapse-242" aria-expanded="false" aria-controls="#collapse-242"><i
-                                        class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                        Can you explain the concept of "Digital Twins" and their role in Metaverse solutions?
-                                  </button>
-                               </div>
-                               <div id="collapse-242" class="collapse " aria-labelledby="heading-242"
-                                  data-parent="#accordion">
-                                  <div class="card-body accordion-body">
-                                     <p>Digital twins are virtual replicas of physical objects or processes. They play a crucial role in our Metaverse solutions for industries, facilitating real-time monitoring, predictive maintenance, and immersive training. These virtual counterparts of real-world elements empower industries to operate efficiently, boosting productivity and safety. Digital twins are at the core of the Metaverse for Industries, enhancing how businesses harness this transformative technology.</p>
-                                  </div>
-                               </div>
-                            </div>
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                               <div class="card-header p-0 border-0" id="heading-243">
-                                  <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                     data-target="#collapse-243" aria-expanded="false" aria-controls="#collapse-243"><i
-                                        class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                        How does Metaprolane create Metaverse environments for Mining, Automotive, and Oil and Gas industries?
-                                  </button>
-                               </div>
-                               <div id="collapse-243" class="collapse " aria-labelledby="heading-243"
-                                  data-parent="#accordion">
-                                  <div class="card-body accordion-body">
-                                     <p>At Metaprolane, we're pioneers in crafting immersive virtual environments for Mining, Automotive, and Oil and Gas industries. Our digital twins recreate every detail of mining sites, vehicles, and oil rigs. These hyper-realistic replicas enable resource optimization, training, and informed decision-making within the Metaverse. We create a Metaverse for industries, where businesses can explore, plan, and operate with unparalleled precision and efficiency.</p>
-                                  </div>
-                               </div>
-                            </div>
-    
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                               <div class="card-header p-0 border-0" id="heading-244">
-                                  <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                     data-target="#collapse-244" aria-expanded="false" aria-controls="#collapse-244"><i
-                                        class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                        What are the advantages of Metaverse technology in Fire & Safety training?
-                                  </button>
-                               </div>
-                               <div id="collapse-244" class="collapse " aria-labelledby="heading-244"
-                                  data-parent="#accordion">
-                                  <div class="card-body accordion-body">
-                                     <p>Metaprolane's Metaverse-powered simulations are redefining Fire & Safety training within the Metaverse for Industries. Our immersive virtual environments prepare emergency responders for real-world scenarios. These hyper-realistic experiences enhance safety awareness and response effectiveness, ensuring teams are fully prepared for any situation. We are shaping the future of fire and safety training by providing a safe yet realistic space to hone crucial skills in Metaverse for Industries.</p>
-                                  </div>
-                               </div>
-                            </div>
-    
-                            <div class="card border-0 wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
-                               <div class="card-header p-0 border-0" id="heading-245">
-                                  <button class="btn btn-link accordion-title border-0 collapsed" data-toggle="collapse"
-                                     data-target="#collapse-245" aria-expanded="false" aria-controls="#collapse-245"><i
-                                        class="fas fa-minus text-center d-flex align-items-center justify-content-center h-100"></i>
-                                        How does the Metaverse redefine efficiency in Logistics?
-                                  </button>
-                               </div>
-                               <div id="collapse-245" class="collapse " aria-labelledby="heading-245"
-                                  data-parent="#accordion">
-                                  <div class="card-body accordion-body">
-                                     <p>In Logistics, we harness the Metaverse's analytical power to optimize supply chains, create virtual warehousing simulations, and streamline distribution operations. This innovative approach doesn't just reshape logistics—it redefines how we perceive and attain efficiency and productivity in the industrial world. The Metaverse enables logistics operations to be data-driven, agile, and responsive, leading to enhanced efficiency and cost savings in the supply chain.</p>
-                                  </div>
-                               </div>
-                            </div>
-                             
-    
-                         </div>
+                        </div>
                       </div>
-                   </div>
-                </div>
-             </section>
+                    </section>
+                  </div>
+                  
+                  <style>
+                    .tab-content {
+                      display: none;
+                    }
+                    .tab-content.active {
+                      display: block;
+                    }
+                    .nav-link.active {
+                      background-color: #007bff;
+                      color: white;
+                      border-color: #007bff;
+                    }
+                    .nav-link {
+                      color: #000;
+                      background-color: #fff;
+                    }
+                  </style>
 
+                <!-- <div class="home-container inner-container game-dev-page">
+                    <section
+                        class="why-metaprolane whym2 product-why-sec casino-ms-Six-section"
+                    >
+                        <div class="container py-0">
+                            <div id="tabs" class="game-dev-tab">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div id="tabs-1">
+                                            <img
+                                                src="assets/images/industries/m-confined-spaces2.png"
+                                                alt="Features Image"
+                                                class="w-100"
+                                            />
+                                            <p class="ms42">
+                                                {
+                                                    data.metaverseForIndustrie.data
+                                                        .attributes
+                                                        .industry_safety_confined_content
+                                                }
+                                            </p>
+                                        </div>
+                                        <div id="tabs-2">
+                                            <img
+                                                src="assets/images/industries/s-metaverse-industry.png"
+                                                alt="Features Image"
+                                                class="w-100"
+                                            />
+                                            <p class="ms43">
+                                                {
+                                                    data.metaverseForIndustrie.data
+                                                        .attributes
+                                                        .industry_fire_safety_content
+                                                }
+                                            </p>
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div
+                                            class="why-metaprolane-l slide-right"
+                                        >
+                                            <h3
+                                                class="text-white text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700"
+                                            >
+                                                <b class="text-blue">{
+                                                    data.metaverseForIndustrie.data
+                                                        .attributes
+                                                        .industry_advance_risk_mang_title
+                                                }</b
+                                                ><br />{
+                                                    data.metaverseForIndustrie.data
+                                                        .attributes
+                                                        .industry_advance_risk_mang_title1
+                                                }
+                                            </h3>
+                                            <div class="mi-advance">
+                                                {
+                                                    data.metaverseForIndustrie.data
+                                                        .attributes
+                                                        .industry_advance_risk_mang_content
+                                                }
+                                            </div>
+                                            <div
+                                                class="text-last-left my-3 mt-4 pt-2"
+                                            >
+                                                <ul>
+                                                    <li>
+                                                        <a href="#tabs-2"
+                                                            >{
+                                                                data.metaverseForIndustrie.data
+                                                                    .attributes
+                                                                    .industry_fire_safety_title
+                                                            }</a
+                                                        >
+                                                    </li>
+                                                    <li>
+                                                        <a href="#tabs-1"
+                                                            >{
+                                                                data.metaverseForIndustrie.data
+                                                                    .attributes
+                                                                    .industry_safety_confined_title
+                                                            }</a
+                                                        >
+                                                    </li>
+                                                </ul>
+                                                <div id="tabs-1"></div>
+                                                <div id="tabs-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div> -->
+
+                <!-- Your Partner in Crafting Industry-Centric Metaverse Solutions -->
+                <section
+                    class="meta-development-services product-our-services casino-ms-five-section"
+                >
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <div class="under-banner">
+                                        <div
+                                            class="under-banner-carousel-section"
+                                        >
+                                            <h4
+                                                class="text-black h3-under-bar2 fw-700 slide-left"
+                                            >
+                                            {
+                                                data.metaverseForIndustrie.data
+                                                    .attributes
+                                                    .industry_crafting_centric_title
+                                            }
+                                            </h4>
+                                            <p>
+                                                {
+                                                    data.metaverseForIndustrie.data
+                                                        .attributes
+                                                        .industry_crafting_centric_content
+                                                }
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- metaverse development tools -->
+                <MetaverseDevelopmentTools />
+
+                <section
+                    class="why-metaprolane whym2 product-why-sec apply-now casino-ms-FAQ-section"
+                >
+                    <div class="container py-0">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="why-metaprolane-l mt-2 slide-left">
+                                    <h5
+                                        class="text-white h3-under-bar2 mb-5 fw-600"
+                                    >
+                                    {
+                                        data.metaverseForIndustrie.data
+                                            .attributes
+                                            .industry_faq_title
+                                    }
+                                    </h5>
+                                </div>
+                                {
+                                    data.metaverseForIndustrie.data.attributes.industry_faq_lists.data.map(
+                                      (item: any) => (
+                                        <div class="FAQ-card faq">
+                                          <div class="FAQ-qstn-section question1">
+                                            <div class="FAQ-question">
+                                              {item.attributes.question}
+                                            </div>
+                                            <img
+                                              class="dropdown-arrow"
+                                              src="assets/images/retail-showroom/Keyboard arrow down.webp"
+                                            />
+                                          </div>
+                                          <div class="answer answer1">{item.attributes.answer}</div>
+                                        </div>
+                                      ),
+                                    )
+                                  }
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     </html>
