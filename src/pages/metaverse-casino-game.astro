@@ -69,6 +69,14 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
             }
           }
         }
+        casino_game_tools_title
+        casino_game_tools_lists{
+          data{
+            attributes{
+              image
+            }
+          }
+        }
       }
     }
   }
@@ -648,36 +656,26 @@ const { data } = await response.json();
           <section class="under-banner our-technologies gradient-ms-box casino-ms-Nine-section">
             <div class="container">
               <div class="under-banner-carousel-section">
-                <h5 class="text-center text-white h3-under-bar2">Metaverse Development Tools That We Use</h5>
+                <h5 class="text-center text-white h3-under-bar2">
+                  {
+                    data.metaverseCasinoGame.data.attributes
+                      .casino_game_tools_title
+                  }
+                </h5>
                 <div class="row mt-4">
-                  <div class="col-lg-12">
+                  <div class="col-lg-12 slide-left">
                     <div class="owl-service-item owl-carousel d-flex justify-content-between">
-                      <div class="item">
+                      {
+                        data.metaverseCasinoGame.data.attributes.casino_game_tools_lists.data.map(
+                            (each: any, index: number) => {
+                                return (
+                      <div class="item" style="width:8rem">
                         <div class="icon">
-                          <img src="https://metaprolane.stsdev.site/assets/images/ourtech1.webp" alt="Ourtech1">
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="icon">
-                          <img src="https://metaprolane.stsdev.site/assets/images/ourtech2.webp" alt="Ourtech2">
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="icon">
-                          <img src="https://metaprolane.stsdev.site/assets/images/ourtech3.webp" alt="Ourtech3">
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="icon">
-                          <img src="https://metaprolane.stsdev.site/assets/images/ourtech4.webp" alt="Ourtech4">
-                        </div>
-                      </div>
-                      <div class="item">
-                        <div class="icon">
-                          <img src="https://metaprolane.stsdev.site/assets/images/ourtech5.webp" alt="Ourtech5">
+                          <img src={each.attributes.image} alt="Ourtech1">
                         </div>
                       </div>
                     </div>
+                    )})}
                   </div>
                 </div>
               </div>
