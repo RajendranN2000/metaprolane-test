@@ -4013,7 +4013,7 @@ p.banner-p {
 
 .box-img {
     max-height: 250px;
-    height: 250px;
+    /* height: 250px; */
     margin: 0 0 20px;
     display: block
 }
@@ -5466,9 +5466,9 @@ section.meta-development-services.product-our-services.casino-ms-three-section .
     height: 60px
 }
 
-section.our-courses.product-our-courses.casino-ms-four-section {
+section.our-courses.product-our-courses.casino-ms-four-section1 {
     padding: 50px 0;
-    background: url(../images/casino-game/game-collections-bg.png) center top/cover no-repeat fixed #262b33;
+    background: url(../images/casino-game/game-collections-bg.png) center top/cover no-repeat fixed #262b33 !important;
     position: relative;
     min-height: max-content;
     align-items: center;

@@ -4046,7 +4046,7 @@ section.under-banner.our-technologies.product-tech-sec.aboutmeta.about-main.abt-
 
 .box-img {
     max-height: 250px;
-    height: 250px;
+    /* height: 250px; */
     margin: 0 0 20px;
     display: block
 }
@@ -5735,7 +5735,7 @@ section.meta-development-services.product-our-services.casino-ms-three-section .
     height: 60px;
 }
 
-section.our-courses.product-our-courses.casino-ms-four-section {
+section.our-courses.product-our-courses.casino-ms-four-section1 {
     padding: 50px 0;
     background: url(../images/casino-game/game-collections-bg.png) center top/cover no-repeat fixed #262b33 !important;
     position: relative;
@@ -5790,6 +5790,15 @@ section.our-courses.product-our-courses.msd-box1.feature-val-p.casino-ms-four-se
 
 section.our-courses.product-our-courses.msd-box1.feature-val-p.casino-ms-four-section .owl-dots .active {
     border-radius: 0;
+}
+
+section.meta-development-services.product-our-services.casino-ms-five-section1 {
+    padding: 50px 0;
+    background: url(../images/casino-game/BG2.png) center bottom/cover no-repeat #262b33 !important;
+    position: relative;
+    min-height: max-content;
+    align-items: center;
+    display: block
 }
 
 section.meta-development-services.product-our-services.casino-ms-five-section {
