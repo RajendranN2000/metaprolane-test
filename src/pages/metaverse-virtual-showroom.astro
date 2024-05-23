@@ -96,7 +96,9 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
 const { data } = await response.json();
 ---
 
-<Layout title="metaverse-virtual-showroom" description="" keywords="">
+<Layout title="metaverse-virtual-showroom" 
+description="Transform retail with our Metaverse Virtual Showrooms. Immersive experiences, bespoke environments. Shape the future of shopping now" 
+keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showroom development, Metaverse virtual showroom development ">
     <html lang="en">
         <div class="home-container industries-page">
             <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
@@ -196,12 +198,14 @@ const { data } = await response.json();
                     </div>
                     <div class="readmore-description">Read more</div>
                     <div class="talk-btn top-talk-btn">
+                        <a href="/#demo">
                         <div class="talk-btn-text" style="color:white">
                             {
                                 data.metaversVirtualShowroom.data.attributes
                                     .section_one_button_text
                             }
                         </div>
+                    </a>
                     </div>
                 </div>
             </div>
@@ -220,12 +224,14 @@ const { data } = await response.json();
                         }
                     </div>
                     <div class="talk-btn">
+                        <a href="/#demo">
                         <div class="talk-btn-text">
                             {
                                 data.metaversVirtualShowroom.data.attributes
                                     .section_two_button_text
                             }
                         </div>
+                    </a>
                     </div>
                 </div>
                 <div class="fashion-right">
@@ -316,12 +322,14 @@ const { data } = await response.json();
                         }
                     </div>
                     <div class="talk-btn">
+                        <a href="/#demo">
                         <div class="talk-btn-text">
                             {
                                 data.metaversVirtualShowroom.data.attributes
                                     .section_five_button_text
                             }
                         </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -585,12 +593,14 @@ const { data } = await response.json();
                             }
                         </div>
                         <div class="talk-btn">
+                            <a href="/#demo">
                             <div class="talk-btn-text">
                                 {
                                     data.metaversVirtualShowroom.data.attributes
                                         .section_seven_button_text
                                 }
                             </div>
+                        </a>
                         </div>
                     </div>
                     <div class="scroll-container">

@@ -48,7 +48,11 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
 const { data } = await response.json();
 ---
 
-<Layout title="metaverse-virtual-office" description="" keywords="">
+<Layout
+  title="metaverse-jewelry-shopping"
+  description="Elevate your jewelry shopping with a Metaverse platform. Experience immersive browsing and interactive try-ons. Explore the future today!"
+  keywords="Metaverse jewelry , Metaverse Jewelry shopping , Metaverse jewelry shopping development, Virtual jewelry store"
+>
   <html lang="en">
     <div class="home-container industries-page meta-product">
       <link rel="stylesheet" href="/styles/css/jewellery.css" />
@@ -68,25 +72,29 @@ const { data } = await response.json();
             answer.slideToggle();
           });
         });
-      
-        document.addEventListener('DOMContentLoaded', function () {
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.carousel-item');
-    const totalSlides = slides.length;
 
-    document.querySelector('.carousel-control-next').addEventListener('click', () => {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex + 1) % totalSlides;
-      slides[currentIndex].classList.add('active');
-    });
+        document.addEventListener("DOMContentLoaded", function () {
+          let currentIndex = 0;
+          const slides = document.querySelectorAll(".carousel-item");
+          const totalSlides = slides.length;
 
-    document.querySelector('.carousel-control-prev').addEventListener('click', () => {
-      slides[currentIndex].classList.remove('active');
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      slides[currentIndex].classList.add('active');
-    });
-  });
-       
+          document
+            .querySelector(".carousel-control-next")
+            .addEventListener("click", () => {
+              slides[currentIndex].classList.remove("active");
+              currentIndex = (currentIndex + 1) % totalSlides;
+              slides[currentIndex].classList.add("active");
+            });
+
+          document
+            .querySelector(".carousel-control-prev")
+            .addEventListener("click", () => {
+              slides[currentIndex].classList.remove("active");
+              currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+              slides[currentIndex].classList.add("active");
+            });
+        });
+
         $(document).ready(function () {
           $(".talk-btn").click(function () {
             $("html, body").animate(
@@ -115,9 +123,11 @@ const { data } = await response.json();
                   .jewelry_shopping_content
               }
             </div>
-            <div class="section1-button request-demo">
-              Request for a Free Demo
-            </div>
+            <a href="/#demo">
+              <div class="section1-button request-demo">
+                Request for a Free Demo
+              </div>
+            </a>
           </div>
         </div>
 
@@ -126,206 +136,240 @@ const { data } = await response.json();
             class="section2-img"
             src="assets/images/jewellery/ImageSequence_003_0100@4x.webp"
           />
-        <div class="section2-right">
-          <div class="section2-title">
-            {data.metaverseJewelryShopping.data.attributes.own_jewelry_shop_title}
-          </div>
-          <div class="section2-content">{data.metaverseJewelryShopping.data.attributes.own_jewelry_shop_content}
-          </div>
-        </div>
-      </div>
-
-      <!-- Benefits of Metaverse Jewelry -->
-      <section class="container-fluid section3 bg-white">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="mt-4 text-center text-white heading">
-                {
-              data.metaverseJewelryShopping.data.attributes
-                .benefits_jewelry_dev_title
-            }
-              </h2>
+          <div class="section2-right">
+            <div class="section2-title">
+              {
+                data.metaverseJewelryShopping.data.attributes
+                  .own_jewelry_shop_title
+              }
+            </div>
+            <div class="section2-content">
+              {
+                data.metaverseJewelryShopping.data.attributes
+                  .own_jewelry_shop_content
+              }
             </div>
           </div>
-          <div class="row">
-            {
-              data.metaverseJewelryShopping.data.attributes.jewelry_benefits_dev_lists.data.map(
-                (each: any, index: number) => {
-                  return (
-            <div class="col-12 col-md-6 col-lg-4 mt-5">
-              <div class="box-content">
-                <div class="outer-section">
-                  <div class="section3-img">
-                    <img
-                      class="img-size"
-                      alt="Customization"
-                      src={each.attributes.image}
-                    />
-                  </div>
-                </div>
-                <div class="">
-                  <h6 class="text-center title-text">{each.attributes.title}</h6>
-                  <p class="text-white">
-                    {each.attributes.content}
-                  </p>
-                </div>
+        </div>
+
+        <!-- Benefits of Metaverse Jewelry -->
+        <section class="container-fluid section3 bg-white">
+          <div class="container">
+            <div class="row">
+              <div class="col-12">
+                <h2 class="mt-4 text-center text-white heading">
+                  {
+                    data.metaverseJewelryShopping.data.attributes
+                      .benefits_jewelry_dev_title
+                  }
+                </h2>
               </div>
             </div>
-          )})}
-          </div>
-        </div>
-      </section>
-
-      <div class="section4">
-        <img
-          class="section4-img"
-          src="assets/images/jewellery/puchachingImage.webp"
-        />
-      </div>
-      <div class="section5-outer">
-        <div class="section5">
-          <div id="carouselExample" class="carousel">
-                        <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                </a>
-            <div class="carousel-inner">
+            <div class="row">
               {
-                data.metaverseJewelryShopping.data.attributes.jewelry_virtual_store_lists.data.map(
+                data.metaverseJewelryShopping.data.attributes.jewelry_benefits_dev_lists.data.map(
                   (each: any, index: number) => {
                     return (
-                    <div class={`carousel-item ${index === 0 ? 'active' : ''}`}>
-        <div class="section5-carousel">
-          <div class="section5-frame">
-            <img class="section5-left"  src={each.attributes.image} />
-            <div class="section5-right">
-              <div class="section5-title">{each.attributes.title}</div>
-              <div class="section5-content">{each.attributes.content}</div>
-            </div>
-          </div>
-        </div>
-      </div>
-              // <div class="carousel-item">
-              //   <div class="section5-carousel">
-              //     <div class="section5-frame">
-              //       <img
-              //         class="section5-left"
-              //         src={each.attributes.image}
-              //       />
-              //       <div class="section5-right">
-              //         <div class="section5-title">{each.attributes.title}</div>
-              //         <div class="section5-content">
-              //           {each.attributes.content}
-              //         </div>
-              //       </div>
-              //     </div>
-              //   </div>
-              // </div>
-           )})}
-
-            </div>
-
-            <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="section6">
-        <div class="section6-frame">
-          <div class="section6-left">
-            <div class="section6-img-section">
-              <div class="">
-                <img
-                  class="section6-image1"
-                  src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp"
-                />
-              </div>
-              <div class="">
-                <img
-                  class="section6-image2"
-                  src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp"
-                />
-              </div>
-            </div>
-            <div class="section6-img2-section">
-              <div class="">
-                <img
-                  class="section6-image3"
-                  src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp"
-                />
-              </div>
-              <div class="">
-                <img
-                  class="section6-image4"
-                  src="assets/images/jewellery/2151034059@4x.webp"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="section6-right">
-            <div class="section6-title">
-              {
-                data.metaverseJewelryShopping.data.attributes
-                  .jewelry_virtual_store_title
-              }
-            </div>
-            <div class="section6-content">
-              {
-                data.metaverseJewelryShopping.data.attributes
-                  .jewelry_virtual_store_content
+                      <div class="col-12 col-md-6 col-lg-4 mt-5">
+                        <div class="box-content">
+                          <div class="outer-section">
+                            <div class="section3-img">
+                              <img
+                                class="img-size"
+                                alt="Customization"
+                                src={each.attributes.image}
+                              />
+                            </div>
+                          </div>
+                          <div class="">
+                            <h6 class="text-center title-text">
+                              {each.attributes.title}
+                            </h6>
+                            <p class="text-white">{each.attributes.content}</p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  },
+                )
               }
             </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="section7-outer-section">
-        <div class="section7-banner">
-          <div class="section7">
-            <div class="section7-title">
-              {
-                data.metaverseJewelryShopping.data.attributes
-                  .jewelry_business_title
-              }
+        <div class="section4">
+          <img
+            class="section4-img"
+            src="assets/images/jewellery/puchachingImage.webp"
+          />
+        </div>
+        <div class="section5-outer">
+          <div class="section5">
+            <div id="carouselExample" class="carousel">
+              <a
+                class="carousel-control-prev"
+                href="#carouselExample"
+                role="button"
+                data-slide="prev"
+              >
+                <span class="carousel-control-prev-icon" aria-hidden="true"
+                ></span>
+              </a>
+              <div class="carousel-inner">
+                {
+                  data.metaverseJewelryShopping.data.attributes.jewelry_virtual_store_lists.data.map(
+                    (each: any, index: number) => {
+                      return (
+                        <div
+                          class={`carousel-item ${index === 0 ? "active" : ""}`}
+                        >
+                          <div class="section5-carousel">
+                            <div class="section5-frame">
+                              <img
+                                class="section5-left"
+                                src={each.attributes.image}
+                              />
+                              <div class="section5-right">
+                                <div class="section5-title">
+                                  {each.attributes.title}
+                                </div>
+                                <div class="section5-content">
+                                  {each.attributes.content}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        // <div class="carousel-item">
+                        //   <div class="section5-carousel">
+                        //     <div class="section5-frame">
+                        //       <img
+                        //         class="section5-left"
+                        //         src={each.attributes.image}
+                        //       />
+                        //       <div class="section5-right">
+                        //         <div class="section5-title">{each.attributes.title}</div>
+                        //         <div class="section5-content">
+                        //           {each.attributes.content}
+                        //         </div>
+                        //       </div>
+                        //     </div>
+                        //   </div>
+                        // </div>
+                      );
+                    },
+                  )
+                }
+              </div>
+
+              <a
+                class="carousel-control-next"
+                href="#carouselExample"
+                role="button"
+                data-slide="next"
+              >
+                <span class="carousel-control-next-icon" aria-hidden="true"
+                ></span>
+              </a>
             </div>
-            <div class="section7-button request-demo">
-              You can be nowhere but here!
+          </div>
+        </div>
+
+        <div class="section6">
+          <div class="section6-frame">
+            <div class="section6-left">
+              <div class="section6-img-section">
+                <div class="">
+                  <img
+                    class="section6-image1"
+                    src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp"
+                  />
+                </div>
+                <div class="">
+                  <img
+                    class="section6-image2"
+                    src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp"
+                  />
+                </div>
+              </div>
+              <div class="section6-img2-section">
+                <div class="">
+                  <img
+                    class="section6-image3"
+                    src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp"
+                  />
+                </div>
+                <div class="">
+                  <img
+                    class="section6-image4"
+                    src="assets/images/jewellery/2151034059@4x.webp"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="section6-right">
+              <div class="section6-title">
+                {
+                  data.metaverseJewelryShopping.data.attributes
+                    .jewelry_virtual_store_title
+                }
+              </div>
+              <div class="section6-content">
+                {
+                  data.metaverseJewelryShopping.data.attributes
+                    .jewelry_virtual_store_content
+                }
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section7-outer-section">
+          <div class="section7-banner">
+            <div class="section7">
+              <div class="section7-title">
+                {
+                  data.metaverseJewelryShopping.data.attributes
+                    .jewelry_business_title
+                }
+              </div>
+              <div class="section7-button request-demo">
+                You can be nowhere but here!
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <style>
+        .carousel {
+          position: relative;
+        }
+        .carousel-inner {
+          display: flex;
+          overflow: hidden;
+        }
+        .carousel-item {
+          min-width: 100%;
+          transition: transform 0.5s ease-in-out;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: none;
+          border: none;
+          font-size: 2rem;
+          cursor: pointer;
+        }
+        .carousel-control-prev {
+          left: 0;
+        }
+        .carousel-control-next {
+          right: 0;
+        }
+      </style>
     </div>
-
-    <style>
-      .carousel {
-        position: relative;
-      }
-      .carousel-inner {
-        display: flex;
-        overflow: hidden;
-      }
-      .carousel-item {
-        min-width: 100%;
-        transition: transform 0.5s ease-in-out;
-      }
-      .carousel-control-prev, .carousel-control-next {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        font-size: 2rem;
-        cursor: pointer;
-      }
-      .carousel-control-prev {
-        left: 0;
-      }
-      .carousel-control-next {
-        right: 0;
-      }
-    </style>
-
   </html>
 </Layout>
