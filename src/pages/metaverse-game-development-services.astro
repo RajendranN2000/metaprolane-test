@@ -110,6 +110,24 @@ keywords="Metaverse Game Development services, Metaverse Game Development Compan
                     });
                 });
 
+                function toggleAnswer(event) {
+                    const question = event.currentTarget;
+                    const answer = question.nextElementSibling;
+
+                    $(answer).slideToggle();
+                    $(question).toggleClass("active");
+                    $(".faq-question")
+                        .not(question)
+                        .removeClass("active")
+                        .next(".faq-answer")
+                        .slideUp();
+
+                    // Toggle the icon between plus and minus
+                    const icon = question.querySelector(".faq-toggle-icon");
+                    icon.textContent = icon.textContent === "+" ? "-" : "+";
+                }
+               
+
                 $(document).ready(function () {
                     $(".talk-btn").click(function () {
                         $("html, body").animate(
@@ -635,7 +653,8 @@ keywords="Metaverse Game Development services, Metaverse Game Development Compan
           </div>
         </div>
       </section>
-
+    </div>
+  </div>
        <!-- metaverse development tools -->
        <MetaverseDevelopmentTools />
 
@@ -652,29 +671,25 @@ keywords="Metaverse Game Development services, Metaverse Game Development Compan
                 }
                 </h5>
               </div>
-              {
-                data.metaverseGameDevelopmentService.data.attributes.game_faq_lists.data.map(
-                    (item: any, index: number) => {
-                        return (
-                    <div class="FAQ-card faq">
-                      <div class="FAQ-qstn-section question1">
-                        <div class="FAQ-question">
-                          {item.attributes.question}
-                        </div>
-                        <img
-                          class="dropdown-arrow"
-                          src="assets/images/retail-showroom/Keyboard arrow down.webp"
-                        />
-                      </div>
-                      <div class="answer answer1">{item.attributes.answer}</div>
+              {data.metaverseGameDevelopmentService.data.attributes.game_faq_lists.data.map(
+                (item: any, index: number) => (
+                  <div class="faq-card">
+                    <div class="faq-question-casino" onclick="toggleAnswer(event)">
+                      {item.attributes.question}
+                      <span class="faq-toggle-icon-casino">+</span>
                     </div>
-                 )})}
+                    <div class="faq-answer">
+                      {item.attributes.answer}
+                    </div>
+                  </div>
+                ),
+              )}
             </div>
           </div>
         </div>
       </section>
-</div>
-    </div>
+
+
             </div>
             </html>
             </Layout>

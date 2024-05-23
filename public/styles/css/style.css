@@ -946,7 +946,7 @@ section.heading-page h6 {
     padding: 50px 0 25px;
     position: unset;
     width: 100%;
-    background: #1f1e2e
+    background: #fff
 }
 
 .under-banner .item {
@@ -3849,7 +3849,7 @@ section.our-courses.product-our-courses .item .icon {
 }
 
 .expert-txt2 {
-    /* background: #333; */
+    background: transparent !important;
     color: #fff;
     text-align: center;
     padding: 0;

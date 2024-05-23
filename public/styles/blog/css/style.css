@@ -928,7 +928,7 @@ section.heading-page h6 {
     }
 }
 
-.under-banner {
+.under-banner-index {
     margin: 0;
     padding: 50px 0 25px;
     position: unset;
@@ -3878,14 +3878,15 @@ section.our-courses.product-our-courses .item .icon {
     border: 0
 }
 
-.expert-txt2 {
-    /* background: #333; */
+.expert-txt2-office {
+    background: #333 !important;
     color: #fff;
     text-align: center;
     padding: 0;
-    min-height: 350px;
+    /* min-height: 350px; */
     border-radius: 20px;
-    margin: 0
+    margin: 0;
+    height: 500px;
 }
 
 .expert-txt2 h3 {
@@ -9190,3 +9191,167 @@ b.rm1 {
 .owl-image-content {
     width:fit-content;
 }
+
+.faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .faq-card {
+    border: 1px solid #5c6b7a;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .faq-question {
+    background-color: #566379;
+    color: white;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-answer {
+    display: none;
+    padding: 20px;
+    height: auto;
+    background-color: #2c2f38;
+    /* border-top: 1px solid #5c6b7a; */
+    color: white;
+    border-top: 0;
+    text-align: left;
+  }
+  
+  .faq-toggle-icon {
+    font-size: 20px;
+  }
+  
+  .faq-question.active .faq-toggle-icon {
+    transform: rotate(183deg);
+  }
+  
+  /* .faq-question-casino{
+       background-color: #0b0b0b;
+       color: white;
+       padding: 8px;
+       cursor: pointer;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       border: 1px solid #0b0b0b !important; 
+  }
+
+  .faq-toggle-icon-casino{
+    position: absolute;
+    width: 40px;
+    height: 100%;
+    right: 0; 
+    top: 0;
+    color: #fff;
+    background: #566379;
+    text-align: center;
+    border-right: 1px solid transparent;
+  } */
+
+  .faq-question-casino {
+    background-color: #0b0b0b;
+    color: white;
+    padding: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px solid #566379; */
+    margin-left: 13px;
+}
+
+.faq-toggle-icon-casino {
+    width: 40px;
+    height: 100%;
+    color: #fff;
+    background: #566379;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 1px solid #566379; /* Adjusting the border to match the parent */
+}
+
+
+/* .faq-section {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .faq-card {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .faq-question {
+    background-color: #566379;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #566379 !important;
+  }
+  
+  .faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #2a2a2a;
+    border-top: 1px solid #ccc;
+    color: #fff;
+  }
+  
+  .faq-toggle-icon {
+    font-size: 20px;
+  }
+  
+  .faq-question.active .faq-toggle-icon {
+    transform: rotate(45deg);
+  } */
+
+
+  
+  /* .faq-card-game {
+    border: 1px solid #5c6b7a;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+  
+  .faq-question-game {
+    background-color: #5c6b7a;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .faq-answer-game {
+    display: none;
+    padding: 15px;
+    background-color: #2c2f38;
+    border-top: 1px solid #5c6b7a;
+  }
+  
+  .faq-toggle-icon-game {
+    font-size: 20px;
+  }
+  
+  .faq-question-game.active .faq-toggle-icon-game {
+    transform: rotate(183deg);
+  }
+  
+   */

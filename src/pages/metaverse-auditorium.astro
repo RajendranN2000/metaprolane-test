@@ -111,6 +111,22 @@ keywords="Metaverse Auditorium Development, Metaverse Auditorium Development com
                         );
                     });
                 });
+                function toggleAnswer(event) {
+                    const question = event.currentTarget;
+                    const answer = question.nextElementSibling;
+
+                    $(answer).slideToggle();
+                    $(question).toggleClass("active");
+                    $(".faq-question")
+                        .not(question)
+                        .removeClass("active")
+                        .next(".faq-answer")
+                        .slideUp();
+
+                    // Toggle the icon between plus and minus
+                    const icon = question.querySelector(".faq-toggle-icon");
+                    icon.textContent = icon.textContent === "+" ? "-" : "+";
+                }
                 $(document).ready(() => {
                     $(".wallet-content").each(function () {
                         var $content = $(this);
@@ -248,13 +264,13 @@ keywords="Metaverse Auditorium Development, Metaverse Auditorium Development com
                                                 return (
                                   <div class="item" style="width:23rem">
                                     <div class="icon">
-                                      <div class="expert-txt2">
+                                      <div class="expert-txt2-office">
                                         <div class="box-img">
                                           <img src={each.attributes.image} alt="Large Capacity" />
                                         </div>
                                         <div class="box-img-inn">
                                           <h5 class="fma">{each.attributes.title}</h5>
-                                          <p class="text-last-center">
+                                          <p class="text-last-center text-white">
                                             {each.attributes.content}
                                           </p>
                                         </div>
@@ -521,6 +537,19 @@ keywords="Metaverse Auditorium Development, Metaverse Auditorium Development com
                                 </h5>
                               </div>
                               {data.metaverseAuditorium.data.attributes.metaverse_auditorium_faq_lists.data.map(
+                                (item: any, index: number) => (
+                                  <div class="faq-card">
+                                    <div class="faq-question" onclick="toggleAnswer(event)">
+                                      {item.attributes.question}
+                                      <span class="faq-toggle-icon">+</span>
+                                    </div>
+                                    <div class="faq-answer">
+                                      {item.attributes.answer}
+                                    </div>
+                                  </div>
+                                ),
+                              )}
+                              <!-- {data.metaverseAuditorium.data.attributes.metaverse_auditorium_faq_lists.data.map(
                                     (item: any) => (
                                         <div class="FAQ-card faq">
                                             <div class="FAQ-qstn-section question1">
@@ -538,7 +567,7 @@ keywords="Metaverse Auditorium Development, Metaverse Auditorium Development com
                                         </div>
                                     ),
                                 )
-                            }            
+                            }             -->
                             </div>
                           </div>
                         </div>

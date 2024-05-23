@@ -97,6 +97,22 @@ keywords="Metaverse Virtual City Development, Metaverse Virtual City Development
             answer.slideToggle();
           });
         });
+        function toggleAnswer(event) {
+                    const question = event.currentTarget;
+                    const answer = question.nextElementSibling;
+
+                    $(answer).slideToggle();
+                    $(question).toggleClass("active");
+                    $(".faq-question")
+                        .not(question)
+                        .removeClass("active")
+                        .next(".faq-answer")
+                        .slideUp();
+
+                    // Toggle the icon between plus and minus
+                    const icon = question.querySelector(".faq-toggle-icon");
+                    icon.textContent = icon.textContent === "+" ? "-" : "+";
+                }
         $(document).ready(() => {
           $(".readmore-description").click(function () {
             var $cardTextContent = $(this).prev(".card1-text-content");
@@ -571,8 +587,21 @@ keywords="Metaverse Virtual City Development, Metaverse Virtual City Development
                   }
                 </h5>
               </div>
+              {data.metaverseVirtualCity.data.attributes.metaverse_virtual_city_faq_lists.data.map(
+                (item: any, index: number) => (
+                  <div class="faq-card">
+                    <div class="faq-question" onclick="toggleAnswer(event)">
+                      {item.attributes.question}
+                      <span class="faq-toggle-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                      {item.attributes.answer}
+                    </div>
+                  </div>
+                ),
+              )}
 
-              {
+              <!-- {
                 data.metaverseVirtualCity.data.attributes.metaverse_virtual_city_faq_lists.data.map(
                   (item: any) => (
                     <div class="FAQ-card faq">
@@ -589,7 +618,7 @@ keywords="Metaverse Virtual City Development, Metaverse Virtual City Development
                     </div>
                   ),
                 )
-              }
+              } -->
             </div>
           </div>
         </div>

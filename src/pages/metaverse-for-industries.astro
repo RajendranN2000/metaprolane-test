@@ -99,6 +99,23 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                     });
                 });
 
+                function toggleAnswer(event) {
+                    const question = event.currentTarget;
+                    const answer = question.nextElementSibling;
+
+                    $(answer).slideToggle();
+                    $(question).toggleClass("active");
+                    $(".faq-question")
+                        .not(question)
+                        .removeClass("active")
+                        .next(".faq-answer")
+                        .slideUp();
+
+                    // Toggle the icon between plus and minus
+                    const icon = question.querySelector(".faq-toggle-icon");
+                    icon.textContent = icon.textContent === "+" ? "-" : "+";
+                }
+
                 $(document).ready(function () {
                     $(".talk-btn").click(function () {
                         $("html, body").animate(
@@ -153,7 +170,7 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                     </div>
                 </section>
 
-                <section class="under-banner ub">
+                <section class="under-banner-index ub">
                     <div class="container">
                         <div class="under-banner-values-section slide-left">
                             <div class="row">
@@ -715,7 +732,20 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                                     }
                                     </h5>
                                 </div>
-                                {
+                                {data.metaverseForIndustrie.data.attributes.industry_faq_lists.data.map(
+                                    (item: any, index: number) => (
+                                      <div class="faq-card">
+                                        <div class="faq-question" onclick="toggleAnswer(event)">
+                                          {item.attributes.question}
+                                          <span class="faq-toggle-icon">+</span>
+                                        </div>
+                                        <div class="faq-answer">
+                                          {item.attributes.answer}
+                                        </div>
+                                      </div>
+                                    ),
+                                  )}
+                                <!-- {
                                     data.metaverseForIndustrie.data.attributes.industry_faq_lists.data.map(
                                       (item: any) => (
                                         <div class="FAQ-card faq">
@@ -732,7 +762,7 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                                         </div>
                                       ),
                                     )
-                                  }
+                                  } -->
                             </div>
                         </div>
                     </div>

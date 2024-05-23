@@ -123,6 +123,22 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
             );
           });
         });
+        function toggleAnswer(event) {
+                    const question = event.currentTarget;
+                    const answer = question.nextElementSibling;
+
+                    $(answer).slideToggle();
+                    $(question).toggleClass("active");
+                    $(".faq-question")
+                        .not(question)
+                        .removeClass("active")
+                        .next(".faq-answer")
+                        .slideUp();
+
+                    // Toggle the icon between plus and minus
+                    const icon = question.querySelector(".faq-toggle-icon");
+                    icon.textContent = icon.textContent === "+" ? "-" : "+";
+                }
         $(document).ready(() => {
           $(".wallet-content").each(function () {
             var $content = $(this);
@@ -703,7 +719,20 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                       }
                     </h5>
                   </div>
-                  {
+                  {data.metaverseCasinoGame.data.attributes.casino_game_faq_lists.data.map(
+                    (item: any, index: number) => (
+                      <div class="faq-card">
+                        <div class="faq-question-casino" onclick="toggleAnswer(event)">
+                          {item.attributes.question}
+                          <span class="faq-toggle-icon-casino">+</span>
+                        </div>
+                        <div class="faq-answer">
+                          {item.attributes.answer}
+                        </div>
+                      </div>
+                    ),
+                  )}
+                  <!-- {
                     data.metaverseCasinoGame.data.attributes.casino_game_faq_lists.data.map(
                       (item: any, index: number) => {
                         return (
@@ -724,7 +753,7 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                         );
                       },
                     )
-                  }
+                  } -->
                 </div>
               </div>
             </div>

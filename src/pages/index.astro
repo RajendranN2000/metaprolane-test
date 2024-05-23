@@ -131,12 +131,64 @@ const data = await response.json();
     description={data.data.homePageSection1.data.attributes.meta_description}
     keywords={data.data.homePageSection1.data.attributes.meta_keywords}
 >
+<!-- 
+<html lang="en">
+            <script is:inline>
+                $(document).ready(function () {
+                    $(".question1").click(function () {
+                        console.log("clicked questions");
+                        var answer = $(this).next(".answer");
+                        $(".answer").not(answer).slideUp();
+                        answer.slideToggle();
+                    });
+                });
+                function toggleAnswer(event) {
+                    const question = event.currentTarget;
+                    const answer = question.nextElementSibling;
+
+                    $(answer).slideToggle();
+                    $(question).toggleClass("active");
+                    $(".faq-question")
+                        .not(question)
+                        .removeClass("active")
+                        .next(".faq-answer")
+                        .slideUp();
+
+                    // Toggle the icon between plus and minus
+                    const icon = question.querySelector(".faq-toggle-icon");
+                    icon.textContent = icon.textContent === "+" ? "-" : "+";
+                }
+
+                document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".carousel-item");
+    const totalSlides = slides.length;
+
+    document
+      .querySelector(".carousel-control-next")
+      .addEventListener("click", () => {
+        slides[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % totalSlides;
+        slides[currentIndex].classList.add("active");
+      });
+
+    document
+      .querySelector(".carousel-control-prev")
+      .addEventListener("click", () => {
+        slides[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        slides[currentIndex].classList.add("active");
+      });
+  });
+                // $("#content").hide().show("slide", { direction: "left" }, 1500);
+            </script> -->
+
     <section class="section main-banner" id="top" data-section="section1">
         <video autoplay muted loop id="bg-video">
             <source src="/assets/video/home_banner.mp4" type="video/mp4" />
         </video>
     </section>
-    <section class="under-banner">
+    <section class="under-banner-index">
         <div class="container">
             <div class="under-banner-values-section slide-left">
                 <div class="row">
@@ -983,29 +1035,31 @@ const data = await response.json();
                 </div>
             </section>
 
-        <section class="meta-development-services">
-            <div class="bg-vectors">
-                <img src="assets/images/bg-vector2.webp" alt="BG Vector">
-            </div>
-            {
-                data.data.homePageSection1.data.attributes.metaverse_lists.data.map(
-                    (each: any, index: number) => {
-                        return (
-            <div class="container">
-                <div class="row align-items-center slide-left">
-                    <div class="col-lg-12">
-                        <div class="text-center">
-                            <div class="under-banner ">
-                                <div class="under-banner-carousel-section">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="owl-service-item2 owl-carousel">
-                                                <div class="item">
-                                                    <div class="icon">
-                                                        <h3 class="text-white h3-test-head">{each.attributes.title}</h3>
-                                                        <p class="text-last-center">
-                                                            {each.attributes.content}
-                                                        </p>
+
+            <section class="meta-development-services">
+                <div class="bg-vectors">
+                    <img src="assets/images/bg-vector2.webp" alt="BG Vector">
+                </div>
+                {
+                    data.data.homePageSection1.data.attributes.metaverse_lists.data.map(
+                        (each: any, index: number) => {
+                            return (
+                <div class="container">
+                    <div class="row align-items-center slide-left">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <div class="under-banner ">
+                                    <div class="under-banner-carousel-section">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="owl-service-item2 owl-carousel">
+                                                    <div class="item">
+                                                        <div class="icon">
+                                                            <h3 class="text-white h3-test-head">{each.attributes.title}</h3>
+                                                            <p class="text-last-center">
+                                                                {each.attributes.content}
+                                                            </p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1016,18 +1070,18 @@ const data = await response.json();
                         </div>
                     </div>
                 </div>
-            </div>
-            )})}
-            </div>
-            <div class="bg-vectors">
-                <img src="assets/images/bg-vector1.webp" alt="BG Vector">
-            </div>
-
-        </section>
+                )})}
+                </div>
+                <div class="bg-vectors">
+                    <img src="assets/images/bg-vector1.webp" alt="BG Vector">
+                </div>
+    
+            </section>
+    
 
 
         <!-- our technologies -->
-        <section class="under-banner our-technologies">
+        <section class="under-banner-index our-technologies">
             <div class="container">
                 <div class="section-heading ss-case">
                     <h4
@@ -1052,6 +1106,7 @@ const data = await response.json();
                                                 <div class="item">
                                                     <div class="icon">
                                                         <img
+                                                        style={{width:'8rem'}}
                                                             src={
                                                                 each.attributes
                                                                     .image
@@ -1137,7 +1192,21 @@ const data = await response.json();
                             .metaverse_faq_title}
                         </h3>
                     </div>
-                    <div class="d-flex flex-wrap">
+                    {data.data.homePageSection1.data.attributes.metaverse_faq_lists.data.map(
+                        (item: any, index: number) => (
+                          <div class="faq-card">
+                            <div class="faq-question" onclick="toggleAnswer(event)">
+                              {item.attributes.title}
+                              <span class="faq-toggle-icon">+</span>
+                            </div>
+                            <div class="faq-answer">
+                              {item.attributes.content}
+                            </div>
+                          </div>
+                        ),
+                      )}
+
+                    <!-- <div class="d-flex flex-wrap">
                     {
                         data.data.homePageSection1.data.attributes.metaverse_faq_lists.data.map(
                             (each: any, index: number) => {
@@ -1158,7 +1227,7 @@ const data = await response.json();
                                 </div>
                             </div>     
                     )})}
-                     </div>    
+                     </div>     -->
                     <div class="pt-3">
                         <a class="btn btn-primary" href="#contact">
                             Ask away
@@ -1168,4 +1237,5 @@ const data = await response.json();
             </div>
         </div>
     </section>
+    <!-- </html> -->
 </Layout>

@@ -89,9 +89,11 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
 const { data } = await response.json();
 ---
 
-<Layout title="metaverse-virtual-office" 
-description="Metaverse Virtual Office Development Company, Metaprolane offers end-to-end Metaverse Virtual Office Development Services at an affordable cost." 
-keywords="metaverse virtual office development, metaverse virtual office, metaverse virtual office development company, metaverse virtual office development services, virtual office metaverse, metaverse workplace, Create vr office, Metaverse Virtual Working Space Solution">
+<Layout
+    title="metaverse-virtual-office"
+    description="Metaverse Virtual Office Development Company, Metaprolane offers end-to-end Metaverse Virtual Office Development Services at an affordable cost."
+    keywords="metaverse virtual office development, metaverse virtual office, metaverse virtual office development company, metaverse virtual office development services, virtual office metaverse, metaverse workplace, Create vr office, Metaverse Virtual Working Space Solution"
+>
     <html lang="en">
         <div class="home-container industries-page meta-product">
             <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
@@ -104,6 +106,7 @@ keywords="metaverse virtual office development, metaverse virtual office, metave
                 rel="stylesheet"
             />
             <link rel="stylesheet" href="/styles/css/style.css" />
+            <!-- <link rel="stylesheet" href="/styles/blog/css/owl.css" /> -->
 
             <script is:inline>
                 $(document).ready(function () {
@@ -114,6 +117,22 @@ keywords="metaverse virtual office development, metaverse virtual office, metave
                         answer.slideToggle();
                     });
                 });
+                function toggleAnswer(event) {
+                    const question = event.currentTarget;
+                    const answer = question.nextElementSibling;
+
+                    $(answer).slideToggle();
+                    $(question).toggleClass("active");
+                    $(".faq-question")
+                        .not(question)
+                        .removeClass("active")
+                        .next(".faq-answer")
+                        .slideUp();
+
+                    // Toggle the icon between plus and minus
+                    const icon = question.querySelector(".faq-toggle-icon");
+                    icon.textContent = icon.textContent === "+" ? "-" : "+";
+                }
                 $(document).ready(() => {
                     $(".readmore-description").click(function () {
                         var $cardTextContent = $(this).prev(
@@ -253,7 +272,7 @@ keywords="metaverse virtual office development, metaverse virtual office, metave
                     <div class="row">
                         <div class="col-lg-12">
                             <div
-                                class="section-heading slide-left d-flex flex-wrap justify-content-between"
+                                class="section-heading slide-left d-flex flex-wrap"
                             >
                                 <h2
                                     class="text-black text-center pt-4 h3-under-bar2 mt-4"
@@ -273,7 +292,7 @@ keywords="metaverse virtual office development, metaverse virtual office, metave
                                                 >
                                                     <div class="item">
                                                         <div class="icon">
-                                                            <div class="expert-txt2">
+                                                            <div class="expert-txt2-office">
                                                                 <div class="box-img">
                                                                     <img
                                                                         src={
@@ -292,7 +311,7 @@ keywords="metaverse virtual office development, metaverse virtual office, metave
                                                                                 .title
                                                                         }
                                                                     </h6>
-                                                                    <p class="text-last-center">
+                                                                    <p class="text-last-center text-white">
                                                                         {
                                                                             each
                                                                                 .attributes
@@ -407,9 +426,7 @@ keywords="metaverse virtual office development, metaverse virtual office, metave
                                     }
                                 </p>
                                 <div class="text-last-left my-3 mt-4 pt-2">
-                                    <a
-                                        href="/#demo"
-                                    >
+                                    <a href="/#demo">
                                         <button class="btn padd-0">
                                             <div
                                                 class="btn-box border-gradient"
@@ -718,27 +735,43 @@ keywords="metaverse virtual office development, metaverse virtual office, metave
                                     }
                                 </h3>
                             </div>
+                            <!-- <div class="faq-section"> -->
+                                {data.metaverseVirtualOffice.data.attributes.virtual_development_faq_lists.data.map(
+                                  (item: any, index: number) => (
+                                    <div class="faq-card">
+                                      <div class="faq-question" onclick="toggleAnswer(event)">
+                                        {item.attributes.question}
+                                        <span class="faq-toggle-icon">+</span>
+                                      </div>
+                                      <div class="faq-answer">
+                                        {item.attributes.answer}
+                                      </div>
+                                    </div>
+                                  ),
+                                )}
+                              <!-- </div> -->
+                              
 
-                            {
+                            <!-- {
                                 data.metaverseVirtualOffice.data.attributes.virtual_development_faq_lists.data.map(
                                     (item: any) => (
-                                        <div class="FAQ-card faq">
-                                            <div class="FAQ-qstn-section question1">
-                                                <div class="FAQ-question">
-                                                    {item.attributes.question}
-                                                </div>
-                                                <img
-                                                    class="dropdown-arrow"
-                                                    src="assets/images/retail-showroom/Keyboard arrow down.webp"
-                                                />
+                                        <div class="faq-card">
+                                            <div
+                                                class="faq-question"
+                                                onclick="toggleAnswer(event)"
+                                            >
+                                                {item.attributes.question}
+                                                <span class="faq-toggle-icon">
+                                                    +
+                                                </span>
                                             </div>
-                                            <div class="answer answer1">
+                                            <div class="faq-answer">
                                                 {item.attributes.answer}
                                             </div>
                                         </div>
                                     ),
                                 )
-                            }
+                            } -->
                         </div>
                     </div>
                 </div>
