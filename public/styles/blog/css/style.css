@@ -9355,3 +9355,12 @@ b.rm1 {
   }
   
    */
+
+
+   .carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+ 
