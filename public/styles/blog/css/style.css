@@ -9363,4 +9363,7 @@ b.rm1 {
     width: 100%;
   }
   
+  .play-text-val .owl-item {
+    width: 100% !important;
+  }
  

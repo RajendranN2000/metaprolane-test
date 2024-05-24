@@ -79,15 +79,16 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
     <html lang="en">
         <div class="home-container industries-page meta-product">
             <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
-            <script
+            <!-- <script
                 is:inline
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            ></script>
+            ></script> -->
             <link
                 href="/vendor/bootstrap/css/bootstrap.min.css"
                 rel="stylesheet"
             />
             <link rel="stylesheet" href="/styles/css/style.css" />
+            <link rel="stylesheet" href="/styles/blog/css/owl.css" />  
 
             <script is:inline>
                 $(document).ready(function () {
@@ -398,14 +399,15 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                                                 .industries_various_content
                                         }
                                     </p>
-                                    <div
-                                        class="owl-experts-item-Cas-game mdsd3 owl-carousel d-flex flex-wrap justify-content-between"
-                                    >
+                                    <div class="owl-carousel">
                                     {
                                         data.metaverseForIndustrie.data.attributes.industries_various_lists.data.map(
                                             (each: any, index: number) => {
                                                 return (
-                                        <div class="item" style="width:27rem">
+                                                <div
+                                            class="owl-experts-item"
+                                            style="width:27rem"
+                                        >
                                             <div class="icon">
                                                 <div class="expert-txt2">
                                                     <div class="box-img" style="width:27rem">
