@@ -117,6 +117,35 @@ const { data } = await response.json();
             <link rel="stylesheet" href="/styles/css/style.css" />
             <link rel="stylesheet" href="/styles/blog/css/owl.css" />
 
+            <style>
+                .owl-stage {
+                    display: flex;
+                    transition: all 0.25s ease 0s;
+                    width: 12552px
+                }
+                .owl-item {
+                    flex: 0 0 1016px; /* Adjust this value according to your item width */
+                    margin-right: 30px;
+                }
+                .nav-button {
+                    /* position: absolute; */
+                    top: 50%;
+                    transform: translateY(-50%);
+                    /* background: rgba(0, 0, 0, 0.5); */
+                    color: white;
+                    /* border: none; */
+                    /* padding: 10px; */
+                    cursor: pointer;
+                    z-index: 1;
+                }
+                #prev {
+                    left: 10px;
+                }
+                #next {
+                    right: 10px;
+                }
+            </style>
+
             <script is:inline>
                 $(document).ready(function () {
                     $(".question1").click(function () {
@@ -185,6 +214,47 @@ const { data } = await response.json();
                             300,
                         ); // Adjust the duration as per your requirement
                     });
+                });
+
+                document.addEventListener('DOMContentLoaded', () => {
+                    const items = document.querySelectorAll('.owl-item');
+                    const itemWidth = 1016 + 30; // item width + margin
+                    let currentIndex = 0;
+                    let autoSlideInterval;
+
+                    function updateCarousel() {
+                        const translateX = -currentIndex * itemWidth;
+                        document.querySelector('.owl-stage').style.transform = `translate3d(${translateX}px, 0, 0)`;
+                    }
+
+                    function startAutoSlide() {
+                        autoSlideInterval = setInterval(() => {
+                            currentIndex = (currentIndex + 1) % items.length;
+                            updateCarousel();
+                        }, 3000);
+                    }
+
+                    function stopAutoSlide() {
+                        clearInterval(autoSlideInterval);
+                    }
+
+                    document.getElementById('prev').addEventListener('click', () => {
+                        stopAutoSlide();
+                        currentIndex = (currentIndex - 1 + items.length) % items.length;
+                        updateCarousel();
+                        startAutoSlide();
+                    });
+
+                    document.getElementById('next').addEventListener('click', () => {
+                        stopAutoSlide();
+                        currentIndex = (currentIndex + 1) % items.length;
+                        updateCarousel();
+                        startAutoSlide();
+                    });
+
+                    // Initial update and start auto slide
+                    updateCarousel();
+                    startAutoSlide();
                 });
                 // $("#content").hide().show("slide", { direction: "left" }, 1500);
             </script>
@@ -675,8 +745,13 @@ const { data } = await response.json();
                                             }
                                         </h3>
                                         <div
-                                            class="owl-service-item-ms owl-carousel d-flex flex-wrap justify-content-between"
+                                            class="owl-service-item-ms owl-carousel slide-left owl-loaded owl-drag in-view"
                                         >
+                                        <!-- <div
+                                            class="owl-service-item-ms owl-carousel slide-left d-flex flex-wrap justify-content-between"
+                                        ></div> -->
+                                        <div class="owl-stage-outer">
+                                            <div class="owl-stage">
                                             {
                                                 data.metaverseVirtualOffice.data.attributes.ideal_partner_development_lists.data.map(
                                                     (
@@ -684,9 +759,10 @@ const { data } = await response.json();
                                                         index: number,
                                                     ) => {
                                                         return (
+                                                            
+                                                           <div class="owl-item">
                                                             <div
                                                                 class="item"
-                                                                style="width:30rem"
                                                             >
                                                                 <div class="icon">
                                                                     <div class="row align-items-center">
@@ -721,12 +797,20 @@ const { data } = await response.json();
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            </div>
+                                                          
                                                         );
                                                     },
                                                 )
                                             }
                                         </div>
+                                        <div id="prev"/>
+                                        <div id="next"/>
+                                        <!-- <button id="prev" class="nav-button"></button>
+                                        <button id="next" class="nav-button"></button> -->
                                     </div>
+                                </div>
+                            </div>
                                 </div>
                             </div>
                         </div>
