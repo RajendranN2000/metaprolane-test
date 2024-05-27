@@ -157,73 +157,12 @@ const activeIndex = 1;
         />
         <link rel="stylesheet" href="styles/css/animate.css" />
         <link rel="stylesheet" href="styles/css/style5597.css" />
-        <!-- <style>
-                .slider_top {
-                    position: relative;
-                    width: 100%;
-                    max-width: 1200px;
-                    margin: auto;
-                    overflow: hidden;
-                }
-        
-                .slider_top ul {
-                    display: flex;
-                    padding: 0;
-                    margin: 0;
-                    list-style: none;
-                    transition: transform 0.5s ease;
-                }
-        
-                .slider_top ul li {
-                    min-width: 33.33%;
-                    box-sizing: border-box;
-                    transition: transform 0.5s ease, opacity 0.5s ease;
-                    opacity: 0.5;
-                }
-        
-                .slider_top ul li.active {
-                    opacity: 1;
-                }
-        
-                .slider_top ul li.prev,
-                .slider_top ul li.next {
-                    opacity: 0.7;
-                }
-        
-                .slider_top ul li .item {
-                    position: relative;
-                    padding: 20px;
-                    background: #fff;
-                    border-radius: 10px;
-                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-                    text-align: center;
-                }
-        
-                .slider_top ul li .item img {
-                    max-width: 100%;
-                    border-radius: 10px;
-                }
-        
-                .slider_nav {
-                    position: absolute;
-                    top: 50%;
-                    width: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    transform: translateY(-50%);
-                }
-        
-                .slider_nav .prev, 
-                .slider_nav .next {
-                    cursor: pointer;
-                    background: rgba(0, 0, 0, 0.5);
-                    padding: 10px;
-                    border-radius: 50%;
-                    color: #fff;
-                    text-align: center;
-                    line-height: 1;
-                }
-            </style> -->
+        <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
 
         <!-- <script
                 is:inline
@@ -294,6 +233,7 @@ const activeIndex = 1;
 
     updateCarousel(); // Initial call to set the classes
 });
+
 
 
         </script>
@@ -1095,7 +1035,7 @@ const activeIndex = 1;
 
 
                 <!-- top your domain with metaverse solutions -->
-                <!-- <section class="our-courses top-your-domain">
+                <section class="our-courses top-your-domain">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -1112,12 +1052,13 @@ const activeIndex = 1;
                                 </div>
 
                                 <div class="owl-carousel">
-                                 
                                     {
                                         data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data.map(
                                             (each: any, index: number) => {
+                                                const reverseIndex = data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data.length - 1 - index;
                                                 return (
-                                                    // <div style="display:flex;flex-direction: row;">
+                                                    // first row
+                                                   <div>
                                                     <div class="owl-experts-item">
                                                         <div
                                                             class="item"
@@ -1153,19 +1094,50 @@ const activeIndex = 1;
                                                             </div>
                                                         </div>
                                                     </div>
+
+                                                        {/* second row */}
+                                                    <div class="owl-experts-item">
+                                                        <div
+                                                            class="item"
+                                                            style={{
+                                                                width: "23rem",
+                                                            }}
+                                                        >
+                                                           <div class="icon">
+                            <img
+                                src={
+                                    data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data[reverseIndex].attributes.image
+                                }
+                                alt="Gaming"
+                            />
+                            <div class="expert-txt">
+                                <p class="top-your-head">
+                                    {
+                                        data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data[reverseIndex].attributes.text
+                                    }
+                                </p>
+                                <p class="top-your-bot">
+                                    {
+                                        data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data[reverseIndex].attributes.content
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 );
                                             },
                                         )
                                     }
-                                
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section> -->
+                </section>
 
                 
-                <section class="our-courses top-your-domain">
+                <!-- <section class="our-courses top-your-domain" id="industries">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -1180,12 +1152,12 @@ const activeIndex = 1;
                                       
                                     {/* Data (displayed twice) */}
                                     {Array.from({ length: 2 }).map((_, repeatIndex) => (
-    <div class="d-flex" key={repeatIndex}>
+    <div class="d-flex">
         {repeatIndex === 0
             ? data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data.map(
                   (each: any, index: number) => (
                       <div class="col-md-12 owl-experts-item">
-                          <div class="item" style={{ width: "100%" }}>
+                          <div class="item">
                               <div class="icon">
                                   <img src={each.attributes.image} alt="Gaming" />
                                   <div class="expert-txt">
@@ -1202,7 +1174,7 @@ const activeIndex = 1;
                   .reverse()
                   .map((each: any, index: number) => (
                       <div class="col-md-12 owl-experts-item">
-                          <div class="item" style={{ width: "100%" }}>
+                          <div class="item">
                               <div class="icon">
                                   <img src={each.attributes.image} alt="Gaming" />
                                   <div class="expert-txt">
@@ -1221,7 +1193,7 @@ const activeIndex = 1;
                         </div>
                     </div>
                 </div>
-                </section>
+                </section> -->
                 
                 
 
