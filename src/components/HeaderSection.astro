@@ -3,6 +3,15 @@ interface props {}
 const {title} = Astro.props;
 ---
 
+<style>
+    .nav a {
+      color: white;
+    }
+    .nav a.active {
+      color: green;
+    }
+  </style>
+
 <header class="header-area header-sticky">
     <div class="container-fluid">
         <div class="row">
@@ -13,16 +22,16 @@ const {title} = Astro.props;
                     </a>
                     <ul class="nav align-self-center"></ul>
                     <ul class="nav align-self-right" id="myDIV">
-                        <li>
+                        <li >
                             <a
                                 href="/"
-                                class=""
+                                
                                 >Home</a
                             >
                         </li>
                         
                         <li class="has-sub">
-                            <a href="" >Metaverse Development <i class="icon fa fa-chevron-down"></i></a>
+                            <a href="javascript:void(0)" >Metaverse Development <i class="icon fa fa-chevron-down"></i></a>
                             <ul class="sub-menu">
                                 <li>
                                     <a
@@ -134,3 +143,30 @@ const {title} = Astro.props;
         </div>
     </div>
 </header>
+
+<script is:inline>
+     document.addEventListener('DOMContentLoaded', () => {
+    const currentPath = window.location.pathname + window.location.hash;
+    const navLinks = document.querySelectorAll('.nav a');
+
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPath) {
+        link.classList.add('active');
+        const parent = link.closest('.has-sub');
+        if (parent) {
+          parent.querySelector('a').classList.add('active');
+        }
+      }
+    });
+ 
+    // If no direct match is found, check if any submenu item is active
+    if (!foundActive) {
+      const subMenus = document.querySelectorAll('.has-sub ul.sub-menu a');
+      subMenus.forEach(subLink => {
+        if (subLink.pathname === currentPath) {
+          subLink.closest('.has-sub').querySelector('a').classList.add('active');
+        }
+      });
+    }
+  });
+  </script>
