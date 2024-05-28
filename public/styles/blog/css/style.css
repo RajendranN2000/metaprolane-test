@@ -2699,8 +2699,16 @@ section.our-courses .owl-carousel.owl-drag .owl-item.active.center {
 
 section.our-courses .owl-carousel.owl-drag .owl-item.active {
     opacity: 1;
-    margin: 0
+    margin: 0;
 }
+
+/* @media (max-width:320px) {
+    section.our-courses .owl-carousel.owl-drag .owl-item.active {
+        opacity: 1;
+        margin: 0;
+        width: 296px !important;
+    }
+} */
 
 section.our-courses .item {
     padding: 15px 15px 0;
@@ -7376,6 +7384,10 @@ b.rm1 {
     }
 
     section.under-banner.our-technologies .item .icon {
+        max-width: 100px
+    }
+
+    section.under-banner-index.our-technologies .item .icon {
         max-width: 100px
     }
 

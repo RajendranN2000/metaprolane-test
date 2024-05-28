@@ -151,6 +151,7 @@ const activeIndex = 1;
         <!-- <link rel="stylesheet" href="assets/css/owl.css"> -->
         <link rel="stylesheet" href="styles/css/lightbox.css" />
         <link rel="stylesheet" href="/styles/blog/css/owl.css" />
+        <link rel="stylesheet" href="/styles/css/style.css"/>
         <link
             rel="stylesheet"
             href="styles/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1"
@@ -234,7 +235,30 @@ const activeIndex = 1;
     updateCarousel(); // Initial call to set the classes
 });
 
-
+document.addEventListener("DOMContentLoaded", function () {
+        $(".owl-carousel").owlCarousel({
+            items: 1, // Display one item-row at a time
+            margin: 20, // Space between items
+            loop: true, // Loop through items
+            autoplay: true, // Enable auto-play
+            autoplayTimeout: 3000, // Auto-play interval (in ms)
+            autoplayHoverPause: true, // Pause on hover
+            responsive: {
+                0: {
+                    items: 1, // Display one item-row at a time on small screens
+                },
+                600: {
+                    items: 1, // Display one item-row at a time on medium screens
+                },
+                800: {
+                    items: 2, // Display one item-row at a time on medium screens
+                },
+                1000: {
+                    items: 3, // Display one item-row at a time on large screens
+                },
+            },
+        });
+    });
 
         </script>
 
@@ -1032,10 +1056,10 @@ const activeIndex = 1;
                         />
                     </div>
                 </section>
-
+                <div class="industries-box-20"></div>
 
                 <!-- top your domain with metaverse solutions -->
-                <section class="our-courses top-your-domain">
+                <section class="our-courses top-your-domain" id="industries">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
@@ -1062,9 +1086,7 @@ const activeIndex = 1;
                                                     <div class="owl-experts-item">
                                                         <div
                                                             class="item"
-                                                            style={{
-                                                                width: "23rem",
-                                                            }}
+                                                           
                                                         >
                                                             <div class="icon">
                                                                 <img
@@ -1099,9 +1121,7 @@ const activeIndex = 1;
                                                     <div class="owl-experts-item">
                                                         <div
                                                             class="item"
-                                                            style={{
-                                                                width: "23rem",
-                                                            }}
+                                                           
                                                         >
                                                            <div class="icon">
                             <img
@@ -1283,7 +1303,7 @@ const activeIndex = 1;
                 </div>
 
                 <!-- our technologies -->
-                <section class="under-banner-index our-technologies">
+                <section class="under-banner our-technologies">
                     <div class="container">
                         <div class="section-heading ss-case">
                             <h4
@@ -1295,22 +1315,20 @@ const activeIndex = 1;
                                 }
                             </h4>
                         </div>
-                        <div class="under-banner-carousel-section slide-left">
+                        <div class="under-banner-carousel-section slide-left in-view">
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div
-                                        class="owl-service-item owl-carousel d-flex justify-content-between"
+                                        class="owl-carousel"
                                     >
                                         {
                                             data.data.homePageSection1.data.attributes.metaverse_our_technologies.data.map(
                                                 (each: any, index: number) => {
                                                     return (
+                                                    <div class="owl-experts-item">
                                                         <div class="item">
                                                             <div class="icon">
                                                                 <img
-                                                                    style={{
-                                                                        width: "8rem",
-                                                                    }}
                                                                     src={
                                                                         each
                                                                             .attributes
@@ -1319,6 +1337,7 @@ const activeIndex = 1;
                                                                     alt="Ourtech1"
                                                                 />
                                                             </div>
+                                                        </div>
                                                         </div>
                                                     );
                                                 },
