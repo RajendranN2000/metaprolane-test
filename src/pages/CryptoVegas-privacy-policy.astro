@@ -1,293 +1,1177 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query: `
+          query{
+            cryptoVegasPrivacyPolicy{
+              data {
+                attributes {
+                privacy_notice_title
+                  privacy_notice_content
+                  privacy_overview_title
+                  privacy_overview_content
+                  privacy_service_title
+                  privacy_service_user_title
+                  privacy_service_user_content
+                  privacy_service_bank_title
+                  privacy_service_bank_content
+                  privacy_deposit_metacasino_title
+                  privacy_deposit_metacasino_content
+                  chip_exchange_title
+                  chip_exchange_content
+                  chip_exchange_ratio_title
+                  deposit_process_title
+                  blackjack_game_title
+                  blackjack_payout_title
+                  blackjack_payout_content
+                  game_conditions_title
+                  game_conditions_content
+                  dealer_card_draw_title
+                  dealer_card_draw_content
+                  dealer_card_draw_content1
+                  regulatory_obligation_title
+                  regulatory_customer_title
+                  regulatory_customer_content
+                  verifiction_process_title
+                  verifiction_process_content
+                  introduction_title
+                  introduction_content
+                  additional_title
+                  additional_content
+                  data_collect_blackjack_title
+                  data_collect_blackjack_content
+                  information_collection_title
+                  information_collection_content
+                  information_third_party_title
+                  revealing_personal_info_title
+                  cookies_title
+                  data_processing_title
+                  data_processing_content
+                  data_processing_content1
+                  data_processing_content2
+                  use_personal_data_blackjack_title
+                  use_personal_data_blackjack_content
+                  legal_bases_personal_data_title
+                  legal_bases_personal_data_content
+                  fulfillment_consent_title
+                  fulfillment_consent_content
+                  compliance_applicable_title
+                  compliance_applicable_content
+                  legitimate_interest_title
+                  legitimate_interest_content
+                  fulfillment_contact_obligation_title
+                  fulfillment_contact_obligation_content
+                  protection_safety_title
+                  protection_safety_content
+                  consistent_user_title
+                  consistent_user_content
+                  disclosure_practice_title
+                  disclosure_practice_content
+                  data_security_subject_title
+                  data_security_measure_title
+                  data_security_measure_content
+                  encryption_tech_title
+                  encryption_tech_content
+                  data_retention_title
+                  data_retention_content
+                  disposal_measure_title
+                  disposal_measure_content
+                  internal_transamission_title
+                  internal_transamission_content
+                  privacy_settings_title
+                  privacy_settings_content
+                  data_subject_right_title
+                  data_subject_right_content
+                  confirmation_access_title
+                  confirmation_access_content
+                  correction_updates_title
+                  correction_updates_content
+                  deletion_forgetting_title
+                  deletion_forgetting_content
+                  objectionuse_disclosure_title
+                  objectionuse_disclosure_content
+                  limitation_process_title
+                  limitation_process_content
+                  consent_withdraw_title
+                  consent_withdraw_content
+                  contacting_use_title
+                  contacting_use_content
+                  complaints_supervisory_title
+                  complaints_supervisory_content
+                  chnages_privacy_meta_title
+                  chnages_privacy_meta_content
+                  policy_update_process_title
+                  frequency_updated_title
+                  frequency_updated_content
+                  notification_channel_title
+                  notification_channel_content
+                  email_notify_title
+                  email_notify_content
+                  your_responsibility_title
+                  review_frequency_title
+                  review_frequency_content
+                  policy_accebility_title
+                  policy_accebility_content
+                  email_updates_title
+                  email_updates_content
+                  revision_date_title
+                  revision_date_content
+                  user_responsibility_title
+                  user_responsibility_content
+                  user_responsibility_content1
+                  processing_fee_cal_title
+                  deposit_process_example_title
+                  chip_exchange_ratio_lists{
+                    data{
+                      attributes{
+                        title
+                        content
+                      }
+                    }
+                  }
+             deposit_process_titles{
+              data{
+                attributes{
+                  title
+                  content
+                }
+              }
+            }
+                 privacy_blackjack_payout_lists{
+                  data{
+                    attributes{
+                      title
+                      content
+                    }
+                  }
+                }
+                  privacy_dealer_card_draw_lists{
+                  data{
+                    attributes{
+                      logic
+                      condition
+                    }
+                  }
+                }
+                privacy_information_third_party_lists{
+                  data{
+                    attributes{
+                      text
+                    }
+                  }
+                }
+                 privacy_revealing_personal_info_lists{
+                  data{
+                    attributes{
+                      text
+                    }
+                  }
+                }
+                 privacy_cookies_lists{
+                  data{
+                    attributes{
+                      text
+                    }
+                  }
+                }
+                privacy_legitimate_interest_lists{
+                  data{
+                    attributes{
+                      text
+                    }
+                  }
+                }
+                 privacy_consistent_user_lists{
+                  data{
+                    attributes{
+                      text
+                    }
+                  }
+                }
+                   privacy_disclosure_practice_lists{
+                  data{
+                    attributes{
+                      text
+                    }
+                  }
+                }
+                privacy_processing_fee_cal_lists{
+                  data{
+                    attributes{
+                      title
+                      content
+                    }
+                  }
+                }
+                privacy_deposit_process_example_lists{
+                  data{
+                    attributes{
+                      title
+                      value
+                    }
+                  }
+                }  
+                } 
+                }
+              }
+    
+                } 
+        `,
+  }),
+});
+
+const { data } = await response.json();
 ---
 
-<Layout title="CryptoVegas-privacy-policy" 
-description="Metaverse Virtual Office Development Company, Metaprolane offers end-to-end Metaverse Virtual Office Development Services at an affordable cost." 
-keywords="Metaverse Virtual Office Development, Metaverse Virtual Office Development Company, Metaverse Virtual Office Development Company, Metaverse Virtual Office Development Services">
-    <html lang="en">
-      <div class="home-container inner-container privacy-policy-main">   
-            <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
-            <script
-                is:inline
-                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            ></script>
-            <link
-                href="/vendor/bootstrap/css/bootstrap.min.css"
-                rel="stylesheet"
-            />
-            <link rel="stylesheet" href="/styles/css/style.css" />
+<Layout
+  title="CryptoVegas-privacy-policy"
+  description="Metaverse Virtual Office Development Company, Metaprolane offers end-to-end Metaverse Virtual Office Development Services at an affordable cost."
+  keywords="Metaverse Virtual Office Development, Metaverse Virtual Office Development Company, Metaverse Virtual Office Development Company, Metaverse Virtual Office Development Services"
+>
+  <html lang="en">
+    <div class="home-container inner-container privacy-policy-main">
+      <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
+      <script
+        is:inline
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      ></script>
+      <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/styles/css/style.css" />
 
-            <script is:inline>
-                $(document).ready(function () {
-                    $(".question1").click(function () {
-                        console.log("clicked questions");
-                        var answer = $(this).next(".answer");
-                        $(".answer").not(answer).slideUp();
-                        answer.slideToggle();
-                    });
-                });
-            
-                // $("#content").hide().show("slide", { direction: "left" }, 1500);
-            </script>
+      <script is:inline>
+        $(document).ready(function () {
+          $(".question1").click(function () {
+            console.log("clicked questions");
+            var answer = $(this).next(".answer");
+            $(".answer").not(answer).slideUp();
+            answer.slideToggle();
+          });
+        });
 
-<div class="meta-product">
-    <section class="section main-banner" data-section="section1">
-      <video autoplay muted loop id="bg-video">
-        <source src="assets/images/privacypolicy.mp4" type="video/mp4" />
-      </video>
-      <div class="bg-vectors bgv-white">
-        <img src="assets/images/products/bg1.webp" alt="BG Image">
-      </div>
-    </section>
+        // $("#content").hide().show("slide", { direction: "left" }, 1500);
+      </script>
 
-    <section class="under-banner our-technologies product-tech-sec">
-        <div class="container">
-          <div class="pp-inn">
-          <h2>Privacy Notice</h2>
-          <p>Welcome to MetaCasino Blackjack's comprehensive Privacy Notice, where we delve into the intricacies of how your personal data is processed. While the summary below highlights crucial points, we strongly recommend a thorough review of the entire notice for a more nuanced understanding.</p>
-          
-          <h2>Overview</h2>
-          <p>Our data processing serves two fundamental purposes, acting as the backbone for both seamless service provision and unwavering adherence to regulatory obligations.</p>
-          
-          <h2>Service Provision</h2>
-          <h4>User Account Registration</h4>
-          <p>At MetaCasino Blackjack, we prioritize a personalized gaming experience. To embark on this journey, users are required to register an account, creating a customized space that enhances their overall interaction with our platform.</p>
-          <h4>Bank Details for Deposits</h4>
-          <p>Facilitating secure and efficient transactions is a vital aspect of user engagement. Users willingly provide bank details to ensure smooth deposit processes, contributing to a hassle-free and enjoyable gaming experience.</p>
-
-          <h2>Deposit Process at MetaCasino Blackjack</h2>
-          <p>At MetaCasino Blackjack, we've streamlined the deposit process to provide you with a seamless experience. MetaCasino Blackjack offers an immersive casino experience in the virtual reality (VR) metaverse, allowing users to play real-time casino games, interact with others, and bet real money using cryptocurrencies like Ethereum, Binance, Smart Chain, Arbitrum, Polygon, etc. The cryptocurrency transactions are facilitated through the user's Metamask wallet, creating a seamless link between the VR experience and the crypto world.The USDT value fluctuates in real-time, and the chips added to your account will correspond to the current USDT amount. The minimum deposit is designed to allow users to play at least two games in the casino, ensuring an engaging gaming experience.</p>
-          <h4>Chip Exchange</h4>
-          <p>The process of converting cryptocurrency to in-game chips and vice versa is known as chip exchange. This exchange is pegged to the equivalent dollar value of the cryptocurrency in real-time. Users can deposit funds into their in-game accounts via Metamask, incorporating gas fees, service charges (including GST charges), and receive winnings through the same process.</p>
-          <h4>Chip Exchange Ratio</h4>
-          <ul>
-            <li>Exchange Ratio: 1 Chip per US Dollar (1 Chip/USDT)</li>
-            <li>Cryptocurrency Chains: Ethereum, Binance, Smart Chain, Arbitrum, Polygon, etc.</li>
-          </ul>
-          <h4>Deposit Process</h4> 
-          <p><b>1.User Initiation:</b> User A wants to deposit currency to update the in-game chip balance by logging into the Metamask wallet.</p>
-          <p><b>2.Add Money to In-Game Balance:</b> Within the MetaCasino VR platform, navigate to the in-game balance section. Choose the option to add funds, specifying the desired amount to enhance your virtual chip balance.</p>
-          <p><b>3.Withdrawal from Metamask:</b> The user initiates a withdrawal from their Metamask wallet to add funds to the MetaCasino application.</p>
-          <p><b>4.Real-time USDT Value:</b> As part of the withdrawal process, the cryptocurrency held in your in-game balance is converted into USDT (Tether) based on the real-time value of the selected cryptochain.</p>
-          <p><b>5.Minimum Deposit:</b> The minimum deposit amount required to play two games in the casino is $4 in hand.</p>
-          <p><b>6.Processing Fees Calculation:</b></p>
-          <ul>
-            <li>Service Charge: 2% of the deposit amount</li>
-            <li>Crypto and Casino Game Tax: Variable tax dependent on the game origin</li>
-            <li>Gas Fees: Dependent on the selected cryptochain</li>
-          </ul>
-          <p><b>7.Average Minimum Deposit:</b> The minimum deposit amount averages to a rounded value of $5, of which the user receives a minimum of $4 after excluding all service charges, taxes, and gas fees.</p>
-          <h4>Example</h4>
-          <ul>
-            <li>Principal Deposit Amount: $5</li>
-            <li>Service Charge: 2% of $5</li>
-            <li>Crypto and Casino Game Tax: Variable tax based on game origin</li>
-            <li>Gas Fees: Dependent on the chosen cryptochain</li>
-            <li>In-Hand Balance After Charges: $5 - (Service Charge + Crypto and Casino Game Tax + Gas Fees)</li>
-            <li>Minimum Required Balance: $4 (after deducting all charges)</li>
-          </ul>
-          <p>On average, users will receive a minimum of $4 after deducting the service charge, Crypto and Casino Game Tax, and Gas Fees from their deposited amount.</p>
-          <h4>BlackJack Game Payouts</h4>
-            
-          <h4>Payout Structure</h4>
-          <p>The payout structure for BlackJack is determined by the game condition and the player's bet scheme. Payouts are represented in a ratio format, indicating the bet and win ratio. Here are the payout ratios for different game conditions:</p>
-          <ul>
-            <li>Player Win: 1 : 1 (1 time more than the bet amount)</li>
-            <li>BlackJack: 2 : 3 (1.5 times more than the bet amount)</li>
-            <li>Tie or Draw: Return bets back to the player</li>
-          </ul>
-
-          <h4>Game Conditions</h4>
-          <p>The game conditions play a crucial role in determining player payouts. Various game conditions based on the player's bet scheme and game dynamics influence the payouts. The dealer's card drawing is vital in deciding the win or loss of the player.</p>
-          <h4>Dealer Card Draw Logic</h4>
-          <p>The dealer's card drawing is crucial in deciding the outcome of the game. The logic is as follows:</p>
-          <table>
-            <tr>
-              <th>Dealer Draw Logic</th>
-              <th>Condition</th>
-            </tr>
-            <tr>
-              <td>2nd Card Reveal and Must Hit</td>
-              <td>Dealer card total < 17</td>
-            </tr>
-            <tr>
-              <td>2nd Card Reveal and Must Stand</td>
-              <td>Dealer card total >= 17</td>
-            </tr>
-            <tr>
-              <td>No 2nd Card Reveal and no card draw</td>
-              <td>Player BlackJack or Bust</td>
-            </tr>
-          </table>
-          <p>These conditions come into play after the player decides to stand on their turn. If the player goes bust without standing, the dealer's draw logic does not apply. The dealer's actions are fundamental to the overall dynamics of the game, influencing the win or loss for the player.</p>
-          
-          <h2>Regulatory Obligations</h2>
-          <h4>Customer Monitoring</h4>
-          <p>A cornerstone of our commitment to fairness and security involves continuous monitoring of customer activities. This dynamic process ensures a gaming environment that is not only entertaining but also fair, responsible, and secure.</p>
-          <h4>Verification Processes</h4>
-          <p>MetaCasino Blackjack upholds rigorous age verification procedures and maintains constant vigilance over customer behavior. These practices are integral to our commitment to responsible gambling, prioritizing customer well-being and compliance with regulatory standards.</p>
-          <h4>Introduction</h4>
-          <p>This Privacy Notice extends across all MetaCasino Blackjack platforms, including websites, applications, and associated services. We encourage regular reviews, especially during updates, and pledge to communicate significant changes directly to our users.</p>
-          <h4>Additional Details</h4>
-          <p>For a comprehensive understanding of how we handle, process, and protect your personal data, please refer to the complete Privacy Notice available on our platforms.</p>
-          
-          <h2>Data Collection Practices at MetaCasino Blackjack</h2>
-          <p>Embark on an exciting gaming adventure at MetaCasino Blackjack, where your privacy and gaming experience are our top priorities. This section outlines our data collection methods when you engage with our platform.</p>
-          <h4>Information Collection</h4>
-          <p>When you immerse yourself in the MetaCasino Blackjack experience, we employ various means to collect information:</p>
-          <h4>Information from Third Party Platforms</h4>
-          <ul>
-            <li>As you download and play MetaCasino Blackjack, we may automatically receive personal information from the platforms facilitating your gaming journey (e.g., Oculus, Steam).</li>
-            <li>Your personal information, such as your unique identifier (e.g., Oculus ID), is seamlessly transmitted to us through the third-party platform without any additional action on your part.</li>
-            <li>Please refer to the respective third-party terms of use and privacy policies (e.g., Oculus Privacy Policy, Steam Privacy Policy Agreement) for detailed information on how your data is handled by these platforms.</li>
-            <li>Our utilization of the personal information gathered is strictly confined to the purposes outlined in the "How We Use Your Information" section below.</li>
-          </ul>
-          <h4>Revealing Personal Information in MetaCasino Blackjack</h4>
-          <ul>
-            <li>Within the game environment, you have the option to disclose personal information through multiplayer chat or other public functions, including your username.</li>
-            <li>It's important to note that this information, accessible to other users, might be captured using recording functions designed for monitoring user activity.</li>
-            <li>Users are urged to exercise caution, understanding that we cannot control how other users will utilize personal information disclosed in multiplayer chat or other public functions. Any such disclosure is done at your own risk.</li>
-            <li>To maintain a secure environment, users are advised against creating usernames that reflect their real names or reveal sensitive personal information.</li>
-          </ul>
-          <h4>Cookies</h4>
-          <ul>
-            <li>In our pursuit of enhancing your experience, we may employ cookies for automatic data collection through the MetaCasino Blackjack website.</li>
-            <li>Cookies, small files stored on your computer's hard drive, contribute to a personalized and seamless browsing experience.</li>
-            <li>While you have the option to refuse browser cookies by adjusting your settings, please be aware that this might limit access to certain parts of the MetaCasino Blackjack website.</li>
-          </ul>
-          <h4>Data Processing</h4>
-          <p>All information you provide is securely stored on servers located in the United States of America. By engaging with MetaCasino Blackjack, you explicitly consent to the processing and transfer of your information, including personal details, to the United States of America and other countries.</p>
-          <p>Please be aware that the laws governing the collection, maintenance, and use of information in the United States of America or other countries may not be as comprehensive or strict as those in your own country.</p>
-          <p>Your privacy and security are paramount at MetaCasino Blackjack, and we're committed to ensuring a thrilling yet secure gaming environment for all our users.</p>
-          <h2>Use of Personal Data at MetaCasino Blackjack</h2>
-          <p>At MetaCasino Blackjack, we prioritize transparency and security in handling your personal data. This section outlines how we utilize your information to enhance your gaming experience and fulfill regulatory requirements.</p>
-          <h4>Legal Bases for Processing Personal Data</h4>
-          <p>In compliance with applicable laws, we articulate the legal bases for processing personal data:</p>
-          <h4>Fulfillment of Consent</h4>
-          <ul>
-            <li>We process your data to fulfill the purposes for which you have provided your explicit consent.</li>
-          </ul>
-          <h4>Compliance with Applicable Law</h4>
-          <ul>
-            <li>Our data processing aligns with the relevant legal requirements to ensure a responsible and lawful gaming environment.</li>
-          </ul>
-          <h4>Legitimate Interests</h4>
-          <p>We exercise legitimate interests in:</p>
-          <ul>
-            <li>Providing a safe and enjoyable experience for MetaCasino Blackjack players.</li>
-            <li>Responding to customer service inquiries and providing support.</li>
-            <li>Enhancing and optimizing the game and overall business operations.</li>
-            <li>Addressing legal matters.</li>
-          </ul>
-          <h4>Fulfillment of Contractual Obligations</h4>
-          <ul>
-            <li>Your data is processed to fulfill contractual obligations to users of MetaCasino Blackjack.</li>
-          </ul>
-          <h4>Protection and Safety</h4>
-          <ul>
-            <li>We process information to take precautions against potential liability and to safeguard the safety and security of the MetaCasino Blackjack services.</li>
-          </ul>
-            
-          <h2>Consistent Use of Information</h2>
-          <p>Our policy is to use your information consistently with and subject to this privacy policy. Specifically:</p>
-          <ul>
-            <li>Information provided for a specific purpose (e.g., troubleshooting issues) will be used to further that purpose.</li>
-            <li>Your data is utilized to offer, operate, maintain, and improve MetaCasino Blackjack services.</li>
-            <li>We present features within the services, investigate violations of our Terms of Service, and strive to prevent additional violations.</li>
-            <li>Notices about your registration, changes to services, or related products/services may be communicated using your personal information.</li>
-            <li>With your consent, we may send news and updates about our products or services, including special offers and promotions. Opt-out options will always be provided.</li>
-          </ul>
-          <h4>Disclosure Practices</h4>
-          <p>We are committed to safeguarding your privacy and adhere to strict disclosure practices:</p>
-          <ul>
-            <li>Your personal information is not shared or disclosed to third parties except under specific circumstances, including your consent, safety considerations, and legal requirements.</li>
-            <li>In events like a sale, merger, or reorganization, user information may be among the assets transferred.</li>
-            <li>For moderation purposes, voice data captured through your microphone, if any, is typically not stored. However, specific voice data may be recorded and shared with a third-party service for moderation, ensuring anonymity and compliance with regulations. Such recordings are retained for 35 days.</li>
-            <li>MetaCasino Blackjack prioritizes the responsible and secure use of your personal data, ensuring an immersive and safe gaming environment for all players.</li>
-          </ul>
-          <h2>Data Security and Data Subject Rights at MetaCasino Blackjack</h2>
-          <h4>Data Security Measures</h4>
-          <p>At MetaCasino Blackjack, we prioritize the utmost security and protection of your personal information. Our comprehensive measures are designed to prevent accidental loss and unauthorized access, use, alteration, and disclosure of your data. Here's how we ensure the security of your information:</p>
-          <h4>Encryption Technology</h4>
-          <ul>
-            <li>When you provide us with personal information during registration or other interactions, we employ secure socket layer technology or similar encryption technologies to safeguard the confidentiality of your data.</li>
-          </ul>
-          <h4>Data Retention</h4>
-          <ul>
-            <li>We may retain data, including personal information, to assist in customer service inquiries and prevent repeated violations of our Terms of Service. Retention is performed as long as necessary and relevant to your use of MetaCasino Blackjack services and our operational needs. This may extend beyond the end of your service usage.</li>
-          </ul>
-          <h4>Disposal Measures</h4>
-          <ul>
-            <li>To dispose of personal information responsibly, we may anonymize, delete, or take other appropriate measures in line with our data retention policies.</li>
-          </ul>
-          <h4>Internet Transmission</h4>
-          <ul>
-            <li>While we strive to protect your personal information, we acknowledge that the transmission of data over the internet is not entirely secure. Any transmission of personal information through MetaCasino Blackjack services is at your own risk.</li>
-          </ul>
-          <h4>Privacy Settings</h4>
-          <ul>
-            <li>We are not responsible for the circumvention of privacy settings or security measures used in MetaCasino Blackjack services. Users are encouraged to manage their privacy settings effectively.</li>
-          </ul>
-          <h2>Data Subject Rights</h2>
-          <p>MetaCasino Blackjack is committed to respecting the privacy rights of all users, regardless of their location. As outlined in this section, users have specific rights concerning their personal data:</p>
-          <h4>Confirmation and Access</h4>
-          <ul>
-            <li>Users have the right to confirm the existence of their personal data and access the data we possess, including in portable format.</li>
-          </ul>
-          <h4>Correction, Updates, and Amendments</h4>
-          <ul>
-            <li>Users can request corrections, updates, or amendments to their personal data to ensure accuracy.</li>
-          </ul>
-          <h4>Deletion and "Forgetting" Data</h4>
-          <ul>
-            <li>Users have the right to request the deletion and "forgetting" of their personal data.</li>
-          </ul>
-          <h4>Objection to Use or Disclosure</h4>
-          <ul>
-            <li>Users can object to the use or disclosure of their personal data.</li>
-          </ul>
-          <h4>Limitation of Processing</h4>
-          <ul>
-            <li>Users have the right to limit the processing of their personal information.</li>
-          </ul>
-          <h4>Consent Withdrawal</h4>
-          <ul>
-            <li>Users can withdraw any previously provided consent for the processing of their personal information. The exercise of these rights generally does not apply retroactively from the date of the request and does not impact our ability to continue lawful information processing. Please note that certain limitations and exceptions may apply under applicable law.</li>
-          </ul>
-          
-          <h2>Contacting Us</h2>
-          <p>To exercise any of the data subject rights or address privacy concerns, users can contact us via email at <b>please provide mail <a href="mailto:info@metaprolane.com" class="main-info">info@metaprolane.com</a></b> For identity verification, we may use your personal information before acting on your request.</p>
-          
-          <h2>Complaints and Supervisory Authority</h2>
-          <p>While users have the right to lodge complaints with the appropriate supervisory authority, we encourage users to contact us first. We are dedicated to resolving any concerns about our privacy practices and ensuring a positive user experience at MetaCasino.</p>
-          <h4>Changes to Privacy Policy at MetaCasino</h4>
-          <p>At MetaCasino, we are committed to maintaining transparency and ensuring your data privacy. As part of this commitment, we may update our privacy policy periodically to reflect changes in our practices and compliance requirements. This section outlines our approach to communicating changes and your responsibility in staying informed.</p>
-          
-          <h2>Policy Update Process</h2>
-          <h4>Frequency of Updates</h4>
-          <p>We may update our privacy policy periodically. It is advisable to review it regularly to stay informed about how your personal information is handled.</p>
-          <h4>Notification Channels</h4>
-          <p>We will post any new or updated privacy policy on our official website. Additionally, the revised policy will be made accessible within MetaCasino Blackjack for your convenience.</p>
-          <h4>Email Notification</h4>
-          <p>To ensure you are aware of policy changes, we will attempt to notify you via email. This notification will be sent to the email address provided during the registration process, if applicable.</p>
-          <h4>Your Responsibility</h4>
-          <h4>Review Frequency</h4>
-          <p>You are encouraged to review our privacy policy frequently to stay up-to-date with any modifications.</p>
-          <h4>Policy Accessibility</h4>
-          <p>The most recent version of the privacy policy will be accessible on our official website and within the MetaCasino Blackjack platform.</p>
-          <h4>Email Updates</h4>
-          <p>Please check your registered email address for any notifications regarding updates to the privacy policy.</p>
-          <h4>Revision Date</h4>
-          <p>The date of the last revision will be clearly identified at the top of the privacy policy page. This allows you to easily identify when changes were last made.</p>
-          <h4>User Responsibility</h4>
-          <p>As a user of MetaCasino, you are responsible for periodically visiting the privacy policy page to check for any updates or revisions. Staying informed about changes ensures that you are aware of how your personal information is being handled and processed.</p>
-          <p>We appreciate your diligence in reviewing our privacy policy and your continued trust in MetaCasino Blackjack. If you have any questions or concerns about the privacy policy or its updates, please feel free to contact us at <b>please provide mail <a href="mailto:info@metaprolane.com" class="main-info">info@metaprolane.com</a></b></p>
+      <div class="meta-product">
+        <section class="section main-banner" data-section="section1">
+          <video autoplay muted loop id="bg-video">
+            <source src="assets/images/privacypolicy.mp4" type="video/mp4" />
+          </video>
+          <div class="bg-vectors bgv-white">
+            <img src="assets/images/products/bg1.webp" alt="BG Image" />
           </div>
-        </div>
-      </section>
+        </section>
 
-    </div>
+        <section class="under-banner our-technologies product-tech-sec">
+          <div class="container">
+            <div class="pp-inn">
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_notice_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_notice_content
+                }
+              </p>
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_overview_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_overview_content
+                }
+              </p>
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_service_title
+                }
+              </h2>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_service_user_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_service_user_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_service_bank_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_service_bank_content
+                }
+              </p>
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_deposit_metacasino_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_deposit_metacasino_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .chip_exchange_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .chip_exchange_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .chip_exchange_ratio_title
+                }
+              </h4>
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.chip_exchange_ratio_lists.data.map(
+                    (each: any, index: number) => {
+                      return (
+                        <li>
+                          {each.attributes.title}: {each.attributes.content}
+                        </li>
+                      );
+                    },
+                  )
+                }
+              </ul>
+
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .deposit_process_title
+                }
+              </h4>
+              {
+                data.cryptoVegasPrivacyPolicy.data.attributes.deposit_process_titles.data.map(
+                  (each: any, index: number) => {
+                    return (
+                      <p>
+                        <b> {each.attributes.title}:</b>{" "}
+                        {each.attributes.content}
+                      </p>
+                    );
+                  },
+                )
+              }
+
+              <p>
+                <b
+                  >{
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .processing_fee_cal_title
+                  }</b
+                >
+              </p>
+
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_processing_fee_cal_lists.data.map(
+                    (each: any, index: number) => {
+                      return (
+                        <li>
+                          {each.attributes.title}: {each.attributes.content}
+                        </li>
+                      );
+                    },
+                  )
+                }
+              </ul>
+
+              <!-- <p>
+                <b>7.Average Minimum Deposit:</b> The minimum deposit amount averages
+                to a rounded value of $5, of which the user receives a minimum of
+                $4 after excluding all service charges, taxes, and gas fees.
+              </p> -->
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .deposit_process_example_title
+                }
+              </h4>
+
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_deposit_process_example_lists.data.map(
+                    (each: any, index: number) => {
+                      return (
+                        <li>
+                          {each.attributes.title}: {each.attributes.value}
+                        </li>
+                      );
+                    },
+                  )
+                }
+              </ul>
+
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .deposit_process_average_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .blackjack_game_title
+                }
+              </h4>
+
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .blackjack_payout_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .blackjack_payout_content
+                }
+              </p>
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_blackjack_payout_lists.data.map(
+                    (each: any, index: number) => {
+                      return (
+                        <li>
+                          {each.attributes.title} : {each.attributes.content}
+                        </li>
+                      );
+                    },
+                  )
+                }
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .game_conditions_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .game_conditions_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .dealer_card_draw_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .dealer_card_draw_content
+                }
+              </p>
+              <table>
+                <tr>
+                  <th>Dealer Draw Logic</th>
+                  <th>Condition</th>
+                </tr>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_dealer_card_draw_lists.data.map(
+                    (each: any, index: number) => {
+                      return (
+                        <tr>
+                          <td>{each.attributes.logic}</td>
+                          <td>{each.attributes.condition}</td>
+                        </tr>
+                      );
+                    },
+                  )
+                }
+              </table>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .dealer_card_draw_content1
+                }
+              </p>
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .regulatory_obligation_title
+                }
+              </h2>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .regulatory_customer_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .regulatory_customer_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .verifiction_process_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .verifiction_process_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .introduction_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .introduction_content
+                }
+              </p>
+              <h4>
+                {data.cryptoVegasPrivacyPolicy.data.attributes.additional_title}
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .additional_content
+                }
+              </p>
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_collect_blackjack_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_collect_blackjack_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .information_collection_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .information_collection_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .information_third_party_title
+                }
+              </h4>
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_information_third_party_lists.data.map(
+                    (each: any, index: number) => {
+                      return <li>{each.attributes.text}</li>;
+                    },
+                  )
+                }
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .revealing_personal_info_title
+                }
+              </h4>
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_revealing_personal_info_lists.data.map(
+                    (each: any, index: number) => {
+                      return <li>{each.attributes.text}</li>;
+                    },
+                  )
+                }
+              </ul>
+              <h4>
+                {data.cryptoVegasPrivacyPolicy.data.attributes.cookies_title}
+              </h4>
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_cookies_lists.data.map(
+                    (each: any, index: number) => {
+                      return <li>{each.attributes.text}</li>;
+                    },
+                  )
+                }
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_processing_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_processing_content
+                }
+              </p>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_processing_content1
+                }
+              </p>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_processing_content2
+                }
+              </p>
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .use_personal_data_blackjack_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .use_personal_data_blackjack_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .legal_bases_personal_data_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .legal_bases_personal_data_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .fulfillment_consent_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .fulfillment_consent_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .compliance_applicable_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .compliance_applicable_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .legitimate_interest_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .legitimate_interest_content
+                }
+              </p>
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_legitimate_interest_lists.data.map(
+                    (each: any, index: number) => {
+                      return <li>{each.attributes.text}</li>;
+                    },
+                  )
+                }
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .fulfillment_contact_obligation_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .fulfillment_contact_obligation_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .protection_safety_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .protection_safety_content
+                  }
+                </li>
+              </ul>
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .consistent_user_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .consistent_user_content
+                }
+              </p>
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_consistent_user_lists.data.map(
+                    (each: any, index: number) => {
+                      return <li>{each.attributes.text}</li>;
+                    },
+                  )
+                }
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .disclosure_practice_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .disclosure_practice_content
+                }
+              </p>
+              <ul>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes.privacy_disclosure_practice_lists.data.map(
+                    (each: any, index: number) => {
+                      return <li>{each.attributes.text}</li>;
+                    },
+                  )
+                }
+              </ul>
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_security_subject_title
+                }
+              </h2>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_security_measure_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_security_measure_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .encryption_tech_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .encryption_tech_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_retention_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .data_retention_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .disposal_measure_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .disposal_measure_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .internal_transamission_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .internal_transamission_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .privacy_settings_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .privacy_settings_content
+                  }
+                </li>
+              </ul>
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_subject_right_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .data_subject_right_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .confirmation_access_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .confirmation_access_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .correction_updates_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .correction_updates_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .deletion_forgetting_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .deletion_forgetting_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .objectionuse_disclosure_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .objectionuse_disclosure_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .limitation_process_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .limitation_process_content
+                  }
+                </li>
+              </ul>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .consent_withdraw_title
+                }
+              </h4>
+              <ul>
+                <li>
+                  {
+                    data.cryptoVegasPrivacyPolicy.data.attributes
+                      .consent_withdraw_content
+                  }
+                </li>
+              </ul>
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .contacting_use_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .contacting_use_content
+                }
+              </p>
+              <!-- <p>
+                To exercise any of the data subject rights or address privacy
+                concerns, users can contact us via email at <b
+                  >please provide mail <a
+                    href="mailto:info@metaprolane.com"
+                    class="main-info">info@metaprolane.com</a
+                  ></b
+                > For identity verification, we may use your personal information
+                before acting on your request.
+              </p> -->
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .complaints_supervisory_title
+                }
+              </h2>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .complaints_supervisory_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .chnages_privacy_meta_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .chnages_privacy_meta_content
+                }
+              </p>
+
+              <h2>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .policy_update_process_title
+                }
+              </h2>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .frequency_updated_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .frequency_updated_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .notification_channel_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .notification_channel_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .email_notify_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .email_notify_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .your_responsibility_title
+                }
+              </h4>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .review_frequency_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .review_frequency_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .policy_accebility_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .policy_accebility_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .email_updates_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .email_updates_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .revision_date_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .revision_date_content
+                }
+              </p>
+              <h4>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .user_responsibility_title
+                }
+              </h4>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .user_responsibility_content
+                }
+              </p>
+              <p>
+                {
+                  data.cryptoVegasPrivacyPolicy.data.attributes
+                    .user_responsibility_content1
+                }
+              </p>
+              <!-- <p>
+                We appreciate your diligence in reviewing our privacy policy and
+                your continued trust in MetaCasino Blackjack. If you have any
+                questions or concerns about the privacy policy or its updates,
+                please feel free to contact us at <b
+                  >please provide mail <a
+                    href="mailto:info@metaprolane.com"
+                    class="main-info">info@metaprolane.com</a
+                  ></b
+                >
+              </p> -->
             </div>
-            </html>
-            </Layout>
+          </div>
+        </section>
+      </div>
+    </div>
+  </html>
+</Layout>
