@@ -73,9 +73,11 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
 const { data } = await response.json();
 ---
 
-<Layout title="metaverse-for-industries" 
-description="Discover the potential of the Metaverse for Industries with Metaprolane. Explore how diverse sectors are transforming operations and shaping a future" 
-keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
+<Layout
+    title="metaverse-for-industries"
+    description="Discover the potential of the Metaverse for Industries with Metaprolane. Explore how diverse sectors are transforming operations and shaping a future"
+    keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive"
+>
     <html lang="en">
         <div class="home-container industries-page meta-product">
             <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
@@ -88,7 +90,7 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                 rel="stylesheet"
             />
             <link rel="stylesheet" href="/styles/css/style.css" />
-            <link rel="stylesheet" href="/styles/blog/css/owl.css" />  
+            <link rel="stylesheet" href="/styles/blog/css/owl.css" />
 
             <script is:inline>
                 $(document).ready(function () {
@@ -127,24 +129,32 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                         ); // Adjust the duration as per your requirement
                     });
                 });
-                document.addEventListener('DOMContentLoaded', function() {
-    const tabLinks = document.querySelectorAll('.tab-link');
-    const tabContents = document.querySelectorAll('.tab-content');
+                document.addEventListener("DOMContentLoaded", function () {
+                    const tabLinks = document.querySelectorAll(".tab-link");
+                    const tabContents =
+                        document.querySelectorAll(".tab-content");
 
-    tabLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
+                    tabLinks.forEach((link) => {
+                        link.addEventListener("click", function (event) {
+                            event.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1);
+                            const targetId =
+                                this.getAttribute("href").substring(1);
 
-        tabLinks.forEach(link => link.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
+                            tabLinks.forEach((link) =>
+                                link.classList.remove("active"),
+                            );
+                            tabContents.forEach((content) =>
+                                content.classList.remove("active"),
+                            );
 
-        this.classList.add('active');
-        document.getElementById(targetId).classList.add('active');
-      });
-    });
-  });
+                            this.classList.add("active");
+                            document
+                                .getElementById(targetId)
+                                .classList.add("active");
+                        });
+                    });
+                });
                 // $("#content").hide().show("slide", { direction: "left" }, 1500);
             </script>
 
@@ -179,37 +189,46 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                                     data.metaverseForIndustrie.data.attributes.industry_project_details.data.map(
                                         (each: any, index: number) => {
                                             return (
-                                <div class="col-lg-3">
-                                    <div
-                                        class="svs-main d-flex count-area-content pluss"
-                                    >
-                                        <div class="svs-l">
-                                            <img
-                                                src= {each.attributes.image}
-                                                alt="icon1"
-                                            />
-                                        </div>
-                                        <div class="svs-r">
-                                            <h6 class="text-green numbers-top">
-                                                {each.attributes.title}
-                                            </h6>
-                                            <div
-                                                class="count-digit numbers-bot"
-                                            >
-                                                 {each.attributes.count}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                               )})}
+                                                <div class="col-lg-3">
+                                                    <div class="svs-main d-flex count-area-content pluss">
+                                                        <div class="svs-l">
+                                                            <img
+                                                                src={
+                                                                    each
+                                                                        .attributes
+                                                                        .image
+                                                                }
+                                                                alt="icon1"
+                                                            />
+                                                        </div>
+                                                        <div class="svs-r">
+                                                            <h6 class="text-green numbers-top">
+                                                                {
+                                                                    each
+                                                                        .attributes
+                                                                        .title
+                                                                }
+                                                            </h6>
+                                                            <div class="count-digit numbers-bot">
+                                                                {
+                                                                    each
+                                                                        .attributes
+                                                                        .count
+                                                                }
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            );
+                                        },
+                                    )
+                                }
                             </div>
                         </div>
                         <div class="under-banner-carousel-section slide-left">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div
-                                        class="d-flex"
-                                    >
+                                    <div class="d-flex">
                                         <div class="item">
                                             <div class="icon">
                                                 <img
@@ -386,11 +405,11 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                                     <h2
                                         class="text-white text-center h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 mt-0 mb-4"
                                     >
-                                    {
-                                        data.metaverseForIndustrie.data
-                                            .attributes
-                                            .industries_various_title
-                                    }
+                                        {
+                                            data.metaverseForIndustrie.data
+                                                .attributes
+                                                .industries_various_title
+                                        }
                                     </h2>
                                     <p class="text-center">
                                         {
@@ -400,186 +419,248 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                                         }
                                     </p>
                                     <div class="owl-carousel">
-                                    {
-                                        data.metaverseForIndustrie.data.attributes.industries_various_lists.data.map(
-                                            (each: any, index: number) => {
-                                                return (
-                                                <div
-                                            class="owl-experts-item"
-                                            style="width:27rem"
-                                        >
-                                            <div class="icon">
-                                                <div class="expert-txt2">
-                                                    <div class="box-img" style="width:27rem">
-                                                        <img
-                                                            src={each.attributes.image}
-                                                            alt="Features Image"
-                                                        />
-                                                    </div>
-                                                    <div class="box-img-inn">
-                                                        <h6 class="fma">
-                                                            {each.attributes.title}
-                                                        </h6>
-                                                        <p
-                                                            class="text-last-left"
+                                        {
+                                            data.metaverseForIndustrie.data.attributes.industries_various_lists.data.map(
+                                                (each: any, index: number) => {
+                                                    return (
+                                                        <div
+                                                            class="owl-experts-item"
+                                                            style="width:27rem"
                                                         >
-                                                           {each.attributes.content}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                       )})}
+                                                            <div class="icon">
+                                                                <div class="expert-txt2">
+                                                                    <div
+                                                                        class="box-img"
+                                                                        style="width:27rem"
+                                                                    >
+                                                                        <img
+                                                                            src={
+                                                                                each
+                                                                                    .attributes
+                                                                                    .image
+                                                                            }
+                                                                            alt="Features Image"
+                                                                        />
+                                                                    </div>
+                                                                    <div class="box-img-inn">
+                                                                        <h6 class="fma">
+                                                                            {
+                                                                                each
+                                                                                    .attributes
+                                                                                    .title
+                                                                            }
+                                                                        </h6>
+                                                                        <p class="text-last-left">
+                                                                            {
+                                                                                each
+                                                                                    .attributes
+                                                                                    .content
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                },
+                                            )
+                                        }
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
                     </div>
                 </section>
+            </div>
 
-                <!-- Reshaping Diverse Industry Landscapes -->
-                <section class="our-courses top-your-domain" id="industries">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="section-heading">
-                                    <h5
-                                        class="text-black text-center h3-under-bar text-uppercase slide-left"
-                                    >
-                                        <b class="text-blue">{
+            <!-- Reshaping Diverse Industry Landscapes -->
+            <section class="our-courses top-your-domain" id="industries">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-heading">
+                                <h5
+                                    class="text-black text-center h3-under-bar text-uppercase slide-left"
+                                >
+                                    <b class="text-blue"
+                                        >{
                                             data.metaverseForIndustrie.data
                                                 .attributes
                                                 .industry_reshaping_diverse_title
                                         }</b
-                                        ><br />{
-                                            data.metaverseForIndustrie.data
-                                                .attributes
-                                                .industry_reshaping_diverse_content
-                                        }
-                                    </h5>
-                                </div>
-                                <div
-                                    class="owl-experts-item owl-carousel slide-left d-flex flex-wrap justify-content-between"
-                                >
+                                    ><br />{
+                                        data.metaverseForIndustrie.data
+                                            .attributes
+                                            .industry_reshaping_diverse_content
+                                    }
+                                </h5>
+                            </div>
+                            <div
+                                class="owl-experts-item owl-carousel slide-left d-flex flex-wrap justify-content-between"
+                            >
                                 {
                                     data.metaverseForIndustrie.data.attributes.industry_reshaping_diverse_lists.data.map(
                                         (each: any, index: number) => {
                                             return (
-                                    <div class="item" style="width:22rem">
-                                        <div class="icon">
-                                            <img
-                                                src={each.attributes.image}
-                                                alt="Manufacturing"
-                                            />
-                                            <div class="expert-txt">
-                                                <p class="top-your-head">
-                                                    {each.attributes.text}
-                                                </p>
-                                            </div>
-                                        </div>
-                                </div>
-                                   )})}
+                                                <div
+                                                    class="item"
+                                                    style="width:22rem"
+                                                >
+                                                    <div class="icon">
+                                                        <img
+                                                            src={
+                                                                each.attributes
+                                                                    .image
+                                                            }
+                                                            alt="Manufacturing"
+                                                        />
+                                                        <div class="expert-txt">
+                                                            <p class="top-your-head">
+                                                                {
+                                                                    each
+                                                                        .attributes
+                                                                        .text
+                                                                }
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            );
+                                        },
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
                 <div class="home-container inner-container game-dev-page">
-                    <section class="why-metaprolane whym2 product-why-sec casino-ms-Six-section">
-                      <div class="container py-0">
-                        <div id="tabs" class="game-dev-tab">
-                          <div class="row">
-                            <div class="col-lg-6">
-                              <div id="tabs-1" class="tab-content active">
-                                <img src="assets/images/industries/m-confined-spaces2.png" alt="Features Image" class="w-100" />
-                                <p class="ms42">
-                                    {
-                                        data.metaverseForIndustrie.data
-                                            .attributes
-                                            .industry_safety_confined_content
-                                    }
-                                </p>
-                              </div>
-                              <div id="tabs-2" class="tab-content">
-                                <img src="assets/images/industries/s-metaverse-industry.png" alt="Features Image" class="w-100" />
-                                <p class="ms43">
-                                    {
-                                        data.metaverseForIndustrie.data
-                                            .attributes
-                                            .industry_fire_safety_content
-                                    }
-                                </p>
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <div class="why-metaprolane-l slide-right">
-                                <h3 class="text-white text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700">
-                                  <b class="text-blue">{
-                                    data.metaverseForIndustrie.data
-                                        .attributes
-                                        .industry_advance_risk_mang_title
-                                }</b><br>{
-                                        data.metaverseForIndustrie.data
-                                            .attributes
-                                            .industry_advance_risk_mang_title1
-                                    }
-                                </h3>
-                                <div class="mi-advance">
-                                    {
-                                        data.metaverseForIndustrie.data
-                                            .attributes
-                                            .industry_advance_risk_mang_content
-                                    }
+                    <section
+                        class="why-metaprolane whym2 product-why-sec casino-ms-Six-section"
+                    >
+                        <div class="container py-0">
+                            <div id="tabs" class="game-dev-tab">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div
+                                            id="tabs-1"
+                                            class="tab-content active"
+                                        >
+                                            <img
+                                                src="assets/images/industries/m-confined-spaces2.png"
+                                                alt="Features Image"
+                                                class="w-100"
+                                            />
+                                            <p class="ms42">
+                                                {
+                                                    data.metaverseForIndustrie
+                                                        .data.attributes
+                                                        .industry_safety_confined_content
+                                                }
+                                            </p>
+                                        </div>
+                                        <div id="tabs-2" class="tab-content">
+                                            <img
+                                                src="assets/images/industries/s-metaverse-industry.png"
+                                                alt="Features Image"
+                                                class="w-100"
+                                            />
+                                            <p class="ms43">
+                                                {
+                                                    data.metaverseForIndustrie
+                                                        .data.attributes
+                                                        .industry_fire_safety_content
+                                                }
+                                            </p>
+                                        </div>
                                     </div>
-                                <div class="text-last-left my-3 mt-4 pt-2">
-                                  <ul class="nav nav-tabs">
-                                    <li class="nav-item">
-                                      <a href="#tabs-2" class="nav-link tab-link">
-                                        {
-                                            data.metaverseForIndustrie.data
-                                                .attributes
-                                                .industry_fire_safety_title
-                                        }
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                      <a href="#tabs-1" class="nav-link tab-link">
-                                        {
-                                            data.metaverseForIndustrie.data
-                                                .attributes
-                                                .industry_safety_confined_title
-                                        }
-                                      </a>
-                                    </li>
-                                  </ul>
-                                  <div id="tabs-1"></div>
-                                  <div id="tabs-2"></div>
+                                    <div class="col-lg-6">
+                                        <div
+                                            class="why-metaprolane-l slide-right"
+                                        >
+                                            <h3
+                                                class="text-white text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700"
+                                            >
+                                                <b class="text-blue"
+                                                    >{
+                                                        data
+                                                            .metaverseForIndustrie
+                                                            .data.attributes
+                                                            .industry_advance_risk_mang_title
+                                                    }</b
+                                                ><br />{
+                                                    data.metaverseForIndustrie
+                                                        .data.attributes
+                                                        .industry_advance_risk_mang_title1
+                                                }
+                                            </h3>
+                                            <div class="mi-advance">
+                                                {
+                                                    data.metaverseForIndustrie
+                                                        .data.attributes
+                                                        .industry_advance_risk_mang_content
+                                                }
+                                            </div>
+                                            <div
+                                                class="text-last-left my-3 mt-4 pt-2"
+                                            >
+                                                <ul class="nav nav-tabs">
+                                                    <li class="nav-item">
+                                                        <a
+                                                            href="#tabs-2"
+                                                            class="nav-link tab-link"
+                                                        >
+                                                            {
+                                                                data
+                                                                    .metaverseForIndustrie
+                                                                    .data
+                                                                    .attributes
+                                                                    .industry_fire_safety_title
+                                                            }
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a
+                                                            href="#tabs-1"
+                                                            class="nav-link tab-link"
+                                                        >
+                                                            {
+                                                                data
+                                                                    .metaverseForIndustrie
+                                                                    .data
+                                                                    .attributes
+                                                                    .industry_safety_confined_title
+                                                            }
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div id="tabs-1"></div>
+                                                <div id="tabs-2"></div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                              </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
                     </section>
-                  </div>
-                  
-                  <style>
+                </div>
+
+                <style>
                     .tab-content {
-                      display: none;
+                        display: none;
                     }
                     .tab-content.active {
-                      display: block;
+                        display: block;
                     }
                     .nav-link.active {
-                      background-color: #007bff;
-                      color: white;
-                      border-color: #007bff;
+                        background-color: #007bff;
+                        color: white;
+                        border-color: #007bff;
                     }
                     .nav-link {
-                      color: #000;
-                      background-color: #fff;
+                        color: #000;
+                        background-color: #fff;
                     }
-                  </style>
+                </style>
 
                 <!-- <div class="home-container inner-container game-dev-page">
                     <section
@@ -693,16 +774,16 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                                             <h4
                                                 class="text-black h3-under-bar2 fw-700 slide-left"
                                             >
-                                            {
-                                                data.metaverseForIndustrie.data
-                                                    .attributes
-                                                    .industry_crafting_centric_title
-                                            }
+                                                {
+                                                    data.metaverseForIndustrie
+                                                        .data.attributes
+                                                        .industry_crafting_centric_title
+                                                }
                                             </h4>
                                             <p>
                                                 {
-                                                    data.metaverseForIndustrie.data
-                                                        .attributes
+                                                    data.metaverseForIndustrie
+                                                        .data.attributes
                                                         .industry_crafting_centric_content
                                                 }
                                             </p>
@@ -727,26 +808,32 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                                     <h5
                                         class="text-white h3-under-bar2 mb-5 fw-600"
                                     >
-                                    {
-                                        data.metaverseForIndustrie.data
-                                            .attributes
-                                            .industry_faq_title
-                                    }
+                                        {
+                                            data.metaverseForIndustrie.data
+                                                .attributes.industry_faq_title
+                                        }
                                     </h5>
                                 </div>
-                                {data.metaverseForIndustrie.data.attributes.industry_faq_lists.data.map(
-                                    (item: any, index: number) => (
-                                      <div class="faq-card">
-                                        <div class="faq-question" onclick="toggleAnswer(event)">
-                                          {item.attributes.question}
-                                          <span class="faq-toggle-icon">+</span>
-                                        </div>
-                                        <div class="faq-answer">
-                                          {item.attributes.answer}
-                                        </div>
-                                      </div>
-                                    ),
-                                  )}
+                                {
+                                    data.metaverseForIndustrie.data.attributes.industry_faq_lists.data.map(
+                                        (item: any, index: number) => (
+                                            <div class="faq-card">
+                                                <div
+                                                    class="faq-question"
+                                                    onclick="toggleAnswer(event)"
+                                                >
+                                                    {item.attributes.question}
+                                                    <span class="faq-toggle-icon">
+                                                        +
+                                                    </span>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    {item.attributes.answer}
+                                                </div>
+                                            </div>
+                                        ),
+                                    )
+                                }
                                 <!-- {
                                     data.metaverseForIndustrie.data.attributes.industry_faq_lists.data.map(
                                       (item: any) => (
@@ -769,7 +856,7 @@ keywords="Metaverse for Industries, Metaverse Industry , Metaverse automotive">
                         </div>
                     </div>
                 </section>
-            </div>
+            </section>
         </div>
     </html>
 </Layout>
