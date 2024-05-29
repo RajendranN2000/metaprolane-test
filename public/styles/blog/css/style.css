@@ -2606,7 +2606,10 @@ section.under-banner.our-technologies .section-heading h2:after {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px
 }
-
+section.under-banner.top-section {
+    padding: 0px 0;
+    position: relative;
+}
 section.apply-now::after,
 section.under-banner.our-technologies::before {
     text-align: center;
