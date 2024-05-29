@@ -68,14 +68,14 @@ const { data } = await response.json();
               <div class="row">
                 <div class="col-lg-6">
                   <div class="ai-l">
-                    <h1>
+                    <h1 class="animation-element slide-left">
                       {
                         data.blogMetaverseWorkplace.data
                             .attributes
                             .metaverse_virtual_title
                     }
                     </h1>
-                    <p>
+                    <p class="animation-element slide-left">
                       {
                         data.blogMetaverseWorkplace.data
                             .attributes
@@ -83,7 +83,7 @@ const { data } = await response.json();
                     }
                     </p>
 
-                    <p>
+                    <p class="animation-element slide-left">
                       {
                         data.blogMetaverseWorkplace.data
                             .attributes
@@ -91,7 +91,7 @@ const { data } = await response.json();
                     }
                     </p>
 
-                    <p>
+                    <p class="animation-element slide-left">
                       {
                         data.blogMetaverseWorkplace.data
                             .attributes
@@ -99,7 +99,7 @@ const { data } = await response.json();
                     }
                     </p>
 
-                    <p>
+                    <p class="animation-element slide-left">
                       {
                         data.blogMetaverseWorkplace.data
                             .attributes
@@ -107,7 +107,7 @@ const { data } = await response.json();
                     }
                     </p>
 
-                    <p>
+                    <p class="animation-element slide-left">
                       {
                         data.blogMetaverseWorkplace.data
                             .attributes
@@ -117,7 +117,7 @@ const { data } = await response.json();
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <img
+                  <img class="animation-element slide-right"
                     src= {
                       data.blogMetaverseWorkplace.data
                           .attributes
@@ -135,7 +135,7 @@ const { data } = await response.json();
             <div class="blog-detail-middle">
               <div class="row">
                 <div class="col-lg-8">
-                  <div class="bdm-l">
+                  <div class="bdm-l animation-element slide-left">
                     <h4>Features of the metaverse virtual office:</h4>
 
                     <h6>Immersive environments:</h6><p>
@@ -541,7 +541,7 @@ const { data } = await response.json();
                   </div>
                 </div>
                 <div class="col-lg-4">
-                  <div class="bdm-l">
+                  <div class="bdm-l animation-element slide-right">
                     <h3 class="text-left h3-head">
                       {
                         data.blogMetaverseWorkplace.data
@@ -613,5 +613,36 @@ const { data } = await response.json();
         </section>
       </div>
     </div>
+    <script type="text/javascript">
+      var $animation_elements = $(".animation-element");
+      var $window = $(window);
+
+      function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = window_top_position + window_height;
+
+        $.each($animation_elements, function () {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = element_top_position + element_height;
+
+          //check to see if this current container is within viewport
+          if (
+            element_bottom_position >= window_top_position &&
+            element_top_position <= window_bottom_position
+          ) {
+            $element.addClass("in-view");
+          }
+          // else {
+          //   $element.removeClass('in-view');
+          // }
+        });
+      }
+
+      $window.on("scroll resize", check_if_in_view);
+      $window.trigger("scroll", check_if_in_view);
+    </script>
   </html>
 </BlogLayout>

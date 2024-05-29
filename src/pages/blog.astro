@@ -65,46 +65,48 @@ const { data } = await response.json();
               <div class="row">
                 {
                   data.blog.data.attributes.blog_lists.data.map(
-                      (each: any, index: number) => {
-                          return (
-                <div class="col-lg-6 item">
-                  <div class="blog-banner-r">
-                    <a 
-                    href={`/${each.attributes.url}`}
-                      // href="/metaverse-workplace"
-                      >
-                      <div class="blog-banner-r-inn">
-                        <div class="row">
-                          <div class="col-lg-6">
-                            <div class="bb-img">
-                              <img
-                                src={each.attributes.image}
-                                alt="blog"
-                              />
-                            </div>
-                          </div>
-                          <div class="col-lg-6">
-                            <div class="">
-                              <div class="bb-l-cont2">
-                                <p>
-                                  {each.attributes.date}
-                                </p>
-                                <div class="h5-box">
-                                  {each.attributes.name}
+                    (each: any, index: number) => {
+                      return (
+                        <div class="col-lg-6 item">
+                          <div class="blog-banner-r animation-element slide-left">
+                            <a
+                              href={`/${each.attributes.url}`}
+                              href="/metaverse-workplace"
+                            >
+                              <div class="blog-banner-r-inn ">
+                                <div class="row">
+                                  <div class="col-lg-6 ">
+                                    <div class="bb-img">
+                                      <img
+                                        src={each.attributes.image}
+                                        alt="blog"
+                                      />
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-6">
+                                    <div class="">
+                                      <div class="bb-l-cont2">
+                                        <p>{each.attributes.date}</p>
+                                        <div class="h5-box">
+                                          {each.attributes.name}
+                                        </div>
+                                        <h2>{each.attributes.title}</h2>
+                                        <p>
+                                          {each.attributes.content}
+                                          <b class="rm1">Read More...</b>
+                                        </p>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
-                                <h2>{each.attributes.title}</h2>
-                                <p>
-                                  {each.attributes.content}<b class="rm1">Read More...</b>
-                                </p>
                               </div>
-                            </div>
+                            </a>
                           </div>
                         </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                )})}
+                      );
+                    },
+                  )
+                }
                 <!-- <div class="col-lg-6 item">
                   <div class="blog-banner-r">
                     <a href="/basics-of-metaverse-virtual-reality">
@@ -251,15 +253,48 @@ const { data } = await response.json();
                 </div>
               </div>
             </div> -->
-            <div
-              class="pagination-container"
-              id="pagination-container"
-              style="text-align: center;"
-            >
+                <div
+                  class="pagination-container"
+                  id="pagination-container"
+                  style="text-align: center;"
+                >
+                </div>
+              </div>
             </div>
           </section>
         </div>
       </div>
     </div>
+    <script type="text/javascript">
+      var $animation_elements = $(".animation-element");
+      var $window = $(window);
+
+      function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = window_top_position + window_height;
+
+        $.each($animation_elements, function () {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = element_top_position + element_height;
+
+          //check to see if this current container is within viewport
+          if (
+            element_bottom_position >= window_top_position &&
+            element_top_position <= window_bottom_position
+          ) {
+            $element.addClass("in-view");
+          }
+          // else {
+          //   $element.removeClass('in-view');
+          // }
+        });
+      }
+
+      $window.on("scroll resize", check_if_in_view);
+      $window.trigger("scroll", check_if_in_view);
+    </script>
   </html></BlogLayout
 >

@@ -176,17 +176,17 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 // $("#content").hide().show("slide", { direction: "left" }, 1500);
             </script>
 
-            <div class="home-container industries-page">
+            <div class="home-container  industries-page">
                 <section class="container-fluid realestate-section-1 bg-white">
                     <div class="row">
                         <div class="section-1-text">
-                            <h2 class="text-center text-light">
+                            <h2 class="text-center text-light  animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes.real_estate_dev_title
                                 }
                             </h2>
-                            <p class="text-center text-light">
+                            <p class="text-center text-light  animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes.real_estate_dev_content
@@ -199,10 +199,10 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
 
             <!-- Metaverse Real Estate Development Services -->
             <section class="container-fluid bg-white section-2">
-                <div class="container">
+                <div class="container ">
                     <div class="row">
                         <div class="col-12 col-lg-6 col-md-12 col-xs-12">
-                            <div class="mt-5">
+                            <div class="mt-5  animation-element slide-left">
                                 <h1>
                                     {
                                         data.metaverseRealEstateSolution.data
@@ -222,7 +222,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                         <div
                             class="col-12 col-lg-6 col-md-12 col-xs-12 d-flex justify-content-center align-items-center"
                         >
-                            <div class="image1">
+                            <div class="image1  animation-element slide-right">
                                 <img
                                     src="./assets/images/realestate/section2 img.webp"
                                     alt="section-2"
@@ -239,7 +239,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
-                            <div class="text-center section-3-top-content">
+                            <div class="text-center section-3-top-content animation-element slide-left">
                                 <h2 class="text-white">
                                     {
                                         data.metaverseRealEstateSolution.data
@@ -264,7 +264,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                                     return (
                                         <div class="col-12 col-lg-6 col-md-6 p-5">
                                             <img
-                                                class="img-responsive"
+                                                class="img-responsive  animation-element slide-right"
                                                 alt="3D-image"
                                                 src="./assets/images/realestate/section-3-first.webp"
                                             />
@@ -288,7 +288,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="text-center heading">
+                            <h2 class="text-center heading  animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes
@@ -303,8 +303,8 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                                 (each: any, index: number) => {
                                     return (
                                         <div class="col-12 col-xs-6 col-md-6 col-lg-4 col-xl-3">
-                                            <div class="box">
-                                                <div class="d-flex justify-content-center">
+                                            <div class="box animation-element slide-left">
+                                                <div class="d-flex justify-content-center  ">
                                                     <img
                                                         id="first"
                                                         alt="user-friendly-image"
@@ -341,7 +341,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="mt-4 text-center text-white heading">
+                            <h2 class="mt-4 text-center text-white heading animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes.real_estate_benefits_title
@@ -354,8 +354,8 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                             data.metaverseRealEstateSolution.data.attributes.real_estate_benefits_lists.data.map(
                                 (each: any, index: number) => {
                                     return (
-                                        <div class="col-12 col-md-12 col-lg-6 mt-5">
-                                            <div class="d-flex box-content">
+                                        <div class="col-12 col-md-12 col-lg-6 mt-5 ">
+                                            <div class="d-flex box-content animation-element slide-left">
                                                 <div class="image-section">
                                                     <img
                                                         class=""
@@ -392,14 +392,14 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="mt-5 text-center heading">
+                            <h2 class="mt-5 text-center heading animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes
                                         .real_estate_platform_dev_title
                                 }
                             </h2>
-                            <p class="text-center mb-5 px-5">
+                            <p class="text-center mb-5 px-5 animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes
@@ -414,7 +414,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                                 (each: any, index: number) => {
                                     return (
                                         <div class="col-12 col-md-12 col-lg-6 col-xl-4 mt-4">
-                                            <div class="box-small text-center">
+                                            <div class="box-small text-center animation-element slide-right">
                                                 <img
                                                     alt="Conceptualization-image"
                                                     src={each.attributes.image}
@@ -436,7 +436,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="pt-5 heading text-white text-center">
+                            <h2 class="pt-5 heading text-white text-center animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes
@@ -451,7 +451,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                                 (each: any, index: number) => {
                                     return (
                                         <div class="col-12 col-xs-12 col-md-12 col-lg-6 col-xl-4">
-                                            <div class="box">
+                                            <div class="box animation-element slide-right">
                                                 <h2>{each.attributes.title}</h2>
                                                 <p class="text-white mt-2">
                                                     {each.attributes.content}
@@ -471,7 +471,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 <div class="container section-8-bg">
                     <div class="row">
                         <div class="col-12">
-                            <h2 class="text-center mt-5">
+                            <h2 class="text-center mt-5 animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes.real_estate_tech_stack_title
@@ -481,7 +481,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                     </div>
                     <div class="row">
                         <div class="col-12 col-xs-12 col-md-4 mt-5 no-padding">
-                            <ul class="nav nav-tabs" role="tablist">
+                            <ul class="nav nav-tabs animation-element slide-left" role="tablist">
                                 <li class="nav-item" role="presentation">
                                     <a
                                         class="nav-link bottom-border"
@@ -631,7 +631,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                                 class="d-flex justify-content-center align-items-center"
                             >
                                 <div
-                                    class="tab-content pt-5 mt-5"
+                                    class="tab-content pt-5 mt-5 animation-element slide-right"
                                     id="tab-content"
                                 >
                                     <div
@@ -805,7 +805,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <h1 class="pt-5 heading text-white text-center">
+                            <h1 class="pt-5 heading text-white text-center animation-element slide-left">
                                 {
                                     data.metaverseRealEstateSolution.data
                                         .attributes
@@ -819,7 +819,7 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                         class="carousel slide"
                         data-ride="carousel"
                     >
-                        <div class="carousel-inner">
+                        <div class="carousel-inner animation-element slide-right">
                             {
                                 data.metaverseRealEstateSolution.data.attributes.real_estate_platform_mechanics_lists.data.map(
                                     (each: any, index: number) => {
@@ -877,5 +877,36 @@ keywords="Metaverse real estate, Metaverse real estate development, Metaverse re
                 </div>
             </section>
         </div>
+        <script type="text/javascript">
+            var $animation_elements = $(".animation-element");
+            var $window = $(window);
+      
+            function check_if_in_view() {
+              var window_height = $window.height();
+              var window_top_position = $window.scrollTop();
+              var window_bottom_position = window_top_position + window_height;
+      
+              $.each($animation_elements, function () {
+                var $element = $(this);
+                var element_height = $element.outerHeight();
+                var element_top_position = $element.offset().top;
+                var element_bottom_position = element_top_position + element_height;
+      
+                //check to see if this current container is within viewport
+                if (
+                  element_bottom_position >= window_top_position &&
+                  element_top_position <= window_bottom_position
+                ) {
+                  $element.addClass("in-view");
+                }
+                // else {
+                //   $element.removeClass('in-view');
+                // }
+              });
+            }
+      
+            $window.on("scroll resize", check_if_in_view);
+            $window.trigger("scroll", check_if_in_view);
+          </script>
     </html>
 </Layout>

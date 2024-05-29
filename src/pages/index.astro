@@ -151,7 +151,7 @@ const activeIndex = 1;
         <!-- <link rel="stylesheet" href="assets/css/owl.css"> -->
         <link rel="stylesheet" href="styles/css/lightbox.css" />
         <link rel="stylesheet" href="/styles/blog/css/owl.css" />
-        <link rel="stylesheet" href="/styles/css/style.css"/>
+        <link rel="stylesheet" href="/styles/css/style.css" />
         <link
             rel="stylesheet"
             href="styles/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1"
@@ -159,18 +159,16 @@ const activeIndex = 1;
         <link rel="stylesheet" href="styles/css/animate.css" />
         <link rel="stylesheet" href="styles/css/style5597.css" />
         <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
+            src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+            integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"></script>
 
         <!-- <script
                 is:inline
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
             ></script> -->
-         
-            
+
         <script is:inline>
             document.addEventListener("DOMContentLoaded", function () {
                 let currentIndex = 0;
@@ -196,70 +194,71 @@ const activeIndex = 1;
             });
 
             document.addEventListener("DOMContentLoaded", () => {
-    const prevButton = document.querySelector(".slider_nav .prev");
-    const nextButton = document.querySelector(".slider_nav .next");
-    const items = document.querySelectorAll(".slider_top ul li");
-    let currentIndex = 0; // Start from the first item
+                const prevButton = document.querySelector(".slider_nav .prev");
+                const nextButton = document.querySelector(".slider_nav .next");
+                const items = document.querySelectorAll(".slider_top ul li");
+                let currentIndex = 0; // Start from the first item
 
-    function updateCarousel() {
-        items.forEach((item, index) => {
-            item.classList.remove(
-                "prev",
-                "prev2",
-                "active",
-                "next",
-                "next2"
-            );
-        });
+                function updateCarousel() {
+                    items.forEach((item, index) => {
+                        item.classList.remove(
+                            "prev",
+                            "prev2",
+                            "active",
+                            "next",
+                            "next2",
+                        );
+                    });
 
-        const prevIndex = (currentIndex - 1 + items.length) % items.length;
-        const nextIndex = (currentIndex + 1) % items.length;
-        const prev2Index = (currentIndex - 2 + items.length) % items.length;
-        const next2Index = (currentIndex + 2) % items.length;
+                    const prevIndex =
+                        (currentIndex - 1 + items.length) % items.length;
+                    const nextIndex = (currentIndex + 1) % items.length;
+                    const prev2Index =
+                        (currentIndex - 2 + items.length) % items.length;
+                    const next2Index = (currentIndex + 2) % items.length;
 
-        items[prev2Index].classList.add("prev2");
-        items[prevIndex].classList.add("prev");
-        items[currentIndex].classList.add("active");
-        items[nextIndex].classList.add("next");
-        items[next2Index].classList.add("next2");
-    }
+                    items[prev2Index].classList.add("prev2");
+                    items[prevIndex].classList.add("prev");
+                    items[currentIndex].classList.add("active");
+                    items[nextIndex].classList.add("next");
+                    items[next2Index].classList.add("next2");
+                }
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % items.length;
-        updateCarousel();
-    }
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    updateCarousel();
+                }
 
-    // Automatically advance to the next slide every 5 seconds
-    setInterval(nextSlide, 3000);
+                // Automatically advance to the next slide every 5 seconds
+                setInterval(nextSlide, 3000);
 
-    updateCarousel(); // Initial call to set the classes
-});
+                updateCarousel(); // Initial call to set the classes
+            });
 
-document.addEventListener("DOMContentLoaded", function () {
-        $(".owl-carousel").owlCarousel({
-            items: 1, // Display one item-row at a time
-            margin: 20, // Space between items
-            loop: true, // Loop through items
-            autoplay: true, // Enable auto-play
-            autoplayTimeout: 3000, // Auto-play interval (in ms)
-            autoplayHoverPause: true, // Pause on hover
-            responsive: {
-                0: {
-                    items: 1, // Display one item-row at a time on small screens
-                },
-                600: {
-                    items: 1, // Display one item-row at a time on medium screens
-                },
-                800: {
-                    items: 2, // Display one item-row at a time on medium screens
-                },
-                1000: {
-                    items: 3, // Display one item-row at a time on large screens
-                },
-            },
-        });
-    });
-
+            document.addEventListener("DOMContentLoaded", function () {
+                $(".owl-carousel").owlCarousel({
+                    items: 1, // Display one item-row at a time
+                    margin: 20, // Space between items
+                    loop: true, // Loop through items
+                    autoplay: true, // Enable auto-play
+                    autoplayTimeout: 3000, // Auto-play interval (in ms)
+                    autoplayHoverPause: true, // Pause on hover
+                    responsive: {
+                        0: {
+                            items: 1, // Display one item-row at a time on small screens
+                        },
+                        600: {
+                            items: 1, // Display one item-row at a time on medium screens
+                        },
+                        800: {
+                            items: 2, // Display one item-row at a time on medium screens
+                        },
+                        1000: {
+                            items: 3, // Display one item-row at a time on large screens
+                        },
+                    },
+                });
+            });
         </script>
 
         <section class="section main-banner" id="top" data-section="section1">
@@ -269,7 +268,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </section>
         <section class="under-banner-index">
             <div class="container">
-                <div class="under-banner-values-section slide-left">
+                <div class="under-banner-values-section animation-element slide-left">
                     <div class="row">
                         {
                             data.data.homePageSection1.data.attributes.project_details.data.map(
@@ -365,13 +364,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div> -->
 
-                    <!-- <div class="under-banner-carousel-section slide-left">
+                    <!-- <div class="under-banner-carousel-section animation-element slide-left">
                         <div class="col-lg-12">
                           <Carousel />
                         </div>
                       </div> -->
 
-                    <div class="under-banner-carousel-section slide-left">
+                    <div class="under-banner-carousel-section animation-element slide-left">
                         <div class="col-lg-12">
                             <div class="row">
                                 <div class="d-flex">
@@ -509,7 +508,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
-                        <div class="about-ms slide-right">
+                        <div class="about-ms animation-element slide-right">
                             <h1 class="text-black top-t">
                                 {
                                     data.data.homePageSection1.data.attributes
@@ -525,7 +524,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="about-ms-r text-right slide-left">
+                        <div class="about-ms-r text-right animation-element slide-left">
                             <div class="about-ms-img ams2">
                                 <img
                                     src="/assets/images/about2.webp"
@@ -542,7 +541,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        <div class="about-ms slide-left">
+                        <div class="about-ms animation-element slide-left">
                             <p class="text-black unlock-heading">
                                 {
                                     data.data.homePageSection1.data.attributes
@@ -581,7 +580,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="about-ms-r text-right slide-right">
+                        <div class="about-ms-r text-right  animation-element slide-right">
                             <div class="about-ms-img">
                                 <img
                                     src="assets/images/about.webp"
@@ -601,7 +600,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="container immersive-experience-c">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="immersive-m-l slide-left">
+                        <div class="immersive-m-l animation-element slide-left">
                             <iframe
                                 title="Metaprolane Video"
                                 srcdoc="
@@ -641,7 +640,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <!-- https://vumbnail.com/t0NKhGQVuhQ.jpg -->
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-r slide-right">
+                        <div class="immersive-m-r animation-element slide-right">
                             <h5 class="text-white get-experience">
                                 {
                                     data.data.homePageSection1.data.attributes
@@ -677,7 +676,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="about-ms slide-left">
+                        <div class="about-ms animation-element slide-left">
                             <h5
                                 class="text-black text-last-left2 ims get-experience pb-3"
                             >
@@ -703,7 +702,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-l slide-right">
+                        <div class="immersive-m-l animation-element slide-right">
                             <!-- https://www.youtube.com/embed/t0NKhGQVuhQ?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1 -->
                             <iframe
                                 title="Metaprolane Video"
@@ -752,7 +751,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="container immersive-experience-c">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="immersive-m-l slide-left">
+                        <div class="immersive-m-l animation-element slide-left">
                             <iframe
                                 title="Metaprolane Video"
                                 srcdoc="
@@ -791,7 +790,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-r slide-right">
+                        <div class="immersive-m-r animation-element slide-right">
                             <h4 class="text-white get-experience">
                                 {
                                     data.data.homePageSection1.data.attributes
@@ -827,7 +826,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="about-ms slide-left">
+                        <div class="about-ms animation-element slide-left">
                             <h5
                                 class="text-black text-last-left2 ims get-experience pb-3"
                             >
@@ -853,7 +852,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-l slide-right">
+                        <div class="immersive-m-l animation-element slide-right">
                             <img
                                 src="https://metaprolane.stsdev.site/assets/images/mall-home/home-mall.png"
                                 alt="Casino"
@@ -871,7 +870,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="container immersive-experience-c">
                 <div class="row">
                     <div class="col-lg-6">
-                        <div class="immersive-m-l slide-left">
+                        <div class="immersive-m-l animation-element slide-left">
                             <img
                                 src="https://metaprolane.stsdev.site/assets/images/casino-game/home-casino.png"
                                 alt="Casino"
@@ -880,7 +879,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-r slide-right">
+                        <div class="immersive-m-r animation-element slide-right">
                             <h4 class="text-white get-experience">
                                 {
                                     data.data.homePageSection1.data.attributes
@@ -917,7 +916,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         <section class="why-metaprolane need-meta">
             <div class="container">
-                <div class="row slide-left">
+                <div class="row animation-element slide-left">
                     <div class="col-lg-12">
                         <div class="why-metaprolane-head">
                             <h3 class="text-white text-center h3-under-bar">
@@ -956,138 +955,130 @@ document.addEventListener("DOMContentLoaded", function () {
                         )
                     }
                 </div>
-            </section>
-                <!-- metaverse development services -->
-                <section
-                    class="under-banner experts-in-sec"
-                    id="metadevelopment"
-                >
-                    <div class="container our-custom-meta-solutions">
-                        <div class="experts-inn">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="section-heading ss-case">
-                                        <h2
-                                            class="text-white text-center slide-left"
-                                        >
-                                            {
-                                                data.data.homePageSection1.data
-                                                    .attributes
-                                                    .section_metaverse_developmet
-                                            }
-                                        </h2>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 slide-left">
-                                    <div
-                                        class="fn_cs_slider"
-                                        data-responsive="on"
+            </div>
+            <!-- metaverse development services -->
+            <section class="under-banner experts-in-sec" id="metadevelopment">
+                <div class="container our-custom-meta-solutions">
+                    <div class="experts-inn">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-heading ss-case">
+                                    <h2
+                                        class="text-white text-center animation-element slide-left"
                                     >
-                                        <div class="slider_top">
-                                            <ul>
-                                                {
-                                                    data.data.homePageSection1.data.attributes.metavarse_development_service_lists.data.map(
-                                                        (
-                                                            each: any,
-                                                            index: number,
-                                                        ) => {
-                                                          
-                                                            return (
-                                                                <li
-                                                                  
-                                                                >
-                                                                    <div
-                                                                        class="item"
-                                                                       
-                                                                    >
-                                                                        <img
-                                                                            src={
-                                                                                each.attributes.image
-                                                                            }
+                                        {
+                                            data.data.homePageSection1.data
+                                                .attributes
+                                                .section_metaverse_developmet
+                                        }
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 animation-element slide-left">
+                                <div class="fn_cs_slider" data-responsive="on">
+                                    <div class="slider_top">
+                                        <ul>
+                                            {
+                                                data.data.homePageSection1.data.attributes.metavarse_development_service_lists.data.map(
+                                                    (
+                                                        each: any,
+                                                        index: number,
+                                                    ) => {
+                                                        return (
+                                                            <li>
+                                                                <div class="item">
+                                                                    <img
+                                                                        src={
+                                                                            each
+                                                                                .attributes
+                                                                                .image
+                                                                        }
+                                                                    />
+                                                                    <div class="item_in">
+                                                                        <div
+                                                                            class="img"
+                                                                            style={{
+                                                                                backgroundImage: `url(${each.attributes.image})`,
+                                                                                // backgroundSize: 'cover',
+                                                                                // backgroundPosition: 'center',
+                                                                                // width: '100%',
+                                                                                // height: '100%'
+                                                                            }}
                                                                         />
-                                                                        <div class="item_in">
-                                                                            <div
-                                                                                class="img"
-                                                                                style={{
-                                                                backgroundImage: `url(${each.attributes.image})`,
-                                                                // backgroundSize: 'cover',
-                                                                // backgroundPosition: 'center',
-                                                                // width: '100%',
-                                                                // height: '100%'
-                                                            }}                                                                            />
-                                                                        </div>
                                                                     </div>
-                                                                </li>
-                                                            );
-                                                        },
-                                                    )
-                                                }
-                                            </ul>
-                                        </div>
-                                        <div class="slider_nav">
-                                            <a href="#" class="prev">
-                                                <span class="circle"></span>
-                                                <span class="icon"
-                                                    ><i
-                                                        class="fa fa-chevron-left"
-                                                    ></i></span
-                                                >
-                                                <span class="circle"></span>
-                                            </a>
-                                            <a href="#" class="next">
-                                                <span class="circle"></span>
-                                                <span class="icon"
-                                                    ><i
-                                                        class="fa fa-chevron-right"
-                                                    ></i></span
-                                                >
-                                                <span class="circle"></span>
-                                            </a>
-                                        </div>
+                                                                </div>
+                                                            </li>
+                                                        );
+                                                    },
+                                                )
+                                            }
+                                        </ul>
+                                    </div>
+                                    <div class="slider_nav">
+                                        <a href="#" class="prev">
+                                            <span class="circle"></span>
+                                            <span class="icon"
+                                                ><i class="fa fa-chevron-left"
+                                                ></i></span
+                                            >
+                                            <span class="circle"></span>
+                                        </a>
+                                        <a href="#" class="next">
+                                            <span class="circle"></span>
+                                            <span class="icon"
+                                                ><i class="fa fa-chevron-right"
+                                                ></i></span
+                                            >
+                                            <span class="circle"></span>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="bg-vectors">
-                        <img
-                            src="assets/images/bg-vector3.webp"
-                            alt="vector image"
-                        />
-                    </div>
-                </section>
-                <div class="industries-box-20"></div>
+                </div>
+                <div class="bg-vectors">
+                    <img
+                        src="assets/images/bg-vector3.webp"
+                        alt="vector image"
+                    />
+                </div>
+            </section>
+            <div class="industries-box-20"></div>
 
-                <!-- top your domain with metaverse solutions -->
-                <section class="our-courses top-your-domain" id="industries">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="section-heading">
-                                    <h5
-                                        class="text-black text-center h3-under-bar text-uppercase slide-left"
-                                    >
-                                        {
-                                            data.data.homePageSection1.data
-                                                .attributes
-                                                .section_metaverse_domain_title
-                                        }
-                                    </h5>
-                                </div>
-
-                                <div class="owl-carousel">
+            <!-- top your domain with metaverse solutions -->
+            <section class="our-courses top-your-domain" id="industries">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section-heading">
+                                <h5
+                                    class="text-black text-center h3-under-bar text-uppercase animation-element slide-left"
+                                >
                                     {
-                                        data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data.map(
-                                            (each: any, index: number) => {
-                                                const reverseIndex = data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data.length - 1 - index;
-                                                return (
-                                                    // first row
-                                                   <div>
+                                        data.data.homePageSection1.data
+                                            .attributes
+                                            .section_metaverse_domain_title
+                                    }
+                                </h5>
+                            </div>
+
+                            <div class="owl-carousel">
+                                {
+                                    data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data.map(
+                                        (each: any, index: number) => {
+                                            const reverseIndex =
+                                                data.data.homePageSection1.data
+                                                    .attributes
+                                                    .metaverse_domain_solutions
+                                                    .data.length -
+                                                1 -
+                                                index;
+                                            return (
+                                                // first row
+                                                <div>
                                                     <div class="owl-experts-item">
-                                                        <div
-                                                            class="item"
-                                                           
-                                                        >
+                                                        <div class="item">
                                                             <div class="icon">
                                                                 <img
                                                                     src={
@@ -1117,52 +1108,78 @@ document.addEventListener("DOMContentLoaded", function () {
                                                         </div>
                                                     </div>
 
-                                                        {/* second row */}
+                                                    {/* second row */}
                                                     <div class="owl-experts-item">
-                                                        <div
-                                                            class="item"
-                                                           
-                                                        >
-                                                           <div class="icon">
-                            <img
-                                src={
-                                    data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data[reverseIndex].attributes.image
-                                }
-                                alt="Gaming"
-                            />
-                            <div class="expert-txt">
-                                <p class="top-your-head">
-                                    {
-                                        data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data[reverseIndex].attributes.text
-                                    }
-                                </p>
-                                <p class="top-your-bot">
-                                    {
-                                        data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data[reverseIndex].attributes.content
-                                    }
-                                </p>
-                            </div>
-                        </div>
+                                                        <div class="item">
+                                                            <div class="icon">
+                                                                <img
+                                                                    src={
+                                                                        data
+                                                                            .data
+                                                                            .homePageSection1
+                                                                            .data
+                                                                            .attributes
+                                                                            .metaverse_domain_solutions
+                                                                            .data[
+                                                                            reverseIndex
+                                                                        ]
+                                                                            .attributes
+                                                                            .image
+                                                                    }
+                                                                    alt="Gaming"
+                                                                />
+                                                                <div class="expert-txt">
+                                                                    <p class="top-your-head">
+                                                                        {
+                                                                            data
+                                                                                .data
+                                                                                .homePageSection1
+                                                                                .data
+                                                                                .attributes
+                                                                                .metaverse_domain_solutions
+                                                                                .data[
+                                                                                reverseIndex
+                                                                            ]
+                                                                                .attributes
+                                                                                .text
+                                                                        }
+                                                                    </p>
+                                                                    <p class="top-your-bot">
+                                                                        {
+                                                                            data
+                                                                                .data
+                                                                                .homePageSection1
+                                                                                .data
+                                                                                .attributes
+                                                                                .metaverse_domain_solutions
+                                                                                .data[
+                                                                                reverseIndex
+                                                                            ]
+                                                                                .attributes
+                                                                                .content
+                                                                        }
+                                                                    </p>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                );
-                                            },
-                                        )
-                                    }
-                                </div>
+                                            );
+                                        },
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                
-                <!-- <section class="our-courses top-your-domain" id="industries">
+            <!-- <section class="our-courses top-your-domain" id="industries">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="section-heading">
-                                    <h5 class="text-black text-center h3-under-bar text-uppercase slide-left">
+                                    <h5 class="text-black text-center h3-under-bar text-uppercase animation-element slide-left">
                                         {data.data.homePageSection1.data.attributes.section_metaverse_domain_title}
                                     </h5>
                                 </div>
@@ -1214,117 +1231,108 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
                 </section> -->
-                
-                
 
-            
-                <section class="meta-development-services">
-                    <div class="bg-vectors">
-                        <img
-                            src="assets/images/bg-vector2.webp"
-                            alt="BG Vector"
-                        />
-                    </div>
-                    <div
-                        id="carouselExample"
-                        class="carousel slide"
-                        data-ride="carousel"
-                    >
-                        <div class="carousel-inner">
-                            {
-                                data.data.homePageSection1.data.attributes.metaverse_lists.data.map(
-                                    (each: any, index: number) => {
-                                        return (
-                                            <div
-                                                class={`carousel-item ${index === 0 ? "active" : ""}`}
-                                            >
-                                                <div class="row">
-                                                    <div class="col-12 mt-5">
-                                                        <h3 class="text-center text-white text-bold">
-                                                            {
-                                                                each.attributes
-                                                                    .title
-                                                            }
-                                                        </h3>
-                                                        <div class="d-flex justify-content-center">
-                                                            <div class="quote-box">
-                                                                <div class="d-flex justify-content-center">
-                                                                    <blockquote class="text-center corosel-content text-white">
-                                                                        <span>
-                                                                            &#x201C;
-                                                                        </span>
-                                                                        {
-                                                                            each
-                                                                                .attributes
-                                                                                .content
-                                                                        }
-                                                                        <span>
-                                                                            &#x201D;
-                                                                        </span>
-                                                                    </blockquote>
-                                                                </div>
+            <section class="meta-development-services">
+                <div class="bg-vectors">
+                    <img src="assets/images/bg-vector2.webp" alt="BG Vector" />
+                </div>
+                <div
+                    id="carouselExample"
+                    class="carousel slide"
+                    data-ride="carousel"
+                >
+                    <div class="carousel-inner">
+                        {
+                            data.data.homePageSection1.data.attributes.metaverse_lists.data.map(
+                                (each: any, index: number) => {
+                                    return (
+                                        <div
+                                            class={`carousel-item ${index === 0 ? "active" : ""}`}
+                                        >
+                                            <div class="row">
+                                                <div class="col-12 mt-5">
+                                                    <h3 class="text-center text-white text-bold">
+                                                        {each.attributes.title}
+                                                    </h3>
+                                                    <div class="d-flex justify-content-center">
+                                                        <div class="quote-box">
+                                                            <div class="d-flex justify-content-center">
+                                                                <blockquote class="text-center corosel-content text-white">
+                                                                    <span>
+                                                                        &#x201C;
+                                                                    </span>
+                                                                    {
+                                                                        each
+                                                                            .attributes
+                                                                            .content
+                                                                    }
+                                                                    <span>
+                                                                        &#x201D;
+                                                                    </span>
+                                                                </blockquote>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        );
-                                    },
-                                )
-                            }
-                        </div>
+                                        </div>
+                                    );
+                                },
+                            )
+                        }
                     </div>
-                    <!-- Add navigation controls  -->
-                    <a
-                        class="carousel-control-prev"
-                        href="#carouselExample"
-                        role="button"
-                        data-slide="prev"
-                    >
-                        <span
-                        style="margin-top:80px;width:1.3rem;margin-left:-99px"
-                            class="carousel-control-prev-icon"
-                            aria-hidden="true"></span>
-                    </a>
-                    <a
-                        class="carousel-control-next"
-                        href="#carouselExample"
-                        role="button"
-                        data-slide="next"
-                    >
-                        <span
-                        style="margin-top:80px;width:1.3rem;margin-right:-99px"
-                            class="carousel-control-next-icon"
-                            aria-hidden="true"></span>
-                    </a>
-                </section>
-                <div class="bg-vectors">
-                    <img src="assets/images/bg-vector1.webp" alt="BG Vector" />
                 </div>
+                <!-- Add navigation controls  -->
+                <a
+                    class="carousel-control-prev"
+                    href="#carouselExample"
+                    role="button"
+                    data-slide="prev"
+                >
+                    <span
+                        style="margin-top:80px;width:1.3rem;margin-left:-99px"
+                        class="carousel-control-prev-icon"
+                        aria-hidden="true"></span>
+                </a>
+                <a
+                    class="carousel-control-next"
+                    href="#carouselExample"
+                    role="button"
+                    data-slide="next"
+                >
+                    <span
+                        style="margin-top:80px;width:1.3rem;margin-right:-99px"
+                        class="carousel-control-next-icon"
+                        aria-hidden="true"></span>
+                </a>
+            </section>
+            <div class="bg-vectors">
+                <img src="assets/images/bg-vector1.webp" alt="BG Vector" />
+            </div>
 
-                <!-- our technologies -->
-                <section class="under-banner our-technologies">
-                    <div class="container">
-                        <div class="section-heading ss-case">
-                            <h4
-                                class="text-white text-center h3-under-bar text-uppercase slide-left"
-                            >
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_our_technologies
-                                }
-                            </h4>
-                        </div>
-                        <div class="under-banner-carousel-section slide-left in-view">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div
-                                        class="owl-carousel"
-                                    >
-                                        {
-                                            data.data.homePageSection1.data.attributes.metaverse_our_technologies.data.map(
-                                                (each: any, index: number) => {
-                                                    return (
+            <!-- our technologies -->
+            <section class="under-banner our-technologies">
+                <div class="container">
+                    <div class="section-heading ss-case">
+                        <h4
+                            class="text-white text-center h3-under-bar text-uppercase animation-element slide-left"
+                        >
+                            {
+                                data.data.homePageSection1.data.attributes
+                                    .section_our_technologies
+                            }
+                        </h4>
+                    </div>
+                    <div
+                        class="under-banner-carousel-section animation-element slide-left in-view"
+                    >
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="owl-carousel">
+                                    {
+                                        data.data.homePageSection1.data.attributes.metaverse_our_technologies.data.map(
+                                            (each: any, index: number) => {
+                                                return (
                                                     <div class="owl-experts-item">
                                                         <div class="item">
                                                             <div class="icon">
@@ -1338,123 +1346,113 @@ document.addEventListener("DOMContentLoaded", function () {
                                                                 />
                                                             </div>
                                                         </div>
-                                                        </div>
-                                                    );
-                                                },
-                                            )
-                                        }
-                                    </div>
+                                                    </div>
+                                                );
+                                            },
+                                        )
+                                    }
                                 </div>
                             </div>
                         </div>
                     </div>
-                </section>
-            </div>
-
-            <!-- why metarpolane -->
-            <section class="why-metaprolane whym2">
-                <div class="container">
-                    <div class="row slide-left">
-                        <div class="col-lg-12">
-                            <div class="why-metaprolane-l" style="display:block">
-                                <h2 class="text-black text-center">
-                                    {
-                                        data.data.homePageSection1.data
-                                            .attributes.section_why_metaprolane
-                                    }
-                                </h2>
-                                <p class="text-black text-last-center whyp-c">
-                                    {
-                                        data.data.homePageSection1.data
-                                            .attributes
-                                            .section_metaprolane_description
-                                    }
-                                </p>
-                            </div>
-                        </div>
-
-                        {
-                            data.data.homePageSection1.data.attributes.metaverse_why_metaprolanes.data.map(
-                                (each: any, index: number) => {
-                                    return (
-                                        <div class="col-lg-6">
-                                            <div class="why-metaprolane-l2">
-                                                <div class="why-img">
-                                                    <img
-                                                        src={
-                                                            each.attributes
-                                                                .image
-                                                        }
-                                                        alt="Expert Team"
-                                                    />
-                                                </div>
-                                                <div class="why-meta-r">
-                                                    <h6 class="text-black h6-why-meta">
-                                                        {each.attributes.text}
-                                                    </h6>
-                                                    <p class="text-black text-last-left ts1">
-                                                        {
-                                                            each.attributes
-                                                                .content
-                                                        }
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    );
-                                },
-                            )
-                        }
-                    </div>
-                </div>
-                <div class="bg-vectors">
-                    <img
-                        src="assets/images/bg-vector5.webp"
-                        alt="vector Image"
-                    />
                 </div>
             </section>
+        </section>
 
-            <!-- FAQ -->
-            <section class="apply-now">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="why-metaprolane-l">
-                                <h3 class="text-white faq-head slide-left">
-                                    {
-                                        data.data.homePageSection1.data
-                                            .attributes.metaverse_faq_title
-                                    }
-                                </h3>
-                            </div>
-                            {
-                                data.data.homePageSection1.data.attributes.metaverse_faq_lists.data.map(
-                                    (item: any, index: number) => (
-                                        <div class="faq-card">
-                                            <div
-                                                class="faq-question"
-                                                onclick="toggleAnswer(event)"
-                                            >
-                                                {item.attributes.title}
-                                                <span class="faq-toggle-icon">
-                                                    +
-                                                </span>
+        <!-- why metarpolane -->
+        <section class="why-metaprolane whym2">
+            <div class="container">
+                <div class="row animation-element slide-left">
+                    <div class="col-lg-12">
+                        <div class="why-metaprolane-l" style="display:block">
+                            <h2 class="text-black text-center">
+                                {
+                                    data.data.homePageSection1.data.attributes
+                                        .section_why_metaprolane
+                                }
+                            </h2>
+                            <p class="text-black text-last-center whyp-c">
+                                {
+                                    data.data.homePageSection1.data.attributes
+                                        .section_metaprolane_description
+                                }
+                            </p>
+                        </div>
+                    </div>
+
+                    {
+                        data.data.homePageSection1.data.attributes.metaverse_why_metaprolanes.data.map(
+                            (each: any, index: number) => {
+                                return (
+                                    <div class="col-lg-6">
+                                        <div class="why-metaprolane-l2">
+                                            <div class="why-img">
+                                                <img
+                                                    src={each.attributes.image}
+                                                    alt="Expert Team"
+                                                />
                                             </div>
-                                            <div class="faq-answer">
-                                                {item.attributes.content}
+                                            <div class="why-meta-r">
+                                                <h6 class="text-black h6-why-meta">
+                                                    {each.attributes.text}
+                                                </h6>
+                                                <p class="text-black text-last-left ts1">
+                                                    {each.attributes.content}
+                                                </p>
                                             </div>
                                         </div>
-                                    ),
-                                )
-                            }
+                                    </div>
+                                );
+                            },
+                        )
+                    }
+                </div>
+            </div>
+            <div class="bg-vectors">
+                <img src="assets/images/bg-vector5.webp" alt="vector Image" />
+            </div>
+        </section>
 
-                            <!-- <div class="d-flex flex-wrap">
+        <!-- FAQ -->
+        <section class="apply-now">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="why-metaprolane-l">
+                            <h3 class="text-white faq-head animation-element slide-left">
+                                {
+                                    data.data.homePageSection1.data.attributes
+                                        .metaverse_faq_title
+                                }
+                            </h3>
+                        </div>
+                        {
+                            data.data.homePageSection1.data.attributes.metaverse_faq_lists.data.map(
+                                (item: any, index: number) => (
+                                    <div class="faq-card">
+                                        <div
+                                            class="faq-question"
+                                            onclick="toggleAnswer(event)"
+                                        >
+                                            {item.attributes.title}
+                                            <span class="faq-toggle-icon">
+                                                +
+                                            </span>
+                                        </div>
+                                        <div class="faq-answer">
+                                            {item.attributes.content}
+                                        </div>
+                                    </div>
+                                ),
+                            )
+                        }
+
+                        <!-- <div class="d-flex flex-wrap">
                     {
                         data.data.homePageSection1.data.attributes.metaverse_faq_lists.data.map(
                             (each: any, index: number) => {
                                 return (
-                                     <div id="accordion" class="accordion slide-left">
+                                     <div id="accordion" class="accordion animation-element slide-left">
                         {/* <div class="card border-0"> */}
                                 <div class="col-lg-12">
                                     <div class="why-metaprolane-l2">
@@ -1471,15 +1469,44 @@ document.addEventListener("DOMContentLoaded", function () {
                             </div>     
                     )})}
                      </div>     -->
-                            <div class="pt-3">
-                                <a class="btn btn-primary" href="#contact">
-                                    Ask away
-                                </a>
-                            </div>
+                        <div class="pt-3">
+                            <a class="btn btn-primary" href="#contact">
+                                Ask away
+                            </a>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
         </section>
-    </html>
+        <script type="text/javascript">
+            var $animation_elements = $('.animation-element');
+            var $window = $(window);
+    
+            function check_if_in_view() {
+                var window_height = $window.height();
+                var window_top_position = $window.scrollTop();
+                var window_bottom_position = (window_top_position + window_height);
+    
+                $.each($animation_elements, function () {
+                    var $element = $(this);
+                    var element_height = $element.outerHeight();
+                    var element_top_position = $element.offset().top;
+                    var element_bottom_position = (element_top_position + element_height);
+    
+                    //check to see if this current container is within viewport
+                    if ((element_bottom_position >= window_top_position) &&
+                        (element_top_position <= window_bottom_position)) {
+                        $element.addClass('in-view');
+                    }
+                    // else {
+                    //   $element.removeClass('in-view');
+                    // }
+    
+                });
+            }
+    
+            $window.on('scroll resize', check_if_in_view);
+            $window.trigger('scroll', check_if_in_view);
+        </script>
+        </html>
 </Layout>

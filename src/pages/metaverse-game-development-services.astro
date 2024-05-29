@@ -3,10 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.astro";
 
 const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-        query: `
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    query: `
         query{
           metaverseGameDevelopmentService{
     data {
@@ -78,167 +78,180 @@ game_dev_company_content
   }
         }
         `,
-    }),
+  }),
 });
 
 const { data } = await response.json();
 ---
 
-<Layout title="metaverse-game-development" 
-description="Dive into boundless realms with Metaprolane! Elevate, conquer, and transcend your gaming experience through our top-notch Metaverse game development services." 
-keywords="Metaverse Game Development services, Metaverse Game Development Company, Metaverse Game Development, Metaverse P2E Game Development, Metaverse play to earn game development">
-    <html lang="en">
-        <div class="home-container industries-page meta-product">
-            <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
-            <script
-                is:inline
-                src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            ></script>
-            <link
-                href="/vendor/bootstrap/css/bootstrap.min.css"
-                rel="stylesheet"
-            />
-            <link rel="stylesheet" href="/styles/css/style.css" />
-             <link rel="stylesheet" href="/styles/blog/css/owl.css" />  
+<Layout
+  title="metaverse-game-development"
+  description="Dive into boundless realms with Metaprolane! Elevate, conquer, and transcend your gaming experience through our top-notch Metaverse game development services."
+  keywords="Metaverse Game Development services, Metaverse Game Development Company, Metaverse Game Development, Metaverse P2E Game Development, Metaverse play to earn game development"
+>
+  <html lang="en">
+    <div class="home-container industries-page meta-product">
+      <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
+      <script
+        is:inline
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+      ></script>
+      <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/styles/css/style.css" />
+      <link rel="stylesheet" href="/styles/blog/css/owl.css" />
 
-            <script is:inline>
-                $(document).ready(function () {
-                    $(".question1").click(function () {
-                        console.log("clicked questions");
-                        var answer = $(this).next(".answer");
-                        $(".answer").not(answer).slideUp();
-                        answer.slideToggle();
-                    });
-                });
+      <script is:inline>
+        $(document).ready(function () {
+          $(".question1").click(function () {
+            console.log("clicked questions");
+            var answer = $(this).next(".answer");
+            $(".answer").not(answer).slideUp();
+            answer.slideToggle();
+          });
+        });
 
-                function toggleAnswer(event) {
-                    const question = event.currentTarget;
-                    const answer = question.nextElementSibling;
+        function toggleAnswer(event) {
+          const question = event.currentTarget;
+          const answer = question.nextElementSibling;
 
-                    $(answer).slideToggle();
-                    $(question).toggleClass("active");
-                    $(".faq-question")
-                        .not(question)
-                        .removeClass("active")
-                        .next(".faq-answer")
-                        .slideUp();
+          $(answer).slideToggle();
+          $(question).toggleClass("active");
+          $(".faq-question")
+            .not(question)
+            .removeClass("active")
+            .next(".faq-answer")
+            .slideUp();
 
-                    // Toggle the icon between plus and minus
-                    const icon = question.querySelector(".faq-toggle-icon");
-                    icon.textContent = icon.textContent === "+" ? "-" : "+";
-                }
-               
+          // Toggle the icon between plus and minus
+          const icon = question.querySelector(".faq-toggle-icon");
+          icon.textContent = icon.textContent === "+" ? "-" : "+";
+        }
 
-                $(document).ready(function () {
-                    $(".talk-btn").click(function () {
-                        $("html, body").animate(
-                            {
-                                scrollTop: $("#footer").offset().top,
-                            },
-                            300,
-                        ); // Adjust the duration as per your requirement
-                    });
-                });
+        $(document).ready(function () {
+          $(".talk-btn").click(function () {
+            $("html, body").animate(
+              {
+                scrollTop: $("#footer").offset().top,
+              },
+              300,
+            ); // Adjust the duration as per your requirement
+          });
+        });
 
-                document.addEventListener('DOMContentLoaded', function() {
-    const tabLinks = document.querySelectorAll('.tab-link');
-    const tabContents = document.querySelectorAll('.tab-content');
+        document.addEventListener("DOMContentLoaded", function () {
+          const tabLinks = document.querySelectorAll(".tab-link");
+          const tabContents = document.querySelectorAll(".tab-content");
 
-    tabLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
-        event.preventDefault();
+          tabLinks.forEach((link) => {
+            link.addEventListener("click", function (event) {
+              event.preventDefault();
 
-        const targetId = this.getAttribute('href').substring(1);
+              const targetId = this.getAttribute("href").substring(1);
 
-        tabLinks.forEach(link => link.classList.remove('active'));
-        tabContents.forEach(content => content.classList.remove('active'));
+              tabLinks.forEach((link) => link.classList.remove("active"));
+              tabContents.forEach((content) =>
+                content.classList.remove("active"),
+              );
 
-        this.classList.add('active');
-        document.getElementById(targetId).classList.add('active');
-      });
-    });
-  });
-                // $("#content").hide().show("slide", { direction: "left" }, 1500);
-            </script>
+              this.classList.add("active");
+              document.getElementById(targetId).classList.add("active");
+            });
+          });
+        });
+        // $("#content").hide().show("slide", { direction: "left" }, 1500);
+      </script>
 
-<div class="home-container inner-container game-dev-page">
-<div class="meta-product ">
-    <section class="section main-banner audit-videos casino-ms-banner-section" id="top" data-section="section1">          
-        <video autoplay="" muted="" loop="" id="bg-video">            
-          <source src="assets/images/game-development2/banner2.mp4" type="video/mp4">
-        </video>
-      <div class="video-overlay header-text main-banner-cont">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="caption">
-                <h1 class="ml2"> {
-                  data.metaverseGameDevelopmentService.data
-                      .attributes
-                      .game_dev_title
-              }
-                </h1>
-                <p class="my-2">
-                  {
-                    data.metaverseGameDevelopmentService.data
-                        .attributes
-                        .game_dev_content
-                }               
-                 </p>
-                <div class="my-4">
-                  <a href="#contact" class="btn btn-game-dev">Contact Us</a> 
-                </div>
-              </div>                
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="under-banner our-technologies casino-ms-one-section">
-        <div class="container">
-          <div class="section-heading ss-case get-readys">
-            <div class="row">
-              <div class="col-lg-6">
-                <div class="cms-one-right slide-left in-view">
-                  <h3 class="text-blue text-left mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0">
-                    {
-                      data.metaverseGameDevelopmentService.data
-                          .attributes
-                          .game_dev_title1
-                  }
-                  </h3>
-                  <p class="text-gray4 text-last-left py-3">
-                    {
-                      data.metaverseGameDevelopmentService.data
-                          .attributes
-                          .game_dev_content1
-                  }
-                  </p>
-                  <div class="unlock-btn-sec my-3">
-                    <a href="#contact" class="btn btn-primary">Get Quote Now</a>
+      <div class="home-container inner-container game-dev-page">
+        <div class="meta-product">
+          <section
+            class="section main-banner audit-videos casino-ms-banner-section"
+            id="top"
+            data-section="section1"
+          >
+            <video autoplay="" muted="" loop="" id="bg-video">
+              <source
+                src="assets/images/game-development2/banner2.mp4"
+                type="video/mp4"
+              />
+            </video>
+            <div class="video-overlay header-text main-banner-cont">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="caption">
+                      <h1 class="ml2">
+                        {
+                          data.metaverseGameDevelopmentService.data.attributes
+                            .game_dev_title
+                        }
+                      </h1>
+                      <p class="my-2">
+                        {
+                          data.metaverseGameDevelopmentService.data.attributes
+                            .game_dev_content
+                        }
+                      </p>
+                      <div class="my-4">
+                        <a href="#contact" class="btn btn-game-dev"
+                          >Contact Us</a
+                        >
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-6">
-                <div class="cms-one-left slide-right w-100">
-                  <img src="assets/images/game-development/BM-img.webp" alt="Best Metaverse Game Development Banner"
-                    class="w-100-br-15">
+            </div>
+          </section>
+
+          <section class="under-banner our-technologies casino-ms-one-section">
+            <div class="container">
+              <div class="section-heading ss-case get-readys">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="cms-one-right animation-element slide-left in-view">
+                      <h3
+                        class="text-blue text-left mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0"
+                      >
+                        {
+                          data.metaverseGameDevelopmentService.data.attributes
+                            .game_dev_title1
+                        }
+                      </h3>
+                      <p class="text-gray4 text-last-left py-3">
+                        {
+                          data.metaverseGameDevelopmentService.data.attributes
+                            .game_dev_content1
+                        }
+                      </p>
+                      <div class="unlock-btn-sec my-3">
+                        <a href="#contact" class="btn btn-primary"
+                          >Get Quote Now</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="cms-one-left animation-element slide-right w-100">
+                      <img
+                        src="assets/images/game-development/BM-img.webp"
+                        alt="Best Metaverse Game Development Banner"
+                        class="w-100-br-15"
+                      />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <!-- <section class="meta-development-services product-our-services casino-ms-three-section">
+          <!-- <section class="meta-development-services product-our-services casino-ms-three-section">
         <div class="container">
           <div class="row align-items-center">
             <div class="col-lg-12">
               <div class="text-center">
                 <div class="under-banner ">
                   <div class="under-banner-carousel-section">
-                    <h4 class="text-white h3-under-bar2 slide-left">
+                    <h4 class="text-white h3-under-bar2 animation-element slide-left">
                       {
                         data.metaverseGameDevelopmentService.data
                             .attributes
@@ -258,7 +271,7 @@ keywords="Metaverse Game Development services, Metaverse Game Development Compan
                           data.metaverseGameDevelopmentService.data.attributes.game_dev_types_lists.data.map(
                               (each: any, index: number) => {
                                   return (
-                        <div class="benefits-metavirtualoffice slide-left">
+                        <div class="benefits-metavirtualoffice animation-element slide-left">
                           <h5 class="benefits-h6 text-right jc-end">{each.attributes.title}&nbsp;<img
                               src={each.attributes.image}
                               alt="Benefits Icons" /></h5>
@@ -277,297 +290,362 @@ keywords="Metaverse Game Development services, Metaverse Game Development Compan
         </div>
       </section> -->
 
-      <section class="meta-development-services product-our-services casino-ms-three-section">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-12">
-              <div class="text-center">
-                <div class="under-banner ">
-                  <div class="under-banner-carousel-section">
-                    <h4 class="text-white h3-under-bar2 slide-left">
-                      {data.metaverseGameDevelopmentService.data.attributes.game_dev_types_title}
-                    </h4>
-                    <div class="row">
-                      {/* Left side with first 2 records */}
-                      <div class="col-lg-4">
-                        {data.metaverseGameDevelopmentService.data.attributes.game_dev_types_lists.data.slice(0, 2).map(
-                          (each: any) => {
-                            return (
-                              <div class="benefits-metavirtualoffice slide-left">
-                                <h5 class="benefits-h6 text-right jc-end">{each.attributes.title}&nbsp;
-                                  <img src={each.attributes.image} alt="Benefits Icons" />
-                                </h5>
-                                <p class="text-gray3 text-right para-our-meta">
-                                  {each.attributes.content}
-                                </p>
-                              </div>
-                            )
+          <section
+            class="meta-development-services product-our-services casino-ms-three-section"
+          >
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-12">
+                  <div class="text-center">
+                    <div class="under-banner">
+                      <div class="under-banner-carousel-section">
+                        <h4 class="text-white h3-under-bar2 animation-element slide-left">
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes
+                              .game_dev_types_title
                           }
-                        )}
-                      </div>
-                      {/* Center with image */}
-                      <div class="col-lg-4 text-center">
-                        <img src="assets/images/game-development2/various-type.webp" alt="Benefits Icons" class="w-100" />
-                      </div>
-                      {/* Right side with last 2 records */}
-                      <div class="col-lg-4">
-                        {data.metaverseGameDevelopmentService.data.attributes.game_dev_types_lists.data.slice(2).map(
-                          (each: any) => {
-                            return (
-                              <div class="benefits-metavirtualoffice slide-left">
-                                <h5 class="benefits-h6 text-right jc-end">{each.attributes.title}&nbsp;
-                                  <img src={each.attributes.image} alt="Benefits Icons" />
-                                </h5>
-                                <p class="text-gray3 text-right para-our-meta">
-                                  {each.attributes.content}
-                                </p>
-                              </div>
-                            )
-                          }
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-
-      <section class="under-banner our-technologies product-tech-sec casino-ms-two-section">
-        <div class="container">
-          <div class="section-heading ss-case">
-            <div class="row pt-3 mob-pt-0">
-              <div class="col-lg-6 slide-left">
-                <div class="w-100">
-                  <div class="immersive-m-l text-center ">
-                    <img src="assets/images/game-development2/MGD-company.webp" alt="Best Metaverse Game Development Banner" class="w-100-br-15 mdG-img">                 
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-6 slide-right">
-                <h2 class="text-blue text-left h3-under-bar2 hub2 hub-mutual2 pt-0">
-                  {
-                    data.metaverseGameDevelopmentService.data
-                        .attributes
-                        .game_dev_company_title
-                }
-                </h2>
-                <p class="text-gray4 text-last-left py-0 pb-4">
-                  {
-                    data.metaverseGameDevelopmentService.data
-                        .attributes
-                        .game_dev_company_content
-                }
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="our-courses product-our-courses msd-box1 feature-val-p casino-ms-four-section ccs">
-        <div class="container c-features">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-heading slide-left">
-                <h4 class="text-white text-center h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 mt-0 mb-4">
-                  {
-                    data.metaverseGameDevelopmentService.data
-                        .attributes
-                        .game_benefits_title
-                }
-                </h4>
-                <div class="owl-experts-item-Cas-game owl-carousel d-flex flex-wrap justify-content-between">
-                  {
-                    data.metaverseGameDevelopmentService.data.attributes.game_benefits_lists.data.map(
-                        (each: any, index: number) => {
-                            return (
-                  <div class="item" style="max-width:32rem">
-                    <div class="icon">
-                      <div class="expert-txt2">
-                        <div class="box-img">
-                          <img src={each.attributes.image} alt="Features Image" style={{width:'35rem', height:'18rem'}}/>
-                        </div>
-                        <div class="box-img-inn">
-                          <h6 class="fma">{each.attributes.title}</h6>
-                          <p class="text-last-left">
-                            {each.attributes.content}
-                          </p>
+                        </h4>
+                        <div class="row">
+                          {/* Left side with first 2 records */}
+                          <div class="col-lg-4">
+                            {
+                              data.metaverseGameDevelopmentService.data.attributes.game_dev_types_lists.data
+                                .slice(0, 2)
+                                .map((each: any) => {
+                                  return (
+                                    <div class="benefits-metavirtualoffice animation-element slide-left">
+                                      <h5 class="benefits-h6 text-right jc-end">
+                                        {each.attributes.title}&nbsp;
+                                        <img
+                                          src={each.attributes.image}
+                                          alt="Benefits Icons"
+                                        />
+                                      </h5>
+                                      <p class="text-gray3 text-right para-our-meta">
+                                        {each.attributes.content}
+                                      </p>
+                                    </div>
+                                  );
+                                })
+                            }
+                          </div>
+                          {/* Center with image */}
+                          <div class="col-lg-4 text-center">
+                            <img
+                              src="assets/images/game-development2/various-type.webp"
+                              alt="Benefits Icons"
+                              class="w-100"
+                            />
+                          </div>
+                          {/* Right side with last 2 records */}
+                          <div class="col-lg-4">
+                            {
+                              data.metaverseGameDevelopmentService.data.attributes.game_dev_types_lists.data
+                                .slice(2)
+                                .map((each: any) => {
+                                  return (
+                                    <div class="benefits-metavirtualoffice animation-element slide-left">
+                                      <h5 class="benefits-h6 text-right jc-end">
+                                        {each.attributes.title}&nbsp;
+                                        <img
+                                          src={each.attributes.image}
+                                          alt="Benefits Icons"
+                                        />
+                                      </h5>
+                                      <p class="text-gray3 text-right para-our-meta">
+                                        {each.attributes.content}
+                                      </p>
+                                    </div>
+                                  );
+                                })
+                            }
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                  )})}
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <div class="home-container inner-container game-dev-page">
-      <section class="why-metaprolane whym2 product-why-sec casino-ms-Six-section">
-        <div class="container py-0">
-          <div id="tabs" class="game-dev-tab">
-            <div class="row">
-              <div class="col-lg-6">
-                <div id="tabs-1" class="tab-content active">
-                  <img src="assets/images/game-development/banner.webp" alt="Features Image" class="w-100" />
-                  <p>
-                    {
-                      data.metaverseGameDevelopmentService.data
-                          .attributes
-                          .game_p2e_title2_content2
-                  }
-                  </p>
-                </div>
-                <div id="tabs-2" class="tab-content">
-                  <img src="assets/images/game-development/artificial-intelligence.webp" alt="Features Image"
-                    class="w-100" />
-                  <p>
-                    {
-                      data.metaverseGameDevelopmentService.data
-                          .attributes
-                          .game_p2e_title1_content1
-                  }
-                  </p>
-                </div>
-                <div id="tabs-3" class="tab-content">
-                  <img src="assets/images/game-development/BM-img.webp" alt="Features Image" class="w-100" />
-                  <p>
-                    {
-                      data.metaverseGameDevelopmentService.data
-                          .attributes
-                          .game_p2e_title3_content3
-                  }
-                  </p>
-                </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="why-metaprolane-l slide-right">
-                  <h3 class="text-blue text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700">
-                    {
-                      data.metaverseGameDevelopmentService.data
-                          .attributes
-                          .game_p2e_title
-                  }
-                  </h3>
-                  <div class="text-last-left my-3 mt-4 pt-2">
-                    <ul>
-                      <li>
-                        <a href="#tabs-1" class="nav-link tab-link">{
-                          data.metaverseGameDevelopmentService.data
-                              .attributes
-                              .game_p2e_title2
-                      }</a>
-                      </li>
-                      <li>
-                        <a href="#tabs-2" class="nav-link tab-link"> {
-                          data.metaverseGameDevelopmentService.data
-                              .attributes
-                              .game_p2e_title1
-                      }</a>
-                      </li>
-                      <li>
-                        <a href="#tabs-3" class="nav-link tab-link">{
-                          data.metaverseGameDevelopmentService.data
-                              .attributes
-                              .game_p2e_title3
-                      }</a>
-                      </li>
-                    </ul>
-                    <div id="tabs-1">
-                    </div>
-                    <div id="tabs-2">
-                    </div>
-                    <div id="tabs-3">
+          <section
+            class="under-banner our-technologies product-tech-sec casino-ms-two-section"
+          >
+            <div class="container">
+              <div class="section-heading ss-case">
+                <div class="row pt-3 mob-pt-0">
+                  <div class="col-lg-6 animation-element slide-left">
+                    <div class="w-100">
+                      <div class="immersive-m-l text-center">
+                        <img
+                          src="assets/images/game-development2/MGD-company.webp"
+                          alt="Best Metaverse Game Development Banner"
+                          class="w-100-br-15 mdG-img"
+                        />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>      
-    </div>
-
-    <style>
-      .tab-content {
-        display: none;
-      }
-      .tab-content.active {
-        display: block;
-      }
-      .nav-link.active {
-        background-color: #007bff;
-        color: white;
-        border-color: #007bff;
-      }
-      .nav-link {
-        color: #000;
-        background-color: #fff;
-      }
-    </style>
-
-      <section class="meta-development-services product-our-services casino-ms-five-section">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-12">
-              <div class="text-center">
-                <div class="under-banner ">
-                  <div class="under-banner-carousel-section">
-                    <h4 class="text-black h3-under-bar2 fw-700 slide-left">
+                  <div class="col-lg-6 animation-element slide-right">
+                    <h2
+                      class="text-blue text-left h3-under-bar2 hub2 hub-mutual2 pt-0"
+                    >
                       {
-                        data.metaverseGameDevelopmentService.data
-                            .attributes
-                            .game_dev_feature_title
-                    }
+                        data.metaverseGameDevelopmentService.data.attributes
+                          .game_dev_company_title
+                      }
+                    </h2>
+                    <p class="text-gray4 text-last-left py-0 pb-4">
+                      {
+                        data.metaverseGameDevelopmentService.data.attributes
+                          .game_dev_company_content
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section
+            class="our-courses product-our-courses msd-box1 feature-val-p casino-ms-four-section ccs"
+          >
+            <div class="container c-features">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="section-heading animation-element slide-left">
+                    <h4
+                      class="text-white text-center h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 mt-0 mb-4"
+                    >
+                      {
+                        data.metaverseGameDevelopmentService.data.attributes
+                          .game_benefits_title
+                      }
                     </h4>
-                    <div class="row">
+                    <div
+                      class="owl-experts-item-Cas-game owl-carousel d-flex flex-wrap justify-content-between"
+                    >
                       {
-                        data.metaverseGameDevelopmentService.data.attributes.game_dev_feature_lists.data.map(
-                            (each: any, index: number) => {
-                                return (
-                      <div class="col-lg-4">
-                        <div class="benefits-metavirtualoffice slide-left">
-                          <div class="text-center bm-img"><img
-                              src={each.attributes.image}
-                              alt="Benefits Icons" /></div>
-                          <h5 class="benefits-h6">{each.attributes.title}</h5>
-                          <p class="text-gray3 text-center">
-                            {each.attributes.content}
-                          </p>
-                        </div>
-                      </div>
-                     )})}
-                   
+                        data.metaverseGameDevelopmentService.data.attributes.game_benefits_lists.data.map(
+                          (each: any, index: number) => {
+                            return (
+                              <div class="item" style="max-width:32rem">
+                                <div class="icon">
+                                  <div class="expert-txt2">
+                                    <div class="box-img">
+                                      <img
+                                        src={each.attributes.image}
+                                        alt="Features Image"
+                                        style={{
+                                          width: "35rem",
+                                          height: "18rem",
+                                        }}
+                                      />
+                                    </div>
+                                    <div class="box-img-inn">
+                                      <h6 class="fma">
+                                        {each.attributes.title}
+                                      </h6>
+                                      <p class="text-last-left">
+                                        {each.attributes.content}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          },
+                        )
+                      }
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <section class="why-metaprolane whym2 product-why-sec check-video">
-          <div class="container pt-0">
-            <h5 class="text-white text-center h3-under-bar2 mb-4 fw-bold-800 mvc-step slide-left">
-              {
-                data.metaverseGameDevelopmentService.data
-                    .attributes
-                    .game_Demo_title
+          <div class="home-container inner-container game-dev-page">
+            <section
+              class="why-metaprolane whym2 product-why-sec casino-ms-Six-section"
+            >
+              <div class="container py-0">
+                <div id="tabs" class="game-dev-tab">
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div id="tabs-1" class="tab-content active">
+                        <img
+                          src="assets/images/game-development/banner.webp"
+                          alt="Features Image"
+                          class="w-100"
+                        />
+                        <p>
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes
+                              .game_p2e_title2_content2
+                          }
+                        </p>
+                      </div>
+                      <div id="tabs-2" class="tab-content">
+                        <img
+                          src="assets/images/game-development/artificial-intelligence.webp"
+                          alt="Features Image"
+                          class="w-100"
+                        />
+                        <p>
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes
+                              .game_p2e_title1_content1
+                          }
+                        </p>
+                      </div>
+                      <div id="tabs-3" class="tab-content">
+                        <img
+                          src="assets/images/game-development/BM-img.webp"
+                          alt="Features Image"
+                          class="w-100"
+                        />
+                        <p>
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes
+                              .game_p2e_title3_content3
+                          }
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="why-metaprolane-l animation-element slide-right">
+                        <h3
+                          class="text-blue text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700"
+                        >
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes
+                              .game_p2e_title
+                          }
+                        </h3>
+                        <div class="text-last-left my-3 mt-4 pt-2">
+                          <ul>
+                            <li>
+                              <a href="#tabs-1" class="nav-link tab-link"
+                                >{
+                                  data.metaverseGameDevelopmentService.data
+                                    .attributes.game_p2e_title2
+                                }</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#tabs-2" class="nav-link tab-link">
+                                {
+                                  data.metaverseGameDevelopmentService.data
+                                    .attributes.game_p2e_title1
+                                }</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#tabs-3" class="nav-link tab-link"
+                                >{
+                                  data.metaverseGameDevelopmentService.data
+                                    .attributes.game_p2e_title3
+                                }</a
+                              >
+                            </li>
+                          </ul>
+                          <div id="tabs-1"></div>
+                          <div id="tabs-2"></div>
+                          <div id="tabs-3"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <style>
+            .tab-content {
+              display: none;
             }
-            </h5>
-            
-            <div class="row mb-3">
-              <div class="col-lg-12">
-                <div class="w-100">
-                  <div class="immersive-m-l text-center slide-left">
-                    <iframe title="Metaprolane Video" srcdoc="
+            .tab-content.active {
+              display: block;
+            }
+            .nav-link.active {
+              background-color: #007bff;
+              color: white;
+              border-color: #007bff;
+            }
+            .nav-link {
+              color: #000;
+              background-color: #fff;
+            }
+          </style>
+
+          <section
+            class="meta-development-services product-our-services casino-ms-five-section"
+          >
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-12">
+                  <div class="text-center">
+                    <div class="under-banner">
+                      <div class="under-banner-carousel-section">
+                        <h4 class="text-black h3-under-bar2 fw-700 animation-element slide-left">
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes
+                              .game_dev_feature_title
+                          }
+                        </h4>
+                        <div class="row">
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes.game_dev_feature_lists.data.map(
+                              (each: any, index: number) => {
+                                return (
+                                  <div class="col-lg-4">
+                                    <div class="benefits-metavirtualoffice animation-element slide-left">
+                                      <div class="text-center bm-img">
+                                        <img
+                                          src={each.attributes.image}
+                                          alt="Benefits Icons"
+                                        />
+                                      </div>
+                                      <h5 class="benefits-h6">
+                                        {each.attributes.title}
+                                      </h5>
+                                      <p class="text-gray3 text-center">
+                                        {each.attributes.content}
+                                      </p>
+                                    </div>
+                                  </div>
+                                );
+                              },
+                            )
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="why-metaprolane whym2 product-why-sec check-video">
+            <div class="container pt-0">
+              <h5
+                class="text-white text-center h3-under-bar2 mb-4 fw-bold-800 mvc-step animation-element slide-left"
+              >
+                {
+                  data.metaverseGameDevelopmentService.data.attributes
+                    .game_Demo_title
+                }
+              </h5>
+
+              <div class="row mb-3">
+                <div class="col-lg-12">
+                  <div class="w-100">
+                    <div class="immersive-m-l text-center animation-element slide-left">
+                      <iframe
+                        title="Metaprolane Video"
+                        srcdoc="
           <style>
           body, .full {
           width: 100%;
@@ -597,100 +675,146 @@ keywords="Metaverse Game Development services, Metaverse Game Development Compan
           <path d='M 45,24 27,14 27,34' fill='#fff'></path>
           </svg>
           </a>
-          " style="max-width: 90%; width: 100%; aspect-ratio: 16/9;" frameborder="0">
-                    </iframe>
+          "
+                        style="max-width: 90%; width: 100%; aspect-ratio: 16/9;"
+                        frameborder="0"
+                      >
+                      </iframe>
+                    </div>
+                  </div>
+
+                  <div class="text-center my-3">
+                    <a href="#contact">
+                      <button class="btn padd-0">
+                        <div class="btn-box border-gradient">
+                          Talk To Our Expert
+                        </div>
+                      </button>
+                    </a>
                   </div>
                 </div>
+              </div>
+            </div>
+          </section>
 
-                <div class="text-center my-3">
-                  <a href="#contact">
-                    <button class="btn padd-0">
-                      <div class="btn-box border-gradient">
-                        Talk To Our Expert
+          <section
+            class="meta-development-services product-our-services monetizing-meta casino-ms-Seven-section"
+          >
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-lg-6">
+                  <div class="text-left">
+                    <div class="under-banner">
+                      <div class="under-banner-carousel-section">
+                        <h4
+                          class="text-black h3-under-bar2 mb-0 mt-0 fw-700 animation-element slide-left"
+                        >
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes
+                              .game_choose_metaprolane_title
+                          }
+                          <!-- company choice? -->
+                        </h4>
+                        <p
+                          class="text-justify text-gray4 mb-3 monetizing-cgame-mob animation-element slide-left"
+                        >
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes
+                              .game_choose_metaprolane_content
+                          }
+                        </p>
+                        <ul>
+                          {
+                            data.metaverseGameDevelopmentService.data.attributes.game_choose_metaprolane_lists.data.map(
+                              (each: any, index: number) => {
+                                return <li>{each.attributes.text}</li>;
+                              },
+                            )
+                          }
+                        </ul>
                       </div>
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-      <section class="meta-development-services product-our-services monetizing-meta casino-ms-Seven-section">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-6">
-              <div class="text-left">
-                <div class="under-banner ">
-                  <div class="under-banner-carousel-section">
-                    <h4 class="text-black h3-under-bar2 mb-0 mt-0 fw-700 slide-left">
-                      {
-                        data.metaverseGameDevelopmentService.data
-                            .attributes
-                            .game_choose_metaprolane_title
-                    }
-                      <!-- company choice? -->
-                    </h4>
-                    <p class="text-justify text-gray4 mb-3 monetizing-cgame-mob slide-left">
-                      {
-                        data.metaverseGameDevelopmentService.data
-                            .attributes
-                            .game_choose_metaprolane_content
-                    }
-                    </p>
-                    <ul>
-                      {
-                        data.metaverseGameDevelopmentService.data.attributes.game_choose_metaprolane_lists.data.map(
-                            (each: any, index: number) => {
-                                return (
-                      <li>{each.attributes.text}</li>
-                     )})}
-                    </ul>
+                    </div>
                   </div>
                 </div>
+                <div class="col-lg-6">
+                  <img
+                    src="assets/images/game-development/meta-shape.webp"
+                    alt="Meta Shape"
+                  />
+                </div>
               </div>
             </div>
-            <div class="col-lg-6"><img src="assets/images/game-development/meta-shape.webp" alt="Meta Shape" /></div>
+          </section>
+        </div>
+      </div>
+      <!-- metaverse development tools -->
+      <MetaverseDevelopmentTools />
+
+      <section
+        class="why-metaprolane whym2 product-why-sec apply-now casino-ms-FAQ-section"
+      >
+        <div class="container py-0">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="why-metaprolane-l mt-2 animation-element slide-left">
+                <h5 class="text-white h3-under-bar2 mb-5 fw-600">
+                  {
+                    data.metaverseGameDevelopmentService.data.attributes
+                      .game_faq_title
+                  }
+                </h5>
+              </div>
+              {
+                data.metaverseGameDevelopmentService.data.attributes.game_faq_lists.data.map(
+                  (item: any, index: number) => (
+                    <div class="faq-card">
+                      <div
+                        class="faq-question-casino"
+                        onclick="toggleAnswer(event)"
+                      >
+                        {item.attributes.question}
+                        <span class="faq-toggle-icon-casino">+</span>
+                      </div>
+                      <div class="faq-answer">{item.attributes.answer}</div>
+                    </div>
+                  ),
+                )
+              }
+            </div>
           </div>
         </div>
       </section>
     </div>
-  </div>
-       <!-- metaverse development tools -->
-       <MetaverseDevelopmentTools />
+    <script type="text/javascript">
+      var $animation_elements = $(".animation-element");
+      var $window = $(window);
 
-      <section class="why-metaprolane whym2 product-why-sec apply-now casino-ms-FAQ-section">
-        <div class="container py-0">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="why-metaprolane-l mt-2 slide-left">
-                <h5 class="text-white h3-under-bar2 mb-5 fw-600">
-                  {
-                    data.metaverseGameDevelopmentService.data
-                        .attributes
-                        .game_faq_title
-                }
-                </h5>
-              </div>
-              {data.metaverseGameDevelopmentService.data.attributes.game_faq_lists.data.map(
-                (item: any, index: number) => (
-                  <div class="faq-card">
-                    <div class="faq-question-casino" onclick="toggleAnswer(event)">
-                      {item.attributes.question}
-                      <span class="faq-toggle-icon-casino">+</span>
-                    </div>
-                    <div class="faq-answer">
-                      {item.attributes.answer}
-                    </div>
-                  </div>
-                ),
-              )}
-            </div>
-          </div>
-        </div>
-      </section>
+      function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = window_top_position + window_height;
 
+        $.each($animation_elements, function () {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = element_top_position + element_height;
 
-            </div>
-            </html>
-            </Layout>
+          //check to see if this current container is within viewport
+          if (
+            element_bottom_position >= window_top_position &&
+            element_top_position <= window_bottom_position
+          ) {
+            $element.addClass("in-view");
+          }
+          // else {
+          //   $element.removeClass('in-view');
+          // }
+        });
+      }
+
+      $window.on("scroll resize", check_if_in_view);
+      $window.trigger("scroll", check_if_in_view);
+    </script>
+  </html>
+</Layout>

@@ -267,89 +267,89 @@ const { data } = await response.json();
 
         <section class="under-banner our-technologies product-tech-sec">
           <div class="container">
-            <div class="pp-inn">
-              <h2>
+            <div class="pp-inn ">
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_notice_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_notice_content
                 }
               </p>
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_overview_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left" >
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_overview_content
                 }
               </p>
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_service_title
                 }
               </h2>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_service_user_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_service_user_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_service_bank_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_service_bank_content
                 }
               </p>
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_deposit_metacasino_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_deposit_metacasino_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .chip_exchange_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .chip_exchange_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .chip_exchange_ratio_title
@@ -360,7 +360,7 @@ const { data } = await response.json();
                   data.cryptoVegasPrivacyPolicy.data.attributes.chip_exchange_ratio_lists.data.map(
                     (each: any, index: number) => {
                       return (
-                        <li>
+                        <li class="animation-element slide-left">
                           {each.attributes.title}: {each.attributes.content}
                         </li>
                       );
@@ -369,7 +369,7 @@ const { data } = await response.json();
                 }
               </ul>
 
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .deposit_process_title
@@ -379,7 +379,7 @@ const { data } = await response.json();
                 data.cryptoVegasPrivacyPolicy.data.attributes.deposit_process_titles.data.map(
                   (each: any, index: number) => {
                     return (
-                      <p>
+                      <p class="animation-element slide-left">
                         <b> {each.attributes.title}:</b>{" "}
                         {each.attributes.content}
                       </p>
@@ -388,8 +388,8 @@ const { data } = await response.json();
                 )
               }
 
-              <p>
-                <b
+              <p class="animation-element slide-left">
+                <b 
                   >{
                     data.cryptoVegasPrivacyPolicy.data.attributes
                       .processing_fee_cal_title
@@ -397,12 +397,12 @@ const { data } = await response.json();
                 >
               </p>
 
-              <ul>
+              <ul class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_processing_fee_cal_lists.data.map(
                     (each: any, index: number) => {
                       return (
-                        <li>
+                        <li >
                           {each.attributes.title}: {each.attributes.content}
                         </li>
                       );
@@ -416,7 +416,7 @@ const { data } = await response.json();
                 to a rounded value of $5, of which the user receives a minimum of
                 $4 after excluding all service charges, taxes, and gas fees.
               </p> -->
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .deposit_process_example_title
@@ -428,7 +428,7 @@ const { data } = await response.json();
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_deposit_process_example_lists.data.map(
                     (each: any, index: number) => {
                       return (
-                        <li>
+                        <li class="animation-element slide-left">
                           {each.attributes.title}: {each.attributes.value}
                         </li>
                       );
@@ -437,32 +437,32 @@ const { data } = await response.json();
                 }
               </ul>
 
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .deposit_process_average_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .blackjack_game_title
                 }
               </h4>
 
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .blackjack_payout_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .blackjack_payout_content
                 }
               </p>
-              <ul>
+              <ul class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_blackjack_payout_lists.data.map(
                     (each: any, index: number) => {
@@ -475,32 +475,32 @@ const { data } = await response.json();
                   )
                 }
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .game_conditions_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .game_conditions_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .dealer_card_draw_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .dealer_card_draw_content
                 }
               </p>
-              <table>
-                <tr>
+              <table class="animation-element slide-left">
+                <tr >
                   <th>Dealer Draw Logic</th>
                   <th>Condition</th>
                 </tr>
@@ -517,96 +517,96 @@ const { data } = await response.json();
                   )
                 }
               </table>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .dealer_card_draw_content1
                 }
               </p>
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .regulatory_obligation_title
                 }
               </h2>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .regulatory_customer_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .regulatory_customer_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .verifiction_process_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .verifiction_process_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .introduction_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .introduction_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {data.cryptoVegasPrivacyPolicy.data.attributes.additional_title}
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .additional_content
                 }
               </p>
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_collect_blackjack_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_collect_blackjack_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .information_collection_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .information_collection_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .information_third_party_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_information_third_party_lists.data.map(
                     (each: any, index: number) => {
@@ -615,13 +615,13 @@ const { data } = await response.json();
                   )
                 }
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .revealing_personal_info_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_revealing_personal_info_lists.data.map(
                     (each: any, index: number) => {
@@ -630,10 +630,10 @@ const { data } = await response.json();
                   )
                 }
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {data.cryptoVegasPrivacyPolicy.data.attributes.cookies_title}
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_cookies_lists.data.map(
                     (each: any, index: number) => {
@@ -642,61 +642,61 @@ const { data } = await response.json();
                   )
                 }
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_processing_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_processing_content
                 }
               </p>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_processing_content1
                 }
               </p>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_processing_content2
                 }
               </p>
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .use_personal_data_blackjack_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .use_personal_data_blackjack_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .legal_bases_personal_data_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .legal_bases_personal_data_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .fulfillment_consent_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -704,13 +704,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .compliance_applicable_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -718,19 +718,19 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .legitimate_interest_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .legitimate_interest_content
                 }
               </p>
-              <ul>
+              <ul class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_legitimate_interest_lists.data.map(
                     (each: any, index: number) => {
@@ -739,13 +739,13 @@ const { data } = await response.json();
                   )
                 }
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .fulfillment_contact_obligation_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -753,13 +753,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .protection_safety_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -768,19 +768,19 @@ const { data } = await response.json();
                 </li>
               </ul>
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .consistent_user_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .consistent_user_content
                 }
               </p>
-              <ul>
+              <ul class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_consistent_user_lists.data.map(
                     (each: any, index: number) => {
@@ -789,19 +789,19 @@ const { data } = await response.json();
                   )
                 }
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .disclosure_practice_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .disclosure_practice_content
                 }
               </p>
-              <ul>
+              <ul class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes.privacy_disclosure_practice_lists.data.map(
                     (each: any, index: number) => {
@@ -810,31 +810,31 @@ const { data } = await response.json();
                   )
                 }
               </ul>
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_security_subject_title
                 }
               </h2>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_security_measure_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_security_measure_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .encryption_tech_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -842,13 +842,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_retention_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -856,13 +856,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .disposal_measure_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -870,13 +870,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .internal_transamission_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -884,13 +884,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .privacy_settings_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -898,25 +898,25 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_subject_right_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .data_subject_right_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .confirmation_access_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -924,13 +924,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .correction_updates_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -938,13 +938,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .deletion_forgetting_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -952,13 +952,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .objectionuse_disclosure_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -966,13 +966,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .limitation_process_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -980,13 +980,13 @@ const { data } = await response.json();
                   }
                 </li>
               </ul>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .consent_withdraw_title
                 }
               </h4>
-              <ul>
+              <ul class="animation-element slide-left">
                 <li>
                   {
                     data.cryptoVegasPrivacyPolicy.data.attributes
@@ -995,13 +995,13 @@ const { data } = await response.json();
                 </li>
               </ul>
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .contacting_use_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .contacting_use_content
@@ -1018,140 +1018,140 @@ const { data } = await response.json();
                 before acting on your request.
               </p> -->
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .complaints_supervisory_title
                 }
               </h2>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .complaints_supervisory_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .chnages_privacy_meta_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .chnages_privacy_meta_content
                 }
               </p>
 
-              <h2>
+              <h2 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .policy_update_process_title
                 }
               </h2>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .frequency_updated_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .frequency_updated_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .notification_channel_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .notification_channel_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .email_notify_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .email_notify_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .your_responsibility_title
                 }
               </h4>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .review_frequency_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .review_frequency_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .policy_accebility_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .policy_accebility_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .email_updates_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .email_updates_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .revision_date_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .revision_date_content
                 }
               </p>
-              <h4>
+              <h4 class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .user_responsibility_title
                 }
               </h4>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .user_responsibility_content
                 }
               </p>
-              <p>
+              <p class="animation-element slide-left">
                 {
                   data.cryptoVegasPrivacyPolicy.data.attributes
                     .user_responsibility_content1
@@ -1173,5 +1173,36 @@ const { data } = await response.json();
         </section>
       </div>
     </div>
+    <script type="text/javascript">
+      var $animation_elements = $(".animation-element");
+      var $window = $(window);
+
+      function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = window_top_position + window_height;
+
+        $.each($animation_elements, function () {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = element_top_position + element_height;
+
+          //check to see if this current container is within viewport
+          if (
+            element_bottom_position >= window_top_position &&
+            element_top_position <= window_bottom_position
+          ) {
+            $element.addClass("in-view");
+          }
+          // else {
+          //   $element.removeClass('in-view');
+          // }
+        });
+      }
+
+      $window.on("scroll resize", check_if_in_view);
+      $window.trigger("scroll", check_if_in_view);
+    </script>
   </html>
 </Layout>

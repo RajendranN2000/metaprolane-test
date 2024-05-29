@@ -96,9 +96,11 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
 const { data } = await response.json();
 ---
 
-<Layout title="metaverse-virtual-showroom" 
-description="Transform retail with our Metaverse Virtual Showrooms. Immersive experiences, bespoke environments. Shape the future of shopping now" 
-keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showroom development, Metaverse virtual showroom development ">
+<Layout
+    title="metaverse-virtual-showroom"
+    description="Transform retail with our Metaverse Virtual Showrooms. Immersive experiences, bespoke environments. Shape the future of shopping now"
+    keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showroom development, Metaverse virtual showroom development "
+>
     <html lang="en">
         <div class="home-container industries-page">
             <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
@@ -183,8 +185,8 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
         url="https://prod.spline.design/adhdc52Z89Fd7Z9u/scene.splinecode"></spline-viewer> -->
             </div>
             <div class="top-detail-card" style=" ">
-                <div class="card-background">
-                    <div class="card1-text-title roboto-regular" id="content">
+                <div class="card-background animation-element slide-left">
+                    <div class="card1-text-title roboto-regular " id="content">
                         {
                             data.metaversVirtualShowroom.data.attributes
                                 .section_one_heading
@@ -199,18 +201,18 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                     <div class="readmore-description">Read more</div>
                     <div class="talk-btn top-talk-btn">
                         <a href="/#demo">
-                        <div class="talk-btn-text" style="color:white">
-                            {
-                                data.metaversVirtualShowroom.data.attributes
-                                    .section_one_button_text
-                            }
-                        </div>
-                    </a>
+                            <div class="talk-btn-text" style="color:white">
+                                {
+                                    data.metaversVirtualShowroom.data.attributes
+                                        .section_one_button_text
+                                }
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="fashion-store d-lg-flex">
-                <div class="fashion-left">
+                <div class="fashion-left animation-element slide-left">
                     <div class="gray-car-title">
                         {
                             data.metaversVirtualShowroom.data.attributes
@@ -225,16 +227,16 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                     </div>
                     <div class="talk-btn">
                         <a href="/#demo">
-                        <div class="talk-btn-text">
-                            {
-                                data.metaversVirtualShowroom.data.attributes
-                                    .section_two_button_text
-                            }
-                        </div>
-                    </a>
+                            <div class="talk-btn-text">
+                                {
+                                    data.metaversVirtualShowroom.data.attributes
+                                        .section_two_button_text
+                                }
+                            </div>
+                        </a>
                     </div>
                 </div>
-                <div class="fashion-right">
+                <div class="fashion-right animation-element slide-right">
                     <img
                         class="fashion-image"
                         src="assets/images/retail-showroom/fashion_store.webp"
@@ -258,7 +260,7 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                                         <div
                                             class={`col-sm-12 col-md-6 col-lg-4`}
                                         >
-                                            <div class="fashion-card">
+                                            <div class="fashion-card animation-element slide-left">
                                                 <img
                                                     class="wallet-img"
                                                     src={item.attributes.url}
@@ -289,7 +291,7 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                     </div>
                 </div>
             </div>
-            <div class="service-section">
+            <div class="service-section animation-element slide-left    ">
                 <div class="service-title">
                     {
                         data.metaversVirtualShowroom.data.attributes
@@ -305,10 +307,10 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
             </div>
             <div class="AI-car-section d-lg-flex">
                 <img
-                    class="gray-car"
+                    class="gray-car animation-element slide-left"
                     src="assets/images/retail-showroom/Gray_car.webp"
                 />
-                <div class="car-right">
+                <div class="car-right animation-element slide-right">
                     <div class="gray-car-title">
                         {
                             data.metaversVirtualShowroom.data.attributes
@@ -323,12 +325,12 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                     </div>
                     <div class="talk-btn">
                         <a href="/#demo">
-                        <div class="talk-btn-text">
-                            {
-                                data.metaversVirtualShowroom.data.attributes
-                                    .section_five_button_text
-                            }
-                        </div>
+                            <div class="talk-btn-text">
+                                {
+                                    data.metaversVirtualShowroom.data.attributes
+                                        .section_five_button_text
+                                }
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -347,7 +349,7 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                                     <div
                                         class={`col-sm-12 col-md-6  ${lastIndex ? "col-lg-12" : "col-lg-4"}`}
                                     >
-                                        <div class="car-feature-card">
+                                        <div class="car-feature-card animation-element slide-left">
                                             <img
                                                 class="car-feature-img"
                                                 src={item.attributes.url}
@@ -578,36 +580,37 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                     </video>
                 </div>
 
-                <div class="video-content">
+                <div class="video-content ">
                     <div>
-                        <div class="gray-car-title">
+                        <div class="gray-car-title animation-element slide-left">
                             {
                                 data.metaversVirtualShowroom.data.attributes
                                     .section_seven_heading
                             }
                         </div>
-                        <div class="gray-car-content">
+                        <div class="gray-car-content animation-element slide-left">
                             {
                                 data.metaversVirtualShowroom.data.attributes
                                     .section_seven_content
                             }
                         </div>
-                        <div class="talk-btn">
+                        <div class="talk-btn animation-element slide-left">
                             <a href="/#demo">
-                            <div class="talk-btn-text">
-                                {
-                                    data.metaversVirtualShowroom.data.attributes
-                                        .section_seven_button_text
-                                }
-                            </div>
-                        </a>
+                                <div class="talk-btn-text">
+                                    {
+                                        data.metaversVirtualShowroom.data
+                                            .attributes
+                                            .section_seven_button_text
+                                    }
+                                </div>
+                            </a>
                         </div>
                     </div>
                     <div class="scroll-container">
                         {
                             data.metaversVirtualShowroom.data.attributes.metaverse_virtual_showroom_section_sevens.data.map(
                                 (item: any) => (
-                                    <div class="scroll-item diverse-card">
+                                    <div class="scroll-item diverse-card animation-element slide-left">
                                         <img
                                             class="car-feature-img"
                                             src={item.attributes.url}
@@ -797,7 +800,7 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                 </div>
             </div>
             <div class="process-card-section">
-                <div class="gray-car-title">
+                <div class="gray-car-title animation-element slide-left">
                     {
                         data.metaversVirtualShowroom.data.attributes
                             .section_eight_heading
@@ -805,7 +808,7 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                 </div>
                 <div class="vr-process-section container-fluid">
                     <div class="row" style="padding-top:24px">
-                        <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="col-sm-12 col-md-6 col-lg-4 animation-element slide-left">
                             {
                                 data.metaversVirtualShowroom.data.attributes.section_eight_left.data.map(
                                     (item: any) => (
@@ -856,7 +859,7 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                                 </div>
                             </div> -->
                         </div>
-                        <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="col-sm-12 col-md-6 col-lg-4 ">
                             <div class="vr-section">
                                 <img
                                     class="vr-img"
@@ -864,7 +867,7 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                                 />
                             </div>
                         </div>
-                        <div class="col-sm-12 col-lg-4">
+                        <div class="col-sm-12 col-lg-4 animation-element slide-right">
                             <div
                                 class="col-md-12 d-md-flex d-sm-block d-lg-block"
                             >
@@ -932,7 +935,7 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                     {
                         data.metaversVirtualShowroom.data.attributes.section_eight_center.data.map(
                             (item: any) => (
-                                <div class="car-feature-card">
+                                <div class="car-feature-card animation-element slide-left">
                                     <div class="process-card">
                                         <div class="wallet-title">
                                             {item.attributes.heading}
@@ -950,16 +953,17 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                     }
                 </div>
             </div>
-            <div class="service-section">
+            <div class="service-section animation-element slide-left">
                 <div class="service-title">
                     {
                         data.metaversVirtualShowroom.data.attributes
                             .section_nine_heading
                     }
                 </div>
-                <div set:html={data.metaversVirtualShowroom.data.attributes.section_nine_content}>
-
-                </div>
+                <div
+                    set:html={data.metaversVirtualShowroom.data.attributes
+                        .section_nine_content}
+                />
                 <!-- <div class="service-content">
                     <span style="font-weight: 600;">Metaprolane stands</span> out
                     as the premier choice for<span style="font-weight: 600;">
@@ -990,12 +994,12 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                     propelling your brand into the future of retail.
                 </div> -->
             </div>
-            <div class="process-card-section">
-                <div class="gray-car-title">FAQs</div>
+            <div class="process-card-section ">
+                <div class="gray-car-title animation-element slide-left">FAQs</div>
                 {
                     data.metaversVirtualShowroom.data.attributes.metaverse_virtual_showroom_faqs.data.map(
                         (item: any) => (
-                            <div class="FAQ-card faq">
+                            <div class="FAQ-card faq animation-element slide-left">
                                 <div class="FAQ-qstn-section question1">
                                     <div class="FAQ-question">
                                         {item.attributes.question}
@@ -1009,8 +1013,9 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                                     {item.attributes.answer}
                                 </div>
                             </div>
-
-                        ))}
+                        ),
+                    )
+                }
                 <!-- <div class="FAQ-card faq">
                     <div class="FAQ-qstn-section question1">
                         <div class="FAQ-question">
@@ -1194,5 +1199,35 @@ keywords="Metaverse Virtual showroom, Metaverse retail, Metaverse virtual showro
                 </div> -->
             </div>
         </div>
+        <script type="text/javascript">
+            var $animation_elements = $('.animation-element');
+            var $window = $(window);
+      
+            function check_if_in_view() {
+                var window_height = $window.height();
+                var window_top_position = $window.scrollTop();
+                var window_bottom_position = (window_top_position + window_height);
+      
+                $.each($animation_elements, function () {
+                    var $element = $(this);
+                    var element_height = $element.outerHeight();
+                    var element_top_position = $element.offset().top;
+                    var element_bottom_position = (element_top_position + element_height);
+      
+                    //check to see if this current container is within viewport
+                    if ((element_bottom_position >= window_top_position) &&
+                        (element_top_position <= window_bottom_position)) {
+                        $element.addClass('in-view');
+                    }
+                    // else {
+                    //   $element.removeClass('in-view');
+                    // }
+      
+                });
+            }
+      
+            $window.on('scroll resize', check_if_in_view);
+            $window.trigger('scroll', check_if_in_view);
+        </script>
     </html></Layout
 >

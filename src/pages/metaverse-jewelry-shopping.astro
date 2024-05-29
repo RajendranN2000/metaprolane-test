@@ -110,7 +110,7 @@ const { data } = await response.json();
 
       <div class="">
         <div class="section1-banner">
-          <div class="section1">
+          <div class="section1 animation-element slide-left">
             <div class="section1-title">
               {
                 data.metaverseJewelryShopping.data.attributes
@@ -133,10 +133,10 @@ const { data } = await response.json();
 
         <div class="section2">
           <img
-            class="section2-img"
+            class="section2-img animation-element slide-left"
             src="assets/images/jewellery/ImageSequence_003_0100@4x.webp"
           />
-          <div class="section2-right">
+          <div class="section2-right animation-element slide-right">
             <div class="section2-title">
               {
                 data.metaverseJewelryShopping.data.attributes
@@ -157,7 +157,7 @@ const { data } = await response.json();
           <div class="container">
             <div class="row">
               <div class="col-12">
-                <h2 class="mt-4 text-center text-white heading">
+                <h2 class="mt-4 text-center text-white heading animation-element slide-left">
                   {
                     data.metaverseJewelryShopping.data.attributes
                       .benefits_jewelry_dev_title
@@ -171,7 +171,7 @@ const { data } = await response.json();
                   (each: any, index: number) => {
                     return (
                       <div class="col-12 col-md-6 col-lg-4 mt-5">
-                        <div class="box-content">
+                        <div class="box-content animation-element slide-right">
                           <div class="outer-section">
                             <div class="section3-img">
                               <img
@@ -199,12 +199,12 @@ const { data } = await response.json();
 
         <div class="section4">
           <img
-            class="section4-img"
+            class="section4-img animation-element slide-left"
             src="assets/images/jewellery/puchachingImage.webp"
           />
         </div>
         <div class="section5-outer">
-          <div class="section5">
+          <div class="section5 ">
             <div id="carouselExample" class="carousel">
               <a
                 class="carousel-control-prev"
@@ -224,7 +224,7 @@ const { data } = await response.json();
                           class={`carousel-item ${index === 0 ? "active" : ""}`}
                         >
                           <div class="section5-carousel">
-                            <div class="section5-frame">
+                            <div class="section5-frame animation-element slide-left">
                               <img
                                 class="section5-left"
                                 src={each.attributes.image}
@@ -277,7 +277,7 @@ const { data } = await response.json();
 
         <div class="section6">
           <div class="section6-frame">
-            <div class="section6-left">
+            <div class="section6-left animation-element slide-left">
               <div class="section6-img-section">
                 <div class="">
                   <img
@@ -307,7 +307,7 @@ const { data } = await response.json();
                 </div>
               </div>
             </div>
-            <div class="section6-right">
+            <div class="section6-right animation-element slide-right">
               <div class="section6-title">
                 {
                   data.metaverseJewelryShopping.data.attributes
@@ -326,7 +326,7 @@ const { data } = await response.json();
 
         <div class="section7-outer-section">
           <div class="section7-banner">
-            <div class="section7">
+            <div class="section7 animation-element slide-left">
               <div class="section7-title">
                 {
                   data.metaverseJewelryShopping.data.attributes
@@ -371,5 +371,36 @@ const { data } = await response.json();
         }
       </style>
     </div>
+    <script type="text/javascript">
+      var $animation_elements = $(".animation-element");
+      var $window = $(window);
+
+      function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = window_top_position + window_height;
+
+        $.each($animation_elements, function () {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = element_top_position + element_height;
+
+          //check to see if this current container is within viewport
+          if (
+            element_bottom_position >= window_top_position &&
+            element_top_position <= window_bottom_position
+          ) {
+            $element.addClass("in-view");
+          }
+          // else {
+          //   $element.removeClass('in-view');
+          // }
+        });
+      }
+
+      $window.on("scroll resize", check_if_in_view);
+      $window.trigger("scroll", check_if_in_view);
+    </script>
   </html>
 </Layout>
