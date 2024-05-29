@@ -1432,7 +1432,16 @@ section.our-facts h2 {
     right: unset;
     font-size: 18px
 }
-
+@media (max-width: 400px) {
+    .pluss .count-digit.noplus:before {
+        left: 140px !important;
+    }
+}
+@media (min-width:401px) and (max-width: 767px) {
+    .pluss .count-digit.noplus:before {
+        left: 175px !important;
+    }
+}
 .count-digit {
     margin: 5px 0;
     color: #fff;
