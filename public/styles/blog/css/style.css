@@ -7355,7 +7355,7 @@ b.rm1 {
     }
 
     .btn-section {
-        position: absolute;
+        /* position: absolute; */
         bottom: 0;
         left: 0;
         right: 0
@@ -8819,7 +8819,7 @@ b.rm1 {
     }
 
     .btn-section {
-        position: absolute;
+        /* position: absolute; */
         bottom: 0;
         left: 0;
         right: 0
