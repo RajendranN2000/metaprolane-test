@@ -105,23 +105,33 @@ const { data } = await response.json();
                 href="/vendor/bootstrap/css/bootstrap.min.css"
                 rel="stylesheet"
             />
-             <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/fontawesome.css">
-  <!-- <link rel="stylesheet" href="assets/css/owl.css"> -->
-  <link rel="stylesheet" href="styles/css/lightbox.css">
-  <link rel="stylesheet" href="styles/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1">
-  <link rel="stylesheet" href="styles/css/animate.css">
-  <!-- <link rel="stylesheet" href="assets/css/countrySelect.min.css" /> -->
-  <link type="text/css" rel="stylesheet" href="assets/css/style5597.css?ver=5.0" />
+            <!-- Bootstrap core CSS -->
+            <link
+                href="vendor/bootstrap/css/bootstrap.min.css"
+                rel="stylesheet"
+            />
+            <link rel="stylesheet" href="assets/css/fontawesome.css" />
+            <!-- <link rel="stylesheet" href="assets/css/owl.css"> -->
+            <link rel="stylesheet" href="styles/css/lightbox.css" />
+            <link
+                rel="stylesheet"
+                href="styles/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1"
+            />
+            <link rel="stylesheet" href="styles/css/animate.css" />
+            <!-- <link rel="stylesheet" href="assets/css/countrySelect.min.css" /> -->
+            <link
+                type="text/css"
+                rel="stylesheet"
+                href="assets/css/style5597.css?ver=5.0"
+            />
             <link rel="stylesheet" href="/styles/css/style.css" />
-            <link rel="stylesheet" href="/styles/blog/css/owl.css" />   
+            <link rel="stylesheet" href="/styles/blog/css/owl.css" />
 
             <style>
                 .owl-stage {
                     display: flex;
                     transition: all 0.25s ease 0s;
-                    width: 12552px
+                    width: 12552px;
                 }
                 .owl-item {
                     flex: 0 0 1016px; /* Adjust this value according to your item width */
@@ -216,15 +226,16 @@ const { data } = await response.json();
                     });
                 });
 
-                document.addEventListener('DOMContentLoaded', () => {
-                    const items = document.querySelectorAll('.owl-item');
+                document.addEventListener("DOMContentLoaded", () => {
+                    const items = document.querySelectorAll(".owl-item");
                     const itemWidth = 1016 + 30; // item width + margin
                     let currentIndex = 0;
                     let autoSlideInterval;
 
                     function updateCarousel() {
                         const translateX = -currentIndex * itemWidth;
-                        document.querySelector('.owl-stage').style.transform = `translate3d(${translateX}px, 0, 0)`;
+                        document.querySelector(".owl-stage").style.transform =
+                            `translate3d(${translateX}px, 0, 0)`;
                     }
 
                     function startAutoSlide() {
@@ -238,19 +249,25 @@ const { data } = await response.json();
                         clearInterval(autoSlideInterval);
                     }
 
-                    document.getElementById('prev').addEventListener('click', () => {
-                        stopAutoSlide();
-                        currentIndex = (currentIndex - 1 + items.length) % items.length;
-                        updateCarousel();
-                        startAutoSlide();
-                    });
+                    document
+                        .getElementById("prev")
+                        .addEventListener("click", () => {
+                            stopAutoSlide();
+                            currentIndex =
+                                (currentIndex - 1 + items.length) %
+                                items.length;
+                            updateCarousel();
+                            startAutoSlide();
+                        });
 
-                    document.getElementById('next').addEventListener('click', () => {
-                        stopAutoSlide();
-                        currentIndex = (currentIndex + 1) % items.length;
-                        updateCarousel();
-                        startAutoSlide();
-                    });
+                    document
+                        .getElementById("next")
+                        .addEventListener("click", () => {
+                            stopAutoSlide();
+                            currentIndex = (currentIndex + 1) % items.length;
+                            updateCarousel();
+                            startAutoSlide();
+                        });
 
                     // Initial update and start auto slide
                     updateCarousel();
@@ -281,7 +298,9 @@ const { data } = await response.json();
 
             <section class="under-banner our-technologies product-tech-sec">
                 <div class="container">
-                    <div class="section-heading ss-case animation-element slide-left">
+                    <div
+                        class="section-heading ss-case animation-element slide-left"
+                    >
                         <h3 class="text-black text-center mb-1 h3-under-bar2">
                             <div class="fs-32 text-blue fw-700">
                                 {
@@ -318,7 +337,9 @@ const { data } = await response.json();
                     </h1>
                     <div class="row py-3">
                         <div class="col-lg-7">
-                            <div class="section-heading ss-case animation-element slide-left">
+                            <div
+                                class="section-heading ss-case animation-element slide-left"
+                            >
                                 <p class="text-gray2 text-last-left pt-0 pb-3">
                                     {
                                         data.metaverseVirtualOffice.data
@@ -334,7 +355,9 @@ const { data } = await response.json();
                             </div>
                         </div>
                         <div class="col-lg-5">
-                            <div class="plr-10-only-mobile animation-element slide-right">
+                            <div
+                                class="plr-10-only-mobile animation-element slide-right"
+                            >
                                 <img
                                     src="assets/images/products2/Join-the-metavers2.webp"
                                     alt="BG Vector"
@@ -361,223 +384,38 @@ const { data } = await response.json();
                                             .attributes.feature_virtual_title
                                     }
                                 </h2>
-                               
+
                                 <div class="owl-carousel">
-                                {
-                                    data.metaverseVirtualOffice.data.attributes.feature_metaverse_virtuals.data.map(
-                                        (each: any, index: number) => {
-                                            return (
-                                                <div
-                                                    class="owl-experts-item "
-                                                    style="width:22rem"
-                                                >
-                                                    <div class="item">
-                                                        <div class="icon">
-                                                            <div class="expert-txt2-office">
-                                                                <div class="box-img">
-                                                                    <img
-                                                                        src={
-                                                                            each
-                                                                                .attributes
-                                                                                .image
-                                                                        }
-                                                                        alt="Features Image"
-                                                                    />
-                                                                </div>
-                                                                <div class="box-img-inn">
-                                                                    <h6>
-                                                                        {
-                                                                            each
-                                                                                .attributes
-                                                                                .title
-                                                                        }
-                                                                    </h6>
-                                                                    <p class="text-last-center text-white">
-                                                                        {
-                                                                            each
-                                                                                .attributes
-                                                                                .content
-                                                                        }
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            );
-                                        },
-                                    )
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="meta-development-services product-our-services">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <div class="under-banner">
-                                    <div class="under-banner-carousel-section">
-                                        <h3
-                                            class="text-white h3-under-bar2 animation-element slide-left"
-                                        >
-                                            {
-                                                data.metaverseVirtualOffice.data
-                                                    .attributes
-                                                    .Benefits_metevarse_virtual
-                                            }
-                                        </h3>
-
-                                        <div class="row animation-element slide-left in-view">
-                                            {
-                                                data.metaverseVirtualOffice.data.attributes.benefits_metaverse_virtual_devs.data.map(
-                                                    (
-                                                        each: any,
-                                                        index: number,
-                                                    ) => {
-                                                        return (
-                                                            <div class="col-lg-4">
-                                                                <div class="benefits-metavirtualoffice">
-                                                                    <div class="text-center bm-img">
+                                    {
+                                        data.metaverseVirtualOffice.data.attributes.feature_metaverse_virtuals.data.map(
+                                            (each: any, index: number) => {
+                                                return (
+                                                    <div
+                                                        class="owl-experts-item "
+                                                        style="width:22rem"
+                                                    >
+                                                        <div class="item">
+                                                            <div class="icon">
+                                                                <div class="expert-txt2-office">
+                                                                    <div class="box-img">
                                                                         <img
                                                                             src={
                                                                                 each
                                                                                     .attributes
                                                                                     .image
                                                                             }
-                                                                            alt="Benefits Icons"
+                                                                            alt="Features Image"
                                                                         />
                                                                     </div>
-                                                                    <h5>
-                                                                        {
-                                                                            each
-                                                                                .attributes
-                                                                                .title
-                                                                        }
-                                                                    </h5>
-                                                                    <p class="text-gray2 text-last-center">
-                                                                        {
-                                                                            each
-                                                                                .attributes
-                                                                                .content
-                                                                        }
-                                                                    </p>
-                                                                </div>
-                                                            </div>
-                                                        );
-                                                    },
-                                                )
-                                            }
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-vectors">
-                    <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
-                </div>
-            </section>
-
-            <section class="why-metaprolane whym2 product-why-sec">
-                <div class="container">
-                    <h2 class="text-black text-center h3-under-bar2 animation-element slide-left">
-                        {
-                            data.metaverseVirtualOffice.data.attributes
-                                .virtual_working_space_solutions
-                        }
-                    </h2>
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="why-metaprolane-l animation-element slide-left">
-                                <p class="text-gray2 text-last-left padd-0">
-                                    {
-                                        data.metaverseVirtualOffice.data
-                                            .attributes
-                                            .virtual_working_space_content
-                                    }
-                                    <br /><br />
-                                    {
-                                        data.metaverseVirtualOffice.data
-                                            .attributes.virtual_signup_text
-                                    }
-                                </p>
-                                <div class="text-last-left my-3 mt-4 pt-2">
-                                    <a href="/#demo">
-                                        <button class="btn padd-0">
-                                            <div
-                                                class="btn-box border-gradient"
-                                            >
-                                                Start your 3D journey
-                                            </div>
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <img
-                                src="assets/images/products2/virtual-meeting-rooms.webp"
-                                alt="BG Vector"
-                                class="w-100-br-15"
-                            />
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="meta-development-services product-our-services">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <div class="under-banner">
-                                    <div class="under-banner-carousel-section">
-                                        <h3
-                                            class="text-white h3-under-bar2 mb-5 animation-element slide-left"
-                                        >
-                                            {
-                                                data.metaverseVirtualOffice.data
-                                                    .attributes
-                                                    .Monetizing_virtual_business
-                                            }
-                                        </h3>
-                                        <div
-                                            class="row align-items-center animation-element slide-left"
-                                        >
-                                            {
-                                                data.metaverseVirtualOffice.data.attributes.monetizing_virtual_business_lists.data.map(
-                                                    (
-                                                        each: any,
-                                                        index: number,
-                                                    ) => {
-                                                        return (
-                                                            <div class="col-lg-6">
-                                                                <div class="benefits-metavirtualoffice mds22">
-                                                                    <div class="align-items-center">
-                                                                        <img
-                                                                            src={
-                                                                                each
-                                                                                    .attributes
-                                                                                    .image
-                                                                            }
-                                                                            alt="Benefits Icons"
-                                                                            class="mds-product"
-                                                                        />
-                                                                    </div>
-                                                                    <div class="benefits-mds-inn">
-                                                                        <h3>
+                                                                    <div class="box-img-inn">
+                                                                        <h6>
                                                                             {
                                                                                 each
                                                                                     .attributes
                                                                                     .title
                                                                             }
-                                                                        </h3>
-                                                                        <p class="text-last-center text-gray2">
+                                                                        </h6>
+                                                                        <p class="text-last-center text-white">
                                                                             {
                                                                                 each
                                                                                     .attributes
@@ -587,47 +425,248 @@ const { data } = await response.json();
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        );
-                                                    },
-                                                )
-                                            }
+                                                        </div>
+                                                    </div>
+                                                );
+                                            },
+                                        )
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="meta-development-services product-our-services">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <div class="under-banner">
+                                        <div
+                                            class="under-banner-carousel-section"
+                                        >
+                                            <h3
+                                                class="text-white h3-under-bar2 animation-element slide-left"
+                                            >
+                                                {
+                                                    data.metaverseVirtualOffice
+                                                        .data.attributes
+                                                        .Benefits_metevarse_virtual
+                                                }
+                                            </h3>
+
+                                            <div
+                                                class="row animation-element slide-left in-view"
+                                            >
+                                                {
+                                                    data.metaverseVirtualOffice.data.attributes.benefits_metaverse_virtual_devs.data.map(
+                                                        (
+                                                            each: any,
+                                                            index: number,
+                                                        ) => {
+                                                            return (
+                                                                <div class="col-lg-4">
+                                                                    <div class="benefits-metavirtualoffice">
+                                                                        <div class="text-center bm-img">
+                                                                            <img
+                                                                                src={
+                                                                                    each
+                                                                                        .attributes
+                                                                                        .image
+                                                                                }
+                                                                                alt="Benefits Icons"
+                                                                            />
+                                                                        </div>
+                                                                        <h5>
+                                                                            {
+                                                                                each
+                                                                                    .attributes
+                                                                                    .title
+                                                                            }
+                                                                        </h5>
+                                                                        <p class="text-gray2 text-last-center">
+                                                                            {
+                                                                                each
+                                                                                    .attributes
+                                                                                    .content
+                                                                            }
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            );
+                                                        },
+                                                    )
+                                                }
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="bg-vectors">
-                    <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
-                </div>
-            </section>
+                    <div class="bg-vectors">
+                        <img
+                            src="assets/images/bg-vector3.webp"
+                            alt="BG Vector"
+                        />
+                    </div>
+                </section>
 
-            <section class="why-metaprolane whym2 product-why-sec">
-                <div class="container">
-                    <h4
-                        class="text-black text-center h3-under-bar2 mb-4 fw-bold-800 animation-element slide-left"
-                    >
-                        {
-                            data.metaverseVirtualOffice.data.attributes
-                                .Future_Virtual_WorkSpace
-                        }
-                    </h4>
-                    <p
-                        class="padd-0 my-4 mb-4 text-last-center text-gray2 animation-element slide-left"
-                    >
-                        {
-                            data.metaverseVirtualOffice.data.attributes
-                                .Future_Virtual_WorkSpace_content
-                        }
-                    </p>
-                    <div class="row mb-3">
-                        <div class="col-lg-12">
-                            <div class="w-100">
-                                <div class="immersive-m-l text-center">
-                                    <iframe
-                                        title="Metaprolane Video"
-                                        srcdoc="
+                <section class="why-metaprolane whym2 product-why-sec">
+                    <div class="container">
+                        <h2
+                            class="text-black text-center h3-under-bar2 animation-element slide-left"
+                        >
+                            {
+                                data.metaverseVirtualOffice.data.attributes
+                                    .virtual_working_space_solutions
+                            }
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div
+                                    class="why-metaprolane-l animation-element slide-left"
+                                >
+                                    <p class="text-gray2 text-last-left padd-0">
+                                        {
+                                            data.metaverseVirtualOffice.data
+                                                .attributes
+                                                .virtual_working_space_content
+                                        }
+                                        <br /><br />
+                                        {
+                                            data.metaverseVirtualOffice.data
+                                                .attributes.virtual_signup_text
+                                        }
+                                    </p>
+                                    <div class="text-last-left my-3 mt-4 pt-2">
+                                        <a href="/#demo">
+                                            <button class="btn padd-0">
+                                                <div
+                                                    class="btn-box border-gradient"
+                                                >
+                                                    Start your 3D journey
+                                                </div>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <img
+                                    src="assets/images/products2/virtual-meeting-rooms.webp"
+                                    alt="BG Vector"
+                                    class="w-100-br-15"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="meta-development-services product-our-services">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-12">
+                                <div class="text-center">
+                                    <div class="under-banner">
+                                        <div
+                                            class="under-banner-carousel-section"
+                                        >
+                                            <h3
+                                                class="text-white h3-under-bar2 mb-5 animation-element slide-left"
+                                            >
+                                                {
+                                                    data.metaverseVirtualOffice
+                                                        .data.attributes
+                                                        .Monetizing_virtual_business
+                                                }
+                                            </h3>
+                                            <div
+                                                class="row align-items-center animation-element slide-left"
+                                            >
+                                                {
+                                                    data.metaverseVirtualOffice.data.attributes.monetizing_virtual_business_lists.data.map(
+                                                        (
+                                                            each: any,
+                                                            index: number,
+                                                        ) => {
+                                                            return (
+                                                                <div class="col-lg-6">
+                                                                    <div class="benefits-metavirtualoffice mds22">
+                                                                        <div class="align-items-center">
+                                                                            <img
+                                                                                src={
+                                                                                    each
+                                                                                        .attributes
+                                                                                        .image
+                                                                                }
+                                                                                alt="Benefits Icons"
+                                                                                class="mds-product"
+                                                                            />
+                                                                        </div>
+                                                                        <div class="benefits-mds-inn">
+                                                                            <h3>
+                                                                                {
+                                                                                    each
+                                                                                        .attributes
+                                                                                        .title
+                                                                                }
+                                                                            </h3>
+                                                                            <p class="text-last-center text-gray2">
+                                                                                {
+                                                                                    each
+                                                                                        .attributes
+                                                                                        .content
+                                                                                }
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            );
+                                                        },
+                                                    )
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-vectors">
+                        <img
+                            src="assets/images/bg-vector3.webp"
+                            alt="BG Vector"
+                        />
+                    </div>
+                </section>
+
+                <section class="why-metaprolane whym2 product-why-sec">
+                    <div class="container">
+                        <h4
+                            class="text-black text-center h3-under-bar2 mb-4 fw-bold-800 animation-element slide-left"
+                        >
+                            {
+                                data.metaverseVirtualOffice.data.attributes
+                                    .Future_Virtual_WorkSpace
+                            }
+                        </h4>
+                        <p
+                            class="padd-0 my-4 mb-4 text-last-center text-gray2 animation-element slide-left"
+                        >
+                            {
+                                data.metaverseVirtualOffice.data.attributes
+                                    .Future_Virtual_WorkSpace_content
+                            }
+                        </p>
+                        <div class="row mb-3">
+                            <div class="col-lg-12">
+                                <div class="w-100">
+                                    <div class="immersive-m-l text-center">
+                                        <iframe
+                                            title="Metaprolane Video"
+                                            srcdoc="
     <style>
     body, .full {
     width: 100%;
@@ -658,196 +697,205 @@ const { data } = await response.json();
     </svg>
     </a>
     "
-                                        style="max-width: 90%; width: 100%; aspect-ratio: 16/9;"
-                                        frameborder="0"
-                                    >
-                                    </iframe>
+                                            style="max-width: 90%; width: 100%; aspect-ratio: 16/9;"
+                                            frameborder="0"
+                                        >
+                                        </iframe>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="text-center my-3">
-                                <a href="#contact">
-                                    <button class="btn padd-0">
-                                        <div class="btn-box border-gradient">
-                                            Talk To Our Expert
-                                        </div>
-                                    </button>
-                                </a>
+                                <div class="text-center my-3">
+                                    <a href="#contact">
+                                        <button class="btn padd-0">
+                                            <div
+                                                class="btn-box border-gradient"
+                                            >
+                                                Talk To Our Expert
+                                            </div>
+                                        </button>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
 
-            <section class="under-banner our-technologies gradient-ms-box">
-                <div class="bg-vectors">
-                    <img
-                        src="assets/images/products/bg3.webp"
-                        alt="BG Vector"
-                    />
-                </div>
-                <div class="container">
-                    <div class="under-banner-carousel-section">
-                        <h5
-                            class="text-center text-white h3-under-bar2 animation-element slide-left"
-                        >
-                            {
-                                data.metaverseVirtualOffice.data.attributes
-                                    .metaveser_development_tools
-                            }
-                        </h5>
-                        <div class="row mt-4">
-                            <div class="col-lg-12 animation-element slide-left">
+                <section class="under-banner our-technologies gradient-ms-box">
+                    <div class="bg-vectors">
+                        <img
+                            src="assets/images/products/bg3.webp"
+                            alt="BG Vector"
+                        />
+                    </div>
+                    <div class="container">
+                        <div class="under-banner-carousel-section">
+                            <h5
+                                class="text-center text-white h3-under-bar2 animation-element slide-left"
+                            >
+                                {
+                                    data.metaverseVirtualOffice.data.attributes
+                                        .metaveser_development_tools
+                                }
+                            </h5>
+                            <div class="row mt-4">
                                 <div
-                                    class="owl-service-item owl-carousel d-flex justify-content-between"
+                                    class="col-lg-12 animation-element slide-left"
                                 >
-                                    {
-                                        data.metaverseVirtualOffice.data.attributes.metaverse_development_tools_lists.data.map(
-                                            (each: any, index: number) => {
-                                                return (
-                                                    <div class="item">
-                                                        <div class="icon">
-                                                            <img
-                                                                src={
-                                                                    each
-                                                                        .attributes
-                                                                        .image
-                                                                }
-                                                                alt="Ourtech1"
-                                                            />
+                                    <div
+                                        class="owl-service-item owl-carousel d-flex justify-content-between"
+                                    >
+                                        {
+                                            data.metaverseVirtualOffice.data.attributes.metaverse_development_tools_lists.data.map(
+                                                (each: any, index: number) => {
+                                                    return (
+                                                        <div class="item">
+                                                            <div class="icon">
+                                                                <img
+                                                                    src={
+                                                                        each
+                                                                            .attributes
+                                                                            .image
+                                                                    }
+                                                                    alt="Ourtech1"
+                                                                />
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                );
-                                            },
-                                        )
-                                    }
+                                                    );
+                                                },
+                                            )
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="gradient-ms-box">
-                <div class="bg-vectors">
-                    <!-- <img src="assets/images/products/bg3.webp" alt="BG Vector"> -->
-                </div>
-                <div class="container">
-                    <div class="why-expertise-section">
-                        <div class="under-banner">
-                            <div class="under-banner-carousel-section">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <h3
-                                            class="text-black text-center fw-bold-800 fs-32 mb-4"
-                                        >
-                                            {
-                                                data.metaverseVirtualOffice.data
-                                                    .attributes
-                                                    .ideal_partner_metaverse_development
-                                            }
-                                        </h3>
-                                        <div
-                                            class="owl-service-item-ms owl-carousel animation-element slide-left owl-loaded owl-drag in-view"
-                                        >
-                                        <!-- <div
+                </section>
+                <section class="gradient-ms-box">
+                    <div class="bg-vectors">
+                        <!-- <img src="assets/images/products/bg3.webp" alt="BG Vector"> -->
+                    </div>
+                    <div class="container">
+                        <div class="why-expertise-section">
+                            <div class="under-banner">
+                                <div class="under-banner-carousel-section">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h3
+                                                class="text-black text-center fw-bold-800 fs-32 mb-4"
+                                            >
+                                                {
+                                                    data.metaverseVirtualOffice
+                                                        .data.attributes
+                                                        .ideal_partner_metaverse_development
+                                                }
+                                            </h3>
+                                            <div
+                                                class="owl-service-item-ms owl-carousel animation-element slide-left owl-loaded owl-drag in-view"
+                                            >
+                                                <!-- <div
                                             class="owl-service-item-ms owl-carousel animation-element slide-left d-flex flex-wrap justify-content-between"
                                         ></div> -->
-                                        <div class="owl-stage-outer">
-                                            <div class="owl-stage">
-                                            {
-                                                data.metaverseVirtualOffice.data.attributes.ideal_partner_development_lists.data.map(
-                                                    (
-                                                        each: any,
-                                                        index: number,
-                                                    ) => {
-                                                        return (
-                                                            
-                                                           <div class="owl-item">
-                                                            <div
-                                                                class="item"
-                                                            >
-                                                                <div class="icon">
-                                                                    <div class="row align-items-center">
-                                                                        <div class="col-lg-7">
-                                                                            <h6 class="text-black text-last-left fw-bold fs-rem">
-                                                                                {
-                                                                                    each
-                                                                                        .attributes
-                                                                                        .title
-                                                                                }
-                                                                            </h6>
-                                                                            <p class="text-gray2 text-last-left">
-                                                                                {
-                                                                                    each
-                                                                                        .attributes
-                                                                                        .content
-                                                                                }
-                                                                            </p>
-                                                                        </div>
-                                                                        <div class="col-lg-5">
-                                                                            <div class="gms-box-img text-center">
-                                                                                <img
-                                                                                    src={
-                                                                                        each
-                                                                                            .attributes
-                                                                                            .image
-                                                                                    }
-                                                                                    alt="Expertise"
-                                                                                />
+                                                <div class="owl-stage-outer">
+                                                    <div class="owl-stage">
+                                                        {
+                                                            data.metaverseVirtualOffice.data.attributes.ideal_partner_development_lists.data.map(
+                                                                (
+                                                                    each: any,
+                                                                    index: number,
+                                                                ) => {
+                                                                    return (
+                                                                        <div class="owl-item">
+                                                                            <div class="item">
+                                                                                <div class="icon">
+                                                                                    <div class="row align-items-center">
+                                                                                        <div class="col-lg-7">
+                                                                                            <h6 class="text-black text-last-left fw-bold fs-rem">
+                                                                                                {
+                                                                                                    each
+                                                                                                        .attributes
+                                                                                                        .title
+                                                                                                }
+                                                                                            </h6>
+                                                                                            <p class="text-gray2 text-last-left">
+                                                                                                {
+                                                                                                    each
+                                                                                                        .attributes
+                                                                                                        .content
+                                                                                                }
+                                                                                            </p>
+                                                                                        </div>
+                                                                                        <div class="col-lg-5">
+                                                                                            <div class="gms-box-img text-center">
+                                                                                                <img
+                                                                                                    src={
+                                                                                                        each
+                                                                                                            .attributes
+                                                                                                            .image
+                                                                                                    }
+                                                                                                    alt="Expertise"
+                                                                                                />
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            </div>
-                                                          
-                                                        );
-                                                    },
-                                                )
-                                            }
-                                        </div>
-                                        <div id="prev"/>
-                                        <div id="next"/>
-                                        <!-- <button id="prev" class="nav-button"></button>
+                                                                    );
+                                                                },
+                                                            )
+                                                        }
+                                                    </div>
+                                                    <div id="prev"></div>
+                                                    <div id="next"></div>
+                                                    <!-- <button id="prev" class="nav-button"></button>
                                         <button id="next" class="nav-button"></button> -->
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="why-metaprolane whym2 product-why-sec apply-now">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="why-metaprolane-l mt-2">
-                                <h3 class="text-black h3-under-bar2 mb-5">
-                                    {
-                                        data.metaverseVirtualOffice.data
-                                            .attributes.virtual_development_faq
-                                    }
-                                </h3>
-                            </div>
-                            <!-- <div class="faq-section"> -->
-                                {data.metaverseVirtualOffice.data.attributes.virtual_development_faq_lists.data.map(
-                                  (item: any, index: number) => (
-                                    <div class="faq-card">
-                                      <div class="faq-question" onclick="toggleAnswer(event)">
-                                        {item.attributes.question}
-                                        <span class="faq-toggle-icon">+</span>
-                                      </div>
-                                      <div class="faq-answer">
-                                        {item.attributes.answer}
-                                      </div>
-                                    </div>
-                                  ),
-                                )}
-                              <!-- </div> -->
-                              
+                </section>
+                <section
+                    class="why-metaprolane whym2 product-why-sec apply-now"
+                >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="why-metaprolane-l mt-2">
+                                    <h3 class="text-black h3-under-bar2 mb-5">
+                                        {
+                                            data.metaverseVirtualOffice.data
+                                                .attributes
+                                                .virtual_development_faq
+                                        }
+                                    </h3>
+                                </div>
+                                <!-- <div class="faq-section"> -->
+                                {
+                                    data.metaverseVirtualOffice.data.attributes.virtual_development_faq_lists.data.map(
+                                        (item: any, index: number) => (
+                                            <div class="faq-card">
+                                                <div
+                                                    class="faq-question"
+                                                    onclick="toggleAnswer(event)"
+                                                >
+                                                    {item.attributes.question}
+                                                    <span class="faq-toggle-icon">
+                                                        +
+                                                    </span>
+                                                </div>
+                                                <div class="faq-answer">
+                                                    {item.attributes.answer}
+                                                </div>
+                                            </div>
+                                        ),
+                                    )
+                                }
+                                <!-- </div> -->
 
-                            <!-- {
+                                <!-- {
                                 data.metaverseVirtualOffice.data.attributes.virtual_development_faq_lists.data.map(
                                     (item: any) => (
                                         <div class="faq-card">
@@ -867,41 +915,45 @@ const { data } = await response.json();
                                     ),
                                 )
                             } -->
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </section>
+            <!-- </div> -->
+            <script type="text/javascript">
+                var $animation_elements = $(".animation-element");
+                var $window = $(window);
+
+                function check_if_in_view() {
+                    var window_height = $window.height();
+                    var window_top_position = $window.scrollTop();
+                    var window_bottom_position =
+                        window_top_position + window_height;
+
+                    $.each($animation_elements, function () {
+                        var $element = $(this);
+                        var element_height = $element.outerHeight();
+                        var element_top_position = $element.offset().top;
+                        var element_bottom_position =
+                            element_top_position + element_height;
+
+                        //check to see if this current container is within viewport
+                        if (
+                            element_bottom_position >= window_top_position &&
+                            element_top_position <= window_bottom_position
+                        ) {
+                            $element.addClass("in-view");
+                        }
+                        // else {
+                        //   $element.removeClass('in-view');
+                        // }
+                    });
+                }
+
+                $window.on("scroll resize", check_if_in_view);
+                $window.trigger("scroll", check_if_in_view);
+            </script>
         </div>
-        <!-- </div> -->
-        <script type="text/javascript">
-            var $animation_elements = $('.animation-element');
-            var $window = $(window);
-    
-            function check_if_in_view() {
-                var window_height = $window.height();
-                var window_top_position = $window.scrollTop();
-                var window_bottom_position = (window_top_position + window_height);
-    
-                $.each($animation_elements, function () {
-                    var $element = $(this);
-                    var element_height = $element.outerHeight();
-                    var element_top_position = $element.offset().top;
-                    var element_bottom_position = (element_top_position + element_height);
-    
-                    //check to see if this current container is within viewport
-                    if ((element_bottom_position >= window_top_position) &&
-                        (element_top_position <= window_bottom_position)) {
-                        $element.addClass('in-view');
-                    }
-                    // else {
-                    //   $element.removeClass('in-view');
-                    // }
-    
-                });
-            }
-    
-            $window.on('scroll resize', check_if_in_view);
-            $window.trigger('scroll', check_if_in_view);
-        </script>
     </html>
 </Layout>
