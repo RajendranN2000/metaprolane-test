@@ -236,7 +236,29 @@ const activeIndex = 1;
             });
 
             document.addEventListener("DOMContentLoaded", function () {
-                $(".owl-carousel").owlCarousel({
+                $(".owl-carousel1").owlCarousel({
+                    items: 1, // Display one item-row at a time
+                    margin: 20, // Space between items
+                    loop: true, // Loop through items
+                    autoplay: true, // Enable auto-play
+                    autoplayTimeout: 3000, // Auto-play interval (in ms)
+                    autoplayHoverPause: true, // Pause on hover
+                    responsive: {
+                        0: {
+                            items: 1, // Display one item-row at a time on small screens
+                        },
+                        600: {
+                            items: 3, // Display one item-row at a time on medium screens
+                        },
+                        800: {
+                            items: 2, // Display one item-row at a time on medium screens
+                        },
+                        1000: {
+                            items: 3, // Display one item-row at a time on large screens
+                        },
+                    },
+                });
+                $(".owl-carousel2").owlCarousel({
                     items: 1, // Display one item-row at a time
                     margin: 20, // Space between items
                     loop: true, // Loop through items
@@ -376,7 +398,7 @@ const activeIndex = 1;
                             >
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <div class="owl-carousel owl-service-item">
+                                        <div class="owl-carousel owl-carousel1  owl-service-item">
                                             <div class="item">
                                                 <div class="icon">
                                                     <img
@@ -1173,7 +1195,7 @@ const activeIndex = 1;
 
             <!-- top your domain with metaverse solutions -->
             <section class="our-courses top-your-domain" id="industries">
-                <div class="container">
+                <div class="container ">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-heading">
@@ -1188,7 +1210,7 @@ const activeIndex = 1;
                                 </h5>
                             </div>
 
-                            <div class="owl-carousel">
+                            <div class="owl-carousel owl-carousel2">
                                 {
                                     data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data.map(
                                         (each: any, index: number) => {
@@ -1453,7 +1475,7 @@ const activeIndex = 1;
                     >
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="owl-carousel">
+                                <div class="owl-carousel owl-carousel2">
                                     {
                                         data.data.homePageSection1.data.attributes.metaverse_our_technologies.data.map(
                                             (each: any, index: number) => {
