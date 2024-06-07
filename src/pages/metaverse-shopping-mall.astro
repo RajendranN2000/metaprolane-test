@@ -156,7 +156,89 @@ const { data } = await response.json();
         });
         // $("#content").hide().show("slide", { direction: "left" }, 1500);
       </script>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".carousel-item");
+    const totalSlides = slides.length;
 
+    document
+      .querySelector(".carousel-control-next")
+      .addEventListener("click", () => {
+        slides[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % totalSlides;
+        slides[currentIndex].classList.add("active");
+      });
+
+    document
+      .querySelector(".carousel-control-prev")
+      .addEventListener("click", () => {
+        slides[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        slides[currentIndex].classList.add("active");
+      });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const prevButton = document.querySelector(".slider_nav .prev");
+    const nextButton = document.querySelector(".slider_nav .next");
+    const items = document.querySelectorAll(".slider_top ul li");
+    let currentIndex = 0; // Start from the first item
+
+    function updateCarousel() {
+      items.forEach((item, index) => {
+        item.classList.remove("prev", "prev2", "active", "next", "next2");
+      });
+
+      const prevIndex = (currentIndex - 1 + items.length) % items.length;
+      const nextIndex = (currentIndex + 1) % items.length;
+      const prev2Index = (currentIndex - 2 + items.length) % items.length;
+      const next2Index = (currentIndex + 2) % items.length;
+
+      items[prev2Index].classList.add("prev2");
+      items[prevIndex].classList.add("prev");
+      items[currentIndex].classList.add("active");
+      items[nextIndex].classList.add("next");
+      items[next2Index].classList.add("next2");
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % items.length;
+      updateCarousel();
+    }
+
+    // Automatically advance to the next slide every 5 seconds
+    setInterval(nextSlide, 3000);
+
+    updateCarousel(); // Initial call to set the classes
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    $(".owl-carousel").owlCarousel({
+      items: 1, // Display one item-row at a time
+      margin: 20, // Space between items
+      loop: true, // Loop through items
+      autoplay: true, // Enable auto-play
+      autoplayTimeout: 3000, // Auto-play interval (in ms)
+      autoplayHoverPause: true, // Pause on hover
+      responsive: {
+        0: {
+          items: 1, // Display one item-row at a time on small screens
+        },
+        600: {
+          items: 2, // Display one item-row at a time on medium screens
+        },
+        800: {
+          items: 2, // Display one item-row at a time on medium screens
+        },
+        1000: {
+          items: 3, // Display one item-row at a time on large screens
+        },
+        
+      },
+    });
+  });
+</script>
       <!-- <div class="meta-product"> -->
       <section class="section main-banner" id="top" data-section="section1">
         <video autoplay="" muted="" loop="" id="bg-video">
@@ -265,7 +347,7 @@ const { data } = await response.json();
                     data.metaverseShoppingMall.data.attributes.shopping_mall_features_lists.data.map(
                       (each: any, index: number) => {
                         return (
-                          <div class="owl-experts-item " style="width:23rem">
+                          <div class="owl-experts-item " >
                             <div class="icon">
                               <div class="expert-txt2-office">
                                 <div class="box-img">
