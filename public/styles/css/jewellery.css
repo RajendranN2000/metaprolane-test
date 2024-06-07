@@ -343,20 +343,6 @@
         padding-top: 20px !important;
     }
 
-    .section3 {
-        /* background-color: black !important; */
-        /* background-image: none !important; */
-        background-color: black !important;
-        /* background-image: none !important; */
-        background-image: url('../images/jewellery/virtual_jewellery_store_mob_bg.webp') !important;
-        padding-top: 0px;
-        background-size: 100%;
-        /* background-repeat: no-repeat; */
-        padding-bottom: 0px;
-        display: flex;
-        justify-content: center;
-    }
-
     .heading {
         padding-top: 44px;
     }
@@ -535,7 +521,21 @@
         width: auto !important;
     }
 }
-
+@media only screen and (max-width:1023px) {
+    .section3 {
+        /* background-color: black !important; */
+        /* background-image: none !important; */
+        background-color: black !important;
+        /* background-image: none !important; */
+        background-image: url('../images/jewellery/virtual_jewellery_store_mob_bg.webp') !important;
+        padding-top: 0px;
+        background-size: 100%;
+        /* background-repeat: no-repeat; */
+        padding-bottom: 0px;
+        display: flex;
+        justify-content: center;
+    }
+}
 @media only screen and (min-width:767px) and (max-width:1023px) {
     .section1-banner {
         /* background-image: url(../images/jewellery/banner_bg_web.webp); */
