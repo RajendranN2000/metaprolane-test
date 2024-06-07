@@ -9450,7 +9450,7 @@ b.rm1 {
     width: 100% !important;
 }
 
-.virtual-office-carousel2 {
+.virtual-office-carousel2,.carousel-gradient {
     background: -webkit-linear-gradient(#10beff, #20de68) !important;
     padding: 0 0 75px;
     margin: 0;
