@@ -9484,7 +9484,7 @@ b.rm1 {
 
     .meta-product .under-banner .owl-nav .owl-prev:before,
     .meta-product .under-banner .owl-nav .owl-next:before {
-        margin-top: 100px !important;
+        /* margin-top: 100px !important; */
     }
 }
 
