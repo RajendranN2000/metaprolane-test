@@ -9456,7 +9456,7 @@ b.rm1 {
     margin: 0;
 }
 
-#owl-carousel2 .owl-dots {
+#owl-carousel2 .owl-dots ,#carousel-remove-dots .owl-dots{
     display: none !important;
 }
 
