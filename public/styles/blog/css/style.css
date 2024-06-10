@@ -4076,6 +4076,7 @@ section.under-banner.our-technologies.product-tech-sec.aboutmeta.about-main.abt-
     margin: 0 0 20px;
     display: block
 }
+
 @media screen and (max-width:767px) {
     .box-img {
         height: 200px !important;
@@ -4084,6 +4085,7 @@ section.under-banner.our-technologies.product-tech-sec.aboutmeta.about-main.abt-
         display: block
     }
 }
+
 .owl-experts-item.owl-carousel .icon .expert-txt2 img {
     filter: unset;
     border-radius: 20px;
@@ -9457,13 +9459,15 @@ b.rm1 {
     width: 100% !important;
 }
 
-.virtual-office-carousel2,.carousel-gradient {
+.virtual-office-carousel2,
+.carousel-gradient {
     background: -webkit-linear-gradient(#10beff, #20de68) !important;
     padding: 0 0 75px;
     margin: 0;
 }
 
-#owl-carousel2 .owl-dots ,#carousel-remove-dots .owl-dots{
+#owl-carousel2 .owl-dots,
+#carousel-remove-dots .owl-dots{
     display: none !important;
 }
 
@@ -9506,12 +9510,18 @@ section.under-banner.our-technologies {
 .space-solution {
     margin-bottom: 28px !important;
 }
-.feature-img{
+
+.feature-img {
     height: 100%;
     width: 100%;
 }
-.box-space{
+
+.box-space {
     display: flex !important;
     justify-content: center !important;
     margin-top: 40px !important;
+}
+
+#game-development-carousel .owl-nav   {
+    display: none !important;
 }
