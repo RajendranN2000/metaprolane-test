@@ -91,12 +91,102 @@ const { data } = await response.json();
 const casinoGameDevLink = data.metaverseCasinoGame.data.attributes.casino_game_dev_link;
 const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
 ---
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+      let currentIndex = 0;
+      const slides = document.querySelectorAll(".carousel-item");
+      const totalSlides = slides.length;
 
+      document
+          .querySelector(".carousel-control-next")
+          .addEventListener("click", () => {
+              slides[currentIndex].classList.remove("active");
+              currentIndex = (currentIndex + 1) % totalSlides;
+              slides[currentIndex].classList.add("active");
+          });
+
+      document
+          .querySelector(".carousel-control-prev")
+          .addEventListener("click", () => {
+              slides[currentIndex].classList.remove("active");
+              currentIndex =
+                  (currentIndex - 1 + totalSlides) % totalSlides;
+              slides[currentIndex].classList.add("active");
+          });
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+      const prevButton = document.querySelector(".slider_nav .prev");
+      const nextButton = document.querySelector(".slider_nav .next");
+      const items = document.querySelectorAll(".slider_top ul li");
+      let currentIndex = 0; // Start from the first item
+
+      function updateCarousel() {
+          items.forEach((item, index) => {
+              item.classList.remove(
+                  "prev",
+                  "prev2",
+                  "active",
+                  "next",
+                  "next2",
+              );
+          });
+
+          const prevIndex =
+              (currentIndex - 1 + items.length) % items.length;
+          const nextIndex = (currentIndex + 1) % items.length;
+          const prev2Index =
+              (currentIndex - 2 + items.length) % items.length;
+          const next2Index = (currentIndex + 2) % items.length;
+
+          items[prev2Index].classList.add("prev2");
+          items[prevIndex].classList.add("prev");
+          items[currentIndex].classList.add("active");
+          items[nextIndex].classList.add("next");
+          items[next2Index].classList.add("next2");
+      }
+
+      function nextSlide() {
+          currentIndex = (currentIndex + 1) % items.length;
+          updateCarousel();
+      }
+
+      // Automatically advance to the next slide every 5 seconds
+      setInterval(nextSlide, 3000);
+
+      updateCarousel(); // Initial call to set the classes
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+      $(".owl-carousel2").owlCarousel({
+          items: 1, // Display one item-row at a time
+          margin: 20, // Space between items
+          loop: true, // Loop through items
+          autoplay: true, // Enable auto-play
+          autoplayTimeout: 3000, // Auto-play interval (in ms)
+          autoplayHoverPause: true, // Pause on hover
+          responsive: {
+              0: {
+                  items: 1, // Display one item-row at a time on small screens
+              },
+              600: {
+                  items: 1, // Display one item-row at a time on medium screens
+              },
+              800: {
+                  items: 2, // Display one item-row at a time on medium screens
+              },
+              1000: {
+                  items: 2, // Display one item-row at a time on large screens
+              },
+          },
+      });
+  });
+</script>
 <Layout title="metaverse-casino-game" 
 description="Metaverse Casino Game Development Company, Metaprolane offers Metaverse Casino Games Development Services that help you to launch your own metaverse casino game." 
 keywords="Metaverse Casino Game Development, Metaverse Casino Game Development Company, Metaverse Casino Game Development Services, Create Metaverse Casino Game, Develop Metaverse Casino Game">
   <html lang="en">
-    <div class="home-container industries-page meta-product">
+      <link rel="stylesheet" href="/styles/blog/css/owl.css" />
       <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
       <script
         is:inline
@@ -104,7 +194,11 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
       ></script>
       <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="/styles/css/style.css" />
-
+      <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+      integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"></script>
       <script is:inline>
         $(document).ready(function () {
           $(".question1").click(function () {
@@ -373,27 +467,72 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
               <div class="col-lg-6"></div>
               <div class="col-lg-6">
                 <div class="section-heading animation-element slide-left">
-                  <div class="text-green2 tg w-700">
+                  <div class="text-green2 tg w-700 text-center">
                     {
                       data.metaverseCasinoGame.data.attributes
                         .casino_game_collection_header
                     }
                   </div>
                   <h4
-                    class="text-white text-left mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700"
+                    class="text-white text-center mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 "
                   >
                     {
                       data.metaverseCasinoGame.data.attributes
                         .casino_game_collection_title
                     }
                   </h4>
-                  <div
+                  <div class="owl-carousel owl-carousel2">
+                    {
+                      data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.map(
+                          (each: any, index: number) => {
+                            const reverseIndex =
+                            data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.length -
+                                                1 -
+                                                index;
+                              return (
+                      <div class="item" style={{ flex: '0 0 50%', boxSizing: 'border-box', padding: '10px' }}>
+                        <div class="icon">
+                          <div class="expert-txt2">
+                            <div class="box-img box-space">
+                              <img
+                                src={each.attributes.image}
+                                alt="Features Image"
+                                style={{width:'10rem', height:'10rem'}}
+                              />
+                            </div>
+                            <div class="box-img-inn">
+                              <h6 class="fma">{each.attributes.title}</h6>
+                              <p class="text-last-left">
+                                {each.attributes.content}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="icon">
+                          <div class="expert-txt2">
+                            <div class="box-img box-space">
+                              <img
+                                src={ data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.image}
+                                alt="Features Image"
+                                style={{width:'10rem', height:'10rem'}}
+                              />
+                            </div>
+                            <div class="box-img-inn">
+                              <h6 class="fma">{ data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.title}</h6>
+                              <p class="text-last-left">
+                                { data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.content}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })
+              }
+                  </div>
+                  <!-- <div
                     class="owl-experts-item-Cas-game owl-carousel d-flex flex-wrap">
-                    <!-- {
-                      data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data
-                        .slice(0, 2)
-                        .map((each: any) => {
-                          return ( -->
+                  
                            {
                             data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.map(
                                 (each: any, index: number) => {
@@ -420,7 +559,7 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                           );
                         })
                     }
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>
@@ -491,9 +630,9 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
               </div>
             </div>
           </div>
-
-          <!-- Metaverse Casino Game Development Solutions -->
-          <section
+        </section>
+        <!-- Metaverse Casino Game Development Solutions -->
+        <section
             class="why-metaprolane whym2 product-why-sec casino-ms-Six-section"
           >
             <div class="container py-0">
@@ -528,10 +667,10 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                 </div>
               </div>
             </div>
-          </section>
+        </section>
 
-          <!-- Monetizing Options in Metaverse Casino Game -->
-          <section
+        <!-- Monetizing Options in Metaverse Casino Game -->
+        <section
             class="meta-development-services product-our-services monetizing-meta casino-ms-Seven-section"
           >
             <div class="container">
@@ -595,10 +734,10 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                 </div>
               </div>
             </div>
-          </section>
+        </section>
 
-          <!-- Metaverse Casino Game Development Demo -->
-          <section
+        <!-- Metaverse Casino Game Development Demo -->
+        <section
             class="why-metaprolane whym2 product-why-sec casino-ms-Eight-section"
           >
             <div class="CG-chip-two">
@@ -644,10 +783,10 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                 </div>
               </div>
             </div>
-          </section>
+        </section>
 
-          <!-- Metaverse Development Tools That We Use -->
-          <section class="under-banner our-technologies gradient-ms-box casino-ms-Nine-section">
+        <!-- Metaverse Development Tools That We Use -->
+        <section class="under-banner our-technologies gradient-ms-box casino-ms-Nine-section">
             <div class="container">
               <div class="under-banner-carousel-section">
                 <h5 class="text-center text-white h3-under-bar2">
@@ -674,10 +813,10 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                 </div>
               </div>
             </div>
-          </section>
+        </section>
 
-          <!-- Why Metaprolane is Your Ideal Partner? -->
-          <section class="gradient-ms-box casino-ms-Ten-section">
+        <!-- Why Metaprolane is Your Ideal Partner? -->
+        <section class="gradient-ms-box casino-ms-Ten-section">
             <div class="container">
               <div class="why-expertise-section">
                 <div class="under-banner">
@@ -702,10 +841,10 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                 </div>
               </div>
             </div>
-          </section>
+        </section>
 
-          <!-- faq's -->
-          <section
+        <!-- faq's -->
+        <section
             class="why-metaprolane whym2 product-why-sec apply-now casino-ms-FAQ-section"
           >
             <div class="container py-0">
@@ -757,12 +896,10 @@ keywords="Metaverse Casino Game Development, Metaverse Casino Game Development C
                 </div>
               </div>
             </div>
-          </section>
         </section>
       </div>
-      </div>
-    </div>
-    <script type="text/javascript">
+  </div>
+  <script type="text/javascript">
       var $animation_elements = $('.animation-element');
       var $window = $(window);
 

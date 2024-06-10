@@ -4071,12 +4071,19 @@ section.under-banner.our-technologies.product-tech-sec.aboutmeta.about-main.abt-
 }
 
 .box-img {
-    height: 250px;
+    height: 175px;
     /* height: 250px; */
     margin: 0 0 20px;
     display: block
 }
-
+@media screen and (max-width:767px) {
+    .box-img {
+        height: 200px !important;
+        /* height: 250px; */
+        margin: 0 0 20px;
+        display: block
+    }
+}
 .owl-experts-item.owl-carousel .icon .expert-txt2 img {
     filter: unset;
     border-radius: 20px;
@@ -9502,4 +9509,9 @@ section.under-banner.our-technologies {
 .feature-img{
     height: 100%;
     width: 100%;
+}
+.box-space{
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 40px !important;
 }
