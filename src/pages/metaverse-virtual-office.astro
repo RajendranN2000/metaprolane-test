@@ -241,7 +241,7 @@ const { data } = await response.json();
                         items: 1, // Display one item-row at a time
                         margin: 20, // Space between items
                         loop: true, // Loop through items
-                        autoplay: true, // Enable auto-play
+                        autoplay: false, // Enable auto-play
                         autoplayTimeout: 3000, // Auto-play interval (in ms)
                         autoplayHoverPause: false, // Pause on hover
                         responsive: {
@@ -972,6 +972,7 @@ const { data } = await response.json();
                                             <div
                                                 class="owl-carousel owl-carousel3 animation-element slide-left"
                                             >
+                                   
                                                     {
                                                         data.metaverseVirtualOffice.data.attributes.ideal_partner_development_lists.data.map(
                                                             (
@@ -1088,8 +1089,7 @@ const { data } = await response.json();
                                                             )
                                                         }
                                                     </div> -->
-                                                    <div id="prev"></div>
-                                                    <div id="next"></div>
+                                               
                                                     <!-- <button id="prev" class="nav-button"></button>
                                         <button id="next" class="nav-button"></button> -->
                                             </div>
