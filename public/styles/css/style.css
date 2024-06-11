@@ -5836,6 +5836,7 @@ section.why-metaprolane.whym2.product-why-sec.apply-now.casino-ms-FAQ-section {
 .home-container.inner-container.game-dev-page section.under-banner.our-technologies.casino-ms-one-section {
     background: #fff !important;
     padding: 50px 0;
+    padding-top: 50px !important    ;
     margin: 0
 }
 
@@ -5877,17 +5878,20 @@ section.why-metaprolane.whym2.product-why-sec.apply-now.casino-ms-FAQ-section {
 }
 
 .home-container.inner-container.game-dev-page section.our-courses.product-our-courses.casino-ms-four-section::after {
-    position: absolute;
+    /* position: absolute;
     content: '';
     left: 0;
     bottom: 0;
     width: 0;
     height: 0;
-    border-top: 25px solid transparent;
-    border-left: 180vh solid #68fe9a;
-    border-bottom: 0 solid transparent;
-    display: block
-}
+      border-top: 14px solid transparent;
+    border-right: 180vh solid #68fe9a;
+    border-bottom: 0px solid transparent; */
+    background-color:#68fe9a ;
+    width: 100%;
+    display: block;
+    height: 8px
+} 
 
 .home-container.inner-container.game-dev-page section.our-courses.product-our-courses.casino-ms-four-section h6.fma {
     font-size: 24px !important;
@@ -6284,7 +6288,7 @@ section.under-banner.our-technologies.gradient-ms-box.casino-ms-Nine-section.too
     color: #fff;
 }
 
-.home-container.industries-page section.our-courses.product-our-courses.casino-ms-four-section::after {
+/* .home-container.industries-page section.our-courses.product-our-courses.casino-ms-four-section::after {
     position: absolute;
     content: '';
     right: 0;
@@ -6295,7 +6299,7 @@ section.under-banner.our-technologies.gradient-ms-box.casino-ms-Nine-section.too
     border-right: 180vh solid #fff;
     border-bottom: 0 solid transparent;
     display: block;
-}
+} */
 
 .home-container.industries-page section.our-courses.top-your-domain {
     margin: 0;
@@ -6346,7 +6350,7 @@ section.under-banner.our-technologies.gradient-ms-box.casino-ms-Nine-section.too
 
 .home-container.industries-page .home-container.inner-container.game-dev-page {
     position: relative;
-    padding: 0px 0 150px;
+    padding: 0px 0 0px;
     background: #000;
 }
 
@@ -6417,7 +6421,7 @@ section.under-banner.our-technologies.gradient-ms-box.casino-ms-Nine-section.too
     border-top: 10px solid #000;
     position: absolute;
     content: '';
-    left: 0;
+    /* left: 0; */
     right: 0;
     top: 0;
     width: 0;
@@ -7900,7 +7904,7 @@ border: 1px solid #8383b6;
     }
 
     .home-container.inner-container.game-dev-page section.why-metaprolane.whym2.product-why-sec.casino-ms-Six-section {
-        padding: 20px 20px 140px !important
+        padding: 20px 20px 0px !important
     }
 
     .home-container.inner-container.game-dev-page .main-banner .caption {
@@ -7918,7 +7922,7 @@ border: 1px solid #8383b6;
     }
 
     .home-container.industries-page .home-container.inner-container.game-dev-page {
-        padding: 0px 0 150px;
+        padding: 0px 0 0px;
     }
 
 
@@ -8643,7 +8647,7 @@ border: 1px solid #8383b6;
     }
 
     .home-container.inner-container.game-dev-page section.why-metaprolane.whym2.product-why-sec.casino-ms-Six-section {
-        padding: 20px 0 100px !important
+        padding: 20px 0 0px !important
     }
 
     .home-container.inner-container.game-dev-page section.why-metaprolane.whym2.product-why-sec.casino-ms-Six-section .container.py-0 {
@@ -8685,7 +8689,7 @@ border: 1px solid #8383b6;
     }
 
     .home-container.industries-page .home-container.inner-container.game-dev-page {
-        padding: 0 0 80px;
+        padding: 0 0 0px;
     }
 
 
@@ -9407,4 +9411,8 @@ section.section-9 .qoute-box span {
     border-top-right-radius: 0.25rem;
     border-top-left-radius: 0.25rem;
     background-color: #fff;
+  }
+  .game-dev-item{
+    width: 35rem;
+    height: 18rem
   }

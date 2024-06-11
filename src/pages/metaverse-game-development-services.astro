@@ -99,71 +99,12 @@ const { data } = await response.json();
       <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
       <link rel="stylesheet" href="/styles/css/style.css" />
       <link rel="stylesheet" href="/styles/blog/css/owl.css" />
-      <script is:inline>
-        $(document).ready(function () {
-          $(".question1").click(function () {
-            console.log("clicked questions");
-            var answer = $(this).next(".answer");
-            $(".answer").not(answer).slideUp();
-            answer.slideToggle();
-          });
-        });
 
-        function toggleAnswer(event) {
-          const question = event.currentTarget;
-          const answer = question.nextElementSibling;
-
-          $(answer).slideToggle();
-          $(question).toggleClass("active");
-          $(".faq-question")
-            .not(question)
-            .removeClass("active")
-            .next(".faq-answer")
-            .slideUp();
-
-          // Toggle the icon between plus and minus
-          const icon = question.querySelector(".faq-toggle-icon");
-          icon.textContent = icon.textContent === "+" ? "-" : "+";
-        }
-
-        $(document).ready(function () {
-          $(".talk-btn").click(function () {
-            $("html, body").animate(
-              {
-                scrollTop: $("#footer").offset().top,
-              },
-              300,
-            ); // Adjust the duration as per your requirement
-          });
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-          const tabLinks = document.querySelectorAll(".tab-link");
-          const tabContents = document.querySelectorAll(".tab-content");
-
-          tabLinks.forEach((link) => {
-            link.addEventListener("click", function (event) {
-              event.preventDefault();
-
-              const targetId = this.getAttribute("href").substring(1);
-
-              tabLinks.forEach((link) => link.classList.remove("active"));
-              tabContents.forEach((content) =>
-                content.classList.remove("active"),
-              );
-
-              this.classList.add("active");
-              document.getElementById(targetId).classList.add("active");
-            });
-          });
-        });
-        // $("#content").hide().show("slide", { direction: "left" }, 1500);
-      </script>
-     <script
-     src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-     integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-     crossorigin="anonymous"
-     referrerpolicy="no-referrer"></script>
+      <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
       <script is:inline>
         document.addEventListener("DOMContentLoaded", function () {
           let currentIndex = 0;
@@ -221,6 +162,7 @@ const { data } = await response.json();
           updateCarousel(); // Initial call to set the classes
         });
 
+       
         document.addEventListener("DOMContentLoaded", function () {
           $(".owl-carousel2").owlCarousel({
             items: 1, // Display one item-row at a time
@@ -240,12 +182,30 @@ const { data } = await response.json();
                 items: 2, // Display one item-row at a time on medium screens
               },
               1000: {
-                items: 2, // Display one item-row at a time on large screens
+                items: 2,
+                 // Display one item-row at a time on large screens
               },
             },
           });
         });
       </script>
+      <style>
+        .tab-content {
+          display: none;
+        }
+        .tab-content.active {
+          display: block;
+        }
+        .nav-link.active {
+          background-color: #007bff;
+          color: white;
+          border-color: #007bff;
+        }
+        .nav-link {
+          color: #000;
+          background-color: #fff;
+        }
+      </style>
       <div class="home-container inner-container game-dev-page">
         <div class="meta-product">
           <section
@@ -318,9 +278,7 @@ const { data } = await response.json();
                     </div>
                   </div>
                   <div class="col-lg-6">
-                    <div
-                      class="cms-one-left animation-element slide-right w-100"
-                    >
+                    <div class="cms-one-left slide-right w-100">
                       <img
                         src="assets/images/game-development/BM-img.webp"
                         alt="Best Metaverse Game Development Banner"
@@ -332,52 +290,6 @@ const { data } = await response.json();
               </div>
             </div>
           </section>
-
-          <!-- <section class="meta-development-services product-our-services casino-ms-three-section">
-        <div class="container">
-          <div class="row align-items-center">
-            <div class="col-lg-12">
-              <div class="text-center">
-                <div class="under-banner ">
-                  <div class="under-banner-carousel-section">
-                    <h4 class="text-white h3-under-bar2 animation-element slide-left">
-                      {
-                        data.metaverseGameDevelopmentService.data
-                            .attributes
-                            .game_dev_types_title
-                    }
-                    </h4>
-                    <div class="row align-items-center">
-                      <div class="col-lg-4">
-                        <div class="">
-                          <div class="text-center player-box">
-                            <img src="assets/images/game-development2/various-type.webp" alt="Benefits Icons" />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4">
-                        {
-                          data.metaverseGameDevelopmentService.data.attributes.game_dev_types_lists.data.map(
-                              (each: any, index: number) => {
-                                  return (
-                        <div class="benefits-metavirtualoffice animation-element slide-left">
-                          <h5 class="benefits-h6 text-right jc-end">{each.attributes.title}&nbsp;<img
-                              src={each.attributes.image}
-                              alt="Benefits Icons" /></h5>
-                          <p class="text-gray3 text-right para-our-meta">
-                            {each.attributes.content}
-                          </p>
-                        </div>
-                      )})}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
 
           <section
             class="meta-development-services product-our-services casino-ms-three-section"
@@ -477,7 +389,7 @@ const { data } = await response.json();
                       </div>
                     </div>
                   </div>
-                  <div class="col-lg-6 animation-element slide-right">
+                  <div class="col-lg-6 slide-right">
                     <h2
                       class="text-blue text-left h3-under-bar2 hub2 hub-mutual2 pt-0"
                     >
@@ -504,7 +416,7 @@ const { data } = await response.json();
             <div class="container c-features">
               <div class="row">
                 <div class="col-lg-12" id="game-development-carousel">
-                  <div class="section-heading animation-element slide-left">
+                  <div class="section-heading  slide-left">
                     <h4
                       class="text-white text-center h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 mt-0 mb-4"
                     >
@@ -514,7 +426,7 @@ const { data } = await response.json();
                       }
                     </h4>
 
-                    <div class="owl-carousel owl-carousel2 ">
+                    <div class="owl-carousel owl-carousel2">
                       {
                         data.metaverseGameDevelopmentService.data.attributes.game_benefits_lists.data.map(
                           (each: any, index: number) => {
@@ -524,20 +436,18 @@ const { data } = await response.json();
                               1 -
                               index;
                             return (
-                              // first row
                               <div>
-                                <div class="owl-experts-item" >
+                                {/* first row */}
+                                <div class="owl-experts-item">
                                   <div class="item">
                                     <div class="icon">
                                       <div class="expert-txt2">
                                         <div class="">
                                           <img
+                                          class="game-dev-item"
                                             src={each.attributes.image}
                                             alt="Features Image"
-                                            style={{
-                                              width: "35rem",
-                                              height: "18rem",
-                                            }}
+                                            
                                           />
                                         </div>
                                         <div class="box-img-inn">
@@ -560,6 +470,7 @@ const { data } = await response.json();
                                       <div class="expert-txt2">
                                         <div class="">
                                           <img
+                                          class="game-dev-item"
                                             src={
                                               data
                                                 .metaverseGameDevelopmentService
@@ -569,10 +480,7 @@ const { data } = await response.json();
                                               ].attributes.image
                                             }
                                             alt="Features Image"
-                                            style={{
-                                              width: "35rem",
-                                              height: "18rem",
-                                            }}
+                                            
                                           />
                                         </div>
                                         <div class="box-img-inn">
@@ -662,9 +570,7 @@ const { data } = await response.json();
                       </div>
                     </div>
                     <div class="col-lg-6">
-                      <div
-                        class="why-metaprolane-l animation-element slide-right"
-                      >
+                      <div class="why-metaprolane-l slide-right">
                         <h3
                           class="text-blue text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700"
                         >
@@ -712,24 +618,6 @@ const { data } = await response.json();
             </section>
           </div>
 
-          <style>
-            .tab-content {
-              display: none;
-            }
-            .tab-content.active {
-              display: block;
-            }
-            .nav-link.active {
-              background-color: #007bff;
-              color: white;
-              border-color: #007bff;
-            }
-            .nav-link {
-              color: #000;
-              background-color: #fff;
-            }
-          </style>
-
           <section
             class="meta-development-services product-our-services casino-ms-five-section"
           >
@@ -739,9 +627,7 @@ const { data } = await response.json();
                   <div class="text-center">
                     <div class="under-banner">
                       <div class="under-banner-carousel-section">
-                        <h4
-                          class="text-black h3-under-bar2 fw-700 animation-element slide-left"
-                        >
+                        <h4 class="text-black h3-under-bar2 fw-700 slide-left">
                           {
                             data.metaverseGameDevelopmentService.data.attributes
                               .game_dev_feature_title
@@ -753,7 +639,7 @@ const { data } = await response.json();
                               (each: any, index: number) => {
                                 return (
                                   <div class="col-lg-4">
-                                    <div class="benefits-metavirtualoffice animation-element slide-left">
+                                    <div class="benefits-metavirtualoffice slide-left">
                                       <div class="text-center bm-img">
                                         <img
                                           src={each.attributes.image}
@@ -780,7 +666,7 @@ const { data } = await response.json();
               </div>
             </div>
           </section>
-
+          
           <section class="why-metaprolane whym2 product-why-sec check-video">
             <div class="container pt-0">
               <h5
@@ -853,53 +739,53 @@ const { data } = await response.json();
           </section>
 
           <section
-            class="meta-development-services product-our-services monetizing-meta casino-ms-Seven-section"
-          >
-            <div class="container">
-              <div class="row align-items-center">
-                <div class="col-lg-6">
-                  <div class="text-left">
-                    <div class="under-banner">
-                      <div class="under-banner-carousel-section">
-                        <h4
-                          class="text-black h3-under-bar2 mb-0 mt-0 fw-700 animation-element slide-left"
-                        >
-                          {
-                            data.metaverseGameDevelopmentService.data.attributes
-                              .game_choose_metaprolane_title
-                          }
-                          <!-- company choice? -->
-                        </h4>
-                        <p
-                          class="text-justify text-gray4 mb-3 monetizing-cgame-mob animation-element slide-left"
-                        >
-                          {
-                            data.metaverseGameDevelopmentService.data.attributes
-                              .game_choose_metaprolane_content
-                          }
-                        </p>
-                        <ul>
-                          {
-                            data.metaverseGameDevelopmentService.data.attributes.game_choose_metaprolane_lists.data.map(
-                              (each: any, index: number) => {
-                                return <li>{each.attributes.text}</li>;
-                              },
-                            )
-                          }
-                        </ul>
-                      </div>
+          class="meta-development-services product-our-services monetizing-meta casino-ms-Seven-section"
+        >
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6">
+                <div class="text-left">
+                  <div class="under-banner">
+                    <div class="under-banner-carousel-section">
+                      <h4
+                        class="text-black h3-under-bar2 mb-0 mt-0 fw-700 animation-element slide-left"
+                      >
+                        {
+                          data.metaverseGameDevelopmentService.data.attributes
+                            .game_choose_metaprolane_title
+                        }
+                        <!-- company choice? -->
+                      </h4>
+                      <p
+                        class="text-justify text-gray4 mb-3 monetizing-cgame-mob animation-element slide-left"
+                      >
+                        {
+                          data.metaverseGameDevelopmentService.data.attributes
+                            .game_choose_metaprolane_content
+                        }
+                      </p>
+                      <ul>
+                        {
+                          data.metaverseGameDevelopmentService.data.attributes.game_choose_metaprolane_lists.data.map(
+                            (each: any, index: number) => {
+                              return <li>{each.attributes.text}</li>;
+                            },
+                          )
+                        }
+                      </ul>
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-6">
-                  <img
-                    src="assets/images/game-development/meta-shape.webp"
-                    alt="Meta Shape"
-                  />
-                </div>
+              </div>
+              <div class="col-lg-6">
+                <img
+                  src="assets/images/game-development/meta-shape.webp"
+                  alt="Meta Shape"
+                />
               </div>
             </div>
-          </section>
+          </div>
+        </section>
         </div>
       </div>
       <!-- metaverse development tools -->
@@ -911,7 +797,7 @@ const { data } = await response.json();
         <div class="container py-0">
           <div class="row">
             <div class="col-lg-12">
-              <div class="why-metaprolane-l mt-2 animation-element slide-left">
+              <div class="why-metaprolane-l mt-2 slide-left">
                 <h5 class="text-white h3-under-bar2 mb-5 fw-600">
                   {
                     data.metaverseGameDevelopmentService.data.attributes
@@ -970,6 +856,66 @@ const { data } = await response.json();
 
       $window.on("scroll resize", check_if_in_view);
       $window.trigger("scroll", check_if_in_view);
+    </script>
+    <script is:inline>
+      $(document).ready(function () {
+        $(".question1").click(function () {
+          console.log("clicked questions");
+          var answer = $(this).next(".answer");
+          $(".answer").not(answer).slideUp();
+          answer.slideToggle();
+        });
+      });
+
+      function toggleAnswer(event) {
+        const question = event.currentTarget;
+        const answer = question.nextElementSibling;
+
+        $(answer).slideToggle();
+        $(question).toggleClass("active");
+        $(".faq-question")
+          .not(question)
+          .removeClass("active")
+          .next(".faq-answer")
+          .slideUp();
+
+        // Toggle the icon between plus and minus
+        const icon = question.querySelector(".faq-toggle-icon");
+        icon.textContent = icon.textContent === "+" ? "-" : "+";
+      }
+
+      $(document).ready(function () {
+        $(".talk-btn").click(function () {
+          $("html, body").animate(
+            {
+              scrollTop: $("#footer").offset().top,
+            },
+            300,
+          ); // Adjust the duration as per your requirement
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const tabLinks = document.querySelectorAll(".tab-link");
+        const tabContents = document.querySelectorAll(".tab-content");
+
+        tabLinks.forEach((link) => {
+          link.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const targetId = this.getAttribute("href").substring(1);
+
+            tabLinks.forEach((link) => link.classList.remove("active"));
+            tabContents.forEach((content) =>
+              content.classList.remove("active"),
+            );
+
+            this.classList.add("active");
+            document.getElementById(targetId).classList.add("active");
+          });
+        });
+      });
+      // $("#content").hide().show("slide", { direction: "left" }, 1500);
     </script>
   </html>
 </Layout>

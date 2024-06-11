@@ -2796,7 +2796,7 @@ section.our-courses .owl-courses-item.owl-carousel.owl-loaded.owl-drag .owl-stag
 
 section.our-courses::after {
     position: absolute;
-    background: url(../images/bg-vector4.webp) center bottom/contain no-repeat;
+    background: url("/assets/images/bg-vector4.webp") center bottom/contain no-repeat;
     height: 150px
 }
 
@@ -9525,3 +9525,11 @@ section.under-banner.our-technologies {
 #game-development-carousel .owl-nav   {
     display: none !important;
 }
+/* .game-img-background{
+    position: absolute;
+    width: 114px;
+    height: 114px;
+    background: linear-gradient(80deg, #6438a9, #0a4fcd);
+    border-radius: 10px;
+    padding: 20px;
+} */
