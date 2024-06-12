@@ -1,86 +1,194 @@
 ---
 const { title } = Astro.props;
-
-// Server-side code for handling form submissions
-// export async function post({ request }) {
-//   const { name, email, country, phone, company, askfor, message } = await request.json();
-
-//   // Here you can use any email service or perform other actions with the data
-//   // For demonstration, we'll just log the parameters
-//   console.log({ name, email, country, phone, company, askfor, message }, "contactpost");
-
-//   // Replace this with actual email sending logic
-//   // For example, using SendGrid, Mailgun, or any other email service
-
-//   return new Response(JSON.stringify({ message: 'Form submitted successfully' }), {
-//     status: 200,
-//     headers: {
-//       'Content-Type': 'application/json'
-//     }
-//   });
-// }
-
-// async function submitContactForm(event:any) {
-//       event.preventDefault();
-//     //   const form = document.getElementById('contact');
-//     //   const formData = new FormData(form);
-//     //   const data = Object.fromEntries(formData.entries());
-
-//       const response = await fetch(`https://metaprolane.stsdev.site/emailmessage.php`, {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         // body: JSON.stringify(data),
-//         body: JSON.stringify({name:formData.get('name')})
-//       });
-
-//       const result = await response.json();
-//     //   document.getElementById('responseMessage').innerText = result.message;
-//     }
-
-// const formData = await Astro.request.formData()
-//     const submitContactForm1 = await fetch(`https://metaprolane.stsdev.site/emailmessage.php`, {
-//     method: "POST",
-//     headers: { "Content-Type": "application/json" },
-//     body: JSON.stringify({
-//         name:formData.get('name')
-//     })
-// })
 ---
-
+<script is:inline src="https://www.google.com/recaptcha/api.js" async defer
+></script>
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/css/countrySelect.min.css"
+    integrity="sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+/>
+<!-- <script type="text/javascript">
+    $(document).ready(() => {
+        $("form").submit((event) => {
+            alert("check");
+        });
+    });
+</script> -->
 <script>
-    //     const tgt = document.querySelector("#contact");
-    //   tgt.addEventListener("click", () => {
-    //     console.log("Hello, on client");
-    //   });
-    // const formData = await Astro.request.formData()
-    //      async function submitContactForm(event:any) {
-    //       event.preventDefault();
-    //     //   const form = document.getElementById('contact');
-    //     //   const formData = new FormData(form);
-    //     //   const data = Object.fromEntries(formData.entries());
+    document.getElementById("submit-btn")!.style.display = "block";
+    document.getElementById("submit-loader")!.style.display = "none";
+    document
+        .getElementById("contact")
+        ?.addEventListener("submit", async (event) => {
+            console.log("event", event);
+            event.preventDefault();
+            const formData = new FormData(event.target as any);
+            console.log(formData, "formData");
+            const data: { [key: string]: any } = {};
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+            console.log(data, "data");
+            let validData = true;
+            if (!data.name) {
+                document.getElementById("name-error")!.innerText =
+                    "Enter your Name";
+                validData = false;
+            } else {
+                if (data.name.length < 3) {
+                    document.getElementById("name-error")!.innerText =
+                        "Name must be atleast 3 characters";
+                    validData = false;
+                } else {
+                    document.getElementById("name-error")!.innerText = "";
+                }
+            }
 
-    //       const response = await fetch(`https://metaprolane.stsdev.site/emailmessage.php`, {
-    //         method: 'POST',
-    //         headers: {
-    //           'Content-Type': 'application/json',
-    //         },
-    //         // body: JSON.stringify(data),
-    //         body: JSON.stringify({name:formData.get('name')})
-    //       });
+            if (!data.email) {
+                document.getElementById("email-error")!.innerText =
+                    "Enter your Email";
+                validData = false;
+            } else if (!validateEmail(data.email)) {
+                document.getElementById("email-error")!.innerText =
+                    "Invalid Email Id";
+                validData = false;
+            } else {
+                document.getElementById("email-error")!.innerText = "";
+            }
 
-    //       const result = await response.json();
-    //     //   document.getElementById('responseMessage').innerText = result.message;
-    //     }
+            function validateEmail(email: string) {
+                var emailPattern =
+                    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                return emailPattern.test(email);
+            }
+
+            if (!data.phone) {
+                document.getElementById("phone-error")!.innerText =
+                    "Enter your Phone Number";
+                validData = false;
+            } else {
+                if (data.phone.length < 10) {
+                    document.getElementById("phone-error")!.innerText =
+                        "Phone Number must have atleast 10 digits";
+                    validData = false;
+                } else {
+                    document.getElementById("phone-error")!.innerText = "";
+                }
+            }
+
+            if (!data.company) {
+                document.getElementById("company-error")!.innerText =
+                    "Enter your Company";
+                validData = false;
+            } else {
+                document.getElementById("company-error")!.innerText = "";
+            }
+
+            if (!data.askfor) {
+                document.getElementById("askfor-error")!.innerText =
+                    "Choose Ask For";
+                validData = false;
+            } else {
+                document.getElementById("askfor-error")!.innerText = "";
+            }
+
+            if (!data.message) {
+                document.getElementById("message-error")!.innerText =
+                    "Enter your message";
+                validData = false;
+            } else {
+                document.getElementById("message-error")!.innerText = "";
+            }
+            // if (!data["g-recaptcha-response"]) {
+            //     document.getElementById("recaptcha-error")!.innerText =
+            //         "Recaptcha is Required";
+            //     validData = false;
+            // } else {
+            //     document.getElementById("recaptcha-error")!.innerText = "";
+            // }
+            if (validData) {
+                document.getElementById("submit-btn")!.style.display = "none";
+                document.getElementById("submit-loader")!.style.display =
+                    "block";
+                event.preventDefault();
+                const response = await fetch(
+                    `${import.meta.env.PUBLIC_STRAPI_URL}`,
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            query: `
+                        mutation{
+                            createContactUs(
+                                data:{
+                                    name:${JSON.stringify(data.name)},
+                                    email:${JSON.stringify(data.email)},
+                                    country:${JSON.stringify(data["country_selector_code"])},
+                                    phone:${JSON.stringify(data.phone)},
+                                    company:${JSON.stringify(data.company)},
+                                    askfor:${JSON.stringify(data.askfor)},
+                                    message:${JSON.stringify(data.message)}
+                                }
+                            ){
+                                data{
+                                    attributes{
+                                        name
+                                        email
+                                        country
+                                        phone
+                                        company
+                                        askfor
+                                        message
+                                    }
+                                }
+                            }
+                        }
+                        `,
+                        }),
+                    },
+                );
+                const tempResponse = await response.json();
+                console.log(tempResponse, "tempResponse");
+                if (
+                    tempResponse && tempResponse.data
+                ) {
+                    setTimeout(() => {
+                        document.getElementById(
+                            "submit-loader",
+                        )!.style.display = "none";
+                        document.getElementById("submit-btn")!.style.display =
+                            "block";
+                    }, 2000);
+
+                    var temp = document.getElementById("snackbar");
+                    temp!.className = "show";
+                    setTimeout(() => {
+                        temp!.className = temp!.className.replace("show", "");
+                        window.location.href =
+                            "/thankyou?name=" +
+                            data?.name +
+                            "&email=" +
+                            data?.email +
+                            "&title=" +
+                            data?.askfor;
+                    }, 2000);
+                    console.log("submitted succesfully");
+                } else {
+                    console.log("failed submit");
+                }
+            }
+        });
+ 
 </script>
-
-<section class="contact-us" id="contact">
+<section class="contact-us">
     <div class="bg-vectors">
         <img src="assets/images/bg-vector2.webp" alt="vector image" />
     </div>
     <div class="container cus-main">
-        <div class="text-center  slide-left">
+        <div class="text-center slide-left">
             <div class="py-2 flex justify-center">
                 <img
                     src="assets/images/let-telegram.webp"
@@ -91,7 +199,7 @@ const { title } = Astro.props;
             <h5 class="text-white">LET'S TALK</h5>
         </div>
         <div class="row">
-            <div class="col-lg-4  slide-left">
+            <div class="col-lg-4 slide-left">
                 <h4 class="text-white pt-5 pb-3">Have A Project?</h4>
                 <p>
                     We assist you with your Metaverse project and help make your
@@ -106,22 +214,17 @@ const { title } = Astro.props;
                 </div>
             </div>
 
-            <div class="col-lg-8  slide-right">
+            <div class="col-lg-8 slide-right">
                 <div id="alerts"></div>
-                <form
-                    id="contact"
-                    action="javascript:void(0)"
-                    method="post"
-                    onsubmit="submitContactForm()"
-                >
+                <form id="contact" method="post">
                     <div class="row">
                         <div class="col-lg-6">
                             <p>
                                 Your Name <span
-                                    id="nameloc"
+                                id="name-error"
                                     style="color:yellow;float:right"></span>
                             </p>
-                            <fieldset>
+                            <fieldset class="bottom-space">
                                 <input
                                     name="name"
                                     type="text"
@@ -134,10 +237,10 @@ const { title } = Astro.props;
                         <div class="col-lg-6">
                             <p>
                                 Your Mail <span
-                                    id="emailloc"
+                                id="email-error"
                                     style="color:yellow;float:right"></span>
                             </p>
-                            <fieldset>
+                            <fieldset class="bottom-space">
                                 <input
                                     name="email"
                                     type="text"
@@ -145,6 +248,7 @@ const { title } = Astro.props;
                                     placeholder=""
                                     class="ms-r"
                                 />
+                               
                             </fieldset>
                         </div>
                         <div class="col-lg-6">
@@ -162,7 +266,7 @@ const { title } = Astro.props;
                                         >Select a country here...</label
                                     >
                                 </div>
-                                <div class="form-item" style="display:none;">
+                                <div class="form-item" style="display: none;">
                                     <input
                                         type="text"
                                         id="country_selector_code"
@@ -181,26 +285,27 @@ const { title } = Astro.props;
                         <div class="col-lg-6">
                             <p>
                                 Phone Number <span
-                                    id="phoneloc"
+                                    id="phone-error"
                                     style="color:yellow;float:right"></span>
                             </p>
-                            <fieldset>
+                            <fieldset class="bottom-space">
                                 <input
                                     name="phone"
-                                    type="text"
+                                    type="number"
                                     id="phone"
                                     placeholder=""
                                     class="ms-r"
                                 />
+                            
                             </fieldset>
                         </div>
                         <div class="col-lg-6">
                             <p>
                                 Company <span
-                                    id="companyloc"
+                                    id="company-error"
                                     style="color:yellow;float:right"></span>
                             </p>
-                            <fieldset>
+                            <fieldset class="bottom-space">
                                 <input
                                     name="company"
                                     type="text"
@@ -213,10 +318,10 @@ const { title } = Astro.props;
                         <div class="col-lg-6">
                             <p>
                                 Ask for <span
-                                    id="askforloc"
+                                    id="askfor-error"
                                     style="color:yellow;float:right"></span>
                             </p>
-                            <fieldset>
+                            <fieldset class="bottom-space">
                                 <select
                                     class="ask-select"
                                     name="askfor"
@@ -265,10 +370,10 @@ const { title } = Astro.props;
                         <div class="col-lg-12">
                             <p>
                                 Your Message <span
-                                    id="msgloc"
+                                    id="message-error"
                                     style="color:yellow;float:right"></span>
                             </p>
-                            <fieldset>
+                            <fieldset class="bottom-space">
                                 <textarea
                                     name="message"
                                     class="form-control"
@@ -276,24 +381,43 @@ const { title } = Astro.props;
                                     placeholder=""></textarea>
                             </fieldset>
                         </div>
-                        <div class="col-lg-12 pb-4">
+                        
+                        <!-- <div class="col-lg-12 pb-4">
                             <fieldset>
                                 <div
                                     class="g-recaptcha"
-                                    data-sitekey="6Lfm0MAlAAAAAAHzTSmQlm7DOG7lYS2On5uoc_ro"
+                                    data-sitekey="6LchH_cpAAAAAH48rqMoB3iV8M3qG9Ytvmd1GRPd"
                                 >
                                 </div>
                             </fieldset>
-                        </div>
+                        </div> -->
                         <div class="col-lg-12 mh-last">
                             <fieldset>
                                 <button
-                                    aria-label="send form"
                                     type="submit"
-                                    id="form-submit"
+                                    id="submit-btn"
                                     class="btn btn-transparent"
+                                    style="width: 120px;
+                                    height: 50px;display:flex;justify-content:center;"
                                     >Send Form</button
                                 >
+                                <button
+                                    id="submit-loader"
+                                    class="contact-btn contact-btn-primary default-btn"
+                                    style="width: 120px;
+                                            height: 50px; display:flex;justify-content:center;"
+                                >
+                                    <div
+                                        style="display: flex;
+                                            justify-content: center;"
+                                    >
+                                        <div
+                                            class="loader-inner ball-clip-rotate"
+                                        >
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </button>
                             </fieldset>
                             <br /><br />
                             <span id="msgbl" style="color:yellow;font-size:20px"
@@ -303,36 +427,50 @@ const { title } = Astro.props;
                 </form>
             </div>
         </div>
+        <div id="snackbar">Submitted successfully</div>
     </div>
     <script type="text/javascript">
         var $animation_elements = $(".animation-element");
         var $window = $(window);
-  
+
         function check_if_in_view() {
-          var window_height = $window.height();
-          var window_top_position = $window.scrollTop();
-          var window_bottom_position = window_top_position + window_height;
-  
-          $.each($animation_elements, function () {
-            var $element = $(this);
-            var element_height = $element.outerHeight();
-            var element_top_position = $element.offset().top;
-            var element_bottom_position = element_top_position + element_height;
-  
-            //check to see if this current container is within viewport
-            if (
-              element_bottom_position >= window_top_position &&
-              element_top_position <= window_bottom_position
-            ) {
-              $element.addClass("in-view");
-            }
-            // else {
-            //   $element.removeClass('in-view');
-            // }
-          });
+            var window_height = $window.height();
+            var window_top_position = $window.scrollTop();
+            var window_bottom_position = window_top_position + window_height;
+
+            $.each($animation_elements, function () {
+                var $element = $(this);
+                var element_height = $element.outerHeight();
+                var element_top_position = $element.offset().top;
+                var element_bottom_position =
+                    element_top_position + element_height;
+
+                //check to see if this current container is within viewport
+                if (
+                    element_bottom_position >= window_top_position &&
+                    element_top_position <= window_bottom_position
+                ) {
+                    $element.addClass("in-view");
+                }
+                // else {
+                //   $element.removeClass('in-view');
+                // }
+            });
         }
-  
+
         $window.on("scroll resize", check_if_in_view);
         $window.trigger("scroll", check_if_in_view);
-      </script>
+    </script>
+    <script is:inline src="/assets/js/countrySelect.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/js/countrySelect.min.js" integrity="sha512-criuU34pNQDOIx2XSSIhHSvjfQcek130Y9fivItZPVfH7paZDEdtAMtwZxyPq/r2pyr9QpctipDFetLpUdKY4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script is:inline>
+        $("#country_selector").countrySelect({
+            defaultCountry: "in",
+            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+            // responsiveDropdown: true,
+            //    preferredCountries: ['ca', 'gb', 'us']
+        });
+
+        console.log("scriptcheck");
+    </script>
 </section>

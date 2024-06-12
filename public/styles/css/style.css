@@ -1533,11 +1533,14 @@ section.contact-us #contact textarea {
     background-color: rgba(31, 30, 46, .8);
     font-weight: 500;
     color: #7a7a7a;
-    margin-bottom: 30px;
+    margin-bottom: 6px;
     font-size: 13px;
     width: 100%;
     outline: 0;
     box-shadow: none
+}
+section.contact-us #contact .bottom-space{
+    margin-bottom: 20px;
 }
 
 section.contact-us #contact input,
@@ -2947,12 +2950,12 @@ section.contact-us p {
 
 section.contact-us #contact .ms-l {
     border-radius: 0 0 0 30px;
-    padding: 25px 20px
+    /* padding: 25px 20px */
 }
 
 section.contact-us #contact .ms-r {
     border-radius: 0 0 30px;
-    padding: 25px 20px
+    /* padding: 25px 20px */
 }
 
 .footer-links {
@@ -9416,3 +9419,200 @@ section.section-9 .qoute-box span {
     width: 35rem;
     height: 18rem
   }
+  .mandatory-text {
+    color: red
+}
+
+.ball-clip-rotate>div {
+    background-color: #fff;
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    margin: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    border: 2px solid #fff;
+    border-bottom-color: transparent;
+    height: 24px;
+    width: 24px;
+    background: transparent !important;
+    display: inline-block;
+    -webkit-animation: rotate 0.75s 0s linear infinite;
+    animation: rotate 0.75s 0s linear infinite;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes rotate {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1);
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        -webkit-transform: rotate(180deg) scale(0.6);
+        transform: rotate(180deg) scale(0.6);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg) scale(1);
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+@keyframes scale {
+    30% {
+        -webkit-transform: scale(0.3);
+        transform: scale(0.3);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+.contact-btn {
+    color: #fff;
+    padding: 0.75rem 1.25rem;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform 0.1s ease-out, border 0.1s ease-out,
+        background-color 0.15s ease-out, color 0.1s ease-out;
+    margin: 2rem 0;
+}
+
+.contact-btn:hover {
+    transform: scale(1.01562);
+    background-color: #fff;
+    color: #ed5565;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 0
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 30px;
+        opacity: 0
+    }
+}
+
+
+.outer-card {
+    height: calc(100vh - 80px);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-text {
+    font-size: 45px;
+    color: white;
+    text-align: center;
+    padding: 24px;
+}
+
+.logo-img {
+    width: 225px;
+    height: auto;
+}
+
+.vector-img {
+    margin-top: 20px;
+    height: 72px;
+    width: auto;
+}
+
+.description-text {
+    font-size: 14px;
+    color: #E3E1E9;
+    padding-top: 36px;
+}
+
+.thanks-btn {
+    margin-top: 30px;
+    border: 4px solid #68fe9a;
+    border-top-right-radius: 32px;
+    border-bottom-left-radius: 32px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-left: 28px;
+    padding-right: 28px;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.thanks-copyright {
+    margin-top: 20px;
+    border-top: 1px solid #68fe9a;
+    color: white;
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+}
