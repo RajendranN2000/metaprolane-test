@@ -1,0 +1,36 @@
+---
+const {} = Astro.props;
+---
+<link rel="stylesheet" href="styles/css/fontawesome.css">
+<script>
+    const query = window.location.search;
+    const urlParams = new URLSearchParams(query);
+    const name = urlParams.get("name");
+    const email = urlParams.get("email");
+    const title = urlParams.get("title");
+    document.getElementById("name")!.innerText = name ?? "";
+    document.getElementById("email")!.innerText = email ?? "";
+    document.getElementById("title")!.innerText = title ?? "";
+</script>
+<link rel="stylesheet" href="/styles/css/style.css" />
+<div class="" style="background-color: black;">
+    <div class="outer-card">
+        <img class="logo-img" src="/assets/images/footer-logo.png" />
+        <div class="title-text">
+            Thanks <span id="name"></span> For Submitting <span id="title"
+            ></span> Enquiry!
+        </div>
+        <img class="vector-img" src="/assets/images/thankyou/Vector.png" />
+        <!-- <div class="tu-icon">
+            <i class="icon fa fa-check"></i>
+        </div> -->
+        <div class="description-text">
+            We Will Get In Touch With You Shortly In This Email Id <span
+                id="email"></span>
+        </div>
+        <a href="/" class="thanks-btn">Back to Home</a>
+    </div>
+    <div class="thanks-copyright">
+        Copyright @2024 BlockBuzzers. All rights reserved
+    </div>
+</div>

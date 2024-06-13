@@ -521,7 +521,7 @@ const { data } = await response.json();
                                                 .industries_various_content
                                         }
                                     </p>
-                                    <div class="owl-carousel">
+                                    <div class="owl-carousel" id="industries-carousel">
                                         {
                                             data.metaverseForIndustrie.data.attributes.industries_various_lists.data.map(
                                                 (each: any, index: number) => {
@@ -605,7 +605,6 @@ const { data } = await response.json();
                                             return (
                                                 <div
                                                     class="item"
-                                                    style="width:22rem"
                                                 >
                                                     <div class="icon">
                                                         <img
