@@ -1,6 +1,7 @@
 ---
 const { title } = Astro.props;
 ---
+
 <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
 ></script>
 <link
@@ -102,13 +103,13 @@ const { title } = Astro.props;
             } else {
                 document.getElementById("message-error")!.innerText = "";
             }
-            // if (!data["g-recaptcha-response"]) {
-            //     document.getElementById("recaptcha-error")!.innerText =
-            //         "Recaptcha is Required";
-            //     validData = false;
-            // } else {
-            //     document.getElementById("recaptcha-error")!.innerText = "";
-            // }
+            if (!data["g-recaptcha-response"]) {
+                document.getElementById("recaptcha-error")!.innerText =
+                    "Recaptcha is Required";
+                validData = false;
+            } else {
+                document.getElementById("recaptcha-error")!.innerText = "";
+            }
             if (validData) {
                 document.getElementById("submit-btn")!.style.display = "none";
                 document.getElementById("submit-loader")!.style.display =
@@ -152,9 +153,7 @@ const { title } = Astro.props;
                 );
                 const tempResponse = await response.json();
                 console.log(tempResponse, "tempResponse");
-                if (
-                    tempResponse && tempResponse.data
-                ) {
+                if (tempResponse && tempResponse.data) {
                     setTimeout(() => {
                         document.getElementById(
                             "submit-loader",
@@ -181,7 +180,6 @@ const { title } = Astro.props;
                 }
             }
         });
- 
 </script>
 <section class="contact-us">
     <div class="bg-vectors">
@@ -221,7 +219,7 @@ const { title } = Astro.props;
                         <div class="col-lg-6">
                             <p>
                                 Your Name <span
-                                id="name-error"
+                                    id="name-error"
                                     style="color:yellow;float:right"></span>
                             </p>
                             <fieldset class="bottom-space">
@@ -231,13 +229,14 @@ const { title } = Astro.props;
                                     id="name"
                                     placeholder=""
                                     class="ms-l"
+                                    required
                                 />
                             </fieldset>
                         </div>
                         <div class="col-lg-6">
                             <p>
                                 Your Mail <span
-                                id="email-error"
+                                    id="email-error"
                                     style="color:yellow;float:right"></span>
                             </p>
                             <fieldset class="bottom-space">
@@ -247,8 +246,9 @@ const { title } = Astro.props;
                                     id="email"
                                     placeholder=""
                                     class="ms-r"
+                                    required
+
                                 />
-                               
                             </fieldset>
                         </div>
                         <div class="col-lg-6">
@@ -295,8 +295,8 @@ const { title } = Astro.props;
                                     id="phone"
                                     placeholder=""
                                     class="ms-r"
+                                    required
                                 />
-                            
                             </fieldset>
                         </div>
                         <div class="col-lg-6">
@@ -312,6 +312,7 @@ const { title } = Astro.props;
                                     id="company"
                                     placeholder=""
                                     class="ms-l"
+                                    required
                                 />
                             </fieldset>
                         </div>
@@ -326,6 +327,7 @@ const { title } = Astro.props;
                                     class="ask-select"
                                     name="askfor"
                                     id="askfor"
+                                    required
                                 >
                                     <option value="">Please Select</option>
                                     <option value="Metaverse Virtual Office"
@@ -378,19 +380,31 @@ const { title } = Astro.props;
                                     name="message"
                                     class="form-control"
                                     id="message"
-                                    placeholder=""></textarea>
+                                    placeholder=""
+                                    required></textarea>
                             </fieldset>
                         </div>
-                        
-                        <!-- <div class="col-lg-12 pb-4">
+
+                        <div class="col-lg-12 pb-4">
                             <fieldset>
                                 <div
+                                    id="recaptcha"
                                     class="g-recaptcha"
-                                    data-sitekey="6LchH_cpAAAAAH48rqMoB3iV8M3qG9Ytvmd1GRPd"
+                                    data-sitekey="6LfJs_cpAAAAAKoOOQx5WywYqpt-Smqv-yDU6ZDm"
                                 >
                                 </div>
+                                <div
+                                    class="mandatory-text"
+                                    id="recaptcha-error"
+                                >
+                                </div>
+                                <!-- <div
+                                    class="g-recaptcha"
+                                    data-sitekey="6LeUifcpAAAAAJl1rlDsP_-b-O65bn4SSLEXZ5UR"
+                                >
+                                </div> -->
                             </fieldset>
-                        </div> -->
+                        </div>
                         <div class="col-lg-12 mh-last">
                             <fieldset>
                                 <button
