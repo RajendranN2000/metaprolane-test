@@ -1,2 +1,3 @@
 User-agent: *
-Disallow: /
+Allow: /
+Sitemap: https://metaprolane-development.vercel.app/sitemap-index.xml
