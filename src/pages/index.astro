@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/Carousel.astro";
-
+import ProjectDetails from "../components/projectDetaiils";
 const {} = Astro.props;
 const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
     method: "POST",
@@ -320,7 +320,8 @@ const activeIndex = 1;
             <div class="container">
                 <div class="under-banner-values-section animation-element slide-left">
                     <div class="row">
-                        {
+                        <ProjectDetails client:only="react"/>
+                        <!-- {
                             data.data.homePageSection1.data.attributes.project_details.data.map(
                                 (each: any, index: number) => {
                                     return (
@@ -350,7 +351,7 @@ const activeIndex = 1;
                                     );
                                 },
                             )
-                        }
+                        } -->
                     </div>
 
                     <!-- <div class="col-lg-3">
