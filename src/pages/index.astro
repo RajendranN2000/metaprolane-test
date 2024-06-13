@@ -255,7 +255,7 @@ const activeIndex = 1;
                         },
                         1000: {
                             items: 5, // Display one item-row at a time on large screens
-                        }
+                        },
                     },
                 });
                 $(".owl-carousel2").owlCarousel({
@@ -278,9 +278,9 @@ const activeIndex = 1;
                         1000: {
                             items: 3, // Display one item-row at a time on large screens
                         },
-                        1200:{
-                            items: 3
-                        }
+                        1200: {
+                            items: 3,
+                        },
                     },
                 });
                 $(".owl-carousel3").owlCarousel({
@@ -303,9 +303,9 @@ const activeIndex = 1;
                         1000: {
                             items: 3, // Display one item-row at a time on large screens
                         },
-                        1200:{
-                            items: 5
-                        }
+                        1200: {
+                            items: 5,
+                        },
                     },
                 });
             });
@@ -318,116 +318,20 @@ const activeIndex = 1;
         </section>
         <section class="under-banner-index">
             <div class="container">
-                <div class="under-banner-values-section animation-element slide-left">
-                    <div class="row">
-                        <ProjectDetails client:only="react"/>
-                        <!-- {
-                            data.data.homePageSection1.data.attributes.project_details.data.map(
-                                (each: any, index: number) => {
-                                    return (
-                                        <div class="col-lg-3">
-                                            <div class="svs-main d-flex count-area-content pluss">
-                                                <div class="svs-l">
-                                                    <img
-                                                        src={
-                                                            each.attributes
-                                                                .img_path
-                                                        }
-                                                        alt="icon1"
-                                                    />
-                                                </div>
-                                                <div class="svs-r">
-                                                    <h6 class="text-green numbers-top">
-                                                        {each.attributes.title}
-                                                    </h6>
-                                                    <div
-                                                        class={`count-digit ${each.attributes.img_path == "/assets/images/icon1.webp" ? "noplus" : "numbers-bot"}`}
-                                                    >
-                                                        {each.attributes.count}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    );
-                                },
-                            )
-                        } -->
-                    </div>
-
-                    <!-- <div class="col-lg-3">
-                        <div class="svs-main d-flex count-area-content pluss">
-                            <div class="svs-l">
-                                <img
-                                    src={data.data.homePageSection1.data
-                                        .attributes.project_details.data[1]
-                                        .attributes.img_path}
-                                    alt="icon2"
-                                />
-                            </div>
-                            <div class="svs-r">
-                                <h6 class="text-green numbers-top">
-                                    {
-                                        data.data.homePageSection1.data
-                                            .attributes.project_details.data[1]
-                                            .attributes.title
-                                    }
-                                </h6>
-                                <div class="count-digit noplus">
-                                    {
-                                        data.data.homePageSection1.data
-                                            .attributes.project_details.data[1]
-                                            .attributes.count
-                                    }
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="svs-main d-flex count-area-content pluss">
-                            <div class="svs-l">
-                                <img
-                                    src="/assets/images/icon4.webp"
-                                    alt="icon3"
-                                />
-                            </div>
-                            <div class="svs-r">
-                                <h6 class="text-green numbers-top">
-                                    Blockchain<br />Experts
-                                </h6>
-                                <div class="count-digit">250</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="svs-main d-flex count-area-content pluss">
-                            <div class="svs-l">
-                                <img
-                                    src="/assets/images/icon2.webp"
-                                    alt="icon4"
-                                />
-                            </div>
-                            <div class="svs-r">
-                                <h6 class="text-green numbers-top">
-                                    Global<br />Brands
-                                </h6>
-                                <div class="count-digit">120</div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- <div class="under-banner-carousel-section animation-element slide-left">
-                        <div class="col-lg-12">
-                          <Carousel />
-                        </div>
-                      </div> -->
-                      <section class="under-banner top-section">
+                <div
+                    class="under-banner-values-section animation-element slide-left"
+                >
+                    <ProjectDetails client:only="react" />
+                    <section class="under-banner top-section">
                         <div class="container">
                             <div
                                 class="under-banner-carousel-section animation-element slide-left in-view"
                             >
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <div class="owl-carousel owl-carousel1  owl-service-item">
+                                        <div
+                                            class="owl-carousel owl-carousel1 owl-service-item"
+                                        >
                                             <div class="item">
                                                 <div class="icon">
                                                     <img
@@ -700,7 +604,9 @@ const activeIndex = 1;
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="about-ms-r text-right animation-element slide-left">
+                        <div
+                            class="about-ms-r text-right animation-element slide-left"
+                        >
                             <div class="about-ms-img ams2">
                                 <img
                                     src="/assets/images/about2.webp"
@@ -756,7 +662,9 @@ const activeIndex = 1;
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="about-ms-r text-right  animation-element slide-right">
+                        <div
+                            class="about-ms-r text-right animation-element slide-right"
+                        >
                             <div class="about-ms-img">
                                 <img
                                     src="assets/images/about.webp"
@@ -816,7 +724,9 @@ const activeIndex = 1;
                         <!-- https://vumbnail.com/t0NKhGQVuhQ.jpg -->
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-r animation-element slide-right">
+                        <div
+                            class="immersive-m-r animation-element slide-right"
+                        >
                             <h5 class="text-white get-experience">
                                 {
                                     data.data.homePageSection1.data.attributes
@@ -878,7 +788,9 @@ const activeIndex = 1;
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-l animation-element slide-right">
+                        <div
+                            class="immersive-m-l animation-element slide-right"
+                        >
                             <!-- https://www.youtube.com/embed/t0NKhGQVuhQ?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1 -->
                             <iframe
                                 title="Metaprolane Video"
@@ -966,7 +878,9 @@ const activeIndex = 1;
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-r animation-element slide-right">
+                        <div
+                            class="immersive-m-r animation-element slide-right"
+                        >
                             <h4 class="text-white get-experience">
                                 {
                                     data.data.homePageSection1.data.attributes
@@ -1028,7 +942,9 @@ const activeIndex = 1;
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-l animation-element slide-right">
+                        <div
+                            class="immersive-m-l animation-element slide-right"
+                        >
                             <img
                                 src="https://metaprolane.stsdev.site/assets/images/mall-home/home-mall.png"
                                 alt="Casino"
@@ -1055,7 +971,9 @@ const activeIndex = 1;
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="immersive-m-r animation-element slide-right">
+                        <div
+                            class="immersive-m-r animation-element slide-right"
+                        >
                             <h4 class="text-white get-experience">
                                 {
                                     data.data.homePageSection1.data.attributes
@@ -1224,7 +1142,7 @@ const activeIndex = 1;
 
             <!-- top your domain with metaverse solutions -->
             <section class="our-courses top-your-domain" id="industries">
-                <div class="container ">
+                <div class="container">
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="section-heading">
@@ -1595,7 +1513,9 @@ const activeIndex = 1;
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="why-metaprolane-l">
-                            <h3 class="text-white faq-head animation-element slide-left">
+                            <h3
+                                class="text-white faq-head animation-element slide-left"
+                            >
                                 {
                                     data.data.homePageSection1.data.attributes
                                         .metaverse_faq_title
@@ -1655,34 +1575,37 @@ const activeIndex = 1;
             </div>
         </section>
         <script type="text/javascript">
-            var $animation_elements = $('.animation-element');
+            var $animation_elements = $(".animation-element");
             var $window = $(window);
-    
+
             function check_if_in_view() {
                 var window_height = $window.height();
                 var window_top_position = $window.scrollTop();
-                var window_bottom_position = (window_top_position + window_height);
-    
+                var window_bottom_position =
+                    window_top_position + window_height;
+
                 $.each($animation_elements, function () {
                     var $element = $(this);
                     var element_height = $element.outerHeight();
                     var element_top_position = $element.offset().top;
-                    var element_bottom_position = (element_top_position + element_height);
-    
+                    var element_bottom_position =
+                        element_top_position + element_height;
+
                     //check to see if this current container is within viewport
-                    if ((element_bottom_position >= window_top_position) &&
-                        (element_top_position <= window_bottom_position)) {
-                        $element.addClass('in-view');
+                    if (
+                        element_bottom_position >= window_top_position &&
+                        element_top_position <= window_bottom_position
+                    ) {
+                        $element.addClass("in-view");
                     }
                     // else {
                     //   $element.removeClass('in-view');
                     // }
-    
                 });
             }
-    
-            $window.on('scroll resize', check_if_in_view);
-            $window.trigger('scroll', check_if_in_view);
+
+            $window.on("scroll resize", check_if_in_view);
+            $window.trigger("scroll", check_if_in_view);
         </script>
-        </html>
+    </html>
 </Layout>
