@@ -1,7 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/Carousel.astro";
-import ProjectDetails from "../components/projectDetaiils";
+import HomeProjectDetails from "../components/HomeProjectDetails";
+import HomeTopMeta from "../components/HomeTopMeta"
 const {} = Astro.props;
 const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
     method: "POST",
@@ -321,7 +322,7 @@ const activeIndex = 1;
                 <div
                     class="under-banner-values-section animation-element slide-left"
                 >
-                    <ProjectDetails client:only="react" />
+                    <HomeProjectDetails client:only="react" />
                     <section class="under-banner top-section">
                         <div class="container">
                             <div
@@ -583,7 +584,8 @@ const activeIndex = 1;
                 </div>
             </div>
         </section>
-
+        <HomeTopMeta client:only="react"/>
+<!-- 
         <section class="aboutmeta about-main abt-1 topmeta-dev-company">
             <div class="container">
                 <div class="row">
@@ -618,8 +620,8 @@ const activeIndex = 1;
                     </div>
                 </div>
             </div>
-        </section>
-        <section class="aboutmeta about-main abt-1 topmeta-dev-company2">
+        </section> -->
+        <!-- <section class="aboutmeta about-main abt-1 topmeta-dev-company2">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
@@ -676,7 +678,7 @@ const activeIndex = 1;
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="immersive-experience" id="demo">
             <div class="bg-vectors">
                 <img src="assets/images/white-bg.webp" alt="white bg" />

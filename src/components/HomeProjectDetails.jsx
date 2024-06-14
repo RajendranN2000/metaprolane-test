@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 
-const ProjectDetails = () => {
+const HomeProjectDetails = () => {
     const [projectData, setProjectData] = useState({})
     useEffect(() => {
         const fetchProject = async () => {
@@ -14,16 +14,15 @@ const ProjectDetails = () => {
                         homePageSection1{
                             data{
                                 attributes{
-                                 project_details{
-                                     data{
-                                        attributes{
-                                            title
-                                            count
-                                            img_path
+                                    project_details{
+                                        data{
+                                            attributes{
+                                                title
+                                                count
+                                                img_path
                                             }
                                         }
-                                    }                               
-                                    
+                                    }                                      
                                 }
                             }
                         }
@@ -33,10 +32,10 @@ const ProjectDetails = () => {
             });
             let data = await response.json();
             setProjectData(data.data.homePageSection1.data.attributes.project_details.data);
-
         };
         fetchProject();
     }, []);
+    // console.log(projectData.data.homePageSection1.data.attributes.project_details,"projectData");
     return (
         <div class="row">
             {
@@ -74,4 +73,4 @@ const ProjectDetails = () => {
     );
 };
 
-export default ProjectDetails;
+export default HomeProjectDetails;
