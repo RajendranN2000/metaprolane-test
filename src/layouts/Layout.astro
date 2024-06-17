@@ -62,7 +62,6 @@ const { title} = Astro.props;
         <script>
             window.onload = getData;
             async function getData() {
-                console.log("data1");
                 var inputTitle = document.getElementById("tempTitle")!.innerText
                 if(inputTitle!="" && inputTitle!=undefined && inputTitle!=null){
                     const response = await fetch(
@@ -96,14 +95,12 @@ const { title} = Astro.props;
                         data.data[inputTitle].data.attributes
                         ) {
                         console.log(data.data[inputTitle].data.attributes.meta_title, "datacheck");
-                        // document.title = "abcd"
                         var titleData = document.getElementById("title")
                         var description = document.getElementById("description")
                         var keywords = document.getElementById("keywords")
                         titleData?.setAttribute("content",data.data[inputTitle].data.attributes.meta_title)
                         description?.setAttribute("content",data.data[inputTitle].data.attributes.meta_description)
                         keywords?.setAttribute("content",data.data[inputTitle].data.attributes.meta_keywords)
-                        console.log(titleData,"titleData");
                     }
                 }
             }

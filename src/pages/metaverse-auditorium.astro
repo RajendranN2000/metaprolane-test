@@ -75,7 +75,7 @@ const { data } = await response.json();
 ---
 
 <Layout
-  title=""
+  title="metaverseAuditorium"
 >
   <html lang="en">
     <div class="home-container industries-page meta-product">
@@ -111,18 +111,18 @@ const { data } = await response.json();
             document
                 .querySelector(".carousel-control-next")
                 .addEventListener("click", () => {
-                    slides[currentIndex].classList.remove("active");
+                    slides[currentIndex]?.classList.remove("active");
                     currentIndex = (currentIndex + 1) % totalSlides;
-                    slides[currentIndex].classList.add("active");
+                    slides[currentIndex]?.classList.add("active");
                 });
 
             document
                 .querySelector(".carousel-control-prev")
                 .addEventListener("click", () => {
-                    slides[currentIndex].classList.remove("active");
+                    slides[currentIndex]?.classList.remove("active");
                     currentIndex =
                         (currentIndex - 1 + totalSlides) % totalSlides;
-                    slides[currentIndex].classList.add("active");
+                    slides[currentIndex]?.classList.add("active");
                 });
         });
 
@@ -134,7 +134,7 @@ const { data } = await response.json();
 
             function updateCarousel() {
                 items.forEach((item, index) => {
-                    item.classList.remove(
+                    item?.classList.remove(
                         "prev",
                         "prev2",
                         "active",
@@ -150,11 +150,11 @@ const { data } = await response.json();
                     (currentIndex - 2 + items.length) % items.length;
                 const next2Index = (currentIndex + 2) % items.length;
 
-                items[prev2Index].classList.add("prev2");
-                items[prevIndex].classList.add("prev");
-                items[currentIndex].classList.add("active");
-                items[nextIndex].classList.add("next");
-                items[next2Index].classList.add("next2");
+                items[prev2Index]?.classList.add("prev2");
+                items[prevIndex]?.classList.add("prev");
+                items[currentIndex]?.classList.add("active");
+                items[nextIndex]?.classList.add("next");
+                items[next2Index]?.classList.add("next2");
             }
 
             function nextSlide() {
