@@ -4,11 +4,9 @@ import ContactSection from '../components/ContactSection.astro';
 import FooterSection from '../components/FooterSection.astro';
 interface Props {
 	title: string;
-	description:string;
-	keywords:string
 }
 
-const { title,description,keywords} = Astro.props;
+const { title} = Astro.props;
 ---
 
 <!doctype html>
@@ -17,20 +15,21 @@ const { title,description,keywords} = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="robots" content="noindex">
 		<meta
-        name="title"
-        content={title}
+        name="title" id="title"
+        content={""}
     />
     <meta
-        name="description"
-        content={description}
+        name="description" id="description"
+        content={""}
     />
     <meta
-        name="keywords"
-        content={keywords}
+        name="keywords" id="keywords"
+        content={""}
     />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
+    <title id="tempTitle">{title}</title>
 		<link
 			href="src/vendor/bootstrap/css/bootstrap.min.css"
 			rel="stylesheet"
@@ -42,29 +41,54 @@ const { title,description,keywords} = Astro.props;
 	<!-- Additional CSS Files -->
     <link rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/fontawesome.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- <link rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/owl.css">
-
-    <link rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/lightbox.css">
-    <link rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/retailShowroom.css">
-    <link rel="stylesheet" href="./assets/css/realestate.css">
-    <link rel="stylesheet" href="./assets/css/retailShowroom.css">
-    <link rel="stylesheet" href="./assets/css/jewellery.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/style.css?@#QA0djd099jsnd34">
-    -<link rel="stylesheet" href="assets/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1">
-    -<link rel="stylesheet" href="assets/css/style.css?@#audit4532twox2slsm4i3ht43nf@ds"> 
-    -<link rel="stylesheet" href="assets/css/style.css?@#vcity34threenelakmdu35n43rn"> 
-    -<link rel="stylesheet" href="assets/css/style.css?@#s@#ma114armsSasd5mum344344640"> 
-    -<link rel="stylesheet" href="assets/css/style.css?@#s@#E$%FFDFsdtskdnk23n4$@#@$Sdsldni">  
-    -<link rel="stylesheet" href="assets/css/style.css?@#FRMasd34SEWjfjsdnpfuehp5345">  
-    -<link rel="stylesheet" href="assets/css/style.css?2#$DSE#$@#D#%34543rdf&ksdf893523">  
-    -<link rel="stylesheet" href="assets/css/style.css?43483452!DubsdE@#4324mis">  
-    -<link rel="stylesheet" href="assets/css/style.css?2SDLSJ#%$#sf45ytg5v1">
-    -<link rel="stylesheet" href="assets/css/style.css?3473342UBBUKsd2EFER#@$$#$$$#$>df324">
-    <link rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/animate.css">
-    <link rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/countrySelect.min.css" />
-    <link type="text/css" rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/style5597.css?ver=5.0" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-0025KQKHFF"></script> -->
+         <script>
+            window.onload = getData;
+            async function getData() {
+              console.log("datacheck");
+                var inputBlogTitle = document.getElementById("tempTitle")!.innerText
+                if(inputBlogTitle!="" && inputBlogTitle!=undefined && inputBlogTitle!=null){
+                    const response = await fetch(
+                        `${import.meta.env.PUBLIC_STRAPI_URL}`,
+                        {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                query: `
+                                    query{
+                                        ${inputBlogTitle}{
+                                            data{
+                                                attributes{
+                                                    meta_title
+                                                    meta_description
+                                                    meta_keywords
+                                                }
+                                            }
+                                        }
+                                    }
+                                `,
+                            }),
+                        },
+                    );
+                    const data = await response.json();
+                    if (
+                        data &&
+                        data.data &&
+                        data.data[inputBlogTitle] &&
+                        data.data[inputBlogTitle].data &&
+                        data.data[inputBlogTitle].data.attributes
+                        ) {
+                        console.log(data.data[inputBlogTitle].data.attributes.meta_title, "datacheck");
+                        var titleData = document.getElementById("title")
+                        var description = document.getElementById("description")
+                        var keywords = document.getElementById("keywords")
+                        titleData?.setAttribute("content",data.data[inputBlogTitle].data.attributes.meta_title)
+                        description?.setAttribute("content",data.data[inputBlogTitle].data.attributes.meta_description)
+                        keywords?.setAttribute("content",data.data[inputBlogTitle].data.attributes.meta_keywords)
+                        console.log(titleData,"titleData");
+                    }
+                }
+            }
+        </script>
 	</head>
 	<body>
 		<HeaderSection />
