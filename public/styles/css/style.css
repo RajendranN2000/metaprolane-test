@@ -4070,7 +4070,7 @@ section.meta-development-services.product-our-services.casino-ms-three-section {
 
 .meta-product section.meta-development-services.product-our-services.v-mall-box {
     padding: 0;
-    background: url(../images/shopping-mall/benefits-bg.png) center center/cover no-repeat fixed #262b33;
+    background: url(../images/shopping-mall/benefits-bg.webp) center center/cover no-repeat fixed #262b33;
     position: relative;
     min-height: max-content;
     align-items: center;
@@ -5375,7 +5375,7 @@ section.under-banner.our-technologies.casino-ms-one-section {
 }
 
 section.under-banner.our-technologies.product-tech-sec.casino-ms-two-section {
-    background: url(../images/casino-game/development-company.png) center center/cover no-repeat #0b0b0b;
+    background: url(../images/casino-game/development-company.webp) center center/cover no-repeat #0b0b0b;
     padding: 60px 0 0
 }
 
