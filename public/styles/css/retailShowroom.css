@@ -807,7 +807,7 @@ body {
 
 section.our-courses.product-our-courses.casino-ms-four-section {
     padding: 50px 0;
-    background: url(../images/casino-game/game-collections-bg.webp) center top/cover no-repeat fixed #262b33 !important;
+    background: url("/assets/images/casino-game/game-collections-bg.webp") center top/cover no-repeat fixed #262b33 !important;
     position: relative;
     min-height: max-content;
     align-items: center;
