@@ -127,11 +127,10 @@ const activeIndex = 1;
 ---
 
 <!-- <link rel="stylesheet" href="/styles/css/bootstrap-rtl.css"/> --><!-- <link rel="stylesheet" href="/styles/css/bootstrap.css"/> -->
-<Layout
-    title={"homePageSection1"}
->
+<Layout title={"homePageSection1"}>
     <html lang="en">
         <!-- <div class="home-container industries-page meta-product"> -->
+
         <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
 
         <link
@@ -168,6 +167,22 @@ const activeIndex = 1;
             ></script> -->
 
         <script is:inline>
+            function toggleAnswer(event) {
+                const question = event.currentTarget;
+                const answer = question.nextElementSibling;
+
+                $(answer).slideToggle();
+                $(question).toggleClass("active");
+                $(".faq-question")
+                    .not(question)
+                    .removeClass("active")
+                    .next(".faq-answer")
+                    .slideUp();
+
+                // Toggle the icon between plus and minus
+                const icon = question.querySelector(".faq-toggle-icon");
+                icon.textContent = icon.textContent === "+" ? "-" : "+";
+            }
             document.addEventListener("DOMContentLoaded", function () {
                 let currentIndex = 0;
                 const slides = document.querySelectorAll(".carousel-item");
@@ -322,35 +337,44 @@ const activeIndex = 1;
                     <!-- <HomeProjectDetails client:only="react" /> -->
                     <div class="row">
                         {
-                            data.data.homePageSection1.data.attributes.project_details.data.length > 0 && data.data.homePageSection1.data.attributes.project_details.data?.map(
-                                (each:any) => {
-                                    return (
-                                        <div class="col-lg-3">
-                                            <div class="svs-main d-flex count-area-content pluss">
-                                                <div class="svs-l">
-                                                    <img
-                                                        src={
-                                                            each.attributes
-                                                                .img_path
-                                                        }
-                                                        alt="icon1"
-                                                    />
-                                                </div>
-                                                <div class="svs-r">
-                                                    <h6 class="text-green numbers-top">
-                                                        {each.attributes.title}
-                                                    </h6>
-                                                    <div
-                                                        class={`count-digit ${each.attributes.img_path == "/assets/images/icon1.webp" ? "noplus" : "numbers-bot"}`}
-                                                    >
-                                                        {each.attributes.count}
+                            data.data.homePageSection1.data.attributes
+                                .project_details.data.length > 0 &&
+                                data.data.homePageSection1.data.attributes.project_details.data?.map(
+                                    (each: any) => {
+                                        return (
+                                            <div class="col-lg-3">
+                                                <div class="svs-main d-flex count-area-content pluss">
+                                                    <div class="svs-l">
+                                                        <img
+                                                            src={
+                                                                each.attributes
+                                                                    .img_path
+                                                            }
+                                                            alt="icon1"
+                                                        />
+                                                    </div>
+                                                    <div class="svs-r">
+                                                        <h6 class="text-green numbers-top">
+                                                            {
+                                                                each.attributes
+                                                                    .title
+                                                            }
+                                                        </h6>
+                                                        <div
+                                                            class={`count-digit ${each.attributes.img_path == "/assets/images/icon1.webp" ? "noplus" : "numbers-bot"}`}
+                                                        >
+                                                            {
+                                                                each.attributes
+                                                                    .count
+                                                            }
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    )
-            
-                                })}
+                                        );
+                                    },
+                                )
+                        }
                     </div>
                     <section class="under-banner top-section">
                         <div class="container">
@@ -1032,7 +1056,6 @@ const activeIndex = 1;
             <img src="assets/images/bg-vector1.webp" alt="vector bg" />
         </div> -->
         </section>
-
 
         <section class="why-metaprolane need-meta">
             <div class="container">
