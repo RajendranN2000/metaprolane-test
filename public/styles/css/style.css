@@ -2988,7 +2988,9 @@ select.ask-select2 {
 }
 
 .footer-links .social-link a,
-.footer-links .social-link a:hover {
+.footer-links .social-link 
+/* a:hover */
+ {
     margin: 0 10px 0 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
@@ -3014,10 +3016,10 @@ section.meta-development-services.product-our-services.casino-ms-five-section .b
 }
 
 .footer-links .social-link a:hover {
-    background: rgba(129, 130, 137, .1);
+    background: #198754;
     color: #fff;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .footer-links h3,
@@ -9615,4 +9617,9 @@ section.section-9 .qoute-box span {
     padding: 20px;
     text-align: center;
     font-size: 16px;
+}
+
+.social-icons{
+    height: 20px;
+    width: auto;
 }
