@@ -1,7 +1,7 @@
 ---
-// import HeaderSection from "../components/HeaderSection.astro";
-// import ContactSection from "../components/ContactSection.astro";
-// import FooterSection from "../components/FooterSection.astro";
+import HeaderSection from "../components/HeaderSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import FooterSection from "../components/FooterSection.astro";
 interface Props {
     title: string;
 }
@@ -59,10 +59,10 @@ const { title} = Astro.props;
       
     </head>
     <body>
-        <!-- <HeaderSection /> -->
+        <HeaderSection />
         <slot />
-        <!-- <ContactSection /> -->
-        <!-- <FooterSection /> -->
+        <ContactSection />
+        <FooterSection />
     </body>
     <script>
         window.onload = getData;
