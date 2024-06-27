@@ -18,169 +18,7 @@ const { title } = Astro.props;
         });
     });
 </script> -->
-<script>
-    document.getElementById("submit-btn")!.style.display = "block";
-    document.getElementById("submit-loader")!.style.display = "none";
-    document
-        .getElementById("contact")
-        ?.addEventListener("submit", async (event) => {
-            console.log("event", event);
-            event.preventDefault();
-            const formData = new FormData(event.target as any);
-            console.log(formData, "formData");
-            const data: { [key: string]: any } = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
-            console.log(data, "data");
-            let validData = true;
-            if (!data.name) {
-                document.getElementById("name-error")!.innerText =
-                    "Enter your Name";
-                validData = false;
-            } else {
-                if (data.name.length < 3) {
-                    document.getElementById("name-error")!.innerText =
-                        "Name must be atleast 3 characters";
-                    validData = false;
-                } else {
-                    document.getElementById("name-error")!.innerText = "";
-                }
-            }
 
-            if (!data.email) {
-                document.getElementById("email-error")!.innerText =
-                    "Enter your Email";
-                validData = false;
-            } else if (!validateEmail(data.email)) {
-                document.getElementById("email-error")!.innerText =
-                    "Invalid Email Id";
-                validData = false;
-            } else {
-                document.getElementById("email-error")!.innerText = "";
-            }
-
-            function validateEmail(email: string) {
-                var emailPattern =
-                    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                return emailPattern.test(email);
-            }
-
-            if (!data.phone) {
-                document.getElementById("phone-error")!.innerText =
-                    "Enter your Phone Number";
-                validData = false;
-            } else {
-                if (data.phone.length < 10) {
-                    document.getElementById("phone-error")!.innerText =
-                        "Phone Number must have atleast 10 digits";
-                    validData = false;
-                } else {
-                    document.getElementById("phone-error")!.innerText = "";
-                }
-            }
-
-            if (!data.company) {
-                document.getElementById("company-error")!.innerText =
-                    "Enter your Company";
-                validData = false;
-            } else {
-                document.getElementById("company-error")!.innerText = "";
-            }
-
-            if (!data.askfor) {
-                document.getElementById("askfor-error")!.innerText =
-                    "Choose Ask For";
-                validData = false;
-            } else {
-                document.getElementById("askfor-error")!.innerText = "";
-            }
-
-            if (!data.message) {
-                document.getElementById("message-error")!.innerText =
-                    "Enter your message";
-                validData = false;
-            } else {
-                document.getElementById("message-error")!.innerText = "";
-            }
-            if (!data["g-recaptcha-response"]) {
-                document.getElementById("recaptcha-error")!.innerText =
-                    "Recaptcha is Required";
-                validData = false;
-            } else {
-                document.getElementById("recaptcha-error")!.innerText = "";
-            }
-            if (validData) {
-                document.getElementById("submit-btn")!.style.display = "none";
-                document.getElementById("submit-loader")!.style.display =
-                    "block";
-                event.preventDefault();
-                const response = await fetch(
-                    `${import.meta.env.PUBLIC_STRAPI_URL}`,
-                    {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            query: `
-                        mutation{
-                            createContactUs(
-                                data:{
-                                    name:${JSON.stringify(data.name)},
-                                    email:${JSON.stringify(data.email)},
-                                    country:${JSON.stringify(data["country_selector_code"])},
-                                    phone:${JSON.stringify(data.phone)},
-                                    company:${JSON.stringify(data.company)},
-                                    askfor:${JSON.stringify(data.askfor)},
-                                    message:${JSON.stringify(data.message)}
-                                }
-                            ){
-                                data{
-                                    attributes{
-                                        name
-                                        email
-                                        country
-                                        phone
-                                        company
-                                        askfor
-                                        message
-                                    }
-                                }
-                            }
-                        }
-                        `,
-                        }),
-                    },
-                );
-                const tempResponse = await response.json();
-                console.log(tempResponse, "tempResponse");
-                if (tempResponse && tempResponse.data) {
-                    setTimeout(() => {
-                        document.getElementById(
-                            "submit-loader",
-                        )!.style.display = "none";
-                        document.getElementById("submit-btn")!.style.display =
-                            "block";
-                    }, 2000);
-
-                    var temp = document.getElementById("snackbar");
-                    temp!.className = "show";
-                    setTimeout(() => {
-                        temp!.className = temp!.className.replace("show", "");
-                        window.location.href =
-                            "/thankyou?name=" +
-                            data?.name +
-                            "&email=" +
-                            data?.email +
-                            "&title=" +
-                            data?.askfor;
-                    }, 2000);
-                    console.log("submitted succesfully");
-                } else {
-                    console.log("failed submit");
-                }
-            }
-        });
-</script>
 <section class="contact-us">
     <div class="bg-vectors">
         <img src="assets/images/bg-vector2.webp" alt="vector image" />
@@ -443,6 +281,169 @@ const { title } = Astro.props;
         </div>
         <div id="snackbar">Submitted successfully</div>
     </div>
+    <script>
+        document.getElementById("submit-btn")!.style.display = "block";
+        document.getElementById("submit-loader")!.style.display = "none";
+        document
+            .getElementById("contact")
+            ?.addEventListener("submit", async (event) => {
+                console.log("event", event);
+                event.preventDefault();
+                const formData = new FormData(event.target as any);
+                console.log(formData, "formData");
+                const data: { [key: string]: any } = {};
+                formData.forEach((value, key) => {
+                    data[key] = value;
+                });
+                console.log(data, "data");
+                let validData = true;
+                if (!data.name) {
+                    document.getElementById("name-error")!.innerText =
+                        "Enter your Name";
+                    validData = false;
+                } else {
+                    if (data.name.length < 3) {
+                        document.getElementById("name-error")!.innerText =
+                            "Name must be atleast 3 characters";
+                        validData = false;
+                    } else {
+                        document.getElementById("name-error")!.innerText = "";
+                    }
+                }
+    
+                if (!data.email) {
+                    document.getElementById("email-error")!.innerText =
+                        "Enter your Email";
+                    validData = false;
+                } else if (!validateEmail(data.email)) {
+                    document.getElementById("email-error")!.innerText =
+                        "Invalid Email Id";
+                    validData = false;
+                } else {
+                    document.getElementById("email-error")!.innerText = "";
+                }
+    
+                function validateEmail(email: string) {
+                    var emailPattern =
+                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    return emailPattern.test(email);
+                }
+    
+                if (!data.phone) {
+                    document.getElementById("phone-error")!.innerText =
+                        "Enter your Phone Number";
+                    validData = false;
+                } else {
+                    if (data.phone.length < 10) {
+                        document.getElementById("phone-error")!.innerText =
+                            "Phone Number must have atleast 10 digits";
+                        validData = false;
+                    } else {
+                        document.getElementById("phone-error")!.innerText = "";
+                    }
+                }
+    
+                if (!data.company) {
+                    document.getElementById("company-error")!.innerText =
+                        "Enter your Company";
+                    validData = false;
+                } else {
+                    document.getElementById("company-error")!.innerText = "";
+                }
+    
+                if (!data.askfor) {
+                    document.getElementById("askfor-error")!.innerText =
+                        "Choose Ask For";
+                    validData = false;
+                } else {
+                    document.getElementById("askfor-error")!.innerText = "";
+                }
+    
+                if (!data.message) {
+                    document.getElementById("message-error")!.innerText =
+                        "Enter your message";
+                    validData = false;
+                } else {
+                    document.getElementById("message-error")!.innerText = "";
+                }
+                if (!data["g-recaptcha-response"]) {
+                    document.getElementById("recaptcha-error")!.innerText =
+                        "Recaptcha is Required";
+                    validData = false;
+                } else {
+                    document.getElementById("recaptcha-error")!.innerText = "";
+                }
+                if (validData) {
+                    document.getElementById("submit-btn")!.style.display = "none";
+                    document.getElementById("submit-loader")!.style.display =
+                        "block";
+                    event.preventDefault();
+                    const response = await fetch(
+                        `${import.meta.env.PUBLIC_STRAPI_URL}`,
+                        {
+                            method: "POST",
+                            headers: { "Content-Type": "application/json" },
+                            body: JSON.stringify({
+                                query: `
+                            mutation{
+                                createContactUs(
+                                    data:{
+                                        name:${JSON.stringify(data.name)},
+                                        email:${JSON.stringify(data.email)},
+                                        country:${JSON.stringify(data["country_selector_code"])},
+                                        phone:${JSON.stringify(data.phone)},
+                                        company:${JSON.stringify(data.company)},
+                                        askfor:${JSON.stringify(data.askfor)},
+                                        message:${JSON.stringify(data.message)}
+                                    }
+                                ){
+                                    data{
+                                        attributes{
+                                            name
+                                            email
+                                            country
+                                            phone
+                                            company
+                                            askfor
+                                            message
+                                        }
+                                    }
+                                }
+                            }
+                            `,
+                            }),
+                        },
+                    );
+                    const tempResponse = await response.json();
+                    console.log(tempResponse, "tempResponse");
+                    if (tempResponse && tempResponse.data) {
+                        setTimeout(() => {
+                            document.getElementById(
+                                "submit-loader",
+                            )!.style.display = "none";
+                            document.getElementById("submit-btn")!.style.display =
+                                "block";
+                        }, 2000);
+    
+                        var temp = document.getElementById("snackbar");
+                        temp!.className = "show";
+                        setTimeout(() => {
+                            temp!.className = temp!.className.replace("show", "");
+                            window.location.href =
+                                "/thankyou?name=" +
+                                data?.name +
+                                "&email=" +
+                                data?.email +
+                                "&title=" +
+                                data?.askfor;
+                        }, 2000);
+                        console.log("submitted succesfully");
+                    } else {
+                        console.log("failed submit");
+                    }
+                }
+            });
+    </script>
     <script type="text/javascript">
         var $animation_elements = $(".animation-element");
         var $window = $(window);
