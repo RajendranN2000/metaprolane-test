@@ -53,22 +53,11 @@ const { title } = Astro.props;
         rel="stylesheet"
         href="styles/css/style5597.css?ver=5.0"
     />
-    <!-- <script>
-        setTimeout(async () => {
-            const { default: ContactSection } = await import(
-                "../components/ContactSection.astro"
-            );
-            const container = document.getElementById("contactsection");
-            container!.innerHTML = "";
-            container!.appendChild(ContactSection({}));
-        }, 5000);
-    </script> -->
 
     <body>
         <HeaderSection />
         <slot />
-        <!-- <ContactSection /> -->
-        <!-- <div id="contactsection"></div> -->
+        <ContactSection />
         <FooterSection />
     </body>
     <script>
