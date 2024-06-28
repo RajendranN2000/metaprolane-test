@@ -6,7 +6,7 @@ interface Props {
     title: string;
 }
 
-const { title} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -15,60 +15,71 @@ const { title} = Astro.props;
         <meta charset="UTF-8" />
         <meta name="robots" content="noindex" />
         <meta name="title" id="title" content="" />
-        <meta name="description" id="description" content=""/>
+        <meta name="description" id="description" content="" />
         <meta name="keywords" id="keywords" content="" />
         <meta name="viewport" content="width=device-width" />
         <link rel="sitemap" href="/sitemap-index.xml" />
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
         <meta name="generator" content={Astro.generator} />
-        <div style="display:none;" id="tempTitle">{title}</div>
-        <title>Metaverse Development Company | Metaprolane</title>
-        <link rel="stylesheet" href="/styles/blog/css/style.css" />
-        <link rel="stylesheet" href="/styles/css/style.css" />
-        <script
-            src="/vendor/jquery.min.js"
-            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"></script>
-        <script
-            src="/vendor/owl.carousel.min.js"
-            integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"></script>
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            crossorigin="anonymous"
-            referrerpolicy="no-referrer"
-        />
-        <!-- Additional CSS Files -->
-        <link
-            rel="stylesheet"
-            href="https://metaprolane.stsdev.site/assets/css/fontawesome.css"
-        />
-        <link
-            rel="stylesheet"
-            href="/vendor/swiper-bundle.min.css"
-        />
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="styles/css/style5597.css?ver=5.0"
-        />
-      
-    </head>
+    </head><div style="display:none;" id="tempTitle">{title}</div>
+    <title>Metaverse Development Company | Metaprolane</title>
+    <link rel="stylesheet" href="/styles/blog/css/style.css" />
+    <link rel="stylesheet" href="/styles/css/style.css" />
+    <script
+        src="/vendor/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <script
+        src="/vendor/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <!-- Additional CSS Files -->
+    <link
+        rel="stylesheet"
+        href="https://metaprolane.stsdev.site/assets/css/fontawesome.css"
+    />
+    <link rel="stylesheet" href="/vendor/swiper-bundle.min.css" />
+    <link
+        type="text/css"
+        rel="stylesheet"
+        href="styles/css/style5597.css?ver=5.0"
+    />
+    <!-- <script>
+        setTimeout(async () => {
+            const { default: ContactSection } = await import(
+                "../components/ContactSection.astro"
+            );
+            const container = document.getElementById("contactsection");
+            container!.innerHTML = "";
+            container!.appendChild(ContactSection({}));
+        }, 5000);
+    </script> -->
+
     <body>
         <HeaderSection />
         <slot />
-        <!-- <ContactSection /> -->
+        <ContactSection />
+        <!-- <div id="contactsection"></div> -->
         <FooterSection />
     </body>
     <script>
         window.onload = getData;
         async function getData() {
-            var inputTitle = document.getElementById("tempTitle")!.innerText
-            if(inputTitle!="" && inputTitle!=undefined && inputTitle!=null){
+            var inputTitle = document.getElementById("tempTitle")!.innerText;
+            if (
+                inputTitle != "" &&
+                inputTitle != undefined &&
+                inputTitle != null
+            ) {
                 const response = await fetch(
                     `${import.meta.env.PUBLIC_STRAPI_URL}`,
                     {
@@ -98,15 +109,26 @@ const { title} = Astro.props;
                     data.data[inputTitle] &&
                     data.data[inputTitle].data &&
                     data.data[inputTitle].data.attributes
-                    ) {
-                    console.log(data.data[inputTitle].data.attributes.meta_title, "datacheck");
-                    var titleData = document.getElementById("title")
-                    var description = document.getElementById("description")
-                    var keywords = document.getElementById("keywords")
-                    titleData?.setAttribute("content",data.data[inputTitle].data.attributes.meta_title)
-                    description?.setAttribute("content",data.data[inputTitle].data.attributes.meta_description)
-                    keywords?.setAttribute("content",data.data[inputTitle].data.attributes.meta_keywords)
-                 
+                ) {
+                    console.log(
+                        data.data[inputTitle].data.attributes.meta_title,
+                        "datacheck",
+                    );
+                    var titleData = document.getElementById("title");
+                    var description = document.getElementById("description");
+                    var keywords = document.getElementById("keywords");
+                    titleData?.setAttribute(
+                        "content",
+                        data.data[inputTitle].data.attributes.meta_title,
+                    );
+                    description?.setAttribute(
+                        "content",
+                        data.data[inputTitle].data.attributes.meta_description,
+                    );
+                    keywords?.setAttribute(
+                        "content",
+                        data.data[inputTitle].data.attributes.meta_keywords,
+                    );
                 }
             }
         }
