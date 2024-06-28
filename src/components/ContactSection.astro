@@ -3,13 +3,13 @@ const { title } = Astro.props;
 ---
 
 
-<!-- <link
+<link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/css/countrySelect.min.css"
     integrity="sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
-/> -->
+/>
 <!-- <link
     rel="stylesheet"
     href="/vendor/countrySelect.min.css"
@@ -482,16 +482,19 @@ const { title } = Astro.props;
         $window.on("scroll resize", check_if_in_view);
         $window.trigger("scroll", check_if_in_view);
     </script>
-    <!-- <script is:inline src="/assets/js/countrySelect.min.js"></script> -->
+    <script is:inline src="/assets/js/countrySelect.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/js/countrySelect.min.js" integrity="sha512-criuU34pNQDOIx2XSSIhHSvjfQcek130Y9fivItZPVfH7paZDEdtAMtwZxyPq/r2pyr9QpctipDFetLpUdKY4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <!-- <script is:inline>
+    <script is:inline>
         $("#country_selector").countrySelect({
             defaultCountry: "in",
+            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+            // responsiveDropdown: true,
+            //    preferredCountries: ['ca', 'gb', 'us']
         });
 
         console.log("scriptcheck");
-    </script> -->
-    <!-- <script>
+    </script>
+    <script>
         setTimeout(function() {
             var script = document.createElement('script');
             script.src = "https://www.google.com/recaptcha/api.js";
@@ -499,7 +502,28 @@ const { title } = Astro.props;
             script.defer = true;
             document.head.appendChild(script);
         }, 10000); // Adjust timeout delay in milliseconds as needed
-    </script> -->
+    </script>
+    <script>
+        setTimeout(function() {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/css/countrySelect.min.css';
+            link.integrity = 'sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ==';
+            link.crossOrigin = 'anonymous';
+            link.referrerPolicy = 'no-referrer';
+    
+            document.head.appendChild(link);
+        }, 10000); // Adjust timeout delay in milliseconds as needed
+    </script>
+    <script>
+        setTimeout(function() {
+            var script = document.createElement('script');
+            script.src = '/assets/js/countrySelect.min.js';
+            script.async = true;
+            script.defer = true;
+            document.head.appendChild(script);
+        }, 10000); // Adjust timeout delay in milliseconds as needed
+    </script>
     <!-- <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
     ></script> -->
 </section>
