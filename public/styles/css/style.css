@@ -9492,7 +9492,8 @@ section.section-9 .qoute-box span {
 }
 
 #snackbar {
-    visibility: hidden;
+    visibility:hidden;
+    width: 50px !important;
     min-width: 250px;
     margin-left: -125px;
     background-color: #333;
