@@ -2,7 +2,6 @@
 const { title } = Astro.props;
 ---
 
-
 <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/css/countrySelect.min.css"
@@ -91,7 +90,6 @@ const { title } = Astro.props;
                                     placeholder=""
                                     class="ms-r"
                                     required
-
                                 />
                             </fieldset>
                         </div>
@@ -103,6 +101,7 @@ const { title } = Astro.props;
                                         id="country_selector"
                                         type="text"
                                         required=""
+                                        class="ms-l"
                                     />
                                     <label
                                         for="country_selector"
@@ -229,7 +228,7 @@ const { title } = Astro.props;
                             </fieldset>
                         </div>
 
-                        <!-- <div class="col-lg-12 pb-4">
+                        <div class="col-lg-12 pb-4">
                             <fieldset>
                                 <div
                                     id="recaptcha"
@@ -242,149 +241,157 @@ const { title } = Astro.props;
                                     id="recaptcha-error"
                                 >
                                 </div>
-                        </div> -->
-                        <div class="col-lg-12 mh-last">
-                            <fieldset>
-                                <button
-                                    type="submit"
-                                    id="submit-btn"
-                                    class="btn btn-transparent"
-                                    style="width: 120px;
+                            </fieldset>
+                            <div class="col-lg-12 mh-last">
+                                <fieldset>
+                                    <button
+                                        type="submit"
+                                        id="submit-btn"
+                                        class="btn btn-transparent"
+                                        style="width: 120px;
                                     height: 50px;display:flex;justify-content:center;"
-                                    >Send Form</button
-                                >
-                                <button
-                                    id="submit-loader"
-                                    class="contact-btn contact-btn-primary default-btn"
-                                    style="width: 120px;
+                                        >Send Form</button
+                                    >
+                                    <button
+                                        id="submit-loader"
+                                        class="contact-btn contact-btn-primary default-btn"
+                                        style="width: 120px;
                                             height: 50px; display:flex;justify-content:center;"
-                                >
-                                    <div
-                                        style="display: flex;
-                                            justify-content: center;"
                                     >
                                         <div
-                                            class="loader-inner ball-clip-rotate"
+                                            style="display: flex;
+                                            justify-content: center;"
                                         >
-                                            <div></div>
+                                            <div
+                                                class="loader-inner ball-clip-rotate"
+                                            >
+                                                <div></div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </button>
-                            </fieldset>
-                            <br /><br />
-                            <span id="msgbl" style="color:yellow;font-size:20px"
-                            ></span>
+                                    </button>
+                                </fieldset>
+                                <br /><br />
+                                <span
+                                    id="msgbl"
+                                    style="color:yellow;font-size:20px"></span>
+                            </div>
                         </div>
                     </div>
                 </form>
             </div>
+            <div id="snackbar">Submitted successfully</div>
         </div>
-        <div id="snackbar">Submitted successfully</div>
-    </div>
-    <script>
-        document.getElementById("submit-btn")!.style.display = "block";
-        document.getElementById("submit-loader")!.style.display = "none";
-        document
-            .getElementById("contact")
-            ?.addEventListener("submit", async (event) => {
-                console.log("event", event);
-                event.preventDefault();
-                const formData = new FormData(event.target as any);
-                console.log(formData, "formData");
-                const data: { [key: string]: any } = {};
-                formData.forEach((value, key) => {
-                    data[key] = value;
-                });
-                console.log(data, "data");
-                let validData = true;
-                if (!data.name) {
-                    document.getElementById("name-error")!.innerText =
-                        "Enter your Name";
-                    validData = false;
-                } else {
-                    if (data.name.length < 3) {
-                        document.getElementById("name-error")!.innerText =
-                            "Name must be atleast 3 characters";
-                        validData = false;
-                    } else {
-                        document.getElementById("name-error")!.innerText = "";
-                    }
-                }
-    
-                if (!data.email) {
-                    document.getElementById("email-error")!.innerText =
-                        "Enter your Email";
-                    validData = false;
-                } else if (!validateEmail(data.email)) {
-                    document.getElementById("email-error")!.innerText =
-                        "Invalid Email Id";
-                    validData = false;
-                } else {
-                    document.getElementById("email-error")!.innerText = "";
-                }
-    
-                function validateEmail(email: string) {
-                    var emailPattern =
-                        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                    return emailPattern.test(email);
-                }
-    
-                if (!data.phone) {
-                    document.getElementById("phone-error")!.innerText =
-                        "Enter your Phone Number";
-                    validData = false;
-                } else {
-                    if (data.phone.length < 10) {
-                        document.getElementById("phone-error")!.innerText =
-                            "Phone Number must have atleast 10 digits";
-                        validData = false;
-                    } else {
-                        document.getElementById("phone-error")!.innerText = "";
-                    }
-                }
-    
-                if (!data.company) {
-                    document.getElementById("company-error")!.innerText =
-                        "Enter your Company";
-                    validData = false;
-                } else {
-                    document.getElementById("company-error")!.innerText = "";
-                }
-    
-                if (!data.askfor) {
-                    document.getElementById("askfor-error")!.innerText =
-                        "Choose Ask For";
-                    validData = false;
-                } else {
-                    document.getElementById("askfor-error")!.innerText = "";
-                }
-    
-                if (!data.message) {
-                    document.getElementById("message-error")!.innerText =
-                        "Enter your message";
-                    validData = false;
-                } else {
-                    document.getElementById("message-error")!.innerText = "";
-                }
-                if (!data["g-recaptcha-response"]) {
-                    document.getElementById("recaptcha-error")!.innerText =
-                        "Recaptcha is Required";
-                    validData = false;
-                } else {
-                    document.getElementById("recaptcha-error")!.innerText = "";
-                }
-                if (validData) {
-                    document.getElementById("submit-btn")!.style.display = "none";
-                    document.getElementById("submit-loader")!.style.display =
-                        "block";
+        <script>
+            document.getElementById("submit-btn")!.style.display = "block";
+            document.getElementById("submit-loader")!.style.display = "none";
+            document
+                .getElementById("contact")
+                ?.addEventListener("submit", async (event) => {
+                    console.log("event", event);
                     event.preventDefault();
-                    const response = await fetch(
-                        `${import.meta.env.PUBLIC_STRAPI_URL}`,
-                        {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({
-                                query: `
+                    const formData = new FormData(event.target as any);
+                    console.log(formData, "formData");
+                    const data: { [key: string]: any } = {};
+                    formData.forEach((value, key) => {
+                        data[key] = value;
+                    });
+                    console.log(data, "data");
+                    let validData = true;
+                    if (!data.name) {
+                        document.getElementById("name-error")!.innerText =
+                            "Enter your Name";
+                        validData = false;
+                    } else {
+                        if (data.name.length < 3) {
+                            document.getElementById("name-error")!.innerText =
+                                "Name must be atleast 3 characters";
+                            validData = false;
+                        } else {
+                            document.getElementById("name-error")!.innerText =
+                                "";
+                        }
+                    }
+
+                    if (!data.email) {
+                        document.getElementById("email-error")!.innerText =
+                            "Enter your Email";
+                        validData = false;
+                    } else if (!validateEmail(data.email)) {
+                        document.getElementById("email-error")!.innerText =
+                            "Invalid Email Id";
+                        validData = false;
+                    } else {
+                        document.getElementById("email-error")!.innerText = "";
+                    }
+
+                    function validateEmail(email: string) {
+                        var emailPattern =
+                            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        return emailPattern.test(email);
+                    }
+
+                    if (!data.phone) {
+                        document.getElementById("phone-error")!.innerText =
+                            "Enter your Phone Number";
+                        validData = false;
+                    } else {
+                        if (data.phone.length < 10) {
+                            document.getElementById("phone-error")!.innerText =
+                                "Phone Number must have atleast 10 digits";
+                            validData = false;
+                        } else {
+                            document.getElementById("phone-error")!.innerText =
+                                "";
+                        }
+                    }
+
+                    if (!data.company) {
+                        document.getElementById("company-error")!.innerText =
+                            "Enter your Company";
+                        validData = false;
+                    } else {
+                        document.getElementById("company-error")!.innerText =
+                            "";
+                    }
+
+                    if (!data.askfor) {
+                        document.getElementById("askfor-error")!.innerText =
+                            "Choose Ask For";
+                        validData = false;
+                    } else {
+                        document.getElementById("askfor-error")!.innerText = "";
+                    }
+
+                    if (!data.message) {
+                        document.getElementById("message-error")!.innerText =
+                            "Enter your message";
+                        validData = false;
+                    } else {
+                        document.getElementById("message-error")!.innerText =
+                            "";
+                    }
+                    if (!data["g-recaptcha-response"]) {
+                        document.getElementById("recaptcha-error")!.innerText =
+                            "Recaptcha is Required";
+                        validData = false;
+                    } else {
+                        document.getElementById("recaptcha-error")!.innerText =
+                            "";
+                    }
+                    if (validData) {
+                        document.getElementById("submit-btn")!.style.display =
+                            "none";
+                        document.getElementById(
+                            "submit-loader",
+                        )!.style.display = "block";
+                        event.preventDefault();
+                        const response = await fetch(
+                            `${import.meta.env.PUBLIC_STRAPI_URL}`,
+                            {
+                                method: "POST",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({
+                                    query: `
                             mutation{
                                 createContactUs(
                                     data:{
@@ -411,113 +418,125 @@ const { title } = Astro.props;
                                 }
                             }
                             `,
-                            }),
-                        },
-                    );
-                    const tempResponse = await response.json();
-                    console.log(tempResponse, "tempResponse");
-                    if (tempResponse && tempResponse.data) {
-                        setTimeout(() => {
-                            document.getElementById(
-                                "submit-loader",
-                            )!.style.display = "none";
-                            document.getElementById("submit-btn")!.style.display =
-                                "block";
-                        }, 2000);
-    
-                        var temp = document.getElementById("snackbar");
-                        temp!.className = "show";
-                        setTimeout(() => {
-                            temp!.className = temp!.className.replace("show", "");
-                            window.location.href =
-                                "/thankyou?name=" +
-                                data?.name +
-                                "&email=" +
-                                data?.email +
-                                "&title=" +
-                                data?.askfor;
-                        }, 2000);
-                        console.log("submitted succesfully");
-                    } else {
-                        console.log("failed submit");
+                                }),
+                            },
+                        );
+                        const tempResponse = await response.json();
+                        console.log(tempResponse, "tempResponse");
+                        if (tempResponse && tempResponse.data) {
+                            setTimeout(() => {
+                                document.getElementById(
+                                    "submit-loader",
+                                )!.style.display = "none";
+                                document.getElementById(
+                                    "submit-btn",
+                                )!.style.display = "block";
+                            }, 2000);
+
+                            var temp = document.getElementById("snackbar");
+                            temp!.className = "show";
+                            setTimeout(() => {
+                                temp!.className = temp!.className.replace(
+                                    "show",
+                                    "",
+                                );
+                                window.location.href =
+                                    "/thankyou?name=" +
+                                    data?.name +
+                                    "&email=" +
+                                    data?.email +
+                                    "&title=" +
+                                    data?.askfor;
+                            }, 2000);
+                            console.log("submitted succesfully");
+                        } else {
+                            console.log("failed submit");
+                        }
                     }
-                }
+                });
+        </script>
+        <script type="text/javascript">
+            var $animation_elements = $(".animation-element");
+            var $window = $(window);
+
+            function check_if_in_view() {
+                var window_height = $window.height();
+                var window_top_position = $window.scrollTop();
+                var window_bottom_position =
+                    window_top_position + window_height;
+
+                $.each($animation_elements, function () {
+                    var $element = $(this);
+                    var element_height = $element.outerHeight();
+                    var element_top_position = $element.offset().top;
+                    var element_bottom_position =
+                        element_top_position + element_height;
+
+                    //check to see if this current container is within viewport
+                    if (
+                        element_bottom_position >= window_top_position &&
+                        element_top_position <= window_bottom_position
+                    ) {
+                        $element.addClass("in-view");
+                    }
+                    // else {
+                    //   $element.removeClass('in-view');
+                    // }
+                });
+            }
+
+            $window.on("scroll resize", check_if_in_view);
+            $window.trigger("scroll", check_if_in_view);
+        </script>
+        <script is:inline src="/assets/js/countrySelect.min.js"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/js/countrySelect.min.js" integrity="sha512-criuU34pNQDOIx2XSSIhHSvjfQcek130Y9fivItZPVfH7paZDEdtAMtwZxyPq/r2pyr9QpctipDFetLpUdKY4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <script is:inline>
+            $("#country_selector").countrySelect({
+                defaultCountry: "in",
+                // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+                // responsiveDropdown: true,
+                //    preferredCountries: ['ca', 'gb', 'us']
             });
-    </script>
-    <script type="text/javascript">
-        var $animation_elements = $(".animation-element");
-        var $window = $(window);
 
-        function check_if_in_view() {
-            var window_height = $window.height();
-            var window_top_position = $window.scrollTop();
-            var window_bottom_position = window_top_position + window_height;
+            console.log("scriptcheck");
+        </script>
+        <script>
+            document.getElementById("recaptcha")!.style.display = "none"
+            document.getElementById("name")!.onclick = () => {
+                var script = document.createElement("script");
+                script.src = "https://www.google.com/recaptcha/api.js";
+                script.async = true;
+                script.defer = true;
+                document.head.appendChild(script);
+                document.getElementById("recaptcha")!.style.display = "block"
+                document.getElementById("recaptcha")!.style.marginBottom="28px"
+            };
+            // Adjust timeout delay in milliseconds as needed
+        </script>
+        <!-- <script>
+            setTimeout(function () {
+                var link = document.createElement("link");
+                link.rel = "stylesheet";
+                link.href =
+                    "https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/css/countrySelect.min.css";
+                link.integrity =
+                    "sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ==";
+                link.crossOrigin = "anonymous";
+                link.referrerPolicy = "no-referrer";
 
-            $.each($animation_elements, function () {
-                var $element = $(this);
-                var element_height = $element.outerHeight();
-                var element_top_position = $element.offset().top;
-                var element_bottom_position =
-                    element_top_position + element_height;
-
-                //check to see if this current container is within viewport
-                if (
-                    element_bottom_position >= window_top_position &&
-                    element_top_position <= window_bottom_position
-                ) {
-                    $element.addClass("in-view");
-                }
-                // else {
-                //   $element.removeClass('in-view');
-                // }
-            });
-        }
-
-        $window.on("scroll resize", check_if_in_view);
-        $window.trigger("scroll", check_if_in_view);
-    </script>
-    <script is:inline src="/assets/js/countrySelect.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/js/countrySelect.min.js" integrity="sha512-criuU34pNQDOIx2XSSIhHSvjfQcek130Y9fivItZPVfH7paZDEdtAMtwZxyPq/r2pyr9QpctipDFetLpUdKY4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <script is:inline>
-        $("#country_selector").countrySelect({
-            defaultCountry: "in",
-            // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-            // responsiveDropdown: true,
-            //    preferredCountries: ['ca', 'gb', 'us']
-        });
-
-        console.log("scriptcheck");
-    </script>
-    <!-- <script>
-        setTimeout(function() {
-            var script = document.createElement('script');
-            script.src = "https://www.google.com/recaptcha/api.js";
-            script.async = true;
-            script.defer = true;
-            document.head.appendChild(script);
-        }, 10000); // Adjust timeout delay in milliseconds as needed
-    </script> -->
-    <script>
-        setTimeout(function() {
-            var link = document.createElement('link');
-            link.rel = 'stylesheet';
-            link.href = 'https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/css/countrySelect.min.css';
-            link.integrity = 'sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ==';
-            link.crossOrigin = 'anonymous';
-            link.referrerPolicy = 'no-referrer';
-    
-            document.head.appendChild(link);
-        }, 10000); // Adjust timeout delay in milliseconds as needed
-    </script>
-    <script>
-        setTimeout(function() {
-            var script = document.createElement('script');
-            script.src = '/assets/js/countrySelect.min.js';
-            script.async = true;
-            script.defer = true;
-            document.head.appendChild(script);
-        }, 10000); // Adjust timeout delay in milliseconds as needed
-    </script>
-    <!-- <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
+                document.head.appendChild(link);
+            }, 10000); // Adjust timeout delay in milliseconds as needed
+        </script> -->
+        <!-- <script>
+            setTimeout(function () {
+                var script = document.createElement("script");
+                script.src = "/assets/js/countrySelect.min.js";
+                script.async = true;
+                script.defer = true;
+                document.head.appendChild(script);
+            }, 5000); // Adjust timeout delay in milliseconds as needed
+        </script> -->
+        <!-- <script is:inline src="https://www.google.com/recaptcha/api.js" async defer
     ></script> -->
+    </div>
 </section>
