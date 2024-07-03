@@ -48,11 +48,11 @@ const { title } = Astro.props;
                     clients' expectations, delivering solutions on time and
                     within budget while maintaining quality.
                 </p>
-                <!-- <div class="calendly-inline-widget" data-processed="true">
-                    <iframe
+                <div class="calendly-inline-widget"  data-processed="true">
+                    <iframe id="calendar-section"
                         src="https://calendly.com/meta_pro_lane/15min"
                         title="Calendly"></iframe>
-                </div> -->
+                </div>
             </div>
 
             <div class="col-lg-8 slide-right">
@@ -455,6 +455,12 @@ const { title } = Astro.props;
                     }
                 });
         </script>
+        <script>
+            setTimeout(() => {
+                console.log("check calendar");
+                document.getElementById("calendar-section")!.style.display = "block";
+            }, 5000);
+        </script>
         <script type="text/javascript">
             var $animation_elements = $(".animation-element");
             var $window = $(window);
@@ -501,15 +507,16 @@ const { title } = Astro.props;
             console.log("scriptcheck");
         </script>
         <script>
-            document.getElementById("recaptcha")!.style.display = "none"
+            document.getElementById("recaptcha")!.style.display = "none";
             document.getElementById("name")!.onclick = () => {
                 var script = document.createElement("script");
                 script.src = "https://www.google.com/recaptcha/api.js";
                 script.async = true;
                 script.defer = true;
                 document.head.appendChild(script);
-                document.getElementById("recaptcha")!.style.display = "block"
-                document.getElementById("recaptcha")!.style.marginBottom="28px"
+                document.getElementById("recaptcha")!.style.display = "block";
+                document.getElementById("recaptcha")!.style.marginBottom =
+                    "28px";
             };
             // Adjust timeout delay in milliseconds as needed
         </script>
