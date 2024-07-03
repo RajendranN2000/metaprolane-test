@@ -104,13 +104,13 @@ const { data } = await response.json();
                 rel="stylesheet"
             />
             <!-- Bootstrap core CSS -->
-            <link
+            <!-- <link
                 href="vendor/bootstrap/css/bootstrap.min.css"
                 rel="stylesheet"
-            />
+            /> -->
             <!-- <link rel="stylesheet" href="assets/css/fontawesome.css" /> -->
             <!-- <link rel="stylesheet" href="assets/css/owl.css"> -->
-            <link rel="stylesheet" href="styles/css/lightbox.css" />
+            <!-- <link rel="stylesheet" href="styles/css/lightbox.css" /> -->
             <link
                 rel="stylesheet"
                 href="styles/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1"
@@ -124,282 +124,7 @@ const { data } = await response.json();
             />
             <link rel="stylesheet" href="/styles/css/style.css" />
             <link rel="stylesheet" href="/styles/blog/css/owl.css" />
-            <script is:inline>
-                document.addEventListener("DOMContentLoaded", function () {
-                    let currentIndex = 0;
-                    const slides = document.querySelectorAll(".carousel-item");
-                    const totalSlides = slides.length;
-    
-                    document
-                        .querySelector(".carousel-control-next")
-                        .addEventListener("click", () => {
-                            slides[currentIndex].classList.remove("active");
-                            currentIndex = (currentIndex + 1) % totalSlides;
-                            slides[currentIndex].classList.add("active");
-                        });
-    
-                    document
-                        .querySelector(".carousel-control-prev")
-                        .addEventListener("click", () => {
-                            slides[currentIndex].classList.remove("active");
-                            currentIndex =
-                                (currentIndex - 1 + totalSlides) % totalSlides;
-                            slides[currentIndex].classList.add("active");
-                        });
-                });
-    
-                document.addEventListener("DOMContentLoaded", () => {
-                    const prevButton = document.querySelector(".slider_nav .prev");
-                    const nextButton = document.querySelector(".slider_nav .next");
-                    const items = document.querySelectorAll(".slider_top ul li");
-                    let currentIndex = 0; // Start from the first item
-    
-                    function updateCarousel() {
-                        items.forEach((item, index) => {
-                            item.classList.remove(
-                                "prev",
-                                "prev2",
-                                "active",
-                                "next",
-                                "next2",
-                            );
-                        });
-    
-                        const prevIndex =
-                            (currentIndex - 1 + items.length) % items.length;
-                        const nextIndex = (currentIndex + 1) % items.length;
-                        const prev2Index =
-                            (currentIndex - 2 + items.length) % items.length;
-                        const next2Index = (currentIndex + 2) % items.length;
-    
-                        items[prev2Index].classList.add("prev2");
-                        items[prevIndex].classList.add("prev");
-                        items[currentIndex].classList.add("active");
-                        items[nextIndex].classList.add("next");
-                        items[next2Index].classList.add("next2");
-                    }
-    
-                    function nextSlide() {
-                        currentIndex = (currentIndex + 1) % items.length;
-                        updateCarousel();
-                    }
-    
-                    // Automatically advance to the next slide every 5 seconds
-                    setInterval(nextSlide, 3000);
-    
-                    updateCarousel(); // Initial call to set the classes
-                });
-    
-                document.addEventListener("DOMContentLoaded", function () {
-                    $(".owl-carousel1").owlCarousel({
-                        items: 1, // Display one item-row at a time
-                        margin: 20, // Space between items
-                        loop: true, // Loop through items
-                        autoplay: true, // Enable auto-play
-                        autoplayTimeout: 3000, // Auto-play interval (in ms)
-                        autoplayHoverPause: false, // Pause on hover
-                        responsive: {
-                            0: {
-                                items: 1, 
-                            },
-                            600: {
-                                items: 2,
-                            },
-                            800: {
-                                items: 2,
-                            },
-                            1000: {
-                                items: 3,
-                            },
-                        },
-                    });
-                    $(".owl-carousel2").owlCarousel({
-                        items: 1, // Display one item-row at a time
-                        margin: 20, // Space between items
-                        loop: true, // Loop through items
-                        autoplay: true, // Enable auto-play
-                        autoplayTimeout: 3000, // Auto-play interval (in ms)
-                        autoplayHoverPause: false, // Pause on hover
-                        responsive: {
-                            0: {
-                                items: 1, 
-                            },
-                            600: {
-                                items: 3,
-                            },
-                            800: {
-                                items: 2,
-                            },
-                            1000: {
-                                items: 5,
-                            },
-                        },
-                    });
-                    $(".owl-carousel3").owlCarousel({
-                        items: 1, // Display one item-row at a time
-                        margin: 20, // Space between items
-                        loop: true, // Loop through items
-                        autoplay: false, // Enable auto-play
-                        autoplayTimeout: 3000, // Auto-play interval (in ms)
-                        autoplayHoverPause: false, // Pause on hover
-                        responsive: {
-                            0: {
-                                items: 1, 
-                            },
-                            600: {
-                                items: 1,
-                            },
-                            800: {
-                                items: 1,
-                            },
-                            1000: {
-                                items: 1,
-                            },
-                        },
-                    });
-                });
-            </script>
-    
-            <style>
-                
-                .nav-button {
-                    /* position: absolute; */
-                    top: 50%;
-                    transform: translateY(-50%);
-                    /* background: rgba(0, 0, 0, 0.5); */
-                    color: white;
-                    /* border: none; */
-                    /* padding: 10px; */
-                    cursor: pointer;
-                    z-index: 1;
-                }
-                #prev {
-                    left: 10px;
-                }
-                #next {
-                    right: 10px;
-                }
-            </style>
-
-            <script is:inline>
-                $(document).ready(function () {
-                    $(".question1").click(function () {
-                        console.log("clicked questions");
-                        var answer = $(this).next(".answer");
-                        $(".answer").not(answer).slideUp();
-                        answer.slideToggle();
-                    });
-                });
-                function toggleAnswer(event) {
-                    const question = event.currentTarget;
-                    const answer = question.nextElementSibling;
-
-                    $(answer).slideToggle();
-                    $(question).toggleClass("active");
-                    $(".faq-question")
-                        .not(question)
-                        .removeClass("active")
-                        .next(".faq-answer")
-                        .slideUp();
-
-                    // Toggle the icon between plus and minus
-                    const icon = question.querySelector(".faq-toggle-icon");
-                    icon.textContent = icon.textContent === "+" ? "-" : "+";
-                }
-                $(document).ready(() => {
-                    $(".readmore-description").click(function () {
-                        var $cardTextContent = $(this).prev(
-                            ".card1-text-content",
-                        );
-                        $cardTextContent.toggleClass("expanded");
-                        $(this).text(
-                            $cardTextContent.hasClass("expanded")
-                                ? "Read less"
-                                : "Read more",
-                        );
-                    });
-                });
-                $(document).ready(() => {
-                    $(".wallet-content").each(function () {
-                        var $content = $(this);
-                        if (
-                            $content[0]?.scrollHeight > $content.innerHeight()
-                        ) {
-                            $content.next(".virtual-readmore").show();
-                        } else {
-                            $content.next(".virtual-readmore").hide();
-                        }
-                    });
-                    $(".virtual-readmore").click(function () {
-                        var $cardTextContent = $(this).prev(".wallet-content");
-                        $cardTextContent.toggleClass("virtual-expanded");
-                        $(this).text(
-                            $cardTextContent.hasClass("virtual-expanded")
-                                ? "Read less"
-                                : "Read more",
-                        );
-                    });
-                });
-                $(document).ready(function () {
-                    $(".talk-btn").click(function () {
-                        $("html, body").animate(
-                            {
-                                scrollTop: $("#footer").offset().top,
-                            },
-                            300,
-                        ); // Adjust the duration as per your requirement
-                    });
-                });
-
-                // document.addEventListener("DOMContentLoaded", () => {
-                //     const items = document.querySelectorAll(".owl-item");
-                //     const itemWidth = 1016 + 30; // item width + margin
-                //     let currentIndex = 0;
-                //     let autoSlideInterval;
-
-                //     function updateCarousel() {
-                //         const translateX = -currentIndex * itemWidth;
-                //         document.querySelector(".owl-stage").style.transform =
-                //             `translate3d(${translateX}px, 0, 0)`;
-                //     }
-
-                //     function startAutoSlide() {
-                //         autoSlideInterval = setInterval(() => {
-                //             currentIndex = (currentIndex + 1) % items.length;
-                //             updateCarousel();
-                //         }, 3000);
-                //     }
-
-                //     function stopAutoSlide() {
-                //         clearInterval(autoSlideInterval);
-                //     }
-
-                //     document
-                //         .getElementById("prev")
-                //         .addEventListener("click", () => {
-                //             stopAutoSlide();
-                //             currentIndex =
-                //                 (currentIndex - 1 + items.length) %
-                //                 items.length;
-                //             updateCarousel();
-                //             startAutoSlide();
-                //         });
-
-                //     document
-                //         .getElementById("next")
-                //         .addEventListener("click", () => {
-                //             stopAutoSlide();
-                //             currentIndex = (currentIndex + 1) % items.length;
-                //             updateCarousel();
-                //             startAutoSlide();
-                //         });
-
-                //     // Initial update and start auto slide
-                //     updateCarousel();
-                //     startAutoSlide();
-                // });
-                // $("#content").hide().show("slide", { direction: "left" }, 1500);
-            </script>
+            
 
             <!-- <div class="meta-product"> -->
             <section
@@ -1162,6 +887,282 @@ const { data } = await response.json();
                 </section>
             </section>
             <!-- </div> -->
+            <script is:inline>
+                document.addEventListener("DOMContentLoaded", function () {
+                    let currentIndex = 0;
+                    const slides = document.querySelectorAll(".carousel-item");
+                    const totalSlides = slides.length;
+    
+                    document
+                        .querySelector(".carousel-control-next")
+                        .addEventListener("click", () => {
+                            slides[currentIndex].classList.remove("active");
+                            currentIndex = (currentIndex + 1) % totalSlides;
+                            slides[currentIndex].classList.add("active");
+                        });
+    
+                    document
+                        .querySelector(".carousel-control-prev")
+                        .addEventListener("click", () => {
+                            slides[currentIndex].classList.remove("active");
+                            currentIndex =
+                                (currentIndex - 1 + totalSlides) % totalSlides;
+                            slides[currentIndex].classList.add("active");
+                        });
+                });
+    
+                document.addEventListener("DOMContentLoaded", () => {
+                    const prevButton = document.querySelector(".slider_nav .prev");
+                    const nextButton = document.querySelector(".slider_nav .next");
+                    const items = document.querySelectorAll(".slider_top ul li");
+                    let currentIndex = 0; // Start from the first item
+    
+                    function updateCarousel() {
+                        items.forEach((item, index) => {
+                            item.classList.remove(
+                                "prev",
+                                "prev2",
+                                "active",
+                                "next",
+                                "next2",
+                            );
+                        });
+    
+                        const prevIndex =
+                            (currentIndex - 1 + items.length) % items.length;
+                        const nextIndex = (currentIndex + 1) % items.length;
+                        const prev2Index =
+                            (currentIndex - 2 + items.length) % items.length;
+                        const next2Index = (currentIndex + 2) % items.length;
+    
+                        items[prev2Index].classList.add("prev2");
+                        items[prevIndex].classList.add("prev");
+                        items[currentIndex].classList.add("active");
+                        items[nextIndex].classList.add("next");
+                        items[next2Index].classList.add("next2");
+                    }
+    
+                    function nextSlide() {
+                        currentIndex = (currentIndex + 1) % items.length;
+                        updateCarousel();
+                    }
+    
+                    // Automatically advance to the next slide every 5 seconds
+                    setInterval(nextSlide, 3000);
+    
+                    updateCarousel(); // Initial call to set the classes
+                });
+    
+                document.addEventListener("DOMContentLoaded", function () {
+                    $(".owl-carousel1").owlCarousel({
+                        items: 1, // Display one item-row at a time
+                        margin: 20, // Space between items
+                        loop: true, // Loop through items
+                        autoplay: true, // Enable auto-play
+                        autoplayTimeout: 3000, // Auto-play interval (in ms)
+                        autoplayHoverPause: false, // Pause on hover
+                        responsive: {
+                            0: {
+                                items: 1, 
+                            },
+                            600: {
+                                items: 2,
+                            },
+                            800: {
+                                items: 2,
+                            },
+                            1000: {
+                                items: 3,
+                            },
+                        },
+                    });
+                    $(".owl-carousel2").owlCarousel({
+                        items: 1, // Display one item-row at a time
+                        margin: 20, // Space between items
+                        loop: true, // Loop through items
+                        autoplay: true, // Enable auto-play
+                        autoplayTimeout: 3000, // Auto-play interval (in ms)
+                        autoplayHoverPause: false, // Pause on hover
+                        responsive: {
+                            0: {
+                                items: 1, 
+                            },
+                            600: {
+                                items: 3,
+                            },
+                            800: {
+                                items: 2,
+                            },
+                            1000: {
+                                items: 5,
+                            },
+                        },
+                    });
+                    $(".owl-carousel3").owlCarousel({
+                        items: 1, // Display one item-row at a time
+                        margin: 20, // Space between items
+                        loop: true, // Loop through items
+                        autoplay: false, // Enable auto-play
+                        autoplayTimeout: 3000, // Auto-play interval (in ms)
+                        autoplayHoverPause: false, // Pause on hover
+                        responsive: {
+                            0: {
+                                items: 1, 
+                            },
+                            600: {
+                                items: 1,
+                            },
+                            800: {
+                                items: 1,
+                            },
+                            1000: {
+                                items: 1,
+                            },
+                        },
+                    });
+                });
+            </script>
+    
+            <style>
+                
+                .nav-button {
+                    /* position: absolute; */
+                    top: 50%;
+                    transform: translateY(-50%);
+                    /* background: rgba(0, 0, 0, 0.5); */
+                    color: white;
+                    /* border: none; */
+                    /* padding: 10px; */
+                    cursor: pointer;
+                    z-index: 1;
+                }
+                #prev {
+                    left: 10px;
+                }
+                #next {
+                    right: 10px;
+                }
+            </style>
+
+            <script is:inline>
+                $(document).ready(function () {
+                    $(".question1").click(function () {
+                        console.log("clicked questions");
+                        var answer = $(this).next(".answer");
+                        $(".answer").not(answer).slideUp();
+                        answer.slideToggle();
+                    });
+                });
+                function toggleAnswer(event) {
+                    const question = event.currentTarget;
+                    const answer = question.nextElementSibling;
+
+                    $(answer).slideToggle();
+                    $(question).toggleClass("active");
+                    $(".faq-question")
+                        .not(question)
+                        .removeClass("active")
+                        .next(".faq-answer")
+                        .slideUp();
+
+                    // Toggle the icon between plus and minus
+                    const icon = question.querySelector(".faq-toggle-icon");
+                    icon.textContent = icon.textContent === "+" ? "-" : "+";
+                }
+                $(document).ready(() => {
+                    $(".readmore-description").click(function () {
+                        var $cardTextContent = $(this).prev(
+                            ".card1-text-content",
+                        );
+                        $cardTextContent.toggleClass("expanded");
+                        $(this).text(
+                            $cardTextContent.hasClass("expanded")
+                                ? "Read less"
+                                : "Read more",
+                        );
+                    });
+                });
+                $(document).ready(() => {
+                    $(".wallet-content").each(function () {
+                        var $content = $(this);
+                        if (
+                            $content[0]?.scrollHeight > $content.innerHeight()
+                        ) {
+                            $content.next(".virtual-readmore").show();
+                        } else {
+                            $content.next(".virtual-readmore").hide();
+                        }
+                    });
+                    $(".virtual-readmore").click(function () {
+                        var $cardTextContent = $(this).prev(".wallet-content");
+                        $cardTextContent.toggleClass("virtual-expanded");
+                        $(this).text(
+                            $cardTextContent.hasClass("virtual-expanded")
+                                ? "Read less"
+                                : "Read more",
+                        );
+                    });
+                });
+                $(document).ready(function () {
+                    $(".talk-btn").click(function () {
+                        $("html, body").animate(
+                            {
+                                scrollTop: $("#footer").offset().top,
+                            },
+                            300,
+                        ); // Adjust the duration as per your requirement
+                    });
+                });
+
+                // document.addEventListener("DOMContentLoaded", () => {
+                //     const items = document.querySelectorAll(".owl-item");
+                //     const itemWidth = 1016 + 30; // item width + margin
+                //     let currentIndex = 0;
+                //     let autoSlideInterval;
+
+                //     function updateCarousel() {
+                //         const translateX = -currentIndex * itemWidth;
+                //         document.querySelector(".owl-stage").style.transform =
+                //             `translate3d(${translateX}px, 0, 0)`;
+                //     }
+
+                //     function startAutoSlide() {
+                //         autoSlideInterval = setInterval(() => {
+                //             currentIndex = (currentIndex + 1) % items.length;
+                //             updateCarousel();
+                //         }, 3000);
+                //     }
+
+                //     function stopAutoSlide() {
+                //         clearInterval(autoSlideInterval);
+                //     }
+
+                //     document
+                //         .getElementById("prev")
+                //         .addEventListener("click", () => {
+                //             stopAutoSlide();
+                //             currentIndex =
+                //                 (currentIndex - 1 + items.length) %
+                //                 items.length;
+                //             updateCarousel();
+                //             startAutoSlide();
+                //         });
+
+                //     document
+                //         .getElementById("next")
+                //         .addEventListener("click", () => {
+                //             stopAutoSlide();
+                //             currentIndex = (currentIndex + 1) % items.length;
+                //             updateCarousel();
+                //             startAutoSlide();
+                //         });
+
+                //     // Initial update and start auto slide
+                //     updateCarousel();
+                //     startAutoSlide();
+                // });
+                // $("#content").hide().show("slide", { direction: "left" }, 1500);
+            </script>
             <script type="text/javascript">
                 var $animation_elements = $(".animation-element");
                 var $window = $(window);
