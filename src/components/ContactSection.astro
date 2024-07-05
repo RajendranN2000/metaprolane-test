@@ -48,8 +48,10 @@ const { title } = Astro.props;
                     clients' expectations, delivering solutions on time and
                     within budget while maintaining quality.
                 </p>
-                <div class="calendly-inline-widget"  data-processed="true">
-                    <iframe id="calendar-section" loading="lazy"
+                <div class="btn btn-primary" id="calendarbutton">Book Calendar</div>
+                <div class="calendly-inline-widget" data-processed="true">
+                    <iframe
+                        id="calendar-section"
                         src="https://calendly.com/meta_pro_lane/15min"
                         title="Calendly"></iframe>
                 </div>
@@ -455,13 +457,18 @@ const { title } = Astro.props;
                     }
                 });
         </script>
-        
+
         <!-- <script>
             setTimeout(() => {
                 console.log("check calendar");
                 document.getElementById("calendar-section")!.style.display = "block";
             }, 20000);
         </script> -->
+        <script>
+            document.getElementById("calendarbutton")!.onclick=(()=>{
+                document.getElementById("calendar-section")!.style.display = "block";
+            })
+        </script>
         <script type="text/javascript">
             var $animation_elements = $(".animation-element");
             var $window = $(window);
