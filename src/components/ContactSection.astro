@@ -49,7 +49,7 @@ const { title } = Astro.props;
                     within budget while maintaining quality.
                 </p>
                 <div class="calendly-inline-widget"  data-processed="true">
-                    <iframe id="calendar-section"
+                    <iframe id="calendar-section" loading="lazy"
                         src="https://calendly.com/meta_pro_lane/15min"
                         title="Calendly"></iframe>
                 </div>
@@ -456,12 +456,12 @@ const { title } = Astro.props;
                 });
         </script>
         
-        <script>
+        <!-- <script>
             setTimeout(() => {
                 console.log("check calendar");
                 document.getElementById("calendar-section")!.style.display = "block";
             }, 20000);
-        </script>
+        </script> -->
         <script type="text/javascript">
             var $animation_elements = $(".animation-element");
             var $window = $(window);
