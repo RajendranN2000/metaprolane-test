@@ -1,8 +1,6 @@
 ---
-import Layout from "../layouts/Layout.astro";
+
 ---
-
-
 <html lang="en">
     <head>
         <link rel="stylesheet" href="/styles/blog/css/owl.css" />
@@ -26,23 +24,55 @@ import Layout from "../layouts/Layout.astro";
         <div class="mt-2">
             <button id="video-toggle-btn" class="btn padd-0">
                 <div class="btn-box btn-pink">Show Demo Video</div>
+                
             </button>
         </div>
         </div>
 
-        <script type="text/javascript">
-            $('#video-toggle-btn').on('click', function(){
-                console.log("toggled")
-                var videoContainer = $(`
-                     <div class="ratio ratio-16x9">
-                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/x_yOZXUEZBA?si=6h4WleLri3AZLEzK" allowfullscreen></iframe>
-                    </div>
-                `  
-                )
+        <script>
+            const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    query: `
+                        query{
+                        metaverseCasinoGame{
+                                data {
+                                    attributes{
+                                        casino_game_dev_link
+                                    }
+                                }
+                            }
+                        }
+                        `,
+                }),
+            });
 
-                $('#master-container').prepend(videoContainer)
-                $('#video-toggle-btn').remove()
+            const { data } = await response.json();
+            const casinoGameDevLink = data.metaverseCasinoGame.data.attributes.casino_game_dev_link;
+            const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
+          
+            document.getElementById("video-toggle-btn")?.addEventListener("click", function(){
+
+               
+                    const videoContainer = document.createElement('div');
+                    videoContainer.innerHTML = `
+                        <iframe
+                            title="Metaprolane Video"
+                            src="${embedLink}"
+                            style="max-width: 100%; width: 100%; aspect-ratio: 16/9;"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen
+                        ></iframe>
+                    `;
+
+                document.getElementById('master-container')?.prepend(videoContainer);
+                document.getElementById('video-toggle-btn')?.remove();
+
             })
+
+           
         </script>
 
     </body>
