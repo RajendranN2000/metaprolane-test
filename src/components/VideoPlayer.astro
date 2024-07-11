@@ -1,0 +1,49 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="/styles/blog/css/owl.css" />
+        <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
+        <!-- <script
+        is:inline
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
+        ></script> -->
+        <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <!-- <link rel="stylesheet" href="/styles/css/style.css" /> -->
+        <!-- <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script> -->
+    </head>
+    
+    <body>
+    <div id="master-container">
+        
+        <div class="mt-2">
+            <button id="video-toggle-btn" class="btn padd-0">
+                <div class="btn-box btn-pink">Show Demo Video</div>
+            </button>
+        </div>
+        </div>
+
+        <script type="text/javascript">
+            $('#video-toggle-btn').on('click', function(){
+                console.log("toggled")
+                var videoContainer = $(`
+                     <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/x_yOZXUEZBA?si=6h4WleLri3AZLEzK" allowfullscreen></iframe>
+                    </div>
+                `  
+                )
+
+                $('#master-container').prepend(videoContainer)
+                $('#video-toggle-btn').remove()
+            })
+        </script>
+
+    </body>
+</html>
