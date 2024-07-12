@@ -93,6 +93,7 @@ const { data } = await response.json();
 const casinoGameDevLink = data.metaverseCasinoGame.data.attributes.casino_game_dev_link;
 const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
 ---
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script is:inline>
   document.addEventListener("DOMContentLoaded", function () {
       let currentIndex = 0;
@@ -200,6 +201,13 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script> -->
       <script is:inline>
+        $(document).ready(function() {
+            // IntersectionObserver polyfill for older browsers
+            var lazyLoadInstance = new LazyLoad({
+                elements_selector: ".lazyload"
+            });
+        });
+
         $(document).ready(function () {
           $(".question1").click(function () {
             console.log("clicked questions");
@@ -304,8 +312,8 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           </div>
         </section>
 
-        <section class="under-banner our-technologies casino-ms-one-section">
-          <div class="CG-chip-one">
+        <section class="under-banner our-technologies casino-ms-one-section ">
+          <div class="CG-chip-one ">
             <img src="assets/images/casino-game/chip-1.webp" alt="Chip1" />
           </div>
           <div class="CG-chip-two">
@@ -315,8 +323,9 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             <div class="section-heading ss-case get-readys">
               <div class="row">
                 <div class="col-lg-6">
-                  <div class="cms-one-left ">
+                  <div class="cms-one-left animation-element slide-left">
                     <img
+                      class="lazyload"
                       src="assets/images/casino-game/casino-experience.webp"
                       alt="Auditorium page Banner"
                     />
@@ -326,7 +335,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <div class="cms-one-right ">
+                  <div class="cms-one-right animation-element slide-right ">
                     <div class="text-green2 tg w-700">
                       {
                         data.metaverseCasinoGame.data.attributes
