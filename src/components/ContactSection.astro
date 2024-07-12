@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+var calSrc = ""
 ---
 
 <link
@@ -24,6 +25,8 @@ const { title } = Astro.props;
         });
     });
 </script> -->
+
+
 
 <section class="contact-us">
     <div class="bg-vectors">
@@ -54,7 +57,7 @@ const { title } = Astro.props;
                     <div class="calendly-inline-widget" data-processed="true">
                         <iframe
                             id="calendar-section"
-                            src="https://calendly.com/meta_pro_lane/15min"
+                            src={calSrc}
                             title="Calendly"></iframe>
                     </div>
                
@@ -288,6 +291,7 @@ const { title } = Astro.props;
             <div id="snackbar">Submitted successfully</div>
         </div>
         <script>
+           
             document.getElementById("submit-btn")!.style.display = "block";
             document.getElementById("submit-loader")!.style.display = "none";
             document
@@ -470,7 +474,12 @@ const { title } = Astro.props;
         </script> -->
         <script>
             document.getElementById("calendarbutton")!.onclick=(()=>{
-                document.getElementById("calendar-section")!.style.display = "block";
+                var section  = document.getElementById("calendar-section")
+                section!.style.display = "block";
+                console.log(section?.setAttribute("src","https://calendly.com/meta_pro_lane/15min"))
+                
+               
+                
             })
         </script>
         <script type="text/javascript">

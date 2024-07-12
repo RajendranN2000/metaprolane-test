@@ -193,6 +193,8 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       ></script> -->
       <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
       <!-- <link rel="stylesheet" href="/styles/css/style.css" /> -->
       <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
@@ -263,6 +265,9 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           });
         });
         // $("#content").hide().show("slide", { direction: "left" }, 1500);
+        $(function() {
+          $('.lazy').lazy();
+        });
       </script>
 
 <div class="home-container inner-container">
@@ -273,6 +278,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           data-section="section1"
         >
           <img
+            
             src="assets/images/casino-game/banner.webp"
             alt="Auditorium page Banner"
             class="inner-section-banner"
@@ -383,6 +389,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                 <div class="col-lg-6 CG-two-right animation-element slide-right">
                   <div class="plr-10-only-mobile">
                     <img
+                    
                       src="assets/images/casino-game/development-company-vector.webp"
                       alt="BG Vector"
                       class="w-100-br-15"
@@ -430,6 +437,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                   <div class="benefits-metavirtualoffice animation-element slide-left">
                                     <div class="text-center bm-img">
                                       <img
+                                        class="lazy"
                                         src={each.attributes.image}
                                         alt="Benefits Icons"
                                       />
