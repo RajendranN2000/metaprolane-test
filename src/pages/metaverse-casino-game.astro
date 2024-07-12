@@ -184,33 +184,6 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       });
   });
 
-  $(document).ready(function() {
-    // Function to check if element is in viewport
-    function isInViewport(element) {
-        var rect = element.getBoundingClientRect();
-        var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
-    }
-
-    // Function to lazy load images
-    function lazyLoadImages() {
-        $("#image-container img").each(function() {
-            if (isInViewport(this)) {
-                // Replace data-src with src attribute
-                $(this).attr("src", $(this).data("src"));
-                $(this).removeAttr("src");
-            }
-        });
-    }
-
-    // Trigger lazy load on scroll and resize
-    $(window).on("scroll resize", function() {
-        lazyLoadImages();
-    });
-
-    // Initial load
-    lazyLoadImages();
-});
 </script>
 <Layout title="metaverseCasinoGame">
   <html lang="en">
@@ -429,8 +402,11 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             </div>
           </div>
         </section>
+        {
 
-        <section
+
+          /* 
+          <section
           class="meta-development-services product-our-services casino-ms-three-section"
         >
           <div class="CG-chip-one">
@@ -464,7 +440,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                         return (
                                 <div class="col-lg-4">
                                   <div class="benefits-metavirtualoffice">
-                                    <div id="image-container" class="text-center bm-img">
+                                    <div class="text-center bm-img">
                                       <img
                                         src={each.attributes.image}
                                         alt="Benefits Icons"
@@ -495,6 +471,13 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             <img src="assets/images/casino-game/chip-2.webp" alt="Chip1" />
           </div>
         </section>
+          
+          
+          
+          
+          */
+        }
+        
 
         <section
           class="our-courses product-our-courses msd-box1 feature-val-p casino-ms-four-section1"
