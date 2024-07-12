@@ -315,7 +315,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             <div class="section-heading ss-case get-readys">
               <div class="row">
                 <div class="col-lg-6">
-                  <div class="cms-one-left animation-element slide-left">
+                  <div class="cms-one-left">
                     <img
                       src="assets/images/casino-game/casino-experience.webp"
                       alt="Auditorium page Banner"
@@ -326,7 +326,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <div class="cms-one-right animation-element slide-right">
+                  <div class="cms-one-right ">
                     <div class="text-green2 tg w-700">
                       {
                         data.metaverseCasinoGame.data.attributes
@@ -361,7 +361,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           <div class="container">
             <div class="section-heading ss-case">
               <div class="row pt-3 mob-pt-0">
-                <div class="col-lg-6 animation-element slide-left">
+                <div class="col-lg-6">
                   <h2
                     class="text-white text-left h3-under-bar2 hub2 hub-mutual2 pt-0"
                   >
@@ -380,7 +380,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                     <a href="#contact" class="btn btn-primary">Get Quote Now</a>
                   </div>
                 </div>
-                <div class="col-lg-6 CG-two-right animation-element slide-right">
+                <div class="col-lg-6 CG-two-right ">
                   <div class="plr-10-only-mobile">
                     <img
                       src="assets/images/casino-game/development-company-vector.webp"
@@ -409,13 +409,13 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                 <div class="text-center">
                   <div class="under-banner">
                     <div class="under-banner-carousel-section">
-                      <div class="text-center text-green2 fw-700 animation-element slide-left">
+                      <div class="text-center text-green2 fw-700">
                         {
                           data.metaverseCasinoGame.data.attributes
                             .casino_game_collection_header
                         }
                       </div>
-                      <h4 class="text-white h3-under-bar2 animation-element slide-left">
+                      <h4 class="text-white h3-under-bar2">
                         {
                           data.metaverseCasinoGame.data.attributes
                             .casino_game_collection_title
@@ -427,7 +427,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                     (each: any, index: number) => {
                                         return (
                                 <div class="col-lg-4">
-                                  <div class="benefits-metavirtualoffice animation-element slide-left">
+                                  <div class="benefits-metavirtualoffice">
                                     <div class="text-center bm-img">
                                       <img
                                         src={each.attributes.image}
@@ -460,7 +460,112 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           </div>
         </section>
 
-        
+        <section
+          class="our-courses product-our-courses msd-box1 feature-val-p casino-ms-four-section1"
+        >
+          <div class="container c-features">
+            <div class="row">
+              <div class="col-lg-6"></div>
+              <div class="col-lg-6">
+                <div class="section-heading">
+                  <div class="text-green2 tg w-700 text-center">
+                    {
+                      data.metaverseCasinoGame.data.attributes
+                        .casino_game_collection_header
+                    }
+                  </div>
+                  <h4
+                    class="text-white text-center mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 "
+                  >
+                    {
+                      data.metaverseCasinoGame.data.attributes
+                        .casino_game_collection_title
+                    }
+                  </h4>
+                  <div class="owl-carousel owl-carousel2">
+                    {
+                      data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.map(
+                          (each: any, index: number) => {
+                            const reverseIndex =
+                            data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.length -
+                                                1 -
+                                                index;
+                              return (
+                      <div class="item" style={{ flex: '0 0 50%', boxSizing: 'border-box', padding: '10px' }}>
+                        <div class="icon">
+                          <div class="expert-txt2">
+                            <div class="box-img box-space">
+                              <img
+                                src={each.attributes.image}
+                                alt="Features Image"
+                                style={{width:'10rem', height:'10rem'}}
+                              />
+                            </div>
+                            <div class="box-img-inn">
+                              <h6 class="fma">{each.attributes.title}</h6>
+                              <p class="text-last-left">
+                                {each.attributes.content}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="icon">
+                          <div class="expert-txt2">
+                            <div class="box-img box-space">
+                              <img
+                                src={ data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.image}
+                                alt="Features Image"
+                                style={{width:'10rem', height:'10rem'}}
+                              />
+                            </div>
+                            <div class="box-img-inn">
+                              <h6 class="fma">{ data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.title}</h6>
+                              <p class="text-last-left">
+                                { data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.content}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })
+              }
+                  </div>
+                  <!-- <div
+                    class="owl-experts-item-Cas-game owl-carousel d-flex flex-wrap">
+                  
+                           {
+                            data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.map(
+                                (each: any, index: number) => {
+                                    return (
+                            <div class="item" style={{ flex: '0 0 50%', boxSizing: 'border-box', padding: '10px' }}>
+                              <div class="icon">
+                                <div class="expert-txt2">
+                                  <div class="box-img">
+                                    <img
+                                      src={each.attributes.image}
+                                      alt="Features Image"
+                                      style={{width:'10rem', height:'10rem'}}
+                                    />
+                                  </div>
+                                  <div class="box-img-inn">
+                                    <h6 class="fma">{each.attributes.title}</h6>
+                                    <p class="text-last-left">
+                                      {each.attributes.content}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })
+                    }
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- Casino Game Collections -->
         <section
@@ -484,7 +589,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                 <div class="text-center">
                   <div class="under-banner">
                     <div class="under-banner-carousel-section">
-                      <h4 class="text-white h3-under-bar2 fw-700 animation-element slide-left">
+                      <h4 class="text-white h3-under-bar2 fw-700 ">
                         {
                           data.metaverseCasinoGame.data.attributes
                             .casino_game_collection_title
@@ -501,7 +606,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                     (each: any, index: number) => {
                                         return (
                                 <div class="col-lg-4">
-                                  <div class="benefits-metavirtualoffice animation-element slide-left">
+                                  <div class="benefits-metavirtualoffice ">
                                     <div class="text-center bm-img">
                                       <img
                                         src={each.attributes.image}
@@ -535,7 +640,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
               <div class="row">
                 <div class="col-lg-5"></div>
                 <div class="col-lg-7">
-                  <div class="why-metaprolane-l animation-element slide-left">
+                  <div class="why-metaprolane-l ">
                     <h3
                       class="text-white text-left h3-under-bar2 mb-2 pt-1 pb-0 fw-700"
                     >
@@ -576,7 +681,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                     <div class="under-banner">
                       <div class="under-banner-carousel-section">
                         <h4
-                          class="text-white h3-under-bar2 mb-0 mt-0 fw-700 animation-element slide-left"
+                          class="text-white h3-under-bar2 mb-0 mt-0 fw-700 "
                         >
                           {
                             data.metaverseCasinoGame.data.attributes
@@ -584,7 +689,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                           }
                         </h4>
                         <p
-                          class="text-center text-gray3 mb-3 monetizing-cgame-mob animation-element slide-left"
+                          class="text-center text-gray3 mb-3 monetizing-cgame-mob"
                         >
                           {
                             data.metaverseCasinoGame.data.attributes
@@ -602,7 +707,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                       (each: any, index: number) => {
                                           return (
                                   <div class="col-lg-3">
-                                    <div class="benefits-metavirtualoffice mds22 animation-element slide-left">
+                                    <div class="benefits-metavirtualoffice mds22 ">
                                       <div class="align-items-center">
                                         <img
                                           src={each.attributes.image}
@@ -639,7 +744,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             <div class="CG-chip-two">
               <img src="assets/images/casino-game/chip-2.webp" alt="Chip1" />
             </div>
-            <div class="container py-0 animation-element slide-left">
+            <div class="container py-0">
               <h4
                 class="text-white text-center h3-under-bar2 mb-4 fw-700 mvc-step"
               >
@@ -681,7 +786,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                   }
                 </h5>
                 <div class="row mt-4">
-                  <div class="col-lg-12 animation-element slide-left">
+                  <div class="col-lg-12 ">
                     <div class="owl-service-item owl-carousel d-flex justify-content-between">
                       {
                         data.metaverseCasinoGame.data.attributes.casino_game_tools_lists.data.map(
@@ -705,7 +810,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             <div class="container">
               <div class="why-expertise-section">
                 <div class="under-banner">
-                  <div class="under-banner-carousel-section animation-element slide-left">
+                  <div class="under-banner-carousel-section ">
                     <div class="row">
                       <div class="col-lg-12">
                         <h5 class="text-white text-center fw-700 mb-0">
@@ -735,7 +840,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             <div class="container py-0">
               <div class="row">
                 <div class="col-lg-12">
-                  <div class="why-metaprolane-l mt-2 animation-element slide-left">
+                  <div class="why-metaprolane-l mt-2 ">
                     <h5 class="text-white h3-under-bar2 mb-5 fw-600">
                       {
                         data.metaverseCasinoGame.data.attributes
