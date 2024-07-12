@@ -183,7 +183,6 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           },
       });
   });
-
 </script>
 <Layout title="metaverseCasinoGame">
   <html lang="en">
@@ -201,13 +200,6 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script> -->
       <script is:inline>
-        $(document).ready(function() {
-            // IntersectionObserver polyfill for older browsers
-            var lazyLoadInstance = new LazyLoad({
-                elements_selector: ".lazyload"
-            });
-        });
-
         $(document).ready(function () {
           $(".question1").click(function () {
             console.log("clicked questions");
@@ -312,8 +304,8 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           </div>
         </section>
 
-        <section class="under-banner our-technologies casino-ms-one-section ">
-          <div class="CG-chip-one ">
+        <section class="under-banner our-technologies casino-ms-one-section">
+          <div class="CG-chip-one">
             <img src="assets/images/casino-game/chip-1.webp" alt="Chip1" />
           </div>
           <div class="CG-chip-two">
@@ -325,7 +317,6 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                 <div class="col-lg-6">
                   <div class="cms-one-left animation-element slide-left">
                     <img
-                      
                       src="assets/images/casino-game/casino-experience.webp"
                       alt="Auditorium page Banner"
                     />
@@ -335,7 +326,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                   </div>
                 </div>
                 <div class="col-lg-6">
-                  <div class="cms-one-right animation-element slide-right ">
+                  <div class="cms-one-right animation-element slide-right">
                     <div class="text-green2 tg w-700">
                       {
                         data.metaverseCasinoGame.data.attributes
@@ -402,11 +393,8 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             </div>
           </div>
         </section>
-        {
 
-
-          /* 
-          <section
+        <section
           class="meta-development-services product-our-services casino-ms-three-section"
         >
           <div class="CG-chip-one">
@@ -439,7 +427,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                     (each: any, index: number) => {
                                         return (
                                 <div class="col-lg-4">
-                                  <div class="benefits-metavirtualoffice">
+                                  <div class="benefits-metavirtualoffice animation-element slide-left">
                                     <div class="text-center bm-img">
                                       <img
                                         src={each.attributes.image}
@@ -471,13 +459,6 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
             <img src="assets/images/casino-game/chip-2.webp" alt="Chip1" />
           </div>
         </section>
-          
-          
-          
-          
-          */
-        }
-        
 
         <section
           class="our-courses product-our-courses msd-box1 feature-val-p casino-ms-four-section1"
