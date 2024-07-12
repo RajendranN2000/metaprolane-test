@@ -304,7 +304,55 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           </div>
         </section>
 
-        
+        <section class="under-banner our-technologies casino-ms-one-section">
+          <div class="CG-chip-one">
+            <img src="assets/images/casino-game/chip-1.webp" alt="Chip1" />
+          </div>
+          <div class="CG-chip-two">
+            <img src="assets/images/casino-game/chip-2.webp" alt="Chip1" />
+          </div>
+          <div class="container">
+            <div class="section-heading ss-case get-readys">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="cms-one-left animation-element slide-left">
+                    <img
+                      src="assets/images/casino-game/casino-experience.webp"
+                      alt="Auditorium page Banner"
+                    />
+                    <div class="cms-one-green">
+                      We Create <br />Fun Gambling Events
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="cms-one-right animation-element slide-right">
+                    <div class="text-green2 tg w-700">
+                      {
+                        data.metaverseCasinoGame.data.attributes
+                          .metaverse_casino_game_header
+                      }
+                    </div>
+                    <h1
+                      class="text-white text-left mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0"
+                    >
+                      {
+                        data.metaverseCasinoGame.data.attributes
+                          .metaverse_casino_game_title
+                      }
+                    </h1>
+                    <p class="text-gray3 text-last-left pt-3 pb-2">
+                      {
+                        data.metaverseCasinoGame.data.attributes
+                          .metaverse_casino_game_content
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- Metaverse Casino Game Development Company -->
         <section
@@ -412,112 +460,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           </div>
         </section>
 
-        <section
-          class="our-courses product-our-courses msd-box1 feature-val-p casino-ms-four-section1"
-        >
-          <div class="container c-features">
-            <div class="row">
-              <div class="col-lg-6"></div>
-              <div class="col-lg-6">
-                <div class="section-heading animation-element slide-left">
-                  <div class="text-green2 tg w-700 text-center">
-                    {
-                      data.metaverseCasinoGame.data.attributes
-                        .casino_game_collection_header
-                    }
-                  </div>
-                  <h4
-                    class="text-white text-center mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0 fw-700 "
-                  >
-                    {
-                      data.metaverseCasinoGame.data.attributes
-                        .casino_game_collection_title
-                    }
-                  </h4>
-                  <div class="owl-carousel owl-carousel2">
-                    {
-                      data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.map(
-                          (each: any, index: number) => {
-                            const reverseIndex =
-                            data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.length -
-                                                1 -
-                                                index;
-                              return (
-                      <div class="item" style={{ flex: '0 0 50%', boxSizing: 'border-box', padding: '10px' }}>
-                        <div class="icon">
-                          <div class="expert-txt2">
-                            <div class="box-img box-space">
-                              <img
-                                src={each.attributes.image}
-                                alt="Features Image"
-                                style={{width:'10rem', height:'10rem'}}
-                              />
-                            </div>
-                            <div class="box-img-inn">
-                              <h6 class="fma">{each.attributes.title}</h6>
-                              <p class="text-last-left">
-                                {each.attributes.content}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="icon">
-                          <div class="expert-txt2">
-                            <div class="box-img box-space">
-                              <img
-                                src={ data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.image}
-                                alt="Features Image"
-                                style={{width:'10rem', height:'10rem'}}
-                              />
-                            </div>
-                            <div class="box-img-inn">
-                              <h6 class="fma">{ data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.title}</h6>
-                              <p class="text-last-left">
-                                { data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data[reverseIndex].attributes.content}
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })
-              }
-                  </div>
-                  <!-- <div
-                    class="owl-experts-item-Cas-game owl-carousel d-flex flex-wrap">
-                  
-                           {
-                            data.metaverseCasinoGame.data.attributes.casino_game_collect_lists.data.map(
-                                (each: any, index: number) => {
-                                    return (
-                            <div class="item" style={{ flex: '0 0 50%', boxSizing: 'border-box', padding: '10px' }}>
-                              <div class="icon">
-                                <div class="expert-txt2">
-                                  <div class="box-img">
-                                    <img
-                                      src={each.attributes.image}
-                                      alt="Features Image"
-                                      style={{width:'10rem', height:'10rem'}}
-                                    />
-                                  </div>
-                                  <div class="box-img-inn">
-                                    <h6 class="fma">{each.attributes.title}</h6>
-                                    <p class="text-last-left">
-                                      {each.attributes.content}
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          );
-                        })
-                    }
-                  </div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        
 
         <!-- Casino Game Collections -->
         <section
