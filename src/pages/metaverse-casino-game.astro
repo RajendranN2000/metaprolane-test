@@ -93,7 +93,6 @@ const { data } = await response.json();
 const casinoGameDevLink = data.metaverseCasinoGame.data.attributes.casino_game_dev_link;
 const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
 ---
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script is:inline>
   document.addEventListener("DOMContentLoaded", function () {
       let currentIndex = 0;
@@ -184,6 +183,34 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           },
       });
   });
+
+  $(document).ready(function() {
+    // Function to check if element is in viewport
+    function isInViewport(element) {
+        var rect = element.getBoundingClientRect();
+        var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+        return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+    }
+
+    // Function to lazy load images
+    function lazyLoadImages() {
+        $("#image-container img").each(function() {
+            if (isInViewport(this)) {
+                // Replace data-src with src attribute
+                $(this).attr("src", $(this).data("src"));
+                $(this).removeAttr("src");
+            }
+        });
+    }
+
+    // Trigger lazy load on scroll and resize
+    $(window).on("scroll resize", function() {
+        lazyLoadImages();
+    });
+
+    // Initial load
+    lazyLoadImages();
+});
 </script>
 <Layout title="metaverseCasinoGame">
   <html lang="en">
@@ -325,7 +352,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                 <div class="col-lg-6">
                   <div class="cms-one-left animation-element slide-left">
                     <img
-                      class="lazyload"
+                      
                       src="assets/images/casino-game/casino-experience.webp"
                       alt="Auditorium page Banner"
                     />
@@ -436,8 +463,8 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                     (each: any, index: number) => {
                                         return (
                                 <div class="col-lg-4">
-                                  <div class="benefits-metavirtualoffice animation-element slide-left">
-                                    <div class="text-center bm-img">
+                                  <div class="benefits-metavirtualoffice">
+                                    <div id="image-container" class="text-center bm-img">
                                       <img
                                         src={each.attributes.image}
                                         alt="Benefits Icons"
