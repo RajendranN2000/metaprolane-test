@@ -16,128 +16,156 @@ const {title} = Astro.props;
     <div class="container-fluid">
         <div class="row">
             <div class="col-12">
-                <nav class="main-nav">
-                    <a href="/" class="logo">
-                        <img src="/assets/images/logo3.webp" alt="Logo" />
-                    </a>
-                    <ul class="nav align-self-center"></ul>
-                    <ul class="nav align-self-right" id="myDIV">
-                        <li >
-                            <a
-                                href="/"
+                <nav class="main-nav d-flex justify-content-between">
+                    <div class="" style="width:40%">
+                        <a href="/" class="logo">
+                            <div class="d-flex align-items-center" style="width:100%">
+                                <div>
+                                    <img src="/metaprolaneLogo.webp" style="width:65px" alt="Logo" />
+                                </div>
+                                <div style="margin-left:10px" class="">
+                                    <h6 style="font-size:24px" class="text-white" style="">meteprolane</h6>
+                                    <h6 style="font-size:8px" class="text-white">Immerse yourself into the future</h6>
+                                </div>
+                             
+                                {
+                                    /*
+                                    
+                                        <div>
+                                            <div style="margin-left:10px" class="">
+                                                <p class="text-white" style="line-height:0 !important">meteprolane</p>
+                                                <p class="text-white" style="line-height:0 !important">Immerse yourself into the future</p>
+                                            </div>
+                                        </div>
+                                    */
+                                }
+                               
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="width:60%">
+                        <ul class="nav align-self-center"></ul>
+                            <ul class="nav align-self-right" id="myDIV">
+                                <li >
+                                    <a
+                                        href="/"
+                                        
+                                        >Home</a
+                                    >
+                                </li>
                                 
-                                >Home</a
-                            >
-                        </li>
-                        
-                        <li class="has-sub">
-                            <a href="javascript:void(0)" >Metaverse Development <i class="icon fa fa-chevron-down"></i></a>
-                            <ul class="sub-menu">
+                                <li class="has-sub">
+                                    <a href="javascript:void(0)" >Metaverse Development <i class="icon fa fa-chevron-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a
+                                                href="/metaverse-virtual-office"
+                                                >Metaverse Virtual Office</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-auditorium"
+                                                >Metaverse Auditorium</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-virtual-city"
+                                                >Metaverse Virtual City</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-shopping-mall"
+                                                >Metaverse Shopping Mall</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-casino-game"
+                                                >Metaverse Casino Game</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-development-company"
+                                                >Metaverse Development Company</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-game-development-services"
+                                                >Metaverse Game Development Services</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-for-industries"
+                                                >Metaverse for Industries</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-virtual-showroom"
+                                                >Metaverse Virtual Showroom</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-real-estate-solutions"
+                                                >Metaverse Real Estate Solutions</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-jewelry-shopping"
+                                                >Metaverse jewelry shopping</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
                                 <li>
                                     <a
-                                        href="/metaverse-virtual-office"
-                                        >Metaverse Virtual Office</a
+                                        href="/#industries"
+                                        class="industries_scroller">Industries</a
                                     >
                                 </li>
                                 <li>
                                     <a
-                                        href="/metaverse-auditorium"
-                                        >Metaverse Auditorium</a
+                                        href="/#contact"
+                                        class="contact_scroller">Contact Us</a
                                     >
                                 </li>
                                 <li>
-                                    <a
-                                        href="/metaverse-virtual-city"
-                                        >Metaverse Virtual City</a
+                                    <a href="/CryptoVegas-privacy-policy"
+                                        >Privacy Policy</a
                                     >
                                 </li>
                                 <li>
-                                    <a
-                                        href="/metaverse-shopping-mall"
-                                        >Metaverse Shopping Mall</a
+                                    <a href="/blog"
+                                        >Blog</a
                                     >
                                 </li>
                                 <li>
-                                    <a
-                                        href="/metaverse-casino-game"
-                                        >Metaverse Casino Game</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="/metaverse-development-company"
-                                        >Metaverse Development Company</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="/metaverse-game-development-services"
-                                        >Metaverse Game Development Services</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="/metaverse-for-industries"
-                                        >Metaverse for Industries</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="/metaverse-virtual-showroom"
-                                        >Metaverse Virtual Showroom</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="/metaverse-real-estate-solutions"
-                                        >Metaverse Real Estate Solutions</a
-                                    >
-                                </li>
-                                <li>
-                                    <a
-                                        href="/metaverse-jewelry-shopping"
-                                        >Metaverse jewelry shopping</a
-                                    >
+                                    <a href="/#contact">
+                                        <button class="btn padd-0">
+                                            <div
+                                                class="btn-box border-gradient menu-demo-link"
+                                            >
+                                                Demo
+                                            </div>
+                                        </button>
+                                    </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li>
-                            <a
-                                href="/#industries"
-                                class="industries_scroller">Industries</a
-                            >
-                        </li>
-                        <li>
-                            <a
-                                href="/#contact"
-                                class="contact_scroller">Contact Us</a
-                            >
-                        </li>
-                        <li>
-                            <a href="/CryptoVegas-privacy-policy"
-                                >Privacy Policy</a
-                            >
-                        </li>
-                        <li>
-                            <a href="/blog"
-                                >Blog</a
-                            >
-                        </li>
-                        <li>
-                            <a href="/#contact">
-                                <button class="btn padd-0">
-                                    <div
-                                        class="btn-box border-gradient menu-demo-link"
-                                    >
-                                        Demo
-                                    </div>
-                                </button>
+                            <a class="menu-trigger" onclick="myFunction()">
+                                <span>Menu</span>
                             </a>
-                        </li>
-                    </ul>
-                    <a class="menu-trigger" onclick="myFunction()">
-                        <span>Menu</span>
-                    </a>
+                    </div>
+                   
+                    
                 </nav>
             </div>
         </div>
