@@ -158,8 +158,38 @@ const {title} = Astro.props;
                    {/* Navbar Container Ends*/}
 
                    {/* TopBar Container Starts */}
-                    <div style="display:none" id="topbar-dropdown" class="bg-warning duration-300">
-                        <h1 class="">demo</h1>
+                    <div style="display:none" id="topbar-dropdown" class="">
+                        <div class="d-flex justify-content-center">
+                            <div class="">
+                                <ul class="list-unstyled d-flex flex-column align-items-start" id="menu">
+                                    <li style="font-size: 2.5vh;" class="mt-4">
+                                        <a style="color: green;" href="/">HOME</a>
+                                    </li>
+                                    <li style="font-size: 2.5vh;" class="mt-4">
+                                        <a class="inline-flex align-items-center" style="color: green;" href="/">
+                                            METAVERSE DEVELOPMENT
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="height:30px; width:30px">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                              
+                                              
+                                        </a>
+                                    </li>
+                                    <li style="font-size: 2.5vh;" class="mt-4">
+                                        <a style="color: green;" href="/">INDUSTRIES</a>
+                                    </li>
+                                    <li style="font-size: 2.5vh;" class="mt-4">
+                                        <a style="color: green;" href="/">CONTACT US</a>
+                                    </li>
+                                    <li style="font-size: 2.5vh;" class="mt-4">
+                                        <a style="color: green;" href="/">PRIVACY POLICY</a>
+                                    </li>
+                                    <li style="font-size: 2.5vh;" class="mt-4">
+                                        <a style="color: green;" href="/">BLOG</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
 
@@ -184,7 +214,12 @@ const {title} = Astro.props;
             topBar.style.height = "60vh";
             topBar.style.transition = "height 0.3s ease";
 
-            dropDown.style.display = "block";
+            setTimeout(() =>{
+                dropDown.style.display = "block";
+                dropDown.style.transtion = "opacity 0.3s ease, max-height 0.3s ease";
+
+            },100)
+            
        }else{
             topBar.style.height = "0vh";
             topBar.style.transition = "height 0.3s ease";
