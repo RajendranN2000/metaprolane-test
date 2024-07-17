@@ -10,6 +10,19 @@ const {title} = Astro.props;
     .nav a.active {
       color: green;
     }
+
+    #metaverse-development-list ul li{
+        margin-top:14px;
+        font-size:1.5vh;
+    }
+
+    #topbar-dropdown ul li a{
+        color:white;
+    }
+
+    #menu li{
+        font-size:2vh;
+    }
   </style>
 
 <header class="header-area header-sticky">
@@ -158,15 +171,15 @@ const {title} = Astro.props;
                    {/* Navbar Container Ends*/}
 
                    {/* TopBar Container Starts */}
-                    <div style="display:none" id="topbar-dropdown" class="">
-                        <div class="d-flex justify-content-center">
+                    <div style="display:none;" id="topbar-dropdown" class="overflow-auto bg-black">
+                        <div class="d-flex justify-content-center ">
                             <div class="">
-                                <ul class="list-unstyled d-flex flex-column align-items-start" id="menu">
-                                    <li style="font-size: 2.5vh;" class="mt-4">
-                                        <a style="color: green;" href="/">HOME</a>
+                                <ul class="list-unstyled d-flex flex-column" id="menu">
+                                    <li class="mt-4">
+                                        <a href="/">HOME</a>
                                     </li>
-                                    <li style="font-size: 2.5vh;" class="mt-4">
-                                        <a class="inline-flex align-items-center" style="color: green;" href="/">
+                                    <li onclick="subListToggler(event)" class="mt-3">
+                                        <a class="inline-flex align-items-center" href="/">
                                             METAVERSE DEVELOPMENT
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="height:30px; width:30px">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -175,17 +188,108 @@ const {title} = Astro.props;
                                               
                                         </a>
                                     </li>
-                                    <li style="font-size: 2.5vh;" class="mt-4">
-                                        <a style="color: green;" href="/">INDUSTRIES</a>
+                                    <div id="metaverse-development-list" style="display:none" class="">
+                                        <ul class="list-unstyled d-flex flex-column">
+                                            <li>
+                                                <a
+                                                   
+                                                    href="/metaverse-virtual-office"
+                                                    >Metaverse Virtual Office</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                
+                                                    href="/metaverse-auditorium"
+                                                    >Metaverse Auditorium</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                    
+                                                    href="/metaverse-virtual-city"
+                                                    >Metaverse Virtual City</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                  
+                                                    href="/metaverse-shopping-mall"
+                                                    >Metaverse Shopping Mall</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                   
+                                                    href="/metaverse-casino-game"
+                                                    >Metaverse Casino Game</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                    href="/metaverse-development-company"
+                                                    >Metaverse Development Company</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                    
+                                                    href="/metaverse-game-development-services"
+                                                    >Metaverse Game Development Services</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                    
+                                                    href="/metaverse-for-industries"
+                                                    >Metaverse for Industries</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                    
+                                                    href="/metaverse-virtual-showroom"
+                                                    >Metaverse Virtual Showroom</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                  
+                                                    href="/metaverse-real-estate-solutions"
+                                                    >Metaverse Real Estate Solutions</a
+                                                >
+                                            </li>
+                                            <li>
+                                                <a
+                                                  
+                                                    href="/metaverse-jewelry-shopping"
+                                                    >Metaverse jewelry shopping</a
+                                                >
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <li class="mt-3">
+                                        <a href="/">INDUSTRIES</a>
                                     </li>
-                                    <li style="font-size: 2.5vh;" class="mt-4">
-                                        <a style="color: green;" href="/">CONTACT US</a>
+                                    <li class="mt-3">
+                                        <a href="/">CONTACT US</a>
                                     </li>
-                                    <li style="font-size: 2.5vh;" class="mt-4">
-                                        <a style="color: green;" href="/">PRIVACY POLICY</a>
+                                    <li class="mt-3">
+                                        <a href="/">PRIVACY POLICY</a>
                                     </li>
-                                    <li style="font-size: 2.5vh;" class="mt-4">
-                                        <a style="color: green;" href="/">BLOG</a>
+                                    <li class="mt-3">
+                                        <a href="/">BLOG</a>
+                                    </li>
+                                    <li class="mt-3">
+                                        <a href="/#contact">
+                                            <button class="btn padd-0">
+                                                <div
+                                                    class="btn-box border-gradient menu-demo-link"
+                                                >
+                                                    Demo
+                                                </div>
+                                            </button>
+                                        </a>
                                     </li>
                                 </ul>
                             </div>
@@ -205,15 +309,32 @@ const {title} = Astro.props;
 <script is:inline>
     const topBar = document.getElementById("topbar");
     const dropDown = document.getElementById("topbar-dropdown");
+    const subMenu = document.getElementById("metaverse-development-list");
 
+
+    function subListToggler(event){
+        console.log("toggled");
+        event.preventDefault();
+        if(subMenu.style.display == "none"){
+            subMenu.style.display = "block";
+            topBar.style.height = "94vh";
+        }else{
+            subMenu.style.display = "none";
+            topBar.style.height = "60vh";
+        }
+    };
 
 
     function TopBarToggler(){
     
        if(topBar.style.height == "0vh"){
-            topBar.style.height = "60vh";
-            topBar.style.transition = "height 0.3s ease";
-
+            if(subMenu.style.display == "none"){
+                topBar.style.height = "50vh";
+                topBar.style.transition = "height 0.3s ease";
+            }else{
+                topBar.style.height = "80vh";
+                topBar.style.transtion = "height 0.3s ease";
+            }
             setTimeout(() =>{
                 dropDown.style.display = "block";
                 dropDown.style.transtion = "opacity 0.3s ease, max-height 0.3s ease";

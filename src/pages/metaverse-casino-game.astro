@@ -202,7 +202,11 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script> -->
       <script is:inline>
+
+        console.log(data.metaverseCasinoGame.data.attributes.metaverse_casino_game_title);
+
         $(document).ready(function () {
+          
           $(".question1").click(function () {
             console.log("clicked questions");
             var answer = $(this).next(".answer");
