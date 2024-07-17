@@ -330,13 +330,13 @@ const {title} = Astro.props;
     
     const parts = url.split("/");
     parts.shift();
- 
+    
     //setting submenu state
     const element = document.getElementById(parts[0]);
     console.log(element);
     element.style.color = "green";
    
-
+    console.log(parts);
     //setting metaverse main title if any of its child is being selected
     if(parts[0].includes("metaverse")){
         metaverse.style.color = "green";
