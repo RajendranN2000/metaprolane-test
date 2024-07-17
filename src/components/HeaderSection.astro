@@ -4,6 +4,11 @@ const {title} = Astro.props;
 ---
 
 <style>
+    @media(min-width:1080px){
+        .topbar-dropdown{
+            display: none !important;
+        }
+    }
     .nav a {
       color: white;
     }
@@ -176,10 +181,10 @@ const {title} = Astro.props;
                             <div class="">
                                 <ul class="list-unstyled d-flex flex-column" id="menu">
                                     <li class="mt-4">
-                                        <a href="/">HOME</a>
+                                        <a href="/#home">HOME</a>
                                     </li>
                                     <li onclick="subListToggler(event)" class="mt-3">
-                                        <a class="inline-flex align-items-center" href="/">
+                                        <a id="metaverse" class="inline-flex align-items-center" href="/">
                                             METAVERSE DEVELOPMENT
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="height:30px; width:30px">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
@@ -192,7 +197,7 @@ const {title} = Astro.props;
                                         <ul class="list-unstyled d-flex flex-column">
                                             <li>
                                                 <a
-                                                   
+                                                    id="metaverse-virtual-office"
                                                     href="/metaverse-virtual-office"
                                                     >Metaverse Virtual Office</a
                                                 >
@@ -200,68 +205,70 @@ const {title} = Astro.props;
                                             <li>
                                                 <a
                                                 
+                                                    id="metaverse-auditorium"
                                                     href="/metaverse-auditorium"
                                                     >Metaverse Auditorium</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
-                                                    
+                                                    id="metaverse-virtual-city"
                                                     href="/metaverse-virtual-city"
                                                     >Metaverse Virtual City</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
-                                                  
+                                                    id="metaverse-shopping-mall"
                                                     href="/metaverse-shopping-mall"
                                                     >Metaverse Shopping Mall</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
-                                                   
+                                                    id="metaverse-casino-game"
                                                     href="/metaverse-casino-game"
                                                     >Metaverse Casino Game</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
+                                                    id="metaverse-development-company"
                                                     href="/metaverse-development-company"
                                                     >Metaverse Development Company</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
-                                                    
+                                                    id="metaverse-game-development-services"
                                                     href="/metaverse-game-development-services"
                                                     >Metaverse Game Development Services</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
-                                                    
+                                                    id="metaverse-for-industries"
                                                     href="/metaverse-for-industries"
                                                     >Metaverse for Industries</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
-                                                    
+                                                    id="metaverse-virtual-showroom"
                                                     href="/metaverse-virtual-showroom"
                                                     >Metaverse Virtual Showroom</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
-                                                  
+                                                    id="metaverse-real-estate-solutions"
                                                     href="/metaverse-real-estate-solutions"
                                                     >Metaverse Real Estate Solutions</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
-                                                  
+                                                    id="metaverse-jewelry-shopping"
                                                     href="/metaverse-jewelry-shopping"
                                                     >Metaverse jewelry shopping</a
                                                 >
@@ -269,16 +276,16 @@ const {title} = Astro.props;
                                         </ul>
                                     </div>
                                     <li class="mt-3">
-                                        <a href="/">INDUSTRIES</a>
+                                        <a id="industries-element" onclick="handleMenuState(event)" href="/#industries">INDUSTRIES</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="/">CONTACT US</a>
+                                        <a id="contact-element" onclick="handleMenuState(event)" href="/#contact">CONTACT US</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="/">PRIVACY POLICY</a>
+                                        <a id="privacy" href="/CryptoVegas-privacy-policy">PRIVACY POLICY</a>
                                     </li>
                                     <li class="mt-3">
-                                        <a href="/">BLOG</a>
+                                        <a href="/blog">BLOG</a>
                                     </li>
                                     <li class="mt-3">
                                         <a href="/#contact">
@@ -311,6 +318,52 @@ const {title} = Astro.props;
     const dropDown = document.getElementById("topbar-dropdown");
     const subMenu = document.getElementById("metaverse-development-list");
 
+    //list elements
+    const industries = document.getElementById("industries-element");
+    const contact = document.getElementById("contact-element");
+    const metaverse = document.getElementById("metaverse");
+
+
+
+    //getting current url
+    const url = window.location.href.slice(7,window.location.href.length);
+    
+    const parts = url.split("/");
+    parts.shift();
+ 
+    //setting submenu state
+    const element = document.getElementById(parts[0]);
+    console.log(element);
+    element.style.color = "green";
+   
+
+    //setting metaverse main title if any of its child is being selected
+    if(parts[0].includes("metaverse")){
+        metaverse.style.color = "green";
+    };
+
+
+
+
+    function handleMenuState(event){
+        //function to handle active states between contact and industries menu
+        console.log("clicked:",event.target.innerHTML)
+
+        switch(event.target.innerHTML){
+            case "INDUSTRIES":
+                industries.style.color = "green";
+                contact.style.color = "white";
+                break;
+
+            case "CONTACT US":
+                contact.style.color = "green";
+                industries.style.color = "white";
+                break;
+
+            default:
+                return false;
+        }
+    };
 
     function subListToggler(event){
         console.log("toggled");
@@ -320,7 +373,7 @@ const {title} = Astro.props;
             topBar.style.height = "94vh";
         }else{
             subMenu.style.display = "none";
-            topBar.style.height = "60vh";
+            topBar.style.height = "50vh";
         }
     };
 
