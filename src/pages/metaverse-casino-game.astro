@@ -305,11 +305,9 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
         </section>
         
         <section class="under-banner our-technologies casino-ms-one-section">
-          <div class="CG-chip-one">
-            <img src="assets/images/casino-game/chip-1.webp" alt="Chip1" />
-          </div>
-          <div class="CG-chip-two">
-            <img src="assets/images/casino-game/chip-2.webp" alt="Chip1" />
+          <div id="under-banner-chip-container" class="">
+            {/* Rendering Chip Images Based on Scroll Event*/}
+            
           </div>
           <div class="container">
             <div class="section-heading ss-case get-readys">
@@ -448,7 +446,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                         return (
                                       <div class="col-lg-4">
                                         <div class="benefits-metavirtualoffice animation-element slide-left">
-                                          <div id="game-collection-image-container" class="text-center bm-img">\
+                                          <div id="game-collection-image-container" class="text-center bm-img">
                                             <img
                                               class="lazy"
                                               src={each.attributes.image}
@@ -810,6 +808,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
 
       //rendering images on scroll
       const quoteImageContainer = document.getElementById("quote-image");
+      const underBannerChipcontainer = document.getElementById("under-banner-chip-container");
 
       function renderImages(){
         quoteImageContainer.innerHTML =  `
@@ -819,6 +818,15 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
               alt="BG Vector"
               class="w-100-br-15"
               />
+          </div>
+        `
+
+        underBannerChipcontainer.innerHTML = `
+          <div class="CG-chip-one">
+            <img src="assets/images/casino-game/chip-1.webp" alt="Chip1" />
+          </div>
+          <div class="CG-chip-two">
+            <img src="assets/images/casino-game/chip-2.webp" alt="Chip1" />
           </div>
         `
       }
