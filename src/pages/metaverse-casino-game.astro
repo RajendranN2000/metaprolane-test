@@ -691,7 +691,34 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
         </section>
 
         <!-- Metaverse Development Tools That We Use -->
-         
+        <section class="under-banner our-technologies gradient-ms-box casino-ms-Nine-section">
+          <div class="container">
+            <div class="under-banner-carousel-section">
+              <h5 class="text-center text-white h3-under-bar2">
+                {
+                  data.metaverseCasinoGame.data.attributes
+                    .casino_game_tools_title
+                }
+              </h5>
+              <div class="row mt-4">
+                <div class="col-lg-12 animation-element slide-left">
+                  <div class="owl-service-item owl-carousel d-flex justify-content-between">
+                    {
+                      data.metaverseCasinoGame.data.attributes.casino_game_tools_lists.data.map(
+                          (each: any, index: number) => {
+                              return (
+                    <div class="item" style="width:8rem">
+                      <div class="icon">
+                        <img src={each.attributes.image} alt="Ourtech1">
+                      </div>
+                    </div>
+                  </div>
+                  )})}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!-- Why Metaprolane is Your Ideal Partner? -->
         <section class="gradient-ms-box casino-ms-Ten-section">
@@ -782,6 +809,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       //rendering images on scroll
       const quoteImageContainer = document.getElementById("quote-image");
       const underBannerChipcontainer = document.getElementById("under-banner-chip-container");
+
 
       function renderImages(){
         quoteImageContainer.innerHTML =  `
