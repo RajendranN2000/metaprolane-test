@@ -390,12 +390,10 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
         <section
           class="meta-development-services product-our-services casino-ms-three-section"
         >
-          <div class="CG-chip-one">
-            <img src="assets/images/casino-game/chip-1.webp" alt="Chip1" />
+          <div id="chip-2-container" class="">
+
           </div>
-          <div class="CG-chip-two">
-            <img src="assets/images/casino-game/chip-2.webp" alt="Chip1" />
-          </div>
+          
           <div class="container">
             <div class="row align-items-center">
               <div class="col-lg-12">
@@ -799,6 +797,8 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       //rendering images on scroll
       const quoteImageContainer = document.getElementById("quote-image");
       const underBannerChipcontainer = document.getElementById("under-banner-chip-container");
+      const chipSecondImage = document.getElementById("chip-2-container");
+
 
 
       function renderImages(){
@@ -821,6 +821,15 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           </div>
         `
       }
+
+      chipSecondImage.innerHTML = `
+        <div class="CG-chip-one">
+            <img src="assets/images/casino-game/chip-1.webp" alt="Chip1" />
+          </div>
+          <div class="CG-chip-two">
+            <img src="assets/images/casino-game/chip-2.webp" alt="Chip1" />
+          </div>
+      `
 
 
       //lazyloading images
