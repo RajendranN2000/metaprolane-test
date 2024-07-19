@@ -7,31 +7,9 @@ const { title } = Astro.props;
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    {
-                        /*
-                            <div class="footer-logo text-left pb-4 slide-left">
-                                <a href="index.php"
-                                    ><img
-                                        src="assets/images/logo3.webp"
-                                        alt="Footer Logo"
-                                    /></a
-                                >
-                                <br /><a
-                                    href="//www.dmca.com/Protection/Status.aspx?ID=cc6dc30a-4bfb-4e22-94f0-e19c281ba70a"
-                                    title="DMCA.com Protection Status"
-                                    class="dmca-badge"
-                                >
-                                    <img
-                                        src="https://images.dmca.com/Badges/dmca_protected_sml_120aj.png?ID=cc6dc30a-4bfb-4e22-94f0-e19c281ba70a"
-                                        alt="DMCA.com Protection Status"
-                                    /></a
-                                >
-                            </div>
+                    <div id="footer-logo-image" class="footer-logo text-left pb-4 slide-left">
                         
-                        
-                        */
-                    }
-                    
+                    </div>
                 </div>
                 <!-- <div class="col-lg-4">
                     <div class="footer-links">
@@ -124,6 +102,31 @@ const { title } = Astro.props;
         </div>
     </section>
     <script type="text/javascript">
+
+        const footerLogoImage = document.getElementById("footer-logo-image");
+
+        window.addEventListener("scroll", function(){
+            footerLogoImage.innerHTML = `
+                    <a href="index.php"
+                            ><img
+                                src="assets/images/logo3.webp"
+                                alt="Footer Logo"
+                            /></a
+                        >
+                        <br /><a
+                            href="//www.dmca.com/Protection/Status.aspx?ID=cc6dc30a-4bfb-4e22-94f0-e19c281ba70a"
+                            title="DMCA.com Protection Status"
+                            class="dmca-badge"
+                        >
+                            <img
+                                src="https://images.dmca.com/Badges/dmca_protected_sml_120aj.png?ID=cc6dc30a-4bfb-4e22-94f0-e19c281ba70a"
+                                alt="DMCA.com Protection Status"
+                            /></a
+                        >
+            `
+        });
+
+
         var $animation_elements = $(".animation-element");
         var $window = $(window);
 
