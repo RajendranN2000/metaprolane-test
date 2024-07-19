@@ -303,15 +303,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
               >
             
         </section>
-        {
-          /*
-            
-                
-          
-          */
-        }
         
-
         <section class="under-banner our-technologies casino-ms-one-section">
           <div class="CG-chip-one">
             <img src="assets/images/casino-game/chip-1.webp" alt="Chip1" />
@@ -389,15 +381,8 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                     <a href="#contact" class="btn btn-primary">Get Quote Now</a>
                   </div>
                 </div>
-                <div class="col-lg-6 CG-two-right animation-element slide-right">
-                  <div class="plr-10-only-mobile">
-                    <img
-                    
-                      src="assets/images/casino-game/development-company-vector.webp"
-                      alt="BG Vector"
-                      class="w-100-br-15"
-                    />
-                  </div>
+                <div id="quote-image" class="col-lg-6 CG-two-right animation-element slide-right">
+                 
                 </div>
               </div>
             </div>
@@ -823,7 +808,29 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
   </div>
   <script type="text/javascript">
 
+      //rendering images on scroll
+      const quoteImageContainer = document.getElementById("quote-image");
+
+      function renderImages(){
+        quoteImageContainer.innerHTML =  `
+          <div class="plr-10-only-mobile">
+              <img  
+              src="assets/images/casino-game/development-company-vector.webp"
+              alt="BG Vector"
+              class="w-100-br-15"
+              />
+          </div>
+        `
+      }
+
+
+      //lazyloading images
+      window.addEventListener("scroll",function(){
+        renderImages();
+      })
       
+
+      //rendering banner image based on viewport width
       const section = document.getElementById("top");
       
 
