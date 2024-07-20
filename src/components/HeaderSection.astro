@@ -55,14 +55,8 @@ const {title} = Astro.props;
                         
                         <div id="logo-container">
                             <a href="/" class="logo">
-                                <div class="d-flex align-items-center" style="width:100%">
-                                    <div>
-                                        <img src="/metaprolaneLogo.webp" style="width:65px" alt="Logo" />
-                                    </div>
-                                    <div style="margin-left:10px" class="">
-                                        <h6 id="heading" class="text-white" style="">metaprolane</h6>
-                                        <h6 id="subHeading" class="text-white">Immerse yourself into the future</h6>
-                                    </div>
+                                <div id="header-logo-container" class="d-flex align-items-center" style="width:100%">
+                                    {/* Rendering Logo After Page Loading*/}
                                 </div>
                             </a>
                         </div>
@@ -328,6 +322,25 @@ const {title} = Astro.props;
 </header>
 
 <script is:inline>
+
+    //header
+
+    const headerLogoContainer = document.getElementById("header-logo-container");
+    
+    document.addEventListener('DOMContentLoaded', function(){
+        headerLogoContainer.innerHTML = `
+            <div>
+                <img src="/metaprolaneLogo.webp" style="width:65px" alt="Logo" />
+            </div>
+            <div style="margin-left:10px" class="">
+                <h6 id="heading" class="text-white" style="">metaprolane</h6>
+                <h6 id="subHeading" class="text-white">Immerse yourself into the future</h6>
+            </div>
+        `
+    })
+
+
+    //topbar
     const topBar = document.getElementById("topbar");
     const dropDown = document.getElementById("topbar-dropdown");
     const subMenu = document.getElementById("metaverse-development-list");
