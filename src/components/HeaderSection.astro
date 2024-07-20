@@ -323,14 +323,17 @@ const {title} = Astro.props;
 
     const headerLogoContainer = document.getElementById("logo-container");
     
-    document.addEventListener("DOMContentLoaded", function(){
 
+       
+
+    window.setTimeout(() =>{
         headerLogoContainer.innerHTML =  `
             <a href="/" class="logo">
                 <img src="/assets/images2/logo2.webp" alt="Logo" />
             </a> 
         `
-    })
+    },3000)
+  
 
     //topbar
     const topBar = document.getElementById("topbar");
