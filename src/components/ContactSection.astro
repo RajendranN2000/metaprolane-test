@@ -518,8 +518,19 @@ var calSrc = ""
         <script is:inline src="/assets/js/countrySelect.min.js"></script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/js/countrySelect.min.js" integrity="sha512-criuU34pNQDOIx2XSSIhHSvjfQcek130Y9fivItZPVfH7paZDEdtAMtwZxyPq/r2pyr9QpctipDFetLpUdKY4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
         <script is:inline>
-            
 
+            document.addEventListener('scroll', function(){
+                $("#country_selector").countrySelect({
+                defaultCountry: "in",
+                // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+                // responsiveDropdown: true,
+                //    preferredCountries: ['ca', 'gb', 'us']
+                });
+            })
+            
+        </script>
+        
+        <script is:inline>
             console.log("scriptcheck");
         </script>
         <script>
