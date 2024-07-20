@@ -515,12 +515,10 @@ var calSrc = ""
             $window.on("scroll resize", check_if_in_view);
             $window.trigger("scroll", check_if_in_view);
         </script>
-        <script id="cloudflare-cdn-script" is:inline ></script>
+        <script id="cloudflare-cdn-script" src="/assets/js/countrySelect.min.js" is:inline ></script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/js/countrySelect.min.js" integrity="sha512-criuU34pNQDOIx2XSSIhHSvjfQcek130Y9fivItZPVfH7paZDEdtAMtwZxyPq/r2pyr9QpctipDFetLpUdKY4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
         <script is:inline>
-            const cloudFlareScript = document.getElementById("cloudflare-cdn-script")
             document.addEventListener('scroll', function(){
-                cloudFlareScript.setAttribute("src", "/assets/js/countrySelect.min.js")
                 $("#country_selector").countrySelect({
                 defaultCountry: "in",
                 // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],

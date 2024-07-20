@@ -192,7 +192,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
         is:inline
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
       ></script> -->
-      <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <link id="bootstrap-link" rel="stylesheet" />
       <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
       <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.plugins.min.js"></script>
       <!-- <link rel="stylesheet" href="/styles/css/style.css" /> -->
@@ -201,6 +201,16 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script> -->
+
+      <script>
+        const bootStrapLink = document.getElementById("bootstrap-link");
+
+        window.setTimeout(() =>{
+          bootStrapLink?.setAttribute('src',"/vendor/bootstrap/css/bootstrap.min.css");
+        },2000)
+
+        console.log(bootStrapLink);
+      </script>
       <script is:inline>
 
         console.log(data.metaverseCasinoGame.data.attributes.metaverse_casino_game_title);
