@@ -346,7 +346,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
               <div class="row">
                 <div class="col-lg-6">
                   <div class="cms-one-left animation-element slide-left">
-                    <div id="header-section-image" class="">
+                    <div id="header-section-image">
                       
                     </div>
                    
@@ -987,6 +987,19 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
         </div>
       
       `
+      }else{
+
+        HeaderSectionImg.innerHTML = `
+            <div style="width:360px; height:463px">
+            <img
+              style="width:fit"
+              src="assets/updated-images/casino-route/Metaverse-Casino-updated.webp"
+              alt="Auditorium page Banner"
+            />
+            </div>
+          
+          
+          `;
       }
       var $animation_elements = $('.animation-element');
       var $window = $(window);
