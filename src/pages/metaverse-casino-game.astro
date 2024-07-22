@@ -349,6 +349,9 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                     <div id="header-section-image">
                       
                     </div>
+                    <div id="header-section-image-mobile" style="width:336px; height:398.7px">
+
+                    </div>
                    
                     {
                       /*
@@ -898,6 +901,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       const chipSecondImage = document.getElementById("chip-2-container");
       const HeaderSectionImg = document.getElementById("header-section-image");
       const ourTechnologies = document.getElementById("our-technologies");
+      const HeaderSectionImgMobile = document.getElementById("header-section-image-mobile");
 
       function renderImages(){
        
@@ -943,6 +947,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
 
       console.log(document.documentElement.clientWidth);
       if(document.documentElement.clientWidth >= 1080){
+        HeaderSectionImgMobile.remove();
           HeaderSectionImg.innerHTML = `
             <img
               style="width:fit"
@@ -988,19 +993,20 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       
       `
       }else{
-
-        HeaderSectionImg.innerHTML = `
-            <div style="width:360px; height:463px">
+        window.setTimeout(() =>{
+          HeaderSectionImgMobile.innerHTML = `
+          <div style="width:336px; height=398.7">
             <img
               style="width:fit"
               src="assets/updated-images/casino-route/Metaverse-Casino-updated.webp"
               alt="Auditorium page Banner"
             />
-            </div>
+          </div>
           
-          
-          `;
+          `;  
+        },1000)
       }
+        
       var $animation_elements = $('.animation-element');
       var $window = $(window);
 
