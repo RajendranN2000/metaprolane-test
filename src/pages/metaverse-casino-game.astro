@@ -190,8 +190,8 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
 
 
       </head>
-      <link rel="stylesheet" href="/styles/blog/css/owl.css" />
-      <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
+      <link id="owlcss" rel="stylesheet"  />
+      <link id="showroomcss" rel="stylesheet"  />
       <!-- <script
         is:inline
         src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
@@ -209,6 +209,16 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
         function insertJqueryLazy() {
             var jquery = document.createElement('script');
             var jqueryPlugin = document.createElement('script');
+            var owlCSS = document.getElementById('owlcss');
+            var showRoomCSS = document.getElementById("showroomcss");
+
+
+            owlCSS.setAttribute('href', '/styles/blog/css/owl.css');
+            showRoomCSS.setAttribute('href', '/styles/css/retailShowroom.css');
+
+            console.log(owlCSS);
+            console.log(showRoomCSS);
+            
 
             jquery.type = "text/javascript";
             jquery.src = "//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js";
