@@ -732,8 +732,57 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
               </h5>
               <div class="row mt-4">
                 <div class="col-lg-12 animation-element slide-left">
-                  <div class="owl-service-item owl-carousel d-flex justify-content-between">
+                  
+                    <div id="our-technologies" class="">
+                      {/* our technologies images will be rendered on scroll*/}
+                      <div class="owl-service-item owl-carousel d-flex justify-content-between">
+                        <div class="item" style="width:8rem">
+                          <div class="icon">
+                            <img id="our-tech-5" alt="Ourtech5">
+                          </div>
+                        </div>
+                        <div class="item" style="width:8rem">
+                          <div class="icon">
+                            <img id="our-tech-4" alt="Ourtech4">
+                          </div>
+                        </div>
+                        <div class="item" style="width:8rem">
+                          <div class="icon">
+                            <img id="our-tech-3" alt="Ourtech3">
+                          </div>
+                        </div>
+                        <div class="item" style="width:8rem">
+                          <div class="icon">
+                            <img id="our-tech-2" alt="Ourtech2">
+                          </div>
+                        </div>
+                        <div class="item" style="width:8rem">
+                          <div class="icon">
+                            <img id="our-tech-1" alt="Ourtech1">
+                          </div>
+                        </div>
+
+                      </div>
+                        
+
+                    </div>
                     
+                    {
+                      /*
+                      data.metaverseCasinoGame.data.attributes.casino_game_tools_lists.data.map(
+                              (each: any, index: number) => {
+                                  return (
+                        <div class="item" style="width:8rem">
+                          <div class="icon">
+                            <img src={each.attributes.image} alt="Ourtech1">
+                          </div>
+                        </div>
+                      </div>
+                      
+                      )})
+                    */
+                  }
+
                 </div>
               </div>
             </div>
@@ -825,17 +874,24 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       </div>
   </div>
   <script type="text/javascript">
+      //our technologies images
+      const ourTechImg1 = document.getElementById("our-tech-1");
+      const ourTechImg2 = document.getElementById("our-tech-2");
+      const ourTechImg3 = document.getElementById("our-tech-3");
+      const ourTechImg4 = document.getElementById("our-tech-4");
+      const ourTechImg5 = document.getElementById("our-tech-5");
+
 
       //rendering images on scroll
       const quoteImageContainer = document.getElementById("quote-image");
       const underBannerChipcontainer = document.getElementById("under-banner-chip-container");
       const chipSecondImage = document.getElementById("chip-2-container");
       const HeaderSectionImg = document.getElementById("header-section-image");
+      const ourTechnologies = document.getElementById("our-technologies");
 
       function renderImages(){
+       
         
-
-
         quoteImageContainer.innerHTML =  `
           <div class="plr-10-only-mobile">
               <img  
@@ -855,6 +911,12 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           </div>
         `
       }
+
+      ourTechImg1.setAttribute("src","/public/assets/images/ourtech1.webp");
+      ourTechImg2.setAttribute("src","/public/assets/images/ourtech2.webp");
+      ourTechImg3.setAttribute("src","/public/assets/images/ourtech3.webp");
+      ourTechImg4.setAttribute("src","/public/assets/images/ourtech4.webp");
+      ourTechImg5.setAttribute("src","/public/assets/images/ourtech5.webp");
 
       
 
