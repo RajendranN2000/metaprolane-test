@@ -338,10 +338,11 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                   <div class="cms-one-left animation-element slide-left">
                     <div id="header-section-image" class="">
                       <img
-                        style="width:fit"
-                        src="assets/updated-images/casino-route/metaverse-game.webp"
-                        alt="Auditorium page Banner"
-                      />
+                          class="d-none d-lg-block"
+                          style="width:fit"
+                          src="assets/updated-images/casino-route/metaverse-game.webp"
+                          alt="Auditorium page Banner"
+                        />
                     </div>
                    
                     {
@@ -836,11 +837,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
       const chipSecondImage = document.getElementById("chip-2-container");
       const HeaderSectionImg = document.getElementById("header-section-image");
 
-
-
-
-      function renderImages(){
-        HeaderSectionImg.innerHTML = `
+      HeaderSectionImg.innerHTML = `
           <img
             style="width:fit"
             src="assets/updated-images/casino-route/metaverse-game.webp"
@@ -849,6 +846,10 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
         
         
         `;
+
+
+      function renderImages(){
+        
 
 
         quoteImageContainer.innerHTML =  `
