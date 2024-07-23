@@ -329,41 +329,36 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
 <div class="home-container inner-container">
       <div class="meta-product">
         <section
-                class="d-none d-md-block section main-banner audit-videos casino-ms-banner-section"
-                id="top"
+                class="section main-banner audit-videos casino-ms-banner-section"
+                
                 data-section="section1"
               >
-            
+              <video style="width:100%" autoplay loop muted>
+                <source src="assets/images2/casino-game/casino-banner-2.mp4" type="video/mp4" />
+                
+                Your browser does not support the video tag.
+              </video>
+              
         </section>
-        
+       
         <section class="under-banner our-technologies casino-ms-one-section">
+          
           <div id="under-banner-chip-container" class="">
             {/* Rendering Chip Images Based on Scroll Event*/}
-            
+           
           </div>
           <div class="container">
             <div class="section-heading ss-case get-readys">
               <div class="row">
                 <div class="col-lg-6">
                   <div class="cms-one-left animation-element slide-left">
-                    <div id="header-section-image">
-                      
-                    </div>
-                    <div id="header-section-image-mobile" style="width:336px; height:398.7px">
-
-                    </div>
-                   
-                    {
-                      /*
+                    
                         <img
                           style="width:fit"
                           src="assets/updated-images/casino-route/metaverse-game.webp"
                           alt="Auditorium page Banner"
                         />
-                      
-                      */
-                    }
-                    
+
                     <div class="cms-one-green">
                       We Create <br />Fun Gambling Events
                     </div>
@@ -957,54 +952,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           
           
           `;
-        section.innerHTML = `
-        <div className="">
-          <img
-              src="assets/images/casino-game/banner.webp"
-              alt="Auditorium page Banner"
-              class="inner-section-banner"
-              style="height:100vh"
-              />
-                <div class="video-overlay header-text main-banner-cont">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="">
-                          <div class="wrapper">
-                            <ul class="bg-bubbles">
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>  
-        </div>
-      
-      `
-      }else{
-        window.setTimeout(() =>{
-          HeaderSectionImgMobile.innerHTML = `
-          <div style="width:336px; height=398.7">
-            <img
-              style="width:fit"
-              src="assets/updated-images/casino-route/Metaverse-Casino-updated.webp"
-              alt="Auditorium page Banner"
-            />
-          </div>
-          
-          `;  
-        },3000)
+        
       }
         
       var $animation_elements = $('.animation-element');
