@@ -333,13 +333,18 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                 id="top"
                 data-section="section1"
               >
+              <video style="height:100vh" autoplay loop muted>
+                <source src="Casinio.mp4" type="video/mp4" />
+               
+              </video>
             
         </section>
         
         <section class="under-banner our-technologies casino-ms-one-section">
+          
           <div id="under-banner-chip-container" class="">
             {/* Rendering Chip Images Based on Scroll Event*/}
-            
+           
           </div>
           <div class="container">
             <div class="section-heading ss-case get-readys">
@@ -957,41 +962,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
           
           
           `;
-        section.innerHTML = `
-        <div className="">
-          <img
-              src="assets/images/casino-game/banner.webp"
-              alt="Auditorium page Banner"
-              class="inner-section-banner"
-              style="height:100vh"
-              />
-                <div class="video-overlay header-text main-banner-cont">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-lg-12">
-                        <div class="">
-                          <div class="wrapper">
-                            <ul class="bg-bubbles">
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                              <li></li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>  
-        </div>
-      
-      `
+        
       }else{
         window.setTimeout(() =>{
           HeaderSectionImgMobile.innerHTML = `
