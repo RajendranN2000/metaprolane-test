@@ -3,125 +3,125 @@ import Layout from "../layouts/Layout.astro";
 import Carousel from "../components/Carousel.astro";
 // import HomeProjectDetails from "../components/HomeProjectDetails";
 const {} = Astro.props;
-const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-        query: `
-        query{
-            homePageSection1{
-                data{
-                    attributes{
-                     project_details{
-                         data{
-                            attributes{
-                                title
-                                count
-                                img_path
-                            }
-                        }
-                    }
-                    section_two_title
-                    section_two_content
-                    meta_title
-                    meta_description
-                    meta_keywords
-                    section_three_title1
-                    section_three_title2
-                    section_three_content
-                    section_three_button1
-                    section_three_button2
-                    section_four_title
-                    section_four_content
-                    section_four_button
-                    section_four_video
-                    section_five_title
-                    section_five_content
-                    section_five_button
-                    section_five_video
-                    section_six_title
-                    section_six_content
-                    section_six_button
-                    section_six_video
-                    section_seven_title
-                    section_seven_content
-                    section_seven_button
-                    section_eight_title
-                    section_eight_content
-                    section_eight_button
-                    section_metaverse_title
-                      metavarse_development_lists{
-                        data{
-                          attributes {
-                            title
-                            content
-                            image
-                          }
-                        }
-                    }
-                    section_metaverse_developmet
-                      metavarse_development_service_lists( pagination: { limit: 100 }){
-                        data{
-                            attributes{
-                                image
-                          }
-                        }
-                      }
-                      section_metaverse_domain_title
-                      metaverse_domain_solutions{
-                        data{
-                          attributes{
-                            text
-                            image
-                            content
-                          }
-                        }
-                      }
-                      section_our_technologies
-                      metaverse_our_technologies{
-                        data{
-                          attributes{
-                            image
-                          }
-                        }
-                      }
-                      section_why_metaprolane
-                      section_metaprolane_description
-                      metaverse_why_metaprolanes{
-                        data{
-                          attributes{
-                          image
-                            text
-                            content
-                          }
-                        }
-                      }
-                      metaverse_lists{
-                        data{
-                          attributes{
-                            title
-                            content
-                          }
-                        }
-                      }
-                      metaverse_faq_title
-                      metaverse_faq_lists {
-                        data{
-                            attributes{
-                                title
-                                content
-                            }
-                        }
-                      }
+// const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//         query: `
+//         query{
+//             homePageSection1{
+//                 data{
+//                     attributes{
+//                      project_details{
+//                          data{
+//                             attributes{
+//                                 title
+//                                 count
+//                                 img_path
+//                             }
+//                         }
+//                     }
+//                     section_two_title
+//                     section_two_content
+//                     meta_title
+//                     meta_description
+//                     meta_keywords
+//                     section_three_title1
+//                     section_three_title2
+//                     section_three_content
+//                     section_three_button1
+//                     section_three_button2
+//                     section_four_title
+//                     section_four_content
+//                     section_four_button
+//                     section_four_video
+//                     section_five_title
+//                     section_five_content
+//                     section_five_button
+//                     section_five_video
+//                     section_six_title
+//                     section_six_content
+//                     section_six_button
+//                     section_six_video
+//                     section_seven_title
+//                     section_seven_content
+//                     section_seven_button
+//                     section_eight_title
+//                     section_eight_content
+//                     section_eight_button
+//                     section_metaverse_title
+//                       metavarse_development_lists{
+//                         data{
+//                           attributes {
+//                             title
+//                             content
+//                             image
+//                           }
+//                         }
+//                     }
+//                     section_metaverse_developmet
+//                       metavarse_development_service_lists( pagination: { limit: 100 }){
+//                         data{
+//                             attributes{
+//                                 image
+//                           }
+//                         }
+//                       }
+//                       section_metaverse_domain_title
+//                       metaverse_domain_solutions{
+//                         data{
+//                           attributes{
+//                             text
+//                             image
+//                             content
+//                           }
+//                         }
+//                       }
+//                       section_our_technologies
+//                       metaverse_our_technologies{
+//                         data{
+//                           attributes{
+//                             image
+//                           }
+//                         }
+//                       }
+//                       section_why_metaprolane
+//                       section_metaprolane_description
+//                       metaverse_why_metaprolanes{
+//                         data{
+//                           attributes{
+//                           image
+//                             text
+//                             content
+//                           }
+//                         }
+//                       }
+//                       metaverse_lists{
+//                         data{
+//                           attributes{
+//                             title
+//                             content
+//                           }
+//                         }
+//                       }
+//                       metaverse_faq_title
+//                       metaverse_faq_lists {
+//                         data{
+//                             attributes{
+//                                 title
+//                                 content
+//                             }
+//                         }
+//                       }
                       
-                }
-            }
-        }
-    }
-        `,
-    }),
-});
-const data = await response.json();
+//                 }
+//             }
+//         }
+//     }
+//         `,
+//     }),
+// });
+// const data = await response.json();
 
 const activeIndex = 1;
 ---
@@ -140,7 +140,7 @@ const activeIndex = 1;
             type="text/css"
             rel="stylesheet"
             href="styles/css/style5597.css?ver=5.0"
-        /> 
+        />
         <!-- <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" /> -->
         <!-- <link rel="stylesheet" href="styles/css/fontawesome.css" /> -->
         <!-- <link rel="stylesheet" href="assets/css/owl.css"> -->
@@ -164,8 +164,6 @@ const activeIndex = 1;
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
             ></script> -->
 
-      
-
         <section class="section main-banner" id="top" data-section="section1">
             <video autoplay muted loop id="bg-video">
                 <source src="/assets/video/home_banner.mp4" type="video/mp4" />
@@ -178,7 +176,95 @@ const activeIndex = 1;
                 >
                     <!-- <HomeProjectDetails client:only="react" /> -->
                     <div class="row">
-                        {
+                        <div class="col-lg-3">
+                            <div class="svs-main d-flex count-area-content pluss">
+                                <div class="svs-l">
+                                    <img
+                                        src={
+                                       "/assets/images/icon3.webp"
+                                        }
+                                        alt="icon1"
+                                    />
+                                </div>
+                                <div class="svs-r">
+                                    <h6 class="text-green numbers-top">
+                                        TOTAL PROJECTS
+                                    </h6>
+                                    <div
+                                        class="count-digit numbers-bot"
+                                    >
+                                    350
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="svs-main d-flex count-area-content pluss">
+                                <div class="svs-l">
+                                    <img
+                                        src={
+                                           "/assets/images/icon1.webp"
+                                        }
+                                        alt="icon1"
+                                    />
+                                </div>
+                                <div class="svs-r">
+                                    <h6 class="text-green numbers-top">
+                                        BLOCKCHAIN EXPERIENCE
+                                    </h6>
+                                    <div
+                                        class="count-digit noplus"
+                                    >
+                                    7
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="svs-main d-flex count-area-content pluss">
+                                <div class="svs-l">
+                                    <img
+                                        src={
+                                            "/assets/images/icon4.webp"
+                                        }
+                                        alt="icon1"
+                                    />
+                                </div>
+                                <div class="svs-r">
+                                    <h6 class="text-green numbers-top">
+                                        BLOCKCHAIN EXPERTS
+                                    </h6>
+                                    <div
+                                        class="count-digit numbers-bot"
+                                    >
+                                    250
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="svs-main d-flex count-area-content pluss">
+                                <div class="svs-l">
+                                    <img
+                                        src={
+                                         "/assets/images/icon2.webp"
+                                        }
+                                        alt="icon1"
+                                    />
+                                </div>
+                                <div class="svs-r">
+                                    <h6 class="text-green numbers-top">
+                                        GLOBAL BRANDS
+                                    </h6>
+                                    <div
+                                        class="count-digit numbers-bot"
+                                    >
+                                    120
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- {
                             data.data.homePageSection1.data.attributes
                                 .project_details.data.length > 0 &&
                                 data.data.homePageSection1.data.attributes.project_details.data?.map(
@@ -216,7 +302,7 @@ const activeIndex = 1;
                                         );
                                     },
                                 )
-                        }
+                        } -->
                     </div>
                     <section class="under-banner top-section">
                         <div class="container">
@@ -486,16 +572,33 @@ const activeIndex = 1;
                     <div class="col-lg-9">
                         <div class="about-ms animation-element slide-right">
                             <h1 class="text-black top-t">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_two_title
-                                }
+                                Top Metaverse Development Company
                             </h1>
                             <p class="text-gray2">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_two_content
-                                }
+                                Welcome to Metaprolane, the ultimate destination
+                                for Metaverse development solutions. As a
+                                leading Metaverse Development Company, we
+                                specialize in creating immersive and interactive
+                                virtual worlds that push the boundaries of what
+                                is possible in the Metaverse. The Metaverse is a
+                                vast and growing digital universe that provides
+                                limitless opportunities for innovation and
+                                creativity. At Metaprolane, we offer innovative
+                                and high-quality Metaverse Development services
+                                and solutions for various businesses and
+                                industry verticals. We specialize in developing
+                                cutting-edge solutions that enable our clients
+                                to leverage the power of the Metaverse to drive
+                                business growth and enhance user engagement.
+                                Whether you're looking to build a virtual
+                                showroom, an interactive gaming experience, or a
+                                social platform, our team of expert developers
+                                and designers have the skills and experience
+                                needed to turn your vision into a reality. Our
+                                team also has extensive experience in creating
+                                custom avatars, 3D models, and virtual reality
+                                environments, ensuring that your virtual world
+                                is tailored to your specific needs.
                             </p>
                         </div>
                     </div>
@@ -521,38 +624,45 @@ const activeIndex = 1;
                     <div class="col-lg-8">
                         <div class="about-ms animation-element slide-left">
                             <p class="text-black unlock-heading">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_three_title1
-                                }
+                                Unlock the true potential of the virtual world
+                                with our
                             </p>
                             <h2 class="text-blue h2-blue">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_three_title2
-                                }
+                                Metaverse Development
                             </h2>
                             <p class="text-gray2 normal-paras">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_three_content
-                                }
+                                Metaverse is an inevitable advancement of the
+                                internet that going to be a game-changer for
+                                businesses across industries. Metaverse is a
+                                futuristic virtual world, where people can
+                                display themselves as digital avatar and do all
+                                kinds of activities just like in the physical
+                                world. Our Metaverse Development encompasses a
+                                wide range of metaverse solutions, including
+                                architecture design, content creation, and
+                                development. We provide end-to-end Metaverse
+                                Development solutions to help businesses create
+                                fascinating and interactive virtual experiences
+                                that captivate audiences. Partner with
+                                Metaprolane, the leading Metaverse Development
+                                Company, and unlock the potential of the
+                                Metaverse for your business or personal project.
+                                We help you develop a Metaverse with intelligent
+                                infrastructure where users can virtually shop,
+                                play, learn, trade, work, party, date, interact,
+                                etc. Contact us today to learn more about our
+                                Metaverse Development Services and how we can
+                                help you achieve your goals.
                             </p>
                             <div class="unlock-btn-sec">
                                 <a
                                     href="https://api.whatsapp.com/send?l=en&text=Hi!%20I%27m%20interested%20in%20one%20of%20your%20products%20&phone=919942011919"
                                     target="_blank"
                                     class="btn btn-primary"
-                                    >{
-                                        data.data.homePageSection1.data
-                                            .attributes.section_three_button1
-                                    }</a
+                                    >Connect To Whatsapp</a
                                 >
                                 <a href="#contact" class="btn btn-primary"
-                                    >{
-                                        data.data.homePageSection1.data
-                                            .attributes.section_three_button2
-                                    }</a
+                                    >Get Quote</a
                                 >
                             </div>
                         </div>
@@ -624,23 +734,25 @@ const activeIndex = 1;
                             class="immersive-m-r animation-element slide-right"
                         >
                             <h5 class="text-white get-experience">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_four_title
-                                }
+                                Get lost in the Elegance of the EternaCity
                             </h5>
                             <p class="text-white text-last-right">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_four_content
-                                }
+                                Metaprolane rolled out a virtual city
+                                “Eternacity”, equipped with intelligent
+                                infrastructure and real-world amenities where
+                                users can shop, play, learn, party, date, etc.
+                                Eternacity also has virtual attractions and
+                                recreational centers such as parks, malls,
+                                Cineplex, shops, a lake, a butterfly aviary, and
+                                other landmarks. You can take your loved one and
+                                go for a romantic boat ride, visiting the
+                                butterfly aviary. Eternacity is an exciting
+                                platform for entertainment, advertisement, and
+                                social interaction.
                             </p>
                             <p class="py-3">
                                 <a class="btn btn-secondary" href="#contact"
-                                    >{
-                                        data.data.homePageSection1.data
-                                            .attributes.section_four_button
-                                    }</a
+                                    >Request Demo</a
                                 >
                             </p>
                         </div>
@@ -662,23 +774,24 @@ const activeIndex = 1;
                             <h5
                                 class="text-black text-last-left2 ims get-experience pb-3"
                             >
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_five_title
-                                }
+                                Experience the Future of Work in MetaCorp
                             </h5>
                             <p class="text-gray2 text-last-left">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_five_content
-                                }
+                                Invite your prestigious customers to your
+                                corporate office in the Metaverse and let your
+                                brand get a new identity! MetaCorp is a virtual
+                                corporate building that serves as a hub for
+                                businesses, entrepreneurs, and professionals.
+                                This Metaverse Corporate office provides various
+                                use cases such as virtual meetings, training
+                                sessions, conferences, presentations, screen
+                                sharing, live chat (voice and text),
+                                team-building activities, and product
+                                demonstrations.
                             </p>
                             <p class="btn-section py-3">
                                 <a class="btn btn-primary" href="#contact"
-                                    >{
-                                        data.data.homePageSection1.data
-                                            .attributes.section_five_button
-                                    }</a
+                                    >Request Demo</a
                                 >
                             </p>
                         </div>
@@ -778,23 +891,24 @@ const activeIndex = 1;
                             class="immersive-m-r animation-element slide-right"
                         >
                             <h4 class="text-white get-experience">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_six_title
-                                }
+                                Explore Limitless Horizons in the MetaSphere
                             </h4>
                             <p class="text-white text-last-right">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_six_content
-                                }
+                                MetaSphere is a virtual complex built on a sleek
+                                island having four elegant Auditoriums and a
+                                Food Court. Each auditorium has desired features
+                                to host events & gatherings that allow you to
+                                connect with attendees from anywhere in the
+                                world. In addition, one of the auditoriums has
+                                an exclusive NFT gallery featuring diverse
+                                digital assets. You can customize the stage
+                                design, lighting, and background music as per
+                                the event, like Music Concerts, Corporate
+                                Events, Get-togethers, Exhibitions, etc.
                             </p>
                             <p class="py-3">
                                 <a class="btn btn-secondary" href="#contact"
-                                    >{
-                                        data.data.homePageSection1.data
-                                            .attributes.section_six_button
-                                    }</a
+                                    >Request Demo</a
                                 >
                             </p>
                         </div>
@@ -816,23 +930,25 @@ const activeIndex = 1;
                             <h5
                                 class="text-black text-last-left2 ims get-experience pb-3"
                             >
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_seven_title
-                                }
+                                Discover a New Era of Shopping at MetaMall
                             </h5>
                             <p class="text-gray2 text-last-left">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_seven_content
-                                }
+                                MetaMall is a 4-story virtual shopping mall that
+                                includes a Cineplex, a vast array of shops, and
+                                an entertaining Funzone! Discover the latest
+                                fashion trends, gadgets, and more in a fully
+                                immersive environment. Watch the latest movies
+                                in the Cineplex or indulge in some arcade games
+                                in the Funzone. From luxury brands to everyday
+                                essentials, MetaMall caters to every taste and
+                                budget. For businesses, MetaMall is the perfect
+                                platform to showcase products and attract new
+                                customers. Shop, explore, and experience the
+                                future of retail at MetaMall!
                             </p>
                             <p class="btn-section py-3">
                                 <a class="btn btn-primary" href="#contact"
-                                    >{
-                                        data.data.homePageSection1.data
-                                            .attributes.section_seven_button
-                                    }</a
+                                    >Request Demo</a
                                 >
                             </p>
                         </div>
@@ -871,23 +987,27 @@ const activeIndex = 1;
                             class="immersive-m-r animation-element slide-right"
                         >
                             <h4 class="text-white get-experience">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_eight_title
-                                }
+                                Enjoy the Thrill of Virtual Gambling at
+                                MetaCasino
                             </h4>
                             <p class="text-white text-last-right">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_eight_content
-                                }
+                                MetaCasino is a virtual casino game club that
+                                offers the excitement and thrills of a
+                                real-world casino in the Metaverse. It offers a
+                                wide range of games such as slot machines,
+                                roulette, blackjack, poker, and more. The
+                                platform is secure and uses encryption
+                                technology to protect personal and financial
+                                data. Players can earn bonuses and rewards, and
+                                businesses can showcase their products. It is an
+                                ideal platform for both players and businesses
+                                looking for a social and engaging virtual gaming
+                                experience. Get ready to spin, bet and win at
+                                MetaCasino!
                             </p>
                             <p class="py-3">
                                 <a class="btn btn-secondary" href="#contact"
-                                    >{
-                                        data.data.homePageSection1.data
-                                            .attributes.section_eight_button
-                                    }</a
+                                    >Request Demo</a
                                 >
                             </p>
                         </div>
@@ -905,15 +1025,158 @@ const activeIndex = 1;
                     <div class="col-lg-12">
                         <div class="why-metaprolane-head">
                             <h3 class="text-white text-center h3-under-bar">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_metaverse_title
-                                }
+                                What is the need to approach a Metaverse
+                                Development Company?
                             </h3>
                             <br />
                         </div>
                     </div>
-                    {
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/early-adapter.webp"}
+                                    alt="Early Adapter"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-green h6-why-meta">
+                                    Early Adapter
+                                </h6>
+                                <p class="text-gray text-last-left ts1">
+                                    Be a pioneer in your domain by developing
+                                    the emerging Metaverse platform for your
+                                    business. Metaverse enables your customers
+                                    to perform various business operations in
+                                    the 3D virtual environment that offers a
+                                    unique user experience. It also helps you to
+                                    draw more attention from a global audience.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/revenue-streams.webp"}
+                                    alt="Early Adapter"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-green h6-why-meta">
+                                    New Revenue Streams
+                                </h6>
+                                <p class="text-gray text-last-left ts1">
+                                    Metaverse platform development enables your
+                                    business to unlock various new revenue
+                                    streams. You can yield more income in
+                                    Metaverse by conducting virtual events,
+                                    monetizing real estate, promoting products
+                                    or services, investing in digital assets,
+                                    etc.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l">
+                            <div class="why-img">
+                                <img
+                                    src={"/assets/images/global-reach.webp"}
+                                    alt="Early Adapter"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-green h6-why-meta">
+                                    Global Reach
+                                </h6>
+                                <p class="text-gray text-last-left ts1">
+                                    Metaverse allows businesses to build their
+                                    own world that represents their brands,
+                                    where anyone can enter regardless of their
+                                    location, and interact with the brands. It
+                                    provides diverse opportunities for companies
+                                    to attract more potential customers
+                                    globally.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/futuristic-technology.webp"}
+                                    alt="Early Adapter"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-green h6-why-meta">
+                                    A Futuristic Technology
+                                </h6>
+                                <p class="text-gray text-last-left ts1">
+                                    Metaverse enables users to experience
+                                    real-time happenings in their respective
+                                    owning in the virtual world from the comfort
+                                    of their homes. It also offers brands and
+                                    individuals to build a strong, definite
+                                    digital identity for themselves in the
+                                    virtual world.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/exceptional-customer-experience.webp"}
+                                    alt="Early Adapter"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-green h6-why-meta">
+                                    Exceptional Customer Experience
+                                </h6>
+                                <p class="text-gray text-last-left ts1">
+                                    The business operations that take place in
+                                    Metaverse will create an immersive and
+                                    unique experience for customers. Metaverse
+                                    has the potential to change the way
+                                    customers interact with your brand. It
+                                    offers more innovative ways for businesses
+                                    to engage their customers in the 3D
+                                    environment.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/improved-employee-engagement.webp"}
+                                    alt="Early Adapter"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-green h6-why-meta">
+                                    Improved Employee Engagement
+                                </h6>
+                                <p class="text-gray text-last-left ts1">
+                                    Metaverse development helps your employees
+                                    to leverage captivating learning experiences
+                                    in the simulated environment. It enables
+                                    employees to work, collaborate, and attend
+                                    meetings, workshops, seminars, etc.
+                                    virtually and also enhances overall
+                                    productivity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- {
                         data.data.homePageSection1.data.attributes.metavarse_development_lists.data.map(
                             (each: any, index: number) => {
                                 return (
@@ -938,7 +1201,7 @@ const activeIndex = 1;
                                 );
                             },
                         )
-                    }
+                    } -->
                 </div>
             </div>
             <!-- metaverse development services -->
@@ -951,11 +1214,7 @@ const activeIndex = 1;
                                     <h2
                                         class="text-white text-center animation-element slide-left"
                                     >
-                                        {
-                                            data.data.homePageSection1.data
-                                                .attributes
-                                                .section_metaverse_developmet
-                                        }
+                                        METAVERSE DEVELOPMENT SERVICES
                                     </h2>
                                 </div>
                             </div>
@@ -963,7 +1222,247 @@ const activeIndex = 1;
                                 <div class="fn_cs_slider" data-responsive="on">
                                     <div class="slider_top">
                                         <ul>
-                                            {
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Application-Development.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Application-Development.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/casino-game.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/casino-game.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Virtual-office.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Virtual-office.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Fashion-Development.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Fashion-Development.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Healthcare.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Healthcare.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Banking.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Banking.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Integration.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Integration.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Avatar-Development.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Avatar-Development.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/NFT-Development.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/NFT-Development.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Ecommerce.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Ecommerce.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/Social-Media.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/Social-Media.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item">
+                                                    <img
+                                                        src={"assets/images/mds2-new/event-platform.webp"}
+                                                    />
+                                                    <div class="item_in">
+                                                        <div
+                                                            class="img"
+                                                            style={{
+                                                                backgroundImage: `url("assets/images/mds2-new/event-platform.webp")`,
+                                                                // backgroundSize: 'cover',
+                                                                // backgroundPosition: 'center',
+                                                                // width: '100%',
+                                                                // height: '100%'
+                                                            }}
+                                                        >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <!-- {
                                                 data.data.homePageSection1.data.attributes.metavarse_development_service_lists.data.map(
                                                     (
                                                         each: any,
@@ -996,11 +1495,11 @@ const activeIndex = 1;
                                                         );
                                                     },
                                                 )
-                                            }
+                                            } -->
                                         </ul>
                                     </div>
                                     <div class="slider_nav">
-                                        <a href="#" class="prev">
+                                        <a class="prev">
                                             <span class="circle"></span>
                                             <span class="icon"
                                                 ><i class="fa fa-chevron-left"
@@ -1008,7 +1507,7 @@ const activeIndex = 1;
                                             >
                                             <span class="circle"></span>
                                         </a>
-                                        <a href="#" class="next">
+                                        <a class="next">
                                             <span class="circle"></span>
                                             <span class="icon"
                                                 ><i class="fa fa-chevron-right"
@@ -1040,16 +1539,213 @@ const activeIndex = 1;
                                 <h5
                                     class="text-black text-center h3-under-bar text-uppercase animation-element slide-left"
                                 >
-                                    {
-                                        data.data.homePageSection1.data
-                                            .attributes
-                                            .section_metaverse_domain_title
-                                    }
+                                    TOP YOUR DOMAIN WITH CUSTOM METAVERSE
+                                    SOLUTIONS
                                 </h5>
                             </div>
 
                             <div class="owl-carousel owl-carousel2">
-                                {
+                                <div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/gaming.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        GAMING
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Entertainment
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* second row */}
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/marketing.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        MARKETING
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Advertisment
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/eductaion.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        EDUCATION
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Learning
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* second row */}
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/entertainment.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        ENTERTAINMENT AND MEDIA
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Engagement
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/manufacturing.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        MANUFACTURING
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Production
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* second row */}
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/BANKING.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        BANKING AND FINANCE
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Transactions
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/HEALTHCARE.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        HEALTHCARE
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Consulting
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* second row */}
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/RETAIL.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        RETAIL
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Distribution
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/real-estate.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        REAL ESTATE
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Flats | Plots Sale
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    {/* second row */}
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/home-industries/tourism.webp"}
+                                                    alt="Gaming"
+                                                />
+                                                <div class="expert-txt">
+                                                    <p class="top-your-head">
+                                                        TOURISM
+                                                    </p>
+                                                    <p class="top-your-bot">
+                                                        Park | Lake
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- {
                                     data.data.homePageSection1.data.attributes.metaverse_domain_solutions.data.map(
                                         (each: any, index: number) => {
                                             const reverseIndex =
@@ -1060,7 +1756,7 @@ const activeIndex = 1;
                                                 1 -
                                                 index;
                                             return (
-                                                // first row
+                                            
                                                 <div>
                                                     <div class="owl-experts-item">
                                                         <div class="item">
@@ -1093,7 +1789,7 @@ const activeIndex = 1;
                                                         </div>
                                                     </div>
 
-                                                    {/* second row */}
+                                                  
                                                     <div class="owl-experts-item">
                                                         <div class="item">
                                                             <div class="icon">
@@ -1152,7 +1848,7 @@ const activeIndex = 1;
                                             );
                                         },
                                     )
-                                }
+                                } -->
                             </div>
                         </div>
                     </div>
@@ -1227,7 +1923,375 @@ const activeIndex = 1;
                     data-ride="carousel"
                 >
                     <div class="carousel-inner">
-                        {
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                        Play Virtual Games
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Metaverse virtual gaming allows
+                                                    users to interact with each other
+                                                    in real-time which offers a fascinating
+                                                    gaming experience. It permits
+                                                    users to earn just by playing
+                                                    in the virtual space by selling
+                                                    in-game assets they won to other
+                                                    players.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                        Organize Events
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    You can host an event of any
+                                                    size in Metaverse that will be
+                                                    more engaging and enticing for
+                                                    users. Our Metaverse facilitates
+                                                    you to conduct an event in the
+                                                    virtual world to create brand
+                                                    awareness globally with the scope
+                                                    of monetizing options.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                        Monetize Real Estate
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Developing Metaverse real estate
+                                                    is a lucrative investment option
+                                                    as the price of virtual land
+                                                    is ratcheted up rapidly each
+                                                    day. You can monetize Metaverse
+                                                    real estate by selling the plots,
+                                                    once the value of the virtual
+                                                    land increases and also by offering
+                                                    it for rent or lease.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                        Conduct in - person like Meetings
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Metaverse offers a massive opportunity
+                                                    to provide an enchanting meeting
+                                                    experience with fully interactive
+                                                    virtual workstations. Metaverse
+                                                    meetings facilitate organic,
+                                                    natural interaction and also
+                                                    drive creativity.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                        Make New Connections
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Brands have plenty of benefits
+                                                    in the Metaverse to grow their
+                                                    identity by forging connections
+                                                    and creating communities in the
+                                                    digital world. Metaverse helps
+                                                    users to meet new characters,
+                                                    interact with them, and make
+                                                    connections in the virtual world.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                        Host Concerts and Tradeshows
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Host music concerts or trade
+                                                    shows in the Metaverse to yield
+                                                    revenue by offering paid tickets
+                                                    to the audience. It also allows
+                                                    you to monetize by advertising
+                                                    any product or service in the
+                                                    concerts with alluring 3D experiences
+                                                    for the audience.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                        Do Virtual Shopping
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Metaverse merges online and in-store
+                                                    shopping and makes the shopping
+                                                    experience more fun & engaging
+                                                    for users. The shoppers can enter
+                                                    the virtual store as an avatar
+                                                    and easily find the items they
+                                                    prefer & also ensure the quality
+                                                    of the product before purchasing.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                        Advertise a Product/ Service
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Metaverse helps to create brand
+                                                    awareness by advertising a product
+                                                    or service through virtual billboards
+                                                    & banners in the virtual space.
+                                                    It provides numerous opportunities
+                                                    for businesses to drive growth
+                                                    by promoting the product to a
+                                                    global audience.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                    Invest in various assets
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Investing in various assets as NFTs is the best investment option with real-world value and ownership. The users can invest in several assets in the virtual space like artworks, images, videos, music, in-game assets, etc.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                    Perform Financial Operations
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Banking and other financial institutions can offer an immersive experience for users by facilitating various banking operations in the 3D virtual environment. Banks can engage customers and employees in a new way in the virtual space.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                    Enjoy Virtual Tour
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    The key use case of Metaverse in virtual tourism is that anyone can enjoy any desired destination in a 360-degree view. Metaverse helps travelers to get an idea about the specific spot using an interactive virtual experience of a real-world landscape and can plan according before they visit.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-12 mt-5">
+                                    <h3
+                                        class="text-center text-white text-bold"
+                                    >
+                                    Healthcare Consulting
+                                    </h3>
+                                    <div class="d-flex justify-content-center">
+                                        <div class="quote-box">
+                                            <div
+                                                class="d-flex justify-content-center"
+                                            >
+                                                <blockquote
+                                                    class="text-center corosel-content text-white"
+                                                >
+                                                    <span> &#x201C; </span>
+                                                    Metaverse creates limitless possibilities in the Healthcare domain for both patients and physicians. Metaverse offers various benefits in the healthcare domain like better patient care, medical and surgical practice, major crisis, enhanced treatment processes, and improved medical procedures.
+                                                    <span> &#x201D; </span>
+                                                </blockquote>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- {
                             data.data.homePageSection1.data.attributes.metaverse_lists.data.map(
                                 (each: any, index: number) => {
                                     return (
@@ -1264,13 +2328,12 @@ const activeIndex = 1;
                                     );
                                 },
                             )
-                        }
+                        } -->
                     </div>
                 </div>
                 <!-- Add navigation controls  -->
                 <a
                     class="carousel-control-prev"
-                    href="#carouselExample"
                     role="button"
                     data-slide="prev"
                 >
@@ -1278,10 +2341,9 @@ const activeIndex = 1;
                         style="margin-top:80px;width:1.3rem;margin-left:-99px"
                         class="carousel-control-prev-icon"
                         aria-hidden="true"></span>
-                </a>
+            </a>
                 <a
                     class="carousel-control-next"
-                    href="#carouselExample"
                     role="button"
                     data-slide="next"
                 >
@@ -1289,7 +2351,7 @@ const activeIndex = 1;
                         style="margin-top:80px;width:1.3rem;margin-right:-99px"
                         class="carousel-control-next-icon"
                         aria-hidden="true"></span>
-                </a>
+        </a>
             </section>
             <div class="bg-vectors">
                 <img src="assets/images/bg-vector1.webp" alt="BG Vector" />
@@ -1302,10 +2364,7 @@ const activeIndex = 1;
                         <h4
                             class="text-white text-center h3-under-bar text-uppercase animation-element slide-left"
                         >
-                            {
-                                data.data.homePageSection1.data.attributes
-                                    .section_our_technologies
-                            }
+                            OUR TECHNOLOGIES
                         </h4>
                     </div>
                     <div
@@ -1314,7 +2373,67 @@ const activeIndex = 1;
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="owl-carousel owl-carousel3">
-                                    {
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/ourtech1.webp"}
+                                                    alt="Ourtech1"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/blender.png"}
+                                                    alt="Ourtech1"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/ourtech2.webp"}
+                                                    alt="Ourtech1"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/ourtech3.webp"}
+                                                    alt="Ourtech1"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/ourtech4.webp"}
+                                                    alt="Ourtech1"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="owl-experts-item">
+                                        <div class="item">
+                                            <div class="icon">
+                                                <img
+                                                    src={"assets/images/ourtech5.webp"}
+                                                    alt="Ourtech1"
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- {
                                         data.data.homePageSection1.data.attributes.metaverse_our_technologies.data.map(
                                             (each: any, index: number) => {
                                                 return (
@@ -1335,7 +2454,7 @@ const activeIndex = 1;
                                                 );
                                             },
                                         )
-                                    }
+                                    } -->
                                 </div>
                             </div>
                         </div>
@@ -1351,21 +2470,120 @@ const activeIndex = 1;
                     <div class="col-lg-12">
                         <div class="why-metaprolane-l" style="display:block">
                             <h2 class="text-black text-center">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_why_metaprolane
-                                }
+                                WHY METAPROLANE
                             </h2>
                             <p class="text-black text-last-center whyp-c">
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .section_metaprolane_description
-                                }
+                                Metaprolane is a renowned company, specializing
+                                exclusively in Metaverse development services
+                                and solutions for different industry verticals
+                                globally. The biggest strength of Metaprolane is
+                                that we are always overseeing and analyzing the
+                                evolution of Metaverse and are very quick to
+                                adapt to the changes in the emergent virtual
+                                world. Our Metaverse development services help
+                                you create a virtual world with various virtual
+                                attractions and recreational centers to deliver
+                                an enchanting experience for your users.
                             </p>
                         </div>
                     </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l2">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/expert-team.webp"}
+                                    alt="Expert Team"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-black h6-why-meta">
+                                    Expert Team
+                                </h6>
+                                <p class="text-black text-last-left ts1">
+                                    We have a team of certified and passionate
+                                    Metaverse developers who built diverse
+                                    Metaverse dapps and simulations for various
+                                    organizations. Our team can offer the best
+                                    technological approach to deliver
+                                    high-quality Metaverse development services
+                                    & solutions.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l2">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/diverse-experience.webp"}
+                                    alt="Expert Team"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-black h6-why-meta">
+                                    Diverse Experience
+                                </h6>
+                                <p class="text-black text-last-left ts1">
+                                    With extensive experience in Metaverse
+                                    development, we have successfully completed
+                                    several projects in creating a virtual world
+                                    for various clients. As a renowned Metaverse
+                                    development company, we help you develop an
+                                    attractive virtual world with a captivating
+                                    experience for users.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l2">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/extended-support.webp"}
+                                    alt="Expert Team"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-black h6-why-meta">
+                                    Extended Support
+                                </h6>
+                                <p class="text-black text-last-left ts1">
+                                    We always offer extended support to
+                                    establish your Metaverse without any
+                                    interruption. Metaprolane's specialists
+                                    possess deep expertise in Metaverse
+                                    development and also provide continued
+                                    support post-delivery of your project.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="why-metaprolane-l2">
+                            <div class="why-img">
+                                <img
+                                    src={"assets/images/rapid-development.webp"}
+                                    alt="Expert Team"
+                                />
+                            </div>
+                            <div class="why-meta-r">
+                                <h6 class="text-black h6-why-meta">
+                                    Rapid Development
+                                </h6>
+                                <p class="text-black text-last-left ts1">
+                                    Our experts will create impactful,
+                                    customized Metaverse applications from the
+                                    ideation to the release stage in the
+                                    shortest time possible. We use the best
+                                    practices to ensure our clients get a fully
+                                    functional solution within the stipulated
+                                    time while maintaining quality standards.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                    {
+                    <!-- {
                         data.data.homePageSection1.data.attributes.metaverse_why_metaprolanes.data.map(
                             (each: any, index: number) => {
                                 return (
@@ -1390,7 +2608,7 @@ const activeIndex = 1;
                                 );
                             },
                         )
-                    }
+                    } -->
                 </div>
             </div>
             <div class="bg-vectors">
@@ -1407,13 +2625,132 @@ const activeIndex = 1;
                             <h3
                                 class="text-white faq-head animation-element slide-left"
                             >
-                                {
-                                    data.data.homePageSection1.data.attributes
-                                        .metaverse_faq_title
-                                }
+                                Metaverse Development - Frequently Asked
+                                Questions (FAQ's)
                             </h3>
                         </div>
-                        {
+                        <div class="faq-card">
+                            <div
+                                class="faq-question"
+                                onclick="toggleAnswer(event)"
+                            >
+                                what is metaverse ?
+                                <span class="faq-toggle-icon"> + </span>
+                            </div>
+                            <div class="faq-answer">
+                                Metaverse is a 3D virtual world where people can
+                                do all kinds of activities like playing,
+                                trading, shopping, interacting, learning, etc.
+                                just like in the physical world
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div
+                                class="faq-question"
+                                onclick="toggleAnswer(event)"
+                            >
+                                How much does it cost to build a Metaverse?
+                                <span class="faq-toggle-icon"> + </span>
+                            </div>
+                            <div class="faq-answer">
+                                The cost of Metaverse platform development
+                                depends on various factors. The price may vary
+                                based on your content, features &
+                                functionalities needed, scale, etc. Please
+                                contact us immediately to know the estimated
+                                cost of Metaverse development as per your needs.
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div
+                                class="faq-question"
+                                onclick="toggleAnswer(event)"
+                            >
+                                How long it takes to build a Metaverse platform?
+                                <span class="faq-toggle-icon"> + </span>
+                            </div>
+                            <div class="faq-answer">
+                                There are various factors that influence the
+                                time taken to develop a Metaverse platform. The
+                                duration for Metaverse development may vary from
+                                2 months to several months depending on the
+                                features, it will be developed in phased
+                                approach.
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div
+                                class="faq-question"
+                                onclick="toggleAnswer(event)"
+                            >
+                                What are the technologies used in Metaverse
+                                development?
+                                <span class="faq-toggle-icon"> + </span>
+                            </div>
+                            <div class="faq-answer">
+                                There are various technologies integrated with
+                                the Metaverse platform that includes Artificial
+                                Intelligence (AI), 3D Modeling and
+                                Reconstruction, Blockchain Mechanism, Virtual
+                                Reality (VR), Augmented Reality (AR), Mixed
+                                Reality (MR), the Internet of Things, Web 3.0,
+                                Edge Computing, Spatial Computing, etc.
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div
+                                class="faq-question"
+                                onclick="toggleAnswer(event)"
+                            >
+                                Can I launch my own Metaverse?
+                                <span class="faq-toggle-icon"> + </span>
+                            </div>
+                            <div class="faq-answer">
+                                Yes, you can launch a Metaverse on your own with
+                                the guidance of a renowned Metaverse Development
+                                Services company like Metaprolane. We will help
+                                you launch your own Metaverse that offers
+                                diverse opportunities for your business to
+                                increase the ROI.
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div
+                                class="faq-question"
+                                onclick="toggleAnswer(event)"
+                            >
+                                Is it beneficial to invest in the Metaverse?
+                                <span class="faq-toggle-icon"> + </span>
+                            </div>
+                            <div class="faq-answer">
+                                Yes, it is beneficial, safe and a great
+                                investment option for businesses to invest in
+                                Metaverse. In fact, this is the right time for
+                                your business to invest in Metaverse technology,
+                                as it already started to become more mainstream.
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div
+                                class="faq-question"
+                                onclick="toggleAnswer(event)"
+                            >
+                                How to create Metaverse?
+                                <span class="faq-toggle-icon"> + </span>
+                            </div>
+                            <div class="faq-answer">
+                                There is no one-size-fits-all answer to the
+                                question of how to develop Metaverse as the
+                                Metaverse development will vary depending on the
+                                specific goals and objectives of the business.
+                                If you are looking for how to build Metaverse,
+                                then seek assistance from a leading Metaverse
+                                Development Company like Metaprolane. We will
+                                help you build a Metaverse platform as per your
+                                business niche and requirements.
+                            </div>
+                        </div>
+                        <!-- {
                             data.data.homePageSection1.data.attributes.metaverse_faq_lists.data.map(
                                 (item: any, index: number) => (
                                     <div class="faq-card">
@@ -1432,7 +2769,7 @@ const activeIndex = 1;
                                     </div>
                                 ),
                             )
-                        }
+                        } -->
 
                         <!-- <div class="d-flex flex-wrap">
                     {
@@ -1535,7 +2872,18 @@ const activeIndex = 1;
                     items[nextIndex].classList.add("next");
                     items[next2Index].classList.add("next2");
                 }
-
+                nextButton.addEventListener("click",()=>{
+                    nextSlide()
+                })
+                prevButton.addEventListener("click",()=>{
+                    prevSlide()
+                })
+                function prevSlide() {
+                    if(currentIndex>0){
+                        currentIndex = (currentIndex - 1) % items.length;
+                        updateCarousel();
+                    }
+                }
                 function nextSlide() {
                     currentIndex = (currentIndex + 1) % items.length;
                     updateCarousel();
