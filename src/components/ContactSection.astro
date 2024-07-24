@@ -81,7 +81,7 @@ var calSrc = ""
                                     id="name"
                                     placeholder=""
                                     class="ms-l"
-                                    required
+                                    
                                 />
                             </fieldset>
                         </div>
@@ -98,7 +98,7 @@ var calSrc = ""
                                     id="email"
                                     placeholder=""
                                     class="ms-r"
-                                    required
+                                    
                                 />
                             </fieldset>
                         </div>
@@ -147,7 +147,7 @@ var calSrc = ""
                                     id="phone"
                                     placeholder=""
                                     class="ms-r"
-                                    required
+                                    
                                 />
                             </fieldset>
                         </div>
@@ -164,7 +164,7 @@ var calSrc = ""
                                     id="company"
                                     placeholder=""
                                     class="ms-l"
-                                    required
+                                    
                                 />
                             </fieldset>
                         </div>
@@ -179,7 +179,7 @@ var calSrc = ""
                                     class="ask-select"
                                     name="askfor"
                                     id="askfor"
-                                    required
+                                    
                                 >
                                     <option value="">Please Select</option>
                                     <option value="Metaverse Virtual Office"
@@ -233,7 +233,7 @@ var calSrc = ""
                                     class="form-control"
                                     id="message"
                                     placeholder=""
-                                    required></textarea>
+                                    ></textarea>
                             </fieldset>
                         </div>
 
@@ -308,6 +308,7 @@ var calSrc = ""
                     console.log(data, "data");
                     let validData = true;
                     if (!data.name) {
+                        console.log("email")
                         document.getElementById("name-error")!.innerText =
                             "Enter your Name";
                         validData = false;
