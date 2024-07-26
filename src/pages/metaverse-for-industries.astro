@@ -84,11 +84,30 @@ const { data } = await response.json();
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
             ></script> -->
             <link
-                href="/vendor/bootstrap/css/bootstrap.min.css"
+                id="bootstrap-href"
                 rel="stylesheet"
             />
-            <link rel="stylesheet" href="/styles/css/style.css" />
-            <link rel="stylesheet" href="/styles/blog/css/owl.css" />
+            <link id="style-href" rel="stylesheet" />
+            <link id="blogstyle-href" rel="stylesheet" />
+
+            <script is:inline>
+                function lazyLoadStyleSheet(){
+                    const bootStrapLink = document.getElementById('bootstrap-href');
+                    const styleLink = document.getElementById('style-href');
+                    const blogLink = document.getElementById('blogstyle-href');
+
+                    bootStrapLink.setAttribute('href', '/vendor/bootstrap/css/bootstrap.min.css');
+                    styleLink.setAttribute('href', '/styles/css/style.css');
+                    blogLink.setAttribute('href', '/styles/blog/css/owl.css');
+
+
+                };
+
+                lazyLoadStyleSheet();
+                
+
+            </script>
+
 
             <script is:inline>
                 $(document).ready(function () {
