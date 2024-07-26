@@ -450,7 +450,7 @@ const { data } = await response.json();
                       <div class="w-100">
                         <div class="immersive-m-l text-center animation-element slide-left">
                         <a href="#contact">
-                          <img src="assets/images/development-services/webp/video-thumbnail.webp" class="w-100-br-15" />
+                          <img id="cta-banner-image" class="w-100-br-15" />
                         </a>
                           <!-- <iframe title="Metaprolane Video" srcdoc="
                   <style>
@@ -593,10 +593,12 @@ const { data } = await response.json();
 
           const metaversePlatformImage = document.getElementById('metaverse-platform-img');
           const devMetaversePlatformImage = document.getElementById('dev-metaverse-platform-img');
+          const ctaBannerImage = document.getElementById('cta-banner-image');
 
           window.addEventListener('wheel', function(){
             metaversePlatformImage.setAttribute('src', "assets/images/development-services/webp/img-01.webp");
             devMetaversePlatformImage.setAttribute('src', "assets/images/development-services/webp/img-02.webp");
+            ctaBannerImage.setAttribute('src', "assets/images/development-services/webp/video-thumbnail.webp");
           });
 
 
