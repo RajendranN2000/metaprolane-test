@@ -86,11 +86,12 @@ const { data } = await response.json();
             <link
                 id="bootstrap-href"
                 rel="stylesheet"
+                href="/vendor/bootstrap/css/bootstrap.min.css"
             />
-            <link id="style-href" rel="stylesheet" />
-            <link id="blogstyle-href" rel="stylesheet" />
+            <link id="style-href" href="/styles/css/style.css" rel="stylesheet" />
+            <link id="blogstyle-href" href="/styles/blog/css/owl.css" rel="stylesheet" />
 
-            <script is:inline>
+            <!-- <script is:inline>
                 function lazyLoadStyleSheet(){
                     const bootStrapLink = document.getElementById('bootstrap-href');
                     const styleLink = document.getElementById('style-href');
@@ -106,7 +107,7 @@ const { data } = await response.json();
                 lazyLoadStyleSheet();
                 
 
-            </script>
+            </script> -->
 
 
             <script is:inline>
