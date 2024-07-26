@@ -308,7 +308,7 @@ const { data } = await response.json();
                       </div>
                       <div class="col-lg-5">
                         <div class="plr-10-only-mobile animation-element slide-right mb-4">
-                          <img src="assets/images/development-services/webp/img-01.webp" alt="BG Vector" class="w-100-br-15">
+                          <img id="metaverse-platform-img" alt="BG Vector" class="w-100-br-15">
                         </div>
                       </div>
                     </div>
@@ -328,7 +328,7 @@ const { data } = await response.json();
                     <div class="row pt-3 mob-pt-0">
                       <div class="col-lg-5">
                         <div class="plr-10-only-mobile animation-element slide-right mb-4">
-                          <img src="assets/images/development-services/webp/img-02.webp" alt="BG Vector" class="w-100-br-15 img-h" >
+                          <img id="dev-metaverse-platform-img" alt="BG Vector" class="w-100-br-15 img-h" >
                         </div>
                       </div>
                       <div class="col-lg-7">
@@ -362,21 +362,19 @@ const { data } = await response.json();
                             data.metaverseDevelopmentCompany.data.attributes.develop_service_lists.data.map(
                               (each: any, index: number) => {
                                 return (
-                                <div
-                                            class="owl-experts-item "
-                                        >
-                            <div class="icon">
-                              <div class="expert-txt2-office">
-                                <div class="box-img">
-                                  <img src={each.attributes.image}
-                                    alt="Immersive Environment Image" />
-                                    <div class="box-img-inn">
-                                      <h5 class="fma">{each.attributes.title}</h5>
-                                      <p class="text-last-center text-white">
-                                        {each.attributes.content}
-                                      </p>
+                                <div class="owl-experts-item ">
+                                  <div class="icon">
+                                    <div class="expert-txt2-office">
+                                      <div class="box-img">
+                                        <img src={each.attributes.image}
+                                          alt="Immersive Environment Image" />
+                                          <div class="box-img-inn">
+                                            <h5 class="fma">{each.attributes.title}</h5>
+                                            <p class="text-last-center text-white">
+                                              {each.attributes.content}
+                                            </p>
+                                          </div>
                                     </div>
-                                </div>
                                 
                               </div>
                             </div>
@@ -592,6 +590,16 @@ const { data } = await response.json();
 
         </div>
         <script type="text/javascript">
+
+          const metaversePlatformImage = document.getElementById('metaverse-platform-img');
+          const devMetaversePlatformImage = document.getElementById('dev-metaverse-platform-img');
+
+          window.addEventListener('wheel', function(){
+            metaversePlatformImage.setAttribute('src', "assets/images/development-services/webp/img-01.webp");
+            devMetaversePlatformImage.setAttribute('src', "assets/images/development-services/webp/img-02.webp");
+          });
+
+
           var $animation_elements = $('.animation-element');
           var $window = $(window);
     
