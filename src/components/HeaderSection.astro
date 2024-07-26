@@ -54,7 +54,10 @@ const {title} = Astro.props;
                     <div  class="main-nav d-flex justify-content-between">
                         
                         <div id="logo-container">
-                            {/* Logo Will Be Loaded After The DOM is Ready */}       
+                            {/* Logo Will Be Loaded After The DOM is Ready */}    
+                            <a href="/" class="logo">
+                                <img src="/assets/images2/logo2.webp" alt="Logo" />
+                            </a>    
                         </div>
     
                         <div id="menu-container" >
@@ -326,13 +329,13 @@ const {title} = Astro.props;
 
        
 
-    window.setTimeout(() =>{
-        headerLogoContainer.innerHTML =  `
-            <a href="/" class="logo">
-                <img src="/assets/images2/logo2.webp" alt="Logo" />
-            </a> 
-        `
-    },3000)
+    // window.setTimeout(() =>{
+    //     headerLogoContainer.innerHTML =  `
+    //         <a href="/" class="logo">
+    //             <img src="/assets/images2/logo2.webp" alt="Logo" />
+    //         </a> 
+    //     `
+    // },3000)
   
 
     //topbar
