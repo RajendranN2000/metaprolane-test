@@ -597,36 +597,107 @@ const { data } = await response.json();
                             <div
                                 class="owl-experts-item owl-carousel animation-element slide-left d-flex flex-wrap justify-content-between"
                             >
-                                {
-                                    data.metaverseForIndustrie.data.attributes.industry_reshaping_diverse_lists.data.map(
-                                        (each: any, index: number) => {
-                                            return (
-                                                <div
-                                                    class="item"
-                                                >
-                                                    <div class="icon">
-                                                        <img
-                                                            src={
-                                                                each.attributes
-                                                                    .image
-                                                            }
-                                                            alt="Manufacturing"
-                                                        />
-                                                        <div class="expert-txt">
-                                                            <p class="top-your-head">
-                                                                {
-                                                                    each
-                                                                        .attributes
-                                                                        .text
-                                                                }
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            );
-                                        },
-                                    )
-                                }
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="logistics-carousel-img" alt="LOGISTICS" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                LOGISTICS
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-carousel-img" alt="MINING" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                MINING
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-oil-img" alt="OIL & GAS" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                OIL & GAS
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-estate-img" alt="REAL ESTATE" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                REAL ESTATE
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-manufacturing-img" alt="MANUFACTURING" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                MANUFACTURING
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-energy-img" alt="ENERGY AND UTILITIES" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                ENERGY AND UTILITIES
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-construction-img" alt="CONSTRUCTION" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                CONSTRUCTION
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-automotive-img" alt="AUTOMOTIVE" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                AUTOMOTIVE
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-aerospace-img" alt="AEROSPACE" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                AEROSPACE
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="icon">
+                                        <img id="mining-health-img" alt="HEALTHCARE" />
+                                        <div class="expert-txt">
+                                            <p class="top-your-head">
+                                                HEALTHCARE
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -959,6 +1030,49 @@ const { data } = await response.json();
             </section>
         </div>
         <script type="text/javascript">
+            //carousel images
+            const logisticsImg  = document.getElementById('logistics-carousel-img');
+            const miningImg = document.getElementById('mining-carousel-img');
+            const oilImg = document.getElementById('mining-oil-img');
+            const estateImg = document.getElementById('mining-estate-img');
+            const manufacturingImg = document.getElementById('mining-manufacturing-img');
+            const energyImg = document.getElementById('mining-energy-img');
+            const constructionImg = document.getElementById('mining-construction-img');
+            const automotiveImg = document.getElementById('mining-automotive-img');
+            const aerospaceImg = document.getElementById('mining-aerospace-img');
+            const healthCare = document.getElementById('mining-health-img');
+
+            window.addEventListener('wheel', function(){
+                logisticsImg.setAttribute('src', 'assets/images/industries/logistics.jpg');
+                miningImg.setAttribute('src', 'assets/images/industries/mining.jpg');
+                oilImg.setAttribute('src', 'assets/images/industries/oil-gas.jpg');
+                estateImg.setAttribute('src', 'assets/images/industries/real-estate.png');
+                manufacturingImg.setAttribute('src', 'assets/images/industries/manufacturing.png');
+                energyImg.setAttribute('src', 'assets/images/industries/energy-and-utilities.jpg');
+                constructionImg.setAttribute('src', 'assets/images/industries/construction.jpg');
+                automotiveImg.setAttribute('src', 'assets/images/industries/automotive.jpg');
+                aerospaceImg.setAttribute('src', 'assets/images/industries/aerospace.jpg');
+                healthCare.setAttribute('src', 'assets/images/industries/H-care.jpg');
+            });
+
+            
+
+
+
+            
+
+            
+
+
+
+
+
+
+
+
+
+
+
             var $animation_elements = $('.animation-element');
             var $window = $(window);
       
