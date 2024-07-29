@@ -388,7 +388,7 @@ const { data } = await response.json();
         <div class="section4">
           <img
             class="section4-img animation-element slide-left"
-            src="assets/images/jewellery/puchachingImage.webp"
+            id="img-after-solutions"
           />
         </div>
         <div class="section5-outer">
@@ -404,6 +404,9 @@ const { data } = await response.json();
                 ></span>
               </a>
               <div class="carousel-inner">
+                
+                
+                
                 {
                   data.metaverseJewelryShopping.data.attributes.jewelry_virtual_store_lists.data.map(
                     (each: any, index: number) => {
@@ -575,6 +578,8 @@ const { data } = await response.json();
       const solutionImg8 = document.getElementById("solution-img-8");
       const solutionImg9 = document.getElementById("solution-img-9");
 
+      const imageAfterSolutions = document.getElementById("img-after-solutions");
+
 
       //loading solutions images ons scroll
 
@@ -589,7 +594,9 @@ const { data } = await response.json();
         solutionImg7.setAttribute('src', '/assets/images/jewellery/GlobalReach-01@4x.webp');
         solutionImg8.setAttribute('src', '/assets/images/jewellery/Customization-01@4x.webp');
         solutionImg9.setAttribute('src', '/assets/images/jewellery/CustomerInsight-01@4x.webp');
-      })
+
+        imageAfterSolutions.setAttribute('src', "assets/images/jewellery/puchachingImage.webp");
+      });
 
 
 
