@@ -399,15 +399,34 @@ const { data } = await response.json();
                 href="#carouselExample"
                 role="button"
                 data-slide="prev"
+                onclick="carouselPrev()"
               >
                 <span class="carousel-control-prev-icon" aria-hidden="true"
                 ></span>
               </a>
               <div class="carousel-inner">
                 
+                <div class="section5-carousel">
+                  <div class="section5-frame animation-element slide-left">
+                    <img
+                      id="carousel-img"
+                      class="section5-left"
+                      src="assets/images/jewellery/ImageSequence_007_0100@4x.webp"
+                    />
+                    <div class="section5-right">
+                      <div id="carousel-title" class="section5-title">
+                        Robust Technology
+                      </div>
+                      <div id="carousel-content" class="section5-content">
+                        We integrate various robust and interactive technologies into the metaverse for jewelry stores, such as haptic feedback, motion sensors, and digital replicas. 
+                        These technologies and their features will help you have a realistic experience within the metaverse. Venturing into the metaverse will give your jewelry a new 
+                        dimension and allow you to create a surrealistic experience.
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 
-                
-                {
+                {/*
                   data.metaverseJewelryShopping.data.attributes.jewelry_virtual_store_lists.data.map(
                     (each: any, index: number) => {
                       return (
@@ -450,6 +469,7 @@ const { data } = await response.json();
                       );
                     },
                   )
+                  */
                 }
               </div>
 
@@ -458,6 +478,7 @@ const { data } = await response.json();
                 href="#carouselExample"
                 role="button"
                 data-slide="next"
+                onclick="carouselNext()"
               >
                 <span class="carousel-control-next-icon" aria-hidden="true"
                 ></span>
@@ -568,6 +589,16 @@ const { data } = await response.json();
 
     <script type="text/javascript">
 
+      let currentCarouselIndex = 0;
+      let carouselContext = [
+        {img : "assets/images/jewellery/Develop_Your_Own_Metaverse_Jewelry_Shop.webp", title: "Virtual Store", context: "Metaverse allows you to build a virtual jewelry store. It can be the duplicate or virtual version of their in-house products or physical store. The same designs and infrastructure can be copied to the virtual world in Metaverse. It will help the customer to explore their desired products, even try it out using their avatar, and they can even purchase it from the same virtual store."},
+        {img : "assets/images/jewellery/ImageSequence_007_0100@4x.webp", title: "Robust Technology", context: "We integrate various robust and interactive technologies into the metaverse for jewelry stores, such as haptic feedback, motion sensors, and digital replicas. These technologies and their features will help you have a realistic experience within the metaverse. Venturing into the metaverse will give your jewelry a new dimension and allow you to create a surrealistic experience."},
+        {img : "assets/images/jewellery/CostCutting.webp", title: "Cost Cutting", context: "Metaverse virtual jewelry store will help you develop the same kind of physical store in virtual reality. This will cut down the real construction cost, time, and energy. Retailers can also save up their rental costs, electrical bills, utilities, operating expenses etc."}
+
+
+      ]
+
+
       const solutionImg1 = document.getElementById("solution-img-1");
       const solutionImg2 = document.getElementById("solution-img-2");
       const solutionImg3 = document.getElementById("solution-img-3");
@@ -577,6 +608,14 @@ const { data } = await response.json();
       const solutionImg7 = document.getElementById("solution-img-7");
       const solutionImg8 = document.getElementById("solution-img-8");
       const solutionImg9 = document.getElementById("solution-img-9");
+
+
+      const CarouselImg = document.getElementById('carousel-img');
+      const CarouselTitle = document.getElementById('carousel-title');
+      const CarouselContent = document.getElementById('carousel-content');
+
+
+
 
       const imageAfterSolutions = document.getElementById("img-after-solutions");
 
@@ -596,9 +635,45 @@ const { data } = await response.json();
         solutionImg9.setAttribute('src', '/assets/images/jewellery/CustomerInsight-01@4x.webp');
 
         imageAfterSolutions.setAttribute('src', "assets/images/jewellery/puchachingImage.webp");
+
+        CarouselImg.setAttribute('src', carouselContext[currentCarouselIndex].img);
+        CarouselContent.innerText = carouselContext[currentCarouselIndex].context;
+        CarouselTitle.innerText = carouselContext[currentCarouselIndex].title;
+        
       });
 
 
+      
+      
+      function switchCarouselCard(event){
+
+        if(event == "next"){
+          if(currentCarouselIndex >= 2){
+            currentCarouselIndex = 0;
+          }else{
+            currentCarouselIndex += 1;
+          }
+        }else if(event == "prev"){
+          if(currentCarouselIndex <= 0){
+            currentCarouselIndex = 2;
+          }else{
+            currentCarouselIndex -= 1;
+          }
+        }
+
+        CarouselImg.setAttribute('src', carouselContext[currentCarouselIndex].img);
+        CarouselContent.innerText = carouselContext[currentCarouselIndex].context;
+        CarouselTitle.innerText = carouselContext[currentCarouselIndex].title;
+        console.log(currentCarouselIndex);
+      }
+
+      function carouselNext(){
+        switchCarouselCard('next');
+      }
+
+      function carouselPrev(){
+        switchCarouselCard('prev');
+      }
 
       var $animation_elements = $(".animation-element");
       var $window = $(window);
