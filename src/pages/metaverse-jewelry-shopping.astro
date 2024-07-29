@@ -493,28 +493,32 @@ const { data } = await response.json();
               <div class="section6-img-section">
                 <div class="">
                   <img
+                    id="store-img-1"
                     class="section6-image1"
-                    src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp"
+                   
                   />
                 </div>
                 <div class="">
                   <img
+                    id="store-img-2"
                     class="section6-image2"
-                    src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp"
+                    
                   />
                 </div>
               </div>
               <div class="section6-img2-section">
                 <div class="">
                   <img
+                    id="store-img-3"
                     class="section6-image3"
-                    src="assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp"
+                    
                   />
                 </div>
                 <div class="">
                   <img
+                    id="store-img-4"
                     class="section6-image4"
-                    src="assets/images/jewellery/2151034059@4x.webp"
+                    
                   />
                 </div>
               </div>
@@ -620,6 +624,12 @@ const { data } = await response.json();
       const imageAfterSolutions = document.getElementById("img-after-solutions");
 
 
+      const storeImg1 = document.getElementById('store-img-1');
+      const storeImg2 = document.getElementById('store-img-2');
+      const storeImg3 = document.getElementById('store-img-3');
+      const storeImg4 = document.getElementById('store-img-4');
+
+
       //loading solutions images ons scroll
 
 
@@ -639,7 +649,13 @@ const { data } = await response.json();
         CarouselImg.setAttribute('src', carouselContext[currentCarouselIndex].img);
         CarouselContent.innerText = carouselContext[currentCarouselIndex].context;
         CarouselTitle.innerText = carouselContext[currentCarouselIndex].title;
-        
+
+
+        storeImg1.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp');
+        storeImg2.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp');
+        storeImg3.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp');
+        storeImg4.setAttribute('src', 'assets/images/jewellery/2151034059@4x.webp');
+
       });
 
 
