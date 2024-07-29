@@ -1,6 +1,6 @@
 ---
 const { title } = Astro.props;
-var calSrc = ""
+var calSrc = "";
 ---
 
 <link
@@ -9,7 +9,6 @@ var calSrc = ""
     integrity="sha512-HHSUgqDtmyVfGT0pdLVRKcktf9PfLMfFzoiBjh9NPBzw94YFTS5DIwZ12Md/aDPcrkOstXBp9uSAOCl5W2/AOQ=="
     crossorigin="anonymous"
     referrerpolicy="no-referrer"
-    
 />
 <!-- <link
     rel="stylesheet"
@@ -25,8 +24,6 @@ var calSrc = ""
         });
     });
 </script> -->
-
-
 
 <section class="contact-us">
     <div class="bg-vectors">
@@ -53,15 +50,13 @@ var calSrc = ""
                     within budget while maintaining quality.
                 </p>
 
-                <div class="btn btn-primary" id="calendarbutton">Book Calendar</div>
-                    <div class="calendly-inline-widget" data-processed="true">
-                        <iframe
-                            id="calendar-section"
-                            src={calSrc}
-                            title="Calendly"></iframe>
-                    </div>
-               
-                
+                <div class="btn btn-primary" id="calendarbutton">
+                    Book Calendar
+                </div>
+                <div class="calendly-inline-widget" data-processed="true">
+                    <iframe id="calendar-section" src={calSrc} title="Calendly"
+                    ></iframe>
+                </div>
             </div>
 
             <div class="col-lg-8 slide-right">
@@ -81,7 +76,6 @@ var calSrc = ""
                                     id="name"
                                     placeholder=""
                                     class="ms-l"
-                                    
                                 />
                             </fieldset>
                         </div>
@@ -98,7 +92,6 @@ var calSrc = ""
                                     id="email"
                                     placeholder=""
                                     class="ms-r"
-                                    
                                 />
                             </fieldset>
                         </div>
@@ -147,7 +140,6 @@ var calSrc = ""
                                     id="phone"
                                     placeholder=""
                                     class="ms-r"
-                                    
                                 />
                             </fieldset>
                         </div>
@@ -164,7 +156,6 @@ var calSrc = ""
                                     id="company"
                                     placeholder=""
                                     class="ms-l"
-                                    
                                 />
                             </fieldset>
                         </div>
@@ -179,7 +170,6 @@ var calSrc = ""
                                     class="ask-select"
                                     name="askfor"
                                     id="askfor"
-                                    
                                 >
                                     <option value="">Please Select</option>
                                     <option value="Metaverse Virtual Office"
@@ -232,8 +222,7 @@ var calSrc = ""
                                     name="message"
                                     class="form-control"
                                     id="message"
-                                    placeholder=""
-                                    ></textarea>
+                                    placeholder=""></textarea>
                             </fieldset>
                         </div>
 
@@ -291,9 +280,46 @@ var calSrc = ""
             <div id="snackbar">Submitted successfully</div>
         </div>
         <script>
-           
             document.getElementById("submit-btn")!.style.display = "block";
             document.getElementById("submit-loader")!.style.display = "none";
+            const newParams = {
+                utm_campaign: "",
+                utm_content: "",
+                utm_id: "",
+                utm_medium: "",
+                utm_source: "",
+                utm_term: "",
+                utm_keyword: "",
+                utm_device: "",
+            };
+            const urlSearchParams = new URLSearchParams(window.location.search);
+
+            const params = Object.fromEntries(urlSearchParams.entries());
+            if (params && params.utm_campaign && params.utm_campaign != "") {
+                newParams.utm_campaign = params.utm_campaign;
+            }
+            if (params && params.utm_content && params.utm_content != "") {
+                newParams.utm_content = params.utm_content;
+            }
+            if (params && params.utm_id && params.utm_id != "") {
+                newParams.utm_id = params.utm_id;
+            }
+            if (params && params.utm_medium && params.utm_medium != "") {
+                newParams.utm_medium = params.utm_medium;
+            }
+            if (params && params.utm_source && params.utm_source != "") {
+                newParams.utm_source = params.utm_source;
+            }
+            if (params && params.utm_term && params.utm_term != "") {
+                newParams.utm_term = params.utm_term;
+            }
+            if (params && params.utm_keyword && params.utm_keyword != "") {
+                newParams.utm_keyword = params.utm_keyword;
+            }
+            if (params && params.utm_device && params.utm_device != "") {
+                newParams.utm_device = params.utm_device;
+            }
+            console.log(newParams, "params");
             document
                 .getElementById("contact")
                 ?.addEventListener("submit", async (event) => {
@@ -308,7 +334,7 @@ var calSrc = ""
                     console.log(data, "data");
                     let validData = true;
                     if (!data.name) {
-                        console.log("email")
+                        console.log("email");
                         document.getElementById("name-error")!.innerText =
                             "Enter your Name";
                         validData = false;
@@ -413,6 +439,14 @@ var calSrc = ""
                                         company:${JSON.stringify(data.company)},
                                         askfor:${JSON.stringify(data.askfor)},
                                         message:${JSON.stringify(data.message)}
+                                        utm_campaign: ${JSON.stringify(newParams.utm_campaign)},
+                                        utm_content: ${JSON.stringify(newParams.utm_content)},
+                                        utm_id: ${JSON.stringify(newParams.utm_id)},
+                                        utm_medium: ${JSON.stringify(newParams.utm_medium)},
+                                        utm_source : ${JSON.stringify(newParams.utm_source)},
+                                        utm_term : ${JSON.stringify(newParams.utm_term)},
+                                        utm_keyword:${JSON.stringify(newParams.utm_keyword)},
+                                        utm_device:${JSON.stringify(newParams.utm_device)}
                                     }
                                 ){
                                     data{
@@ -424,6 +458,14 @@ var calSrc = ""
                                             company
                                             askfor
                                             message
+                                            utm_campaign
+                                            utm_content
+                                            utm_id
+                                            utm_medium
+                                            utm_source
+                                            utm_term
+                                            utm_keyword
+                                            utm_device
                                         }
                                     }
                                 }
@@ -474,14 +516,16 @@ var calSrc = ""
             }, 20000);
         </script> -->
         <script>
-            document.getElementById("calendarbutton")!.onclick=(()=>{
-                var section  = document.getElementById("calendar-section")
+            document.getElementById("calendarbutton")!.onclick = () => {
+                var section = document.getElementById("calendar-section");
                 section!.style.display = "block";
-                console.log(section?.setAttribute("src","https://calendly.com/meta_pro_lane/15min"))
-                
-               
-                
-            })
+                console.log(
+                    section?.setAttribute(
+                        "src",
+                        "https://calendly.com/meta_pro_lane/15min",
+                    ),
+                );
+            };
         </script>
         <script type="text/javascript">
             var $animation_elements = $(".animation-element");
@@ -516,20 +560,22 @@ var calSrc = ""
             $window.on("scroll resize", check_if_in_view);
             $window.trigger("scroll", check_if_in_view);
         </script>
-        <script id="cloudflare-cdn-script" src="/assets/js/countrySelect.min.js" is:inline ></script>
+        <script
+            id="cloudflare-cdn-script"
+            src="/assets/js/countrySelect.min.js"
+            is:inline></script>
         <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/country-select-js/2.1.1/js/countrySelect.min.js" integrity="sha512-criuU34pNQDOIx2XSSIhHSvjfQcek130Y9fivItZPVfH7paZDEdtAMtwZxyPq/r2pyr9QpctipDFetLpUdKY4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
         <script is:inline>
-            document.addEventListener('scroll', function(){
+            document.addEventListener("scroll", function () {
                 $("#country_selector").countrySelect({
-                defaultCountry: "in",
-                // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-                // responsiveDropdown: true,
-                //    preferredCountries: ['ca', 'gb', 'us']
+                    defaultCountry: "in",
+                    // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+                    // responsiveDropdown: true,
+                    //    preferredCountries: ['ca', 'gb', 'us']
                 });
-            })
-            
+            });
         </script>
-        
+
         <script is:inline>
             console.log("scriptcheck");
         </script>
