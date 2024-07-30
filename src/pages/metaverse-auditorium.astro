@@ -87,15 +87,17 @@ const { data } = await response.json();
       <!-- <link rel="stylesheet" href="assets/css/owl.css"> -->
       <!-- <link rel="stylesheet" href="styles/css/lightbox.css" /> -->
       <link
+        id="styleOneCSS"
         rel="stylesheet"
-        href="styles/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1"
+      
       />
-      <link rel="stylesheet" href="styles/css/animate.css" />
+      <link id="animateCSS" rel="stylesheet"/>
       <!-- <link rel="stylesheet" href="assets/css/countrySelect.min.css" /> -->
       <link
+        id="verCSS"
         type="text/css"
         rel="stylesheet"
-        href="assets/css/style5597.css?ver=5.0"
+       
       />
       <link id="stylecss" rel="stylesheet"  />
       <link id="owlcss" rel="stylesheet"  />
@@ -103,12 +105,18 @@ const { data } = await response.json();
       <script type="text/javascript">
         let isScrolled = false;
         const styleCSS = document.getElementById('stylecss');
-        const owlCSS = document.getElementById('owlcss')
+        const owlCSS = document.getElementById('owlcss');
+        const styleOneCSS = document.getElementById('styleOneCSS');
+        const verCSS = document.getElementById('verCSS');
+        const animateCSS = document.getElementById('animateCSS');
 
         window.addEventListener('wheel', function(){
           if(!isScrolled){
             styleCSS.setAttribute('href', '/styles/css/style.css');
             owlCSS.setAttribute('href', '/styles/blog/css/owl.css');
+            styleOneCSS.setAttribute('href', 'styles/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1');
+            verCSS.setAttribute('href', 'assets/css/style5597.css?ver=5.0');
+            animateCSS.setAttribute('href', 'styles/css/animate.css');
             isScrolled = true;
           }
           
