@@ -97,9 +97,19 @@ const { data } = await response.json();
         rel="stylesheet"
         href="assets/css/style5597.css?ver=5.0"
       />
-      <!-- <link rel="stylesheet" href="/styles/css/style.css" />
-      <link rel="stylesheet" href="/styles/blog/css/owl.css" /> -->
+      <link id="stylecss" rel="stylesheet"  />
+      <link id="owlcss" rel="stylesheet"  />
+
+      <script type="text/javascript">
+        const styleCSS = document.getElementById('stylecss');
+        const owlCSS = document.getElementById('owlcss')
+
+        styleCSS.setAttribute('href', '/styles/css/style.css');
+        owlCSS.setAttribute('href', '/styles/blog/css/owl.css');
+
+      </script>
       <script is:inline>
+
         document.addEventListener("DOMContentLoaded", function () {
             let currentIndex = 0;
             const slides = document.querySelectorAll(".carousel-item");
