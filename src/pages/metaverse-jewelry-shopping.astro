@@ -396,7 +396,6 @@ const { data } = await response.json();
             <div id="carouselExample" class="carousel">
               <a
                 class="carousel-control-prev"
-                href="#carouselExample"
                 role="button"
                 data-slide="prev"
                 onclick="carouselPrev()"
@@ -407,12 +406,11 @@ const { data } = await response.json();
               <div class="carousel-inner">
                 
                 <div class="section5-carousel">
-                  <div class="section5-frame animation-element slide-left">
-                    <img
+                  <div id="carousel-context" class="section5-frame animation-element slide-left">
+                    <!-- <img
                       id="carousel-img"
                       class="section5-left"
-                      src="assets/images/jewellery/ImageSequence_007_0100@4x.webp"
-                    />
+                      src="assets/images/jewellery/ImageSequence_007_0100@4x.webp" /> -->
                     <div class="section5-right">
                       <div id="carousel-title" class="section5-title">
                         Robust Technology
@@ -475,7 +473,6 @@ const { data } = await response.json();
 
               <a
                 class="carousel-control-next"
-                href="#carouselExample"
                 role="button"
                 data-slide="next"
                 onclick="carouselNext()"
@@ -593,6 +590,8 @@ const { data } = await response.json();
 
     <script type="text/javascript">
 
+      
+
       let currentCarouselIndex = 0;
       let carouselContext = [
         {img : "assets/images/jewellery/Develop_Your_Own_Metaverse_Jewelry_Shop.webp", title: "Virtual Store", context: "Metaverse allows you to build a virtual jewelry store. It can be the duplicate or virtual version of their in-house products or physical store. The same designs and infrastructure can be copied to the virtual world in Metaverse. It will help the customer to explore their desired products, even try it out using their avatar, and they can even purchase it from the same virtual store."},
@@ -614,7 +613,8 @@ const { data } = await response.json();
       const solutionImg9 = document.getElementById("solution-img-9");
 
 
-      const CarouselImg = document.getElementById('carousel-img');
+      const CarouseContextContainer = document.getElementById('carousel-context');
+      
       const CarouselTitle = document.getElementById('carousel-title');
       const CarouselContent = document.getElementById('carousel-content');
 
@@ -632,37 +632,55 @@ const { data } = await response.json();
 
       //loading solutions images ons scroll
 
+      let isScrolled = false;
+      window.addEventListener('wheel', function(event){
+        
+        // event.preventDefault();
+        console.log(isScrolled);
+        if(!isScrolled){
+          
+          solutionImg1.setAttribute('src', '/assets/images/jewellery/BrandPresence-01@4x.webp');
+          solutionImg2.setAttribute('src', '/assets/images/jewellery/StreamlinedOperations-01@4x.webp');
+          solutionImg3.setAttribute('src', '/assets/images/jewellery/VirtualTry-Ons-01@4x.webp');
+          solutionImg4.setAttribute('src', '/assets/images/jewellery/Trendsetting-01@4x.webp');
+          solutionImg5.setAttribute('src', '/assets/images/jewellery/InvestmentPotential-01@4x.webp');
+          solutionImg6.setAttribute('src', '/assets/images/jewellery/InteractiveShopping-01@4x.webp');
+          solutionImg7.setAttribute('src', '/assets/images/jewellery/GlobalReach-01@4x.webp');
+          solutionImg8.setAttribute('src', '/assets/images/jewellery/Customization-01@4x.webp');
+          solutionImg9.setAttribute('src', '/assets/images/jewellery/CustomerInsight-01@4x.webp');
 
-      window.addEventListener('wheel', function(){
-        solutionImg1.setAttribute('src', '/assets/images/jewellery/BrandPresence-01@4x.webp');
-        solutionImg2.setAttribute('src', '/assets/images/jewellery/StreamlinedOperations-01@4x.webp');
-        solutionImg3.setAttribute('src', '/assets/images/jewellery/VirtualTry-Ons-01@4x.webp');
-        solutionImg4.setAttribute('src', '/assets/images/jewellery/Trendsetting-01@4x.webp');
-        solutionImg5.setAttribute('src', '/assets/images/jewellery/InvestmentPotential-01@4x.webp');
-        solutionImg6.setAttribute('src', '/assets/images/jewellery/InteractiveShopping-01@4x.webp');
-        solutionImg7.setAttribute('src', '/assets/images/jewellery/GlobalReach-01@4x.webp');
-        solutionImg8.setAttribute('src', '/assets/images/jewellery/Customization-01@4x.webp');
-        solutionImg9.setAttribute('src', '/assets/images/jewellery/CustomerInsight-01@4x.webp');
-
-        imageAfterSolutions.setAttribute('src', "assets/images/jewellery/puchachingImage.webp");
-
-        CarouselImg.setAttribute('src', carouselContext[currentCarouselIndex].img);
-        CarouselContent.innerText = carouselContext[currentCarouselIndex].context;
-        CarouselTitle.innerText = carouselContext[currentCarouselIndex].title;
+          renderCarouselImg()
 
 
-        storeImg1.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp');
-        storeImg2.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp');
-        storeImg3.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp');
-        storeImg4.setAttribute('src', 'assets/images/jewellery/2151034059@4x.webp');
 
+
+          storeImg1.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp');
+          storeImg2.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp');
+          storeImg3.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp');
+          storeImg4.setAttribute('src', 'assets/images/jewellery/2151034059@4x.webp');
+          console.log('here')
+          isScrolled = true;
+          }
+          
       });
 
 
-      
-      
-      function switchCarouselCard(event){
+    
+      function renderCarouselImg(){
+          const carouselImg = document.createElement('img');
+          carouselImg.src = 'assets/images/jewellery/ImageSequence_007_0100@4x.webp';
+          carouselImg.id = 'carousel-img';
+          carouselImg.className = 'section5-left';
+          
+          CarouseContextContainer.appendChild(carouselImg);
 
+          imageAfterSolutions.setAttribute('src', "assets/images/jewellery/puchachingImage.webp");
+
+      };
+
+
+      function switchCarouselCard(event){
+        var CarouselImg = document.getElementById('carousel-img');
         if(event == "next"){
           if(currentCarouselIndex >= 2){
             currentCarouselIndex = 0;
