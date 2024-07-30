@@ -101,12 +101,18 @@ const { data } = await response.json();
       <link id="owlcss" rel="stylesheet"  />
 
       <script type="text/javascript">
+        let isScrolled = false;
         const styleCSS = document.getElementById('stylecss');
         const owlCSS = document.getElementById('owlcss')
 
-        styleCSS.setAttribute('href', '/styles/css/style.css');
-        owlCSS.setAttribute('href', '/styles/blog/css/owl.css');
-
+        window.addEventListener('wheel', function(){
+          if(!isScrolled){
+            styleCSS.setAttribute('href', '/styles/css/style.css');
+            owlCSS.setAttribute('href', '/styles/blog/css/owl.css');
+            isScrolled = true;
+          }
+          
+        });
       </script>
       <script is:inline>
 
