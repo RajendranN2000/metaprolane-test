@@ -33,6 +33,7 @@ const { title } = Astro.props;
             href="styles/css/style5597.css?ver=5.0"
         />
         <meta name="generator" content={Astro.generator} />
+        <link referrerpolicy="no-referrer" crossorigin="anonymous" ="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="/>
     </head><div style="display:none;" id="tempTitle">{title}</div>
     <title>Metaverse Development Company | Metaprolane</title>
     
@@ -66,26 +67,6 @@ const { title } = Astro.props;
     
     
     <script>
-
-        
-        function insertCDN(){
-            var FontAwsome = document.createElement("link");
-            
-
-            FontAwsome.href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-            FontAwsome.rel = "stylesheet"
-            FontAwsome.integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-            FontAwsome.crossOrigin="anonymous"
-            FontAwsome.referrerPolicy="no-referrer"
-
-
-
-            document.getElementsByTagName("head")[0].appendChild(FontAwsome);
-          
-            
-        }
-
-        insertCDN();
 
         window.onload = getData;
         async function getData() {
