@@ -15,7 +15,10 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
         metaverse_casino_game_title
         metaverse_casino_game_content
         metaverse_casino_game_header
+        casino_development_service
+        casino_feature_title
         casino_game_dev_title
+        casino_game_dev_title2
         casino_game_dev_content
         casino_game_collection_header
         casino_game_collection_title
@@ -367,14 +370,14 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                 </div>
                 <div class="col-lg-6">
                   <div class="cms-one-right animation-element slide-right">
-                    <div class="text-green2 tg w-700">
+                    <div class="text-green2 tg w-700" style="text-transform: capitalize;">
                       {
                         data.metaverseCasinoGame.data.attributes
                           .metaverse_casino_game_header
                       }
                     </div>
                     <h1
-                      class="text-white text-left mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0"
+                      class="text-white text-left mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0" style="text-transform: capitalize;"
                     >
                       {
                         data.metaverseCasinoGame.data.attributes
@@ -538,7 +541,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                   >
                     {
                       data.metaverseCasinoGame.data.attributes
-                        .casino_game_collection_title
+                        .casino_development_service
                     }
                   </h4>
                   <div class="owl-carousel owl-carousel2">
@@ -654,7 +657,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                       <h4 class="text-white h3-under-bar2 fw-700 animation-element slide-left">
                         {
                           data.metaverseCasinoGame.data.attributes
-                            .casino_game_collection_title
+                            .casino_feature_title
                         }
                       </h4>
                       <div class="row">
@@ -676,7 +679,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                                       />
                                     </div>
                                     <h5 class="benefits-h6">
-                                      {each.attributes.title}
+                                      {each.attributes.title}dd
                                     </h5>
                                     <p class="text-gray3 text-center">
                                       {each.attributes.content}
@@ -708,7 +711,7 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                     >
                       {
                         data.metaverseCasinoGame.data.attributes
-                          .casino_game_dev_title
+                          .casino_game_dev_title2
                       }
                     </h3>
                     <p class="text-gray3 text-last-left padd-0">
