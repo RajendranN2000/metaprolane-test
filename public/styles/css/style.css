@@ -1366,7 +1366,9 @@ section.under-banner.our-technologies.product-tech-sec.aboutmeta.about-main.abt-
     display: inline-block;
     width: 100%
 }
-
+#casino-game-dev .owl-carousel .owl-nav.disabled{
+    display: none !important;
+}
 .our-courses .owl-nav {
     text-align: center;
     position: absolute;
