@@ -161,7 +161,30 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
 
       updateCarousel(); // Initial call to set the classes
   });
-
+  document.addEventListener("DOMContentLoaded", function () {
+      $(".owl-carousel").owlCarousel({
+          items: 1, // Display one item-row at a time
+          margin: 20, // Space between items
+          loop: true, // Loop through items
+          autoplay: true, // Enable auto-play
+          autoplayTimeout: 3000, // Auto-play interval (in ms)
+          autoplayHoverPause: true, // Pause on hover
+          responsive: {
+              0: {
+                  items: 1, // Display one item-row at a time on small screens
+              },
+              600: {
+                  items: 3, // Display one item-row at a time on medium screens
+              },
+              800: {
+                  items: 5, // Display one item-row at a time on medium screens
+              },
+              1000: {
+                  items: 5, // Display one item-row at a time on large screens
+              },
+          },
+      });
+  });
   document.addEventListener("DOMContentLoaded", function () {
       $(".owl-carousel2").owlCarousel({
           items: 1, // Display one item-row at a time
@@ -856,27 +879,27 @@ const embedLink = casinoGameDevLink.replace("watch?v=", "embed/");
                     <div id="our-technologies" class="">
                       {/* our technologies images will be rendered on scroll*/}
                       <div class="owl-service-item owl-carousel d-flex justify-content-between">
-                        <div class="item" style="width:8rem">
+                        <div class="item" style="">
                           <div class="icon">
                             <img id="our-tech-5" alt="Ourtech5">
                           </div>
                         </div>
-                        <div class="item" style="width:8rem">
+                        <div class="item" style="">
                           <div class="icon">
                             <img id="our-tech-4" alt="Ourtech4">
                           </div>
                         </div>
-                        <div class="item" style="width:8rem">
+                        <div class="item" style="">
                           <div class="icon">
                             <img id="our-tech-3" alt="Ourtech3">
                           </div>
                         </div>
-                        <div class="item" style="width:8rem">
+                        <div class="item" style="">
                           <div class="icon">
                             <img id="our-tech-2" alt="Ourtech2">
                           </div>
                         </div>
-                        <div class="item" style="width:8rem">
+                        <div class="item" style="">
                           <div class="icon">
                             <img id="our-tech-1" alt="Ourtech1">
                           </div>
