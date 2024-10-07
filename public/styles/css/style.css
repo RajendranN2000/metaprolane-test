@@ -9632,3 +9632,25 @@ section.section-9 .qoute-box span {
     color: black;
     cursor:pointer;
 }
+
+.whatsapp-icon-container {
+    position: fixed;
+    bottom: 45%;
+    left: 0px;
+    z-index: 18;
+    display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right, #141064, #655fd1);
+    padding: 10px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    width: 60px;
+}
+.custom-social-icons1 {
+    background-color: #28c93c;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.custom-social-icons2 {
+    margin-bottom: 10px;
+}
