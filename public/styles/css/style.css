@@ -9654,3 +9654,13 @@ section.section-9 .qoute-box span {
 .custom-social-icons2 {
     margin-bottom: 10px;
 }
+
+@media screen and (max-width:767px) {
+    .whatsapp-icon-container {
+        width: 48px !important;
+    }
+}
+.whatsapp-icon-container img{
+    height: auto;
+    max-width: 100%;
+}
