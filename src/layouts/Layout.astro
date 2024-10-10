@@ -9,7 +9,6 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-
 <!doctype html>
 <html lang="en">
     <head>
@@ -24,8 +23,8 @@ const { title } = Astro.props;
         <link rel="stylesheet" href="/styles/blog/css/style.css" />
         <link rel="stylesheet" href="/styles/css/style.css" />
         <link
-        rel="stylesheet"
-        href="https://metaprolane.stsdev.site/assets/css/fontawesome.css"
+            rel="stylesheet"
+            href="https://metaprolane.stsdev.site/assets/css/fontawesome.css"
         />
         <link rel="stylesheet" href="/vendor/swiper-bundle.min.css" />
         <link
@@ -34,16 +33,39 @@ const { title } = Astro.props;
             href="styles/css/style5597.css?ver=5.0"
         />
         <meta name="generator" content={Astro.generator} />
-        <link referrerpolicy="no-referrer" crossorigin="anonymous" ="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="/>
-    </head><div style="display:none;" id="tempTitle">{title}</div>
+        <link
+            referrerpolicy="no-referrer"
+            crossorigin="anonymous"
+            rel="stylesheet"
+            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        />
+        <!-- Google Tag Manager -->
+        <script is:inline>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || [];
+                w[l].push({
+                    "gtm.start": new Date().getTime(),
+                    event: "gtm.js",
+                });
+                var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s),
+                    dl = l != "dataLayer" ? "&l=" + l : "";
+                j.async = true;
+                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+                f.parentNode.insertBefore(j, f);
+            })(window, document, "script", "dataLayer", "GTM-KDSRGCP3");
+        </script>
+        <!-- End Google Tag Manager -->
+    </head>
+    <div style="display:none;" id="tempTitle">{title}</div>
     <title>Metaverse Development Company | Metaprolane</title>
-    
+
     <script
-    src="/vendor/jquery.min.js"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
-    
+        src="/vendor/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
     <script
         src="/vendor/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
@@ -51,24 +73,28 @@ const { title } = Astro.props;
         referrerpolicy="no-referrer"></script>
 
     <script
-    id="jqueryVendor"
-    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"></script>
-   
+        id="jqueryVendor"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"></script>
+
     <!-- Additional CSS Files -->
-    
 
     <body>
+        <noscript
+            ><iframe
+                src="https://www.googletagmanager.com/ns.html?id=GTM-KDSRGCP3"
+                height="0"
+                width="0"
+                style="display:none;visibility:hidden"></iframe></noscript
+        >
         <HeaderSection />
         <slot />
         <ContactSection />
         <FooterSection />
     </body>
-    
-    
-    <script>
 
+    <script>
         window.onload = getData;
         async function getData() {
             var inputTitle = document.getElementById("tempTitle")!.innerText;
@@ -135,5 +161,6 @@ const { title } = Astro.props;
             $(".owl-carousel").owlCarousel();
         });
     </script>
+
 
 </html>

@@ -1,59 +1,58 @@
 ---
-import HeaderSection from '../components/HeaderSection.astro';
-import ContactSection from '../components/ContactSection.astro';
-import FooterSection from '../components/FooterSection.astro';
+import HeaderSection from "../components/HeaderSection.astro";
+import ContactSection from "../components/ContactSection.astro";
+import FooterSection from "../components/FooterSection.astro";
 interface Props {
-	title: string;
+  title: string;
 }
 
-const { title} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="robots" content="noindex">
-		<meta
-        name="title" id="title"
-        content={""}
-    />
-    <meta
-        name="description" id="description"
-        content={""}
-    />
-    <meta
-        name="keywords" id="keywords"
-        content={""}
-    />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-		<meta name="generator" content={Astro.generator} />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="title" id="title" content={""} />
+    <meta name="description" id="description" content={""} />
+    <meta name="keywords" id="keywords" content={""} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <meta name="generator" content={Astro.generator} />
     <title id="tempTitle">{title}</title>
-		<link
-			href="src/vendor/bootstrap/css/bootstrap.min.css"
-			rel="stylesheet"
-		/>
-		<link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css"/>
-		<link rel="stylesheet" href="/styles/blog/css/style.css"/>
-		<link rel="stylesheet" href="/styles/css/style.css"/>
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<!-- Additional CSS Files -->
+    <link href="src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/blog/css/style.css" />
+    <link rel="stylesheet" href="/styles/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Additional CSS Files -->
     <!-- <link rel="stylesheet" href="https://metaprolane.stsdev.site/assets/css/fontawesome.css"> -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-         <script>
-            window.onload = getData;
-            async function getData() {
-              console.log("datacheck");
-                var inputBlogTitle = document.getElementById("tempTitle")!.innerText
-                if(inputBlogTitle!="" && inputBlogTitle!=undefined && inputBlogTitle!=null){
-                    const response = await fetch(
-                        `${import.meta.env.PUBLIC_STRAPI_URL}`,
-                        {
-                            method: "POST",
-                            headers: { "Content-Type": "application/json" },
-                            body: JSON.stringify({
-                                query: `
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script>
+      window.onload = getData;
+      async function getData() {
+        console.log("datacheck");
+        var inputBlogTitle = document.getElementById("tempTitle")!.innerText;
+        if (
+          inputBlogTitle != "" &&
+          inputBlogTitle != undefined &&
+          inputBlogTitle != null
+        ) {
+          const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              query: `
                                     query{
                                         ${inputBlogTitle}{
                                             data{
@@ -66,36 +65,71 @@ const { title} = Astro.props;
                                         }
                                     }
                                 `,
-                            }),
-                        },
-                    );
-                    const data = await response.json();
-                    if (
-                        data &&
-                        data.data &&
-                        data.data[inputBlogTitle] &&
-                        data.data[inputBlogTitle].data &&
-                        data.data[inputBlogTitle].data.attributes
-                        ) {
-                        console.log(data.data[inputBlogTitle].data.attributes.meta_title, "datacheck");
-                        var titleData = document.getElementById("title")
-                        var description = document.getElementById("description")
-                        var keywords = document.getElementById("keywords")
-                        titleData?.setAttribute("content",data.data[inputBlogTitle].data.attributes.meta_title)
-                        description?.setAttribute("content",data.data[inputBlogTitle].data.attributes.meta_description)
-                        keywords?.setAttribute("content",data.data[inputBlogTitle].data.attributes.meta_keywords)
-                        console.log(titleData,"titleData");
-                    }
-                }
-            }
-        </script>
-	</head>
-	<body>
-		<HeaderSection />
-		<slot />
-		<FooterSection />
+            }),
+          });
+          const data = await response.json();
+          if (
+            data &&
+            data.data &&
+            data.data[inputBlogTitle] &&
+            data.data[inputBlogTitle].data &&
+            data.data[inputBlogTitle].data.attributes
+          ) {
+            console.log(
+              data.data[inputBlogTitle].data.attributes.meta_title,
+              "datacheck",
+            );
+            var titleData = document.getElementById("title");
+            var description = document.getElementById("description");
+            var keywords = document.getElementById("keywords");
+            titleData?.setAttribute(
+              "content",
+              data.data[inputBlogTitle].data.attributes.meta_title,
+            );
+            description?.setAttribute(
+              "content",
+              data.data[inputBlogTitle].data.attributes.meta_description,
+            );
+            keywords?.setAttribute(
+              "content",
+              data.data[inputBlogTitle].data.attributes.meta_keywords,
+            );
+            console.log(titleData, "titleData");
+          }
+        }
+      }
+    </script>
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KDSRGCP3");
+    </script>
+    <!-- End Google Tag Manager -->
+  </head>
+  <body>
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KDSRGCP3"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <HeaderSection />
+    <slot />
+    <FooterSection />
 
-        <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       new Swiper('.swiper-container', {
@@ -129,6 +163,6 @@ const { title} = Astro.props;
       });
     });
   </script> -->
-	</body>
+  </body>
 </html>
 <style></style>
