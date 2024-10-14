@@ -107,7 +107,9 @@ const { title } = Astro.props;
                                             color:
                                                 typeof window !== "undefined" &&
                                                 window?.location?.pathname !=
-                                                    ""
+                                                    "" &&
+                                                window?.location?.pathname !=
+                                                    "/"
                                                     ? "#68fe9a"
                                                     : "",
                                         }}
