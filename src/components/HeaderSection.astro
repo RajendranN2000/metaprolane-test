@@ -1,61 +1,74 @@
 ---
+import { green } from "@mui/material/colors";
+
 interface props {}
-const {title} = Astro.props;
+const { title } = Astro.props;
 ---
 
 <style>
-    @media(min-width:1080px){
-        .topbar-dropdown{
+    @media (min-width: 1080px) {
+        .topbar-dropdown {
             display: none !important;
         }
     }
     .nav a {
-      color: white;
+        color: white;
     }
     .nav a.active {
-      color: green;
+        color: green;
     }
 
-    #metaverse-development-list ul li{
-        margin-top:14px;
-        font-size:1.5vh;
+    #metaverse-development-list ul li {
+        margin-top: 14px;
+        font-size: 1.5vh;
     }
 
-    #topbar-dropdown ul li a{
-        color:white;
+    #topbar-dropdown ul li a {
+        color: white;
     }
 
-    #menu li{
-        font-size:2vh;
+    #menu li {
+        font-size: 2vh;
     }
 
-    #heading{
-        font-size:20px;
+    #heading {
+        font-size: 20px;
     }
 
-    #subHeading{
-        font-size:8px;
+    #subHeading {
+        font-size: 8px;
     }
-    #logoContainer{
-        width:"40%";
+    #logoContainer {
+        width: "40%";
     }
-    #menuContainer{
-        width:"60%";
+    #menuContainer {
+        width: "60%";
     }
-  </style>
+</style>
 
 <header class="header-area header-sticky">
     <div class="whatsapp-icon-container">
         <div class="custom-social-icons1">
-            <a href="https://api.whatsapp.com/send?l=en&text=Hi!%20I%27m%20interested%20in%20one%20of%20your%20products%20&phone=9363565310"
-                target="_blank">
-                <img src="https://shamlatech.com/wp-content/uploads/2024/01/whatsapp-img.webp" alt="WhatsApp Icon"
-                    width="48" height="48">
+            <a
+                href="https://api.whatsapp.com/send?l=en&text=Hi!%20I%27m%20interested%20in%20one%20of%20your%20products%20&phone=9363565310"
+                target="_blank"
+            >
+                <img
+                    src="https://shamlatech.com/wp-content/uploads/2024/01/whatsapp-img.webp"
+                    alt="WhatsApp Icon"
+                    width="48"
+                    height="48"
+                />
             </a>
         </div>
         <div class="custom-social-icons2">
             <a href="https://t.me/metaprolane" target="_blank">
-                <img src="https://shamlatech.com/wp-content/uploads/2024/01/telegram-img.webp" alt="Telegram Icon" width="48" height="48">
+                <img
+                    src="https://shamlatech.com/wp-content/uploads/2024/01/telegram-img.webp"
+                    alt="Telegram Icon"
+                    width="48"
+                    height="48"
+                />
             </a>
         </div>
     </div>
@@ -63,159 +76,196 @@ const {title} = Astro.props;
         <div class="row">
             <div class="col-12">
                 {/* Navbar and Topbar Container Starts*/}
-                <nav id="topbar" style="height:0vh; transition:height 0.3s ease;" class="bg-black">
+                <nav
+                    id="topbar"
+                    style="height:0vh; transition:height 0.3s ease;"
+                    class="bg-black"
+                >
                     {/* Navbar Container Starts*/}
-                    <div  class="main-nav d-flex justify-content-between">
-                        
+                    <div class="main-nav d-flex justify-content-between">
                         <div id="logo-container">
-                            {/* Logo Will Be Loaded After The DOM is Ready */}    
+                            {/* Logo Will Be Loaded After The DOM is Ready */}
                             <a href="/" class="logo">
-                                <img src="/assets/images2/logo2.webp" alt="Logo" />
-                            </a>    
+                                <img
+                                    src="/assets/images2/logo2.webp"
+                                    alt="Logo"
+                                />
+                            </a>
                         </div>
-    
-                        <div id="menu-container" >
-                            <ul class="nav align-self-center"></ul>
-                                <ul class="nav align-self-right" id="myDIV">
-                                    <li >
-                                        <a
-                                            href="/"
-                                            >Home</a
-                                        >
-                                    </li>
-                                    
-                                    <li class="has-sub">
-                                        <a href="javascript:void(0)" >Metaverse Development <i class="icon fa fa-chevron-down"></i></a>
-                                        <ul class="sub-menu">
-                                            <li>
-                                                <a
-                                                    href="/metaverse-virtual-office"
-                                                    >Metaverse Virtual Office</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-auditorium"
-                                                    >Metaverse Auditorium</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-virtual-city"
-                                                    >Metaverse Virtual City</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-shopping-mall"
-                                                    >Metaverse Shopping Mall</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-casino-game"
-                                                    >Metaverse Casino Game</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-development-company"
-                                                    >Metaverse Development Company</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-game-development-services"
-                                                    >Metaverse Game Development Services</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-for-industries"
-                                                    >Metaverse for Industries</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-virtual-showroom"
-                                                    >Metaverse Virtual Showroom</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-real-estate-solutions"
-                                                    >Metaverse Real Estate Solutions</a
-                                                >
-                                            </li>
-                                            <li>
-                                                <a
-                                                    href="/metaverse-jewelry-shopping"
-                                                    >Metaverse jewelry shopping</a
-                                                >
-                                            </li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="/#industries"
-                                            class="industries_scroller">Industries</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a
-                                            href="/#contact"
-                                            class="contact_scroller">Contact Us</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="/privacy-policy"
-                                            >Privacy Policy</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="/blog"
-                                            >Blog</a
-                                        >
-                                    </li>
-                                    <li>
-                                        <a href="/#contact">
-                                            <button class="btn padd-0">
-                                                <div
-                                                    class="btn-box border-gradient menu-demo-link"
-                                                >
-                                                    Demo
-                                                </div>
-                                            </button>
-                                        </a>
-                                    </li>
-                                </ul>
-                                <a class="menu-trigger" onclick="TopBarToggler()">
-                                    <span>Menu</span>
-                                </a>
-                        </div>
-                    </div>    
-                   {/* Navbar Container Ends*/}
 
-                   {/* TopBar Container Starts */}
-                    <div style="display:none;" id="topbar-dropdown" class="overflow-auto bg-black">
-                        <div class="d-flex justify-content-center ">
+                        <div id="menu-container">
+                            <ul class="nav align-self-center"></ul>
+                            <ul class="nav align-self-right" id="myDIV">
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+
+                                <li class="has-sub">
+                                    <a
+                                        href="javascript:void(0)"
+                                        style={{
+                                            color:
+                                                typeof window !== "undefined" &&
+                                                window?.location?.pathname !=
+                                                    ""
+                                                    ? "#68fe9a"
+                                                    : "",
+                                        }}
+                                        id="selected-title"
+                                        >Metaverse Development<i
+                                            class="icon fa fa-chevron-down"
+                                        ></i></a
+                                    >
+                                    <ul class="sub-menu">
+                                        <li>
+                                            <a href="/metaverse-virtual-office"
+                                                >Metaverse Virtual Office</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="/metaverse-auditorium"
+                                                >Metaverse Auditorium</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="/metaverse-virtual-city"
+                                                >Metaverse Virtual City</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="/metaverse-shopping-mall"
+                                                >Metaverse Shopping Mall</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="/metaverse-casino-game"
+                                                >Metaverse Casino Game</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-development-company"
+                                                >Metaverse Development Company</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-game-development-services"
+                                                >Metaverse Game Development
+                                                Services</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a href="/metaverse-for-industries"
+                                                >Metaverse for Industries</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-virtual-showroom"
+                                                >Metaverse Virtual Showroom</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-real-estate-solutions"
+                                                >Metaverse Real Estate Solutions</a
+                                            >
+                                        </li>
+                                        <li>
+                                            <a
+                                                href="/metaverse-jewelry-shopping"
+                                                >Metaverse jewelry shopping</a
+                                            >
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a
+                                        href="/#industries"
+                                        class="industries_scroller"
+                                        >Industries</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="/#contact" class="contact_scroller"
+                                        >Contact Us</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="/privacy-policy">Privacy Policy</a>
+                                </li>
+                                <li>
+                                    <a href="/blog">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="/#contact">
+                                        <button class="btn padd-0">
+                                            <div
+                                                class="btn-box border-gradient menu-demo-link"
+                                            >
+                                                Demo
+                                            </div>
+                                        </button>
+                                    </a>
+                                </li>
+                            </ul>
+                            <a class="menu-trigger" onclick="TopBarToggler()">
+                                <span>Menu</span>
+                            </a>
+                        </div>
+                    </div>
+                    {/* Navbar Container Ends*/}
+
+                    {/* TopBar Container Starts */}
+                    <div
+                        style="display:none;"
+                        id="topbar-dropdown"
+                        class="overflow-auto bg-black"
+                    >
+                        <div class="d-flex justify-content-center">
                             <div class="">
-                                <ul class="list-unstyled d-flex flex-column" id="menu">
+                                <ul
+                                    class="list-unstyled d-flex flex-column"
+                                    id="menu"
+                                >
                                     <li class="mt-4">
                                         <a href="/#home">HOME</a>
                                     </li>
-                                    <li onclick="subListToggler(event)" class="mt-3">
-                                        <a id="metaverse" class="inline-flex align-items-center" href="/">
+                                    <li
+                                        onclick="subListToggler(event)"
+                                        class="mt-3"
+                                    >
+                                        <a
+                                            id="metaverse"
+                                            class="inline-flex align-items-center"
+                                            href="/"
+                                        >
                                             METAVERSE DEVELOPMENT
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="height:30px; width:30px">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke-width="1.5"
+                                                stroke="currentColor"
+                                                style="height:30px; width:30px"
+                                            >
+                                                <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
+                                                ></path>
                                             </svg>
-                                              
-                                              
                                         </a>
                                     </li>
-                                    <div id="metaverse-development-list" style="display:none" class="">
-                                        <ul class="list-unstyled d-flex flex-column">
+                                    <div
+                                        id="metaverse-development-list"
+                                        style="display:none"
+                                        class=""
+                                    >
+                                        <ul
+                                            class="list-unstyled d-flex flex-column"
+                                        >
                                             <li>
                                                 <a
                                                     id="metaverse-virtual-office"
@@ -225,7 +275,6 @@ const {title} = Astro.props;
                                             </li>
                                             <li>
                                                 <a
-                                                
                                                     id="metaverse-auditorium"
                                                     href="/metaverse-auditorium"
                                                     >Metaverse Auditorium</a
@@ -256,14 +305,16 @@ const {title} = Astro.props;
                                                 <a
                                                     id="metaverse-development-company"
                                                     href="/metaverse-development-company"
-                                                    >Metaverse Development Company</a
+                                                    >Metaverse Development
+                                                    Company</a
                                                 >
                                             </li>
                                             <li>
                                                 <a
                                                     id="metaverse-game-development-services"
                                                     href="/metaverse-game-development-services"
-                                                    >Metaverse Game Development Services</a
+                                                    >Metaverse Game Development
+                                                    Services</a
                                                 >
                                             </li>
                                             <li>
@@ -284,7 +335,8 @@ const {title} = Astro.props;
                                                 <a
                                                     id="metaverse-real-estate-solutions"
                                                     href="/metaverse-real-estate-solutions"
-                                                    >Metaverse Real Estate Solutions</a
+                                                    >Metaverse Real Estate
+                                                    Solutions</a
                                                 >
                                             </li>
                                             <li>
@@ -297,13 +349,23 @@ const {title} = Astro.props;
                                         </ul>
                                     </div>
                                     <li class="mt-3">
-                                        <a id="industries-element" onclick="handleMenuState(event)" href="/#industries">INDUSTRIES</a>
+                                        <a
+                                            id="industries-element"
+                                            onclick="handleMenuState(event)"
+                                            href="/#industries">INDUSTRIES</a
+                                        >
                                     </li>
                                     <li class="mt-3">
-                                        <a id="contact-element" onclick="handleMenuState(event)" href="/#contact">CONTACT US</a>
+                                        <a
+                                            id="contact-element"
+                                            onclick="handleMenuState(event)"
+                                            href="/#contact">CONTACT US</a
+                                        >
                                     </li>
                                     <li class="mt-3">
-                                        <a id="privacy" href="/privacy-policy">PRIVACY POLICY</a>
+                                        <a id="privacy" href="/privacy-policy"
+                                            >PRIVACY POLICY</a
+                                        >
                                     </li>
                                     <li class="mt-3">
                                         <a href="/blog">BLOG</a>
@@ -324,9 +386,7 @@ const {title} = Astro.props;
                         </div>
                     </div>
 
-
-                   {/* TopBar Container Ends */}
-                
+                    {/* TopBar Container Ends */}
                 </nav>
                 {/* Navbar and Topbar Container Starts*/}
             </div>
@@ -335,22 +395,17 @@ const {title} = Astro.props;
 </header>
 
 <script is:inline>
-
     //header
 
     const headerLogoContainer = document.getElementById("logo-container");
-    
-
-       
 
     // window.setTimeout(() =>{
     //     headerLogoContainer.innerHTML =  `
     //         <a href="/" class="logo">
     //             <img src="/assets/images2/logo2.webp" alt="Logo" />
-    //         </a> 
+    //         </a>
     //     `
     // },3000)
-  
 
     //topbar
     const topBar = document.getElementById("topbar");
@@ -362,33 +417,28 @@ const {title} = Astro.props;
     const contact = document.getElementById("contact-element");
     const metaverse = document.getElementById("metaverse");
 
-
-
     //getting current url
-    const url = window.location.href.slice(7,window.location.href.length);
-    
+    const url = window.location.href.slice(7, window.location.href.length);
+
     const parts = url.split("/");
     parts.shift();
-    
+
     //setting submenu state
     const element = document.getElementById(parts[0]);
     console.log(element);
     element.style.color = "green";
-   
-    console.log(parts);               
+
+    console.log(parts);
     //setting metaverse main title if any of its child is being selected
-    if(parts[0].includes("metaverse")){
+    if (parts[0].includes("metaverse")) {
         metaverse.style.color = "green";
-    };
+    }
 
-
-
-
-    function handleMenuState(event){
+    function handleMenuState(event) {
         //function to handle active states between contact and industries menu
-        console.log("clicked:",event.target.innerHTML)
+        console.log("clicked:", event.target.innerHTML);
 
-        switch(event.target.innerHTML){
+        switch (event.target.innerHTML) {
             case "INDUSTRIES":
                 industries.style.color = "green";
                 contact.style.color = "white";
@@ -402,69 +452,76 @@ const {title} = Astro.props;
             default:
                 return false;
         }
-    };
+    }
 
-    function subListToggler(event){
+    function subListToggler(event) {
         console.log("toggled");
         event.preventDefault();
-        if(subMenu.style.display == "none"){
+        if (subMenu.style.display == "none") {
             subMenu.style.display = "block";
             topBar.style.height = "94vh";
-        }else{
+        } else {
             subMenu.style.display = "none";
             topBar.style.height = "50vh";
         }
-    };
+    }
 
-
-    function TopBarToggler(){
-    
-       if(topBar.style.height == "0vh"){
-            if(subMenu.style.display == "none"){
+    function TopBarToggler() {
+        if (topBar.style.height == "0vh") {
+            if (subMenu.style.display == "none") {
                 topBar.style.height = "50vh";
                 topBar.style.transition = "height 0.3s ease";
-            }else{
+            } else {
                 topBar.style.height = "80vh";
                 topBar.style.transtion = "height 0.3s ease";
             }
-            setTimeout(() =>{
+            setTimeout(() => {
                 dropDown.style.display = "block";
-                dropDown.style.transtion = "opacity 0.3s ease, max-height 0.3s ease";
-
-            },100)
-            
-       }else{
+                dropDown.style.transtion =
+                    "opacity 0.3s ease, max-height 0.3s ease";
+            }, 100);
+        } else {
             topBar.style.height = "0vh";
             topBar.style.transition = "height 0.3s ease";
 
             dropDown.style.display = "none";
-
-       };
-    };
-
-    
-    document.addEventListener('DOMContentLoaded', () => {
-    const currentPath = window.location.pathname + window.location.hash;
-    const navLinks = document.querySelectorAll('.nav a');
-
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentPath) {
-        link.classList.add('active');
-        const parent = link.closest('.has-sub');
-        if (parent) {
-          parent.querySelector('a').classList.add('active');
         }
-      }
-    });
-    f
-    // If no direct match is found, check if any submenu item is active
-    if (!foundActive) {
-      const subMenus = document.querySelectorAll('.has-sub ul.sub-menu a');
-      subMenus.forEach(subLink => {
-        if (subLink.pathname === currentPath) {
-          subLink.closest('.has-sub').querySelector('a').classList.add('active');
-        }
-      });
     }
-  });
-  </script>
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const currentPath = window.location.pathname + window.location.hash;
+        const navLinks = document.querySelectorAll(".nav a");
+
+        navLinks.forEach((link) => {
+            if (link.getAttribute("href") === currentPath) {
+                link.classList.add("active");
+                const parent = link.closest(".has-sub");
+                if (parent) {
+                    parent.querySelector("a").classList.add("active");
+                }
+            }
+        });
+        f;
+        // If no direct match is found, check if any submenu item is active
+        if (!foundActive) {
+            const subMenus = document.querySelectorAll(
+                ".has-sub ul.sub-menu a",
+            );
+            subMenus.forEach((subLink) => {
+                if (subLink.pathname === currentPath) {
+                    subLink
+                        .closest(".has-sub")
+                        .querySelector("a")
+                        .classList.add("active");
+                }
+            });
+        }
+    });
+</script>
+<script is:inline>
+    var data = document.getElementById("selected-title");
+    if (data && data.style) {
+        console.log(data.style.color, "datacheck");
+        data.style.color = "green !important";
+    }
+</script>
