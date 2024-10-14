@@ -231,7 +231,7 @@ var calSrc = "";
                                 <div
                                     id="recaptcha"
                                     class="g-recaptcha"
-                                    data-sitekey="6LfoB2EqAAAAAPHy__H0B4nlZFCEoWKJlNB4Tlvm"
+                                    data-sitekey="6LdYEWEqAAAAAJKPuzLmDBOktsm7-gFcSOC7ZOL9"
                                 >
                                 </div>
                                 <div
@@ -408,6 +408,8 @@ var calSrc = "";
                             "";
                     }
                     if (!data["g-recaptcha-response"]) {
+                        console.log(data["g-recaptcha-response"],"recaptcha check");
+                        
                         document.getElementById("recaptcha-error")!.innerText =
                             "Recaptcha is Required";
                         validData = false;
