@@ -186,7 +186,7 @@ const { title } = Astro.props;
                                     <a href="/privacy-policy">Privacy Policy</a>
                                 </li>
                                 <li>
-                                    <a href="/blog">Blog</a>
+                                    <a href="/blog" id="blog">Blog</a>
                                 </li>
                                 <li>
                                     <a href="/#contact">
@@ -410,30 +410,24 @@ const { title } = Astro.props;
     //getting current url
     console.log(window.location.href, window.location.href.length, "pathname");
     const url = window.location.href.slice(7, window.location.href.length);
-    console.log(url, "url");
     let parts = url.split("/");
-    console.log(parts, "partscheck")
     if (parts[0] == "") {
         parts = parts.slice(1, parts.length);
     }
-    console.log(parts, "partsbefore");
     parts.shift();
-
     //setting submenu state
     const element = document.getElementById(parts[0]);
-    element.style.color = "green";
-    const homeElement = document.getElementById("home")
-    console.log(parts, "parts");
+    const privacyElement = document.getElementById("privacy");
+    const blogElement = document.getElementById("blog");
     //setting metaverse main title if any of its child is being selected
-    if (parts[0].includes("metaverse")) {
-        console.log("check metaverse");
-        
+    if (parts && parts[0] && parts[0].includes("metaverse")) {
         metaverse.style.color = "green";
     }
-    else{
-        console.log("check home");
-        
-        homeElement.style.color = "green"
+    else if (parts && parts[0] && parts[0].includes("privacy")) {
+        privacyElement.style.color = "green";
+    } 
+    else if (parts && parts[0] && parts[0].includes("blog")) {
+        blogElement.style.color = "green";
     }
 
     function handleMenuState(event) {
