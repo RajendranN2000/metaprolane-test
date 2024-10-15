@@ -131,9 +131,11 @@
     width: 80%;
     height: auto;
 }
-.title-text{
+
+.title-text, .thankyou-text{
     color: #61ee98;
 }
+
 .section5 {
     background-image: url('../images/jewellery/virtualJ_store_dark.webp');
     padding-top: 200px;

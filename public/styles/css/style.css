@@ -9574,13 +9574,24 @@ section.section-9 .qoute-box span {
     justify-content: center;
 }
 
-.title-text {
+@media screen and (max-width:1200px) {
+    .jewelery-title{
+        padding-top: 50px;
+    }
+}
+
+ .title-text {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    /* padding: 24px; */
+}
+.thankyou-text {
     font-size: 45px;
     color: white;
     text-align: center;
     padding: 24px;
 }
-
 .logo-img {
     width: 225px;
     height: auto;
