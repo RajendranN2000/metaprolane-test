@@ -2,9 +2,6 @@
   "name": "metaprolane",
   "type": "module",
   "version": "0.0.1",
-  "engines": {
-    "node": "20.12.2"
-  },
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev",
