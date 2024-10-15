@@ -60,7 +60,7 @@
 }
 
 .section2-img {
-    height: auto;
+    height: 100%;
     width: 50%;
 }
 
@@ -372,7 +372,7 @@
     }
 
     .section2-img {
-        height: auto !important;
+        height: 100% !important;
         width: 100% !important;
     }
 
@@ -581,7 +581,7 @@
     }
 
     .section2-img {
-        height: auto !important;
+        height: 100% !important;
         width: 100% !important;
     }
 
