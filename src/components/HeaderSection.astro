@@ -103,17 +103,7 @@ const { title } = Astro.props;
                                 <li class="has-sub">
                                     <a
                                         href="javascript:void(0)"
-                                        style={{
-                                            color:
-                                                typeof window !== "undefined" &&
-                                                window?.location?.pathname !=
-                                                    "" &&
-                                                window?.location?.pathname !=
-                                                    "/"
-                                                    ? "#68fe9a"
-                                                    : "",
-                                        }}
-                                        id="selected-title"
+                                        id="metaverse"
                                         >Metaverse Development<i
                                             class="icon fa fa-chevron-down"
                                         ></i></a
@@ -250,7 +240,7 @@ const { title } = Astro.props;
                                                 viewBox="0 0 24 24"
                                                 stroke-width="1.5"
                                                 stroke="currentColor"
-                                                style="height:30px; width:30px"
+                                                style="height:16px; width:26px"
                                             >
                                                 <path
                                                     stroke-linecap="round"
@@ -421,16 +411,17 @@ const { title } = Astro.props;
 
     //getting current url
     const url = window.location.href.slice(7, window.location.href.length);
-
+    console.log(url,"url");
     const parts = url.split("/");
+    console.log(parts,"partsbefore");
     parts.shift();
 
     //setting submenu state
     const element = document.getElementById(parts[0]);
-    console.log(element);
+    console.log(element,"element");
     element.style.color = "green";
 
-    console.log(parts);
+    console.log(parts,"parts");
     //setting metaverse main title if any of its child is being selected
     if (parts[0].includes("metaverse")) {
         metaverse.style.color = "green";
