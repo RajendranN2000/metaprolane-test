@@ -97,7 +97,7 @@ const { title } = Astro.props;
                             <ul class="nav align-self-center"></ul>
                             <ul class="nav align-self-right" id="myDIV">
                                 <li>
-                                    <a href="/">Home</a>
+                                    <a href="/" id="home">Home</a>
                                 </li>
 
                                 <li class="has-sub">
@@ -421,13 +421,19 @@ const { title } = Astro.props;
 
     //setting submenu state
     const element = document.getElementById(parts[0]);
-    console.log(element, "element");
     element.style.color = "green";
-
+    const homeElement = document.getElementById("home")
     console.log(parts, "parts");
     //setting metaverse main title if any of its child is being selected
     if (parts[0].includes("metaverse")) {
+        console.log("check metaverse");
+        
         metaverse.style.color = "green";
+    }
+    else{
+        console.log("check home");
+        
+        homeElement.style.color = "green"
     }
 
     function handleMenuState(event) {
