@@ -260,7 +260,9 @@ img {
     color: #fff;
     background-color: #68fe9a
 }
-
+.product-tech-sec .section-heading h2{
+    margin-bottom: 0px;
+}
 .section-heading h2 {
     line-height: 40px;
     margin-top: 0;
@@ -1023,11 +1025,29 @@ section.under-banner .owl-carousel .owl-stage {
     display: inline-block;
     color: #1e1e1e
 }
-
+.why-expertise-section .under-banner {
+    margin: 0;
+    padding: 50px 0 25px;
+    position: unset;
+    width: 100%;
+    background: white !important;
+}
+@media screen and (max-width:767px) {
+    .why-expertise-section .under-banner {
+        margin: 0;
+        padding: 0px 0 25px !important;
+        position: unset;
+        width: 100%;
+        background: white !important;
+    }
+}
 .under-banner .owl-carousel .owl-nav button.owl-next,
 .under-banner .owl-carousel .owl-nav button.owl-prev,
 .under-banner .owl-carousel button.owl-dot {
     top: -12px
+}
+.under-banner2 .owl-carousel .owl-nav button.owl-prev {
+    top: 0px !important
 }
 
 .under-banner .owl-nav .owl-next:hover::before,
@@ -2126,10 +2146,13 @@ section.why-metaprolane p {
 .btn-primary,
 .btn-primary:hover,
 .btn-secondary {
-    border-radius: 0 30px;
+    border-radius: 0 30px !important;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
-    padding: 15px 0
+    padding: 15px 0;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn-primary {
@@ -2372,7 +2395,14 @@ section.meta-development-services.product-our-services {
     background: #333;
     padding: 0 0 50px
 }
-
+section.meta-development-services.product-our-services2 {
+    background: url('/assets/images/products2/benefits-of-metaverse-parallax.webp');
+    padding: 0 0 0px !important;
+    position: relative;
+    min-height: max-content;
+    align-items: center;
+    display: block;
+}
 .meta-development-services::before,
 section.contact-us::before {
     position: absolute;
@@ -2551,6 +2581,11 @@ section.under-banner.experts-in-sec.product-banner-sec .container.our-custom-met
     line-height: 52px;
     letter-spacing: -2px;
     font-weight: 800
+}
+
+.product-tech-sec .experts-inn .section-heading h2::after,
+section.under-banner.our-technologies .section-heading h2:after{
+    display: none;
 }
 
 .experts-inn .section-heading h2::after,
@@ -4820,6 +4855,10 @@ section.under-banner.our-technologies.product-tech-sec p.hub-mutual1 {
     margin: 20px 0 0;
     line-height: 52px;
 }
+.h3-under-bar2.hub2.hub-mutual4 {
+    margin:  0 0 20px;
+    line-height: 52px;
+}
 
 .meta-product section.under-banner.our-technologies .section-heading h2.h3-under-bar2.hub2.hub-mutual4 {
     padding-bottom: 0;
@@ -6989,7 +7028,14 @@ b.rm1 {
 .blog-banner-r-inn>.row.alignitem-top {
     align-items: start !important;
 }
-
+.under-banner .owl-nav .owl-next:before{
+    top: 0px !important;
+    color: white !important;
+}
+.under-banner .owl-nav .owl-prev:before{
+    top: 0px !important;
+    color: white !important;
+}
 @media (max-width:767px) {
 
     .main-nav .nav .sub-menu,
@@ -7075,7 +7121,18 @@ b.rm1 {
     .under-banner .owl-carousel .owl-nav button.owl-next {
         right: 10px
     }
-
+    .under-banner .owl-nav .owl-next:before{
+        top: 0px !important;
+        color: white !important;
+    }
+    .under-banner .owl-nav .owl-prev:before{
+        top: 0px !important;
+        color: white !important;
+    }
+    .meta-development-services .button.owl-prev{
+        top:0 !important
+    }
+    
     .about-ms-img img {
         top: 0
     }
@@ -7171,6 +7228,11 @@ b.rm1 {
 
     .why-metaprolane.whym2 .container {
         padding: 80px 20px 40px
+    }
+    @media screen and (max-width:767px) {
+        .why-metaprolane.whym2 .container {
+            padding: 0px 20px 40px !important
+        }
     }
 
     .our-courses .owl-nav .owl-prev,
@@ -7760,7 +7822,11 @@ b.rm1 {
     section.our-courses.product-our-courses.msd-box1 {
         padding-top: 30px;
     }
-
+@media screen and (max-width:767px){
+    section.our-courses.product-our-courses.msd-box1 {
+        padding-top: 0px !important;
+    }
+}
     .meta-product section.under-banner.experts-in-sec.product-banner-sec2 #bg-video {
         min-height: 100%;
         height: 100%;

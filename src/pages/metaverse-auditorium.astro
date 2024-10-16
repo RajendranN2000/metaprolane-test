@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import MetaverseDevelopmentTools from "../components/MetaverseDevelopmentTools.astro";
-
+import Check from "../layouts/Check.astro";
+import Layout from "../layouts/Layout.astro";
 const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
   method: "POST",
   headers: { "Content-Type": "application/json" },
@@ -74,160 +74,594 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
 const { data } = await response.json();
 ---
 
-<Layout title="metaverseAuditorium">
-  <html lang="en">
-    <head>
-      
-    </head>
-    <div class="home-container industries-page meta-product">
-      <!-- <link rel="stylesheet" href="/styles/css/retailShowroom.css" /> -->
-      <!-- <script
-        is:inline
-        src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-      ></script> -->
-      
-      <!-- <link rel="stylesheet" href="assets/css/fontawesome.css" /> -->
-      <!-- <link rel="stylesheet" href="assets/css/owl.css"> -->
-      <!-- <link rel="stylesheet" href="styles/css/lightbox.css" /> -->
-      <link
-        id="styleOneCSS"
-        rel="stylesheet"
-      
-      />
-      <link id="animateCSS" rel="stylesheet"/>
-      <!-- <link rel="stylesheet" href="assets/css/countrySelect.min.css" /> -->
-      <link
-        id="verCSS"
-        type="text/css"
-        rel="stylesheet"
-       
-      />
-      <link id="stylecss" rel="stylesheet"  />
-      <link id="owlcss" rel="stylesheet"  />
-
-      <script type="text/javascript">
-        let isScrolled = false;
-        const styleCSS = document.getElementById('stylecss');
-        const owlCSS = document.getElementById('owlcss');
-        const styleOneCSS = document.getElementById('styleOneCSS');
-        const verCSS = document.getElementById('verCSS');
-        const animateCSS = document.getElementById('animateCSS');
-        
-
-        const bootstrapLink = document.createElement('link');
-        bootstrapLink.href = "/vendor/bootstrap/css/bootstrap.min.css";
-        bootstrapLink.rel = "stylesheet";
-        document.head.append(bootstrapLink);
-        
-        
-        window.addEventListener('wheel', function(){
-          if(!isScrolled){
-            styleCSS.setAttribute('href', '/styles/css/style.css');
-            owlCSS.setAttribute('href', '/styles/blog/css/owl.css');
-            styleOneCSS.setAttribute('href', 'styles/css/style.css?@#Oneinnt5556341Ones3sd3dfsf45ytg5v1');
-            verCSS.setAttribute('href', 'assets/css/style5597.css?ver=5.0');
-            animateCSS.setAttribute('href', 'styles/css/animate.css');
-           
-            isScrolled = true;
-          }
-          
+<Layout title="check">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+      integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+      integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    
+    <link rel="stylesheet" href="/styles/blog/css/style.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/css/style.css" type="text/css" />
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+ 
+  </head>
+  <body>
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", function () {
+        $(".owl-carousel1").owlCarousel({
+            items: 4, 
+            margin: 20, 
+            loop: true,
+            autoplay: true, 
+            autoplayTimeout: 3000, 
+            autoplayHoverPause: true,
+            responsive: {
+              0: {
+                items: 1, 
+              },
+              600: {
+                items: 2, 
+              },
+              800: {
+                items: 2,
+              },
+              1000: {
+                items: 2, 
+              },
+              1200: {
+                items: 3,
+              },
+            },
+          });
+        $(".owl-carousel").owlCarousel({
+          items: 1,
+          margin: 20,
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 3000,
+          autoplayHoverPause: true,
+          responsive: {
+            0: {
+              items: 1,
+            },
+            600: {
+              items: 3,
+            },
+            800: {
+              items: 2,
+            },
+            1000: {
+              items: 3,
+            },
+            1200: {
+              items: 5,
+            },
+          },
         });
-      </script>
-      <script is:inline>
-
-        document.addEventListener("DOMContentLoaded", function () {
-            let currentIndex = 0;
-            const slides = document.querySelectorAll(".carousel-item");
-            const totalSlides = slides.length;
-
-            document
-                .querySelector(".carousel-control-next")
-                .addEventListener("click", () => {
-                    slides[currentIndex]?.classList.remove("active");
-                    currentIndex = (currentIndex + 1) % totalSlides;
-                    slides[currentIndex]?.classList.add("active");
-                });
-
-            document
-                .querySelector(".carousel-control-prev")
-                .addEventListener("click", () => {
-                    slides[currentIndex]?.classList.remove("active");
-                    currentIndex =
-                        (currentIndex - 1 + totalSlides) % totalSlides;
-                    slides[currentIndex]?.classList.add("active");
-                });
-        });
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const prevButton = document.querySelector(".slider_nav .prev");
-            const nextButton = document.querySelector(".slider_nav .next");
-            const items = document.querySelectorAll(".slider_top ul li");
-            let currentIndex = 0; // Start from the first item
-
-            function updateCarousel() {
-                items.forEach((item, index) => {
-                    item?.classList.remove(
-                        "prev",
-                        "prev2",
-                        "active",
-                        "next",
-                        "next2",
-                    );
-                });
-
-                const prevIndex =
-                    (currentIndex - 1 + items.length) % items.length;
-                const nextIndex = (currentIndex + 1) % items.length;
-                const prev2Index =
-                    (currentIndex - 2 + items.length) % items.length;
-                const next2Index = (currentIndex + 2) % items.length;
-
-                items[prev2Index]?.classList.add("prev2");
-                items[prevIndex]?.classList.add("prev");
-                items[currentIndex]?.classList.add("active");
-                items[nextIndex]?.classList.add("next");
-                items[next2Index]?.classList.add("next2");
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % items.length;
-                updateCarousel();
-            }
-
-            // Automatically advance to the next slide every 5 seconds
-            setInterval(nextSlide, 3000);
-
-            updateCarousel(); // Initial call to set the classes
-        });
-
-        document.addEventListener("DOMContentLoaded", function () {
-            $(".owl-carousel1").owlCarousel({
-                items: 1, // Display one item-row at a time
-                margin: 20, // Space between items
-                loop: true, // Loop through items
-                autoplay: true, // Enable auto-play
-                autoplayTimeout: 3000, // Auto-play interval (in ms)
-                autoplayHoverPause: true, // Pause on hover
-                responsive: {
-                    0: {
-                        items: 1, // Display one item-row at a time on small screens
-                    },
-                    600: {
-                        items: 2, // Display one item-row at a time on medium screens
-                    },
-                    800: {
-                        items: 2, // Display one item-row at a time on medium screens
-                    },
-                    1000: {
-                        items: 2, // Display one item-row at a time on large screens
-                    },
-                    1200:{
-                      items: 3
-                    }
-                },
-            });
-        });
+      });
     </script>
+    <div class="">
+      <section
+        class="section main-banner audit-videos"
+        id="top"
+        data-section="section1"
+      >
+        <!-- <img src="assets/images/Auditorium/Banner_BG.png" alt="Auditorium page Banner" class="inner-section-banner" /> -->
+        <video autoplay="" muted="" loop="" id="bg-video">
+          <source
+            src="assets/images/shopping-mall/mall-banner.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="video-overlay header-text main-banner-cont">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-vectors banner-vector-down">
+          <img src="assets/images/products/bg1.webp" alt="BG" />
+        </div>
+      </section>
+
+      <section class="under-banner our-technologies product-tech-sec">
+        <div class="container">
+          <div class="section-heading ss-case">
+            <p
+              class="text-blue h2-blue text-center fs-32 fw-bold hub-mutual1 animation-element slide-left"
+            >
+              {
+                data.metaverseAuditorium.data.attributes
+                  .endless_vritual_frontiers
+              }
+            </p>
+            <h2
+              class="text-black text-center h3-under-bar2 hub2 hub-mutual2 animation-element slide-left"
+            >
+              {
+                data.metaverseAuditorium.data.attributes
+                  .metaverse_auditorium_title
+              }
+            </h2>
+            <p
+              class="text-gray2 text-last-center pb-2 immitate0 animation-element slide-left"
+            >
+              {
+                data.metaverseAuditorium.data.attributes
+                  .metaverse_auditorium_content
+              }
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="under-banner our-technologies product-tech-sec vir-ms1 vir-ms11 pt-0"
+      >
+        <div class="container">
+          <div class="section-heading ss-case">
+            <h1
+              class="text-black text-center mb-4 h3-under-bar2 hub2 hub-mutual5 mt-0 vir-ms2 animation-element slide-left"
+            >
+              {
+                data.metaverseAuditorium.data.attributes
+                  .metaverse_auditorium_Dev_title
+              }
+            </h1>
+            <div class="row">
+              <div class="col-lg-7">
+                <div class="animation-element slide-left">
+                  <p class="text-gray2 text-last-left pb-4 pt-0">
+                    {
+                      data.metaverseAuditorium.data.attributes
+                        .metaverse_auditorium_Dev_content
+                    }
+                  </p>
+                  <div class="unlock-btn-sec mb-4">
+                    <a href="#contact" class="btn btn-primary">Get Quote Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div
+                  class="plr-10-only-mobile mb-3 animation-element slide-right"
+                >
+                  <img
+                    src="assets/images/products2/Join-the-metavers2.webp"
+                    alt="BG Vector"
+                    class="w-100-br-15"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="our-courses product-our-courses msd-box1">
+        <div class="container pt-2 pb-2">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-heading animation-element slide-left">
+                <h2 class="text-black text-center h3-under-bar2 px-2">
+                  {
+                    data.metaverseAuditorium.data.attributes
+                      .feature_metaverse_auditorium
+                  }
+                </h2>
+
+                <div class="owl-carousel owl-carousel1 px-3">
+                  {
+                    data.metaverseAuditorium.data.attributes.feature_metaverse_auditorium_lists.data.map(
+                      (each: any, index: number) => {
+                        return (
+                          <div class="owl-experts-item ">
+                            <div class="item">
+                              <div class="icon">
+                                <div class="expert-txt2-office">
+                                  <div class="box-img">
+                                    <img
+                                      class="feature-img"
+                                      src={each.attributes.image}
+                                      alt="Features Image"
+                                    />
+                                  </div>
+                                  <div class="box-img-inn">
+                                    <h6>{each.attributes.title}</h6>
+                                    <p class="text-last-center text-white">
+                                      {each.attributes.content}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        );
+                      },
+                    )
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits of Metaverse Auditorium -->
+      <section class="meta-development-services product-our-services2">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <div class="under-banner">
+                  <div class="under-banner-carousel-section">
+                    <h4
+                      class="text-white h3-under-bar2 animation-element slide-left"
+                    >
+                      {
+                        data.metaverseAuditorium.data.attributes
+                          .benefits_metaverse_auditorium
+                      }
+                    </h4>
+                    <div class="row animation-element slide-left">
+                      {
+                        data.metaverseAuditorium.data.attributes.benefits_metaverse_auditorium_lists.data.map(
+                          (each: any, index: number) => {
+                            return (
+                              <div class="col-lg-4">
+                                <div class="benefits-metavirtualoffice">
+                                  <div class="text-center bm-img">
+                                    <img
+                                      src={each.attributes.image}
+                                      alt="Benefits Icons"
+                                    />
+                                  </div>
+                                  <h5>{each.attributes.title}</h5>
+                                  <p class="text-gray2 text-last-center">
+                                    {each.attributes.content}
+                                  </p>
+                                </div>
+                              </div>
+                            );
+                          },
+                        )
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-vectors">
+          <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
+        </div>
+      </section>
+
+      <!-- Metaverse Revolution Today! -->
+      <section class="why-metaprolane whym2 product-why-sec">
+        <div class="container pt-0">
+          <h4
+            class="text-black text-center h3-under-bar2 mb-2 pt-1 pb-2 fw-bold-800 animation-element slide-left"
+          >
+            {
+              data.metaverseAuditorium.data.attributes
+                .join_metaverse_revolution_title
+            }
+          </h4>
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="why-metaprolane-l animation-element slide-left">
+                <p class="text-gray2 text-last-left padd-0">
+                  {
+                    data.metaverseAuditorium.data.attributes
+                      .join_metaverse_revolution_content
+                  }
+                </p>
+                <div class="text-last-left my-3 mb-4">
+                  <a href="/#demo">
+                    <button class="btn padd-0">
+                      <div class="btn-box border-gradient">
+                        Start your 3D journey
+                      </div>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="animation-element slide-right">
+                <img
+                  src="assets/images/Auditorium/Join-the-Metaverse-Revolution.webp"
+                  alt="BG Vector"
+                  class="w-100-br-15"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Monetizing Options in Metaverse Auditorium -->
+      <section class="meta-development-services product-our-services product-our-services2">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <div class="under-banner under-banner2">
+                  <div class="under-banner-carousel-section">
+                    <h5
+                      class="text-white h3-under-bar2 mb-0 mt-0 animation-element slide-left"
+                    >
+                      {
+                        data.metaverseAuditorium.data.attributes
+                          .monetizing_metaverse_auditorium
+                      }
+                    </h5>
+                    <p
+                      class="text-last-center text-white mb-3 animation-element slide-left"
+                    >
+                      {
+                        data.metaverseAuditorium.data.attributes
+                          .monetizing_metaverse_auditorium_sub
+                      }
+                    </p>
+
+                    <div
+                      class="row align-items-center animation-element slide-left"
+                    >
+                      {
+                        data.metaverseAuditorium.data.attributes.monetizing_metaverse_auditorium_lists.data.map(
+                          (each: any, index: number) => {
+                            return (
+                              <div class="col-lg-6">
+                                <div class="benefits-metavirtualoffice mds22">
+                                  <div class="align-items-center">
+                                    <img
+                                      src={each.attributes.image}
+                                      alt="Ticket Sales"
+                                      class="mds-product"
+                                    />
+                                  </div>
+                                  <div class="benefits-mds-inn">
+                                    <h6 class="bmoffice">
+                                      {each.attributes.title}
+                                    </h6>
+                                    <p class="text-last-center text-gray2">
+                                      {each.attributes.content}
+                                    </p>
+                                  </div>
+                                </div>
+                              </div>
+                            );
+                          },
+                        )
+                      }
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-vectors">
+          <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
+        </div>
+      </section>
+
+      <!-- Creating The Ultimate Virtual Event Experience with Metaverse Auditorium -->
+      <section class="why-metaprolane whym2 product-why-sec">
+        <div class="container pt-0">
+          <h3
+            class="text-black text-center h3-under-bar2 bar-non mb-4 fw-bold-800 animation-element slide-left"
+          >
+            {
+              data.metaverseAuditorium.data.attributes
+                .vitual_metaverse_auditorium
+            }
+          </h3>
+          <p
+            class="padd-0 my-4 mb-4 text-last-center text-gray2 mt-3 animation-element slide-left"
+          >
+            {
+              data.metaverseAuditorium.data.attributes
+                .vitual_metaverse_auditorium_content
+            }
+          </p>
+          <div class="row mb-3">
+            <div class="col-lg-12">
+              <div class="w-100">
+                <div
+                  class="immersive-m-l text-center animation-element slide-left"
+                >
+                  <iframe
+                    title="Metaprolane Video"
+                    srcdoc="
+                          <style>
+                          body, .full {
+                          width: 100%;
+                          height: 100%;
+                          margin: 0;
+                          position: absolute;
+                          display: flex;
+                          justify-content: center;
+                          object-fit: cover;
+                          }
+                          </style>
+                          <a
+                          href='https://www.youtube.com/embed/veaeTQJdOFA?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1'
+                          class='full'
+                          >
+                          <img
+                          src='/assets/images/video2.webp'
+                          class='full'
+                          />
+                          <svg
+                          version='1.1'
+                          viewBox='0 0 68 48'
+                          width='68px'
+                          style='position: relative;'
+                          >
+                          <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
+                          <path d='M 45,24 27,14 27,34' fill='#fff'></path>
+                          </svg>
+                          </a>
+                          "
+                    style="max-width: 90%; width: 100%; aspect-ratio: 16/9;"
+                    frameborder="0"
+                  >
+                  </iframe>
+                </div>
+              </div>
+
+              <div class="text-center my-3">
+                <a href="#contact">
+                  <button class="btn padd-0">
+                    <div class="btn-box border-gradient">
+                      Talk To Our Expert
+                    </div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- metaverse development tools -->
+      <MetaverseDevelopmentTools />
+
+      <!-- Why Metaprolane is your ideal partner? -->
+      <section class="gradient-ms-box">
+        <div class="bg-vectors">
+          <!-- <img src="assets/images/products/bg3.webp" alt="BG Vector"> -->
+        </div>
+        <div class="container">
+          <div class="why-expertise-section">
+            <div class="under-banner">
+              <div
+                class="under-banner-carousel-section animation-element slide-left"
+              >
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h3 class="text-black text-center fw-bold-800 fs-32 mb-0">
+                      {
+                        data.metaverseAuditorium.data.attributes
+                          .metaverse_auditorium_ideal_title
+                      }
+                    </h3>
+                    <p class="text-gray2 text-last-center">
+                      {
+                        data.metaverseAuditorium.data.attributes
+                          .metaverse_auditorium_ideal_content
+                      }
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- faq's -->
+      <section class="why-metaprolane whym2 product-why-sec apply-now">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="why-metaprolane-l animation-element slide-left">
+                <h5 class="text-black h3-under-bar2 ">
+                  {
+                    data.metaverseAuditorium.data.attributes
+                      .metaverse_auditorium_faq
+                  }
+                </h5>
+              </div>
+              {
+                data.metaverseAuditorium.data.attributes.metaverse_auditorium_faq_lists.data.map(
+                  (item: any, index: number) => (
+                    <div class="faq-card">
+                      <div class="faq-question" onclick="toggleAnswer(event)">
+                        {item.attributes.question}
+                        <span class="faq-toggle-icon">+</span>
+                      </div>
+                      <div class="faq-answer">{item.attributes.answer}</div>
+                    </div>
+                  ),
+                )
+              }
+              <!-- {data.metaverseAuditorium.data.attributes.metaverse_auditorium_faq_lists.data.map(
+                                    (item: any) => (
+                                        <div class="FAQ-card faq">
+                                            <div class="FAQ-qstn-section question1">
+                                                <div class="FAQ-question">
+                                                    {item.attributes.question}
+                                                </div>
+                                                <img
+                                                    class="dropdown-arrow"
+                                                    src="assets/images/retail-showroom/Keyboard arrow down.webp"
+                                                />
+                                            </div>
+                                            <div class="answer answer1">
+                                                {item.attributes.answer}
+                                            </div>
+                                        </div>
+                                    ),
+                                )
+                            }             -->
+            </div>
+          </div>
+        </div>
+
+        <script type="text/javascript">
+          var $animation_elements = $(".animation-element");
+          var $window = $(window);
+
+          function check_if_in_view() {
+            var window_height = $window.height();
+            var window_top_position = $window.scrollTop();
+            var window_bottom_position = window_top_position + window_height;
+
+            $.each($animation_elements, function () {
+              var $element = $(this);
+              var element_height = $element.outerHeight();
+              var element_top_position = $element.offset().top;
+              var element_bottom_position =
+                element_top_position + element_height;
+
+              //check to see if this current container is within viewport
+              if (
+                element_bottom_position >= window_top_position &&
+                element_top_position <= window_bottom_position
+              ) {
+                $element.addClass("in-view");
+              }
+              // else {
+              //   $element.removeClass('in-view');
+              // }
+            });
+          }
+
+          $window.on("scroll resize", check_if_in_view);
+          $window.trigger("scroll", check_if_in_view);
+        </script>
+      </section>
+    </div>
+   
       <script is:inline>
         $(document).ready(function () {
           $(".question1").click(function () {
@@ -291,573 +725,8 @@ const { data } = await response.json();
             ); // Adjust the duration as per your requirement
           });
         });
-       
+
         // $("#content").hide().show("slide", { direction: "left" }, 1500);
       </script>
-
-      <!-- <div class="meta-product"> -->
-      <section
-        class="section main-banner audit-videos"
-        id="top"
-        data-section="section1"
-      >
-        <!-- <img src="assets/images/Auditorium/Banner_BG.png" alt="Auditorium page Banner" class="inner-section-banner" /> -->
-        <video autoplay="" muted="" loop="" id="bg-video">
-          <source
-            src="assets/images/shopping-mall/mall-banner.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="video-overlay header-text main-banner-cont">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="caption"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bg-vectors banner-vector-down">
-          <img src="assets/images/products/bg1.webp" alt="BG" />
-        </div>
-      </section>
-
-      <!-- Auditorium Development Services -->
-      <section class="under-banner our-technologies product-tech-sec">
-        <div class="container">
-          <div class="section-heading ss-case">
-            <p
-              class="text-blue h2-blue text-center fs-32 fw-bold hub-mutual1 animation-element slide-left"
-            >
-              {
-                data.metaverseAuditorium.data.attributes
-                  .endless_vritual_frontiers
-              }
-            </p>
-            <h2
-              class="text-black text-center h3-under-bar2 hub2 hub-mutual2 animation-element slide-left"
-            >
-              {
-                data.metaverseAuditorium.data.attributes
-                  .metaverse_auditorium_title
-              }
-            </h2>
-            <p
-              class="text-gray2 text-last-center pb-2 immitate0 animation-element slide-left"
-            >
-              {
-                data.metaverseAuditorium.data.attributes
-                  .metaverse_auditorium_content
-              }
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Metaverse Auditorium Development -->
-      <section
-        class="under-banner our-technologies product-tech-sec vir-ms1 vir-ms11 pt-0"
-      >
-        <div class="container">
-          <div class="section-heading ss-case">
-            <h1
-              class="text-black text-center mb-4 h3-under-bar2 hub2 hub-mutual4 mt-0 vir-ms2 animation-element slide-left"
-            >
-              {
-                data.metaverseAuditorium.data.attributes
-                  .metaverse_auditorium_Dev_title
-              }
-            </h1>
-            <div class="row">
-              <div class="col-lg-7">
-                <div class="animation-element slide-left">
-                  <p class="text-gray2 text-last-left pb-4 pt-0">
-                    {
-                      data.metaverseAuditorium.data.attributes
-                        .metaverse_auditorium_Dev_content
-                    }
-                  </p>
-                  <div class="unlock-btn-sec mb-4">
-                    <a href="#contact" class="btn btn-primary">Get Quote Now</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5">
-                <div
-                  class="plr-10-only-mobile mb-3 animation-element slide-right"
-                >
-                  <img
-                    src="assets/images/products2/Join-the-metavers2.webp"
-                    alt="BG Vector"
-                    class="w-100-br-15"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Features Of Metaverse Auditorium Development -->
-      <section class="our-courses product-our-courses msd-box1">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-heading animation-element slide-left">
-                <h2 class="text-black text-center pt-4 h3-under-bar2 mt-4">
-                  {
-                    data.metaverseAuditorium.data.attributes
-                      .feature_metaverse_auditorium
-                  }
-                </h2>
-
-                <div class="owl-carousel owl-carousel1">
-                  {
-                    data.metaverseAuditorium.data.attributes.feature_metaverse_auditorium_lists.data.map(
-                      (each: any, index: number) => {
-                        return (
-                          <div class="owl-experts-item ">
-                            <div class="item">
-                              <div class="icon">
-                                <div class="expert-txt2-office">
-                                  <div class="box-img">
-                                    <img
-                                      class="feature-img"
-                                      src={each.attributes.image}
-                                      alt="Features Image"
-                                    />
-                                  </div>
-                                  <div class="box-img-inn">
-                                    <h6>{each.attributes.title}</h6>
-                                    <p class="text-last-center text-white">
-                                      {each.attributes.content}
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      },
-                    )
-                  }
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- <section class="our-courses product-our-courses msd-box1 pt-0">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="section-heading animation-element slide-left">
-                <h4
-                  class="text-black text-center h3-under-bar2 hub1 mb-5 hub-mutual3 feature-h5 mb-mobile animation-element slide-left"
-                >
-                  {
-                    data.metaverseAuditorium.data.attributes
-                      .feature_metaverse_auditorium
-                  }
-                </h4>
-                <div class="owl-carousel">
-                  {
-                    data.metaverseAuditorium.data.attributes.feature_metaverse_auditorium_lists.data.map(
-                      (each: any, index: number) => {
-                        return (
-                          <div class="owl-experts-item" 
-                          style="width:22rem">
-                            <div class="item">
-                              <div class="icon">
-                                <div class="expert-txt2-office">
-                                  <div class="box-img">
-                                    <img
-                                      src={each.attributes.image}
-                                      alt="Large Capacity"
-                                    />
-                                  </div>
-                                  <div class="box-img-inn">
-                                    <h5 class="fma">{each.attributes.title}</h5>
-                                    <p class="text-last-center text-white">
-                                      {each.attributes.content}
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        );
-                      },
-                    )
-                  }
-                </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-        <!-- Benefits of Metaverse Auditorium -->
-        <section class="meta-development-services product-our-services">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
-                <div class="text-center">
-                  <div class="under-banner">
-                    <div class="under-banner-carousel-section">
-                      <h4
-                        class="text-white h3-under-bar2 animation-element slide-left"
-                      >
-                        {
-                          data.metaverseAuditorium.data.attributes
-                            .benefits_metaverse_auditorium
-                        }
-                      </h4>
-                      <div class="row animation-element slide-left">
-                        {
-                          data.metaverseAuditorium.data.attributes.benefits_metaverse_auditorium_lists.data.map(
-                            (each: any, index: number) => {
-                              return (
-                                <div class="col-lg-4">
-                                  <div class="benefits-metavirtualoffice">
-                                    <div class="text-center bm-img">
-                                      <img
-                                        src={each.attributes.image}
-                                        alt="Benefits Icons"
-                                      />
-                                    </div>
-                                    <h5>{each.attributes.title}</h5>
-                                    <p class="text-gray2 text-last-center">
-                                      {each.attributes.content}
-                                    </p>
-                                  </div>
-                                </div>
-                              );
-                            },
-                          )
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="bg-vectors">
-            <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
-          </div>
-        </section>
-
-        <!-- Metaverse Revolution Today! -->
-        <section class="why-metaprolane whym2 product-why-sec">
-          <div class="container pt-0">
-            <h4
-              class="text-black text-center h3-under-bar2 mb-2 pt-1 pb-2 fw-bold-800 animation-element slide-left"
-            >
-              {
-                data.metaverseAuditorium.data.attributes
-                  .join_metaverse_revolution_title
-              }
-            </h4>
-            <div class="row">
-              <div class="col-lg-7">
-                <div class="why-metaprolane-l animation-element slide-left">
-                  <p class="text-gray2 text-last-left padd-0">
-                    {
-                      data.metaverseAuditorium.data.attributes
-                        .join_metaverse_revolution_content
-                    }
-                  </p>
-                  <div class="text-last-left my-3 mb-4">
-                    <a href="/#demo">
-                      <button class="btn padd-0">
-                        <div class="btn-box border-gradient">
-                          Start your 3D journey
-                        </div>
-                      </button>
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5">
-                <div class="animation-element slide-right">
-                  <img
-                    src="assets/images/Auditorium/Join-the-Metaverse-Revolution.webp"
-                    alt="BG Vector"
-                    class="w-100-br-15"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Monetizing Options in Metaverse Auditorium -->
-        <section class="meta-development-services product-our-services">
-          <div class="container">
-            <div class="row align-items-center">
-              <div class="col-lg-12">
-                <div class="text-center">
-                  <div class="under-banner">
-                    <div class="under-banner-carousel-section">
-                      <h5
-                        class="text-white h3-under-bar2 mb-0 mt-5 animation-element slide-left"
-                      >
-                        {
-                          data.metaverseAuditorium.data.attributes
-                            .monetizing_metaverse_auditorium
-                        }
-                      </h5>
-                      <p
-                        class="text-last-center text-white mb-3 animation-element slide-left"
-                      >
-                        {
-                          data.metaverseAuditorium.data.attributes
-                            .monetizing_metaverse_auditorium_sub
-                        }
-                      </p>
-
-                      <div
-                        class="row align-items-center animation-element slide-left"
-                      >
-                        {
-                          data.metaverseAuditorium.data.attributes.monetizing_metaverse_auditorium_lists.data.map(
-                            (each: any, index: number) => {
-                              return (
-                                <div class="col-lg-6">
-                                  <div class="benefits-metavirtualoffice mds22">
-                                    <div class="align-items-center">
-                                      <img
-                                        src={each.attributes.image}
-                                        alt="Ticket Sales"
-                                        class="mds-product"
-                                      />
-                                    </div>
-                                    <div class="benefits-mds-inn">
-                                      <h6 class="bmoffice">
-                                        {each.attributes.title}
-                                      </h6>
-                                      <p class="text-last-center text-gray2">
-                                        {each.attributes.content}
-                                      </p>
-                                    </div>
-                                  </div>
-                                </div>
-                              );
-                            },
-                          )
-                        }
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="bg-vectors">
-            <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
-          </div>
-        </section>
-
-        <!-- Creating The Ultimate Virtual Event Experience with Metaverse Auditorium -->
-        <section class="why-metaprolane whym2 product-why-sec">
-          <div class="container pt-0">
-            <h3
-              class="text-black text-center h3-under-bar2 bar-non mb-4 fw-bold-800 animation-element slide-left"
-            >
-              {
-                data.metaverseAuditorium.data.attributes
-                  .vitual_metaverse_auditorium
-              }
-            </h3>
-            <p
-              class="padd-0 my-4 mb-4 text-last-center text-gray2 mt-3 animation-element slide-left"
-            >
-              {
-                data.metaverseAuditorium.data.attributes
-                  .vitual_metaverse_auditorium_content
-              }
-            </p>
-            <div class="row mb-3">
-              <div class="col-lg-12">
-                <div class="w-100">
-                  <div
-                    class="immersive-m-l text-center animation-element slide-left"
-                  >
-                    <iframe
-                      title="Metaprolane Video"
-                      srcdoc="
-                          <style>
-                          body, .full {
-                          width: 100%;
-                          height: 100%;
-                          margin: 0;
-                          position: absolute;
-                          display: flex;
-                          justify-content: center;
-                          object-fit: cover;
-                          }
-                          </style>
-                          <a
-                          href='https://www.youtube.com/embed/veaeTQJdOFA?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&controls=0&autoplay=1'
-                          class='full'
-                          >
-                          <img
-                          src='/assets/images/video2.webp'
-                          class='full'
-                          />
-                          <svg
-                          version='1.1'
-                          viewBox='0 0 68 48'
-                          width='68px'
-                          style='position: relative;'
-                          >
-                          <path d='M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z' fill='#f00'></path>
-                          <path d='M 45,24 27,14 27,34' fill='#fff'></path>
-                          </svg>
-                          </a>
-                          "
-                      style="max-width: 90%; width: 100%; aspect-ratio: 16/9;"
-                      frameborder="0"
-                    >
-                    </iframe>
-                  </div>
-                </div>
-
-                <div class="text-center my-3">
-                  <a href="#contact">
-                    <button class="btn padd-0">
-                      <div class="btn-box border-gradient">
-                        Talk To Our Expert
-                      </div>
-                    </button>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- metaverse development tools -->
-        <MetaverseDevelopmentTools />
-
-        <!-- Why Metaprolane is your ideal partner? -->
-        <section class="gradient-ms-box">
-          <div class="bg-vectors">
-            <!-- <img src="assets/images/products/bg3.webp" alt="BG Vector"> -->
-          </div>
-          <div class="container">
-            <div class="why-expertise-section">
-              <div class="under-banner">
-                <div
-                  class="under-banner-carousel-section animation-element slide-left"
-                >
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <h3 class="text-black text-center fw-bold-800 fs-32 mb-0">
-                        {
-                          data.metaverseAuditorium.data.attributes
-                            .metaverse_auditorium_ideal_title
-                        }
-                      </h3>
-                      <p class="text-gray2 text-last-center">
-                        {
-                          data.metaverseAuditorium.data.attributes
-                            .metaverse_auditorium_ideal_content
-                        }
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- faq's -->
-        <section class="why-metaprolane whym2 product-why-sec apply-now">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div
-                  class="why-metaprolane-l mt-2 animation-element slide-left"
-                >
-                  <h5 class="text-black h3-under-bar2 mb-5">
-                    {
-                      data.metaverseAuditorium.data.attributes
-                        .metaverse_auditorium_faq
-                    }
-                  </h5>
-                </div>
-                {
-                  data.metaverseAuditorium.data.attributes.metaverse_auditorium_faq_lists.data.map(
-                    (item: any, index: number) => (
-                      <div class="faq-card">
-                        <div class="faq-question" onclick="toggleAnswer(event)">
-                          {item.attributes.question}
-                          <span class="faq-toggle-icon">+</span>
-                        </div>
-                        <div class="faq-answer">{item.attributes.answer}</div>
-                      </div>
-                    ),
-                  )
-                }
-                <!-- {data.metaverseAuditorium.data.attributes.metaverse_auditorium_faq_lists.data.map(
-                                    (item: any) => (
-                                        <div class="FAQ-card faq">
-                                            <div class="FAQ-qstn-section question1">
-                                                <div class="FAQ-question">
-                                                    {item.attributes.question}
-                                                </div>
-                                                <img
-                                                    class="dropdown-arrow"
-                                                    src="assets/images/retail-showroom/Keyboard arrow down.webp"
-                                                />
-                                            </div>
-                                            <div class="answer answer1">
-                                                {item.attributes.answer}
-                                            </div>
-                                        </div>
-                                    ),
-                                )
-                            }             -->
-              </div>
-            </div>
-          </div>
-
-          <script type="text/javascript">
-            var $animation_elements = $(".animation-element");
-            var $window = $(window);
-
-            function check_if_in_view() {
-              var window_height = $window.height();
-              var window_top_position = $window.scrollTop();
-              var window_bottom_position = window_top_position + window_height;
-
-              $.each($animation_elements, function () {
-                var $element = $(this);
-                var element_height = $element.outerHeight();
-                var element_top_position = $element.offset().top;
-                var element_bottom_position =
-                  element_top_position + element_height;
-
-                //check to see if this current container is within viewport
-                if (
-                  element_bottom_position >= window_top_position &&
-                  element_top_position <= window_bottom_position
-                ) {
-                  $element.addClass("in-view");
-                }
-                // else {
-                //   $element.removeClass('in-view');
-                // }
-              });
-            }
-
-            $window.on("scroll resize", check_if_in_view);
-            $window.trigger("scroll", check_if_in_view);
-          </script>
-        </section>
-      </section>
-    </div>
-  </html></Layout
->
+  </body>
+</Layout>
