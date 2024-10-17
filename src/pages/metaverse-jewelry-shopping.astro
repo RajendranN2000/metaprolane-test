@@ -65,7 +65,7 @@ const { data } = await response.json();
       ></script> -->
       
 
-      <script is:inline>
+      <!-- <script is:inline>
         $(document).ready(function () {
           $(".question1").click(function () {
             console.log("clicked questions");
@@ -108,7 +108,7 @@ const { data } = await response.json();
           });
         });
         // $("#content").hide().show("slide", { direction: "left" }, 1500);
-      </script>
+      </script> -->
 
       <div class="">
         <div class="section1-banner">
@@ -672,18 +672,7 @@ const { data } = await response.json();
       const storeImg2 = document.getElementById('store-img-2');
       const storeImg3 = document.getElementById('store-img-3');
       const storeImg4 = document.getElementById('store-img-4');
-
-
-      //loading solutions images ons scroll
-
-      let isScrolled = false;
-      window.addEventListener('wheel', function(event){
-        
-        // event.preventDefault();
-        console.log(isScrolled);
-        if(!isScrolled){
-          
-          solutionImg1.setAttribute('src', '/assets/images/jewellery/BrandPresence-01@4x.webp');
+      solutionImg1.setAttribute('src', '/assets/images/jewellery/BrandPresence-01@4x.webp');
           solutionImg2.setAttribute('src', '/assets/images/jewellery/StreamlinedOperations-01@4x.webp');
           solutionImg3.setAttribute('src', '/assets/images/jewellery/VirtualTry-Ons-01@4x.webp');
           solutionImg4.setAttribute('src', '/assets/images/jewellery/Trendsetting-01@4x.webp');
@@ -702,11 +691,40 @@ const { data } = await response.json();
           storeImg2.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp');
           storeImg3.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp');
           storeImg4.setAttribute('src', 'assets/images/jewellery/2151034059@4x.webp');
-          console.log('here')
-          isScrolled = true;
-          }
+
+      //loading solutions images ons scroll
+
+      let isScrolled = false;
+      // window.addEventListener('wheel', function(event){
+        
+      //   // event.preventDefault();
+      //   console.log(!isScrolled,"isscrolled");
+      //   if(!isScrolled){
           
-      });
+      //     solutionImg1.setAttribute('src', '/assets/images/jewellery/BrandPresence-01@4x.webp');
+      //     solutionImg2.setAttribute('src', '/assets/images/jewellery/StreamlinedOperations-01@4x.webp');
+      //     solutionImg3.setAttribute('src', '/assets/images/jewellery/VirtualTry-Ons-01@4x.webp');
+      //     solutionImg4.setAttribute('src', '/assets/images/jewellery/Trendsetting-01@4x.webp');
+      //     solutionImg5.setAttribute('src', '/assets/images/jewellery/InvestmentPotential-01@4x.webp');
+      //     solutionImg6.setAttribute('src', '/assets/images/jewellery/InteractiveShopping-01@4x.webp');
+      //     solutionImg7.setAttribute('src', '/assets/images/jewellery/GlobalReach-01@4x.webp');
+      //     solutionImg8.setAttribute('src', '/assets/images/jewellery/Customization-01@4x.webp');
+      //     solutionImg9.setAttribute('src', '/assets/images/jewellery/CustomerInsight-01@4x.webp');
+
+      //     renderCarouselImg()
+
+
+
+
+      //     storeImg1.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(1)@4x.webp');
+      //     storeImg2.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(3)@4x.webp');
+      //     storeImg3.setAttribute('src', 'assets/images/jewellery/3d-avatar-inside-metaverse-jewelry(2)@4x.webp');
+      //     storeImg4.setAttribute('src', 'assets/images/jewellery/2151034059@4x.webp');
+      //     console.log('here')
+      //     isScrolled = true;
+      //     }
+          
+      // });
 
 
     
