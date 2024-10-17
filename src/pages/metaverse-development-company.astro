@@ -64,395 +64,427 @@ const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
 const { data } = await response.json();
 ---
 
-<Layout title="metaverseDevelopmentCompany" >
-    <html lang="en">
-        <div class="home-container industries-page meta-product">
-            <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
-            <!-- <script
+<Layout title="metaverseDevelopmentCompany">
+  <html lang="en">
+    <div class="home-container industries-page meta-product">
+      <link rel="stylesheet" href="/styles/css/retailShowroom.css" />
+      <!-- <script
                 is:inline
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
             ></script> -->
-            <link
-                href="/vendor/bootstrap/css/bootstrap.min.css"
-                rel="stylesheet"
-            />
-            <link rel="stylesheet" href="/styles/css/style.css" />
-            <link rel="stylesheet" href="/styles/blog/css/owl.css" />  
+      <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+      <link rel="stylesheet" href="/styles/css/style.css" />
+      <link rel="stylesheet" href="/styles/blog/css/owl.css" />
 
-            <script is:inline>
-                $(document).ready(function () {
-                    $(".question1").click(function () {
-                        console.log("clicked questions");
-                        var answer = $(this).next(".answer");
-                        $(".answer").not(answer).slideUp();
-                        answer.slideToggle();
-                    });
-                });
-                function toggleAnswer(event) {
-                    const question = event.currentTarget;
-                    const answer = question.nextElementSibling;
+      <script is:inline>
+        $(document).ready(function () {
+          $(".question1").click(function () {
+            console.log("clicked questions");
+            var answer = $(this).next(".answer");
+            $(".answer").not(answer).slideUp();
+            answer.slideToggle();
+          });
+        });
+        function toggleAnswer(event) {
+          const question = event.currentTarget;
+          const answer = question.nextElementSibling;
 
-                    $(answer).slideToggle();
-                    $(question).toggleClass("active");
-                    $(".faq-question")
-                        .not(question)
-                        .removeClass("active")
-                        .next(".faq-answer")
-                        .slideUp();
+          $(answer).slideToggle();
+          $(question).toggleClass("active");
+          $(".faq-question")
+            .not(question)
+            .removeClass("active")
+            .next(".faq-answer")
+            .slideUp();
 
-                    // Toggle the icon between plus and minus
-                    const icon = question.querySelector(".faq-toggle-icon");
-                    icon.textContent = icon.textContent === "+" ? "-" : "+";
-                }
-                $(document).ready(() => {
-                    $(".readmore-description").click(function () {
-                        var $cardTextContent = $(this).prev(
-                            ".card1-text-content",
-                        );
-                        $cardTextContent.toggleClass("expanded");
-                        $(this).text(
-                            $cardTextContent.hasClass("expanded")
-                                ? "Read less"
-                                : "Read more",
-                        );
-                    });
-                });
-                $(document).ready(() => {
-                    $(".wallet-content").each(function () {
-                        var $content = $(this);
-                        if (
-                            $content[0]?.scrollHeight > $content.innerHeight()
-                        ) {
-                            $content.next(".virtual-readmore").show();
-                        } else {
-                            $content.next(".virtual-readmore").hide();
-                        }
-                    });
-                    $(".virtual-readmore").click(function () {
-                        var $cardTextContent = $(this).prev(".wallet-content");
-                        $cardTextContent.toggleClass("virtual-expanded");
-                        $(this).text(
-                            $cardTextContent.hasClass("virtual-expanded")
-                                ? "Read less"
-                                : "Read more",
-                        );
-                    });
-                });
-                $(document).ready(function () {
-                    $(".talk-btn").click(function () {
-                        $("html, body").animate(
-                            {
-                                scrollTop: $("#footer").offset().top,
-                            },
-                            300,
-                        ); // Adjust the duration as per your requirement
-                    });
-                });
-                // $("#content").hide().show("slide", { direction: "left" }, 1500);
-            </script>
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
-    let currentIndex = 0;
-    const slides = document.querySelectorAll(".carousel-item");
-    const totalSlides = slides.length;
+          // Toggle the icon between plus and minus
+          const icon = question.querySelector(".faq-toggle-icon");
+          icon.textContent = icon.textContent === "+" ? "-" : "+";
+        }
+        $(document).ready(() => {
+          $(".readmore-description").click(function () {
+            var $cardTextContent = $(this).prev(".card1-text-content");
+            $cardTextContent.toggleClass("expanded");
+            $(this).text(
+              $cardTextContent.hasClass("expanded") ? "Read less" : "Read more",
+            );
+          });
+        });
+        $(document).ready(() => {
+          $(".wallet-content").each(function () {
+            var $content = $(this);
+            if ($content[0]?.scrollHeight > $content.innerHeight()) {
+              $content.next(".virtual-readmore").show();
+            } else {
+              $content.next(".virtual-readmore").hide();
+            }
+          });
+          $(".virtual-readmore").click(function () {
+            var $cardTextContent = $(this).prev(".wallet-content");
+            $cardTextContent.toggleClass("virtual-expanded");
+            $(this).text(
+              $cardTextContent.hasClass("virtual-expanded")
+                ? "Read less"
+                : "Read more",
+            );
+          });
+        });
+        $(document).ready(function () {
+          $(".talk-btn").click(function () {
+            $("html, body").animate(
+              {
+                scrollTop: $("#footer").offset().top,
+              },
+              300,
+            ); // Adjust the duration as per your requirement
+          });
+        });
+        // $("#content").hide().show("slide", { direction: "left" }, 1500);
+      </script>
+      <script is:inline>
+        document.addEventListener("DOMContentLoaded", function () {
+          let currentIndex = 0;
+          const slides = document.querySelectorAll(".carousel-item");
+          const totalSlides = slides.length;
 
-    document
-      .querySelector(".carousel-control-next")
-      .addEventListener("click", () => {
-        slides[currentIndex].classList.remove("active");
-        currentIndex = (currentIndex + 1) % totalSlides;
-        slides[currentIndex].classList.add("active");
-      });
+          document
+            .querySelector(".carousel-control-next")
+            .addEventListener("click", () => {
+              slides[currentIndex].classList.remove("active");
+              currentIndex = (currentIndex + 1) % totalSlides;
+              slides[currentIndex].classList.add("active");
+            });
 
-    document
-      .querySelector(".carousel-control-prev")
-      .addEventListener("click", () => {
-        slides[currentIndex].classList.remove("active");
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        slides[currentIndex].classList.add("active");
-      });
-  });
+          document
+            .querySelector(".carousel-control-prev")
+            .addEventListener("click", () => {
+              slides[currentIndex].classList.remove("active");
+              currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+              slides[currentIndex].classList.add("active");
+            });
+        });
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const prevButton = document.querySelector(".slider_nav .prev");
-    const nextButton = document.querySelector(".slider_nav .next");
-    const items = document.querySelectorAll(".slider_top ul li");
-    let currentIndex = 0; // Start from the first item
+        document.addEventListener("DOMContentLoaded", () => {
+          const prevButton = document.querySelector(".slider_nav .prev");
+          const nextButton = document.querySelector(".slider_nav .next");
+          const items = document.querySelectorAll(".slider_top ul li");
+          let currentIndex = 0; // Start from the first item
 
-    function updateCarousel() {
-      items.forEach((item, index) => {
-        item.classList.remove("prev", "prev2", "active", "next", "next2");
-      });
+          function updateCarousel() {
+            items.forEach((item, index) => {
+              item.classList.remove("prev", "prev2", "active", "next", "next2");
+            });
 
-      const prevIndex = (currentIndex - 1 + items.length) % items.length;
-      const nextIndex = (currentIndex + 1) % items.length;
-      const prev2Index = (currentIndex - 2 + items.length) % items.length;
-      const next2Index = (currentIndex + 2) % items.length;
+            const prevIndex = (currentIndex - 1 + items.length) % items.length;
+            const nextIndex = (currentIndex + 1) % items.length;
+            const prev2Index = (currentIndex - 2 + items.length) % items.length;
+            const next2Index = (currentIndex + 2) % items.length;
 
-      items[prev2Index].classList.add("prev2");
-      items[prevIndex].classList.add("prev");
-      items[currentIndex].classList.add("active");
-      items[nextIndex].classList.add("next");
-      items[next2Index].classList.add("next2");
-    }
+            items[prev2Index].classList.add("prev2");
+            items[prevIndex].classList.add("prev");
+            items[currentIndex].classList.add("active");
+            items[nextIndex].classList.add("next");
+            items[next2Index].classList.add("next2");
+          }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % items.length;
-      updateCarousel();
-    }
+          function nextSlide() {
+            currentIndex = (currentIndex + 1) % items.length;
+            updateCarousel();
+          }
 
-    // Automatically advance to the next slide every 5 seconds
-    setInterval(nextSlide, 3000);
+          // Automatically advance to the next slide every 5 seconds
+          setInterval(nextSlide, 3000);
 
-    updateCarousel(); // Initial call to set the classes
-  });
+          updateCarousel(); // Initial call to set the classes
+        });
 
-  document.addEventListener("DOMContentLoaded", function () {
-    $(".owl-carousel").owlCarousel({
-      items: 1, // Display one item-row at a time
-      margin: 20, // Space between items
-      loop: true, // Loop through items
-      autoplay: true, // Enable auto-play
-      autoplayTimeout: 3000, // Auto-play interval (in ms)
-      autoplayHoverPause: true, // Pause on hover
-      responsive: {
-        0: {
-          items: 1, // Display one item-row at a time on small screens
-        },
-        600: {
-          items: 2, // Display one item-row at a time on medium screens
-        },
-        800: {
-          items: 2, // Display one item-row at a time on medium screens
-        },
-        1000: {
-          items: 3, // Display one item-row at a time on large screens
-        },
-        
-      },
-    });
-  });
-</script>
-            <section
-                class="section main-banner"
-                id="top"
-                data-section="section1"
-            >
-                <!-- <img src="assets/images/development-services/webp/top-banner.webp" alt="Metaverse Development Services page Banner"
+        document.addEventListener("DOMContentLoaded", function () {
+          $(".owl-carousel").owlCarousel({
+            items: 1, // Display one item-row at a time
+            margin: 20, // Space between items
+            loop: true, // Loop through items
+            autoplay: true, // Enable auto-play
+            autoplayTimeout: 3000, // Auto-play interval (in ms)
+            autoplayHoverPause: true, // Pause on hover
+            responsive: {
+              0: {
+                items: 1, // Display one item-row at a time on small screens
+              },
+              600: {
+                items: 2, // Display one item-row at a time on medium screens
+              },
+              800: {
+                items: 2, // Display one item-row at a time on medium screens
+              },
+              1000: {
+                items: 3, // Display one item-row at a time on large screens
+              },
+            },
+          });
+        });
+      </script>
+      <section class="section main-banner" id="top" data-section="section1">
+        <!-- <img src="assets/images/development-services/webp/top-banner.webp" alt="Metaverse Development Services page Banner"
       class="inner-section-banner" /> -->
-                <video autoplay="" muted="" loop="" id="bg-video">
-                    <source
-                        src="assets/images/development-services/webp/top-banner-video.mp4"
-                        type="video/mp4"
-                    />
-                </video>
-                <div class="video-overlay header-text main-banner-cont">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="caption"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-vectors banner-vector-down">
-                    <img src="assets/images/products/bg1.webp" alt="BG" />
-                </div>
-            </section>
+        <video autoplay="" muted="" loop="" id="bg-video">
+          <source
+            src="assets/images/development-services/webp/top-banner-video.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div class="video-overlay header-text main-banner-cont">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="caption"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-vectors banner-vector-down">
+          <img src="assets/images/products/bg1.webp" alt="BG" />
+        </div>
+      </section>
 
-            <section class="under-banner our-technologies product-tech-sec">
-                <div class="container">
-                  <div class="section-heading ss-case get-readys">
-                    <div class="animation-element slide-left">
-                      <h1 class="text-black text-center mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0 mt-0 head-another-one">
-                        {
-                          data.metaverseDevelopmentCompany.data.attributes
-                            .development_company_title
-                        }
-                      </h1>
-                    </div>
-                    <p class="text-gray2 text-last-center py-4 first-para animation-element slide-left">
-                      {
-                        data.metaverseDevelopmentCompany.data.attributes
-                          .development_company_content
-                      }
-                    </p>
-                  </div>
+      <section class="under-banner our-technologies product-tech-sec">
+        <div class="container">
+          <div class="section-heading ss-case get-readys">
+            <div class="animation-element slide-left">
+              <h1
+                class="text-black text-center mb-1 h3-under-bar2 hub2 hub-mutual4 pt-0 mt-0 head-another-one"
+              >
+                {
+                  data.metaverseDevelopmentCompany.data.attributes
+                    .development_company_title
+                }
+              </h1>
+            </div>
+            <p
+              class="text-gray2 text-last-center py-4 first-para animation-element slide-left"
+            >
+              {
+                data.metaverseDevelopmentCompany.data.attributes
+                  .development_company_content
+              }
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="under-banner our-technologies product-tech-sec pt-0">
+        <div class="container">
+          <div class="section-heading ss-case">
+            <h2
+              class="text-black text-center h3-under-bar2 hub2 hub-mutual2 animation-element slide-left"
+            >
+              {
+                data.metaverseDevelopmentCompany.data.attributes
+                  .metaverse_platform_title
+              }
+            </h2>
+            <div class="row pt-3 mob-pt-0">
+              <div class="col-lg-7">
+                <p
+                  class="text-gray2 text-last-left py-0 pb-4 animation-element slide-left"
+                >
+                  {
+                    data.metaverseDevelopmentCompany.data.attributes
+                      .metaverse_platform_content1
+                  }
+                  <br /><br />
+                  {
+                    data.metaverseDevelopmentCompany.data.attributes
+                      .metaverse_platform_content2
+                  }
+                </p>
+                <div class="unlock-btn-sec mb-4">
+                  <a href="#contact" class="btn btn-primary">Get Quote Now</a>
                 </div>
-              </section>
-              <section class="under-banner our-technologies product-tech-sec pt-0">
-                <div class="container">
-                  <div class="section-heading ss-case">
-                    <h2 class="text-black text-center h3-under-bar2 hub2 hub-mutual2 animation-element slide-left">
-                      {
-                        data.metaverseDevelopmentCompany.data.attributes
-                          .metaverse_platform_title
-                      }
-                    </h2>
-                    <div class="row pt-3 mob-pt-0">
-                      <div class="col-lg-7">
-                        <p class="text-gray2 text-last-left py-0 pb-4 animation-element slide-left">
-                          {
-                            data.metaverseDevelopmentCompany.data.attributes
-                              .metaverse_platform_content1
-                          }
-                          <br><br>
-                          {
-                            data.metaverseDevelopmentCompany.data.attributes
-                              .metaverse_platform_content2
-                          }
-                        </p>
-                        <div class="unlock-btn-sec mb-4">
-                          <a href="#contact" class="btn btn-primary">Get Quote Now</a>
-                        </div>
-                      </div>
-                      <div class="col-lg-5">
-                        <div class="plr-10-only-mobile animation-element slide-right mb-4">
-                          <img id="metaverse-platform-img" alt="BG Vector" class="w-100-br-15">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="col-lg-5">
+                <div
+                  class="plr-10-only-mobile animation-element slide-right mb-4"
+                >
+                  <img
+                    id="metaverse-platform-img"
+                    alt="BG Vector"
+                    class="w-100-br-15"
+                    src="/assets/images/development-services/webp/img-01.webp"
+                  />
                 </div>
-              </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <section class="under-banner our-technologies product-tech-sec py-2">
-                <div class="container">
-                  <div class="section-heading ss-case">
-                    <h2 class="text-black text-center h3-under-bar2 hub2 hub-mutual2 animation-element slide-left">
-                      {
-                        data.metaverseDevelopmentCompany.data.attributes
-                          .develop_platform_expert_title
-                      }
-                    </h2>
-                    <div class="row pt-3 mob-pt-0">
-                      <div class="col-lg-5">
-                        <div class="plr-10-only-mobile animation-element slide-right mb-4">
-                          <img id="dev-metaverse-platform-img" alt="BG Vector" class="w-100-br-15 img-h" >
-                        </div>
-                      </div>
-                      <div class="col-lg-7">
-                        <p class="text-gray2 text-last-left py-0 pb-4 animation-element slide-left">
-                          {
-                            data.metaverseDevelopmentCompany.data.attributes
-                              .develop_platform_expert_content
-                          }
-                        </p>
-        
-                      </div>
-        
-                    </div>
-                  </div>
+      <section class="under-banner our-technologies product-tech-sec py-2">
+        <div class="container">
+          <div class="section-heading ss-case">
+            <h2
+              class="text-black text-center h3-under-bar2 hub2 hub-mutual2 animation-element slide-left"
+            >
+              {
+                data.metaverseDevelopmentCompany.data.attributes
+                  .develop_platform_expert_title
+              }
+            </h2>
+            <div class="row pt-3 mob-pt-0">
+              <div class="col-lg-5">
+                <div
+                  class="plr-10-only-mobile animation-element slide-right mb-4"
+                >
+                  <img
+                    id="dev-metaverse-platform-img"
+                    alt="BG Vector"
+                    class="w-100-br-15 img-h"
+                    src="/assets/images/development-services/webp/img-02.webp"
+                  />
                 </div>
-              </section>
-              <section class="our-courses product-our-courses msd-box1 pt-0">
-                <div class="container c-features">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="section-heading">
-                        <h3
-                          class="text-black text-center h3-under-bar2 hub1 mb-5 hub-mutual3 feature-h5 animation-element slide-left">
-                          {
-                            data.metaverseDevelopmentCompany.data.attributes
-                              .metaver_develop_service_title
-                          }
-                        </h3>
-                        <div class="owl-carousel">
-                          {
-                            data.metaverseDevelopmentCompany.data.attributes.develop_service_lists.data.map(
-                              (each: any, index: number) => {
-                                return (
-                                <div class="owl-experts-item ">
-                                  <div class="icon">
-                                    <div class="expert-txt2-office">
-                                      <div class="box-img">
-                                        <img src={each.attributes.image}
-                                          alt="Immersive Environment Image" />
-                                          <div class="box-img-inn">
-                                            <h5 class="fma">{each.attributes.title}</h5>
-                                            <p class="text-last-center text-white">
-                                              {each.attributes.content}
-                                            </p>
-                                          </div>
-                                    </div>
-                                
+              </div>
+              <div class="col-lg-7">
+                <p
+                  class="text-gray2 text-last-left py-0 pb-4 animation-element slide-left"
+                >
+                  {
+                    data.metaverseDevelopmentCompany.data.attributes
+                      .develop_platform_expert_content
+                  }
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="our-courses product-our-courses msd-box1 pt-0">
+        <div class="container c-features">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="section-heading">
+                <h3
+                  class="text-black text-center h3-under-bar2 hub1 mb-5 hub-mutual3 feature-h5 animation-element slide-left"
+                >
+                  {
+                    data.metaverseDevelopmentCompany.data.attributes
+                      .metaver_develop_service_title
+                  }
+                </h3>
+                <div class="owl-carousel">
+                  {
+                    data.metaverseDevelopmentCompany.data.attributes.develop_service_lists.data.map(
+                      (each: any, index: number) => {
+                        return (
+                          <div class="owl-experts-item ">
+                            <div class="icon">
+                              <div class="expert-txt2-office">
+                                <div class="box-img">
+                                  <img
+                                    src={each.attributes.image}
+                                    alt="Immersive Environment Image"
+                                  />
+                                  <div class="box-img-inn">
+                                    <h5 class="fma">{each.attributes.title}</h5>
+                                    <p class="text-last-center text-white">
+                                      {each.attributes.content}
+                                    </p>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
-                         )})}
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                        );
+                      },
+                    )
+                  }
                 </div>
-              </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <section class="meta-development-services product-our-services v-mall-box benefits-mds-page">
-                <div class="container">
-                  <div class="row align-items-center">
-                    <div class="col-lg-12">
-                      <div class="text-center">
-                        <div class="under-banner ">
-                          <div class="under-banner-carousel-section">
-                            <h4 class="text-white h3-under-bar2 animation-element slide-left">
-                              {
-                                data.metaverseDevelopmentCompany.data.attributes
-                                  .develop_service_benefits
-                              }
-                            </h4>
-                            <div class="row animation-element slide-left">
-                              {
-                                data.metaverseDevelopmentCompany.data.attributes.develop_service_benefits_lists.data.map(
-                                  (each: any, index: number) => {
-                                    return (
+      <section
+        class="meta-development-services product-our-services v-mall-box benefits-mds-page"
+      >
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-12">
+              <div class="text-center">
+                <div class="under-banner">
+                  <div class="under-banner-carousel-section">
+                    <h4
+                      class="text-white h3-under-bar2 animation-element slide-left"
+                    >
+                      {
+                        data.metaverseDevelopmentCompany.data.attributes
+                          .develop_service_benefits
+                      }
+                    </h4>
+                    <div class="row animation-element slide-left">
+                      {
+                        data.metaverseDevelopmentCompany.data.attributes.develop_service_benefits_lists.data.map(
+                          (each: any, index: number) => {
+                            return (
                               <div class="col-lg-6">
                                 <div class="benefits-metavirtualoffice">
                                   <div class="text-center bm-img">
                                     <img
-                                      src={each.attributes.image} alt="Benefits Icons" />
+                                      src={each.attributes.image}
+                                      alt="Benefits Icons"
+                                    />
                                   </div>
-                                  <h6 class="benefits-h6">{each.attributes.title}</h6>
+                                  <h6 class="benefits-h6">
+                                    {each.attributes.title}
+                                  </h6>
                                   <p class="text-gray2 text-last-center">
                                     {each.attributes.content}
                                   </p>
                                 </div>
                               </div>
-                             )})}
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                            );
+                          },
+                        )
+                      }
                     </div>
                   </div>
                 </div>
-                <div class="bg-vectors">
-                  <img src="assets/images/bg-vector3.webp" alt="BG Vector">
-                </div>
-              </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-vectors">
+          <img src="assets/images/bg-vector3.webp" alt="BG Vector" />
+        </div>
+      </section>
 
-              <!-- Check out an exciting world with our demo -->
-              <section class="why-metaprolane whym2 product-why-sec">
-                <div class="container pt-0">
-                  <h5 class="text-black text-center h3-under-bar2 mb-4 fw-bold-800 mvc-step animation-element slide-left">
-                    {
-                      data.metaverseDevelopmentCompany.data.attributes
-                        .develop_world_demo_title
-                    }
-                  </h5>
-                  <p class="padd-0 my-3 mb-4 text-last-center text-gray2 animation-element slide-left">
-                    {
-                      data.metaverseDevelopmentCompany.data.attributes
-                        .develop_world_demo_content
-                    }
-                  </p>
-                  <div class="row mb-3">
-                    <div class="col-lg-12">
-                      <div class="w-100">
-                        <div class="immersive-m-l text-center animation-element slide-left">
-                        <a href="#contact">
-                          <img id="cta-banner-image" class="w-100-br-15" />
-                        </a>
-                          <!-- <iframe title="Metaprolane Video" srcdoc="
+      <!-- Check out an exciting world with our demo -->
+      <section class="why-metaprolane whym2 product-why-sec">
+        <div class="container pt-0">
+          <h5
+            class="text-black text-center h3-under-bar2 mb-4 fw-bold-800 mvc-step animation-element slide-left"
+          >
+            {
+              data.metaverseDevelopmentCompany.data.attributes
+                .develop_world_demo_title
+            }
+          </h5>
+          <p
+            class="padd-0 my-3 mb-4 text-last-center text-gray2 animation-element slide-left"
+          >
+            {
+              data.metaverseDevelopmentCompany.data.attributes
+                .develop_world_demo_content
+            }
+          </p>
+          <div class="row mb-3">
+            <div class="col-lg-12">
+              <div class="w-100">
+                <div
+                  class="immersive-m-l text-center animation-element slide-left"
+                >
+                  <a href="#contact">
+                    <img src="/assets/images/development-services/webp/video-thumbnail.webp" id="cta-banner-image" class="w-100-br-15" />
+                  </a>
+                  <!-- <iframe title="Metaprolane Video" srcdoc="
                   <style>
                   body, .full {
                   width: 100%;
@@ -484,88 +516,94 @@ const { data } = await response.json();
                   </a>
                   " style="max-width: 90%; width: 100%; aspect-ratio: 16/9;" frameborder="0">
                           </iframe> -->
-                        </div>
-                      </div>
-        
-                      <div class="text-center my-3">
-                        <a href="#contact">
-                          <button class="btn padd-0">
-                            <div class="btn-box border-gradient">
-                              Talk To Our Expert
-                            </div>
-                          </button>
-                        </a>
-                      </div>
+                </div>
+              </div>
+
+              <div class="text-center my-3">
+                <a href="#contact">
+                  <button class="btn padd-0">
+                    <div class="btn-box border-gradient">
+                      Talk To Our Expert
                     </div>
+                  </button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- metaverse development tools -->
+      <MetaverseDevelopmentTools />
+
+      <!-- ideal Metaverse Development Company -->
+      <section class="gradient-ms-box">
+        <div class="bg-vectors">
+          <!-- <img src="assets/images/products/bg3.webp" alt="BG Vector"> -->
+        </div>
+        <div class="container">
+          <div class="why-expertise-section">
+            <div class="under-banner">
+              <div class="under-banner-carousel-section">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <h5
+                      class="text-black text-center fw-bold-800 fs-32 mb-0 animation-element slide-left"
+                    >
+                      {
+                        data.metaverseDevelopmentCompany.data.attributes
+                          .develop_ideal_metaverse_title
+                      }
+                    </h5>
+                    <p
+                      class="text-gray2 text-last-center animation-element slide-left"
+                    >
+                      {
+                        data.metaverseDevelopmentCompany.data.attributes
+                          .develop_ideal_metaverse_content
+                      }<br />
+                      {
+                        data.metaverseDevelopmentCompany.data.attributes
+                          .develop_ideal_metaverse_content2
+                      }
+                    </p>
                   </div>
                 </div>
-              </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <!-- metaverse development tools -->
-              <MetaverseDevelopmentTools /> 
-
-              <!-- ideal Metaverse Development Company -->
-              <section class="gradient-ms-box">
-                <div class="bg-vectors">
-                  <!-- <img src="assets/images/products/bg3.webp" alt="BG Vector"> -->
-                </div>
-                <div class="container">
-                  <div class="why-expertise-section">
-                    <div class="under-banner ">
-                      <div class="under-banner-carousel-section">
-                        <div class="row">
-                          <div class="col-lg-12">
-                            <h5 class="text-black text-center fw-bold-800 fs-32 mb-0 animation-element slide-left">
-                              {
-                                data.metaverseDevelopmentCompany.data.attributes
-                                  .develop_ideal_metaverse_title
-                              }
-                            </h5>
-                            <p class="text-gray2 text-last-center animation-element slide-left">
-                              {
-                                data.metaverseDevelopmentCompany.data.attributes
-                                  .develop_ideal_metaverse_content
-                              }<br>
-                              {
-                                data.metaverseDevelopmentCompany.data.attributes
-                                  .develop_ideal_metaverse_content2
-                              }
-                            </p>
-                          </div>
-                        </div>
+      <!-- FAQ's - Metaverse Development Services -->
+      <section class="why-metaprolane whym2 product-why-sec apply-now pb-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="why-metaprolane-l mt-2">
+                <h5
+                  class="text-black h3-under-bar2 mb-5 animation-element slide-left"
+                >
+                  {
+                    data.metaverseDevelopmentCompany.data.attributes
+                      .develop_service_faq_title
+                  }
+                </h5>
+              </div>
+              {
+                data.metaverseDevelopmentCompany.data.attributes.develop_service_faq_lists.data.map(
+                  (item: any, index: number) => (
+                    <div class="faq-card">
+                      <div class="faq-question" onclick="toggleAnswer(event)">
+                        {item.attributes.question}
+                        <span class="faq-toggle-icon">+</span>
                       </div>
+                      <div class="faq-answer">{item.attributes.answer}</div>
                     </div>
-                  </div>
-                </div>
-              </section>
-
-              <!-- FAQ's - Metaverse Development Services -->
-              <section class="why-metaprolane whym2 product-why-sec apply-now pb-5">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <div class="why-metaprolane-l mt-2">
-                        <h5 class="text-black h3-under-bar2 mb-5 animation-element slide-left">
-                          {
-                            data.metaverseDevelopmentCompany.data.attributes
-                              .develop_service_faq_title
-                          }
-                        </h5>
-                      </div>
-                      {data.metaverseDevelopmentCompany.data.attributes.develop_service_faq_lists.data.map(
-                        (item: any, index: number) => (
-                          <div class="faq-card">
-                            <div class="faq-question" onclick="toggleAnswer(event)">
-                              {item.attributes.question}
-                              <span class="faq-toggle-icon">+</span>
-                            </div>
-                            <div class="faq-answer">
-                              {item.attributes.answer}
-                            </div>
-                          </div>
-                        ),
-                      )}
-                      <!-- {
+                  ),
+                )
+              }
+              <!-- {
                         data.metaverseDevelopmentCompany.data.attributes.develop_service_faq_lists.data.map(
                           (item: any) => (
                             <div class="FAQ-card faq">
@@ -583,53 +621,66 @@ const { data } = await response.json();
                           ),
                         )
                       } -->
-                    </div>
-                  </div>
-                </div>
-              </section>
-
+            </div>
+          </div>
         </div>
-        <script type="text/javascript">
+      </section>
+    </div>
+    <script type="text/javascript">
+      // const metaversePlatformImage = document.getElementById(
+      //   "metaverse-platform-img",
+      // );
+      // const devMetaversePlatformImage = document.getElementById(
+      //   "dev-metaverse-platform-img",
+      // );
+      // const ctaBannerImage = document.getElementById("cta-banner-image");
+      // metaversePlatformImage.setAttribute(
+      //   "src",
+      //   "assets/images/development-services/webp/img-01.webp",
+      // );
+      // devMetaversePlatformImage.setAttribute(
+      //   "src",
+      //   "assets/images/development-services/webp/img-02.webp",
+      // );
+      // ctaBannerImage.setAttribute(
+      //   "src",
+      //   "assets/images/development-services/webp/video-thumbnail.webp",
+      // );
+      // window.addEventListener('wheel', function(){
+      //   metaversePlatformImage.setAttribute('src', "assets/images/development-services/webp/img-01.webp");
+      //   devMetaversePlatformImage.setAttribute('src', "assets/images/development-services/webp/img-02.webp");
+      //   ctaBannerImage.setAttribute('src', "assets/images/development-services/webp/video-thumbnail.webp");
+      // });
 
-          const metaversePlatformImage = document.getElementById('metaverse-platform-img');
-          const devMetaversePlatformImage = document.getElementById('dev-metaverse-platform-img');
-          const ctaBannerImage = document.getElementById('cta-banner-image');
+      var $animation_elements = $(".animation-element");
+      var $window = $(window);
 
-          window.addEventListener('wheel', function(){
-            metaversePlatformImage.setAttribute('src', "assets/images/development-services/webp/img-01.webp");
-            devMetaversePlatformImage.setAttribute('src', "assets/images/development-services/webp/img-02.webp");
-            ctaBannerImage.setAttribute('src', "assets/images/development-services/webp/video-thumbnail.webp");
-          });
+      function check_if_in_view() {
+        var window_height = $window.height();
+        var window_top_position = $window.scrollTop();
+        var window_bottom_position = window_top_position + window_height;
 
+        $.each($animation_elements, function () {
+          var $element = $(this);
+          var element_height = $element.outerHeight();
+          var element_top_position = $element.offset().top;
+          var element_bottom_position = element_top_position + element_height;
 
-          var $animation_elements = $('.animation-element');
-          var $window = $(window);
-    
-          function check_if_in_view() {
-              var window_height = $window.height();
-              var window_top_position = $window.scrollTop();
-              var window_bottom_position = (window_top_position + window_height);
-    
-              $.each($animation_elements, function () {
-                  var $element = $(this);
-                  var element_height = $element.outerHeight();
-                  var element_top_position = $element.offset().top;
-                  var element_bottom_position = (element_top_position + element_height);
-    
-                  //check to see if this current container is within viewport
-                  if ((element_bottom_position >= window_top_position) &&
-                      (element_top_position <= window_bottom_position)) {
-                      $element.addClass('in-view');
-                  }
-                  // else {
-                  //   $element.removeClass('in-view');
-                  // }
-    
-              });
+          //check to see if this current container is within viewport
+          if (
+            element_bottom_position >= window_top_position &&
+            element_top_position <= window_bottom_position
+          ) {
+            $element.addClass("in-view");
           }
-    
-          $window.on('scroll resize', check_if_in_view);
-          $window.trigger('scroll', check_if_in_view);
-      </script>
-    </html>
+          // else {
+          //   $element.removeClass('in-view');
+          // }
+        });
+      }
+
+      $window.on("scroll resize", check_if_in_view);
+      $window.trigger("scroll", check_if_in_view);
+    </script>
+  </html>
 </Layout>
