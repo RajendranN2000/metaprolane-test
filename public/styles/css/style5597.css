@@ -407,7 +407,7 @@
 
 @media (max-width:767px) {
     .fn_cs_slider .slider_top {
-        min-height: 800px
+        min-height: 550px
     }
 }
 
@@ -443,7 +443,7 @@
 
 @media (min-width:481px) and (max-width:560px) {
     .fn_cs_slider .slider_top {
-        min-height: 800px
+        min-height: 650px
     }
 }
 
@@ -618,6 +618,6 @@
 
 @media (min-width:1400px) {
     .fn_cs_slider .slider_top {
-        min-height: 800px
+        min-height: 650px
     }
 }

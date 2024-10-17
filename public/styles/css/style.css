@@ -7827,9 +7827,14 @@ border: 1px solid #8383b6;
 .top-your-head{
     padding-top: 12px;
 }
+/* @media screen and (max-width:767px) {
+    .fn_cs_slider .slider_top{
+        min-height: 550px !important;
+    }
+}
 .fn_cs_slider .slider_top{
     min-height: 650px !important;
-}
+} */
 @media (min-width:0px) and (max-width:319px) {
     .ex-item {
         height: 999px;
