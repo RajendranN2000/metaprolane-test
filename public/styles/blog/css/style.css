@@ -2366,6 +2366,11 @@ section.why-metaprolane {
     width: 110px;
     height: 6px
 }
+@media screen and (max-width:767px) {
+    section.under-banner .container::after {
+      display: none !important;
+    }
+}
 
 section.under-banner .container::after {
     position: absolute;
@@ -9550,9 +9555,20 @@ b.rm1 {
     content: '\f104';
     background-color: transparent;
 } */
+ .top-section .owl-nav .owl-prev:before,
+ .top-section .owl-nav .owl-next:before {
+     margin-top: 0px !important;
+     display: inline-block;
+     color: white !important;
+     letter-spacing: -2px;
+     font-weight: 800;
+     content: '\f104';
+     background-color: transparent !important;
+     border: none !important;
+ }
 .meta-product .under-banner .owl-nav .owl-prev:before,
 .meta-product .under-banner .owl-nav .owl-next:before {
-    margin-top: 50% !important;
+    margin-top: 40px ;
     display: inline-block;
     color: white !important;
     letter-spacing: -2px;
