@@ -694,7 +694,7 @@ const { data } = await response.json();
                             >
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="logistics-carousel-img" alt="LOGISTICS" />
+                                        <img src="/assets/images/industries/logistics.jpg" id="logistics-carousel-img" alt="LOGISTICS" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 LOGISTICS
@@ -704,7 +704,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-carousel-img" alt="MINING" />
+                                        <img src="/assets/images/industries/mining.jpg" id="mining-carousel-img" alt="MINING" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 MINING
@@ -714,7 +714,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-oil-img" alt="OIL & GAS" />
+                                        <img src="/assets/images/industries/oil-gas.jpg" id="mining-oil-img" alt="OIL & GAS" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 OIL & GAS
@@ -724,7 +724,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-estate-img" alt="REAL ESTATE" />
+                                        <img src="/assets/images/industries/real-estate.png" id="mining-estate-img" alt="REAL ESTATE" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 REAL ESTATE
@@ -734,7 +734,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-manufacturing-img" alt="MANUFACTURING" />
+                                        <img src="/assets/images/industries/manufacturing.png" id="mining-manufacturing-img" alt="MANUFACTURING" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 MANUFACTURING
@@ -744,7 +744,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-energy-img" alt="ENERGY AND UTILITIES" />
+                                        <img src="/assets/images/industries/energy-and-utilities.jpg" id="mining-energy-img" alt="ENERGY AND UTILITIES" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 ENERGY AND UTILITIES
@@ -754,7 +754,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-construction-img" alt="CONSTRUCTION" />
+                                        <img src="/assets/images/industries/construction.jpg" id="mining-construction-img" alt="CONSTRUCTION" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 CONSTRUCTION
@@ -764,7 +764,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-automotive-img" alt="AUTOMOTIVE" />
+                                        <img src="/assets/images/industries/automotive.jpg" id="mining-automotive-img" alt="AUTOMOTIVE" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 AUTOMOTIVE
@@ -774,7 +774,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-aerospace-img" alt="AEROSPACE" />
+                                        <img src="/assets/images/industries/aerospace.jpg" id="mining-aerospace-img" alt="AEROSPACE" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 AEROSPACE
@@ -784,7 +784,7 @@ const { data } = await response.json();
                                 </div>
                                 <div class="item">
                                     <div class="icon">
-                                        <img id="mining-health-img" alt="HEALTHCARE" />
+                                        <img src="/assets/images/industries/H-care.jpg" id="mining-health-img" alt="HEALTHCARE" />
                                         <div class="expert-txt">
                                             <p class="top-your-head">
                                                 HEALTHCARE
@@ -1126,29 +1126,38 @@ const { data } = await response.json();
         </div>
         <script type="text/javascript">
             //carousel images
-            const logisticsImg  = document.getElementById('logistics-carousel-img');
-            const miningImg = document.getElementById('mining-carousel-img');
-            const oilImg = document.getElementById('mining-oil-img');
-            const estateImg = document.getElementById('mining-estate-img');
-            const manufacturingImg = document.getElementById('mining-manufacturing-img');
-            const energyImg = document.getElementById('mining-energy-img');
-            const constructionImg = document.getElementById('mining-construction-img');
-            const automotiveImg = document.getElementById('mining-automotive-img');
-            const aerospaceImg = document.getElementById('mining-aerospace-img');
-            const healthCare = document.getElementById('mining-health-img');
-
-            window.addEventListener('wheel', function(){
-                logisticsImg.setAttribute('src', 'assets/images/industries/logistics.jpg');
-                miningImg.setAttribute('src', 'assets/images/industries/mining.jpg');
-                oilImg.setAttribute('src', 'assets/images/industries/oil-gas.jpg');
-                estateImg.setAttribute('src', 'assets/images/industries/real-estate.png');
-                manufacturingImg.setAttribute('src', 'assets/images/industries/manufacturing.png');
-                energyImg.setAttribute('src', 'assets/images/industries/energy-and-utilities.jpg');
-                constructionImg.setAttribute('src', 'assets/images/industries/construction.jpg');
-                automotiveImg.setAttribute('src', 'assets/images/industries/automotive.jpg');
-                aerospaceImg.setAttribute('src', 'assets/images/industries/aerospace.jpg');
-                healthCare.setAttribute('src', 'assets/images/industries/H-care.jpg');
-            });
+            // const logisticsImg  = document.getElementById('logistics-carousel-img');
+            // const miningImg = document.getElementById('mining-carousel-img');
+            // const oilImg = document.getElementById('mining-oil-img');
+            // const estateImg = document.getElementById('mining-estate-img');
+            // const manufacturingImg = document.getElementById('mining-manufacturing-img');
+            // const energyImg = document.getElementById('mining-energy-img');
+            // const constructionImg = document.getElementById('mining-construction-img');
+            // const automotiveImg = document.getElementById('mining-automotive-img');
+            // const aerospaceImg = document.getElementById('mining-aerospace-img');
+            // const healthCare = document.getElementById('mining-health-img');
+            // logisticsImg.setAttribute('src', 'assets/images/industries/logistics.jpg');
+            //     miningImg.setAttribute('src', 'assets/images/industries/mining.jpg');
+            //     oilImg.setAttribute('src', 'assets/images/industries/oil-gas.jpg');
+            //     estateImg.setAttribute('src', 'assets/images/industries/real-estate.png');
+            //     manufacturingImg.setAttribute('src', 'assets/images/industries/manufacturing.png');
+            //     energyImg.setAttribute('src', 'assets/images/industries/energy-and-utilities.jpg');
+            //     constructionImg.setAttribute('src', 'assets/images/industries/construction.jpg');
+            //     automotiveImg.setAttribute('src', 'assets/images/industries/automotive.jpg');
+            //     aerospaceImg.setAttribute('src', 'assets/images/industries/aerospace.jpg');
+            //     healthCare.setAttribute('src', 'assets/images/industries/H-care.jpg');
+            // window.addEventListener('wheel', function(){
+            //     logisticsImg.setAttribute('src', 'assets/images/industries/logistics.jpg');
+            //     miningImg.setAttribute('src', 'assets/images/industries/mining.jpg');
+            //     oilImg.setAttribute('src', 'assets/images/industries/oil-gas.jpg');
+            //     estateImg.setAttribute('src', 'assets/images/industries/real-estate.png');
+            //     manufacturingImg.setAttribute('src', 'assets/images/industries/manufacturing.png');
+            //     energyImg.setAttribute('src', 'assets/images/industries/energy-and-utilities.jpg');
+            //     constructionImg.setAttribute('src', 'assets/images/industries/construction.jpg');
+            //     automotiveImg.setAttribute('src', 'assets/images/industries/automotive.jpg');
+            //     aerospaceImg.setAttribute('src', 'assets/images/industries/aerospace.jpg');
+            //     healthCare.setAttribute('src', 'assets/images/industries/H-care.jpg');
+            // });
 
             
 
