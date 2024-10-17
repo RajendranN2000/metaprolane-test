@@ -2661,7 +2661,22 @@ section.under-banner.our-technologies::before {
     -webkit-filter: none;
     filter: none
 }
-
+@media screen and (max-width:767px) {
+    section.under-banner.experts-in-sec::before{
+        border-top: 60px solid transparent !important;
+        border-right:60px solid #68fe9a !important;
+        border-bottom: 60px solid transparent !important;
+    }
+    section.under-banner.experts-in-sec::before {
+        top: -30px !important;
+    }
+    .carousel-control-prev-icon{
+        margin-left: 0px !important;
+    }
+    .carousel-control-next-icon{
+        margin-right: 0px !important;
+    }
+}
 section.under-banner.experts-in-sec::before {
     position: absolute;
     content: '';
@@ -7801,7 +7816,20 @@ border: 1px solid #8383b6;
         text-align: justify !important; text-align-last: center !important;
     }
 }
-
+@media screen and (max-width:767px) {
+    .technolgy .owl-carousel .owl-nav button.owl-prev{
+        left: -50% !important;
+    }
+    .technolgy .owl-carousel .owl-nav button.owl-next{
+        right: 50% !important;
+    }
+}
+.top-your-head{
+    padding-top: 12px;
+}
+.fn_cs_slider .slider_top{
+    min-height: 650px !important;
+}
 @media (min-width:0px) and (max-width:319px) {
     .ex-item {
         height: 999px;
@@ -7911,6 +7939,7 @@ border: 1px solid #8383b6;
         right: -10px
     }
 
+   
     .meta-development-c h1::before,
     .under-banner .owl-carousel .owl-nav button.owl-prev {
         left: -10px
