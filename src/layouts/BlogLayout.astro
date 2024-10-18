@@ -2,24 +2,21 @@
 import HeaderSection from "../components/HeaderSection.astro";
 import ContactSection from "../components/ContactSection.astro";
 import FooterSection from "../components/FooterSection.astro";
-interface Props {
-  title: string;
-}
 
-const { title } = Astro.props;
+
+const { } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="title" id="title" content={""} />
-    <meta name="description" id="description" content={""} />
+    <meta name="title" id="title" content="Blog | Metaverse Development Solutions | Leading Metaverse Development Company | Metaprolane" />
+    <meta name="description" id="description" content="Discover innovative Metaverse development solutions with our expert team. As a top Metaverse development company, we specialize in creating immersive experiences and transformative digital environments. Explore our services and elevate your business in the Metaverse today." />
     <meta name="keywords" id="keywords" content={""} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title id="tempTitle">{title}</title>
     <link href="src/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/styles/blog/css/style.css" />
