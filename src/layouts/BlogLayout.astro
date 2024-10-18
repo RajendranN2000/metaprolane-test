@@ -3,16 +3,24 @@ import HeaderSection from "../components/HeaderSection.astro";
 import ContactSection from "../components/ContactSection.astro";
 import FooterSection from "../components/FooterSection.astro";
 
-
-const { } = Astro.props;
+const {} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="title" id="title" content="Blog | Metaverse Development Solutions | Leading Metaverse Development Company | Metaprolane" />
-    <meta name="description" id="description" content="Discover innovative Metaverse development solutions with our expert team. As a top Metaverse development company, we specialize in creating immersive experiences and transformative digital environments. Explore our services and elevate your business in the Metaverse today." />
+    <meta
+      name="title"
+      id="title"
+      content="Blog | Metaverse Development Solutions | Leading Metaverse Development Company | Metaprolane"
+    />
+    <meta
+      name="description"
+      id="description"
+      content="Discover innovative Metaverse development solutions with our expert team. As a top Metaverse development company, we specialize in creating immersive experiences and transformative digital environments. Explore our services and elevate your business in the Metaverse today."
+    />
+    <link rel="canonical" id="canonicalBlogLink" href={""}/>
     <meta name="keywords" id="keywords" content={""} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
@@ -34,6 +42,12 @@ const { } = Astro.props;
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", function () {
+        var canonicalData = document.getElementById("canonicalBlogLink");
+        canonicalData.href = window.location.href;
+      });
+    </script>
     <script>
       window.onload = getData;
       async function getData() {
@@ -124,7 +138,7 @@ const { } = Astro.props;
     <HeaderSection />
     <slot />
     <FooterSection />
-    
+
     <!-- Start of LiveChat (www.livechat.com) code -->
     <script is:inline>
       window.__lc = window.__lc || {};

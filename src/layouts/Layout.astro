@@ -19,6 +19,7 @@ const { title,description } = Astro.props;
         <meta name="keywords" id="keywords" content="" />
         <meta name="viewport" content="width=device-width" />
         <link rel="sitemap" href="/sitemap-index.xml" />
+        <link rel="canonical" id="canonicalLink" href={""}/>
         <link rel="icon" type="image/svg+xml" href="/favicon.png" />
         <link rel="stylesheet" href="/styles/blog/css/style.css" />
         <link rel="stylesheet" href="/styles/css/style.css" />
@@ -39,6 +40,12 @@ const { title,description } = Astro.props;
             rel="stylesheet"
             integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         />
+        <script is:inline>
+            document.addEventListener("DOMContentLoaded",function(){
+                var canonicalData = document.getElementById("canonicalLink")
+                canonicalData.href = window.location.href
+            })
+        </script>
         <!-- Google Tag Manager -->
         <script is:inline>
             (function (w, d, s, l, i) {
