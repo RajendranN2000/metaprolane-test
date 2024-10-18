@@ -5441,6 +5441,11 @@ section.under-banner.our-technologies.product-tech-sec.casino-ms-two-section .bt
         min-height: 360px !important;
         background: #120d1c
     }
+    .btn-gap{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+    }
 }
 
 section.meta-development-services.product-our-services.casino-ms-three-section .benefits-metavirtualoffice {
