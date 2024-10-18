@@ -5433,12 +5433,21 @@ section.under-banner.our-technologies.product-tech-sec.casino-ms-two-section .bt
     border-radius: 0;
     margin: 0 0 45px
 }
+@media screen and (max-width:767px) {
+    section.meta-development-services.product-our-services.casino-ms-three-section .benefits-metavirtualoffice {
+        margin: 0 0 30px;
+        padding: 0;
+        border-radius: 0;
+        min-height: 360px !important;
+        background: #120d1c
+    }
+}
 
 section.meta-development-services.product-our-services.casino-ms-three-section .benefits-metavirtualoffice {
     margin: 0 0 30px;
     padding: 0;
     border-radius: 0;
-    min-height: 500px;
+    min-height: 450px;
     background: #120d1c
 }
 
