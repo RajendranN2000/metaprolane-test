@@ -9760,3 +9760,13 @@ section.section-9 .qoute-box span {
     height: auto;
     max-width: 100%;
 }
+
+.virtual-banner{
+    height: 800px;
+}
+
+@media screen and (max-width:1024px) {
+    .virtual-banner{
+        height: auto;
+    }
+}
