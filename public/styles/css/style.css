@@ -9811,3 +9811,23 @@ section.section-9 .qoute-box span {
         height: 680px;
     }
 }
+
+.virtual-web{
+    display: block;
+}
+.virtual-mobile{
+    display: none;
+}
+@media screen and (max-width:767px) {
+    .virtual-web{
+        display: none;
+    }
+    .virtual-mobile{
+        display: block;
+    }
+}
+@media screen and (min-width:767px) and (max-width:1024px) {
+    .virtual-banner{
+        height: 600;
+    }
+}
