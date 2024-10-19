@@ -6,6 +6,6 @@ import robotsTxt from 'astro-robots-txt';
 dotenv.config();
 // https://astro.build/config
 export default defineConfig({
-    site:"https://metaprolane-development.vercel.app/",
+    site:"https://www.metaprolane.com/",
     integrations: [react(),sitemap(),robotsTxt()],
 });
