@@ -3,125 +3,118 @@ import HeaderSection from "../components/HeaderSection.astro";
 import ContactSection from "../components/ContactSection.astro";
 import FooterSection from "../components/FooterSection.astro";
 interface Props {
-    title: string;
-    description:string;
+  title: string;
+  description: string;
 }
 
-const { title,description } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>{title}</title>
-        <meta name="description" id="description" content={description} />
-        <meta name="keywords" id="keywords" content="" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="sitemap" href="/sitemap-index.xml" />
-        <link rel="canonical" id="canonicalLink" href={""}/>
-        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
-        <link rel="stylesheet" href="/styles/blog/css/style.css" />
-        <link rel="stylesheet" href="/styles/css/style.css" />
-        <link
-            rel="stylesheet"
-            href="https://metaprolane.stsdev.site/assets/css/fontawesome.css"
-        />
-        <link rel="stylesheet" href="/vendor/swiper-bundle.min.css" />
-        <link
-            type="text/css"
-            rel="stylesheet"
-            href="styles/css/style5597.css?ver=5.0"
-        />
-        <meta name="generator" content={Astro.generator} />
-        <link
-            referrerpolicy="no-referrer"
-            crossorigin="anonymous"
-            rel="stylesheet"
-            integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-        />
-        <script is:inline>
-            document.addEventListener("DOMContentLoaded",function(){
-                var canonicalData = document.getElementById("canonicalLink")
-                canonicalData.href = window.location.href
-            })
-        </script>
-        <!-- Google Tag Manager -->
-        <script is:inline>
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || [];
-                w[l].push({
-                    "gtm.start": new Date().getTime(),
-                    event: "gtm.js",
-                });
-                var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s),
-                    dl = l != "dataLayer" ? "&l=" + l : "";
-                j.async = true;
-                j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-                f.parentNode.insertBefore(j, f);
-            })(window, document, "script", "dataLayer", "GTM-KDSRGCP3");
-        </script>
-        <!-- End Google Tag Manager -->
-    </head>
-    <div style="display:none;" id="tempTitle">{title}</div>
-
-    <script
-        src="/vendor/jquery.min.js"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
-    <script
-        src="/vendor/owl.carousel.min.js"
-        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
-    <script
-        id="jqueryVendor"
-        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
-
-    <!-- Additional CSS Files -->
+  <head>
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KDSRGCP3");
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="description" id="description" content={description} />
+    <meta name="keywords" id="keywords" content="" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" id="canonicalLink" href={""} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="stylesheet" href="/styles/blog/css/style.css" />
+    <link rel="stylesheet" href="/styles/css/style.css" />
     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
-        integrity="sha512-XJ3ntWHl40opEiE+6dGhfK9NAKOCELrpjiBRQKtu6uJf9Pli8XY+Hikp7rlFzY4ElLSFtzjx9GGgHql7PLSeog=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
+      rel="stylesheet"
+      href="https://metaprolane.stsdev.site/assets/css/fontawesome.css"
     />
-    <body>
-        <noscript
-            ><iframe
-                src="https://www.googletagmanager.com/ns.html?id=GTM-KDSRGCP3"
-                height="0"
-                width="0"
-                style="display:none;visibility:hidden"></iframe></noscript
-        >
-        <HeaderSection />
-        <slot />
-        <ContactSection />
-        <FooterSection />
-    </body>
+    <link rel="stylesheet" href="/vendor/swiper-bundle.min.css" />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="styles/css/style5597.css?ver=5.0"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <link
+      referrerpolicy="no-referrer"
+      crossorigin="anonymous"
+      rel="stylesheet"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    />
+    <script is:inline>
+      document.addEventListener("DOMContentLoaded", function () {
+        var canonicalData = document.getElementById("canonicalLink");
+        canonicalData.href = window.location.href;
+      });
+    </script>
+  </head>
+  <div style="display:none;" id="tempTitle">{title}</div>
 
-    <script>
-        window.onload = getData;
-        async function getData() {
-            var inputTitle = document.getElementById("tempTitle")!.innerText;
-            if (
-                inputTitle != "" &&
-                inputTitle != undefined &&
-                inputTitle != null
-            ) {
-                const response = await fetch(
-                    `${import.meta.env.PUBLIC_STRAPI_URL}`,
-                    {
-                        method: "POST",
-                        headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({
-                            query: `
+  <script
+    src="/vendor/jquery.min.js"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+  <script
+    src="/vendor/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+  <script
+    id="jqueryVendor"
+    integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+  <!-- Additional CSS Files -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+    integrity="sha512-XJ3ntWHl40opEiE+6dGhfK9NAKOCELrpjiBRQKtu6uJf9Pli8XY+Hikp7rlFzY4ElLSFtzjx9GGgHql7PLSeog=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KDSRGCP3"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"></iframe></noscript
+    >
+    <!-- End Google Tag Manager (noscript) -->
+    <HeaderSection />
+    <slot />
+    <ContactSection />
+    <FooterSection />
+  </body>
+
+  <script>
+    window.onload = getData;
+    async function getData() {
+      var inputTitle = document.getElementById("tempTitle")!.innerText;
+      if (inputTitle != "" && inputTitle != undefined && inputTitle != null) {
+        const response = await fetch(`${import.meta.env.PUBLIC_STRAPI_URL}`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            query: `
                                 query{
                                     ${inputTitle}{
                                         data{
@@ -134,109 +127,107 @@ const { title,description } = Astro.props;
                                     }
                                 }
                             `,
-                        }),
-                    },
-                );
-                const data = await response.json();
-                if (
-                    data &&
-                    data.data &&
-                    data.data[inputTitle] &&
-                    data.data[inputTitle].data &&
-                    data.data[inputTitle].data.attributes
-                ) {
-                    console.log(
-                        data.data[inputTitle].data.attributes.meta_title,
-                        "datacheck",
-                    );
-                    var titleData = document.getElementById("title");
-                    var description = document.getElementById("description");
-                    var keywords = document.getElementById("keywords");
-                    titleData?.setAttribute(
-                        "content",
-                        data.data[inputTitle].data.attributes.meta_title,
-                    );
-                    description?.setAttribute(
-                        "content",
-                        data.data[inputTitle].data.attributes.meta_description,
-                    );
-                    keywords?.setAttribute(
-                        "content",
-                        data.data[inputTitle].data.attributes.meta_keywords,
-                    );
-                }
-            }
-        }
-    </script>
-    <script is:inline>
-        $(document).ready(function () {
-            $(".owl-carousel").owlCarousel();
+          }),
         });
-    </script>
-     <!-- Start of LiveChat (www.livechat.com) code -->
-    <script is:inline>
-        window.__lc = window.__lc || {};
-        window.__lc.license = 17706609;
-        (function (n, t, c) {
-            function i(n) {
-                return e._h ? e._h.apply(null, n) : e._q.push(n);
-            }
-            var e = {
-                _q: [],
-                _h: null,
-                _v: "2.0",
-                on: function () {
-                    i(["on", c.call(arguments)]);
-                },
-                once: function () {
-                    i(["once", c.call(arguments)]);
-                },
-                off: function () {
-                    i(["off", c.call(arguments)]);
-                },
-                get: function () {
-                    if (!e._h)
-                        throw new Error(
-                            "[LiveChatWidget] You can't use getters before load.",
-                        );
-                    return i(["get", c.call(arguments)]);
-                },
-                call: function () {
-                    i(["call", c.call(arguments)]);
-                },
-                init: function () {
-                    var n = t.createElement("script");
-                    (n.async = !0),
-                        (n.type = "text/javascript"),
-                        (n.src = "https://cdn.livechatinc.com/tracking.js"),
-                        t.head.appendChild(n);
-                },
-            };
-            !n.__lc.asyncInit && e.init(),
-                (n.LiveChatWidget = n.LiveChatWidget || e);
-        })(window, document, [].slice);
-    </script>
+        const data = await response.json();
+        if (
+          data &&
+          data.data &&
+          data.data[inputTitle] &&
+          data.data[inputTitle].data &&
+          data.data[inputTitle].data.attributes
+        ) {
+          console.log(
+            data.data[inputTitle].data.attributes.meta_title,
+            "datacheck"
+          );
+          var titleData = document.getElementById("title");
+          var description = document.getElementById("description");
+          var keywords = document.getElementById("keywords");
+          titleData?.setAttribute(
+            "content",
+            data.data[inputTitle].data.attributes.meta_title
+          );
+          description?.setAttribute(
+            "content",
+            data.data[inputTitle].data.attributes.meta_description
+          );
+          keywords?.setAttribute(
+            "content",
+            data.data[inputTitle].data.attributes.meta_keywords
+          );
+        }
+      }
+    }
+  </script>
+  <script is:inline>
+    $(document).ready(function () {
+      $(".owl-carousel").owlCarousel();
+    });
+  </script>
+  <!-- Start of LiveChat (www.livechat.com) code -->
+  <script is:inline>
+    window.__lc = window.__lc || {};
+    window.__lc.license = 17706609;
+    (function (n, t, c) {
+      function i(n) {
+        return e._h ? e._h.apply(null, n) : e._q.push(n);
+      }
+      var e = {
+        _q: [],
+        _h: null,
+        _v: "2.0",
+        on: function () {
+          i(["on", c.call(arguments)]);
+        },
+        once: function () {
+          i(["once", c.call(arguments)]);
+        },
+        off: function () {
+          i(["off", c.call(arguments)]);
+        },
+        get: function () {
+          if (!e._h)
+            throw new Error(
+              "[LiveChatWidget] You can't use getters before load."
+            );
+          return i(["get", c.call(arguments)]);
+        },
+        call: function () {
+          i(["call", c.call(arguments)]);
+        },
+        init: function () {
+          var n = t.createElement("script");
+          (n.async = !0),
+            (n.type = "text/javascript"),
+            (n.src = "https://cdn.livechatinc.com/tracking.js"),
+            t.head.appendChild(n);
+        },
+      };
+      !n.__lc.asyncInit && e.init(), (n.LiveChatWidget = n.LiveChatWidget || e);
+    })(window, document, [].slice);
+  </script>
 
-    <script is:inline>
-        window.$zoho = window.$zoho || {};
-        $zoho.salesiq = $zoho.salesiq || { ready: function () {} };
-    </script>
-    <script
-        id="zsiqscript"
-        src="https://salesiq.zohopublic.in/widget?wc=siq8fb9eaa5e71af4d38bb860678d2d2081f22eb8cbceb7992fb6d8d83427f9e3c6"
-        defer></script>
+  <script is:inline>
+    window.$zoho = window.$zoho || {};
+    $zoho.salesiq = $zoho.salesiq || { ready: function () {} };
+  </script>
+  <script
+    id="zsiqscript"
+    src="https://salesiq.zohopublic.in/widget?wc=siq8fb9eaa5e71af4d38bb860678d2d2081f22eb8cbceb7992fb6d8d83427f9e3c6"
+    defer></script>
 
-    <noscript
-        ><a href="https://www.livechat.com/chat-with/17706609/" rel="nofollow"
-            >Chat with us</a
-        >, powered by <a
-            href="https://www.livechat.com/?welcome"
-            rel="noopener nofollow"
-            target="_blank">LiveChat</a
-        ></noscript
-    >
+  <noscript
+    ><a href="https://www.livechat.com/chat-with/17706609/" rel="nofollow"
+      >Chat with us</a
+    >, powered by <a
+      href="https://www.livechat.com/?welcome"
+      rel="noopener nofollow"
+      target="_blank">LiveChat</a
+    ></noscript
+  >
 
-    <!-- End of LiveChat code -->
+  <!-- End of LiveChat code -->
 
 
 </html>

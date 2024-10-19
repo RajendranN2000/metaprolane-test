@@ -9,14 +9,31 @@ const {} = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KDSRGCP3");
+    </script>
+    <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
-    <title>"Blog | Metaverse Development Solutions | Leading Metaverse Development Company | Metaprolane</title>
+    <title>
+      "Blog | Metaverse Development Solutions | Leading Metaverse Development
+      Company | Metaprolane
+    </title>
     <meta
       name="description"
       id="description"
       content="Discover innovative Metaverse development solutions with our expert team. As a top Metaverse development company, we specialize in creating immersive experiences and transformative digital environments. Explore our services and elevate your business in the Metaverse today."
     />
-    <link rel="canonical" id="canonicalBlogLink" href={""}/>
+    <link rel="canonical" id="canonicalBlogLink" href={""} />
     <meta name="keywords" id="keywords" content={""} />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
@@ -83,45 +100,28 @@ const {} = Astro.props;
           ) {
             console.log(
               data.data[inputBlogTitle].data.attributes.meta_title,
-              "datacheck",
+              "datacheck"
             );
             var titleData = document.getElementById("title");
             var description = document.getElementById("description");
             var keywords = document.getElementById("keywords");
             titleData?.setAttribute(
               "content",
-              data.data[inputBlogTitle].data.attributes.meta_title,
+              data.data[inputBlogTitle].data.attributes.meta_title
             );
             description?.setAttribute(
               "content",
-              data.data[inputBlogTitle].data.attributes.meta_description,
+              data.data[inputBlogTitle].data.attributes.meta_description
             );
             keywords?.setAttribute(
               "content",
-              data.data[inputBlogTitle].data.attributes.meta_keywords,
+              data.data[inputBlogTitle].data.attributes.meta_keywords
             );
             console.log(titleData, "titleData");
           }
         }
       }
     </script>
-    <!-- Google Tag Manager -->
-    <script is:inline>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          "gtm.start": new Date().getTime(),
-          event: "gtm.js",
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-KDSRGCP3");
-    </script>
-    <!-- End Google Tag Manager -->
   </head>
   <body>
     <noscript
@@ -159,7 +159,7 @@ const {} = Astro.props;
           get: function () {
             if (!e._h)
               throw new Error(
-                "[LiveChatWidget] You can't use getters before load.",
+                "[LiveChatWidget] You can't use getters before load."
               );
             return i(["get", c.call(arguments)]);
           },
