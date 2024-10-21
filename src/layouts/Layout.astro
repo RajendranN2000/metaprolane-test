@@ -64,6 +64,8 @@ const { title, description } = Astro.props;
         var canonicalData = document.getElementById("canonicalLink");
         canonicalData.href = window.location.href;
       });
+      console.log(window.location.pathname,"check page");
+      
     </script>
   </head>
   <div style="display:none;" id="tempTitle">{title}</div>
