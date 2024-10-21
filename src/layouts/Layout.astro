@@ -13,7 +13,11 @@ const { title, description } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <meta name="google-site-verification" content="iyD7UJfawQdBjnhx8gAoFE30wV3a-KzpnVQMNBqMyG0" />
+    <meta
+      name="google-site-verification"
+      content="iyD7UJfawQdBjnhx8gAoFE30wV3a-KzpnVQMNBqMyG0"
+    />
+    <!-- Google Tag Manager -->
     <!-- Google Tag Manager -->
     <script is:inline>
       (function (w, d, s, l, i) {
@@ -25,7 +29,7 @@ const { title, description } = Astro.props;
         j.async = true;
         j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
         f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-PDQ3G678");
+      })(window, document, "script", "dataLayer", "GTM-KDSRGCP3");
     </script>
     <!-- End Google Tag Manager -->
     <meta charset="UTF-8" />
@@ -94,7 +98,7 @@ const { title, description } = Astro.props;
     <!-- Google Tag Manager (noscript) -->
     <noscript
       ><iframe
-        src="https://www.googletagmanager.com/ns.html?id=GTM-PDQ3G678"
+        src="https://www.googletagmanager.com/ns.html?id=GTM-KDSRGCP3"
         height="0"
         width="0"
         style="display:none;visibility:hidden"></iframe></noscript
@@ -140,22 +144,22 @@ const { title, description } = Astro.props;
         ) {
           console.log(
             data.data[inputTitle].data.attributes.meta_title,
-            "datacheck"
+            "datacheck",
           );
           var titleData = document.getElementById("title");
           var description = document.getElementById("description");
           var keywords = document.getElementById("keywords");
           titleData?.setAttribute(
             "content",
-            data.data[inputTitle].data.attributes.meta_title
+            data.data[inputTitle].data.attributes.meta_title,
           );
           description?.setAttribute(
             "content",
-            data.data[inputTitle].data.attributes.meta_description
+            data.data[inputTitle].data.attributes.meta_description,
           );
           keywords?.setAttribute(
             "content",
-            data.data[inputTitle].data.attributes.meta_keywords
+            data.data[inputTitle].data.attributes.meta_keywords,
           );
         }
       }
@@ -190,7 +194,7 @@ const { title, description } = Astro.props;
         get: function () {
           if (!e._h)
             throw new Error(
-              "[LiveChatWidget] You can't use getters before load."
+              "[LiveChatWidget] You can't use getters before load.",
             );
           return i(["get", c.call(arguments)]);
         },
