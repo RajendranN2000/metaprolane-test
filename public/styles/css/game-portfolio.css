@@ -1,0 +1,101 @@
+@font-face {
+    font-family: 'oswald';
+    src: url('/assets/fonts/Oswald-VariableFont_wght.ttf');
+}
+
+.oswald-bold {
+    font-family: 'oswald';
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'a25';
+    src: url('/assets/fonts/A25-SQUANOVA.ttf');
+}
+
+.a25-bold {
+    font-family: 'a25';
+    font-weight: 800;
+    line-height: 103px;
+  
+}
+
+@font-face {
+    font-family: 'albertSans';
+    src: url('/assets/fonts/AlbertSans-VariableFont_wght.ttf');
+}
+.albertSans{
+    font-family: 'albertSans';
+}
+body {
+    background: #1c1a32;
+    margin: 0px;
+}
+p {
+    font-size: 25px;
+    font-family: 'albertSans';
+    line-height: 46px;
+}
+.top-banner img {
+    width: 100%;
+}
+.premier-game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.premier-text {
+    text-align: center;
+    font-size: 90px;
+    color: white;
+    text-transform: uppercase;
+    padding-top: 100px;
+}
+
+.premier-content {
+    color: white;
+    max-width: 60%;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.game-text {
+    background: linear-gradient(to right, #eb0b7c, #14dbfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.game-development{
+    /* background-color: white; */
+    background-image: url('/assets/images/game-portfolio/expert-game-bg.webp');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.thunder-img1{
+    height: 400px;
+    width: auto;
+}
+.game-development-inner{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.expert-text{
+    font-size: 65px;
+   text-transform: uppercase;
+}
+.text-large{
+    font-size: 103px;
+}
+.expert-img{
+    height: 400px;
+    width: auto;
+}
+.game-development-outer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
