@@ -17,33 +17,40 @@
     font-family: 'a25';
     font-weight: 800;
     line-height: 103px;
-  
+
 }
 
 @font-face {
     font-family: 'albertSans';
     src: url('/assets/fonts/AlbertSans-VariableFont_wght.ttf');
 }
-.albertSans{
+
+.albertSans {
     font-family: 'albertSans';
 }
+
 body {
     background: #1c1a32;
     margin: 0px;
+    padding-bottom: 50px;
 }
+
 p {
     font-size: 25px;
     font-family: 'albertSans';
     line-height: 46px;
 }
+
 .top-banner img {
     width: 100%;
 }
-.premier-game{
+
+.premier-game {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .premier-text {
     text-align: center;
     font-size: 90px;
@@ -65,37 +72,301 @@ p {
     -webkit-text-fill-color: transparent;
 }
 
-.game-development{
+.game-development {
     /* background-color: white; */
     background-image: url('/assets/images/game-portfolio/expert-game-bg.webp');
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
-.thunder-img1{
+
+.thunder-img1 {
     height: 400px;
     width: auto;
 }
-.game-development-inner{
+
+.game-development-inner {
     display: flex;
     align-items: center;
     gap: 40px;
 }
-.expert-text{
+
+.expert-text {
     font-size: 65px;
-   text-transform: uppercase;
+    text-transform: uppercase;
 }
-.text-large{
+
+.text-large {
     font-size: 103px;
 }
-.expert-img{
+
+.expert-img {
     height: 400px;
     width: auto;
 }
-.game-development-outer{
+
+.game-development-outer {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 100px;
     padding-left: 200px;
     padding-right: 200px;
+    padding-bottom: 80px;
+}
+
+.expert-content {
+    text-align: center;
+}
+
+.btn-bg {
+    background-image: url('/assets/images/game-portfolio/button.webp');
+    color: white;
+    font-size: 35px;
+    font-family: 'oswald' !important;
+    font-weight: 700;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.medium-btn-bg {
+    background-image: url('/assets/images/game-portfolio/button.webp');
+    color: white;
+    font-size: 24px;
+    font-family: 'oswald' !important;
+    font-weight: 700;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    cursor: pointer;
+    object-fit: contain;
+    background-size: 100% 100%;
+}
+
+.endtoend-bg {
+    background-image: url('/assets/images/game-portfolio/section04_bg.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 120px;
+    padding-left: 120px;
+    position: relative;
+    padding-top: 100px;
+    /* padding-bottom: 800px; */
+    height: 120rem;
+}
+
+.end-to-end-title {
+    font-size: 62px;
+    font-family: 'a25';
+    color: white;
+    padding-top: 100px;
+}
+
+.game-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-top: 120px;
+}
+
+.game-card-outer-1 {
+    background-image: linear-gradient(to bottom, #701f71, transparent);
+    padding: 3px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.game-card-outer {
+
+    background-image: linear-gradient(to bottom, #190c26 50%, transparent);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 20px;
+    padding-bottom: 50px;
+    position: relative;
+    width: 400px;
+}
+
+.card-blue-bg {
+    background-image: linear-gradient(to bottom, #b27eff, transparent);
+    /* background-image: linear-gradient(0deg, #1f113f 0%, #37155d 72%, #6844a4 80%, #b27eff 100%) !important; */
+}
+
+.mobile-game-title {
+    font-size: 31px;
+    font-family: 'oswald';
+    font-weight: 700;
+    color: #14dbfc;
+    text-align: center;
+}
+
+.mobile-game-content {
+    font-size: 19px;
+    line-height: 32px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "albertSans";
+    text-align: center;
+    padding-top: 12px;
+}
+
+.game-bottom-img-section {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+}
+
+.game-bottom-img {
+    height: 100px;
+    width: 100px;
+}
+
+.right-thunder1-section {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.right-thunder {
+    height: 300px;
+    width: auto;
+}
+
+.recent-launch-section {
+    position: relative;
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-red-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-green-shadow {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+.purple-point,
+.green-point {
+    height: 1000px;
+    width: auto;
+}
+.shadow-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 1;
+}
+.recent-launch-section {
+    display: flex;
+    align-items: center;
+}
+
+.recent-launch-title {
+    font-size: 88px;
+    line-height: 95px;
+    color: #ffffff;
+    font-family: "a25";
+    text-align: center;
+}
+
+.recent-game-card {
+    width: 1000px;
+    border-radius: 60px;
+    background-color: rgba(25, 12, 38, 0.9);
+    border: 3px solid #701f71;
+    margin-top: 40px;
+    padding: 50px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    z-index: 1;
+}
+
+.recent-game-inner {
+    position: relative;
+    height: 364px;
+}
+
+.recent-game-img1 {
+    width: 280px;
+    height: 320px;
+}
+
+.recent-game-img2-section {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.recent-game-img2 {
+    width: auto;
+    height: 84px;
+}
+
+.recent-game-title {
+    font-size: 60px;
+    line-height: 78px;
+    color: #21cef4;
+    font-family: 'a25' !important;
+}
+
+.recent-game-content {
+    font-size: 27px;
+    line-height: 37px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "albertSans";
+}
+.recent-icon{
+    display: flex;
+    gap: 30px;
+    padding-top: 30px;
+}
+.recent-icon-size{
+    height: 60px;
+    width: auto;
+}
+.white-img{
+    height:auto;
+    width: 100%;
+    z-index: -1;
+}
+.white-img-section{
+    display: flex;
+}
+.comprehensive-game{
+    position: relative;
+}
+.game-service{
+    position: absolute;
+    top: -500px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
