@@ -31,7 +31,6 @@
 body {
   background: #1c1a32;
   margin: 0px;
-  padding-bottom: 50px;
 }
 
 p {
@@ -70,7 +69,22 @@ p {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+@media screen and (min-width: 1024px) and (max-width: 1600px) {
+  .game-development {
+    background-image: url("/assets/images/game-portfolio/expert_game.webp") !important;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  .thunder-img1 {
+    height: 230px !important;
+    width: auto;
+  }
+  .game-development-outer {
+    padding-top: 200px !important;
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+}
+}
 .game-development {
   /* background-color: white; */
   background-image: url("/assets/images/game-portfolio/expert-game-bg.webp");
@@ -103,15 +117,6 @@ p {
   width: auto;
 }
 @media screen and (min-width: 1024px) and (max-width: 1500px) {
-  .game-development-outer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 150px !important;
-    padding-left: 100px !important;
-    padding-right: 100px !important;
-    padding-bottom: 80px;
-  }
   .premier-text {
     text-align: center;
     font-size: 65px;
@@ -148,9 +153,9 @@ p {
   }
   .game-development {
     /* background-color: white; */
-    background-image: url("/assets/images/game-portfolio/expert-game-bg2.webp") !important;
+    /* background-image: url("/assets/images/game-portfolio/expert-game-bg2.webp") !important;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: 100% 100%; */
   }
   .endtoend-bg {
     padding-right: 60px !important;
@@ -182,7 +187,6 @@ p {
   .recent-game-card {
     width: 820px !important;
   }
- 
 }
 .game-development-outer {
   display: flex;
@@ -224,6 +228,23 @@ p {
   align-items: center;
   justify-content: center;
   width: 300px;
+  text-transform: uppercase;
+  margin-top: 30px;
+  cursor: pointer;
+  object-fit: contain;
+  background-size: 100% 100%;
+}
+.small-btn-bg {
+  background-image: url("/assets/images/game-portfolio/button.webp");
+  color: white;
+  font-size: 14px;
+  font-family: "oswald" !important;
+  font-weight: 700;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
   text-transform: uppercase;
   margin-top: 30px;
   cursor: pointer;
@@ -631,4 +652,210 @@ p {
   background: #b494e3;
   bottom: -7px;
   right: -4px;
+}
+.game-layer,
+.game-layer-2 {
+  position: relative;
+  height: 1000px;
+}
+.game-outer-layer,
+.game-outer-layer-2 {
+  position: absolute;
+  top: 0;
+}
+.man-img1 {
+  height: 900px;
+  width: auto;
+}
+.man-img1-section {
+  display: flex;
+  justify-content: end;
+}
+.immersive-gaming-section {
+  background-image: url("/assets/images/game-portfolio/Immersive Gaming Solutions.webp");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-top: 100px;
+  padding-bottom: 250px;
+  position: relative;
+}
+.immersive-title {
+  font-size: 43px;
+  line-height: 50px;
+  color: #1c1b33;
+  font-family: "a25";
+  text-align: center;
+}
+.immersive-description {
+  font-size: 16px;
+  color: #4f4f4f;
+  font-weight: 500;
+  line-height: 24px;
+  font-family: "albertSans";
+  text-align: center;
+  padding-top: 12px;
+}
+.immersive-game-row {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-between;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 80px;
+}
+.immersive-card-layout {
+  width: 300px;
+  z-index: 1;
+}
+.immersive-game-card {
+  position: relative;
+  height: 350px;
+}
+.game-card-image1 {
+  height: 300px;
+  width: 100%;
+}
+.game-card-image2 {
+  position: absolute;
+  bottom: 0px;
+  left: 40px;
+  width: 100%;
+}
+.game-card-small-img {
+  height: 100px;
+  width: 100px;
+}
+.immersive-game-card-title {
+  font-size: 24px;
+  line-height: 28px;
+  color: #1c1b33;
+  font-family: "a25";
+  padding-top: 30px;
+}
+.immersive-game-card-content {
+  font-size: 14px;
+  line-height: 20px;
+  color: #4f4f4f;
+  font-weight: 400;
+  font-family: "albertSans";
+  padding-top: 12px;
+}
+@media screen and (min-width: 1600px) {
+  .immersive-all-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .immersive-game-row {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: space-between;
+    padding-left: 10 0px;
+    padding-right: 100px;
+    padding-top: 80px;
+    max-width: 1100px;
+  }
+}
+.immersive-purple-section {
+  position: absolute;
+  bottom: 220px;
+  right: 0;
+}
+.immersive-purple-bg {
+  height: 900px;
+  width: auto;
+}
+.purple-outer {
+  position: relative;
+  width: 600px;
+  display: flex;
+  justify-content: end;
+}
+.immersive-boy {
+  position: absolute;
+  bottom: 30px;
+  right: 40px;
+  height: 600px;
+  width: auto;
+}
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+  .immersive-boy {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    height: 350px !important;
+    width: auto;
+  }
+  .immersive-purple-bg {
+    height: 700px !important;
+    width: auto;
+  }
+}
+@media screen and (min-width: 1400px) {
+  .immersive-game-row {
+    padding-left: 200px !important;
+    padding-right: 200px !important;
+  }
+}
+
+.thunder-3 {
+  height: 160px;
+  width: auto;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.choose-us-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  padding-left: 100px;
+  padding-right: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.choose-us-title {
+  font-size: 54px;
+  line-height: 63px;
+  color: #ffffff;
+  font-family: "a25";
+  filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
+}
+.choose-girl-img {
+  height: auto;
+  width: 40%;
+}
+.chooseus-card-outer {
+  margin-top: 30px;
+  padding: 3px;
+  border-radius: 30px;
+  background-image: linear-gradient(to right, #701f71, transparent);
+}
+.chooseus-card-inner {
+  padding: 20px;
+  border-radius: 30px;
+  background-image: linear-gradient(to right, #190c26 80%, transparent);
+}
+.choose-us-left {
+  width: 50%;
+}
+.choose-us-card-title {
+  font-size: 20px;
+  line-height: 20px;
+  color: #14dbfc;
+  font-weight: 700;
+  font-family: "oswald";
+}
+.choose-us-card-content {
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  font-weight: 500;
+  font-family: "albertSans";
+  padding-top: 12px;
 }
