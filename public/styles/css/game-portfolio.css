@@ -1,861 +1,987 @@
 @font-face {
-  font-family: "oswald";
-  src: url("/assets/fonts/Oswald-VariableFont_wght.ttf");
+    font-family: "oswald";
+    src: url("/assets/fonts/Oswald-VariableFont_wght.ttf");
 }
 
 .oswald-bold {
-  font-family: "oswald";
-  font-weight: 800;
+    font-family: "oswald";
+    font-weight: 800;
 }
 
 @font-face {
-  font-family: "a25";
-  src: url("/assets/fonts/A25-SQUANOVA.ttf");
+    font-family: "a25";
+    src: url("/assets/fonts/A25-SQUANOVA.ttf");
 }
 
 .a25-bold {
-  font-family: "a25";
-  font-weight: 800;
-  line-height: 103px;
+    font-family: "a25";
+    font-weight: 800;
+    line-height: 103px;
 }
 
 @font-face {
-  font-family: "albertSans";
-  src: url("/assets/fonts/AlbertSans-VariableFont_wght.ttf");
+    font-family: "albertSans";
+    src: url("/assets/fonts/AlbertSans-VariableFont_wght.ttf");
 }
 
 .albertSans {
-  font-family: "albertSans";
+    font-family: "albertSans";
 }
 
 body {
-  background: #1c1a32;
-  margin: 0px;
+    background: #1c1a32;
+    margin: 0px;
 }
 
 p {
-  font-size: 25px;
-  font-family: "albertSans";
-  line-height: 46px;
+    font-size: 25px;
+    font-family: "albertSans";
+    line-height: 46px;
 }
 
 .top-banner img {
-  width: 100%;
+    width: 100%;
 }
 
 .premier-game {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .premier-text {
-  text-align: center;
-  font-size: 90px;
-  color: white;
-  text-transform: uppercase;
-  padding-top: 100px;
+    text-align: center;
+    font-size: 90px;
+    color: white;
+    text-transform: uppercase;
+    padding-top: 100px;
 }
 
 .premier-content {
-  color: white;
-  max-width: 60%;
-  text-align: center;
-  padding-top: 8px;
+    color: white;
+    max-width: 60%;
+    text-align: center;
+    padding-top: 8px;
 }
 
 .game-text {
-  background: linear-gradient(to right, #eb0b7c, #14dbfc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+    background: linear-gradient(to right, #eb0b7c, #14dbfc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
 @media screen and (min-width: 1024px) and (max-width: 1600px) {
-  .game-development {
-    background-image: url("/assets/images/game-portfolio/expert_game.webp") !important;
+    .game-development {
+        background-image: url("/assets/images/game-portfolio/expert_game.webp") !important;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .thunder-img1 {
+        height: 230px !important;
+        width: auto;
+    }
+
+    .game-development-outer {
+        padding-top: 200px !important;
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+    }
+}
+
+.game-development {
+    /* background-color: white; */
+    background-image: url("/assets/images/game-portfolio/expert-game-bg.webp");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-  }
-  .thunder-img1 {
-    height: 230px !important;
-    width: auto;
-  }
-  .game-development-outer {
-    padding-top: 200px !important;
-    padding-left: 100px !important;
-    padding-right: 100px !important;
-}
-}
-.game-development {
-  /* background-color: white; */
-  background-image: url("/assets/images/game-portfolio/expert-game-bg.webp");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
 }
 
 .thunder-img1 {
-  height: 400px;
-  width: auto;
+    height: 400px;
+    width: auto;
 }
 
 .game-development-inner {
-  display: flex;
-  align-items: center;
-  gap: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
 
 .expert-text {
-  font-size: 65px;
-  text-transform: uppercase;
+    font-size: 65px;
+    text-transform: uppercase;
 }
 
 .text-large {
-  font-size: 103px;
+    font-size: 103px;
 }
 
 .expert-img {
-  height: 400px;
-  width: auto;
-}
-@media screen and (min-width: 1024px) and (max-width: 1500px) {
-  .premier-text {
-    text-align: center;
-    font-size: 65px;
-    color: white;
-    text-transform: uppercase;
-    padding-top: 64px;
-  }
-  .a25-bold {
-    font-family: "a25";
-    font-weight: 800;
-    line-height: 81px;
-  }
-  .premier-content {
-    color: white;
-    max-width: 80%;
-    text-align: center;
-    padding-top: 0px;
-  }
-  .expert-text {
-    font-size: 55px;
-    text-transform: uppercase;
-  }
-  .text-large {
-    font-size: 80px;
-  }
-  .expert-img {
-    height: 300px;
+    height: 400px;
     width: auto;
-  }
-  p {
-    font-size: 20px;
-    font-family: "albertSans";
-    line-height: 36px;
-  }
-  .game-development {
-    /* background-color: white; */
-    /* background-image: url("/assets/images/game-portfolio/expert-game-bg2.webp") !important;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
+    .premier-text {
+        text-align: center;
+        font-size: 65px;
+        color: white;
+        text-transform: uppercase;
+        padding-top: 64px;
+    }
+
+    .a25-bold {
+        font-family: "a25";
+        font-weight: 800;
+        line-height: 81px;
+    }
+
+    .premier-content {
+        color: white;
+        max-width: 80%;
+        text-align: center;
+        padding-top: 0px;
+    }
+
+    .expert-text {
+        font-size: 55px;
+        text-transform: uppercase;
+    }
+
+    .text-large {
+        font-size: 80px;
+    }
+
+    .expert-img {
+        height: 300px;
+        width: auto;
+    }
+
+    p {
+        font-size: 20px;
+        font-family: "albertSans";
+        line-height: 36px;
+    }
+
+    .game-development {
+        /* background-color: white; */
+        /* background-image: url("/assets/images/game-portfolio/expert-game-bg2.webp") !important;
     background-repeat: no-repeat;
     background-size: 100% 100%; */
-  }
-  .endtoend-bg {
-    padding-right: 60px !important;
-    padding-left: 60px !important;
-    padding-top: 0px !important;
-  }
-  .game-card-outer {
+    }
+
+    .endtoend-bg {
+        padding-right: 60px !important;
+        padding-left: 60px !important;
+        padding-top: 0px !important;
+    }
+
+    .game-card-outer {
+        background-image: linear-gradient(to bottom, #190c26 50%, transparent);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 20px;
+        padding-bottom: 24px !important;
+        position: relative;
+        width: 320px !important;
+    }
+
+    .game-cards {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        padding-top: 70px !important;
+    }
+
+    .recent-launch-title {
+        font-size: 62px !important;
+        line-height: 91px;
+        color: #ffffff;
+        font-family: "a25";
+        text-align: center;
+    }
+
+    .recent-game-card {
+        width: 820px !important;
+    }
+}
+
+.game-development-outer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 200px;
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 80px;
+}
+
+.expert-content {
+    text-align: center;
+}
+
+.btn-bg {
+    background-image: url("/assets/images/game-portfolio/button.webp");
+    color: white;
+    font-size: 35px;
+    font-family: "oswald" !important;
+    font-weight: 700;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.medium-btn-bg {
+    background-image: url("/assets/images/game-portfolio/button.webp");
+    color: white;
+    font-size: 24px;
+    font-family: "oswald" !important;
+    font-weight: 700;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    cursor: pointer;
+    object-fit: contain;
+    background-size: 100% 100%;
+}
+
+.small-btn-bg {
+    background-image: url("/assets/images/game-portfolio/button.webp");
+    color: white;
+    font-size: 14px;
+    font-family: "oswald" !important;
+    font-weight: 700;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    cursor: pointer;
+    object-fit: contain;
+    background-size: 100% 100%;
+}
+
+.endtoend-bg {
+    background-image: url("/assets/images/game-portfolio/section04_bg.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-right: 120px;
+    padding-left: 120px;
+    position: relative;
+    padding-top: 100px;
+    /* padding-bottom: 800px; */
+    height: 108rem !important;
+}
+
+.end-to-end-title {
+    font-size: 62px;
+    font-family: "a25";
+    color: white;
+    padding-top: 100px;
+    text-align: end;
+}
+
+.game-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    padding-top: 120px;
+}
+
+.game-card-outer-1 {
+    background-image: linear-gradient(to bottom, #701f71, transparent);
+    padding: 3px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.game-card-outer {
     background-image: linear-gradient(to bottom, #190c26 50%, transparent);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     padding: 20px;
-    padding-bottom: 24px !important;
+    padding-bottom: 50px;
     position: relative;
-    width: 320px !important;
-  }
-  .game-cards {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    padding-top: 70px !important;
-  }
-  .recent-launch-title {
-    font-size: 62px !important;
-    line-height: 91px;
-    color: #ffffff;
-    font-family: "a25";
-    text-align: center;
-  }
-  .recent-game-card {
-    width: 820px !important;
-  }
-}
-.game-development-outer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 200px;
-  padding-left: 200px;
-  padding-right: 200px;
-  padding-bottom: 80px;
-}
-
-.expert-content {
-  text-align: center;
-}
-
-.btn-bg {
-  background-image: url("/assets/images/game-portfolio/button.webp");
-  color: white;
-  font-size: 35px;
-  font-family: "oswald" !important;
-  font-weight: 700;
-  height: 125px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 500px;
-  text-transform: uppercase;
-  margin-top: 30px;
-  cursor: pointer;
-}
-.medium-btn-bg {
-  background-image: url("/assets/images/game-portfolio/button.webp");
-  color: white;
-  font-size: 24px;
-  font-family: "oswald" !important;
-  font-weight: 700;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  text-transform: uppercase;
-  margin-top: 30px;
-  cursor: pointer;
-  object-fit: contain;
-  background-size: 100% 100%;
-}
-.small-btn-bg {
-  background-image: url("/assets/images/game-portfolio/button.webp");
-  color: white;
-  font-size: 14px;
-  font-family: "oswald" !important;
-  font-weight: 700;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 200px;
-  text-transform: uppercase;
-  margin-top: 30px;
-  cursor: pointer;
-  object-fit: contain;
-  background-size: 100% 100%;
-}
-
-.endtoend-bg {
-  background-image: url("/assets/images/game-portfolio/section04_bg.webp");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  padding-right: 120px;
-  padding-left: 120px;
-  position: relative;
-  padding-top: 100px;
-  /* padding-bottom: 800px; */
-  height: 108rem !important;
-}
-
-.end-to-end-title {
-  font-size: 62px;
-  font-family: "a25";
-  color: white;
-  padding-top: 100px;
-  text-align: end;
-}
-
-.game-cards {
-  display: flex;
-  flex-direction: row;
-  gap: 50px;
-  padding-top: 120px;
-}
-
-.game-card-outer-1 {
-  background-image: linear-gradient(to bottom, #701f71, transparent);
-  padding: 3px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.game-card-outer {
-  background-image: linear-gradient(to bottom, #190c26 50%, transparent);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  padding: 20px;
-  padding-bottom: 50px;
-  position: relative;
-  width: 400px;
+    width: 400px;
 }
 
 .card-blue-bg {
-  background-image: linear-gradient(to bottom, #b27eff, transparent);
-  /* background-image: linear-gradient(0deg, #1f113f 0%, #37155d 72%, #6844a4 80%, #b27eff 100%) !important; */
+    background-image: linear-gradient(to bottom, #b27eff, transparent);
+    /* background-image: linear-gradient(0deg, #1f113f 0%, #37155d 72%, #6844a4 80%, #b27eff 100%) !important; */
 }
 
 .mobile-game-title {
-  font-size: 31px;
-  font-family: "oswald";
-  font-weight: 700;
-  color: #14dbfc;
-  text-align: center;
+    font-size: 31px;
+    font-family: "oswald";
+    font-weight: 700;
+    color: #14dbfc;
+    text-align: center;
 }
 
 .mobile-game-content {
-  font-size: 19px;
-  line-height: 32px;
-  color: #ffffff;
-  font-weight: 500;
-  font-family: "albertSans";
-  text-align: center;
-  padding-top: 12px;
+    font-size: 19px;
+    line-height: 32px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "albertSans";
+    text-align: center;
+    padding-top: 12px;
 }
 
 .game-bottom-img-section {
-  position: absolute;
-  bottom: -40px;
-  right: -40px;
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
 }
 
 .game-bottom-img {
-  height: 100px;
-  width: 100px;
+    height: 100px;
+    width: 100px;
 }
 
 .right-thunder1-section {
-  position: absolute;
-  bottom: 0;
-  right: 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .right-thunder {
-  height: 300px;
-  width: auto;
+    height: 300px;
+    width: auto;
 }
 
 .recent-launch-section {
-  /* position: relative; */
-  width: 100%;
-  /* height: 1100px; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-image: url("/assets/images/game-portfolio/recent-bg.webp");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+    /* position: relative; */
+    width: 100%;
+    /* height: 1100px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("/assets/images/game-portfolio/recent-bg.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
 }
 
 .left-red-shadow {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .right-green-shadow {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
 }
 
 .purple-point,
 .green-point {
-  height: 1000px;
-  width: auto;
+    height: 1000px;
+    width: auto;
 }
+
 .shadow-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 1;
 }
 
 .recent-launch-title {
-  font-size: 88px;
-  line-height: 95px;
-  color: #ffffff;
-  font-family: "a25";
-  text-align: center;
+    font-size: 88px;
+    line-height: 95px;
+    color: #ffffff;
+    font-family: "a25";
+    text-align: center;
 }
 
 .recent-game-card {
-  width: 1000px;
-  border-radius: 60px;
-  background-color: rgba(25, 12, 38, 0.9);
-  border: 3px solid #701f71;
-  margin-top: 40px;
-  padding: 50px;
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  z-index: 1;
+    width: 1000px;
+    border-radius: 60px;
+    background-color: rgba(25, 12, 38, 0.9);
+    border: 3px solid #701f71;
+    margin-top: 40px;
+    padding: 50px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    z-index: 1;
 }
 
 .recent-game-inner {
-  position: relative;
-  height: 364px;
+    position: relative;
+    height: 364px;
 }
 
 .recent-game-img1 {
-  width: 280px;
-  height: 320px;
+    width: 280px;
+    height: 320px;
 }
 
 .recent-game-img2-section {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .recent-game-img2 {
-  width: auto;
-  height: 84px;
+    width: auto;
+    height: 84px;
 }
 
 .recent-game-title {
-  font-size: 60px;
-  line-height: 78px;
-  color: #21cef4;
-  font-family: "a25" !important;
+    font-size: 60px;
+    line-height: 78px;
+    color: #21cef4;
+    font-family: "a25" !important;
 }
 
 .recent-game-content {
-  font-size: 27px;
-  line-height: 37px;
-  color: #ffffff;
-  font-weight: 400;
-  font-family: "albertSans";
+    font-size: 27px;
+    line-height: 37px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "albertSans";
 }
+
 .recent-icon {
-  display: flex;
-  gap: 30px;
-  padding-top: 30px;
+    display: flex;
+    gap: 30px;
+    padding-top: 30px;
 }
+
 .recent-icon-size {
-  height: 60px;
-  width: auto;
+    height: 60px;
+    width: auto;
 }
+
 .white-img {
-  height: auto;
-  width: 100%;
-  z-index: -1;
+    height: auto;
+    width: 100%;
+    z-index: -1;
 }
+
 .white-img-section {
-  display: flex;
+    display: flex;
 }
+
 .comprehensive-game {
-  position: relative;
-  background: white;
+    position: relative;
+    background: white;
 }
+
 .game-service-img1 {
-  position: absolute;
-  display: flex;
+    position: absolute;
+    display: flex;
 }
+
 .comprehensive-title {
-  font-size: 42px;
-  line-height: 46px;
-  color: #1c1a32;
-  font-family: "a25";
-  text-align: center;
-  font-weight: 700;
-  line-height: 60px;
-  padding-top: 80px;
+    font-size: 42px;
+    line-height: 46px;
+    color: #1c1a32;
+    font-family: "a25";
+    text-align: center;
+    font-weight: 700;
+    line-height: 60px;
+    padding-top: 80px;
 }
+
 .comprehensive-description {
-  font-size: 18px;
-  line-height: 28px;
-  color: #1c1a32;
-  font-weight: 500;
-  font-family: "albertSans";
-  text-align: center;
-  font-weight: 600;
-  padding-top: 12px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #1c1a32;
+    font-weight: 500;
+    font-family: "albertSans";
+    text-align: center;
+    font-weight: 600;
+    padding-top: 12px;
 }
+
 .game-development-row {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-  width: 60%;
-  align-items: center;
-  margin-top: 30px;
-  margin-left: 100px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    width: 60%;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 100px;
 }
+
 .game-development-row-right {
-  display: flex;
-  flex-direction: row-reverse;
-  gap: 30px;
-  width: 60%;
-  align-items: center;
-  margin-top: 30px;
-  margin-right: 100px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 30px;
+    width: 60%;
+    align-items: center;
+    margin-top: 30px;
+    margin-right: 100px;
 }
+
 .game-square-img {
-  height: 150px;
-  width: auto;
+    height: 150px;
+    width: auto;
 }
+
 .game-content-card {
-  border-radius: 29px;
-  min-height: 110px;
-  background-color: #f4edff;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    border-radius: 29px;
+    min-height: 110px;
+    background-color: #f4edff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 .game-card-title {
-  font-size: 18px;
-  line-height: 22px;
-  color: #1e1c37;
-  font-weight: 700;
-  font-family: "oswald";
+    font-size: 18px;
+    line-height: 22px;
+    color: #1e1c37;
+    font-weight: 700;
+    font-family: "oswald";
 }
+
 .game-card-text {
-  font-size: 14px;
-  line-height: 20px;
-  color: #1c1a32;
-  font-weight: 600;
-  font-family: "albertSans";
-  padding-top: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1c1a32;
+    font-weight: 600;
+    font-family: "albertSans";
+    padding-top: 12px;
 }
+
 .game-right-cards {
-  display: flex;
-  flex-direction: column;
-  align-items: end;
-  padding-top: 40px;
-  padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-top: 40px;
+    padding-bottom: 80px;
 }
+
 .unique-features {
-  background-image: url("/assets/images/game-portfolio/unique-features bg.webp");
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 140px;
-}
-.feature-title {
-  font-size: 42px;
-  line-height: 60px;
-  color: #ffffff;
-  font-family: "A25";
-  text-align: center;
-  filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
-  padding-top: 100px;
-}
-.line-section {
-  width: 800px;
-  margin-top: 40px;
-}
-.first-line {
-  width: 650px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  border-top-left-radius: 29px;
-  border-bottom-left-radius: 29px;
-  background-image: linear-gradient(to right, #190c26 70%, transparent);
-  border-top: 3px solid #701f71;
-  border-bottom: 3px solid #701f71;
-  border-left: 3px solid #701f71;
-  font-size: 21px;
-  color: #ffffff;
-  font-weight: 500;
-  font-family: "albertSans";
-  padding-left: 20px;
-  position: relative;
-}
-.curve-right-line {
-  margin-top: -3px;
-  margin-left: 24px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  border-top-right-radius: 29px;
-  border-bottom-right-radius: 29px;
-  background-image: linear-gradient(to left, #190c26 70%, transparent);
-  border-top: 3px solid #701f71;
-  border-right: 3px solid #701f71;
-  border-bottom: 3px solid #701f71;
-  font-size: 21px;
-  color: #ffffff;
-  font-weight: 500;
-  font-family: "albertSans";
-  text-align: end;
-  padding-right: 20px;
-}
-.curve-left-line {
-  margin-top: -3px;
-  margin-right: 22px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  border-top-left-radius: 29px;
-  border-bottom-left-radius: 29px;
-  background-image: linear-gradient(to right, #190c26 70%, transparent);
-  border-top: 3px solid #701f71;
-  border-left: 3px solid #701f71;
-  border-bottom: 3px solid #701f71;
-  font-size: 21px;
-  color: #ffffff;
-  font-weight: 500;
-  font-family: "albertSans";
-  text-align: start;
-  padding-left: 20px;
-}
-.last-line {
-  margin-top: -3px;
-  width: 650px;
-  padding-top: 16px;
-  padding-bottom: 16px;
-  border-top-left-radius: 29px;
-  border-bottom-left-radius: 29px;
-  background-image: linear-gradient(to right, #190c26 70%, transparent);
-  border-top: 3px solid #701f71;
-  border-bottom: 3px solid #701f71;
-  border-left: 3px solid #701f71;
-  font-size: 21px;
-  color: #ffffff;
-  font-weight: 500;
-  font-family: "albertSans";
-  padding-left: 20px;
-  position: relative;
-}
-.dot-circle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  background: #b494e3;
-  top: -7px;
-  right: -4px;
-}
-.bottom-dot-circle {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 100%;
-  background: #b494e3;
-  bottom: -7px;
-  right: -4px;
-}
-.game-layer,
-.game-layer-2 {
-  position: relative;
-  height: 1000px;
-}
-.game-outer-layer,
-.game-outer-layer-2 {
-  position: absolute;
-  top: 0;
-}
-.man-img1 {
-  height: 900px;
-  width: auto;
-}
-.man-img1-section {
-  display: flex;
-  justify-content: end;
-}
-.immersive-gaming-section {
-  background-image: url("/assets/images/game-portfolio/Immersive Gaming Solutions.webp");
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  padding-top: 100px;
-  padding-bottom: 250px;
-  position: relative;
-}
-.immersive-title {
-  font-size: 43px;
-  line-height: 50px;
-  color: #1c1b33;
-  font-family: "a25";
-  text-align: center;
-}
-.immersive-description {
-  font-size: 16px;
-  color: #4f4f4f;
-  font-weight: 500;
-  line-height: 24px;
-  font-family: "albertSans";
-  text-align: center;
-  padding-top: 12px;
-}
-.immersive-game-row {
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  justify-content: space-between;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 80px;
-}
-.immersive-card-layout {
-  width: 300px;
-  z-index: 1;
-}
-.immersive-game-card {
-  position: relative;
-  height: 350px;
-}
-.game-card-image1 {
-  height: 300px;
-  width: 100%;
-}
-.game-card-image2 {
-  position: absolute;
-  bottom: 0px;
-  left: 40px;
-  width: 100%;
-}
-.game-card-small-img {
-  height: 100px;
-  width: 100px;
-}
-.immersive-game-card-title {
-  font-size: 24px;
-  line-height: 28px;
-  color: #1c1b33;
-  font-family: "a25";
-  padding-top: 30px;
-}
-.immersive-game-card-content {
-  font-size: 14px;
-  line-height: 20px;
-  color: #4f4f4f;
-  font-weight: 400;
-  font-family: "albertSans";
-  padding-top: 12px;
-}
-@media screen and (min-width: 1600px) {
-  .immersive-all-cards {
+    background-image: url("/assets/images/game-portfolio/unique-features bg.webp");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-  }
-  .immersive-game-row {
+    padding-bottom: 140px;
+}
+
+.feature-title {
+    font-size: 42px;
+    line-height: 60px;
+    color: #ffffff;
+    font-family: "A25";
+    text-align: center;
+    filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
+    padding-top: 100px;
+}
+
+.line-section {
+    width: 800px;
+    margin-top: 40px;
+}
+
+.first-line {
+    width: 650px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top-left-radius: 29px;
+    border-bottom-left-radius: 29px;
+    background-image: linear-gradient(to right, #190c26 70%, transparent);
+    border-top: 3px solid #701f71;
+    border-bottom: 3px solid #701f71;
+    border-left: 3px solid #701f71;
+    font-size: 21px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "albertSans";
+    padding-left: 20px;
+    position: relative;
+}
+
+.curve-right-line {
+    margin-top: -3px;
+    margin-left: 24px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top-right-radius: 29px;
+    border-bottom-right-radius: 29px;
+    background-image: linear-gradient(to left, #190c26 70%, transparent);
+    border-top: 3px solid #701f71;
+    border-right: 3px solid #701f71;
+    border-bottom: 3px solid #701f71;
+    font-size: 21px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "albertSans";
+    text-align: end;
+    padding-right: 20px;
+}
+
+.curve-left-line {
+    margin-top: -3px;
+    margin-right: 22px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top-left-radius: 29px;
+    border-bottom-left-radius: 29px;
+    background-image: linear-gradient(to right, #190c26 70%, transparent);
+    border-top: 3px solid #701f71;
+    border-left: 3px solid #701f71;
+    border-bottom: 3px solid #701f71;
+    font-size: 21px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "albertSans";
+    text-align: start;
+    padding-left: 20px;
+}
+
+.last-line {
+    margin-top: -3px;
+    width: 650px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-top-left-radius: 29px;
+    border-bottom-left-radius: 29px;
+    background-image: linear-gradient(to right, #190c26 70%, transparent);
+    border-top: 3px solid #701f71;
+    border-bottom: 3px solid #701f71;
+    border-left: 3px solid #701f71;
+    font-size: 21px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "albertSans";
+    padding-left: 20px;
+    position: relative;
+}
+
+.dot-circle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: #b494e3;
+    top: -7px;
+    right: -4px;
+}
+
+.bottom-dot-circle {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background: #b494e3;
+    bottom: -7px;
+    right: -4px;
+}
+
+.game-layer,
+.game-layer-2 {
+    position: relative;
+    height: 1000px;
+}
+
+.game-outer-layer,
+.game-outer-layer-2 {
+    position: absolute;
+    top: 0;
+}
+
+.man-img1 {
+    height: 900px;
+    width: auto;
+}
+
+.man-img1-section {
+    display: flex;
+    justify-content: end;
+}
+
+.immersive-gaming-section {
+    background-image: url("/assets/images/game-portfolio/Immersive Gaming Solutions.webp");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-top: 100px;
+    padding-bottom: 250px;
+    position: relative;
+}
+
+.immersive-title {
+    font-size: 43px;
+    line-height: 50px;
+    color: #1c1b33;
+    font-family: "a25";
+    text-align: center;
+}
+
+.immersive-description {
+    font-size: 16px;
+    color: #4f4f4f;
+    font-weight: 500;
+    line-height: 24px;
+    font-family: "albertSans";
+    text-align: center;
+    padding-top: 12px;
+}
+
+.immersive-game-row {
     display: flex;
     flex-direction: row;
     gap: 40px;
     justify-content: space-between;
-    padding-left: 10 0px;
+    padding-left: 100px;
     padding-right: 100px;
     padding-top: 80px;
-    max-width: 1100px;
-  }
 }
+
+.immersive-card-layout {
+    width: 300px;
+    z-index: 1;
+}
+
+.immersive-game-card {
+    position: relative;
+    height: 350px;
+}
+
+.game-card-image1 {
+    height: 300px;
+    width: 100%;
+}
+
+.game-card-image2 {
+    position: absolute;
+    bottom: 0px;
+    left: 40px;
+    width: 100%;
+}
+
+.game-card-small-img {
+    height: 100px;
+    width: 100px;
+}
+
+.immersive-game-card-title {
+    font-size: 24px;
+    line-height: 28px;
+    color: #1c1b33;
+    font-family: "a25";
+    padding-top: 30px;
+}
+
+.immersive-game-card-content {
+    font-size: 14px;
+    line-height: 20px;
+    color: #4f4f4f;
+    font-weight: 400;
+    font-family: "albertSans";
+    padding-top: 12px;
+}
+
+@media screen and (min-width: 1600px) {
+    .immersive-all-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .immersive-game-row {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        justify-content: space-between;
+        padding-left: 10 0px;
+        padding-right: 100px;
+        padding-top: 80px;
+        max-width: 1100px;
+    }
+}
+
 .immersive-purple-section {
-  position: absolute;
-  bottom: 220px;
-  right: 0;
+    position: absolute;
+    bottom: 220px;
+    right: 0;
 }
+
 .immersive-purple-bg {
-  height: 900px;
-  width: auto;
+    height: 900px;
+    width: auto;
 }
+
 .purple-outer {
-  position: relative;
-  width: 600px;
-  display: flex;
-  justify-content: end;
+    position: relative;
+    width: 600px;
+    display: flex;
+    justify-content: end;
 }
+
 .immersive-boy {
-  position: absolute;
-  bottom: 30px;
-  right: 40px;
-  height: 600px;
-  width: auto;
-}
-@media screen and (min-width: 1024px) and (max-width: 1300px) {
-  .immersive-boy {
     position: absolute;
     bottom: 30px;
     right: 40px;
-    height: 350px !important;
+    height: 600px;
     width: auto;
-  }
-  .immersive-purple-bg {
-    height: 700px !important;
-    width: auto;
-  }
 }
+
+@media screen and (min-width: 1024px) and (max-width: 1300px) {
+    .immersive-boy {
+        position: absolute;
+        bottom: 30px;
+        right: 40px;
+        height: 350px !important;
+        width: auto;
+    }
+
+    .immersive-purple-bg {
+        height: 700px !important;
+        width: auto;
+    }
+}
+
 @media screen and (min-width: 1400px) {
-  .immersive-game-row {
-    padding-left: 200px !important;
-    padding-right: 200px !important;
-  }
+    .immersive-game-row {
+        padding-left: 200px !important;
+        padding-right: 200px !important;
+    }
 }
 
 .thunder-3 {
-  height: 160px;
-  width: auto;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+    height: 160px;
+    width: auto;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 .choose-us-section {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  padding-left: 100px;
-  padding-right: 100px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+
 .choose-us-title {
-  font-size: 54px;
-  line-height: 63px;
-  color: #ffffff;
-  font-family: "a25";
-  filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
+    font-size: 54px;
+    line-height: 63px;
+    color: #ffffff;
+    font-family: "a25";
+    filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
 }
+
 .choose-girl-img {
-  height: auto;
-  width: 40%;
+    height: auto;
+    width: 40%;
 }
+
 .chooseus-card-outer {
-  margin-top: 30px;
-  padding: 3px;
-  border-radius: 30px;
-  background-image: linear-gradient(to right, #701f71, transparent);
+    margin-top: 30px;
+    padding: 3px;
+    border-radius: 30px;
+    background-image: linear-gradient(to right, #701f71, transparent);
 }
+
 .chooseus-card-inner {
-  padding: 20px;
-  border-radius: 30px;
-  background-image: linear-gradient(to right, #190c26 80%, transparent);
+    padding: 20px;
+    border-radius: 30px;
+    background-image: linear-gradient(to right, #190c26 80%, transparent);
 }
+
 .choose-us-left {
-  width: 50%;
+    width: 50%;
 }
+
 .choose-us-card-title {
-  font-size: 20px;
-  line-height: 20px;
-  color: #14dbfc;
-  font-weight: 700;
-  font-family: "oswald";
+    font-size: 20px;
+    line-height: 20px;
+    color: #14dbfc;
+    font-weight: 700;
+    font-family: "oswald";
 }
+
 .choose-us-card-content {
-  font-size: 14px;
-  line-height: 20px;
-  color: #ffffff;
-  font-weight: 500;
-  font-family: "albertSans";
-  padding-top: 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "albertSans";
+    padding-top: 12px;
+}
+
+.video-game-art {
+    background: url('/assets/images/game-portfolio/our-video-game-art-bg.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 80px;
+}
+
+.video-game-title {
+    font-size: 62px;
+    line-height: 80px;
+    color: #ffffff;
+    font-family: "a25";
+    text-align: center;
+}
+
+.video-game-description {
+    font-size: 16px;
+    line-height: 24px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: "albertSans";
+    text-align: center;
+    padding-top: 40px;
+}
+
+
+.video-game-section {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin-top: 40px;
+}
+
+.video-img1 {
+    height: 500px;
+    width: 900px;
+}
+.video-game-card{
+    position: absolute;
+    z-index: 1;
+    height: 500px;
+    width: 900px;
+    display: flex;   
+}
+
+.video-game-boy{
+    height: 400px;
+    width: auto;
 }
