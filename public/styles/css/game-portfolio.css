@@ -982,13 +982,17 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 40px;
 }
 
 .video-game-boy {
     height: 450px;
     width: auto;
 }
-
+.dragon-img {
+    height: 380px;
+    width: auto;
+}
 .concept-title {
     font-size: 40px;
     line-height: 50px;
@@ -1033,6 +1037,7 @@ p {
     border: 3px solid #701f71;
     border-bottom-right-radius: 40px;
     padding: 30px;
+    width: 300px;
 }
 
 .video-card-title {
@@ -1055,4 +1060,32 @@ p {
     font-family: "Albert Sans Roman";
     text-align: center;
     padding-top: 30px;
+}
+.modeling-section{
+    background: url('/assets/images/game-portfolio/3d-modeling-bg.webp');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 80px;
+}
+.modeling-title{
+    font-size: 62px;
+    line-height: 80px;
+    color: #ffffff;
+    font-family: "a25";
+    text-align: center;
+}
+.modeling-text{
+    margin-right: 120px;
+}
+.modeling-spacing{
+    margin-top: 50px !important;
+}
+.full-width{
+    width: 100% !important;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+.modeling-padding{
+    padding-top: 0px !important;
 }
