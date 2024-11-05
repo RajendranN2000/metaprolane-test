@@ -13,9 +13,21 @@
     src: url("/assets/fonts/A25-SQUANOVA.ttf");
 }
 
+
 .a25-bold {
     font-family: "a25";
     font-weight: 800;
+    line-height: 103px;
+}
+
+@font-face {
+    font-family: "Arial";
+    src: url('/assets/fonts/arial.ttf');
+}
+
+.Arial {
+    font-family: "Arial";
+    font-weight: 500;
     line-height: 103px;
 }
 
@@ -970,7 +982,7 @@ p {
     margin-top: 40px;
 }
 
-.integration-card{
+.integration-card {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1148,9 +1160,89 @@ p {
     margin-top: 50px;
 }
 
-.integration-card{
+.integration-card {
     margin-left: -50px;
     display: flex;
     gap: 50px;
     margin-top: 50px;
+}
+
+.game-develoment-section {
+    background-color: white;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-develoment-title {
+    font-size: 42px;
+    line-height: 46px;
+    color: #1c1a32;
+    font-family: "a25";
+    text-align: center;
+    font-weight: 700;
+    line-height: 60px;
+    padding-top: 80px;
+}
+
+.game-development-card-row {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1000px;
+    padding-top: 50px;
+}
+
+.game-development-card {
+    width: 300px;
+    height: 230px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-development-number {
+    font-size: 158px;
+    line-height: 158px;
+    text-transform: uppercase;
+    color: #e2cdff;
+    font-weight: bold;
+    font-family: "Arial";
+}
+
+.game-development-data-card {
+    position: absolute;
+    width: 195px;
+    height: 230px;
+    right: 0;
+    top: 0;
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background-color: #ffffff;
+    border: 3px solid #4b515b;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-development-data-title {
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "oswald";
+}
+
+.game-development-data-content {
+    font-size: 10px;
+    line-height: 16px;
+    color: #030508;
+    font-weight: 500;
+    font-family: "albertSans";
+    padding-top: 10px;
 }
