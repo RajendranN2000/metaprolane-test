@@ -962,10 +962,18 @@ p {
 }
 
 
-.video-game-section,.UI-UX-section {
+.video-game-section,
+.UI-UX-section {
     display: flex;
     justify-content: center;
     position: relative;
+    margin-top: 40px;
+}
+
+.integration-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-top: 40px;
 }
 
@@ -989,10 +997,12 @@ p {
     height: 450px;
     width: auto;
 }
+
 .dragon-img {
     height: 380px;
     width: auto;
 }
+
 .concept-title {
     font-size: 40px;
     line-height: 50px;
@@ -1013,7 +1023,8 @@ p {
     margin-left: 120px;
 }
 
-.video-game-list-outer,.UI-UX-list-outer {
+.video-game-list-outer,
+.UI-UX-list-outer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1051,7 +1062,8 @@ p {
     align-items: center;
     justify-content: center;
 }
-.UI-card-title{
+
+.UI-card-title {
     font-size: 24px;
     line-height: 32px;
     color: #eb0b7c;
@@ -1071,14 +1083,16 @@ p {
     text-align: center;
     padding-top: 30px;
 }
-.modeling-section{
+
+.modeling-section {
     background: url('/assets/images/game-portfolio/3d-modeling-bg.webp');
     background-repeat: no-repeat;
     background-size: 100% 100%;
     padding-left: 80px;
     padding-right: 80px;
 }
-.vfx-section{
+
+.vfx-section {
     background: url('/assets/images/game-portfolio/VFX-bg.webp');
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1086,25 +1100,57 @@ p {
     padding-right: 80px;
     padding-bottom: 80px;
 }
-.modeling-title{
+
+.modeling-title {
     font-size: 62px;
     line-height: 80px;
     color: #ffffff;
     font-family: "a25";
     text-align: center;
 }
-.modeling-text{
+
+.modeling-text {
     margin-right: 120px;
 }
-.modeling-spacing{
+
+.modeling-spacing {
     margin-top: 50px !important;
 }
-.full-width{
+
+.full-width {
     width: 100% !important;
     display: flex;
     gap: 40px;
     align-items: center;
 }
-.modeling-padding{
+
+.modeling-padding {
     padding-top: 0px !important;
+}
+
+.blockchain-integration-outer {
+    background-image: url('/assets/images/game-portfolio/blockchain-bg.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    margin-top: 50px;
+}
+
+.blockchain-integration-inner {
+    max-width: 1000px;
+    border-radius: 29px;
+    background-color: #190c26;
+    border: 3px solid #701f71;
+    margin-top: 50px;
+}
+
+.integration-card{
+    margin-left: -50px;
+    display: flex;
+    gap: 50px;
+    margin-top: 50px;
 }
