@@ -1204,7 +1204,7 @@ p {
 
 .game-development-card {
     width: 300px;
-    height: 230px;
+    height: 320px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1223,7 +1223,7 @@ p {
 .game-development-data-card {
     position: absolute;
     width: 240px;
-    height: 230px;
+    height: 320px;
     right: 0;
     top: 0;
     border-top-right-radius: 50px;
@@ -1238,16 +1238,16 @@ p {
 }
 
 .game-development-data-title {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 28px;
     color: #000000;
     font-weight: 600;
     font-family: "oswald";
 }
 
 .game-development-data-content {
-    font-size: 10px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 20px;
     color: #030508;
     font-weight: 500;
     font-family: "albertSans";
