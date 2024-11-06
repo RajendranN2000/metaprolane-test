@@ -296,9 +296,14 @@ p {
     position: relative;
     padding-top: 100px;
     /* padding-bottom: 800px; */
-    height: 108rem !important;
+    height: 112rem !important;
 }
-
+@media screen and (min-width:1500px) {
+    
+.endtoend-bg {
+    height: 120rem !important;
+}
+}
 .end-to-end-title {
     font-size: 62px;
     font-family: "a25";
@@ -558,7 +563,8 @@ p {
 
 .game-content-card {
     border-radius: 29px;
-    min-height: 110px;
+    /* max-width: 600px; */
+    min-height: 150px;
     background-color: #f4edff;
     padding: 20px;
     display: flex;
@@ -719,6 +725,7 @@ p {
 
 .game-outer-layer,
 .game-outer-layer-2 {
+    width: 100%;
     position: absolute;
     top: 0;
 }
@@ -827,8 +834,8 @@ p {
         flex-direction: row;
         gap: 40px;
         justify-content: space-between;
-        padding-left: 10 0px;
-        padding-right: 100px;
+        padding-left: 0px;
+        padding-right: 0px;
         padding-top: 80px;
         max-width: 1100px;
     }
@@ -875,7 +882,7 @@ p {
     }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1400px) and (max-width:1500px) {
     .immersive-game-row {
         padding-left: 200px !important;
         padding-right: 200px !important;
@@ -1215,7 +1222,7 @@ p {
 
 .game-development-data-card {
     position: absolute;
-    width: 195px;
+    width: 240px;
     height: 230px;
     right: 0;
     top: 0;
@@ -1245,4 +1252,33 @@ p {
     font-weight: 500;
     font-family: "albertSans";
     padding-top: 10px;
+}
+.portfolio-faq{
+    display: flex;
+    justify-content: center;
+}
+
+.bg-vectors {
+    align-items: flex-start;
+    display: grid
+}
+
+section.apply-now {
+    padding: 20px 20px 75px;
+    background: #1f1e2e;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.bg-vectors img{
+    width: 100%;
+    height: auto;
+}
+@media (min-width: 1200px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1140px !important;
+    }
+}
+.game-development-service-page{
+    background-color: #1C1931;
 }
