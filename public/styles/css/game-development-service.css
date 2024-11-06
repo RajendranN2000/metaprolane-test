@@ -49,11 +49,383 @@ p {
     font-size: 25px;
     font-family: "albertSans";
     line-height: 46px;
+    font-weight: 500;
 }
 
-.top-banner img {
-    width: 100%;
+@media screen and (min-width: 1024px) and (max-width: 1400px) {
+    .game-development {
+        background-image: url("/assets/images/game-portfolio/expert_game.webp") !important;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .thunder-img1 {
+        height: 150px !important;
+        width: auto;
+    }
+
+    .game-development-outer {
+        padding-top: 200px !important;
+        padding-left: 100px !important;
+        padding-right: 100px !important;
+    }
 }
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+    .top-banner img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .top-banner-mobile img {
+        width: 100%;
+        height: auto;
+        display: none;
+    }
+
+    .a25-bold {
+        font-family: "a25";
+        font-weight: 800;
+        line-height: 64px !important;
+    }
+
+    .premier-text {
+        text-align: center;
+        font-size: 45px !important;
+        color: white;
+        text-transform: uppercase;
+        padding-top: 40px !important;
+    }
+
+    p {
+        font-size: 14px !important;
+        font-family: "albertSans";
+        line-height: 24px !important;
+    }
+
+    .premier-content {
+        max-width: 70% !important;
+    }
+
+    .thunder-img1 {
+        height: 150px !important;
+        width: auto;
+    }
+
+    .expert-img {
+        height: 200px !important;
+        width: auto;
+    }
+
+    .expert-text {
+        font-size: 24px !important;
+        text-transform: uppercase;
+    }
+
+    .text-large {
+        font-size: 44px !important;
+    }
+
+    .game-development-outer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 150px !important;
+        padding-left: 80px !important;
+        padding-right: 80px !important;
+        padding-bottom: 60px !important;
+    }
+
+    .btn-bg {
+        height: 70px !important;
+        width: 300px !important;
+        margin-top: 0px !important;
+        font-size: 14px !important;
+    }
+
+    .expert-text {
+        font-family: "a25";
+        font-weight: 800;
+        line-height: 40px !important;
+    }
+    .end-to-end-title {
+        font-size: 44px !important;
+        font-family: "a25";
+        color: white;
+        padding-top: 20px !important;
+        text-align: center !important;
+    }
+    .game-card-outer {
+        width: 250px !important;
+    }
+    .endtoend-bg {
+        align-items: center !important;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        position: relative;
+        padding-top: 40px !important;
+        /* padding-bottom: 800px; */
+        height: 80rem !important;
+    }
+    .game-cards {
+        display: flex;
+        flex-direction: row;
+        gap: 50px;
+        padding-top: 50px !important;
+    }
+    .mobile-game-content {
+        font-size: 14px !important;
+        line-height: 20px !important;
+        padding-top: 8px !important;
+    }
+    .mobile-game-title {
+        font-size: 24px !important;
+        line-height: 32px !important;
+    }
+    .right-thunder {
+        height: 200px !important;
+        width: auto;
+    }
+    
+}
+
+@media screen and (min-width:1024px) {
+    .top-banner img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .top-banner-mobile img {
+        width: 100%;
+        height: auto;
+        display: none;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .top-banner-mobile img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-top: 32px;
+    }
+
+    .top-banner img {
+        width: 100%;
+        height: auto;
+        display: none;
+    }
+
+    .premier-text {
+        text-align: center;
+        font-size: 25px !important;
+        color: white;
+        text-transform: uppercase;
+        padding-top: 20px !important;
+        font-family: 'a25';
+        line-height: 32px !important;
+    }
+
+    .premier-content {
+        color: white;
+        max-width: 100% !important;
+        text-align: center;
+        padding-top: 8px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    p {
+        font-size: 13px !important;
+        font-family: "albertSans";
+        line-height: 25px !important;
+    }
+
+    .thunder-img1 {
+        height: 100px !important;
+        width: auto;
+    }
+
+    .game-development-outer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 200px;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-bottom: 30px !important;
+    }
+
+    .game-development-inner {
+        display: flex;
+        flex-direction: column !important;
+        align-items: center;
+        gap: 20px !important;
+    }
+
+    .expert-text {
+        font-size: 22px !important;
+        line-height: 29px !important;
+        text-align: center !important;
+
+    }
+
+    .expert-img {
+        height: 200px !important;
+        width: auto;
+    }
+
+    .text-large {
+        font-size: 46px !important;
+    }
+
+    .a25-bold {
+        line-height: 24px !important;
+    }
+
+    .btn-bg {
+        background-size: 100% 100% !important;
+        font-size: 14px !important;
+        font-family: "oswald" !important;
+        height: 50px !important;
+        width: 200px !important;
+        margin-top: 0px !important;
+    }
+
+    p {
+        margin-top: 0;
+        margin-bottom: 0rem !important;
+    }
+
+    .game-development-outer {
+        padding-top: 30px !important;
+    }
+
+    .video-game-art {
+        padding: 20px !important;
+    }
+
+    .video-game-title {
+        font-size: 15px !important;
+        line-height: 20px !important;
+        padding-top: 12px;
+    }
+
+    .video-game-description {
+        font-size: 14px !important;
+        line-height: 20px !important;
+        padding-top: 12px !important;
+    }
+
+    .video-game-card {
+        height: 450px;
+        width: 100% !important;
+    }
+
+    .concept-title {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+
+    .concept-text {
+        margin-left: 20px !important;
+    }
+
+    .video-game-boy {
+        height: 130px !important;
+        width: auto;
+    }
+
+    .game-development {
+        background-image: url("/assets/images/game-portfolio/expert-mobile-game.webp") !important;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
+    .video-game-card {
+        position: absolute;
+        z-index: 1;
+        height: 320px !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px !important;
+    }
+
+    .video-img1 {
+        height: 320px !important;
+        width: 100% !important;
+    }
+
+    .concept-description {
+        padding-top: 8px !important;
+    }
+
+    .endtoend-bg {
+        background-image: url("/assets/images/game-portfolio/end-to-end-mobile-bg.webp") !important;
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+        padding-top: 30px !important;
+        height: 90rem !important;
+        align-items: center !important;
+    }
+
+    .end-to-end-title {
+        font-size: 18px !important;
+        line-height: 28px !important;
+        text-align: center !important;
+        padding-top: 20px !important;
+    }
+
+    .game-cards {
+        display: flex;
+        flex-direction: column !important;
+        gap: 60px !important;
+        padding-bottom: 30px !important;
+        padding-top: 30px !important;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
+    }
+
+    .game-card-outer {
+        background-image: linear-gradient(to bottom, #190c26 50%, transparent);
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        padding: 20px;
+        padding-bottom: 50px;
+        position: relative;
+        width: 100% !important;
+    }
+
+    .mobile-game-title {
+        font-size: 13px !important;
+        line-height: 16px !important;
+    }
+
+    .mobile-game-content {
+        font-size: 9px !important;
+        line-height: 12px !important;
+    }
+
+    .game-bottom-img {
+        height: 80px !important;
+        width: 80px !important;
+    }
+
+    .right-thunder {
+        height: 150px !important;
+        width: auto;
+    }
+
+    .game-card-outer-1 {
+       max-width: 300px !important;
+    }
+
+}
+
 
 .premier-game {
     display: flex;
@@ -67,6 +439,7 @@ p {
     color: white;
     text-transform: uppercase;
     padding-top: 100px;
+    font-family: 'a25';
 }
 
 .premier-content {
@@ -90,7 +463,7 @@ p {
     }
 
     .thunder-img1 {
-        height: 230px !important;
+        height: 150px !important;
         width: auto;
     }
 
@@ -119,10 +492,7 @@ p {
     gap: 40px;
 }
 
-.expert-text {
-    font-size: 65px;
-    text-transform: uppercase;
-}
+
 
 .text-large {
     font-size: 103px;
@@ -133,7 +503,14 @@ p {
     width: auto;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1500px) {
+.expert-text {
+    font-size: 65px;
+    text-transform: uppercase;
+    font-family: 'a25';
+    font-weight: 700;
+}
+
+@media screen and (min-width: 1024px) and (max-width:1440px) {
     .premier-text {
         text-align: center;
         font-size: 65px;
@@ -156,7 +533,7 @@ p {
     }
 
     .expert-text {
-        font-size: 55px;
+        font-size: 40px;
         text-transform: uppercase;
     }
 
@@ -234,6 +611,7 @@ p {
 
 .btn-bg {
     background-image: url("/assets/images/game-portfolio/button.webp");
+    background-size: 100% 100%;
     color: white;
     font-size: 35px;
     font-family: "oswald" !important;
@@ -296,14 +674,16 @@ p {
     position: relative;
     padding-top: 100px;
     /* padding-bottom: 800px; */
-    height: 112rem !important;
+    height: 112rem;
 }
+
 @media screen and (min-width:1500px) {
-    
-.endtoend-bg {
-    height: 120rem !important;
+
+    .endtoend-bg {
+        height: 120rem !important;
+    }
 }
-}
+
 .end-to-end-title {
     font-size: 62px;
     font-family: "a25";
@@ -1253,7 +1633,8 @@ p {
     font-family: "albertSans";
     padding-top: 10px;
 }
-.portfolio-faq{
+
+.portfolio-faq {
     display: flex;
     justify-content: center;
 }
@@ -1270,15 +1651,23 @@ section.apply-now {
     display: flex;
     justify-content: center;
 }
-.bg-vectors img{
+
+.bg-vectors img {
     width: 100%;
     height: auto;
 }
+
 @media (min-width: 1200px) {
-    .container, .container-lg, .container-md, .container-sm, .container-xl {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
         max-width: 1140px !important;
     }
 }
-.game-development-service-page{
+
+.game-development-service-page {
     background-color: #1C1931;
 }
