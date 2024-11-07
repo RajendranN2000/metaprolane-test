@@ -214,7 +214,7 @@ p {
         width: auto;
     }
     .video-game-card {
-        width: 100% !important;
+        width: 610px !important;
         gap: 30px !important;
         height: 400px !important;
     }
@@ -247,7 +247,10 @@ p {
     .video-card-content {
         padding-top: 20px !important;
     }
- 
+    .dragon-img {
+        height: 280px !important;
+        width: auto;
+    }
 }
 
 @media screen and (min-width:1024px) {
