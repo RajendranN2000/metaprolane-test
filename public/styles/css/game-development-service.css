@@ -149,6 +149,7 @@ p {
         font-weight: 800;
         line-height: 40px !important;
     }
+
     .end-to-end-title {
         font-size: 44px !important;
         font-family: "a25";
@@ -156,9 +157,11 @@ p {
         padding-top: 20px !important;
         text-align: center !important;
     }
+
     .game-card-outer {
         width: 250px !important;
     }
+
     .endtoend-bg {
         align-items: center !important;
         padding-right: 20px !important;
@@ -168,26 +171,79 @@ p {
         /* padding-bottom: 800px; */
         height: 80rem !important;
     }
+
     .game-cards {
         display: flex;
         flex-direction: row;
         gap: 50px;
         padding-top: 50px !important;
     }
+
     .mobile-game-content {
         font-size: 14px !important;
         line-height: 20px !important;
         padding-top: 8px !important;
     }
+
     .mobile-game-title {
         font-size: 24px !important;
         line-height: 32px !important;
     }
+
     .right-thunder {
         height: 200px !important;
         width: auto;
     }
-    
+
+    .video-game-mobile {
+        display: none !important;
+    }
+    .video-game-title {
+        font-size: 50px !important;
+        line-height: 60px !important;
+        color: #ffffff;
+        font-family: "a25";
+        text-align: center;
+    }
+    .video-game-description {
+        font-size: 14px !important;
+        padding-top: 18px !important;
+    }
+    .video-game-boy {
+        height: 300px !important;
+        width: auto;
+    }
+    .video-game-card {
+        width: 100% !important;
+        gap: 30px !important;
+        height: 400px !important;
+    }
+    .concept-text {
+        margin-left: 30px !important;
+    }
+    .video-img1 {
+        height: 400px !important;
+        width: 900px;
+    }
+    .concept-title {
+        font-size: 32px !important;
+        line-height: 40px !important;
+    }
+    .video-game-inner-card {
+        background-color: #190c26;
+        border: 3px solid #701f71;
+        border-bottom-right-radius: 40px;
+        padding: 20px !important;
+        width: 200px !important;
+    }
+    .video-card-title {
+        font-size: 18px !important;
+        line-height: 24px !important;
+        height: 44px !important;
+    }
+    .video-card-content {
+        padding-top: 20px !important;
+    }
 }
 
 @media screen and (min-width:1024px) {
@@ -195,6 +251,10 @@ p {
         width: 100%;
         height: auto;
         display: block;
+    }
+
+    .video-game-mobile {
+        display: none !important;
     }
 
     .top-banner-mobile img {
@@ -305,22 +365,24 @@ p {
 
     .video-game-art {
         padding: 20px !important;
+        background-size: 100% !important;
     }
 
     .video-game-title {
-        font-size: 15px !important;
-        line-height: 20px !important;
+        font-size: 25px !important;
+        line-height: 28px !important;
         padding-top: 12px;
     }
 
     .video-game-description {
-        font-size: 14px !important;
-        line-height: 20px !important;
+        font-size: 13px !important;
+        line-height: 21px !important;
         padding-top: 12px !important;
     }
 
+
     .video-game-card {
-        height: 450px;
+        height: 300px;
         width: 100% !important;
     }
 
@@ -331,11 +393,12 @@ p {
 
     .concept-text {
         margin-left: 20px !important;
+        margin-right: 20px !important;
     }
 
     .video-game-boy {
-        height: 130px !important;
-        width: auto;
+        height: auto !important;
+        width: 280px !important;
     }
 
     .game-development {
@@ -347,21 +410,25 @@ p {
     .video-game-card {
         position: absolute;
         z-index: 1;
-        height: 320px !important;
+        height: 300px !important;
         width: 100% !important;
         display: flex;
         justify-content: space-between;
         align-items: center;
         gap: 12px !important;
+        width: 300px !important;
     }
 
     .video-img1 {
-        height: 320px !important;
-        width: 100% !important;
+        height: 300px !important;
+        width: 300px !important;
     }
 
     .concept-description {
-        padding-top: 8px !important;
+        font-size: 13px !important;
+        line-height: 21px !important;
+        text-align: center !important;
+        padding-top: 16px !important;
     }
 
     .endtoend-bg {
@@ -421,11 +488,49 @@ p {
     }
 
     .game-card-outer-1 {
-       max-width: 300px !important;
+        max-width: 300px !important;
     }
 
+    .video-game-mobile {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .video-game-web {
+        display: none !important;
+    }
+
+    .video-game-section,
+    .UI-UX-section {
+        margin-top: 0px !important;
+    }
+    .concept-title {
+        font-size: 25px !important;
+        line-height: 28px !important;
+        text-align: center !important;
+    }
+    .video-game-row {
+        display: flex;
+        flex-direction: column !important;
+        gap: 30px !important;
+        width: 100%;
+        padding-bottom: 30px !important;
+    }
+    .video-card-title {
+        font-size: 30px !important;
+        line-height: 40px !important;
+    }
+    .video-card-content {
+        font-size: 15px !important;
+        line-height: 24px !important;
+        padding-top: 24px !important;
+    }
 }
 
+.video-game-web {
+    display: block;
+}
 
 .premier-game {
     display: flex;
