@@ -275,6 +275,7 @@ p {
         margin-top: 0px !important;
         padding: 30px !important;
     }
+
     .recent-launch-title {
         font-size: 50px !important;
         line-height: 50px !important;
@@ -283,15 +284,18 @@ p {
         text-align: center;
         margin-top: 20px !important;
     }
+
     .right-thunder {
         height: 150px !important;
         width: auto;
     }
+
     .right-thunder1-section {
         position: absolute;
         bottom: 40px !important;
         right: 0;
     }
+
     .recent-game-card {
         width: 610px !important;
         border-radius: 30px !important;
@@ -299,38 +303,46 @@ p {
         padding: 30px !important;
         gap: 30px !important;
     }
+
     .recent-game-img1 {
         width: 200px !important;
         height: 250px !important;
     }
+
     .recent-game-img2 {
         width: auto;
         height: 50px !important;
     }
+
     .recent-game-inner {
         position: relative;
         height: 270px !important;
     }
+
     .recent-game-title {
         font-size: 40px !important;
         line-height: 50px !important;
         color: #21cef4;
         font-family: "a25" !important;
     }
+
     .recent-game-content {
         font-size: 16px !important;
         line-height: 24px !important;
         padding-top: 12px !important;
     }
+
     .recent-icon-size {
         height: 40px !important;
         width: auto;
     }
+
     .recent-icon {
         display: flex;
         gap: 20px !important;
         padding-top: 20px !important;
     }
+
     .medium-btn-bg {
         background-image: url('/assets/images/game-portfolio/button.webp');
         font-size: 16px !important;
@@ -339,6 +351,7 @@ p {
         width: 200px !important;
         margin-top: 20px !important;
     }
+
     .game-development-card {
         width: 200px !important;
         height: 260px !important;
@@ -347,6 +360,7 @@ p {
         flex-direction: column;
         justify-content: center;
     }
+
     .game-development-data-card {
         position: absolute;
         width: 173px !important;
@@ -358,6 +372,7 @@ p {
         padding-left: 16px !important;
         padding-right: 16px !important;
     }
+
     .game-development-number {
         font-size: 70px !important;
         line-height: 80px;
@@ -366,21 +381,127 @@ p {
         font-weight: bold;
         font-family: "Arial";
     }
+
     .game-development-data-title {
         font-size: 16px !important;
         line-height: 20px !important;
     }
+
     .game-development-data-content {
         font-size: 10px !important;
         line-height: 16px !important;
         padding-top: 6px !important;
     }
+
     .game-development-card-row {
         display: flex;
         flex-direction: row;
         gap: 20px !important;
         padding-top: 30px !important;
     }
+
+    .man-img1 {
+        height: 500px !important;
+        width: auto;
+    }
+
+    .game-square-img {
+        height: 100px !important;
+        width: auto;
+    }
+
+    .game-development-row {
+        margin-left: 50px !important;
+        gap: 20px !important;
+    }
+
+    .game-card-title {
+        font-size: 14px !important;
+        line-height: 12px !important;
+    }
+
+    .game-card-text {
+        font-size: 10px !important;
+        line-height: 13px !important;
+        color: #1c1a32;
+        font-weight: 600;
+        font-family: "albertSans";
+        padding-top: 8px !important;
+    }
+
+    .game-content-card {
+        border-radius: 20px !important;
+        min-height: 100px !important;
+        background-color: #f4edff;
+        padding: 16px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .game-layer,
+    .game-layer-2 {
+        position: relative;
+        height: 760px !important;
+    }
+
+    .game-development-row-right {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 30px;
+        width: 60%;
+        align-items: center;
+        margin-top: 30px;
+        margin-right: 50px !important;
+    }
+
+    .game-right-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding-top: 0px !important;
+        padding-bottom: 80px;
+    }
+
+    .feature-title {
+        font-size: 42px !important;
+        padding-top: 60px !important;
+    }
+
+    .line-section {
+        width: 600px !important;
+        margin-top: 40px;
+    }
+
+    .first-line {
+        width: 500px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        font-size: 16px !important;
+    }
+
+    .last-line {
+        width: 550px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        font-size: 16px !important;
+    }
+
+    .curve-right-line {
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        font-size: 16px !important;
+        padding-right: 20px;
+    }
+    .curve-left-line {
+        padding-top: 12px !important;
+        padding-bottom: 16px !important;
+        font-size: 16px !important;
+    }
+    .unique-features {
+        padding-bottom: 70px !important;
+    }
+
 }
 
 @media screen and (min-width:1024px) {
@@ -797,6 +918,7 @@ p {
         gap: 20px !important;
         padding-top: 16px !important;
     }
+
     .medium-btn-bg {
         background-image: url('/assets/images/game-portfolio/button.webp');
         font-size: 12px !important;
@@ -805,11 +927,13 @@ p {
         width: 160px !important;
         margin-top: 16px !important;
     }
-    .recent-game-center{
+
+    .recent-game-center {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .comprehensive-title {
         font-size: 22px !important;
         line-height: 30px !important;
@@ -821,10 +945,12 @@ p {
         padding-left: 16px !important;
         padding-right: 16px !important;
     }
+
     .comprehensive-game {
         position: relative;
         background: white;
     }
+
     .comprehensive-description {
         font-size: 12px !important;
         line-height: 17px !important;
@@ -832,10 +958,12 @@ p {
         padding-left: 16px !important;
         padding-right: 16px !important;
     }
+
     .man-img1 {
         height: auto !important;
         width: 300px !important;
     }
+
     .game-development-row {
         display: flex;
         flex-direction: row;
@@ -845,14 +973,17 @@ p {
         margin-top: 30px !important;
         margin-left: 0px !important;
     }
+
     .game-square-img {
         height: 70px !important;
         width: auto;
     }
+
     .game-card-title {
         font-size: 11px !important;
         line-height: 15px !important;
     }
+
     .game-content-card {
         border-radius: 15px !important;
         /* max-width: 600px; */
@@ -863,21 +994,27 @@ p {
         flex-direction: column;
         justify-content: center;
     }
+
     .game-card-text {
         font-size: 6px !important;
         line-height: 9px !important;
         padding-top: 8px !important;
     }
-    .game-outer-layer, .game-outer-layer-2 {
+
+    .game-outer-layer,
+    .game-outer-layer-2 {
         width: 100%;
         position: initial !important;
         top: 0;
         padding: 16px !important;
     }
-    .game-layer, .game-layer-2 {
+
+    .game-layer,
+    .game-layer-2 {
         position: relative;
         height: auto !important;
     }
+
     .game-development-row-right {
         display: flex;
         flex-direction: row-reverse;
@@ -887,11 +1024,13 @@ p {
         margin-top: 20px !important;
         margin-right: 0px !important;
     }
+
     .game-develoment-title {
         font-size: 22px !important;
         line-height: 30px !important;
         padding-top: 30px !important;
     }
+
     .game-develoment-section {
         background-color: white;
         padding-top: 50px;
@@ -899,6 +1038,7 @@ p {
         padding-left: 16px !important;
         padding-right: 16px !important;
     }
+
     .game-development-card-row {
         display: flex;
         flex-direction: column !important;
@@ -906,6 +1046,67 @@ p {
         max-width: 300px !important;
         padding-top: 30px !important;
     }
+
+    .game-right-cards {
+        padding-bottom: 40px !important;
+    }
+
+    .feature-title {
+        font-size: 19px !important;
+        line-height: 26px !important;
+        padding-top: 40px !important;
+    }
+
+    .first-line {
+        width: 250px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        border-top-left-radius: 29px;
+        border-bottom-left-radius: 29px;
+        background-image: linear-gradient(to right, #190c26 70%, transparent);
+        border-top: 3px solid #701f71;
+        border-bottom: 3px solid #701f71;
+        border-left: 3px solid #701f71;
+        font-size: 10px !important;
+        color: #ffffff;
+        font-weight: 500;
+        font-family: "albertSans";
+        padding-left: 16px !important;
+        position: relative;
+    }
+
+    .line-section {
+        width: 300px !important;
+        margin-top: 30px;
+    }
+
+    .curve-right-line {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        font-size: 10px !important;
+        padding-right: 16px !important;
+    }
+
+    .curve-left-line {
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        font-size: 10px !important;
+        padding-left: 16px !important;
+    }
+
+    .last-line {
+        margin-top: -3px;
+        width: 250px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+        font-size: 10px !important;
+        padding-left: 16px !important;
+    }
+
+    .unique-features {
+        padding-bottom: 50px !important;
+    }
+
 }
 
 .video-game-web {
