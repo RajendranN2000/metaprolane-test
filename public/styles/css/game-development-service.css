@@ -339,6 +339,48 @@ p {
         width: 200px !important;
         margin-top: 20px !important;
     }
+    .game-development-card {
+        width: 200px !important;
+        height: 260px !important;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .game-development-data-card {
+        position: absolute;
+        width: 173px !important;
+        height: 260px !important;
+        border-top-right-radius: 40px !important;
+        border-bottom-right-radius: 40px !important;
+        background-color: #ffffff;
+        border: 3px solid #4b515b;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    .game-development-number {
+        font-size: 70px !important;
+        line-height: 80px;
+        text-transform: uppercase;
+        color: #e2cdff;
+        font-weight: bold;
+        font-family: "Arial";
+    }
+    .game-development-data-title {
+        font-size: 16px !important;
+        line-height: 20px !important;
+    }
+    .game-development-data-content {
+        font-size: 10px !important;
+        line-height: 16px !important;
+        padding-top: 6px !important;
+    }
+    .game-development-card-row {
+        display: flex;
+        flex-direction: row;
+        gap: 20px !important;
+        padding-top: 30px !important;
+    }
 }
 
 @media screen and (min-width:1024px) {
@@ -767,6 +809,102 @@ p {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+    .comprehensive-title {
+        font-size: 22px !important;
+        line-height: 30px !important;
+        color: #1c1a32;
+        font-family: "a25";
+        text-align: center;
+        font-weight: 700;
+        padding-top: 0px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    .comprehensive-game {
+        position: relative;
+        background: white;
+    }
+    .comprehensive-description {
+        font-size: 12px !important;
+        line-height: 17px !important;
+        padding-top: 8px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    .man-img1 {
+        height: auto !important;
+        width: 300px !important;
+    }
+    .game-development-row {
+        display: flex;
+        flex-direction: row;
+        gap: 20px !important;
+        width: 100% !important;
+        align-items: center;
+        margin-top: 30px !important;
+        margin-left: 0px !important;
+    }
+    .game-square-img {
+        height: 70px !important;
+        width: auto;
+    }
+    .game-card-title {
+        font-size: 11px !important;
+        line-height: 15px !important;
+    }
+    .game-content-card {
+        border-radius: 15px !important;
+        /* max-width: 600px; */
+        min-height: 70px !important;
+        background-color: #f4edff;
+        padding: 12px !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .game-card-text {
+        font-size: 6px !important;
+        line-height: 9px !important;
+        padding-top: 8px !important;
+    }
+    .game-outer-layer, .game-outer-layer-2 {
+        width: 100%;
+        position: initial !important;
+        top: 0;
+        padding: 16px !important;
+    }
+    .game-layer, .game-layer-2 {
+        position: relative;
+        height: auto !important;
+    }
+    .game-development-row-right {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 20px !important;
+        width: 100% !important;
+        align-items: center;
+        margin-top: 20px !important;
+        margin-right: 0px !important;
+    }
+    .game-develoment-title {
+        font-size: 22px !important;
+        line-height: 30px !important;
+        padding-top: 30px !important;
+    }
+    .game-develoment-section {
+        background-color: white;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+    .game-development-card-row {
+        display: flex;
+        flex-direction: column !important;
+        gap: 40px !important;
+        max-width: 300px !important;
+        padding-top: 30px !important;
     }
 }
 
