@@ -223,7 +223,7 @@ p {
     }
     .video-img1 {
         height: 400px !important;
-        width: 100% !important;
+        width: 610px !important;
     }
     .modeling-text {
         margin-right: 30px !important;
@@ -548,6 +548,11 @@ p {
         align-items: center;
         flex-direction: column !important;
         gap: 20px !important;
+    }
+    .vfx-section {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-bottom: 30px !important;
     }
 }
 
