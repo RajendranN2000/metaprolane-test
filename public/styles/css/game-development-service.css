@@ -198,6 +198,7 @@ p {
     .video-game-mobile {
         display: none !important;
     }
+
     .video-game-title {
         font-size: 50px !important;
         line-height: 60px !important;
@@ -205,33 +206,41 @@ p {
         font-family: "a25";
         text-align: center;
     }
+
     .video-game-description {
         font-size: 14px !important;
         padding-top: 18px !important;
     }
+
     .video-game-boy {
         height: 300px !important;
         width: auto;
     }
+
     .video-game-card {
         width: 610px !important;
         gap: 30px !important;
         height: 400px !important;
     }
+
     .concept-text {
         margin-left: 30px !important;
     }
+
     .video-img1 {
         height: 400px !important;
         width: 610px !important;
     }
+
     .modeling-text {
         margin-right: 30px !important;
     }
+
     .concept-title {
         font-size: 32px !important;
         line-height: 40px !important;
     }
+
     .video-game-inner-card {
         background-color: #190c26;
         border: 3px solid #701f71;
@@ -239,27 +248,96 @@ p {
         padding: 20px !important;
         width: 200px !important;
     }
+
     .video-card-title {
         font-size: 18px !important;
         line-height: 24px !important;
         height: 44px !important;
     }
+
     .video-card-content {
         padding-top: 20px !important;
     }
+
     .dragon-img {
         height: 200px !important;
         width: auto;
     }
+
     .blockchain-integration-inner {
         max-width: 610px !important;
     }
+
     .integration-card {
         margin-left: 0px !important;
         display: flex;
         gap: 50px;
         margin-top: 0px !important;
         padding: 30px !important;
+    }
+    .recent-launch-title {
+        font-size: 50px !important;
+        line-height: 50px !important;
+        color: #ffffff;
+        font-family: "a25";
+        text-align: center;
+        margin-top: 20px !important;
+    }
+    .right-thunder {
+        height: 150px !important;
+        width: auto;
+    }
+    .right-thunder1-section {
+        position: absolute;
+        bottom: 40px !important;
+        right: 0;
+    }
+    .recent-game-card {
+        width: 610px !important;
+        border-radius: 30px !important;
+        margin-top: 40px !important;
+        padding: 30px !important;
+        gap: 30px !important;
+    }
+    .recent-game-img1 {
+        width: 200px !important;
+        height: 250px !important;
+    }
+    .recent-game-img2 {
+        width: auto;
+        height: 50px !important;
+    }
+    .recent-game-inner {
+        position: relative;
+        height: 270px !important;
+    }
+    .recent-game-title {
+        font-size: 40px !important;
+        line-height: 50px !important;
+        color: #21cef4;
+        font-family: "a25" !important;
+    }
+    .recent-game-content {
+        font-size: 16px !important;
+        line-height: 24px !important;
+        padding-top: 12px !important;
+    }
+    .recent-icon-size {
+        height: 40px !important;
+        width: auto;
+    }
+    .recent-icon {
+        display: flex;
+        gap: 20px !important;
+        padding-top: 20px !important;
+    }
+    .medium-btn-bg {
+        background-image: url('/assets/images/game-portfolio/button.webp');
+        font-size: 16px !important;
+        font-family: "oswald" !important;
+        height: 50px !important;
+        width: 200px !important;
+        margin-top: 20px !important;
     }
 }
 
@@ -408,7 +486,8 @@ p {
         line-height: 24px !important;
     }
 
-    .concept-text,.modeling-text {
+    .concept-text,
+    .modeling-text {
         margin-left: 20px !important;
         margin-right: 20px !important;
     }
@@ -500,7 +579,7 @@ p {
     }
 
     .right-thunder {
-        height: 150px !important;
+        height: 120px !important;
         width: auto;
     }
 
@@ -523,11 +602,13 @@ p {
     .UI-UX-section {
         margin-top: 0px !important;
     }
+
     .concept-title {
         font-size: 25px !important;
         line-height: 28px !important;
         text-align: center !important;
     }
+
     .video-game-row {
         display: flex;
         flex-direction: column !important;
@@ -536,15 +617,18 @@ p {
         width: 100%;
         padding-bottom: 30px !important;
     }
+
     .video-card-title {
         font-size: 30px !important;
         line-height: 40px !important;
     }
+
     .video-card-content {
         font-size: 15px !important;
         line-height: 24px !important;
         padding-top: 24px !important;
     }
+
     .modeling-section {
         background: none !important;
         background-repeat: no-repeat;
@@ -552,6 +636,7 @@ p {
         padding-left: 80px;
         padding-right: 80px;
     }
+
     .full-width {
         width: 300px !important;
         display: flex;
@@ -559,11 +644,13 @@ p {
         flex-direction: column !important;
         gap: 20px !important;
     }
+
     .vfx-section {
         padding-left: 0px !important;
         padding-right: 0px !important;
         padding-bottom: 30px !important;
     }
+
     .integration-card {
         margin-left: 0px !important;
         display: flex;
@@ -572,7 +659,8 @@ p {
         margin-top: 0px !important;
         padding: 20px !important;
     }
-    .metaverse-card{
+
+    .metaverse-card {
         margin-left: 0px !important;
         display: flex;
         flex-direction: column-reverse !important;
@@ -580,10 +668,12 @@ p {
         margin-top: 0px !important;
         padding: 20px !important;
     }
+
     .dragon-img {
         height: auto !important;
-        width:150px !important;
+        width: 150px !important;
     }
+
     .blockchain-integration-outer {
         background-image: url('/assets/images/game-portfolio/white-bg-mobile.png') !important;
         padding-top: 30px !important;
@@ -592,8 +682,91 @@ p {
         padding-right: 20px;
         margin-top: 0px !important;
     }
+
     .blockchain-integration-inner {
         max-width: 300px !important;
+    }
+
+    .recent-launch-title {
+        font-size: 23px !important;
+        line-height: 25px !important;
+    }
+
+    .recent-launch-section {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+
+    }
+
+    .right-thunder1-section {
+        position: absolute;
+        bottom: 50px !important;
+        right: 0;
+    }
+
+    .recent-game-card {
+        width: 100% !important;
+        border-radius: 20px !important;
+        background-color: rgba(25, 12, 38, 0.9);
+        flex-direction: column !important;
+        padding: 20px !important;
+        gap: 30px !important;
+        width: 300px !important;
+        margin-top: 30px !important;
+    }
+
+    .recent-game-img1 {
+        width: 200px !important;
+        height: 230px !important;
+    }
+
+    .recent-game-inner {
+        position: relative;
+        height: 250px !important;
+    }
+
+    .recent-game-img2 {
+        width: auto;
+        height: 50px !important;
+    }
+
+    .recent-game-title {
+        font-size: 25px !important;
+        line-height: 25px !important;
+        font-family: "a25" !important;
+        text-align: center !important;
+    }
+
+    .recent-game-content {
+        font-size: 13px !important;
+        line-height: 21px !important;
+        text-align: center !important;
+        padding-top: 12px;
+    }
+
+    .recent-icon-size {
+        height: 30px !important;
+        width: auto;
+    }
+
+    .recent-icon {
+        display: flex;
+        justify-content: center !important;
+        gap: 20px !important;
+        padding-top: 16px !important;
+    }
+    .medium-btn-bg {
+        background-image: url('/assets/images/game-portfolio/button.webp');
+        font-size: 12px !important;
+        font-family: "oswald" !important;
+        height: 32px !important;
+        width: 160px !important;
+        margin-top: 16px !important;
+    }
+    .recent-game-center{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -1689,6 +1862,7 @@ p {
 .modeling-spacing {
     margin-top: 50px !important;
 }
+
 @media screen and (min-width:768px) {
     .full-width {
         width: 100% !important;
