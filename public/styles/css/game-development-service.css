@@ -918,9 +918,10 @@ p {
     }
 
     .recent-launch-section {
+        padding-bottom: 40px !important;
         padding-left: 16px !important;
         padding-right: 16px !important;
-
+        background-image: url('/assets/images/game-portfolio/our-recent-launches-mobile.webp') !important;
     }
 
     .right-thunder1-section {
@@ -937,22 +938,23 @@ p {
         padding: 20px !important;
         gap: 30px !important;
         width: 300px !important;
-        margin-top: 30px !important;
+        margin-top: 130px !important;
     }
 
     .recent-game-img1 {
-        width: 200px !important;
-        height: 230px !important;
+        width: 280px !important;
+        height: 300px !important;
     }
 
     .recent-game-inner {
         position: relative;
-        height: 250px !important;
+        height: 330px !important;
+        margin-top: -120px !important;
     }
 
     .recent-game-img2 {
         width: auto;
-        height: 50px !important;
+        height: 70px !important;
     }
 
     .recent-game-title {
@@ -977,7 +979,7 @@ p {
     .recent-icon {
         display: flex;
         justify-content: center !important;
-        gap: 20px !important;
+        gap: 14px !important;
         padding-top: 16px !important;
     }
 
@@ -1090,7 +1092,7 @@ p {
     .game-develoment-title {
         font-size: 25px !important;
         line-height: 33px !important;
-        padding-top: 30px !important;
+        padding-top: 0px !important;
     }
 
     .game-develoment-section {
@@ -1218,9 +1220,22 @@ p {
         width: auto;
         position: absolute;
         right: 0;
-        bottom: 20px !important;
     }
- 
+    .choose-us-section {
+        padding-top: 40px !important;
+        padding-bottom: 40px !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        flex-direction: column !important;
+    }
+    .choose-us-title {
+        font-size: 43px !important;
+        line-height: 49px !important;
+    }
+    .choose-us-left {
+        width: 100% !important;
+    }
+    
 }
 
 .video-game-web {
