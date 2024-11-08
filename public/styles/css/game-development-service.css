@@ -493,14 +493,77 @@ p {
         font-size: 16px !important;
         padding-right: 20px;
     }
+
     .curve-left-line {
         padding-top: 12px !important;
         padding-bottom: 16px !important;
         font-size: 16px !important;
     }
+
     .unique-features {
         padding-bottom: 70px !important;
     }
+
+    .immersive-description {
+        font-size: 14px !important;
+        line-height: 20px !important;
+        padding-top: 10px !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+    }
+
+    .immersive-game-row {
+        gap: 30px !important;
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+        padding-top: 40px !important;
+    }
+
+    .immersive-game-card {
+        position: relative;
+        height: 270px !important;
+    }
+
+    .game-card-image1 {
+        height: 230px !important;
+        width: 200px !important;
+    }
+
+    .game-card-small-img {
+        height: 90px !important;
+        width: 90px !important;
+    }
+    .immersive-purple-bg {
+        height: 650px !important;
+        width: auto;
+    }
+    .immersive-boy {
+        position: absolute;
+        bottom: 60px !important;
+        right: 12px !important;
+        height: 350px !important;
+        width: auto;
+    }
+    .small-btn-bg {
+        color: white;
+        font-size: 12px !important;
+        font-family: "oswald" !important;
+        height: 40px !important;
+        width: 160px !important;
+        margin-top: 20px !important;
+    }
+    .immersive-gaming-section {
+        padding-top: 60px !important;
+        padding-bottom: 220px !important;
+        position: relative;
+    }
+    .immersive-purple-section {
+        position: absolute;
+        bottom: 170px !important;
+        right: 0;
+    }
+  
+    
 }
 
 @media screen and (min-width:1024px) {
@@ -1106,6 +1169,58 @@ p {
         padding-bottom: 50px !important;
     }
 
+    .immersive-title {
+        font-size: 21px !important;
+        line-height: 24px !important;
+    }
+
+    .immersive-description {
+        font-size: 12px !important;
+        line-height: 17px !important;
+        padding-top: 8px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+
+    .immersive-gaming-section {
+        padding-top: 40px !important;
+        background-image: url('/assets/images/game-portfolio/Immersive-Gaming-mobile.webp') !important;
+        padding-bottom: 70px !important;
+
+    }
+
+    .immersive-game-row {
+        display: flex;
+        flex-direction: column !important;
+        gap: 40px !important;
+        padding-left: 30px !important;
+        padding-right: 30px !important;
+        padding-top: 30px !important;
+    }
+
+    .immersive-card-layout {
+        width: 100% !important;
+        z-index: 1;
+    }
+
+    .immersive-game-card {
+        position: relative;
+        height: 350px;
+        width: 300px !important;
+    }
+
+    .purple-outer {
+        display: none !important;
+    }
+
+    .thunder-3 {
+        height: 60px !important;
+        width: auto;
+        position: absolute;
+        right: 0;
+        bottom: 20px !important;
+    }
+ 
 }
 
 .video-game-web {
