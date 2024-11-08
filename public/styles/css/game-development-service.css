@@ -567,7 +567,33 @@ p {
         bottom: 170px !important;
         right: 0;
     }
+    .choose-us-section {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        padding-left: 100px;
+        padding-right: 100px;
+        display: flex;
+        flex-direction: column !important;
+        gap: 40px !important;
+    }
+    .choose-us-left {
+        width: 100% !important;
+    }
+    .chooseus-card-inner {
+        padding: 16px !important;
+        border-radius: 20px !important;
+        background-image: linear-gradient(to right, #190c26, #190c26) !important;
+    }
 
+    .chooseus-card-outer {
+        margin-top: 16px !important;
+        padding: 2px !important;
+        border-radius: 20px !important;
+        background-image: linear-gradient(to right, #701f71, #701f71) !important;
+    }
+    .choose-us-title,.choose-us-card-title ,.choose-us-card-content  {
+        text-align: center !important;
+    }
 
 }
 
