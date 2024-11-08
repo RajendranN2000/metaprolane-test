@@ -421,8 +421,8 @@ p {
     }
 
     .game-card-text {
-        font-size: 10px !important;
-        line-height: 13px !important;
+        font-size: 12px !important;
+        line-height: 17px !important;
         color: #1c1a32;
         font-weight: 600;
         font-family: "albertSans";
@@ -501,7 +501,6 @@ p {
     .unique-features {
         padding-bottom: 70px !important;
     }
-
 }
 
 @media screen and (min-width:1024px) {
@@ -975,12 +974,12 @@ p {
     }
 
     .game-square-img {
-        height: 70px !important;
+        height: 78px !important;
         width: auto;
     }
 
     .game-card-title {
-        font-size: 11px !important;
+        font-size: 15px !important;
         line-height: 15px !important;
     }
 
@@ -996,8 +995,8 @@ p {
     }
 
     .game-card-text {
-        font-size: 6px !important;
-        line-height: 9px !important;
+        font-size: 12px !important;
+        line-height: 17px !important;
         padding-top: 8px !important;
     }
 
@@ -1026,8 +1025,8 @@ p {
     }
 
     .game-develoment-title {
-        font-size: 22px !important;
-        line-height: 30px !important;
+        font-size: 25px !important;
+        line-height: 33px !important;
         padding-top: 30px !important;
     }
 
