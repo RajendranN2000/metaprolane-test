@@ -46,9 +46,9 @@ body {
 }
 
 p {
-    font-size: 25px;
+    font-size: 20px;
     font-family: "albertSans";
-    line-height: 46px;
+    line-height: 32px;
     font-weight: 500;
 }
 
@@ -71,7 +71,7 @@ p {
     }
 }
 
-@media screen and (min-width:768px) and (max-width:1024px) {
+@media screen and (min-width:768px) and (max-width:1023px) {
     .top-banner img {
         width: 100%;
         height: auto;
@@ -442,7 +442,7 @@ p {
     .game-layer,
     .game-layer-2 {
         position: relative;
-        height: 760px !important;
+        height: 900px !important;
     }
 
     .game-development-row-right {
@@ -1314,6 +1314,7 @@ p {
 .premier-text {
     text-align: center;
     font-size: 90px;
+    line-height: 110px;
     color: white;
     text-transform: uppercase;
     padding-top: 100px;
@@ -1824,25 +1825,25 @@ p {
     /* max-width: 600px; */
     min-height: 150px;
     background-color: #f4edff;
-    padding: 20px;
+    padding: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .game-card-title {
-    font-size: 18px;
-    line-height: 22px;
+    font-size: 30px;
+    line-height: 30px;
     color: #1e1c37;
     font-weight: 700;
     font-family: "oswald";
 }
 
 .game-card-text {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 32px;
     color: #1c1a32;
-    font-weight: 600;
+    font-weight: 500;
     font-family: "albertSans";
     padding-top: 12px;
 }
@@ -1978,7 +1979,7 @@ p {
 .game-layer,
 .game-layer-2 {
     position: relative;
-    height: 1000px;
+    height: 1200px;
 }
 
 .game-outer-layer,
@@ -1989,7 +1990,7 @@ p {
 }
 
 .man-img1 {
-    height: 900px;
+    height: 1200px;
     width: auto;
 }
 
@@ -2038,6 +2039,9 @@ p {
 .immersive-card-layout {
     width: 300px;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .immersive-game-card {
@@ -2071,10 +2075,10 @@ p {
 }
 
 .immersive-game-card-content {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 28px;
     color: #4f4f4f;
-    font-weight: 400;
+    font-weight: 500;
     font-family: "albertSans";
     padding-top: 12px;
 }
@@ -2101,7 +2105,7 @@ p {
 
 .immersive-purple-section {
     position: absolute;
-    bottom: 220px;
+    bottom: 190px;
     right: 0;
 }
 
@@ -2196,23 +2200,22 @@ p {
     width: 50%;
 }
 
+
 .choose-us-card-title {
-    font-size: 20px;
-    line-height: 20px;
+    font-size: 30px;
+    line-height: 30px;
     color: #14dbfc;
     font-weight: 700;
     font-family: "oswald";
 }
-
 .choose-us-card-content {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 32px;
     color: #ffffff;
     font-weight: 500;
     font-family: "albertSans";
     padding-top: 12px;
 }
-
 .video-game-art {
     background: url('/assets/images/game-portfolio/our-video-game-art-bg.webp');
     background-repeat: no-repeat;
@@ -2229,8 +2232,8 @@ p {
 }
 
 .video-game-description {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 28px;
     color: #ffffff;
     font-weight: 500;
     font-family: "albertSans";
@@ -2288,8 +2291,8 @@ p {
 }
 
 .concept-description {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 32px;
     color: #ffffff;
     font-weight: 500;
     font-family: "albertSans";
@@ -2352,8 +2355,8 @@ p {
 }
 
 .video-card-content {
-    font-size: 12px;
-    line-height: 19px;
+    font-size: 16px;
+    line-height: 24px;
     color: #ffffff;
     font-weight: 500;
     font-family: "albertSans";
@@ -2432,6 +2435,7 @@ p {
     display: flex;
     gap: 50px;
     margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .game-develoment-section {
@@ -2464,7 +2468,7 @@ p {
 
 .game-development-card {
     width: 300px;
-    height: 320px;
+    height: 400px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -2483,7 +2487,7 @@ p {
 .game-development-data-card {
     position: absolute;
     width: 240px;
-    height: 320px;
+    height: 400px;
     right: 0;
     top: 0;
     border-top-right-radius: 50px;
@@ -2494,19 +2498,20 @@ p {
     padding-right: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .game-development-data-title {
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 28px;
+    line-height: 34px;
     color: #000000;
     font-weight: 600;
     font-family: "oswald";
 }
 
 .game-development-data-content {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 20px;
     color: #030508;
     font-weight: 500;
@@ -2550,4 +2555,40 @@ section.apply-now {
 
 .game-development-service-page {
     background-color: #1C1931;
+}
+@media screen and (min-width:1024px) and (max-width:1050px) {
+    .game-layer, .game-layer-2 {
+        position: relative;
+        height: 1750px !important;
+    }
+}
+@media screen and (min-width:1051px) and (max-width:1100px) {
+    .game-layer, .game-layer-2 {
+        position: relative;
+        height: 1700px !important;
+    }
+}
+@media screen and (min-width:1101px) and (max-width:1200px) {
+    .game-layer, .game-layer-2 {
+        position: relative;
+        height: 1600px !important;
+    }
+}
+@media screen and (min-width:1201px) and (max-width:1400px) {
+    .game-layer, .game-layer-2 {
+        position: relative;
+        height: 1500px !important;
+    }
+}
+@media screen and (min-width:1401px) and (max-width:2300px) {
+    .game-layer, .game-layer-2 {
+        position: relative;
+        height: 1300px !important;
+    }
+}
+@media screen and (min-width:2301px) {
+    .game-layer, .game-layer-2 {
+        position: relative;
+        height: 1300px !important;
+    }
 }
