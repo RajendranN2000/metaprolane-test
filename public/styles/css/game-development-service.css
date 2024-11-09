@@ -1,43 +1,24 @@
-@font-face {
-    font-family: "oswald";
-    src: url("/assets/fonts/Oswald-VariableFont_wght.ttf");
-}
 
-.oswald-bold {
-    font-family: "oswald";
+.Oswald-bold {
+    font-family: "Oswald";
     font-weight: 800;
-}
+} 
 
-@font-face {
-    font-family: "a25";
-    src: url("/assets/fonts/A25-SQUANOVA.ttf");
-}
-
-
-.a25-bold {
-    font-family: "a25";
+.Montserrat-bold {
+    font-family: "Montserrat";
     font-weight: 800;
     line-height: 103px;
 }
 
-@font-face {
-    font-family: "Arial";
-    src: url('/assets/fonts/arial.ttf');
-}
 
-.Arial {
-    font-family: "Arial";
+.Montserrat {
+    font-family: "Montserrat";
     font-weight: 500;
     line-height: 103px;
 }
 
-@font-face {
-    font-family: "albertSans";
-    src: url("/assets/fonts/AlbertSans-VariableFont_wght.ttf");
-}
-
-.albertSans {
-    font-family: "albertSans";
+.Albert-sans {
+    font-family: "Albert Sans";
 }
 
 body {
@@ -47,7 +28,7 @@ body {
 
 p {
     font-size: 20px;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     line-height: 32px;
     font-weight: 500;
 }
@@ -84,8 +65,8 @@ p {
         display: none;
     }
 
-    .a25-bold {
-        font-family: "a25";
+    .Montserrat-bold {
+        font-family: "Montserrat";
         font-weight: 800;
         line-height: 64px !important;
     }
@@ -100,7 +81,7 @@ p {
 
     p {
         font-size: 14px !important;
-        font-family: "albertSans";
+        font-family: "Albert Sans";
         line-height: 24px !important;
     }
 
@@ -145,14 +126,14 @@ p {
     }
 
     .expert-text {
-        font-family: "a25";
+        font-family: "Montserrat";
         font-weight: 800;
         line-height: 40px !important;
     }
 
     .end-to-end-title {
         font-size: 44px !important;
-        font-family: "a25";
+        font-family: "Montserrat";
         color: white;
         padding-top: 20px !important;
         text-align: center !important;
@@ -203,7 +184,7 @@ p {
         font-size: 50px !important;
         line-height: 60px !important;
         color: #ffffff;
-        font-family: "a25";
+        font-family: "Montserrat";
         text-align: center;
     }
 
@@ -280,7 +261,7 @@ p {
         font-size: 50px !important;
         line-height: 50px !important;
         color: #ffffff;
-        font-family: "a25";
+        font-family: "Montserrat";
         text-align: center;
         margin-top: 20px !important;
     }
@@ -323,7 +304,7 @@ p {
         font-size: 40px !important;
         line-height: 50px !important;
         color: #21cef4;
-        font-family: "a25" !important;
+        font-family: "Montserrat" !important;
     }
 
     .recent-game-content {
@@ -346,7 +327,7 @@ p {
     .medium-btn-bg {
         background-image: url('/assets/images/game-portfolio/button.webp');
         font-size: 16px !important;
-        font-family: "oswald" !important;
+        font-family: "Oswald" !important;
         height: 50px !important;
         width: 200px !important;
         margin-top: 20px !important;
@@ -379,7 +360,7 @@ p {
         text-transform: uppercase;
         color: #e2cdff;
         font-weight: bold;
-        font-family: "Arial";
+        font-family: "Montserrat";
     }
 
     .game-development-data-title {
@@ -425,7 +406,7 @@ p {
         line-height: 17px !important;
         color: #1c1a32;
         font-weight: 600;
-        font-family: "albertSans";
+        font-family: "Albert Sans";
         padding-top: 8px !important;
     }
 
@@ -550,7 +531,7 @@ p {
     .small-btn-bg {
         color: white;
         font-size: 12px !important;
-        font-family: "oswald" !important;
+        font-family: "Oswald" !important;
         height: 40px !important;
         width: 160px !important;
         margin-top: 20px !important;
@@ -635,7 +616,7 @@ p {
         color: white;
         text-transform: uppercase;
         padding-top: 20px !important;
-        font-family: 'a25';
+        font-family: 'Montserrat';
         line-height: 32px !important;
     }
 
@@ -650,7 +631,7 @@ p {
 
     p {
         font-size: 13px !important;
-        font-family: "albertSans";
+        font-family: "Albert Sans";
         line-height: 25px !important;
     }
 
@@ -692,14 +673,14 @@ p {
         font-size: 46px !important;
     }
 
-    .a25-bold {
+    .Montserrat-bold {
         line-height: 24px !important;
     }
 
     .btn-bg {
         background-size: 100% 100% !important;
         font-size: 14px !important;
-        font-family: "oswald" !important;
+        font-family: "Oswald" !important;
         height: 50px !important;
         width: 200px !important;
         margin-top: 0px !important;
@@ -991,7 +972,7 @@ p {
     .recent-game-title {
         font-size: 25px !important;
         line-height: 25px !important;
-        font-family: "a25" !important;
+        font-family: "Montserrat" !important;
         text-align: center !important;
     }
 
@@ -1017,7 +998,7 @@ p {
     .medium-btn-bg {
         background-image: url('/assets/images/game-portfolio/button.webp');
         font-size: 12px !important;
-        font-family: "oswald" !important;
+        font-family: "Oswald" !important;
         height: 32px !important;
         width: 160px !important;
         margin-top: 16px !important;
@@ -1033,7 +1014,7 @@ p {
         font-size: 22px !important;
         line-height: 30px !important;
         color: #1c1a32;
-        font-family: "a25";
+        font-family: "Montserrat";
         text-align: center;
         font-weight: 700;
         padding-top: 0px !important;
@@ -1165,7 +1146,7 @@ p {
         font-size: 10px !important;
         color: #ffffff;
         font-weight: 500;
-        font-family: "albertSans";
+        font-family: "Albert Sans";
         padding-left: 16px !important;
         position: relative;
     }
@@ -1318,7 +1299,8 @@ p {
     color: white;
     text-transform: uppercase;
     padding-top: 100px;
-    font-family: 'a25';
+    font-family: 'Montserrat';
+    font-weight: 700;
 }
 
 .premier-content {
@@ -1385,7 +1367,7 @@ p {
 .expert-text {
     font-size: 65px;
     text-transform: uppercase;
-    font-family: 'a25';
+    font-family: 'Montserrat';
     font-weight: 700;
 }
 
@@ -1398,8 +1380,8 @@ p {
         padding-top: 64px;
     }
 
-    .a25-bold {
-        font-family: "a25";
+    .Montserrat-bold {
+        font-family: "Montserrat";
         font-weight: 800;
         line-height: 81px;
     }
@@ -1427,7 +1409,7 @@ p {
 
     p {
         font-size: 20px;
-        font-family: "albertSans";
+        font-family: "Albert Sans";
         line-height: 36px;
     }
 
@@ -1465,7 +1447,7 @@ p {
         font-size: 62px !important;
         line-height: 91px;
         color: #ffffff;
-        font-family: "a25";
+        font-family: "Montserrat";
         text-align: center;
     }
 
@@ -1493,7 +1475,7 @@ p {
     background-size: 100% 100%;
     color: white;
     font-size: 35px;
-    font-family: "oswald" !important;
+    font-family: "Oswald" !important;
     font-weight: 700;
     height: 125px;
     display: flex;
@@ -1509,7 +1491,7 @@ p {
     background-image: url("/assets/images/game-portfolio/button.webp");
     color: white;
     font-size: 24px;
-    font-family: "oswald" !important;
+    font-family: "Oswald" !important;
     font-weight: 700;
     height: 80px;
     display: flex;
@@ -1527,7 +1509,7 @@ p {
     background-image: url("/assets/images/game-portfolio/button.webp");
     color: white;
     font-size: 14px;
-    font-family: "oswald" !important;
+    font-family: "Oswald" !important;
     font-weight: 700;
     height: 60px;
     display: flex;
@@ -1565,10 +1547,12 @@ p {
 
 .end-to-end-title {
     font-size: 62px;
-    font-family: "a25";
+    font-family: "Montserrat";
     color: white;
     padding-top: 100px;
     text-align: end;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .game-cards {
@@ -1602,7 +1586,7 @@ p {
 
 .mobile-game-title {
     font-size: 31px;
-    font-family: "oswald";
+    font-family: "Oswald";
     font-weight: 700;
     color: #14dbfc;
     text-align: center;
@@ -1613,7 +1597,7 @@ p {
     line-height: 32px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     text-align: center;
     padding-top: 12px;
 }
@@ -1686,8 +1670,10 @@ p {
     font-size: 88px;
     line-height: 95px;
     color: #ffffff;
-    font-family: "a25";
+    font-family: "Montserrat";
     text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .recent-game-card {
@@ -1731,7 +1717,9 @@ p {
     font-size: 60px;
     line-height: 78px;
     color: #21cef4;
-    font-family: "a25" !important;
+    font-family: "Montserrat" !important;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .recent-game-content {
@@ -1739,7 +1727,7 @@ p {
     line-height: 37px;
     color: #ffffff;
     font-weight: 400;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
 }
 
 .recent-icon {
@@ -1777,11 +1765,13 @@ p {
     font-size: 42px;
     line-height: 46px;
     color: #1c1a32;
-    font-family: "a25";
+    font-family: "Montserrat";
     text-align: center;
     font-weight: 700;
     line-height: 60px;
     padding-top: 80px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .comprehensive-description {
@@ -1789,7 +1779,7 @@ p {
     line-height: 28px;
     color: #1c1a32;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     text-align: center;
     font-weight: 500;
     padding-top: 12px;
@@ -1836,7 +1826,7 @@ p {
     line-height: 30px;
     color: #1e1c37;
     font-weight: 700;
-    font-family: "oswald";
+    font-family: "Oswald";
 }
 
 .game-card-text {
@@ -1844,7 +1834,7 @@ p {
     line-height: 32px;
     color: #1c1a32;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     padding-top: 12px;
 }
 
@@ -1870,10 +1860,12 @@ p {
     font-size: 42px;
     line-height: 60px;
     color: #ffffff;
-    font-family: "A25";
+    font-family: "Montserrat";
     text-align: center;
     filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
     padding-top: 100px;
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .line-section {
@@ -1894,7 +1886,7 @@ p {
     font-size: 21px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     padding-left: 20px;
     position: relative;
 }
@@ -1913,7 +1905,7 @@ p {
     font-size: 21px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     text-align: end;
     padding-right: 20px;
 }
@@ -1932,7 +1924,7 @@ p {
     font-size: 21px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     text-align: start;
     padding-left: 20px;
 }
@@ -1951,7 +1943,7 @@ p {
     font-size: 21px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     padding-left: 20px;
     position: relative;
 }
@@ -2012,8 +2004,10 @@ p {
     font-size: 43px;
     line-height: 50px;
     color: #1c1b33;
-    font-family: "a25";
+    font-family: "Montserrat";
     text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .immersive-description {
@@ -2021,7 +2015,7 @@ p {
     color: #4f4f4f;
     font-weight: 500;
     line-height: 24px;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     text-align: center;
     padding-top: 12px;
 }
@@ -2070,8 +2064,10 @@ p {
     font-size: 24px;
     line-height: 28px;
     color: #1c1b33;
-    font-family: "a25";
+    font-family: "Montserrat";
     padding-top: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .immersive-game-card-content {
@@ -2079,7 +2075,7 @@ p {
     line-height: 28px;
     color: #4f4f4f;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     padding-top: 12px;
 }
 
@@ -2174,8 +2170,10 @@ p {
     font-size: 54px;
     line-height: 63px;
     color: #ffffff;
-    font-family: "a25";
+    font-family: "Montserrat";
     filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
+    text-transform: uppercase;
+    font-weight: 700;
 }
 
 .choose-girl-img {
@@ -2206,14 +2204,14 @@ p {
     line-height: 30px;
     color: #14dbfc;
     font-weight: 700;
-    font-family: "oswald";
+    font-family: "Oswald";
 }
 .choose-us-card-content {
     font-size: 20px;
     line-height: 32px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     padding-top: 12px;
 }
 .video-game-art {
@@ -2227,8 +2225,9 @@ p {
     font-size: 62px;
     line-height: 80px;
     color: #ffffff;
-    font-family: "a25";
+    font-family: "Montserrat";
     text-align: center;
+    font-weight: 700;
 }
 
 .video-game-description {
@@ -2236,7 +2235,7 @@ p {
     line-height: 28px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     text-align: center;
     padding-top: 40px;
 }
@@ -2287,7 +2286,9 @@ p {
     font-size: 40px;
     line-height: 50px;
     color: #5c9bff;
-    font-family: "a25";
+    font-family: "Montserrat";
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .concept-description {
@@ -2295,7 +2296,7 @@ p {
     line-height: 32px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     padding-top: 30px;
 }
 
@@ -2335,23 +2336,27 @@ p {
     font-size: 24px;
     line-height: 32px;
     color: #eb0b7c;
-    font-family: "A25";
+    font-family: "Montserrat";
     text-align: center;
     height: 64px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .UI-card-title {
     font-size: 24px;
     line-height: 32px;
     color: #eb0b7c;
-    font-family: "A25";
+    font-family: "Montserrat";
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .video-card-content {
@@ -2359,7 +2364,7 @@ p {
     line-height: 24px;
     color: #ffffff;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     text-align: center;
     padding-top: 30px;
 }
@@ -2385,7 +2390,7 @@ p {
     font-size: 62px;
     line-height: 80px;
     color: #ffffff;
-    font-family: "a25";
+    font-family: "Montserrat";
     text-align: center;
 }
 
@@ -2451,7 +2456,7 @@ p {
     font-size: 42px;
     line-height: 46px;
     color: #1c1a32;
-    font-family: "a25";
+    font-family: "Montserrat";
     text-align: center;
     font-weight: 700;
     line-height: 60px;
@@ -2481,7 +2486,7 @@ p {
     text-transform: uppercase;
     color: #e2cdff;
     font-weight: bold;
-    font-family: "Arial";
+    font-family: "Montserrat";
 }
 
 .game-development-data-card {
@@ -2507,7 +2512,7 @@ p {
     line-height: 34px;
     color: #000000;
     font-weight: 600;
-    font-family: "oswald";
+    font-family: "Oswald";
 }
 
 .game-development-data-content {
@@ -2515,7 +2520,7 @@ p {
     line-height: 20px;
     color: #030508;
     font-weight: 500;
-    font-family: "albertSans";
+    font-family: "Albert Sans";
     padding-top: 10px;
 }
 
