@@ -1452,7 +1452,7 @@ p {
         text-align: center;
     }
 
-    .recent-game-card {
+    .recent-game-card,.blockchain-integration-inner {
         width: 820px !important;
     }
 }
