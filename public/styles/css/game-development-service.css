@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: "oswald";
     src: url("/assets/fonts/Oswald-VariableFont_wght.ttf");
-}
+} */
 
-.oswald-bold {
+/* .oswald-bold {
     font-family: "oswald";
     font-weight: 800;
 }
@@ -11,10 +11,10 @@
 @font-face {
     font-family: "a25";
     src: url("/assets/fonts/A25-SQUANOVA.ttf");
-}
+} */
 
 
-.a25-bold {
+/* .a25-bold {
     font-family: "a25";
     font-weight: 800;
     line-height: 103px;
@@ -23,9 +23,9 @@
 @font-face {
     font-family: "Arial";
     src: url('/assets/fonts/arial.ttf');
-}
+} */
 
-.Arial {
+/* .Arial {
     font-family: "Arial";
     font-weight: 500;
     line-height: 103px;
@@ -34,7 +34,7 @@
 @font-face {
     font-family: "albertSans";
     src: url("/assets/fonts/AlbertSans-VariableFont_wght.ttf");
-}
+} */
 
 .albertSans {
     font-family: "albertSans";
