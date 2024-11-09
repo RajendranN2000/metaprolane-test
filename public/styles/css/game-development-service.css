@@ -39,7 +39,10 @@ p {
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
-
+    .recent-game-title {
+        font-size: 50px !important;
+        line-height: 70px !important;
+    }
     .thunder-img1 {
         height: 150px !important;
         width: auto;
