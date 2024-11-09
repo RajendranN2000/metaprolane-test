@@ -1434,6 +1434,7 @@ p {
         padding-bottom: 24px !important;
         position: relative;
         width: 320px !important;
+        height: 460px !important;
     }
 
     .game-cards {
@@ -1577,6 +1578,7 @@ p {
     padding-bottom: 50px;
     position: relative;
     width: 400px;
+    height: 400px;
 }
 
 .card-blue-bg {
