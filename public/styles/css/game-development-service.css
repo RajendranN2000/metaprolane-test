@@ -1844,7 +1844,6 @@ p {
     display: flex;
     flex-direction: column;
     align-items: end;
-    padding-top: 40px;
     padding-bottom: 80px;
 }
 
@@ -2586,10 +2585,16 @@ section.apply-now {
         height: 1600px !important;
     }
 }
-@media screen and (min-width:1201px) and (max-width:1400px) {
+@media screen and (min-width:1201px) and (max-width:1301px) {
     .game-layer, .game-layer-2 {
         position: relative;
         height: 1500px !important;
+    }
+}
+@media screen and (min-width:1301px) and (max-width:1400px) {
+    .game-layer, .game-layer-2 {
+        position: relative;
+        height: 1350px !important;
     }
 }
 @media screen and (min-width:1401px) and (max-width:2300px) {
