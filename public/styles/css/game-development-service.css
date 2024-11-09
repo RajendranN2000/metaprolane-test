@@ -205,7 +205,7 @@ p {
     .video-game-card {
         width: 610px !important;
         gap: 30px !important;
-        height: 400px !important;
+        height: 520px !important;
     }
 
     .concept-text {
@@ -213,10 +213,12 @@ p {
     }
 
     .video-img1 {
-        height: 400px !important;
+        height: 520px !important;
         width: 610px !important;
     }
-
+    .concept-description {
+        padding-top: 10px !important;
+    }
     .modeling-text {
         margin-right: 30px !important;
     }
