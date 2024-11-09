@@ -4,15 +4,15 @@
     font-weight: 800;
 } 
 
-.Montserrat-bold {
-    font-family: "Montserrat";
+.Exo-bold {
+    font-family: "Exo";
     font-weight: 800;
     line-height: 103px;
 }
 
 
-.Montserrat {
-    font-family: "Montserrat";
+.Exo {
+    font-family: "Exo";
     font-weight: 500;
     line-height: 103px;
 }
@@ -68,8 +68,8 @@ p {
         display: none;
     }
 
-    .Montserrat-bold {
-        font-family: "Montserrat";
+    .Exo-bold {
+        font-family: "Exo";
         font-weight: 800;
         line-height: 64px !important;
     }
@@ -129,14 +129,14 @@ p {
     }
 
     .expert-text {
-        font-family: "Montserrat";
+        font-family: "Exo";
         font-weight: 800;
         line-height: 40px !important;
     }
 
     .end-to-end-title {
         font-size: 44px !important;
-        font-family: "Montserrat";
+        font-family: "Exo";
         color: white;
         padding-top: 20px !important;
         text-align: center !important;
@@ -188,7 +188,7 @@ p {
         font-size: 50px !important;
         line-height: 60px !important;
         color: #ffffff;
-        font-family: "Montserrat";
+        font-family: "Exo";
         text-align: center;
     }
 
@@ -267,7 +267,7 @@ p {
         font-size: 50px !important;
         line-height: 50px !important;
         color: #ffffff;
-        font-family: "Montserrat";
+        font-family: "Exo";
         text-align: center;
         margin-top: 20px !important;
     }
@@ -310,7 +310,7 @@ p {
         font-size: 40px !important;
         line-height: 50px !important;
         color: #21cef4;
-        font-family: "Montserrat" !important;
+        font-family: "Exo" !important;
     }
 
     .recent-game-content {
@@ -622,7 +622,7 @@ p {
         color: white;
         text-transform: uppercase;
         padding-top: 20px !important;
-        font-family: 'Montserrat';
+        font-family: 'Exo';
         line-height: 32px !important;
     }
 
@@ -679,7 +679,7 @@ p {
         font-size: 46px !important;
     }
 
-    .Montserrat-bold {
+    .Exo-bold {
         line-height: 24px !important;
     }
 
@@ -981,7 +981,7 @@ p {
     .recent-game-title {
         font-size: 25px !important;
         line-height: 25px !important;
-        font-family: "Montserrat" !important;
+        font-family: "Exo" !important;
         text-align: center !important;
     }
 
@@ -1023,7 +1023,7 @@ p {
         font-size: 22px !important;
         line-height: 30px !important;
         color: #1c1a32;
-        font-family: "Montserrat";
+        font-family: "Exo";
         text-align: center;
         font-weight: 700;
         padding-top: 0px !important;
@@ -1308,7 +1308,7 @@ p {
     color: white;
     text-transform: uppercase;
     padding-top: 100px;
-    font-family: 'Montserrat';
+    font-family: 'Exo';
     font-weight: 700;
 }
 
@@ -1376,7 +1376,7 @@ p {
 .expert-text {
     font-size: 65px;
     text-transform: uppercase;
-    font-family: 'Montserrat';
+    font-family: 'Exo';
     font-weight: 700;
 }
 
@@ -1389,8 +1389,8 @@ p {
         padding-top: 64px;
     }
 
-    .Montserrat-bold {
-        font-family: "Montserrat";
+    .Exo-bold {
+        font-family: "Exo";
         font-weight: 800;
         line-height: 81px;
     }
@@ -1458,7 +1458,7 @@ p {
         font-size: 62px !important;
         line-height: 91px;
         color: #ffffff;
-        font-family: "Montserrat";
+        font-family: "Exo";
         text-align: center;
     }
 
@@ -1571,7 +1571,7 @@ p {
 
 .end-to-end-title {
     font-size: 62px;
-    font-family: "Montserrat";
+    font-family: "Exo";
     color: white;
     padding-top: 100px;
     text-align: end;
@@ -1695,7 +1695,7 @@ p {
     font-size: 88px;
     line-height: 95px;
     color: #ffffff;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
     text-transform: uppercase;
     font-weight: 700;
@@ -1741,7 +1741,7 @@ p {
     font-size: 60px;
     line-height: 78px;
     color: #21cef4;
-    font-family: "Montserrat" !important;
+    font-family: "Exo" !important;
     font-weight: 600;
     text-transform: uppercase;
 }
@@ -1789,7 +1789,7 @@ p {
     font-size: 42px;
     line-height: 46px;
     color: #1c1a32;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
     font-weight: 700;
     line-height: 60px;
@@ -1883,7 +1883,7 @@ p {
     font-size: 42px;
     line-height: 60px;
     color: #ffffff;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
     filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
     padding-top: 100px;
@@ -2027,7 +2027,7 @@ p {
     font-size: 43px;
     line-height: 50px;
     color: #1c1b33;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
     font-weight: 700;
     text-transform: uppercase;
@@ -2087,7 +2087,7 @@ p {
     font-size: 24px;
     line-height: 28px;
     color: #1c1b33;
-    font-family: "Montserrat";
+    font-family: "Exo";
     padding-top: 30px;
     font-weight: 600;
     text-transform: uppercase;
@@ -2193,7 +2193,7 @@ p {
     font-size: 54px;
     line-height: 63px;
     color: #ffffff;
-    font-family: "Montserrat";
+    font-family: "Exo";
     filter: drop-shadow(0px 17px 2.5px rgba(5, 46, 62, 0.34));
     text-transform: uppercase;
     font-weight: 700;
@@ -2248,7 +2248,7 @@ p {
     font-size: 62px;
     line-height: 80px;
     color: #ffffff;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
     font-weight: 700;
 }
@@ -2309,7 +2309,7 @@ p {
     font-size: 40px;
     line-height: 50px;
     color: #5c9bff;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-transform: uppercase;
     font-weight: 600;
 }
@@ -2359,7 +2359,7 @@ p {
     font-size: 24px;
     line-height: 32px;
     color: #eb0b7c;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
     height: 64px;
     display: flex;
@@ -2373,7 +2373,7 @@ p {
     font-size: 24px;
     line-height: 32px;
     color: #eb0b7c;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
     display: flex;
     align-items: center;
@@ -2413,7 +2413,7 @@ p {
     font-size: 62px;
     line-height: 80px;
     color: #ffffff;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
 }
 
@@ -2479,7 +2479,7 @@ p {
     font-size: 42px;
     line-height: 46px;
     color: #1c1a32;
-    font-family: "Montserrat";
+    font-family: "Exo";
     text-align: center;
     font-weight: 700;
     line-height: 60px;
