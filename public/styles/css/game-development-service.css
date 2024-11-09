@@ -144,6 +144,7 @@ p {
 
     .game-card-outer {
         width: 250px !important;
+        height: 320px !important;
     }
 
     .endtoend-bg {
@@ -153,7 +154,7 @@ p {
         position: relative;
         padding-top: 40px !important;
         /* padding-bottom: 800px; */
-        height: 80rem !important;
+        height: 85rem !important;
     }
 
     .game-cards {
