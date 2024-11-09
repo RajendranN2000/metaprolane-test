@@ -1472,17 +1472,17 @@ p {
 }
 
 .btn-bg {
-    background-image: url("/assets/images/game-portfolio/button.webp");
+    background-image: url('/assets/images/game-portfolio/button.webp');
     background-size: 100% 100%;
     color: white;
-    font-size: 35px;
+    font-size: 18px;
     font-family: "Oswald" !important;
     font-weight: 700;
-    height: 125px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 500px;
+    width: 300px;
     text-transform: uppercase;
     margin-top: 30px;
     cursor: pointer;
