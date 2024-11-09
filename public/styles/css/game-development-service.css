@@ -775,7 +775,7 @@ p {
         padding-right: 20px !important;
         padding-left: 20px !important;
         padding-top: 30px !important;
-        height: 90rem !important;
+        height: 124rem !important;
         align-items: center !important;
     }
 
@@ -804,16 +804,18 @@ p {
         padding-bottom: 50px;
         position: relative;
         width: 100% !important;
+        height: 300px !important;
+
     }
 
     .mobile-game-title {
-        font-size: 13px !important;
-        line-height: 16px !important;
+        font-size: 17px !important;
+        line-height: 24px !important;
     }
 
     .mobile-game-content {
-        font-size: 9px !important;
-        line-height: 12px !important;
+        font-size: 12px !important;
+        line-height: 20px !important;
     }
 
     .game-bottom-img {
@@ -828,6 +830,7 @@ p {
 
     .game-card-outer-1 {
         max-width: 300px !important;
+
     }
 
     .video-game-mobile {
@@ -960,7 +963,7 @@ p {
     }
 
     .recent-game-img1 {
-        width: 280px !important;
+        width: 255px !important;
         height: 300px !important;
     }
 
