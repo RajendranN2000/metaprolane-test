@@ -55,41 +55,44 @@ import Layout from "../layouts/Layout.astro";
                 });
                 // $("#content").hide().show("slide", { direction: "left" }, 1500);
             </script>
-            <div class="game-development-service-page">
-                <div class="top-banner">
-                    <img
-                        src="/assets/images/game-portfolio/hero_banner_img.webp"
-                        alt=""
-                    />
-                    <div class="top-banner-title-section">
-                        <div class="top-banner-title">Game Devlopment</div>
-                    </div>
-                </div>
-                <div class="top-banner-mobile">
-                    <img
-                        src="/assets/images/game-portfolio/banner-mobile-bg.webp"
-                        alt=""
-                    />
-                    <div class="top-banner-title-section">
-                        <div class="top-banner-title">Game Devlopment</div>
-                    </div>
-                </div>
 
-                <div class="premier-game">
-                    <div class="premier-text">
-                        Your Premier <span class="game-text">Game</span>
-                        <br />
-                        Development Company
+            <div class="game-development-service-page">
+                <div class="" id="top-section">
+                    <div class="top-banner">
+                        <img
+                            src="/assets/images/game-portfolio/hero_banner_img.webp"
+                            alt=""
+                        />
+                        <div class="top-banner-title-section">
+                            <div class="top-banner-title">Game Devlopment</div>
+                        </div>
                     </div>
-                    <p class="premier-content">
-                        Metaprolane is a leading game development company
-                        specializing in creating immersive games across multiple
-                        platforms, including mobile, web, PC, and VR. We
-                        integrate blockchain technology, cryptocurrency payment
-                        systems, and AI-driven mechanics, delivering innovative
-                        games that captivate players and boost profitability.
-                        Let us bring your gaming vision to life!
-                    </p>
+                    <div class="top-banner-mobile">
+                        <img
+                            src="/assets/images/game-portfolio/banner-mobile-bg.webp"
+                            alt=""
+                        />
+                        <div class="top-banner-title-section">
+                            <div class="top-banner-title">Game Devlopment</div>
+                        </div>
+                    </div>
+                    <div class="premier-game">
+                        <div class="premier-text">
+                            Your Premier <span class="game-text">Game</span>
+                            <br />
+                            Development Company
+                        </div>
+                        <p class="premier-content">
+                            Metaprolane is a leading game development company
+                            specializing in creating immersive games across
+                            multiple platforms, including mobile, web, PC, and
+                            VR. We integrate blockchain technology,
+                            cryptocurrency payment systems, and AI-driven
+                            mechanics, delivering innovative games that
+                            captivate players and boost profitability. Let us
+                            bring your gaming vision to life!
+                        </p>
+                    </div>
                 </div>
 
                 <div class="game-development">
@@ -1680,7 +1683,6 @@ import Layout from "../layouts/Layout.astro";
                         alt=""
                     />
                 </div>
-
                 <div class="bg-vectors">
                     <img
                         src="assets/images/bg-vector5.webp"
@@ -1874,6 +1876,8 @@ import Layout from "../layouts/Layout.astro";
                         </div>
                     </div>
                 </section>
+
+                <img class="scroll-top-btn" src="/assets/images/game-portfolio/top-arrow.webp" id="scrollTopBtn"/>
             </div>
             <script is:inline>
                 function toggleAnswer(event) {
@@ -1892,6 +1896,30 @@ import Layout from "../layouts/Layout.astro";
                     const icon = question.querySelector(".faq-toggle-icon");
                     icon.textContent = icon.textContent === "+" ? "-" : "+";
                 }
+            </script>
+            <script is:inline>
+                const scrollTopBtn = document.getElementById("scrollTopBtn");
+                const topSection = document.getElementById("top-section");
+                const observer = new IntersectionObserver(
+                    (entries) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                console.log(scrollTopBtn, "check top banner");
+                                scrollTopBtn.style.display = "none";
+                            } else {
+                                console.log(false, "check outer top banner");
+                                scrollTopBtn.style.display = "block";
+                            }
+                        });
+                    },
+                    { threshold: 0.1 },
+                );
+                observer.observe(topSection);
+                scrollTopBtn.onclick= (()=>{
+                    topSection.scrollIntoView({
+                        behavior:'smooth'
+                    })
+                })
             </script>
         </body>
     </html>

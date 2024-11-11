@@ -1330,6 +1330,13 @@ p {
         height: auto;
         width: 200px !important;
     }
+    .scroll-top-btn {
+        position: fixed;
+        bottom: 5px !important;
+        right: 50px !important;
+        height: 65px !important;
+       
+    }
 }
 
 @media screen and (min-width:450px) and (max-width:767px) {
@@ -2735,10 +2742,24 @@ section.apply-now {
 }
 
 @media screen and (min-width:2301px) {
-
     .game-layer,
     .game-layer-2 {
         position: relative;
         height: 1300px !important;
     }
+}
+.scroll-top-btn {
+    position: fixed;
+    bottom: 0px;
+    right: 60px;
+    padding: 10px 15px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 78px;
+    width: auto;
+    cursor: pointer;
+    z-index: 100000;
 }
