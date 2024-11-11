@@ -1,8 +1,7 @@
-
 .Oswald-bold {
     font-family: "Oswald";
     font-weight: 800;
-} 
+}
 
 .Exo-bold {
     font-family: "Exo";
@@ -39,10 +38,12 @@ p {
         background-repeat: no-repeat;
         background-size: 100% 100%;
     }
+
     .recent-game-title {
         font-size: 50px !important;
         line-height: 70px !important;
     }
+
     .thunder-img1 {
         height: 150px !important;
         width: auto;
@@ -143,6 +144,16 @@ p {
         text-align: center !important;
     }
 
+    .top-banner-title {
+        font-size: 40px !important;
+        font-family: "Exo";
+        color: white;
+        padding-top: 60px !important;
+        text-align: end;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+
     .game-card-outer {
         width: 250px !important;
         height: 320px !important;
@@ -217,9 +228,11 @@ p {
         height: 520px !important;
         width: 610px !important;
     }
+
     .concept-description {
         padding-top: 10px !important;
     }
+
     .modeling-text {
         margin-right: 30px !important;
     }
@@ -555,6 +568,7 @@ p {
         bottom: 170px !important;
         right: 0;
     }
+
     .choose-us-section {
         padding-top: 100px;
         padding-bottom: 100px;
@@ -564,9 +578,11 @@ p {
         flex-direction: column !important;
         gap: 40px !important;
     }
+
     .choose-us-left {
         width: 100% !important;
     }
+
     .chooseus-card-inner {
         padding: 16px !important;
         border-radius: 20px !important;
@@ -579,7 +595,10 @@ p {
         border-radius: 20px !important;
         background-image: linear-gradient(to right, #701f71, #701f71) !important;
     }
-    .choose-us-title,.choose-us-card-title ,.choose-us-card-content  {
+
+    .choose-us-title,
+    .choose-us-card-title,
+    .choose-us-card-content {
         text-align: center !important;
     }
 
@@ -590,6 +609,7 @@ p {
         width: 100%;
         height: auto;
         display: block;
+        position: relative;
     }
 
     .video-game-mobile {
@@ -785,6 +805,13 @@ p {
         line-height: 28px !important;
         text-align: center !important;
         padding-top: 20px !important;
+    }
+
+    .top-banner-title {
+        font-size: 30px !important;
+        line-height: 28px !important;
+        text-align: center !important;
+        padding-top: 120px !important;
     }
 
     .game-cards {
@@ -1227,14 +1254,18 @@ p {
         align-items: center !important;
         z-index: 1;
     }
-    .immersive-game-card-title,.immersive-game-card-content{
+
+    .immersive-game-card-title,
+    .immersive-game-card-content {
         text-align: center;
     }
-    .immersive-card-mobile{
+
+    .immersive-card-mobile {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     .immersive-game-card {
         position: relative;
         height: 350px;
@@ -1294,9 +1325,19 @@ p {
         padding-top: 8px !important;
         text-align: center !important;
     }
+
     .choose-girl-img {
         height: auto;
         width: 200px !important;
+    }
+}
+
+@media screen and (min-width:450px) and (max-width:767px) {
+    .top-banner-title {
+        font-size: 40px !important;
+        line-height: 28px !important;
+        text-align: center !important;
+        padding-top: 150px !important;
     }
 }
 
@@ -1471,24 +1512,29 @@ p {
         text-align: center;
     }
 
-    .recent-game-card,.blockchain-integration-inner {
+    .recent-game-card,
+    .blockchain-integration-inner {
         width: 820px !important;
     }
 }
+
 @media screen and (max-width: 370px) {
     .game-card-outer {
         height: 400px !important;
     }
 }
+
 @media screen and (min-width:1024px) and (max-width:1100px) {
     .expert-text {
         font-size: 30px;
         text-transform: uppercase;
     }
+
     .text-large {
         font-size: 70px;
     }
 }
+
 .game-development-outer {
     display: flex;
     flex-direction: column;
@@ -1578,6 +1624,18 @@ p {
     }
 }
 
+@media screen and (min-width:1024px) and (max-width:1300px) {
+    .top-banner-title {
+        font-size: 80px !important;
+        font-family: "Exo";
+        color: white;
+        padding-top: 60px !important;
+        text-align: end;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+}
+
 .end-to-end-title {
     font-size: 62px;
     font-family: "Exo";
@@ -1586,6 +1644,25 @@ p {
     text-align: end;
     text-transform: uppercase;
     font-weight: 700;
+}
+
+.top-banner-title {
+    font-size: 100px;
+    font-family: "Exo";
+    color: white;
+    padding-top: 100px;
+    text-align: end;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.top-banner-title-section {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 40px;
 }
 
 .game-cards {
@@ -2239,6 +2316,7 @@ p {
     font-weight: 700;
     font-family: "Oswald";
 }
+
 .choose-us-card-content {
     font-size: 20px;
     line-height: 32px;
@@ -2247,6 +2325,7 @@ p {
     font-family: "Albert Sans";
     padding-top: 12px;
 }
+
 .video-game-art {
     background: url('/assets/images/game-portfolio/our-video-game-art-bg.webp');
     background-repeat: no-repeat;
@@ -2579,7 +2658,8 @@ section.apply-now {
     width: 100%;
     height: auto;
 }
-.recent-launch-inner{
+
+.recent-launch-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2599,44 +2679,65 @@ section.apply-now {
 .game-development-service-page {
     background-color: #1C1931;
 }
+
 @media screen and (min-width:1024px) and (max-width:1050px) {
-    .game-layer, .game-layer-2 {
+
+    .game-layer,
+    .game-layer-2 {
         position: relative;
         height: 1750px !important;
     }
 }
+
 @media screen and (min-width:1051px) and (max-width:1100px) {
-    .game-layer, .game-layer-2 {
+
+    .game-layer,
+    .game-layer-2 {
         position: relative;
         height: 1700px !important;
     }
 }
+
 @media screen and (min-width:1101px) and (max-width:1200px) {
-    .game-layer, .game-layer-2 {
+
+    .game-layer,
+    .game-layer-2 {
         position: relative;
         height: 1600px !important;
     }
 }
+
 @media screen and (min-width:1201px) and (max-width:1301px) {
-    .game-layer, .game-layer-2 {
+
+    .game-layer,
+    .game-layer-2 {
         position: relative;
         height: 1500px !important;
     }
 }
+
 @media screen and (min-width:1301px) and (max-width:1400px) {
-    .game-layer, .game-layer-2 {
+
+    .game-layer,
+    .game-layer-2 {
         position: relative;
         height: 1350px !important;
     }
 }
+
 @media screen and (min-width:1401px) and (max-width:2300px) {
-    .game-layer, .game-layer-2 {
+
+    .game-layer,
+    .game-layer-2 {
         position: relative;
         height: 1300px !important;
     }
 }
+
 @media screen and (min-width:2301px) {
-    .game-layer, .game-layer-2 {
+
+    .game-layer,
+    .game-layer-2 {
         position: relative;
         height: 1300px !important;
     }
