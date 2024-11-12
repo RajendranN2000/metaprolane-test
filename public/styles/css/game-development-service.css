@@ -1347,7 +1347,12 @@ p {
         padding-top: 150px !important;
     }
 }
-
+@media screen and (min-width:320px) and (max-width:360px){
+    .endtoend-bg {
+        height: 148rem !important;
+        align-items: center !important;
+    }
+}
 .video-game-web {
     display: block;
 }
