@@ -84,13 +84,13 @@ const { title, description } = Astro.props;
   />
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <!-- <noscript
+    <noscript
       ><iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-KDSRGCP3"
         height="0"
         width="0"
         style="display:none;visibility:hidden"></iframe></noscript
-    > -->
+    >
     <!-- End Google Tag Manager (noscript) -->
     <HeaderSection />
     <slot />
@@ -223,7 +223,7 @@ const { title, description } = Astro.props;
   <!-- End of LiveChat code -->
 
   <!-- Google Tag Manager -->
-  <!-- <script is:inline>
+  <script is:inline>
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
       w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
@@ -234,7 +234,7 @@ const { title, description } = Astro.props;
       j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
       f.parentNode.insertBefore(j, f);
     })(window, document, "script", "dataLayer", "GTM-KDSRGCP3");
-  </script> -->
+  </script>
   <!-- End Google Tag Manager -->
 
 
