@@ -1332,8 +1332,8 @@ p {
     }
     .scroll-top-btn {
         position: fixed;
-        bottom: 5px !important;
-        right: 50px !important;
+        bottom: 60px !important;
+        right: 0px !important;
         height: 65px !important;
        
     }
@@ -2755,8 +2755,8 @@ section.apply-now {
 }
 .scroll-top-btn {
     position: fixed;
-    bottom: 0px;
-    right: 60px;
+    bottom: 70px;
+    right: -6px;
     padding: 10px 15px;
     color: white;
     border: none;
