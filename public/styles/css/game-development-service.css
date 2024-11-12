@@ -63,7 +63,7 @@ p {
         display: block;
     }
 
-    .top-banner-mobile img {
+    .top-banner-mobile img,.top-banner-mobile .top-banner-title-section {
         width: 100%;
         height: auto;
         display: none;
@@ -616,7 +616,7 @@ p {
         display: none !important;
     }
 
-    .top-banner-mobile img {
+    .top-banner-mobile img ,.top-banner-mobile .top-banner-title-section {
         width: 100%;
         height: auto;
         display: none;
@@ -631,7 +631,7 @@ p {
         margin-top: 32px;
     }
 
-    .top-banner img {
+    .top-banner img,.top-banner-mobile .top-banner-title-section{
         width: 100%;
         height: auto;
         display: none;
