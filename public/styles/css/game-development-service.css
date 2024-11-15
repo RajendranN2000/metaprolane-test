@@ -590,6 +590,78 @@ p {
     .choose-us-title {
         text-align: center !important
     }
+
+    .play-to-earn-inner {
+        max-width: 600px !important;
+    }
+
+    .tap-to-earn-title {
+        font-size: 42px !important;
+        line-height: 60px !important;
+        color: #fff;
+        font-family: Exo;
+        text-align: center;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .tap-to-earn {
+        padding: 40px !important;
+        display: flex;
+        justify-content: center;
+    }
+
+    .tap-to-earn-description {
+        font-size: 18px !important;
+        line-height: 28px !important;
+    }
+
+    .features-tap-to-earn-title {
+        font-size: 42px !important;
+        line-height: 60px !important;
+    }
+
+    .tap-to-earn-feature-description {
+        font-size: 18px !important;
+        line-height: 28px !important;
+        padding-top: 16px !important;
+        padding-bottom: 16px !important;
+    }
+
+    .tap-to-earn-padding {
+        padding-top: 20px !important;
+    }
+
+    .play-to-earn-title {
+        font-size: 42px !important;
+        line-height: 60px !important;
+    }
+    .play-to-earn-description {
+        font-size: 18px !important;
+        line-height: 28px !important;
+        padding-top: 12px !important;
+        padding-bottom: 13px !important;
+    }
+    .play-to-earn-feature-title {
+        font-size: 42px !important;
+        line-height: 60px !important;
+        padding-top: 16px !important;
+    }
+    .play-to-earn-feature-description {
+        font-size: 18px !important;
+        line-height: 24px !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+    }
+    .play-earn-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: 12px;
+        gap: 30px;
+    }
 }
 
 @media screen and (min-width:1024px) {
@@ -1273,6 +1345,112 @@ p {
         bottom: 60px !important;
         right: 0 !important;
         height: 65px !important
+    }
+
+    .tap-to-earn-title {
+        font-size: 22px !important;
+        line-height: 25px !important;
+    }
+
+    .tap-to-earn-description {
+        font-size: 13px !important;
+        line-height: 21px !important;
+    }
+
+    .tap-to-earn {
+        padding: 20px !important;
+    }
+
+    .tap-to-earn-description {
+        padding-top: 16px !important;
+    }
+
+    .features-tap-to-earn-title {
+        font-size: 15px !important;
+        line-height: 15px !important;
+    }
+
+    .tap-to-earn-feature-description {
+        font-size: 13px !important;
+        line-height: 21px !important;
+        padding-top: 8px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .tap-to-earn-inner-card {
+        margin-top: 20px !important;
+    }
+
+    .tap-to-earn-card-title {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+
+    .tap-to-earn-padding {
+        text-align: center !important;
+    }
+
+    .tap-to-earn-padding {
+        font-size: 13px !important;
+        line-height: 21px !important;
+        padding-top: 16px !important;
+    }
+
+    .play-to-earn-title {
+        font-size: 22px !important;
+        line-height: 25px !important;
+    }
+
+    .play-to-earn-description {
+        font-size: 13px !important;
+        line-height: 21px !important;
+        padding-top: 16px !important;
+        padding-bottom: 12px !important;
+    }
+
+    .play-to-earn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px !important;
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+        background-color: white;
+    }
+
+    .play-to-earn-feature-title {
+        font-size: 15px !important;
+        line-height: 18px !important;
+        padding-top: 8px !important;
+    }
+
+    .play-to-earn-feature-description {
+        font-size: 13px !important;
+        line-height: 21px !important;
+        padding-top: 8px !important;
+        padding-bottom: 0px !important;
+    }
+
+    .play-earn-row {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: 12px;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .video-card-title {
+        font-size: 24px !important;
+        line-height: 32px !important;
+    }
+
+    .play-card-content {
+        font-size: 13px !important;
+        line-height: 21px !important;
+        padding-top: 12px !important;
     }
 }
 
@@ -2660,6 +2838,7 @@ section.apply-now {
     font-family: Exo;
     text-align: center;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .tap-to-earn-description {
@@ -2692,6 +2871,7 @@ section.apply-now {
     text-align: center;
     font-weight: 700;
     padding-top: 40px;
+    text-transform: uppercase;
 }
 
 .tap-to-earn-inner-card {
@@ -2711,8 +2891,13 @@ section.apply-now {
 }
 
 .tap-to-earn-padding {
-    padding-top: 10px;
-    text-align: start !important;
+    text-align: start;
+    font-size: 16px;
+    line-height: 24px;
+    color: #fff;
+    font-weight: 500;
+    font-family: "Albert Sans";
+    padding-top: 30px
 }
 
 .tap-to-earn-card-title {
@@ -2722,7 +2907,8 @@ section.apply-now {
     font-family: Exo;
     font-weight: 600;
     text-transform: uppercase;
-    display: flex
+    display: flex;
+
 }
 
 .play-to-earn {
@@ -2775,13 +2961,15 @@ section.apply-now {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-.features-paly-earn-inner-card{
+
+.features-paly-earn-inner-card {
     background-color: #e2cdff;
     border-bottom-right-radius: 40px;
     padding: 30px;
     width: 300px;
-    filter: drop-shadow(0px 2px 2.5px rgba(28,26,50,0.75));
+    filter: drop-shadow(0px 2px 2.5px rgba(28, 26, 50, 0.75));
 }
+
 .video-card-content {
     font-size: 16px;
     line-height: 24px;
@@ -2791,6 +2979,7 @@ section.apply-now {
     text-align: center;
     padding-top: 30px
 }
+
 .play-card-content {
     font-size: 16px;
     line-height: 24px;
@@ -2800,13 +2989,15 @@ section.apply-now {
     text-align: center;
     padding-top: 30px
 }
-.play-earn-row{
+
+.play-earn-row {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
     margin-bottom: 12px;
     gap: 30px;
 }
-.justify-center{
+
+.justify-center {
     justify-content: center !important;
 }
