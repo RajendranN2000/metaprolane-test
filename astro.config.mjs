@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import dotenv from 'dotenv';
 import robotsTxt from 'astro-robots-txt';
-import css from '@astrojs/css';
+import postcss from '@astrojs/postcss';
 dotenv.config();
 // https://astro.build/config
 export default defineConfig({
@@ -11,5 +11,5 @@ export default defineConfig({
         mode:"production"
     },
     site:"https://www.metaprolane.com/",
-    integrations: [react(),sitemap(),robotsTxt(),css()],
+    integrations: [react(),sitemap(),robotsTxt(),postcss()],
 });
