@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 import react from '@astrojs/react';
 import dotenv from 'dotenv';
 import robotsTxt from 'astro-robots-txt';
-import compress from 'astro-compress';
+// import compress from 'astro-compress';
 
 dotenv.config();
 
@@ -13,5 +13,8 @@ export default defineConfig({
         mode: "production"
     },
     site: "https://www.metaprolane.com/",
-    integrations: [react(), sitemap(), robotsTxt(), compress()],
+    integrations: [react(), sitemap(), robotsTxt(),(await import("astro-compress")).default({
+        Image: false,
+        SVG: false,
+    })],
 });
