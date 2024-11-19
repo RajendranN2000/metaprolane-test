@@ -9,9 +9,9 @@ dotenv.config();
 
 // https://astro.build/config
 export default defineConfig({
-    // build: {
-    //     mode: "production"
-    // },
+    build: {
+        mode: "production"
+    },
     site: "https://www.metaprolane.com/",
     integrations: [react(), sitemap(), robotsTxt()],
 });
