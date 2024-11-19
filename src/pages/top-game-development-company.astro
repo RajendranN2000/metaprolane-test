@@ -21,12 +21,12 @@ import Layout from "../layouts/Layout.astro";
                 href="/vendor/bootstrap/css/bootstrap.min.css"
                 rel="stylesheet"
             />
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link
                 rel="preconnect"
                 href="https://fonts.gstatic.com"
                 crossorigin
-            />
+            /> -->
             <!-- <link
                 href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
                 rel="stylesheet"
@@ -45,7 +45,7 @@ import Layout from "../layouts/Layout.astro";
             /> -->
         </head>
         <body>
-            <script is:inline>
+            <!-- <script is:inline>
                 $(document).ready(function () {
                     $(".question1").click(function () {
                         console.log("clicked questions");
@@ -54,11 +54,11 @@ import Layout from "../layouts/Layout.astro";
                         answer.slideToggle();
                     });
                 });
-            </script>
+            </script> -->
 
             <div class="game-development-service-page">
-               <div class="" id="top-section">
-                    <!-- <div class="top-banner">
+               <!-- <div class="" id="top-section">
+                    <div class="top-banner">
                         <img
                             src="/assets/images/game-portfolio/hero_banner_image.webp"
                             alt="image"
@@ -77,7 +77,7 @@ import Layout from "../layouts/Layout.astro";
                                 Game Developments
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                     <div class="premier-game">
                         <div class="premier-text">
                             Your Premier <span class="game-text">Game</span>
@@ -2133,9 +2133,9 @@ import Layout from "../layouts/Layout.astro";
                     class="scroll-top-btn"
                     src="/assets/images/game-portfolio/top-arrow.webp"
                     id="scrollTopBtn"
-                />
+                /> -->
             </div>
-            <script is:inline>
+            <!-- <script is:inline>
                 function toggleAnswer(event) {
                     const question = event.currentTarget;
                     const answer = question.nextElementSibling;
@@ -2152,8 +2152,8 @@ import Layout from "../layouts/Layout.astro";
                     const icon = question.querySelector(".faq-toggle-icon");
                     icon.textContent = icon.textContent === "+" ? "-" : "+";
                 }
-            </script>
-            <script is:inline>
+            </script> -->
+            <!-- <script is:inline>
                 const scrollTopBtn = document.getElementById("scrollTopBtn");
                 const topSection = document.getElementById("top-section");
                 const observer = new IntersectionObserver(
@@ -2176,7 +2176,7 @@ import Layout from "../layouts/Layout.astro";
                         behavior: "smooth",
                     });
                 };
-            </script>
+            </script> -->
         </body>
     </html> 
 </Layout>
